@@ -6,14 +6,6 @@
   <title>Two for the Row’d</title>
   <meta name="description" content="Nicola & Padraig — Irish travel storytellers sharing hidden gems, gluten-free finds, and real-world adventures." />
 
-  <!-- Optional: social sharing (edit these when you have a real domain + share image) -->
-  <!--
-  <meta property="og:title" content="Two for the Row’d" />
-  <meta property="og:description" content="Irish travel storytellers sharing hidden gems, gluten-free finds, and real-world adventures." />
-  <meta property="og:image" content="https://YOURDOMAIN.ie/img/share.jpg" />
-  <meta property="og:type" content="website" />
-  -->
-
   <style>
     :root{
       --bg:#ffd84a;
@@ -24,7 +16,6 @@
       --shadow: 0 10px 25px rgba(0,0,0,.12);
       --shadowSoft: 0 6px 14px rgba(0,0,0,.10);
       --radius:16px;
-      --radiusSm:12px;
     }
 
     *{ box-sizing:border-box; }
@@ -40,7 +31,6 @@
       line-height:1.5;
     }
 
-    /* Layout container */
     .wrap{
       max-width:1100px;
       margin:0 auto;
@@ -125,3 +115,402 @@
     .tabBtn[aria-selected="true"]{
       background:rgba(0,0,0,.08);
       border-color: rgba(0,0,0,.18);
+    }
+    .tabBtn:focus-visible{
+      outline:3px solid rgba(0,0,0,.35);
+      outline-offset:3px;
+    }
+
+    main section{
+      display:none;
+      padding:18px 0 34px;
+      margin:0 auto;
+      animation: fadeIn .18s ease;
+    }
+    main section.active{ display:block; }
+
+    @keyframes fadeIn{
+      from{ opacity:.0; transform: translateY(4px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
+
+    h1{ margin:10px 0 14px; font-size:34px; letter-spacing:-.4px; }
+    h2{ margin:18px 0 10px; }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+      text-align:left;
+      max-width:900px;
+      margin:16px auto;
+      backdrop-filter: blur(2px);
+    }
+
+    .smallNote{
+      opacity:.85;
+      font-size:14px;
+      margin-top:8px;
+      text-align:center;
+      max-width:900px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    /* HOME VIDEO: smaller than before */
+    .heroVideo{
+      width:100%;
+      max-width:720px;   /* was 900px; smaller now */
+      border-radius:14px;
+      margin:10px auto 0;
+      box-shadow: var(--shadow);
+      background:#000;
+      display:block;
+    }
+
+    /* Responsive YouTube embeds */
+    .iframeWrap{
+      max-width:900px;
+      margin:14px auto;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background:#000;
+      position:relative;
+      aspect-ratio: 16 / 9;
+    }
+    iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    /* Image grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap:12px;
+      max-width:900px;
+      margin:14px auto 0;
+    }
+
+    .grid img{
+      width:100%;
+      border-radius:14px;
+      object-fit:cover;
+      aspect-ratio: 1 / 1;
+      box-shadow: 0 8px 18px rgba(0,0,0,.12);
+      background:#fff;
+    }
+
+    .links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+      margin-top:10px;
+    }
+
+    /* Form */
+    .formGrid{
+      display:grid;
+      gap:10px;
+    }
+
+    .field label{
+      display:block;
+      font-weight:900;
+      margin:6px 0 6px;
+    }
+
+    .input, .textarea{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.15);
+      background:rgba(255,255,255,.9);
+      font: inherit;
+    }
+
+    .textarea{ min-height:140px; resize:vertical; }
+
+    .btn{
+      display:inline-block;
+      padding:12px 16px;
+      border:none;
+      border-radius:12px;
+      background:#fff;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow: var(--shadowSoft);
+      transition: transform .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn:focus-visible{
+      outline:3px solid rgba(0,0,0,.35);
+      outline-offset:3px;
+    }
+
+    footer{
+      margin-top:10px;
+      padding:18px 0 10px;
+      opacity:.9;
+      font-size:14px;
+    }
+
+    @media (max-width: 700px){
+      h1{ font-size:28px; }
+      .logo{ width:140px; }
+      .email{ font-size:14px; }
+      nav{ gap:8px; }
+      .tabBtn{ padding:10px 12px; }
+      .grid{ grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+      .heroVideo{ max-width:100%; }
+    }
+  </style>
+
+  <script>
+    const TAB_IDS = ["home","brew","hidden","reels","tourradar","ask","work"];
+
+    function show(tab){
+      document.querySelectorAll("main section").forEach(s => s.classList.remove("active"));
+      const active = document.getElementById(tab);
+      if(active) active.classList.add("active");
+
+      document.querySelectorAll("[data-tab]").forEach(btn => {
+        const selected = btn.dataset.tab === tab;
+        btn.setAttribute("aria-selected", selected ? "true" : "false");
+      });
+
+      history.replaceState(null, "", "#" + tab);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const hash = (location.hash || "#home").replace("#","");
+      show(TAB_IDS.includes(hash) ? hash : "home");
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+  </script>
+</head>
+
+<body>
+
+<header>
+  <img src="img/Logo.jpg" class="logo" alt="Two for the Row’d logo">
+
+  <div class="topline">
+    <div class="email">twofortherowd@gmail.com</div>
+
+    <div class="social" aria-label="Social links">
+      <a class="pill" href="https://www.facebook.com/share/1DKADAR7dV/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+      <a class="pill" href="https://www.instagram.com/twofortherowd25?igsh=MnptN2M5bDlqMXRx&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      <a class="pill" href="https://www.tiktok.com/@twofortherowd?_r=1&_t=ZN-93qLG9ldk18" target="_blank" rel="noopener">TikTok</a>
+      <a class="pill" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</header>
+
+<nav aria-label="Site navigation">
+  <button class="tabBtn" data-tab="home" onclick="show('home')" aria-selected="true">Home</button>
+  <button class="tabBtn" data-tab="brew" onclick="show('brew')" aria-selected="false">Brew for Two</button>
+  <button class="tabBtn" data-tab="hidden" onclick="show('hidden')" aria-selected="false">Hidden Ireland</button>
+  <button class="tabBtn" data-tab="reels" onclick="show('reels')" aria-selected="false">Reels & Shorts</button>
+  <button class="tabBtn" data-tab="tourradar" onclick="show('tourradar')" aria-selected="false">TourRadar</button>
+  <button class="tabBtn" data-tab="ask" onclick="show('ask')" aria-selected="false">Ask Us</button>
+  <button class="tabBtn" data-tab="work" onclick="show('work')" aria-selected="false">Work With Us</button>
+</nav>
+
+<main class="wrap">
+
+  <!-- HOME -->
+  <section id="home" class="active">
+    <h1>About Two for the Row’d</h1>
+
+    <!-- Smaller home video -->
+    <video class="heroVideo" controls preload="metadata">
+      <source src="video/who-are-we.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="smallNote">
+      If the video ever loads slowly, it’s because GitHub has a size/bandwidth limit — YouTube embeds are usually smoother.
+    </div>
+
+    <div class="grid" aria-label="Two for the Row’d photos">
+      <img loading="lazy" src="img/NP1.jpeg" alt="Two for the Row’d photo 1">
+      <img loading="lazy" src="img/NP2.jpeg" alt="Two for the Row’d photo 2">
+      <img loading="lazy" src="img/NP3.jpeg" alt="Two for the Row’d photo 3">
+      <img loading="lazy" src="img/NP4.jpeg" alt="Two for the Row’d photo 4">
+      <img loading="lazy" src="img/NP5.jpeg" alt="Two for the Row’d photo 5">
+      <img loading="lazy" src="img/NP6.jpeg" alt="Two for the Row’d photo 6">
+      <img loading="lazy" src="img/NP7.jpeg" alt="Two for the Row’d photo 7">
+      <img loading="lazy" src="img/NP8.jpeg" alt="Two for the Row’d photo 8">
+      <img loading="lazy" src="img/NP9.jpeg" alt="Two for the Row’d photo 9">
+      <img loading="lazy" src="img/NP10.jpeg" alt="Two for the Row’d photo 10">
+      <img loading="lazy" src="img/NP11.jpeg" alt="Two for the Row’d photo 11">
+    </div>
+
+    <div class="card">
+      <h2>About Two for the Row’d</h2>
+
+      <p><strong>Two for the Row’d</strong> is what happens when two Irish people who love a good story, a bit of craic, and the odd adventure decide to bring the internet with them.</p>
+
+      <p>We’re Nicola and Padraig — husband, wife, and travel partners in crime from Carlow — and we document the places we go, the things we see, the food we eat (especially the gluten-free gems), and the little moments that make travel memorable.</p>
+
+      <p><strong>Not the polished postcard version.<br>The real one.</strong></p>
+
+      <p>We share travel the way it actually happens: getting lost, finding hidden gems, chatting to locals, laughing at ourselves, learning bits of history along the way, and always coming home with a story to tell.</p>
+
+      <p>From heritage spots around Ireland to far-flung corners of the world, our content blends:</p>
+
+      <ul>
+        <li>Storytelling</li>
+        <li>Humour</li>
+        <li>Local history</li>
+        <li>Practical tips for real travellers</li>
+        <li>A strong dose of Irish personality</li>
+      </ul>
+
+      <p>Across Instagram, TikTok, Facebook and YouTube, our growing audience follows along because it feels like they’re travelling with us, not watching from a distance.</p>
+
+      <p>We’re proud <strong>TourRadar Ambassadors</strong>, partnering with one of the world’s leading adventure travel platforms to inspire people to see more of the world — one trip, one story, one reel at a time.</p>
+
+      <p><strong>At its heart, Two for the Row’d is simple:</strong></p>
+
+      <p><strong>Travel isn’t about perfection.<br>It’s about moments, memories, and the stories you bring home.<br>And we’ve plenty of those.</strong></p>
+    </div>
+  </section>
+
+  <!-- BREW -->
+  <section id="brew">
+    <h1>Brew for Two</h1>
+
+    <div class="card">
+      <p><strong>Brew for Two</strong> is our nationwide quest to find seriously good coffee — one café at a time.</p>
+      <p>We rate:</p>
+      <ul>
+        <li>Taste</li>
+        <li>Strength (will it wake the dead?)</li>
+        <li>Presentation</li>
+        <li>Vibes</li>
+        <li>Gluten-free treat potential (non-negotiable)</li>
+      </ul>
+    </div>
+
+    <div class="iframeWrap">
+      <iframe src="https://www.youtube.com/embed/LJuH3nCk-wo" title="Brew for Two video 1" allowfullscreen></iframe>
+    </div>
+    <div class="iframeWrap">
+      <iframe src="https://www.youtube.com/embed/tVcyL096Tt0" title="Brew for Two video 2" allowfullscreen></iframe>
+    </div>
+
+    <!-- Wandering Elk (Shorts) -->
+    <div class="iframeWrap">
+      <iframe src="https://www.youtube.com/embed/l-8KEQGANAM" title="Brew for Two — The Wandering Elk" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- HIDDEN IRELAND -->
+  <section id="hidden">
+    <h1>Hidden Ireland</h1>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/B_FI9F3tlNc" title="Hidden Ireland video 1" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/lZo2oaNYat8" title="Hidden Ireland video 2" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/vGSWZw-wPGc" title="Hidden Ireland video 3" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/P2W4kTX8o2Q" title="Hidden Ireland video 4" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/F95_h49sL0U" title="Hidden Ireland video 5" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/kB5AbOkWUZs" title="Hidden Ireland video 6" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/7EwSwlstqoY" title="Hidden Ireland video 7" allowfullscreen></iframe></div>
+  </section>
+
+  <!-- REELS -->
+  <section id="reels">
+    <h1>Reels & Shorts</h1>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/zwu2B4Q_QaI" title="Shorts video 1" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/PEQRwS4rTVI" title="Shorts video 2" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/ueyBfcQxNTg" title="Shorts video 3" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/DCCKVM5d3oc" title="Shorts video 4" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/_oVjZc-I6cg" title="Shorts video 5" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/RzSMfH-dDus" title="Shorts video 6" allowfullscreen></iframe></div>
+  </section>
+
+  <!-- TOURRADAR -->
+  <section id="tourradar">
+    <h1>TourRadar</h1>
+
+    <div class="card">
+      <p><strong>TourRadar</strong> is where you go when you want the adventure without the headache of planning it.</p>
+      <p>It’s a global platform packed with multi-day, small-group tours run by trusted local operators — covering everything from culture and heritage to wildlife, foodie trips, and proper bucket-list adventures. Transport, accommodation, guides, and experiences are all built in. You just pick the trip and go.</p>
+
+      <p><strong>€50 off your tour</strong><br>
+      Use our ambassador code at checkout:<br>
+      <strong>NicolaR50</strong></p>
+
+      <div class="links">
+        <a class="pill" href="https://tinyurl.com/4x2xwmwv" target="_blank" rel="noopener">TourRadar Main Page</a>
+        <a class="pill" href="https://tinyurl.com/4azpatpn" target="_blank" rel="noopener">Current Deals</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASK -->
+  <section id="ask">
+    <h1>Ask Two for the Row’d</h1>
+
+    <div class="card">
+      <p>A little form where people can ask:</p>
+      <p><strong>“We’re going to X — where should we go / eat / stay?”</strong></p>
+
+      <form action="mailto:twofortherowd@gmail.com" method="post" enctype="text/plain">
+        <div class="formGrid">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input class="input" id="name" name="Name" placeholder="Your name" autocomplete="name">
+          </div>
+
+          <div class="field">
+            <label for="email">Your email</label>
+            <input class="input" id="email" name="Email" placeholder="Your email" autocomplete="email">
+          </div>
+
+          <div class="field">
+            <label for="dest">Where are you going?</label>
+            <input class="input" id="dest" name="Destination" placeholder="Where are you going?">
+          </div>
+
+          <div class="field">
+            <label for="q">Your question</label>
+            <textarea class="textarea" id="q" name="Question" placeholder="Tell us what you like (food, vibe, budget, gluten-free needs etc.)"></textarea>
+          </div>
+
+          <div>
+            <button class="btn" type="submit">Send</button>
+            <p class="smallNote">This opens your email app to send us the message (no fancy backend needed).</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- WORK WITH US -->
+  <section id="work">
+    <h1>Work With Us</h1>
+
+    <div class="card">
+      <p>Pop your media kit into the repo (PDF is best) and we’ll link it here.</p>
+      <p>For now, email us at <strong>twofortherowd@gmail.com</strong> and we’ll send it straight on.</p>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Two for the Row’d • Built with love & a bit of chaos
+  </footer>
+
+</main>
+
+</body>
+</html>
