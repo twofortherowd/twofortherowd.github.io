@@ -458,45 +458,55 @@
   </section>
 
   <!-- ASK -->
-  <section id="ask">
-    <h1>Ask Two for the Row’d</h1>
+  <!-- ASK -->
+<section id="ask">
+  <h1>Ask Two for the Row’d</h1>
 
-    <div class="card">
-      <p>A little form where people can ask:</p>
-      <p><strong>“We’re going to X — where should we go / eat / stay?”</strong></p>
+  <div class="card">
+    <p>Planning a trip?</p>
+    <p><strong>Tell us where you're heading and what kind of experience you're after — we’ll point you in the right direction.</strong></p>
 
-      <form action="mailto:twofortherowd@gmail.com" method="post" enctype="text/plain">
-        <div class="formGrid">
-          <div class="field">
-            <label for="name">Your name</label>
-            <input class="input" id="name" name="Name" placeholder="Your name" autocomplete="name">
-          </div>
+    <form action="https://formspree.io/f/xojnjzne" method="POST" class="formGrid">
 
-          <div class="field">
-            <label for="email">Your email</label>
-            <input class="input" id="email" name="Email" placeholder="Your email" autocomplete="email">
-          </div>
+      <!-- Custom email subject -->
+      <input type="hidden" name="_subject" value="New Ask Two for the Row’d Submission">
 
-          <div class="field">
-            <label for="dest">Where are you going?</label>
-            <input class="input" id="dest" name="Destination" placeholder="Where are you going?">
-          </div>
+      <!-- Optional redirect after submission -->
+      <input type="hidden" name="_next" value="https://twofortherowd.github.io/#ask">
 
-          <div class="field">
-            <label for="q">Your question</label>
-            <textarea class="textarea" id="q" name="Question" placeholder="Tell us what you like (food, vibe, budget, gluten-free needs etc.)"></textarea>
-          </div>
+      <div class="field">
+        <label for="name">Your Name</label>
+        <input class="input" type="text" id="name" name="name" required>
+      </div>
 
-          <div>
-            <button class="btn" type="submit">Send</button>
-            <p class="smallNote">This opens your email app to send us the message (no fancy backend needed).</p>
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
+      <div class="field">
+        <label for="email">Your Email</label>
+        <input class="input" type="email" id="email" name="email" required>
+      </div>
 
-  <!-- WORK WITH US -->
+      <div class="field">
+        <label for="destination">Where are you going?</label>
+        <input class="input" type="text" id="destination" name="destination" required>
+      </div>
+
+      <div class="field">
+        <label for="details">Tell us what you're looking for</label>
+        <textarea class="textarea" id="details" name="message" placeholder="Food? Hidden gems? Gluten-free spots? Budget tips? Chill vibes? Adventure?" required></textarea>
+      </div>
+
+      <div>
+        <button class="btn" type="submit">Send Question</button>
+      </div>
+
+      <p class="smallNote">
+        We read every message. Give us a little detail and we’ll give you proper recommendations.
+      </p>
+
+    </form>
+  </div>
+</section>
+
+          <!-- WORK WITH US -->
   <section id="work">
     <h1>Work With Us</h1>
 
