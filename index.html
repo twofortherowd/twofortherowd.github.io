@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1 hookup"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Two for the Row’d</title>
   <meta name="description" content="Nicola & Padraig — Irish travel storytellers sharing hidden gems, gluten-free finds, and real-world adventures." />
 
@@ -40,14 +40,14 @@
       padding:18px 16px 8px;
     }
 
-    /* BIGGER LOGO */
-.logo{
-  width:720px;      /* was 600px */
-  max-width:96%;
-  height:auto;
-  display:block;
-  margin:0 auto 26px auto;
-}
+    /* Logo (big, brandy) */
+    .logo{
+      width:720px;
+      max-width:96%;
+      height:auto;
+      display:block;
+      margin:0 auto 22px auto;
+    }
 
     .topline{
       display:flex;
@@ -195,10 +195,10 @@
       border:0;
     }
 
-    /* HOMEPAGE PHOTO GRID (organised layout) */
+    /* NEW: Balanced photo grid (no featured image) */
     .grid{
       display:grid;
-      grid-template-columns: repeat(12, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap:14px;
       max-width:1000px;
       margin:20px auto 0;
@@ -213,6 +213,7 @@
       transition: transform .25s ease, box-shadow .25s ease;
       display:block;
       background:#fff;
+      object-position:center;
     }
 
     .grid img:hover{
@@ -220,29 +221,10 @@
       box-shadow: 0 16px 35px rgba(0,0,0,.20);
     }
 
-    /* Fix head crop on NP11 only */
+    /* NP11: keep heads safer */
     .grid img.fixHead{
       object-position: center 35%;
     }
-
-    /* Featured hero on the RIGHT (NP8) */
-    .grid img.featured{
-      grid-column: 5 / -1;
-      grid-row: 1 / span 3;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-     object-position: center center;
-    }
-
-    /* Left stack (3 images) */
-    .grid img.left1{ grid-column: 1 / span 4; grid-row: 1; }
-    .grid img.left2{ grid-column: 1 / span 4; grid-row: 2; }
-    .grid img.left3{ grid-column: 1 / span 4; grid-row: 3; }
-
-    /* Bottom row (3 across) */
-    .grid img.bottom1{ grid-column: 1 / span 4; grid-row: 4; }
-    .grid img.bottom2{ grid-column: 5 / span 4; grid-row: 4; }
-    .grid img.bottom3{ grid-column: 9 / span 4; grid-row: 4; }
 
     /* Extra strip under the grid */
     .extraRow{
@@ -261,34 +243,22 @@
       background:#fff;
       transition: transform .25s ease, box-shadow .25s ease;
       display:block;
+      object-position:center;
     }
     .extraRow img:hover{
       transform: translateY(-4px);
       box-shadow: 0 16px 35px rgba(0,0,0,.20);
     }
 
+    /* Optional: NP5 crop fix (remove if you don't need it) */
+    .extraRow img.fixNP5{
+      object-position: center 25%;
+    }
+
     /* Tablet */
     @media (max-width: 900px){
-      .grid{
-        grid-template-columns: repeat(2, 1fr);
-        max-width:900px;
-      }
-      .grid img{
-        aspect-ratio: 4 / 3;
-      }
-      .grid img.featured,
-      .grid img.left1, .grid img.left2, .grid img.left3,
-      .grid img.bottom1, .grid img.bottom2, .grid img.bottom3{
-        grid-column:auto;
-        grid-row:auto;
-        aspect-ratio: 4 / 3;
-        object-position:center;
-      }
-
-      .extraRow{
-        grid-template-columns: repeat(2, 1fr);
-        max-width:900px;
-      }
+      .grid{ grid-template-columns: repeat(2, 1fr); max-width:900px; }
+      .extraRow{ grid-template-columns: repeat(2, 1fr); max-width:900px; }
     }
 
     /* Mobile */
@@ -354,8 +324,7 @@
 
     @media (max-width: 700px){
       h1{ font-size:28px; }
-      /* keep logo still nice and big on mobile */
-      .logo{ width:260px; }
+      .logo{ width:95%; }
       .email{ font-size:14px; }
       nav{ gap:8px; }
       .tabBtn{ padding:10px 12px; }
@@ -422,7 +391,6 @@
   <section id="home" class="active">
     <h1>About Two for the Row’d</h1>
 
-    <!-- ABOUT FIRST -->
     <div class="card">
       <h2>About Us</h2>
 
@@ -453,7 +421,6 @@
       <p><strong>Travel isn’t about perfection.<br>It’s about moments, memories, and the stories you bring home.<br>And we’ve plenty of those.</strong></p>
     </div>
 
-    <!-- VIDEO AFTER ABOUT -->
     <video class="heroVideo" controls preload="metadata">
       <source src="video/who-are-we.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -463,17 +430,14 @@
       If it takes a moment to load, hang tight — it’s worth it.
     </div>
 
-    <!-- PHOTO LAYOUT -->
+    <!-- BALANCED PHOTO LAYOUT (NP8 removed) -->
     <div class="grid" aria-label="Two for the Row’d photos">
-      <img class="left1" loading="lazy" src="img/NP2.jpeg" alt="">
-      <img class="left2" loading="lazy" src="img/NP6.jpeg" alt="">
-      <img class="left3" loading="lazy" src="img/NP7.jpeg" alt="">
-
-      <img class="featured" loading="lazy" src="img/NP8.jpeg" alt="">
-
-      <img class="bottom1" loading="lazy" src="img/NP9.jpeg" alt="">
-      <img class="bottom2" loading="lazy" src="img/NP10.jpeg" alt="">
-      <img class="bottom3 fixHead" loading="lazy" src="img/NP11.jpeg" alt="">
+      <img loading="lazy" src="img/NP2.jpeg" alt="">
+      <img loading="lazy" src="img/NP6.jpeg" alt="">
+      <img loading="lazy" src="img/NP7.jpeg" alt="">
+      <img loading="lazy" src="img/NP9.jpeg" alt="">
+      <img loading="lazy" src="img/NP10.jpeg" alt="">
+      <img class="fixHead" loading="lazy" src="img/NP11.jpeg" alt="">
     </div>
 
     <div class="extraRow" aria-label="More Two for the Row’d photos">
