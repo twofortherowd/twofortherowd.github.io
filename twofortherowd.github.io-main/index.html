@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Two for the Row’d</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#ffd84a;color:#222;text-align:center}
+header{padding:20px}
+nav{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+nav button{padding:10px 14px;border:none;border-radius:8px;background:#fff;font-weight:bold;cursor:pointer}
+section{display:none;padding:20px;max-width:1000px;margin:auto}
+section.active{display:block}
+video, iframe{width:100%;max-width:900px;border-radius:12px;margin-top:14px}
+.logo{width:120px}
+</style>
+
+<script>
+function show(tab){
+document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+document.getElementById(tab).classList.add("active");
+window.scrollTo(0,0);
+}
+</script>
+</head>
+
+<body>
+
+<header>
+<img src="assets/img/Logo.jpg" class="logo">
+<div><strong>twofortherowd@gmail.com</strong></div>
+</header>
+
+<nav>
+<button onclick="show('home')">Home</button>
+<button onclick="show('brew')">Brew for Two</button>
+<button onclick="show('hidden')">Hidden Ireland</button>
+<button onclick="show('reels')">Reels & Shorts</button>
+<button onclick="show('tourradar')">TourRadar</button>
+<button onclick="show('ask')">Ask Us</button>
+<button onclick="show('work')">Work With Us</button>
+</nav>
+
+<section id="home" class="active">
+<h1>About Two for the Row’d</h1>
+
+<!-- THIS VIDEO COMES FROM GITHUB -->
+<video controls>
+  <source src="assets/video/who-are-we.mp4" type="video/mp4">
+</video>
+
+<p>Two for the Row’d is what happens when two Irish people who love a good story, a bit of craic, and the odd adventure decide to bring the internet with them.</p>
+</section>
+
+<section id="brew">
+<h1>Brew for Two</h1>
+<iframe src="https://www.youtube.com/embed/LJuH3nCk-wo" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/tVcyL096Tt0" allowfullscreen></iframe>
+</section>
+
+<section id="hidden">
+<h1>Hidden Ireland</h1>
+<iframe src="https://www.youtube.com/embed/B_FI9F3tlNc" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/lZo2oaNYat8" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/vGSWZw-wPGc" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/P2W4kTX8o2Q" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/F95_h49sL0U" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/kB5AbOkWUZs" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/7EwSwlstqoY" allowfullscreen></iframe>
+</section>
+
+<section id="reels">
+<h1>Reels & Shorts</h1>
+<iframe src="https://www.youtube.com/embed/zwu2B4Q_QaI" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/PEQRwS4rTVI" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/ueyBfcQxNTg" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/DCCKVM5d3oc" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/_oVjZc-I6cg" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/RzSMfH-dDus" allowfullscreen></iframe>
+</section>
+
+<section id="tourradar">
+<h1>TourRadar</h1>
+<p>Use code <strong>NicolaR50</strong> for €50 off.</p>
+<a href="https://tinyurl.com/4x2xwmwv">Main page</a><br><br>
+<a href="https://tinyurl.com/4azpatpn">Deals</a>
+</section>
+
+<section id="ask">
+<h1>Ask Two for the Row’d</h1>
+<p>Email us: twofortherowd@gmail.com</p>
+</section>
+
+<section id="work">
+<h1>Work With Us</h1>
+<p>Media kit coming soon.</p>
+</section>
+
+</body>
+</html>
