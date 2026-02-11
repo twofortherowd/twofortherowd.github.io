@@ -83,9 +83,10 @@
       border-radius:999px;
       font-weight:800;
       box-shadow: 0 4px 10px rgba(0,0,0,.08);
-      transition: transform .12s ease, background .12s ease;
+      transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+      display:inline-block;
     }
-    .pill:hover{ background:#fff; transform: translateY(-1px); }
+    .pill:hover{ background:#fff; transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,.12); }
     .pill:focus-visible{
       outline:3px solid rgba(0,0,0,.35);
       outline-offset:3px;
@@ -130,7 +131,7 @@
     main section.active{ display:block; }
 
     @keyframes fadeIn{
-      from{ opacity:.0; transform: translateY(4px); }
+      from{ opacity:0; transform: translateY(4px); }
       to{ opacity:1; transform: translateY(0); }
     }
 
@@ -162,7 +163,7 @@
     /* HOME VIDEO: smaller than before */
     .heroVideo{
       width:100%;
-      max-width:720px;   /* was 900px; smaller now */
+      max-width:720px;
       border-radius:14px;
       margin:10px auto 0;
       box-shadow: var(--shadow);
@@ -189,53 +190,45 @@
       border:0;
     }
 
-    /* Image grid */
+    /* Image grid (with featured sunset tile) */
     .grid{
-  display:grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap:14px;
-  max-width:1000px;
-  margin:20px auto 0;
-}
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+      max-width:1000px;
+      margin:20px auto 0;
+    }
 
-.grid img{
-  width:100%;
-  border-radius:18px;
-  object-fit:cover;
-  aspect-ratio: 4 / 3;
-  box-shadow: 0 10px 25px rgba(0,0,0,.15);
-  transition: transform .25s ease, box-shadow .25s ease;
-  grid-column: span 4;
-}
+    .grid img{
+      width:100%;
+      border-radius:18px;
+      object-fit:cover;
+      aspect-ratio: 4 / 3;
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+      transition: transform .25s ease, box-shadow .25s ease;
+      grid-column: span 4;
+      display:block;
+      background:#fff;
+    }
 
-/* Featured hero image */
-.grid img.featured{
-  grid-column: span 8;
-  aspect-ratio: 16 / 9;
-}
+    .grid img.featured{
+      grid-column: span 8;
+      aspect-ratio: 16 / 9;
+    }
 
-/* Hover lift */
-.grid img:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 16px 35px rgba(0,0,0,.20);
-}
+    .grid img:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(0,0,0,.20);
+    }
 
-/* Tablet */
-@media (max-width: 900px){
-  .grid img{
-    grid-column: span 6;
-  }
+    @media (max-width: 900px){
+      .grid img{ grid-column: span 6; }
+      .grid img.featured{ grid-column: span 12; }
+    }
 
-  .grid img.featured{
-    grid-column: span 12;
-  }
-}
-
-/* Mobile */
-@media (max-width: 520px){
-  .grid img{
-    grid-column: span 12;
-  }
+    @media (max-width: 520px){
+      .grid img{ grid-column: span 12; }
+    }
 
     .links{
       display:flex;
@@ -298,7 +291,6 @@
       .email{ font-size:14px; }
       nav{ gap:8px; }
       .tabBtn{ padding:10px 12px; }
-      .grid{ grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
       .heroVideo{ max-width:100%; }
     }
   </style>
@@ -323,7 +315,8 @@
     window.addEventListener("DOMContentLoaded", () => {
       const hash = (location.hash || "#home").replace("#","");
       show(TAB_IDS.includes(hash) ? hash : "home");
-      document.getElementById("year").textContent = new Date().getFullYear();
+      const yearEl = document.getElementById("year");
+      if(yearEl) yearEl.textContent = new Date().getFullYear();
     });
   </script>
 </head>
@@ -361,7 +354,6 @@
   <section id="home" class="active">
     <h1>About Two for the Row’d</h1>
 
-    <!-- Smaller home video -->
     <video class="heroVideo" controls preload="metadata">
       <source src="video/who-are-we.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -379,7 +371,10 @@
       <img loading="lazy" src="img/NP5.jpeg" alt="Two for the Row’d photo 5">
       <img loading="lazy" src="img/NP6.jpeg" alt="Two for the Row’d photo 6">
       <img loading="lazy" src="img/NP7.jpeg" alt="Two for the Row’d photo 7">
-      <img loading="lazy" src="img/NP8.jpeg" alt="Two for the Row’d photo 8">
+
+      <!-- Featured sunset hero -->
+      <img class="featured" loading="lazy" src="img/NP8.jpeg" alt="Two for the Row’d photo 8">
+
       <img loading="lazy" src="img/NP9.jpeg" alt="Two for the Row’d photo 9">
       <img loading="lazy" src="img/NP10.jpeg" alt="Two for the Row’d photo 10">
       <img loading="lazy" src="img/NP11.jpeg" alt="Two for the Row’d photo 11">
@@ -438,8 +433,6 @@
     <div class="iframeWrap">
       <iframe src="https://www.youtube.com/embed/tVcyL096Tt0" title="Brew for Two video 2" allowfullscreen></iframe>
     </div>
-
-    <!-- Wandering Elk (Shorts) -->
     <div class="iframeWrap">
       <iframe src="https://www.youtube.com/embed/l-8KEQGANAM" title="Brew for Two — The Wandering Elk" allowfullscreen></iframe>
     </div>
@@ -487,74 +480,73 @@
     </div>
   </section>
 
- <!-- ASK -->
-<section id="ask">
-  <h1>Ask Two for the Row’d</h1>
+  <!-- ASK -->
+  <section id="ask">
+    <h1>Ask Two for the Row’d</h1>
 
-  <div class="card">
-    <p>Planning a trip?</p>
-    <p><strong>Tell us where you're heading and what kind of experience you're after — we’ll point you in the right direction.</strong></p>
+    <div class="card">
+      <p>Planning a trip?</p>
+      <p><strong>Tell us where you're heading and what kind of experience you're after — we’ll point you in the right direction.</strong></p>
 
-    <form action="https://formspree.io/f/xojnjzne" method="POST" class="formGrid">
-      <input type="hidden" name="_subject" value="New Ask Two for the Row’d Submission">
-      <input type="hidden" name="_next" value="https://twofortherowd.github.io/#ask">
+      <form action="https://formspree.io/f/xojnjzne" method="POST" class="formGrid">
+        <input type="hidden" name="_subject" value="New Ask Two for the Row’d Submission">
+        <input type="hidden" name="_next" value="https://twofortherowd.github.io/#ask">
 
-      <div class="field">
-        <label for="ask-name">Your Name</label>
-        <input class="input" type="text" id="ask-name" name="name" required>
-      </div>
+        <div class="field">
+          <label for="ask-name">Your Name</label>
+          <input class="input" type="text" id="ask-name" name="name" required>
+        </div>
 
-      <div class="field">
-        <label for="ask-email">Your Email</label>
-        <input class="input" type="email" id="ask-email" name="email" required>
-      </div>
+        <div class="field">
+          <label for="ask-email">Your Email</label>
+          <input class="input" type="email" id="ask-email" name="email" required>
+        </div>
 
-      <div class="field">
-        <label for="ask-destination">Where are you going?</label>
-        <input class="input" type="text" id="ask-destination" name="destination" required>
-      </div>
+        <div class="field">
+          <label for="ask-destination">Where are you going?</label>
+          <input class="input" type="text" id="ask-destination" name="destination" required>
+        </div>
 
-      <div class="field">
-        <label for="ask-details">Tell us what you're looking for</label>
-        <textarea class="textarea" id="ask-details" name="message"
-          placeholder="Food? Hidden gems? Gluten-free spots? Budget tips? Chill vibes? Adventure?" required></textarea>
-      </div>
+        <div class="field">
+          <label for="ask-details">Tell us what you're looking for</label>
+          <textarea class="textarea" id="ask-details" name="message"
+            placeholder="Food? Hidden gems? Gluten-free spots? Budget tips? Chill vibes? Adventure?" required></textarea>
+        </div>
 
-      <div>
-        <button class="btn" type="submit">Send Question</button>
-      </div>
+        <div>
+          <button class="btn" type="submit">Send Question</button>
+        </div>
 
-      <p class="smallNote">
-        We read every message. Give us a little detail and we’ll give you proper recommendations.
-      </p>
-    </form>
-  </div>
-</section>
+        <p class="smallNote">
+          We read every message. Give us a little detail and we’ll give you proper recommendations.
+        </p>
+      </form>
+    </div>
+  </section>
 
-          <!-- WORK WITH US -->
+  <!-- WORK WITH US -->
   <section id="work">
     <h1>Work With Us</h1>
 
-   <div class="card">
-  <h2>Work With Us</h2>
+    <div class="card">
+      <h2>Work With Us</h2>
 
-  <p>We love partnering with brands, tourism boards, cafés, hotels and heritage spaces.</p>
+      <p>We love partnering with brands, tourism boards, cafés, hotels and heritage spaces.</p>
 
-  <div class="links">
-    <a class="pill" href="media/two-for-the-rowd-media-kit.pdf" target="_blank" rel="noopener">
-      Download Our Media Kit (PDF)
-    </a>
+      <div class="links">
+        <a class="pill" href="media/two-for-the-rowd-media-kit.pdf" target="_blank" rel="noopener">
+          Download Our Media Kit (PDF)
+        </a>
 
-    <a class="pill" href="mailto:twofortherowd@gmail.com">
-      Email Us
-    </a>
-  </div>
+        <a class="pill" href="mailto:twofortherowd@gmail.com">
+          Email Us
+        </a>
+      </div>
 
-  <p class="smallNote">
-    TikTok • Instagram • YouTube Shorts • Facebook • Story-led travel content with personality.
-  </p>
-</div>
-
+      <p class="smallNote">
+        TikTok • Instagram • YouTube Shorts • Facebook • Story-led travel content with personality.
+      </p>
+    </div>
   </section>
 
   <footer>
