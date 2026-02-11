@@ -4,15 +4,32 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Two for the Row’d</title>
+  <meta name="description" content="Nicola & Padraig — Irish travel storytellers sharing hidden gems, gluten-free finds, and real-world adventures." />
+
+  <!-- Optional: social sharing (edit these when you have a real domain + share image) -->
+  <!--
+  <meta property="og:title" content="Two for the Row’d" />
+  <meta property="og:description" content="Irish travel storytellers sharing hidden gems, gluten-free finds, and real-world adventures." />
+  <meta property="og:image" content="https://YOURDOMAIN.ie/img/share.jpg" />
+  <meta property="og:type" content="website" />
+  -->
 
   <style>
     :root{
       --bg:#ffd84a;
       --text:#1b1b1b;
-      --card:#ffffff;
+      --card: rgba(255,255,255,.75);
+      --cardSolid:#ffffff;
+      --border: rgba(0,0,0,.10);
       --shadow: 0 10px 25px rgba(0,0,0,.12);
+      --shadowSoft: 0 6px 14px rgba(0,0,0,.10);
       --radius:16px;
+      --radiusSm:12px;
     }
+
+    *{ box-sizing:border-box; }
+
+    html{ scroll-behavior:smooth; }
 
     body{
       margin:0;
@@ -20,6 +37,14 @@
       background:var(--bg);
       color:var(--text);
       text-align:center;
+      line-height:1.5;
+    }
+
+    /* Layout container */
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 14px 28px;
     }
 
     header{
@@ -36,15 +61,20 @@
     .topline{
       display:flex;
       flex-direction:column;
-      gap:8px;
+      gap:10px;
       align-items:center;
       justify-content:center;
       margin-bottom:14px;
     }
 
     .email{
-      font-weight:800;
+      font-weight:900;
       letter-spacing:.2px;
+      background:rgba(255,255,255,.65);
+      border:1px solid var(--border);
+      padding:8px 12px;
+      border-radius:999px;
+      box-shadow: var(--shadowSoft);
     }
 
     .social{
@@ -54,16 +84,22 @@
       justify-content:center;
     }
 
-    .social a{
+    .pill{
       text-decoration:none;
       color:var(--text);
       background:rgba(255,255,255,.75);
       border:1px solid rgba(0,0,0,.12);
       padding:8px 12px;
       border-radius:999px;
-      font-weight:700;
+      font-weight:800;
+      box-shadow: 0 4px 10px rgba(0,0,0,.08);
+      transition: transform .12s ease, background .12s ease;
     }
-    .social a:hover{ background:#fff; }
+    .pill:hover{ background:#fff; transform: translateY(-1px); }
+    .pill:focus-visible{
+      outline:3px solid rgba(0,0,0,.35);
+      outline-offset:3px;
+    }
 
     nav{
       display:flex;
@@ -75,302 +111,17 @@
       max-width:1100px;
     }
 
-    nav button{
+    .tabBtn{
       padding:10px 14px;
-      border:none;
-      border-radius:10px;
-      background:var(--card);
-      font-weight:800;
-      cursor:pointer;
-      box-shadow: 0 6px 14px rgba(0,0,0,.10);
-    }
-    nav button:hover{ transform:translateY(-1px); }
-
-    section{
-      display:none;
-      padding:18px 14px 34px;
-      max-width:1050px;
-      margin:0 auto;
-    }
-    section.active{ display:block; }
-
-    h1{ margin:10px 0 14px; font-size:34px; }
-    h2{ margin:18px 0 10px; }
-
-    .card{
-      background:rgba(255,255,255,.65);
       border:1px solid rgba(0,0,0,.10);
-      border-radius:var(--radius);
-      box-shadow: var(--shadow);
-      padding:18px;
-      text-align:left;
-      max-width:900px;
-      margin:16px auto;
-    }
-
-    video{
-      width:100%;
-      max-width:900px;
-      border-radius:14px;
-      margin-top:10px;
-      box-shadow: var(--shadow);
-      background:#000;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap:12px;
-      max-width:900px;
-      margin:14px auto 0;
-    }
-
-    .grid img{
-      width:100%;
-      border-radius:14px;
-      object-fit:cover;
-      aspect-ratio: 1 / 1;
-      box-shadow: 0 8px 18px rgba(0,0,0,.12);
-      background:#fff;
-    }
-
-    .iframeWrap{
-      max-width:900px;
-      margin:14px auto;
-    }
-
-    iframe{
-      width:100%;
-      max-width:900px;
-      height:510px;
-      border:0;
-      border-radius:14px;
-      box-shadow: var(--shadow);
-      background:#000;
-    }
-
-    @media (max-width: 700px){
-      iframe{ height:420px; }
-      h1{ font-size:28px; }
-    }
-
-    .smallNote{
-      opacity:.85;
-      font-size:14px;
-      margin-top:8px;
-      text-align:center;
-    }
-
-    .links a{
-      display:inline-block;
-      margin:8px 10px 0;
-      font-weight:800;
-      color:var(--text);
-      background:rgba(255,255,255,.8);
-      padding:10px 12px;
       border-radius:12px;
-      text-decoration:none;
-      border:1px solid rgba(0,0,0,.10);
+      background:var(--cardSolid);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow: var(--shadowSoft);
+      transition: transform .12s ease, background .12s ease;
     }
-    .links a:hover{ background:#fff; }
-  </style>
-
-  <script>
-    function show(tab){
-      document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-      document.getElementById(tab).classList.add("active");
-      window.scrollTo(0,0);
-    }
-  </script>
-</head>
-
-<body>
-
-<header>
-  <img src="img/Logo.jpg" class="logo" alt="Two for the Row’d logo">
-  <div class="topline">
-    <div class="email">twofortherowd@gmail.com</div>
-
-    <!-- Put your real links in these when you have them -->
-    <div class="social">
-      <a href="#" target="_blank" rel="noopener">Facebook</a>
-      <a href="#" target="_blank" rel="noopener">Instagram</a>
-      <a href="#" target="_blank" rel="noopener">TikTok</a>
-      <a href="#" target="_blank" rel="noopener">YouTube</a>
-    </div>
-  </div>
-</header>
-
-<nav>
-  <button onclick="show('home')">Home</button>
-  <button onclick="show('brew')">Brew for Two</button>
-  <button onclick="show('hidden')">Hidden Ireland</button>
-  <button onclick="show('reels')">Reels & Shorts</button>
-  <button onclick="show('tourradar')">TourRadar</button>
-  <button onclick="show('ask')">Ask Us</button>
-  <button onclick="show('work')">Work With Us</button>
-</nav>
-
-<!-- HOME -->
-<section id="home" class="active">
-  <h1>About Two for the Row’d</h1>
-
-  <video controls>
-    <source src="video/who-are-we.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="smallNote">If the video ever loads slowly, it’s because GitHub has a size/bandwidth limit — YouTube embeds are usually smoother.</div>
-
-  <div class="grid" aria-label="Two for the Row’d photos">
-    <img src="img/NP1.jpeg" alt="Two for the Row’d photo 1">
-    <img src="img/NP2.jpeg" alt="Two for the Row’d photo 2">
-    <img src="img/NP3.jpeg" alt="Two for the Row’d photo 3">
-    <img src="img/NP4.jpeg" alt="Two for the Row’d photo 4">
-    <img src="img/NP5.jpeg" alt="Two for the Row’d photo 5">
-    <img src="img/NP6.jpeg" alt="Two for the Row’d photo 6">
-    <img src="img/NP7.jpeg" alt="Two for the Row’d photo 7">
-    <img src="img/NP8.jpeg" alt="Two for the Row’d photo 8">
-    <img src="img/NP9.jpeg" alt="Two for the Row’d photo 9">
-    <img src="img/NP10.jpeg" alt="Two for the Row’d photo 10">
-    <img src="img/NP11.jpeg" alt="Two for the Row’d photo 11">
-  </div>
-
-  <div class="card">
-    <h2>About Two for the Row’d</h2>
-
-    <p><strong>Two for the Row’d</strong> is what happens when two Irish people who love a good story, a bit of craic, and the odd adventure decide to bring the internet with them.</p>
-
-    <p>We’re Nicola and Padraig — husband, wife, and travel partners in crime from Carlow — and we document the places we go, the things we see, the food we eat (especially the gluten-free gems), and the little moments that make travel memorable.</p>
-
-    <p><strong>Not the polished postcard version.<br>
-    The real one.</strong></p>
-
-    <p>We share travel the way it actually happens:
-      getting lost, finding hidden gems, chatting to locals, laughing at ourselves, learning bits of history along the way, and always coming home with a story to tell.</p>
-
-    <p>From heritage spots around Ireland to far-flung corners of the world, our content blends:</p>
-
-    <ul>
-      <li>Storytelling</li>
-      <li>Humour</li>
-      <li>Local history</li>
-      <li>Practical tips for real travellers</li>
-      <li>A strong dose of Irish personality</li>
-    </ul>
-
-    <p>Across Instagram, TikTok, Facebook and YouTube, our growing audience follows along because it feels like they’re travelling with us, not watching from a distance.</p>
-
-    <p>We’re proud <strong>TourRadar Ambassadors</strong>, partnering with one of the world’s leading adventure travel platforms to inspire people to see more of the world — one trip, one story, one reel at a time.</p>
-
-    <p><strong>At its heart, Two for the Row’d is simple:</strong></p>
-
-    <p><strong>Travel isn’t about perfection.<br>
-    It’s about moments, memories, and the stories you bring home.<br>
-    And we’ve plenty of those.</strong></p>
-  </div>
-</section>
-
-<!-- BREW -->
-<section id="brew">
-  <h1>Brew for Two</h1>
-
-  <div class="card">
-    <p><strong>Brew for Two</strong> is our nationwide quest to find seriously good coffee — one café at a time.</p>
-    <p>We rate:</p>
-    <ul>
-      <li>Taste</li>
-      <li>Strength (will it wake the dead?)</li>
-      <li>Presentation</li>
-      <li>Vibes</li>
-      <li>Gluten-free treat potential (non-negotiable)</li>
-    </ul>
-  </div>
-
-  <div class="iframeWrap">
-    <iframe src="https://www.youtube.com/embed/LJuH3nCk-wo" allowfullscreen></iframe>
-  </div>
-  <div class="iframeWrap">
-    <iframe src="https://www.youtube.com/embed/tVcyL096Tt0" allowfullscreen></iframe>
-  </div>
-
-  <div class="card">
-    <p><strong>The Wandering Elk</strong> — send me the YouTube link and I’ll add it in here.</p>
-  </div>
-</section>
-
-<!-- HIDDEN IRELAND -->
-<section id="hidden">
-  <h1>Hidden Ireland</h1>
-
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/B_FI9F3tlNc" allowfullscreen></iframe></div>
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/lZo2oaNYat8" allowfullscreen></iframe></div>
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/vGSWZw-wPGc" allowfullscreen></iframe></div>
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/P2W4kTX8o2Q" allowfullscreen></iframe></div>
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/F95_h49sL0U" allowfullscreen></iframe></div>
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/kB5AbOkWUZs" allowfullscreen></iframe></div>
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/7EwSwlstqoY" allowfullscreen></iframe></div>
-</section>
-
-<!-- REELS -->
-<section id="reels">
-  <h1>Reels & Shorts</h1>
-
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/zwu2B4Q_QaI" allowfullscreen></iframe></div>
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/PEQRwS4rTVI" allowfullscreen></iframe></div>
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/ueyBfcQxNTg" allowfullscreen></iframe></div>
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/DCCKVM5d3oc" allowfullscreen></iframe></div>
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/_oVjZc-I6cg" allowfullscreen></iframe></div>
-  <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/RzSMfH-dDus" allowfullscreen></iframe></div>
-</section>
-
-<!-- TOURRADAR -->
-<section id="tourradar">
-  <h1>TourRadar</h1>
-
-  <div class="card">
-    <p><strong>TourRadar</strong> is where you go when you want the adventure without the headache of planning it.</p>
-    <p>It’s a global platform packed with multi-day, small-group tours run by trusted local operators — covering everything from culture and heritage to wildlife, foodie trips, and proper bucket-list adventures. Transport, accommodation, guides, and experiences are all built in. You just pick the trip and go.</p>
-
-    <p><strong>€50 off your tour</strong><br>
-    Use our ambassador code at checkout:<br>
-    <strong>NicolaR50</strong></p>
-
-    <div class="links">
-      <a href="https://tinyurl.com/4x2xwmwv" target="_blank" rel="noopener">TourRadar Main Page</a>
-      <a href="https://tinyurl.com/4azpatpn" target="_blank" rel="noopener">Current Deals</a>
-    </div>
-  </div>
-</section>
-
-<!-- ASK -->
-<section id="ask">
-  <h1>Ask Two for the Row’d</h1>
-
-  <div class="card">
-    <p>A little form where people can ask:</p>
-    <p><strong>“We’re going to X — where should we go / eat / stay?”</strong></p>
-
-    <!-- Simple mailto form (no backend needed) -->
-    <form action="mailto:twofortherowd@gmail.com" method="post" enctype="text/plain">
-      <p><input style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,.15);" name="Name" placeholder="Your name"></p>
-      <p><input style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,.15);" name="Email" placeholder="Your email"></p>
-      <p><input style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,.15);" name="Destination" placeholder="Where are you going?"></p>
-      <p><textarea style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,.15);" name="Question" rows="6" placeholder="Tell us what you like (food, vibe, budget, gluten-free needs etc.)"></textarea></p>
-      <p><button style="padding:12px 16px;border:none;border-radius:12px;background:#fff;font-weight:900;cursor:pointer;box-shadow:0 6px 14px rgba(0,0,0,.10);" type="submit">Send</button></p>
-      <p class="smallNote">This opens your email app to send us the message (no fancy backend needed).</p>
-    </form>
-  </div>
-</section>
-
-<!-- WORK WITH US -->
-<section id="work">
-  <h1>Work With Us</h1>
-
-  <div class="card">
-    <p>Pop your media kit into the repo (PDF is best) and I’ll link it here.</p>
-    <p>For now, email us at <strong>twofortherowd@gmail.com</strong> and we’ll send it straight on.</p>
-  </div>
-</section>
-
-</body>
-</html>
+    .tabBtn:hover{ transform:translateY(-1px); }
+    .tabBtn[aria-selected="true"]{
+      background:rgba(0,0,0,.08);
+      border-color: rgba(0,0,0,.18);
