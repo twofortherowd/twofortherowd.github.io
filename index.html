@@ -211,10 +211,12 @@
       background:#fff;
     }
 
-    .grid img.featured{
-      grid-column: span 8;
-      aspect-ratio: 16 / 9;
-    }
+   .grid img.featured{
+  grid-column: span 8;
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}
 
     .grid img:hover{
       transform: translateY(-4px);
