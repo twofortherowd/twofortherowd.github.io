@@ -19,7 +19,6 @@
     }
 
     *{ box-sizing:border-box; }
-
     html{ scroll-behavior:smooth; }
 
     body{
@@ -41,13 +40,12 @@
       padding:18px 16px 8px;
     }
 
-.logo{
-  width:220px;   /* was 160px */
-  height:auto;
-  display:block;
-  margin:0 auto 14px auto;
-}
-
+    .logo{
+      width:220px;
+      height:auto;
+      display:block;
+      margin:0 auto 14px auto;
+    }
 
     .topline{
       display:flex;
@@ -87,7 +85,11 @@
       transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
       display:inline-block;
     }
-    .pill:hover{ background:#fff; transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,.12); }
+    .pill:hover{
+      background:#fff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(0,0,0,.12);
+    }
     .pill:focus-visible{
       outline:3px solid rgba(0,0,0,.35);
       outline-offset:3px;
@@ -161,7 +163,7 @@
       margin-right:auto;
     }
 
-    /* HOME VIDEO: smaller than before */
+    /* HOME VIDEO */
     .heroVideo{
       width:100%;
       max-width:720px;
@@ -191,7 +193,7 @@
       border:0;
     }
 
-    /* Image grid (with featured sunset tile) */
+    /* HOMEPAGE PHOTO GRID (organised layout) */
     .grid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -204,33 +206,60 @@
       width:100%;
       border-radius:18px;
       object-fit:cover;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 1 / 1;
       box-shadow: 0 10px 25px rgba(0,0,0,.15);
       transition: transform .25s ease, box-shadow .25s ease;
-      grid-column: span 4;
       display:block;
       background:#fff;
     }
-
-   .grid img.featured{
-  grid-column: span 8;
-  aspect-ratio: auto;
-  height: auto;
-  object-fit: contain;
-}
 
     .grid img:hover{
       transform: translateY(-4px);
       box-shadow: 0 16px 35px rgba(0,0,0,.20);
     }
 
-    @media (max-width: 900px){
-      .grid img{ grid-column: span 6; }
-      .grid img.featured{ grid-column: span 12; }
+    /* Big featured hero on the RIGHT (NP8) */
+    .grid img.featured{
+      grid-column: 5 / -1;
+      grid-row: 1 / span 3;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top; /* keeps heads safer */
     }
 
+    /* Left stack (3 images) */
+    .grid img.left1{ grid-column: 1 / span 4; grid-row: 1; }
+    .grid img.left2{ grid-column: 1 / span 4; grid-row: 2; }
+    .grid img.left3{ grid-column: 1 / span 4; grid-row: 3; }
+
+    /* Bottom row (3 across) */
+    .grid img.bottom1{ grid-column: 1 / span 4; grid-row: 4; }
+    .grid img.bottom2{ grid-column: 5 / span 4; grid-row: 4; }
+    .grid img.bottom3{ grid-column: 9 / span 4; grid-row: 4; }
+
+    /* Tablet: simple flow */
+    @media (max-width: 900px){
+      .grid{
+        grid-template-columns: repeat(2, 1fr);
+        max-width:900px;
+      }
+      .grid img{
+        aspect-ratio: 4 / 3;
+      }
+      .grid img.featured,
+      .grid img.left1, .grid img.left2, .grid img.left3,
+      .grid img.bottom1, .grid img.bottom2, .grid img.bottom3{
+        grid-column:auto;
+        grid-row:auto;
+        aspect-ratio: 4 / 3;
+        object-position:center;
+      }
+    }
+
+    /* Mobile */
     @media (max-width: 520px){
-      .grid img{ grid-column: span 12; }
+      .grid{ grid-template-columns: 1fr; }
+      .grid img{ aspect-ratio: 4 / 3; }
     }
 
     .links{
@@ -290,7 +319,7 @@
 
     @media (max-width: 700px){
       h1{ font-size:28px; }
-      .logo{ width:140px; }
+      .logo{ width:180px; }
       .email{ font-size:14px; }
       nav{ gap:8px; }
       .tabBtn{ padding:10px 12px; }
@@ -363,24 +392,28 @@
     </video>
 
     <div class="smallNote">
-  If it takes a moment to load, hang tight — it’s worth it.
-</div>
+      If it takes a moment to load, hang tight — it’s worth it.
+    </div>
 
     <div class="grid" aria-label="Two for the Row’d photos">
+      <!-- Left stack -->
+      <img class="left1" loading="lazy" src="img/NP2.jpeg" alt="Two for the Row’d photo 2">
+      <img class="left2" loading="lazy" src="img/NP6.jpeg" alt="Two for the Row’d photo 6">
+      <img class="left3" loading="lazy" src="img/NP7.jpeg" alt="Two for the Row’d photo 7">
+
+      <!-- Featured sunset hero (NP8) -->
+      <img class="featured" loading="lazy" src="img/NP8.jpeg" alt="Two for the Row’d photo 8">
+
+      <!-- Bottom row -->
+      <img class="bottom1" loading="lazy" src="img/NP9.jpeg" alt="Two for the Row’d photo 9">
+      <img class="bottom2" loading="lazy" src="img/NP10.jpeg" alt="Two for the Row’d photo 10">
+      <img class="bottom3" loading="lazy" src="img/NP11.jpeg" alt="Two for the Row’d photo 11">
+
+      <!-- Remaining photos (flow underneath neatly) -->
       <img loading="lazy" src="img/NP1.jpeg" alt="Two for the Row’d photo 1">
-      <img loading="lazy" src="img/NP2.jpeg" alt="Two for the Row’d photo 2">
       <img loading="lazy" src="img/NP3.jpeg" alt="Two for the Row’d photo 3">
       <img loading="lazy" src="img/NP4.jpeg" alt="Two for the Row’d photo 4">
       <img loading="lazy" src="img/NP5.jpeg" alt="Two for the Row’d photo 5">
-      <img loading="lazy" src="img/NP6.jpeg" alt="Two for the Row’d photo 6">
-      <img loading="lazy" src="img/NP7.jpeg" alt="Two for the Row’d photo 7">
-
-      <!-- Featured sunset hero -->
-      <img class="featured" loading="lazy" src="img/NP8.jpeg" alt="Two for the Row’d photo 8">
-
-      <img loading="lazy" src="img/NP9.jpeg" alt="Two for the Row’d photo 9">
-      <img loading="lazy" src="img/NP10.jpeg" alt="Two for the Row’d photo 10">
-      <img loading="lazy" src="img/NP11.jpeg" alt="Two for the Row’d photo 11">
     </div>
 
     <div class="card">
