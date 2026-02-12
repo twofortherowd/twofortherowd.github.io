@@ -216,10 +216,15 @@
       object-position:center;
     }
 
-    .grid img:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 16px 35px rgba(0,0,0,.20);
-    }
+.grid img:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0,0,0,.20);
+}
+
+/* NP11: push crop down so heads stay in */
+.grid img.np11{
+  object-position: center 50%;
+}
 
     /* NP11: keep heads safer */
     .grid img.fixHead{
