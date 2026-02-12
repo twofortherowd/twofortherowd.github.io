@@ -195,13 +195,14 @@
       border:0;
     }
 
-    /* NEW: Balanced photo grid (no featured image) */
+    /* Balanced photo grid */
     .grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap:14px;
       max-width:1000px;
       margin:20px auto 0;
+      justify-items:center; /* makes the layout feel more balanced */
     }
 
     .grid img{
@@ -216,28 +217,24 @@
       object-position:center;
     }
 
-.grid img:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 16px 35px rgba(0,0,0,.20);
-}
+    .grid img:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(0,0,0,.20);
+    }
 
-/* NP11: push crop down so heads stay in */
-.grid img.np11{
-  object-position: center 50%;
-}
-
-    /* NP11: keep heads safer */
-    .grid img.fixHead{
-      object-position: center 35%;
+    /* NP11: push crop DOWN so Podge's head stays in */
+    .grid img.np11{
+      object-position: center 60%;
     }
 
     /* Extra strip under the grid */
     .extraRow{
       display:grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr); /* 3 photos now */
       gap:14px;
       max-width:1000px;
       margin:14px auto 0;
+      justify-items:center;
     }
     .extraRow img{
       width:100%;
@@ -253,11 +250,6 @@
     .extraRow img:hover{
       transform: translateY(-4px);
       box-shadow: 0 16px 35px rgba(0,0,0,.20);
-    }
-
-    /* Optional: NP5 crop fix (remove if you don't need it) */
-    .extraRow img.fixNP5{
-      object-position: center 25%;
     }
 
     /* Tablet */
@@ -442,15 +434,14 @@
       <img loading="lazy" src="img/NP7.jpeg" alt="">
       <img loading="lazy" src="img/NP9.jpeg" alt="">
       <img loading="lazy" src="img/NP10.jpeg" alt="">
-      <img class="bottom3 headSafe" loading="lazy" src="img/NP11.jpeg" alt="">
+      <img class="np11" loading="lazy" src="img/NP11.jpeg" alt="">
     </div>
 
-<div class="extraRow" aria-label="More Two for the Row’d photos">
-  <img loading="lazy" src="img/NP1.jpeg" alt="">
-  <img loading="lazy" src="img/NP3.jpeg" alt="">
-  <img loading="lazy" src="img/NP4.jpeg" alt="">
-</div>
-
+    <div class="extraRow" aria-label="More Two for the Row’d photos">
+      <img loading="lazy" src="img/NP1.jpeg" alt="">
+      <img loading="lazy" src="img/NP3.jpeg" alt="">
+      <img loading="lazy" src="img/NP4.jpeg" alt="">
+    </div>
   </section>
 
   <!-- BREW -->
