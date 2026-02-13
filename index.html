@@ -127,22 +127,22 @@
       outline-offset:3px;
     }
 
-  main section{
-  display:none;
-  padding:18px 0 34px;
-  margin:0 auto;
-  animation: fadeIn .18s ease;
-  scroll-margin-top: 600px;   /* ← ADD THIS LINE */
-}
+    main section{
+      display:none;
+      padding:18px 0 34px;
+      margin:0 auto;
+      animation: fadeIn .18s ease;
+      scroll-margin-top: 600px;
+    }
 
-main section.active{
-  display:block;
-}
+    main section.active{
+      display:block;
+    }
 
-@keyframes fadeIn{
-  from{ opacity:0; transform: translateY(4px); }
-  to{ opacity:1; transform: translateY(0); }
-}
+    @keyframes fadeIn{
+      from{ opacity:0; transform: translateY(4px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
 
     h1{ margin:10px 0 14px; font-size:34px; letter-spacing:-.4px; }
     h2{ margin:18px 0 10px; }
@@ -206,7 +206,7 @@ main section.active{
       gap:14px;
       max-width:1000px;
       margin:20px auto 0;
-      justify-items:center; /* makes the layout feel more balanced */
+      justify-items:center;
     }
 
     .grid img{
@@ -234,7 +234,7 @@ main section.active{
     /* Extra strip under the grid */
     .extraRow{
       display:grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 photos now */
+      grid-template-columns: repeat(3, 1fr);
       gap:14px;
       max-width:1000px;
       margin:14px auto 0;
@@ -334,7 +334,7 @@ main section.active{
   </style>
 
   <script>
-    const TAB_IDS = ["home","brew","hidden","reels","tourradar","ask","work"];
+    const TAB_IDS = ["home","brew","hidden","hotel","reels","tourradar","ask","work"];
 
     function show(tab){
       document.querySelectorAll("main section").forEach(s => s.classList.remove("active"));
@@ -380,6 +380,7 @@ main section.active{
   <button class="tabBtn" data-tab="home" onclick="show('home')" aria-selected="true">Home</button>
   <button class="tabBtn" data-tab="brew" onclick="show('brew')" aria-selected="false">Brew for Two</button>
   <button class="tabBtn" data-tab="hidden" onclick="show('hidden')" aria-selected="false">Hidden Ireland</button>
+  <button class="tabBtn" data-tab="hotel" onclick="show('hotel')" aria-selected="false">Hotel Stays</button>
   <button class="tabBtn" data-tab="reels" onclick="show('reels')" aria-selected="false">Reels & Shorts</button>
   <button class="tabBtn" data-tab="tourradar" onclick="show('tourradar')" aria-selected="false">TourRadar</button>
   <button class="tabBtn" data-tab="ask" onclick="show('ask')" aria-selected="false">Ask Us</button>
@@ -478,6 +479,12 @@ main section.active{
   <!-- HIDDEN IRELAND -->
   <section id="hidden">
     <h1>Hidden Ireland</h1>
+
+    <div class="card">
+      <p>Little corners, big stories. These are the places around Ireland that surprised us — the kind of spots you’d drive past a hundred times… until you finally stop.</p>
+    </div>
+
+    <!-- Existing Hidden Ireland videos -->
     <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/B_FI9F3tlNc" title="Hidden Ireland video 1" allowfullscreen></iframe></div>
     <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/lZo2oaNYat8" title="Hidden Ireland video 2" allowfullscreen></iframe></div>
     <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/vGSWZw-wPGc" title="Hidden Ireland video 3" allowfullscreen></iframe></div>
@@ -485,6 +492,33 @@ main section.active{
     <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/F95_h49sL0U" title="Hidden Ireland video 5" allowfullscreen></iframe></div>
     <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/kB5AbOkWUZs" title="Hidden Ireland video 6" allowfullscreen></iframe></div>
     <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/7EwSwlstqoY" title="Hidden Ireland video 7" allowfullscreen></iframe></div>
+
+    <!-- NEW Hidden Ireland Shorts -->
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/n9TnoC9jYVw" title="Hidden Ireland — Short 8" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/GJq_daIOK_Q" title="Hidden Ireland — Short 9" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/XmB1wPN_lZ8" title="Hidden Ireland — Short 10" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/C-5H3VxAiuM" title="Hidden Ireland — Short 11" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/-0qZWJGrWAk" title="Hidden Ireland — Short 12" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/4O_qWCiQp6I" title="Hidden Ireland — Short 13" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/vBAJJGr0Lvc" title="Hidden Ireland — Short 14" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/t1L4vsIhpTM" title="Hidden Ireland — Short 15" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/bsfdbZol4iA" title="Hidden Ireland — Short 16" allowfullscreen></iframe></div>
+  </section>
+
+  <!-- HOTEL STAYS (NEW TAB) -->
+  <section id="hotel">
+    <h1>Hotel Stays</h1>
+
+    <div class="card">
+      <p><strong>Hotel Stays</strong> is where we share the real deal on the places we stay — the good, the gorgeous, and the “would we come back?” moment.</p>
+      <p>Expect quick, honest reviews, room peeks, and the bits you actually want to know before you book.</p>
+    </div>
+
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/8rgFhGusUz4" title="Hotel Stay review 1" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/gIFmEE2o5cw" title="Hotel Stay review 2" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/92x1qDOXEPo" title="Hotel Stay review 3" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/UyapEmAYNcg" title="Hotel Stay review 4" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/NTR7--xMfGs" title="Hotel Stay review 5" allowfullscreen></iframe></div>
   </section>
 
   <!-- REELS -->
