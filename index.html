@@ -88,18 +88,20 @@
       justify-content:center;
     }
 
-    .pill{
-      text-decoration:none;
-      color:var(--text);
-      background:rgba(255,255,255,.75);
-      border:1px solid rgba(0,0,0,.12);
-      padding:8px 12px;
-      border-radius:999px;
-      font-weight:800;
-      box-shadow: 0 4px 10px rgba(0,0,0,.08);
-      transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
-      display:inline-block;
-    }
+  .pill{
+  text-decoration:none;
+  color:var(--text);
+  background:rgba(255,255,255,.75);
+  border:1px solid rgba(0,0,0,.12);
+  padding:6px 10px;        /* smaller */
+  border-radius:999px;
+  font-weight:700;         /* slightly lighter */
+  font-size:14px;          /* smaller text */
+  box-shadow: 0 3px 8px rgba(0,0,0,.08);
+  transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+  display:inline-block;
+}
+
     .pill:hover{
       background:#fff;
       transform: translateY(-1px);
