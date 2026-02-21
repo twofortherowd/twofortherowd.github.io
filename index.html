@@ -916,36 +916,5 @@
   <a class="pill" href="#home" onclick="show('home')" aria-label="Back to top">↑ Top</a>
 </div>
 
-<script>
-  function setupToTop(){
-    const toTop = document.getElementById("toTop");
-    if(!toTop) return;
-    const toggle = () => {
-      toTop.style.display = window.scrollY > 600 ? "inline-block" : "none";
-    };
-    window.addEventListener("scroll", toggle, {passive:true});
-    toggle();
-  }
-
-  function setupTabs(){
-    const tabButtons = document.querySelectorAll("button[data-tab]");
-    tabButtons.forEach(btn => {
-      btn.addEventListener("keydown", (e) => {
-        if(e.key === "Enter" || e.key === " "){
-          e.preventDefault();
-          btn.click();
-        }
-      });
-    });
-  }
-
-  window.addEventListener("DOMContentLoaded", () => {
-    setupTabs();
-    setupToTop();
-    const yearEl = document.getElementById("year");
-    if(yearEl) yearEl.textContent = new Date().getFullYear();
-  });
-</script>
-
 </body>
 </html>
