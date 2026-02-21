@@ -24,7 +24,6 @@
   <meta property="og:description" content="Irish travel storytellers sharing hidden gems, gluten-free finds, and real-world adventures." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://twofortherowd.com/" />
-  <!-- Optional: upload an image called og.jpg into /img and keep this line -->
   <meta property="og:image" content="https://twofortherowd.com/img/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -501,7 +500,14 @@
   <script>
     const TAB_IDS = ["home","brew","hidden","hotel","reels","tourradar","ask","work"];
 
-    function show(tab){
+    // Prevent scroll-position weirdness on mobile reload/back
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    function show(tab, opts = {}) {
+      const { scroll = true, smooth = true, updateHash = true } = opts;
+
       document.querySelectorAll("main section").forEach(s => s.classList.remove("active"));
       const active = document.getElementById(tab);
       if(active) active.classList.add("active");
@@ -511,8 +517,13 @@
         btn.setAttribute("aria-selected", selected ? "true" : "false");
       });
 
-      history.replaceState(null, "", "#" + tab);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (updateHash) {
+        history.replaceState(null, "", "#" + tab);
+      }
+
+      if (scroll) {
+        window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
+      }
     }
 
     function setupTabs(){
@@ -538,8 +549,15 @@
     }
 
     window.addEventListener("DOMContentLoaded", () => {
+      // Stop the browser doing an initial hash jump on mobile
+      window.scrollTo(0, 0);
+
       const hash = (location.hash || "#home").replace("#","");
-      show(TAB_IDS.includes(hash) ? hash : "home");
+      const initialTab = TAB_IDS.includes(hash) ? hash : "home";
+
+      // On first load: no smooth animation (prevents visible "jump")
+      show(initialTab, { scroll: true, smooth: false, updateHash: true });
+
       setupTabs();
       setupToTop();
 
@@ -623,9 +641,9 @@
       <p>We’re proud <strong>TourRadar Ambassadors</strong>, partnering with one of the world’s leading adventure travel platforms to inspire people to see more of the world — one trip, one story, one reel at a time.</p>
 
       <div class="quickLinks" aria-label="Quick links">
-        <a class="pill" href="#tourradar" onclick="show('tourradar')">Get €50 off on TourRadar</a>
+        <a class="pill" href="#tourradar" onclick="event.preventDefault(); show('tourradar');">Get €50 off on TourRadar</a>
         <a class="pill" href="https://tinyurl.com/4azpatpn" target="_blank" rel="noopener">TourRadar Deals</a>
-        <a class="pill" href="#work" onclick="show('work')">Work With Us</a>
+        <a class="pill" href="#work" onclick="event.preventDefault(); show('work');">Work With Us</a>
         <a class="pill" href="mailto:twofortherowd@gmail.com">Email Us</a>
       </div>
 
@@ -915,7 +933,7 @@
 </main>
 
 <div class="toTop" id="toTop">
-  <a class="pill" href="#home" onclick="show('home')" aria-label="Back to top">↑ Top</a>
+  <a class="pill" href="#home" onclick="event.preventDefault(); show('home');" aria-label="Back to top">↑ Top</a>
 </div>
 
 </body>
