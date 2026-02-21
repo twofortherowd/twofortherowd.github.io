@@ -41,7 +41,7 @@
     }
 
     *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    html{ scroll-behavior:auto; }
 
     body{
       margin:0;
@@ -497,74 +497,82 @@
     }
   </style>
 
-  <script>
-    const TAB_IDS = ["home","brew","hidden","hotel","reels","tourradar","ask","work"];
+<script>
+  const TAB_IDS = ["home","brew","hidden","hotel","reels","tourradar","ask","work"];
 
-    // Prevent scroll-position weirdness on mobile reload/back
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
+  // Capture the hash ASAP and remove it before the browser can auto-scroll to it (mobile fix)
+  const INITIAL_HASH = (location.hash || "").replace("#", "");
+  if (location.hash) {
+    history.replaceState(null, "", location.pathname + location.search);
+  }
 
-    function show(tab, opts = {}) {
-      const { scroll = true, smooth = true, updateHash = true } = opts;
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
 
-      document.querySelectorAll("main section").forEach(s => s.classList.remove("active"));
-      const active = document.getElementById(tab);
-      if(active) active.classList.add("active");
+  function show(tab, opts = {}) {
+    const { scroll = true, smooth = true, updateHash = true } = opts;
 
-      document.querySelectorAll("[data-tab]").forEach(btn => {
-        const selected = btn.dataset.tab === tab;
-        btn.setAttribute("aria-selected", selected ? "true" : "false");
-      });
+    document.querySelectorAll("main section").forEach(s => s.classList.remove("active"));
+    const active = document.getElementById(tab);
+    if (active) active.classList.add("active");
 
-      if (updateHash) {
-        history.replaceState(null, "", "#" + tab);
-      }
-
-      if (scroll) {
-        window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
-      }
-    }
-
-    function setupTabs(){
-      const tabButtons = document.querySelectorAll("button[data-tab]");
-      tabButtons.forEach(btn => {
-        btn.addEventListener("keydown", (e) => {
-          if(e.key === "Enter" || e.key === " "){
-            e.preventDefault();
-            btn.click();
-          }
-        });
-      });
-    }
-
-    function setupToTop(){
-      const toTop = document.getElementById("toTop");
-      if(!toTop) return;
-      const toggle = () => {
-        toTop.style.display = window.scrollY > 600 ? "inline-block" : "none";
-      };
-      window.addEventListener("scroll", toggle, {passive:true});
-      toggle();
-    }
-
-    window.addEventListener("DOMContentLoaded", () => {
-      // Stop the browser doing an initial hash jump on mobile
-      window.scrollTo(0, 0);
-
-      const hash = (location.hash || "#home").replace("#","");
-      const initialTab = TAB_IDS.includes(hash) ? hash : "home";
-
-      // On first load: no smooth animation (prevents visible "jump")
-      show(initialTab, { scroll: true, smooth: false, updateHash: true });
-
-      setupTabs();
-      setupToTop();
-
-      const yearEl = document.getElementById("year");
-      if(yearEl) yearEl.textContent = new Date().getFullYear();
+    document.querySelectorAll("[data-tab]").forEach(btn => {
+      const selected = btn.dataset.tab === tab;
+      btn.setAttribute("aria-selected", selected ? "true" : "false");
     });
-  </script>
+
+    if (updateHash) {
+      history.replaceState(null, "", "#" + tab); // replaceState does NOT scroll
+    }
+
+    if (scroll) {
+      window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
+    }
+  }
+
+  function setupTabs(){
+    const tabButtons = document.querySelectorAll("button[data-tab]");
+    tabButtons.forEach(btn => {
+      btn.addEventListener("keydown", (e) => {
+        if(e.key === "Enter" || e.key === " "){
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
+  }
+
+  function setupToTop(){
+    const toTop = document.getElementById("toTop");
+    if(!toTop) return;
+    const toggle = () => {
+      toTop.style.display = window.scrollY > 600 ? "inline-block" : "none";
+    };
+    window.addEventListener("scroll", toggle, {passive:true});
+    toggle();
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const initialTab = TAB_IDS.includes(INITIAL_HASH) ? INITIAL_HASH : "home";
+
+    // Show the tab but DON'T scroll on load (prevents the bounce)
+    show(initialTab, { scroll: false, smooth: false, updateHash: false });
+
+    // Hard-pin to the very top after layout settles (mobile address-bar shenanigans)
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      // Put the hash back without triggering a jump
+      history.replaceState(null, "", "#" + initialTab);
+    });
+
+    setupTabs();
+    setupToTop();
+
+    const yearEl = document.getElementById("year");
+    if(yearEl) yearEl.textContent = new Date().getFullYear();
+  });
+</script>
 
 </head>
 
