@@ -185,8 +185,7 @@
       white-space:nowrap;border:0;
     }
 
-    /* Sticky nav */
-    nav{
+  /* Navigation */
       border-top: 1px solid rgba(0,0,0,.06);
       border-bottom: 1px solid rgba(0,0,0,.08);
 
@@ -224,7 +223,7 @@
       padding:16px 0 34px;
       margin:0 auto;
       animation: fadeIn .18s ease;
-      scroll-margin-top: 140px;
+      scroll-margin-top: 20px;
     }
     main section.active{ display:block; }
 
@@ -508,8 +507,7 @@
         btn.setAttribute("aria-selected", selected ? "true" : "false");
       });
 
-      history.replaceState(null, "", "#" + tab);
-      window.scrollTo(0, 0);
+     window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     function setupTabs(){
