@@ -2,393 +2,525 @@
 <html lang="en">
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-H7SPF3M3X8');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H7SPF3M3X8');
+  </script>
 
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Two for the Row’d</title>
-<meta name="description" content="Nicola & Padraig — Irish travel storytellers sharing hidden gems, gluten-free finds, and real-world adventures." />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Two for the Row’d</title>
+  <meta name="description" content="Nicola & Padraig — Irish travel storytellers sharing hidden gems, gluten-free finds, and real-world adventures." />
 
-<style>
-  :root{
-    --bg:#ffd84a;
-    --text:#1b1b1b;
-    --card: rgba(255,255,255,.75);
-    --cardSolid:#ffffff;
-    --border: rgba(0,0,0,.10);
-    --shadow: 0 10px 25px rgba(0,0,0,.12);
-    --shadowSoft: 0 6px 14px rgba(0,0,0,.10);
-    --radius:16px;
-  }
+  <!-- Basic SEO / Sharing -->
+  <link rel="canonical" href="https://twofortherowd.com/" />
+  <meta name="theme-color" content="#ffd84a" />
 
-  *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
+  <meta property="og:title" content="Two for the Row’d" />
+  <meta property="og:description" content="Irish travel storytellers sharing hidden gems, gluten-free finds, and real-world adventures." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://twofortherowd.com/" />
+  <!-- Optional: upload an image called og.jpg into /img and keep this line -->
+  <meta property="og:image" content="https://twofortherowd.com/img/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  body{
-    margin:0;
-    font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    text-align:center;
-    line-height:1.5;
-  }
+  <style>
+    :root{
+      --bg:#ffd84a;
+      --text:#1b1b1b;
+      --card: rgba(255,255,255,.75);
+      --cardSolid:#ffffff;
+      --border: rgba(0,0,0,.10);
+      --shadow: 0 10px 25px rgba(0,0,0,.12);
+      --shadowSoft: 0 6px 14px rgba(0,0,0,.10);
+      --radius:16px;
+      --radius2:18px;
+    }
 
-  .wrap{
-    max-width:1100px;
-    margin:0 auto;
-    padding:0 14px 28px;
-  }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
 
-  header{
-    padding:18px 16px 8px;
-  }
+    body{
+      margin:0;
+      font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      text-align:center;
+      line-height:1.5;
+    }
 
-  /* Logo */
-  .logo{
-    width:720px;
-    max-width:96%;
-    height:auto;
-    display:block;
-    margin:0 auto 22px auto;
-  }
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 14px 28px;
+    }
 
-  .topline{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:14px;
-  }
+    header{
+      padding:18px 16px 8px;
+    }
 
-  .email{
-    font-weight:900;
-    letter-spacing:.2px;
-    background:rgba(255,255,255,.65);
-    border:1px solid var(--border);
-    padding:8px 12px;
-    border-radius:999px;
-    box-shadow: var(--shadowSoft);
-  }
+    /* Logo */
+    .logo{
+      width:720px;
+      max-width:96%;
+      height:auto;
+      display:block;
+      margin:0 auto 18px auto;
+    }
 
-  /* Social icon row (4 across) */
-  .social{
-    display:flex;
-    gap:10px;
-    flex-wrap:nowrap;          /* keep on one line */
-    justify-content:center;
-    align-items:center;
-  }
+    .topline{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:12px;
+    }
 
-  /* Base pill style (used everywhere) */
-  .pill{
-    text-decoration:none;
-    color:var(--text);
-    background:rgba(255,255,255,.75);
-    border:1px solid rgba(0,0,0,.12);
-    border-radius:999px;
-    font-weight:700;
-    font-size:14px;
-    box-shadow: 0 3px 8px rgba(0,0,0,.08);
-    transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
-    display:inline-block;
-  }
+    .email{
+      font-weight:900;
+      letter-spacing:.2px;
+      background:rgba(255,255,255,.65);
+      border:1px solid var(--border);
+      padding:8px 12px;
+      border-radius:999px;
+      box-shadow: var(--shadowSoft);
+    }
 
-  .pill:hover{
-    background:#fff;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 14px rgba(0,0,0,.12);
-  }
-  .pill:focus-visible{
-    outline:3px solid rgba(0,0,0,.35);
-    outline-offset:3px;
-  }
+    /* Social icon row */
+    .social{
+      display:flex;
+      gap:10px;
+      flex-wrap:nowrap;
+      justify-content:center;
+      align-items:center;
+    }
 
-  /* Icon-only version of pill */
-  .pill.icon{
-    width:44px;
-    height:44px;
-    padding:0;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-  }
+    /* Base pill */
+    .pill{
+      text-decoration:none;
+      color:var(--text);
+      background:rgba(255,255,255,.75);
+      border:1px solid rgba(0,0,0,.12);
+      border-radius:999px;
+      font-weight:800;
+      font-size:14px;
+      box-shadow: 0 3px 8px rgba(0,0,0,.08);
+      transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+      display:inline-block;
+      padding:10px 14px;
+    }
 
-  .pill.icon svg{
-    width:22px;
-    height:22px;
-    display:block;
-    fill: currentColor;
-  }
+    .pill:hover{
+      background:#fff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(0,0,0,.12);
+    }
+    .pill:focus-visible{
+      outline:3px solid rgba(0,0,0,.35);
+      outline-offset:3px;
+    }
 
-  /* tiny phones */
-  @media (max-width: 380px){
-    .pill.icon{ width:40px; height:40px; }
-    .pill.icon svg{ width:20px; height:20px; }
-    .social{ gap:8px; }
-  }
+    /* Icon-only pill */
+    .pill.icon{
+      width:44px;
+      height:44px;
+      padding:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
 
-  /* Accessibility helper */
-  .sr-only{
-    position:absolute;
-    width:1px;height:1px;
-    padding:0;margin:-1px;
-    overflow:hidden;clip:rect(0,0,0,0);
-    white-space:nowrap;border:0;
-  }
+    .pill.icon svg{
+      width:22px;
+      height:22px;
+      display:block;
+      fill: currentColor;
+    }
 
-  nav{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    flex-wrap:wrap;
-    margin:10px auto 18px;
-    padding:0 12px;
-    max-width:1100px;
-  }
+    @media (max-width: 380px){
+      .pill.icon{ width:40px; height:40px; }
+      .pill.icon svg{ width:20px; height:20px; }
+      .social{ gap:8px; }
+    }
 
-  .tabBtn{
-    padding:10px 14px;
-    border:1px solid rgba(0,0,0,.10);
-    border-radius:12px;
-    background:var(--cardSolid);
-    font-weight:900;
-    cursor:pointer;
-    box-shadow: var(--shadowSoft);
-    transition: transform .12s ease, background .12s ease;
-  }
-  .tabBtn:hover{ transform:translateY(-1px); }
-  .tabBtn[aria-selected="true"]{
-    background:rgba(0,0,0,.08);
-    border-color: rgba(0,0,0,.18);
-  }
-  .tabBtn:focus-visible{
-    outline:3px solid rgba(0,0,0,.35);
-    outline-offset:3px;
-  }
+    /* Accessibility helper */
+    .sr-only{
+      position:absolute;
+      width:1px;height:1px;
+      padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);
+      white-space:nowrap;border:0;
+    }
 
-  main section{
-    display:none;
-    padding:18px 0 34px;
-    margin:0 auto;
-    animation: fadeIn .18s ease;
-    scroll-margin-top: 600px;
-  }
+    /* Sticky nav */
+    nav{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,216,74,.92);
+      backdrop-filter: blur(6px);
+      border-top: 1px solid rgba(0,0,0,.06);
+      border-bottom: 1px solid rgba(0,0,0,.08);
 
-  main section.active{ display:block; }
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin:10px auto 12px;
+      padding:10px 12px;
+      max-width:1100px;
+    }
 
-  @keyframes fadeIn{
-    from{ opacity:0; transform: translateY(4px); }
-    to{ opacity:1; transform: translateY(0); }
-  }
+    .tabBtn{
+      padding:10px 14px;
+      border:1px solid rgba(0,0,0,.10);
+      border-radius:12px;
+      background:var(--cardSolid);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow: var(--shadowSoft);
+      transition: transform .12s ease, background .12s ease;
+    }
+    .tabBtn:hover{ transform:translateY(-1px); }
+    .tabBtn[aria-selected="true"]{
+      background:rgba(0,0,0,.08);
+      border-color: rgba(0,0,0,.18);
+    }
+    .tabBtn:focus-visible{
+      outline:3px solid rgba(0,0,0,.35);
+      outline-offset:3px;
+    }
 
-  h1{ margin:10px 0 14px; font-size:34px; letter-spacing:-.4px; }
-  h2{ margin:18px 0 10px; }
+    main section{
+      display:none;
+      padding:16px 0 34px;
+      margin:0 auto;
+      animation: fadeIn .18s ease;
+      scroll-margin-top: 140px;
+    }
+    main section.active{ display:block; }
 
-  .card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    box-shadow: var(--shadow);
-    padding:18px;
-    text-align:left;
-    max-width:900px;
-    margin:16px auto;
-    backdrop-filter: blur(2px);
-  }
+    @keyframes fadeIn{
+      from{ opacity:0; transform: translateY(4px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
 
-  .smallNote{
-    opacity:.85;
-    font-size:14px;
-    margin-top:8px;
-    text-align:center;
-    max-width:900px;
-    margin-left:auto;
-    margin-right:auto;
-  }
+    h1{ margin:10px 0 14px; font-size:34px; letter-spacing:-.4px; }
+    h2{ margin:18px 0 10px; }
 
-  .heroVideo{
-    width:100%;
-    max-width:720px;
-    border-radius:14px;
-    margin:10px auto 0;
-    box-shadow: var(--shadow);
-    background:#000;
-    display:block;
-  }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+      text-align:left;
+      max-width:900px;
+      margin:16px auto;
+      backdrop-filter: blur(2px);
+    }
 
-  .iframeWrap{
-    max-width:900px;
-    margin:14px auto;
-    border-radius:14px;
-    overflow:hidden;
-    box-shadow: var(--shadow);
-    background:#000;
-    position:relative;
-    aspect-ratio: 16 / 9;
-  }
-  iframe{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    border:0;
-  }
+    .smallNote{
+      opacity:.85;
+      font-size:14px;
+      margin-top:8px;
+      text-align:center;
+      max-width:900px;
+      margin-left:auto;
+      margin-right:auto;
+    }
 
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:14px;
-    max-width:1000px;
-    margin:20px auto 0;
-    justify-items:center;
-  }
+    .heroVideo{
+      width:100%;
+      max-width:720px;
+      border-radius:14px;
+      margin:10px auto 0;
+      box-shadow: var(--shadow);
+      background:#000;
+      display:block;
+    }
 
-  .grid img{
-    width:100%;
-    border-radius:18px;
-    object-fit:cover;
-    aspect-ratio: 4 / 3;
-    box-shadow: 0 10px 25px rgba(0,0,0,.15);
-    transition: transform .25s ease, box-shadow .25s ease;
-    display:block;
-    background:#fff;
-    object-position:center;
-  }
+    .iframeWrap{
+      max-width:900px;
+      margin:14px auto;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background:#000;
+      position:relative;
+      aspect-ratio: 16 / 9;
+    }
+    iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
 
-  .grid img:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 16px 35px rgba(0,0,0,.20);
-  }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      max-width:1000px;
+      margin:20px auto 0;
+      justify-items:center;
+    }
 
-  .grid img.np11{ object-position: center 20%; }
+    .grid img{
+      width:100%;
+      border-radius:var(--radius2);
+      object-fit:cover;
+      aspect-ratio: 4 / 3;
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+      transition: transform .25s ease, box-shadow .25s ease;
+      display:block;
+      background:#fff;
+      object-position:center;
+    }
 
-  .extraRow{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:14px;
-    max-width:1000px;
-    margin:14px auto 0;
-    justify-items:center;
-  }
-  .extraRow img{
-    width:100%;
-    border-radius:18px;
-    object-fit:cover;
-    aspect-ratio: 4 / 3;
-    box-shadow: 0 10px 25px rgba(0,0,0,.15);
-    background:#fff;
-    transition: transform .25s ease, box-shadow .25s ease;
-    display:block;
-    object-position:center;
-  }
-  .extraRow img:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 16px 35px rgba(0,0,0,.20);
-  }
+    .grid img:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(0,0,0,.20);
+    }
 
-  @media (max-width: 900px){
-    .grid{ grid-template-columns: repeat(2, 1fr); max-width:900px; }
-    .extraRow{ grid-template-columns: repeat(2, 1fr); max-width:900px; }
-  }
+    .grid img.np11{ object-position: center 20%; }
 
-  @media (max-width: 520px){
-    .grid{ grid-template-columns: 1fr; }
-    .extraRow{ grid-template-columns: 1fr; }
-  }
+    .extraRow{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      max-width:1000px;
+      margin:14px auto 0;
+      justify-items:center;
+    }
+    .extraRow img{
+      width:100%;
+      border-radius:var(--radius2);
+      object-fit:cover;
+      aspect-ratio: 4 / 3;
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+      background:#fff;
+      transition: transform .25s ease, box-shadow .25s ease;
+      display:block;
+      object-position:center;
+    }
+    .extraRow img:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(0,0,0,.20);
+    }
 
-  .links{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    justify-content:flex-start;
-    margin-top:10px;
-  }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: repeat(2, 1fr); max-width:900px; }
+      .extraRow{ grid-template-columns: repeat(2, 1fr); max-width:900px; }
+    }
 
-  .formGrid{ display:grid; gap:10px; }
+    @media (max-width: 520px){
+      .grid{ grid-template-columns: 1fr; }
+      .extraRow{ grid-template-columns: 1fr; }
+    }
 
-  .field label{
-    display:block;
-    font-weight:900;
-    margin:6px 0 6px;
-  }
+    .links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+      margin-top:10px;
+    }
 
-  .input, .textarea{
-    width:100%;
-    padding:12px;
-    border-radius:12px;
-    border:1px solid rgba(0,0,0,.15);
-    background:rgba(255,255,255,.9);
-    font: inherit;
-  }
+    /* Home quick links */
+    .quickLinks{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:10px;
+      margin-top:12px;
+    }
+    .quickLinks .pill{
+      text-align:center;
+      font-weight:900;
+      padding:12px 14px;
+    }
+    @media (max-width: 680px){
+      .quickLinks{ grid-template-columns: 1fr; }
+    }
 
-  .textarea{ min-height:140px; resize:vertical; }
+    .formGrid{ display:grid; gap:10px; }
 
-  .btn{
-    display:inline-block;
-    padding:12px 16px;
-    border:none;
-    border-radius:12px;
-    background:#fff;
-    font-weight:900;
-    cursor:pointer;
-    box-shadow: var(--shadowSoft);
-    transition: transform .12s ease;
-  }
-  .btn:hover{ transform: translateY(-1px); }
-  .btn:focus-visible{
-    outline:3px solid rgba(0,0,0,.35);
-    outline-offset:3px;
-  }
+    .field label{
+      display:block;
+      font-weight:900;
+      margin:6px 0 6px;
+    }
 
-  footer{
-    margin-top:10px;
-    padding:18px 0 10px;
-    opacity:.9;
-    font-size:14px;
-  }
+    .input, .textarea{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.15);
+      background:rgba(255,255,255,.9);
+      font: inherit;
+    }
 
-  @media (max-width: 700px){
-    h1{ font-size:28px; }
-    .logo{ width:95%; }
-    .email{ font-size:14px; }
-    nav{ gap:8px; }
-    .tabBtn{ padding:10px 12px; }
-    .heroVideo{ max-width:100%; }
-  }
-</style>
+    .textarea{ min-height:140px; resize:vertical; }
 
-<script>
-  const TAB_IDS = ["home","brew","hidden","hotel","reels","tourradar","ask","work"];
+    .btn{
+      display:inline-block;
+      padding:12px 16px;
+      border:none;
+      border-radius:12px;
+      background:#fff;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow: var(--shadowSoft);
+      transition: transform .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn:focus-visible{
+      outline:3px solid rgba(0,0,0,.35);
+      outline-offset:3px;
+    }
 
-  function show(tab){
-    document.querySelectorAll("main section").forEach(s => s.classList.remove("active"));
-    const active = document.getElementById(tab);
-    if(active) active.classList.add("active");
+    .disclosure{
+      font-size:13px;
+      opacity:.85;
+      margin-top:10px;
+      padding-top:10px;
+      border-top:1px dashed rgba(0,0,0,.18);
+    }
 
-    document.querySelectorAll("[data-tab]").forEach(btn => {
-      const selected = btn.dataset.tab === tab;
-      btn.setAttribute("aria-selected", selected ? "true" : "false");
+    /* Media kit preview grid */
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+      margin:12px 0 6px;
+    }
+    .stat{
+      background: rgba(255,255,255,.75);
+      border:1px solid rgba(0,0,0,.10);
+      border-radius:14px;
+      padding:12px;
+      box-shadow: 0 6px 14px rgba(0,0,0,.08);
+      text-align:left;
+    }
+    .stat .k{
+      font-size:12px;
+      opacity:.75;
+      font-weight:900;
+      letter-spacing:.3px;
+      text-transform:uppercase;
+      margin-bottom:4px;
+    }
+    .stat .v{
+      font-size:18px;
+      font-weight:900;
+      line-height:1.15;
+    }
+    @media (max-width: 900px){
+      .stats{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px){
+      .stats{ grid-template-columns: 1fr; }
+    }
+
+    .tagRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .tag{
+      display:inline-block;
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.75);
+      border:1px solid rgba(0,0,0,.10);
+      font-weight:800;
+      font-size:13px;
+      box-shadow: 0 4px 10px rgba(0,0,0,.06);
+    }
+
+    footer{
+      margin-top:10px;
+      padding:18px 0 10px;
+      opacity:.9;
+      font-size:14px;
+    }
+
+    /* Back to top */
+    .toTop{
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 60;
+      display:none;
+    }
+
+    @media (max-width: 700px){
+      h1{ font-size:28px; }
+      .logo{ width:95%; }
+      .email{ font-size:14px; }
+      nav{ gap:8px; }
+      .tabBtn{ padding:10px 12px; }
+      .heroVideo{ max-width:100%; }
+      main section{ padding-top: 12px; }
+    }
+  </style>
+
+  <script>
+    const TAB_IDS = ["home","brew","hidden","hotel","reels","tourradar","ask","work"];
+
+    function show(tab){
+      document.querySelectorAll("main section").forEach(s => s.classList.remove("active"));
+      const active = document.getElementById(tab);
+      if(active) active.classList.add("active");
+
+      document.querySelectorAll("[data-tab]").forEach(btn => {
+        const selected = btn.dataset.tab === tab;
+        btn.setAttribute("aria-selected", selected ? "true" : "false");
+      });
+
+      history.replaceState(null, "", "#" + tab);
+      window.scrollTo(0, 0);
+    }
+
+    function setupTabs(){
+      const tabButtons = document.querySelectorAll("button[data-tab]");
+      tabButtons.forEach(btn => {
+        btn.addEventListener("keydown", (e) => {
+          if(e.key === "Enter" || e.key === " "){
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+    }
+
+    function setupToTop(){
+      const toTop = document.getElementById("toTop");
+      if(!toTop) return;
+      const toggle = () => {
+        toTop.style.display = window.scrollY > 600 ? "inline-block" : "none";
+      };
+      window.addEventListener("scroll", toggle, {passive:true});
+      toggle();
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const hash = (location.hash || "#home").replace("#","");
+      show(TAB_IDS.includes(hash) ? hash : "home");
+      setupTabs();
+      setupToTop();
+
+      const yearEl = document.getElementById("year");
+      if(yearEl) yearEl.textContent = new Date().getFullYear();
     });
-
-    history.replaceState(null, "", "#" + tab);
-    window.scrollTo(0, 0);
-  }
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const hash = (location.hash || "#home").replace("#","");
-    show(TAB_IDS.includes(hash) ? hash : "home");
-    const yearEl = document.getElementById("year");
-    if(yearEl) yearEl.textContent = new Date().getFullYear();
-  });
-</script>
+  </script>
 
 </head>
 
@@ -439,7 +571,7 @@
 
   <!-- HOME -->
   <section id="home" class="active">
-    
+
     <div class="card">
       <h2>About Us</h2>
 
@@ -465,9 +597,16 @@
 
       <p>We’re proud <strong>TourRadar Ambassadors</strong>, partnering with one of the world’s leading adventure travel platforms to inspire people to see more of the world — one trip, one story, one reel at a time.</p>
 
-      <p><strong>At its heart, Two for the Row’d is simple:</strong></p>
+      <div class="quickLinks" aria-label="Quick links">
+        <a class="pill" href="#tourradar" onclick="show('tourradar')">Get €50 off on TourRadar</a>
+        <a class="pill" href="https://tinyurl.com/4azpatpn" target="_blank" rel="noopener">TourRadar Deals</a>
+        <a class="pill" href="#work" onclick="show('work')">Work With Us</a>
+        <a class="pill" href="mailto:twofortherowd@gmail.com">Email Us</a>
+      </div>
 
-      <p><strong>Travel isn’t about perfection.<br>It’s about moments, memories, and the stories you bring home.<br>And we’ve plenty of those.</strong></p>
+      <p class="disclosure">
+        <strong>Disclosure:</strong> Some links on this site may be affiliate links. If you book through them, we may earn a small commission at no extra cost to you. We only share things we genuinely recommend.
+      </p>
     </div>
 
     <video class="heroVideo" controls preload="metadata">
@@ -480,18 +619,18 @@
     </div>
 
     <div class="grid" aria-label="Two for the Row’d photos">
-      <img loading="lazy" src="img/NP2.jpeg" alt="">
-      <img loading="lazy" src="img/NP6.jpeg" alt="">
-      <img loading="lazy" src="img/NP7.jpeg" alt="">
-      <img loading="lazy" src="img/NP9.jpeg" alt="">
-      <img loading="lazy" src="img/NP10.jpeg" alt="">
-      <img class="np11" loading="lazy" src="img/NP11.jpeg" alt="">
+      <img loading="lazy" src="img/NP2.jpeg" alt="Two for the Row’d travel photo">
+      <img loading="lazy" src="img/NP6.jpeg" alt="Two for the Row’d travel photo">
+      <img loading="lazy" src="img/NP7.jpeg" alt="Two for the Row’d travel photo">
+      <img loading="lazy" src="img/NP9.jpeg" alt="Two for the Row’d travel photo">
+      <img loading="lazy" src="img/NP10.jpeg" alt="Two for the Row’d travel photo">
+      <img class="np11" loading="lazy" src="img/NP11.jpeg" alt="Two for the Row’d travel photo">
     </div>
 
     <div class="extraRow" aria-label="More Two for the Row’d photos">
-      <img loading="lazy" src="img/NP1.jpeg" alt="">
-      <img loading="lazy" src="img/NP3.jpeg" alt="">
-      <img loading="lazy" src="img/NP4.jpeg" alt="">
+      <img loading="lazy" src="img/NP1.jpeg" alt="Two for the Row’d travel photo">
+      <img loading="lazy" src="img/NP3.jpeg" alt="Two for the Row’d travel photo">
+      <img loading="lazy" src="img/NP4.jpeg" alt="Two for the Row’d travel photo">
     </div>
   </section>
 
@@ -512,13 +651,13 @@
     </div>
 
     <div class="iframeWrap">
-      <iframe src="https://www.youtube.com/embed/LJuH3nCk-wo" title="Brew for Two video 1" allowfullscreen></iframe>
+      <iframe loading="lazy" src="https://www.youtube.com/embed/LJuH3nCk-wo" title="Brew for Two video 1" allowfullscreen></iframe>
     </div>
     <div class="iframeWrap">
-      <iframe src="https://www.youtube.com/embed/tVcyL096Tt0" title="Brew for Two video 2" allowfullscreen></iframe>
+      <iframe loading="lazy" src="https://www.youtube.com/embed/tVcyL096Tt0" title="Brew for Two video 2" allowfullscreen></iframe>
     </div>
     <div class="iframeWrap">
-      <iframe src="https://www.youtube.com/embed/l-8KEQGANAM" title="Brew for Two — The Wandering Elk" allowfullscreen></iframe>
+      <iframe loading="lazy" src="https://www.youtube.com/embed/l-8KEQGANAM" title="Brew for Two — The Wandering Elk" allowfullscreen></iframe>
     </div>
   </section>
 
@@ -530,23 +669,23 @@
       <p>Little corners, big stories. These are the places around Ireland that surprised us — the kind of spots you’d drive past a hundred times… until you finally stop.</p>
     </div>
 
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/B_FI9F3tlNc" title="Hidden Ireland video 1" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/lZo2oaNYat8" title="Hidden Ireland video 2" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/vGSWZw-wPGc" title="Hidden Ireland video 3" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/P2W4kTX8o2Q" title="Hidden Ireland video 4" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/F95_h49sL0U" title="Hidden Ireland video 5" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/kB5AbOkWUZs" title="Hidden Ireland video 6" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/7EwSwlstqoY" title="Hidden Ireland video 7" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/B_FI9F3tlNc" title="Hidden Ireland video 1" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/lZo2oaNYat8" title="Hidden Ireland video 2" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/vGSWZw-wPGc" title="Hidden Ireland video 3" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/P2W4kTX8o2Q" title="Hidden Ireland video 4" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/F95_h49sL0U" title="Hidden Ireland video 5" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/kB5AbOkWUZs" title="Hidden Ireland video 6" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/7EwSwlstqoY" title="Hidden Ireland video 7" allowfullscreen></iframe></div>
 
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/n9TnoC9jYVw" title="Hidden Ireland — Short 8" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/GJq_daIOK_Q" title="Hidden Ireland — Short 9" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/XmB1wPN_lZ8" title="Hidden Ireland — Short 10" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/C-5H3VxAiuM" title="Hidden Ireland — Short 11" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/-0qZWJGrWAk" title="Hidden Ireland — Short 12" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/4O_qWCiQp6I" title="Hidden Ireland — Short 13" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/vBAJJGr0Lvc" title="Hidden Ireland — Short 14" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/t1L4vsIhpTM" title="Hidden Ireland — Short 15" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/bsfdbZol4iA" title="Hidden Ireland — Short 16" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/n9TnoC9jYVw" title="Hidden Ireland — Short 8" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/GJq_daIOK_Q" title="Hidden Ireland — Short 9" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/XmB1wPN_lZ8" title="Hidden Ireland — Short 10" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/C-5H3VxAiuM" title="Hidden Ireland — Short 11" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/-0qZWJGrWAk" title="Hidden Ireland — Short 12" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/4O_qWCiQp6I" title="Hidden Ireland — Short 13" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/vBAJJGr0Lvc" title="Hidden Ireland — Short 14" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/t1L4vsIhpTM" title="Hidden Ireland — Short 15" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/bsfdbZol4iA" title="Hidden Ireland — Short 16" allowfullscreen></iframe></div>
   </section>
 
   <!-- HOTEL STAYS -->
@@ -558,22 +697,22 @@
       <p>Expect quick, honest reviews, room peeks, and the bits you actually want to know before you book.</p>
     </div>
 
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/8rgFhGusUz4" title="Hotel Stay review 1" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/gIFmEE2o5cw" title="Hotel Stay review 2" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/92x1qDOXEPo" title="Hotel Stay review 3" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/UyapEmAYNcg" title="Hotel Stay review 4" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/NTR7--xMfGs" title="Hotel Stay review 5" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/8rgFhGusUz4" title="Hotel Stay review 1" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/gIFmEE2o5cw" title="Hotel Stay review 2" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/92x1qDOXEPo" title="Hotel Stay review 3" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/UyapEmAYNcg" title="Hotel Stay review 4" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/NTR7--xMfGs" title="Hotel Stay review 5" allowfullscreen></iframe></div>
   </section>
 
   <!-- REELS -->
   <section id="reels">
     <h1>Reels & Shorts</h1>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/zwu2B4Q_QaI" title="Shorts video 1" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/PEQRwS4rTVI" title="Shorts video 2" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/ueyBfcQxNTg" title="Shorts video 3" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/DCCKVM5d3oc" title="Shorts video 4" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/_oVjZc-I6cg" title="Shorts video 5" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe src="https://www.youtube.com/embed/RzSMfH-dDus" title="Shorts video 6" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/zwu2B4Q_QaI" title="Shorts video 1" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/PEQRwS4rTVI" title="Shorts video 2" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/ueyBfcQxNTg" title="Shorts video 3" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/DCCKVM5d3oc" title="Shorts video 4" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/_oVjZc-I6cg" title="Shorts video 5" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/RzSMfH-dDus" title="Shorts video 6" allowfullscreen></iframe></div>
   </section>
 
   <!-- TOURRADAR -->
@@ -592,6 +731,10 @@
         <a class="pill" href="https://tinyurl.com/4x2xwmwv" target="_blank" rel="noopener">TourRadar Main Page</a>
         <a class="pill" href="https://tinyurl.com/4azpatpn" target="_blank" rel="noopener">Current Deals</a>
       </div>
+
+      <p class="disclosure">
+        <strong>Tip:</strong> If you’re booking a big trip, check “Current Deals” first — it’s often where the best discounts live.
+      </p>
     </div>
   </section>
 
@@ -605,7 +748,7 @@
 
       <form action="https://formspree.io/f/xojnjzne" method="POST" class="formGrid">
         <input type="hidden" name="_subject" value="New Ask Two for the Row’d Submission">
-        <input type="hidden" name="_next" value="https://twofortherowd.github.io/#ask">
+        <input type="hidden" name="_next" value="https://twofortherowd.com/#ask">
 
         <div class="field">
           <label for="ask-name">Your Name</label>
@@ -646,20 +789,64 @@
     <div class="card">
       <h2>Work With Us</h2>
 
-      <p>We love partnering with brands, tourism boards, cafés, hotels and heritage spaces.</p>
+      <p>We love partnering with brands, tourism boards, cafés, hotels and heritage spaces — especially those that value real storytelling and honest recommendations.</p>
 
-      <div class="links">
+      <h3 style="margin:14px 0 6px;">Media Kit Preview</h3>
+
+      <!-- EDIT THESE FOUR BOXES WITH YOUR REAL NUMBERS -->
+      <div class="stats" aria-label="Media kit preview stats">
+        <div class="stat">
+          <div class="k">Total Community</div>
+          <div class="v">~X,XXX followers</div>
+        </div>
+        <div class="stat">
+          <div class="k">Typical Views</div>
+          <div class="v">X,XXX–XX,XXX</div>
+        </div>
+        <div class="stat">
+          <div class="k">Audience</div>
+          <div class="v">Ireland + travellers</div>
+        </div>
+        <div class="stat">
+          <div class="k">Niche</div>
+          <div class="v">Gluten-free friendly</div>
+        </div>
+      </div>
+
+      <p class="smallNote" style="text-align:left; margin-top:8px;">
+        We can share platform-specific insights (reach, saves, watch time, audience location) on request.
+      </p>
+
+      <h3 style="margin:14px 0 6px;">What we can deliver</h3>
+      <ul>
+        <li>Reels / TikToks / Shorts (story-led, human, and genuinely engaging)</li>
+        <li>Hotel stay review + room tour</li>
+        <li>Gluten-free food spotlight (menu + experience)</li>
+        <li>Facebook post + story set</li>
+        <li>Website feature + long-term link placement (great for affiliates)</li>
+      </ul>
+
+      <h3 style="margin:14px 0 6px;">Best fit partners</h3>
+      <div class="tagRow" aria-label="Partner niches">
+        <span class="tag">Boutique hotels</span>
+        <span class="tag">Heritage sites</span>
+        <span class="tag">Tour operators</span>
+        <span class="tag">Cafés & foodie spots</span>
+        <span class="tag">Gluten-free friendly venues</span>
+        <span class="tag">Irish stays & weekends</span>
+      </div>
+
+      <div class="links" style="margin-top:14px;">
         <a class="pill" href="media/two-for-the-rowd-media-kit.pdf" target="_blank" rel="noopener">
           Download Our Media Kit (PDF)
         </a>
-
         <a class="pill" href="mailto:twofortherowd@gmail.com">
           Email Us
         </a>
       </div>
 
-      <p class="smallNote">
-        TikTok • Instagram • YouTube Shorts • Facebook • Story-led travel content with personality.
+      <p class="disclosure">
+        <strong>Brands:</strong> Send us your dates + deliverables and we’ll reply with a simple proposal.
       </p>
     </div>
   </section>
@@ -669,6 +856,41 @@
   </footer>
 
 </main>
+
+<div class="toTop" id="toTop">
+  <a class="pill" href="#home" onclick="show('home')" aria-label="Back to top">↑ Top</a>
+</div>
+
+<script>
+  function setupToTop(){
+    const toTop = document.getElementById("toTop");
+    if(!toTop) return;
+    const toggle = () => {
+      toTop.style.display = window.scrollY > 600 ? "inline-block" : "none";
+    };
+    window.addEventListener("scroll", toggle, {passive:true});
+    toggle();
+  }
+
+  function setupTabs(){
+    const tabButtons = document.querySelectorAll("button[data-tab]");
+    tabButtons.forEach(btn => {
+      btn.addEventListener("keydown", (e) => {
+        if(e.key === "Enter" || e.key === " "){
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    setupTabs();
+    setupToTop();
+    const yearEl = document.getElementById("year");
+    if(yearEl) yearEl.textContent = new Date().getFullYear();
+  });
+</script>
 
 </body>
 </html>
