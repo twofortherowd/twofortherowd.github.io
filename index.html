@@ -58,11 +58,8 @@
       padding:0 14px 28px;
     }
 
-    header{
-      padding:18px 16px 8px;
-    }
+    header{ padding:18px 16px 8px; }
 
-    /* Logo */
     .logo{
       width:720px;
       max-width:96%;
@@ -90,7 +87,6 @@
       box-shadow: var(--shadowSoft);
     }
 
-    /* Social icon row */
     .social{
       display:flex;
       gap:10px;
@@ -99,7 +95,6 @@
       align-items:center;
     }
 
-    /* Base pill */
     .pill{
       text-decoration:none;
       color:var(--text);
@@ -125,7 +120,6 @@
       outline-offset:3px;
     }
 
-    /* Icon-only pill */
     .pill.icon{
       width:44px;
       height:44px;
@@ -148,7 +142,6 @@
       .social{ gap:8px; }
     }
 
-    /* Accessibility helper */
     .sr-only{
       position:absolute;
       width:1px;height:1px;
@@ -157,11 +150,9 @@
       white-space:nowrap;border:0;
     }
 
-    /* Navigation */
     nav{
       border-top: 1px solid rgba(0,0,0,.06);
       border-bottom: 1px solid rgba(0,0,0,.08);
-
       display:flex;
       gap:10px;
       justify-content:center;
@@ -259,7 +250,6 @@
       border:0;
     }
 
-    /* Shorts-friendly wrapper (9:16) */
     .iframeWrap.short{
       max-width:420px;
       aspect-ratio: 9 / 16;
@@ -335,7 +325,6 @@
       margin-top:10px;
     }
 
-    /* Home quick links */
     .quickLinks{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
@@ -395,7 +384,6 @@
       border-top:1px dashed rgba(0,0,0,.18);
     }
 
-    /* Media kit preview grid */
     .stats{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -430,7 +418,6 @@
       .stats{ grid-template-columns: 1fr; }
     }
 
-    /* Platforms list inside Media Kit */
     .platforms{
       display:flex;
       flex-wrap:wrap;
@@ -484,7 +471,6 @@
       font-size:14px;
     }
 
-    /* Back to top */
     .toTop{
       position: fixed;
       right: 14px;
@@ -532,147 +518,149 @@
       .heroVideo{ max-width:100%; }
       main section{ padding-top: 12px; }
     }
-    /* Morocco Route Map (inline SVG animation) */
-.routeMapWrap{
-  max-width:900px;
-  margin:0 auto;
-}
 
-.routeMap{
-  width:100%;
-  height:auto;
-  display:block;
-  background: rgba(255,255,255,.65);
-  border:1px solid rgba(0,0,0,.10);
-  border-radius:16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.12);
-}
+    /* ===== Morocco Route Map (upgraded) ===== */
+    .routeMapWrap{ max-width:900px; margin:0 auto; }
+    .routeMap{
+      width:100%;
+      height:auto;
+      display:block;
+      border:1px solid rgba(0,0,0,.10);
+      border-radius:16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.12);
+      background: rgba(255,255,255,.65);
+    }
 
-.routeStroke{
-  fill:none;
-  stroke: rgba(0,0,0,.75);
-  stroke-width: 4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: drawRoute 2.2s ease forwards;
-}
+    .routeStroke{
+      fill:none;
+      stroke: url(#routeGrad);
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: drawRoute 2.2s ease forwards;
+      filter: url(#softShadow);
+    }
+    @keyframes drawRoute{ to{ stroke-dashoffset: 0; } }
 
-@keyframes drawRoute{
-  to{ stroke-dashoffset: 0; }
-}
+    .pin{
+      transform-origin: center;
+      opacity:0;
+      transform: scale(.2);
+      animation: popPin .35s ease forwards;
+    }
+    @keyframes popPin{ to{ opacity:1; transform: scale(1); } }
 
-.pin{
-  transform-origin: center;
-  opacity:0;
-  transform: scale(.2);
-  animation: popPin .35s ease forwards;
-}
+    .pin.p1{ animation-delay: .25s; }
+    .pin.p2{ animation-delay: .55s; }
+    .pin.p3{ animation-delay: .85s; }
+    .pin.p4{ animation-delay: 1.15s; }
+    .pin.p5{ animation-delay: 1.45s; }
+    .pin.p6{ animation-delay: 1.75s; }
+    .pin.p7{ animation-delay: 2.05s; }
+    .pin.p8{ animation-delay: 2.35s; }
 
-@keyframes popPin{
-  to{ opacity:1; transform: scale(1); }
-}
+    .pinDotOuter{ fill: rgba(0,0,0,.88); }
+    .pinDotInner{ fill: #ffd84a; }
 
-/* stagger pin pops */
-.pin.p1{ animation-delay: .25s; }
-.pin.p2{ animation-delay: .55s; }
-.pin.p3{ animation-delay: .85s; }
-.pin.p4{ animation-delay: 1.15s; }
-.pin.p5{ animation-delay: 1.45s; }
-.pin.p6{ animation-delay: 1.75s; }
-.pin.p7{ animation-delay: 2.05s; }
-.pin.p8{ animation-delay: 2.35s; }
+    .pinLabel{
+      font: 800 12px Arial, system-ui, sans-serif;
+      fill: rgba(0,0,0,.90);
+    }
 
-.mapLabel{
-  font: 700 12px Arial, system-ui, sans-serif;
-  fill: rgba(0,0,0,.85);
-}
+    .badgeCircle{
+      fill: rgba(255,255,255,.92);
+      stroke: rgba(0,0,0,.22);
+      stroke-width: 1.5;
+      filter: url(#softShadow);
+    }
+    .badgeText{
+      font: 900 14px Arial, system-ui, sans-serif;
+      dominant-baseline: middle;
+      text-anchor: middle;
+    }
 
-.mapHint{
-  font-size:13px;
-  opacity:.85;
-  margin-top:10px;
-  text-align:left;
-}
+    .mapHint{
+      font-size:13px;
+      opacity:.85;
+      margin-top:10px;
+      text-align:left;
+    }
   </style>
 
-<script>
-  const TAB_IDS = ["home","morocco","brew","hidden","hotel","reels","tourradar","ask","work"];
+  <script>
+    const TAB_IDS = ["home","morocco","brew","hidden","hotel","reels","tourradar","ask","work"];
 
-  // Capture the hash ASAP and remove it before the browser can auto-scroll to it (mobile fix)
-  const INITIAL_HASH = (location.hash || "").replace("#", "");
-  if (location.hash) {
-    history.replaceState(null, "", location.pathname + location.search);
-  }
-
-  if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-  }
-
-  function show(tab, opts = {}) {
-    const { scroll = true, smooth = true, updateHash = true } = opts;
-
-    document.querySelectorAll("main section").forEach(s => s.classList.remove("active"));
-    const active = document.getElementById(tab);
-    if (active) active.classList.add("active");
-
-    document.querySelectorAll("[data-tab]").forEach(btn => {
-      const selected = btn.dataset.tab === tab;
-      btn.setAttribute("aria-selected", selected ? "true" : "false");
-    });
-
-    if (updateHash) {
-      history.replaceState(null, "", "#" + tab); // replaceState does NOT scroll
+    const INITIAL_HASH = (location.hash || "").replace("#", "");
+    if (location.hash) {
+      history.replaceState(null, "", location.pathname + location.search);
     }
 
-    if (scroll) {
-      window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
     }
-  }
 
-  function setupTabs(){
-    const tabButtons = document.querySelectorAll("button[data-tab]");
-    tabButtons.forEach(btn => {
-      btn.addEventListener("keydown", (e) => {
-        if(e.key === "Enter" || e.key === " "){
-          e.preventDefault();
-          btn.click();
-        }
+    function show(tab, opts = {}) {
+      const { scroll = true, smooth = true, updateHash = true } = opts;
+
+      document.querySelectorAll("main section").forEach(s => s.classList.remove("active"));
+      const active = document.getElementById(tab);
+      if (active) active.classList.add("active");
+
+      document.querySelectorAll("[data-tab]").forEach(btn => {
+        const selected = btn.dataset.tab === tab;
+        btn.setAttribute("aria-selected", selected ? "true" : "false");
       });
+
+      if (updateHash) {
+        history.replaceState(null, "", "#" + tab);
+      }
+
+      if (scroll) {
+        window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
+      }
+    }
+
+    function setupTabs(){
+      const tabButtons = document.querySelectorAll("button[data-tab]");
+      tabButtons.forEach(btn => {
+        btn.addEventListener("keydown", (e) => {
+          if(e.key === "Enter" || e.key === " "){
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+    }
+
+    function setupToTop(){
+      const toTop = document.getElementById("toTop");
+      if(!toTop) return;
+      const toggle = () => {
+        toTop.style.display = window.scrollY > 600 ? "inline-block" : "none";
+      };
+      window.addEventListener("scroll", toggle, {passive:true});
+      toggle();
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const initialTab = TAB_IDS.includes(INITIAL_HASH) ? INITIAL_HASH : "home";
+
+      show(initialTab, { scroll: false, smooth: false, updateHash: false });
+
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+        history.replaceState(null, "", "#" + initialTab);
+      });
+
+      setupTabs();
+      setupToTop();
+
+      const yearEl = document.getElementById("year");
+      if(yearEl) yearEl.textContent = new Date().getFullYear();
     });
-  }
-
-  function setupToTop(){
-    const toTop = document.getElementById("toTop");
-    if(!toTop) return;
-    const toggle = () => {
-      toTop.style.display = window.scrollY > 600 ? "inline-block" : "none";
-    };
-    window.addEventListener("scroll", toggle, {passive:true});
-    toggle();
-  }
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const initialTab = TAB_IDS.includes(INITIAL_HASH) ? INITIAL_HASH : "home";
-
-    // Show the tab but DON'T scroll on load (prevents the bounce)
-    show(initialTab, { scroll: false, smooth: false, updateHash: false });
-
-    // Hard-pin to the very top after layout settles (mobile address-bar shenanigans)
-    requestAnimationFrame(() => {
-      window.scrollTo(0, 0);
-      // Put the hash back without triggering a jump
-      history.replaceState(null, "", "#" + initialTab);
-    });
-
-    setupTabs();
-    setupToTop();
-
-    const yearEl = document.getElementById("year");
-    if(yearEl) yearEl.textContent = new Date().getFullYear();
-  });
-</script>
+  </script>
 
 </head>
 
@@ -804,104 +792,215 @@
 
       <p>This Morocco series follows the full route of our journey — from city rooftops and bustling souks to remote desert dunes and mountain villages. Each stop along the way tells a different story about Morocco’s history, culture and landscapes.</p>
 
-<h2>Our Route Through Morocco</h2>
-</div> <!-- ✅ closes the Our Morocco Journey card -->
-
-<div class="card">
-  <h2>Route Map</h2>
-
-    <div class="routeMapWrap" aria-label="Animated route map of Morocco">
-     /* Upgraded map styling */
-.routeMap{
-  width:100%;
-  height:auto;
-  display:block;
-  border:1px solid rgba(0,0,0,.10);
-  border-radius:16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.12);
-}
-
-/* Better route line */
-.routeStroke{
-  stroke: url(#routeGrad);
-  stroke-width: 5;
-  filter: url(#softShadow);
-}
-
-/* Nicer pins */
-.pinDotOuter{ fill: rgba(0,0,0,.88); }
-.pinDotInner{ fill: #ffd84a; }
-.pinLabel{
-  font: 800 12px Arial, system-ui, sans-serif;
-  fill: rgba(0,0,0,.90);
-}
-
-/* Icon badge beside each place */
-.badgeCircle{
-  fill: rgba(255,255,255,.92);
-  stroke: rgba(0,0,0,.22);
-  stroke-width: 1.5;
-  filter: url(#softShadow);
-}
-.badgeText{
-  font: 900 14px Arial, system-ui, sans-serif;
-  dominant-baseline: middle;
-  text-anchor: middle;
-}
+      <h2>Our Route Through Morocco</h2>
     </div>
 
-    <p class="mapHint">
-      This is a quick visual route guide (stylised). As the series grows, we’ll update the map pins to match each Part exactly.
-    </p>
-  </div>
+    <div class="card">
+      <h2>Route Map</h2>
 
-      <div class="routeGrid" aria-label="Morocco route overview">
-        <div class="routeBox">
-          <h3>Key Stops</h3>
-          <ul>
-            <li>Marrakech</li>
-            <li>Atlas Mountains</li>
-            <li>Ait Benhaddou</li>
-            <li>Berber villages and the Caravan Trails</li>
-            <li>Fint Oasis</li>
-            <li>Zagora and the edge of the Sahara</li>
-            <li>Desert Camp in the Sahara</li>
-            <li>Tamegroute Village</li>
-            <li>Amazraoute Museum</li>
-            <li>Women’s cooperatives in Talouste and Aguelmouss</li>
-            <li>Traditional kasbahs and desert towns</li>
-          </ul>
+      <div class="routeMapWrap" aria-label="Animated route map of Morocco">
+        <svg class="routeMap" viewBox="0 0 900 520" role="img" aria-label="Morocco route map">
+          <defs>
+            <linearGradient id="sandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="rgba(255,216,74,.28)"/>
+              <stop offset="1" stop-color="rgba(255,255,255,.55)"/>
+            </linearGradient>
+
+            <pattern id="dotPattern" width="18" height="18" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="1.2" fill="rgba(0,0,0,.05)"/>
+            </pattern>
+
+            <linearGradient id="routeGrad" x1="330" y1="400" x2="560" y2="190" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="rgba(0,0,0,.75)"/>
+              <stop offset="1" stop-color="rgba(0,0,0,.40)"/>
+            </linearGradient>
+
+            <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,.18)"/>
+            </filter>
+          </defs>
+
+          <!-- Background -->
+          <rect x="0" y="0" width="900" height="520" fill="url(#sandGrad)"></rect>
+          <rect x="0" y="0" width="900" height="520" fill="url(#dotPattern)" opacity=".7"></rect>
+
+          <!-- Subtle Moroccan flag watermark -->
+          <g opacity=".14" transform="translate(460,250) rotate(-12)">
+            <rect x="-300" y="-180" width="600" height="360" rx="26" fill="#c1272d"></rect>
+            <path d="M 0 -95 L 56 78 L -90 -18 L 90 -18 L -56 78 Z"
+                  fill="none" stroke="#006233" stroke-width="14" stroke-linejoin="round"/>
+          </g>
+
+          <!-- Stylised silhouette -->
+          <path d="M240,80
+                   C270,60 330,55 380,70
+                   C410,82 445,92 500,90
+                   C560,88 610,110 640,150
+                   C675,195 690,235 675,295
+                   C660,355 620,395 570,425
+                   C520,455 470,470 410,465
+                   C350,458 300,440 270,410
+                   C240,380 220,340 220,290
+                   C220,235 205,205 200,165
+                   C195,125 210,95 240,80 Z"
+                fill="rgba(0,0,0,.05)"
+                stroke="rgba(0,0,0,.10)"
+                stroke-width="2"
+                filter="url(#softShadow)"></path>
+
+          <!-- Route: Marrakech → Atlas → Ait Benhaddou → Ouarzazate → Zagora → Sahara → Tamegroute → back north → Marrakech -->
+          <path class="routeStroke"
+                d="M540,240
+                   L495,220
+                   L455,240
+                   L420,260
+                   L395,300
+                   L380,340
+                   L355,360
+                   L420,290
+                   L540,240" />
+
+          <!-- Marrakech -->
+          <g class="pin p1">
+            <circle class="pinDotOuter" cx="540" cy="240" r="11"></circle>
+            <circle class="pinDotInner" cx="540" cy="240" r="5.2"></circle>
+            <text class="pinLabel" x="558" y="244">Marrakech</text>
+            <g transform="translate(520,215)">
+              <circle class="badgeCircle" cx="0" cy="0" r="14"></circle>
+              <text class="badgeText" x="0" y="1">🕌</text>
+            </g>
+          </g>
+
+          <!-- Atlas -->
+          <g class="pin p2">
+            <circle class="pinDotOuter" cx="495" cy="220" r="10"></circle>
+            <circle class="pinDotInner" cx="495" cy="220" r="4.8"></circle>
+            <text class="pinLabel" x="512" y="224">Atlas</text>
+            <g transform="translate(475,195)">
+              <circle class="badgeCircle" cx="0" cy="0" r="14"></circle>
+              <text class="badgeText" x="0" y="1">🏔️</text>
+            </g>
+          </g>
+
+          <!-- Ait Benhaddou -->
+          <g class="pin p3">
+            <circle class="pinDotOuter" cx="455" cy="240" r="10"></circle>
+            <circle class="pinDotInner" cx="455" cy="240" r="4.8"></circle>
+            <text class="pinLabel" x="472" y="244">Ait Benhaddou</text>
+            <g transform="translate(435,215)">
+              <circle class="badgeCircle" cx="0" cy="0" r="14"></circle>
+              <text class="badgeText" x="0" y="1">🏯</text>
+            </g>
+          </g>
+
+          <!-- Ouarzazate -->
+          <g class="pin p4">
+            <circle class="pinDotOuter" cx="420" cy="260" r="10"></circle>
+            <circle class="pinDotInner" cx="420" cy="260" r="4.8"></circle>
+            <text class="pinLabel" x="437" y="264">Ouarzazate</text>
+            <g transform="translate(400,235)">
+              <circle class="badgeCircle" cx="0" cy="0" r="14"></circle>
+              <text class="badgeText" x="0" y="1">🎬</text>
+            </g>
+          </g>
+
+          <!-- Zagora -->
+          <g class="pin p5">
+            <circle class="pinDotOuter" cx="395" cy="300" r="10"></circle>
+            <circle class="pinDotInner" cx="395" cy="300" r="4.8"></circle>
+            <text class="pinLabel" x="412" y="304">Zagora</text>
+            <g transform="translate(375,275)">
+              <circle class="badgeCircle" cx="0" cy="0" r="14"></circle>
+              <text class="badgeText" x="0" y="1">🌴</text>
+            </g>
+          </g>
+
+          <!-- Sahara -->
+          <g class="pin p6">
+            <circle class="pinDotOuter" cx="380" cy="340" r="10"></circle>
+            <circle class="pinDotInner" cx="380" cy="340" r="4.8"></circle>
+            <text class="pinLabel" x="397" y="344">Sahara</text>
+            <g transform="translate(360,315)">
+              <circle class="badgeCircle" cx="0" cy="0" r="14"></circle>
+              <text class="badgeText" x="0" y="1">🐪</text>
+            </g>
+          </g>
+
+          <!-- Tamegroute -->
+          <g class="pin p7">
+            <circle class="pinDotOuter" cx="355" cy="360" r="10"></circle>
+            <circle class="pinDotInner" cx="355" cy="360" r="4.8"></circle>
+            <text class="pinLabel" x="372" y="364">Tamegroute</text>
+            <g transform="translate(335,335)">
+              <circle class="badgeCircle" cx="0" cy="0" r="14"></circle>
+              <text class="badgeText" x="0" y="1">🏺</text>
+            </g>
+          </g>
+
+          <!-- Back north -->
+          <g class="pin p8">
+            <circle class="pinDotOuter" cx="420" cy="290" r="10"></circle>
+            <circle class="pinDotInner" cx="420" cy="290" r="4.8"></circle>
+            <text class="pinLabel" x="437" y="294">Back north</text>
+            <g transform="translate(442,270)">
+              <circle class="badgeCircle" cx="0" cy="0" r="14"></circle>
+              <text class="badgeText" x="0" y="1">↩️</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <p class="mapHint">
+        This is a quick visual route guide (stylised). As the series grows, we’ll update the map pins to match each Part exactly.
+      </p>
+    </div>
+
+    <div class="routeGrid" aria-label="Morocco route overview">
+      <div class="routeBox">
+        <h3>Key Stops</h3>
+        <ul>
+          <li>Marrakech</li>
+          <li>Atlas Mountains</li>
+          <li>Ait Benhaddou</li>
+          <li>Berber villages and the Caravan Trails</li>
+          <li>Fint Oasis</li>
+          <li>Zagora and the edge of the Sahara</li>
+          <li>Desert Camp in the Sahara</li>
+          <li>Tamegroute Village</li>
+          <li>Amazraoute Museum</li>
+          <li>Women’s cooperatives in Talouste and Aguelmouss</li>
+          <li>Traditional kasbahs and desert towns</li>
+        </ul>
+      </div>
+
+      <div class="routeBox">
+        <h3>Follow the Journey</h3>
+        <ul style="list-style:none; padding-left:0; margin:8px 0 0;">
+          <li>🏜 Crossing the Sahara Desert</li>
+          <li>🏔 Driving through the Atlas Mountains</li>
+          <li>🏛 Exploring ancient kasbahs and caravan routes</li>
+          <li>🫖 Moroccan food, cafés and rooftop views</li>
+          <li>🐪 Desert camps and star-filled skies</li>
+          <li>🧶 Traditional crafts and women’s cooperatives</li>
+        </ul>
+
+        <p style="margin-top:12px;">
+          Each stop on our route has its own story — and we’re bringing you along for the full adventure.
+        </p>
+
+        <p style="margin:10px 0 0;">
+          <span class="highlight">Discount code: NicolaR50</span>
+        </p>
+
+        <div class="links" style="margin-top:10px;">
+          <a class="pill" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=Morocco+Tour" target="_blank" rel="noopener">
+            Book the Morocco Tour
+          </a>
         </div>
 
-        <div class="routeBox">
-          <h3>Follow the Journey</h3>
-          <ul style="list-style:none; padding-left:0; margin:8px 0 0;">
-            <li>🏜 Crossing the Sahara Desert</li>
-            <li>🏔 Driving through the Atlas Mountains</li>
-            <li>🏛 Exploring ancient kasbahs and caravan routes</li>
-            <li>🫖 Moroccan food, cafés and rooftop views</li>
-            <li>🐪 Desert camps and star-filled skies</li>
-            <li>🧶 Traditional crafts and women’s cooperatives</li>
-          </ul>
-
-          <p style="margin-top:12px;">
-            Each stop on our route has its own story — and we’re bringing you along for the full adventure.
-          </p>
-
-          <p style="margin:10px 0 0;">
-            <span class="highlight">Discount code: NicolaR50</span>
-          </p>
-
-          <div class="links" style="margin-top:10px;">
-            <a class="pill" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=Morocco+Tour" target="_blank" rel="noopener">
-              Book the Morocco Tour
-            </a>
-          </div>
-
-          <p class="disclosure" style="margin-top:10px;">
-            <strong>Disclosure:</strong> If you book through our link, we may earn a small commission at no extra cost to you.
-          </p>
-        </div>
+        <p class="disclosure" style="margin-top:10px;">
+          <strong>Disclosure:</strong> If you book through our link, we may earn a small commission at no extra cost to you.
+        </p>
       </div>
     </div>
 
