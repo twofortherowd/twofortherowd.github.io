@@ -811,94 +811,43 @@
   <h2>Route Map</h2>
 
     <div class="routeMapWrap" aria-label="Animated route map of Morocco">
-      <svg class="routeMap" viewBox="0 0 900 520" role="img" aria-label="Morocco route map">
-        <!-- Background -->
-        <rect x="0" y="0" width="900" height="520" fill="rgba(255,255,255,.55)"></rect>
+     /* Upgraded map styling */
+.routeMap{
+  width:100%;
+  height:auto;
+  display:block;
+  border:1px solid rgba(0,0,0,.10);
+  border-radius:16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
 
-        <!-- Simple “Morocco-ish” silhouette (stylised, not exact geography) -->
-        <path d="M240,80
-                 C270,60 330,55 380,70
-                 C410,82 445,92 500,90
-                 C560,88 610,110 640,150
-                 C675,195 690,235 675,295
-                 C660,355 620,395 570,425
-                 C520,455 470,470 410,465
-                 C350,458 300,440 270,410
-                 C240,380 220,340 220,290
-                 C220,235 205,205 200,165
-                 C195,125 210,95 240,80 Z"
-              fill="rgba(0,0,0,.06)" stroke="rgba(0,0,0,.12)" stroke-width="2"></path>
+/* Better route line */
+.routeStroke{
+  stroke: url(#routeGrad);
+  stroke-width: 5;
+  filter: url(#softShadow);
+}
 
-        <!-- Route line (draws itself) -->
-        <!-- Marrakech → Atlas → Ait Benhaddou → Ouarzazate → Zagora → Sahara → Tamegroute → back toward Marrakech -->
-        <path class="routeStroke"
-              d="M540,240
-                 L495,220
-                 L455,240
-                 L420,260
-                 L395,300
-                 L380,340
-                 L355,360
-                 L420,290
-                 L540,240" />
+/* Nicer pins */
+.pinDotOuter{ fill: rgba(0,0,0,.88); }
+.pinDotInner{ fill: #ffd84a; }
+.pinLabel{
+  font: 800 12px Arial, system-ui, sans-serif;
+  fill: rgba(0,0,0,.90);
+}
 
-        <!-- Pins -->
-        <!-- Marrakech -->
-        <g class="pin p1">
-          <circle cx="540" cy="240" r="10" fill="rgba(0,0,0,.85)"></circle>
-          <circle cx="540" cy="240" r="5" fill="#ffd84a"></circle>
-          <text class="mapLabel" x="555" y="244">Marrakech</text>
-        </g>
-
-        <!-- Atlas -->
-        <g class="pin p2">
-          <circle cx="495" cy="220" r="9" fill="rgba(0,0,0,.85)"></circle>
-          <circle cx="495" cy="220" r="4.5" fill="#ffd84a"></circle>
-          <text class="mapLabel" x="510" y="224">Atlas</text>
-        </g>
-
-        <!-- Ait Benhaddou -->
-        <g class="pin p3">
-          <circle cx="455" cy="240" r="9" fill="rgba(0,0,0,.85)"></circle>
-          <circle cx="455" cy="240" r="4.5" fill="#ffd84a"></circle>
-          <text class="mapLabel" x="470" y="244">Ait Benhaddou</text>
-        </g>
-
-        <!-- Ouarzazate area / Les Jardins -->
-        <g class="pin p4">
-          <circle cx="420" cy="260" r="9" fill="rgba(0,0,0,.85)"></circle>
-          <circle cx="420" cy="260" r="4.5" fill="#ffd84a"></circle>
-          <text class="mapLabel" x="435" y="264">Ouarzazate</text>
-        </g>
-
-        <!-- Zagora -->
-        <g class="pin p5">
-          <circle cx="395" cy="300" r="9" fill="rgba(0,0,0,.85)"></circle>
-          <circle cx="395" cy="300" r="4.5" fill="#ffd84a"></circle>
-          <text class="mapLabel" x="410" y="304">Zagora</text>
-        </g>
-
-        <!-- Sahara -->
-        <g class="pin p6">
-          <circle cx="380" cy="340" r="9" fill="rgba(0,0,0,.85)"></circle>
-          <circle cx="380" cy="340" r="4.5" fill="#ffd84a"></circle>
-          <text class="mapLabel" x="395" y="344">Sahara</text>
-        </g>
-
-        <!-- Tamegroute -->
-        <g class="pin p7">
-          <circle cx="355" cy="360" r="9" fill="rgba(0,0,0,.85)"></circle>
-          <circle cx="355" cy="360" r="4.5" fill="#ffd84a"></circle>
-          <text class="mapLabel" x="370" y="364">Tamegroute</text>
-        </g>
-
-        <!-- Return -->
-        <g class="pin p8">
-          <circle cx="420" cy="290" r="9" fill="rgba(0,0,0,.85)"></circle>
-          <circle cx="420" cy="290" r="4.5" fill="#ffd84a"></circle>
-          <text class="mapLabel" x="435" y="294">Back north</text>
-        </g>
-      </svg>
+/* Icon badge beside each place */
+.badgeCircle{
+  fill: rgba(255,255,255,.92);
+  stroke: rgba(0,0,0,.22);
+  stroke-width: 1.5;
+  filter: url(#softShadow);
+}
+.badgeText{
+  font: 900 14px Arial, system-ui, sans-serif;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
     </div>
 
     <p class="mapHint">
