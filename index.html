@@ -207,6 +207,7 @@
 
     h1{ margin:10px 0 14px; font-size:34px; letter-spacing:-.4px; }
     h2{ margin:18px 0 10px; }
+    h3{ margin:14px 0 8px; }
 
     .card{
       background:var(--card);
@@ -486,6 +487,36 @@
       display:none;
     }
 
+    /* Morocco extras */
+    .routeGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:10px;
+    }
+    .routeBox{
+      background: rgba(255,255,255,.70);
+      border:1px solid rgba(0,0,0,.10);
+      border-radius:14px;
+      padding:14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,.08);
+    }
+    .routeBox ul{
+      margin:8px 0 0;
+      padding-left:18px;
+    }
+    .highlight{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.12);
+      font-weight:900;
+    }
+    @media (max-width: 760px){
+      .routeGrid{ grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 700px){
       h1{ font-size:28px; }
       .logo{ width:95%; }
@@ -498,7 +529,7 @@
   </style>
 
 <script>
-  const TAB_IDS = ["home","brew","hidden","hotel","reels","tourradar","ask","work"];
+  const TAB_IDS = ["home","morocco","brew","hidden","hotel","reels","tourradar","ask","work"];
 
   // Capture the hash ASAP and remove it before the browser can auto-scroll to it (mobile fix)
   const INITIAL_HASH = (location.hash || "").replace("#", "");
@@ -610,6 +641,7 @@
 
 <nav aria-label="Site navigation">
   <button class="tabBtn" data-tab="home" onclick="show('home')" aria-selected="true">Home</button>
+  <button class="tabBtn" data-tab="morocco" onclick="show('morocco')" aria-selected="false">Morocco Series</button>
   <button class="tabBtn" data-tab="brew" onclick="show('brew')" aria-selected="false">Brew for Two</button>
   <button class="tabBtn" data-tab="hidden" onclick="show('hidden')" aria-selected="false">Hidden Ireland</button>
   <button class="tabBtn" data-tab="hotel" onclick="show('hotel')" aria-selected="false">Hotel Stays</button>
@@ -649,6 +681,7 @@
       <p>We’re proud <strong>TourRadar Ambassadors</strong>, partnering with one of the world’s leading adventure travel platforms to inspire people to see more of the world — one trip, one story, one reel at a time.</p>
 
       <div class="quickLinks" aria-label="Quick links">
+        <a class="pill" href="#morocco" onclick="event.preventDefault(); show('morocco');">Morocco Series</a>
         <a class="pill" href="#tourradar" onclick="event.preventDefault(); show('tourradar');">Get €50 off on TourRadar</a>
         <a class="pill" href="https://tinyurl.com/4azpatpn" target="_blank" rel="noopener">TourRadar Deals</a>
         <a class="pill" href="#work" onclick="event.preventDefault(); show('work');">Work With Us</a>
@@ -682,6 +715,160 @@
       <img loading="lazy" src="img/NP1.jpeg" alt="Two for the Row’d travel photo">
       <img loading="lazy" src="img/NP3.jpeg" alt="Two for the Row’d travel photo">
       <img loading="lazy" src="img/NP4.jpeg" alt="Two for the Row’d travel photo">
+    </div>
+  </section>
+
+    <!-- MOROCCO SERIES -->
+  <section id="morocco">
+    <h1>Morocco Series</h1>
+
+    <div class="card">
+      <h2>Our Morocco Journey</h2>
+
+      <p>Morocco had been on our travel list for a long time, and this adventure brought us through some of the most incredible landscapes and cultural experiences we’ve ever seen. From the vibrant streets of Marrakech to the vast silence of the Sahara Desert, this journey took us across mountains, deserts, ancient towns and traditional villages.</p>
+
+      <p>Our trip was booked through <strong>TourRadar</strong> and the tour itself was run by the fantastic team at <strong>Morhara Morocco Tours</strong>, who guided us through some of the most breathtaking parts of the country. We also explored the historic streets of Marrakech on a walking tour with <strong>Ali from Get Marrakech</strong>, which gave us a brilliant introduction to the city's culture, food and history.</p>
+
+      <p>Over the course of the journey we travelled through the dramatic peaks of the Atlas Mountains, visited traditional Berber towns, explored UNESCO heritage sites, and experienced the magic of the Sahara — including an unforgettable night in a desert camp under the stars.</p>
+
+      <p>Along the way we met local artisans, visited women’s cooperatives producing traditional Moroccan products, explored ancient caravan routes, and discovered hidden oases that felt like something from another world.</p>
+
+      <p>This Morocco series follows the full route of our journey — from city rooftops and bustling souks to remote desert dunes and mountain villages. Each stop along the way tells a different story about Morocco’s history, culture and landscapes.</p>
+
+      <h2>Our Route Through Morocco</h2>
+
+      <div class="routeGrid" aria-label="Morocco route overview">
+        <div class="routeBox">
+          <h3>Key Stops</h3>
+          <ul>
+            <li>Marrakech</li>
+            <li>Atlas Mountains</li>
+            <li>Ait Benhaddou</li>
+            <li>Berber villages and the Caravan Trails</li>
+            <li>Fint Oasis</li>
+            <li>Zagora and the edge of the Sahara</li>
+            <li>Desert Camp in the Sahara</li>
+            <li>Tamegroute Village</li>
+            <li>Amazraoute Museum</li>
+            <li>Women’s cooperatives in Talouste and Aguelmouss</li>
+            <li>Traditional kasbahs and desert towns</li>
+          </ul>
+        </div>
+
+        <div class="routeBox">
+          <h3>Follow the Journey</h3>
+          <ul style="list-style:none; padding-left:0; margin:8px 0 0;">
+            <li>🏜 Crossing the Sahara Desert</li>
+            <li>🏔 Driving through the Atlas Mountains</li>
+            <li>🏛 Exploring ancient kasbahs and caravan routes</li>
+            <li>🫖 Moroccan food, cafés and rooftop views</li>
+            <li>🐪 Desert camps and star-filled skies</li>
+            <li>🧶 Traditional crafts and women’s cooperatives</li>
+          </ul>
+
+          <p style="margin-top:12px;">
+            Each stop on our route has its own story — and we’re bringing you along for the full adventure.
+          </p>
+
+          <p style="margin:10px 0 0;">
+            <span class="highlight">Discount code: NicolaR50</span>
+          </p>
+
+          <div class="links" style="margin-top:10px;">
+            <a class="pill" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=Morocco+Tour" target="_blank" rel="noopener">
+              Book the Morocco Tour
+            </a>
+          </div>
+
+          <p class="disclosure" style="margin-top:10px;">
+            <strong>Disclosure:</strong> If you book through our link, we may earn a small commission at no extra cost to you.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Morocco Videos</h2>
+
+    <div class="card">
+      <h3>Part 1 – Dublin to Marrakech</h3>
+      <div class="iframeWrap">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/8sJj521AVo8" title="Part 1 – Dublin to Marrakech" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Part 2 – Grand Mogador Menara Marrakech</h3>
+      <div class="iframeWrap">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/dmtF1M-rzFk" title="Part 2 – Grand Mogador Menara Marrakech" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Part 3 – Les Jardins de Ouzazarte</h3>
+      <div class="iframeWrap">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/ZTdiMwEIw3U" title="Part 3 – Les Jardins de Ouzazarte" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Part 4 – Travelling through the Atlas</h3>
+      <div class="iframeWrap">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/65d2mpohVo0" title="Part 4 – Travelling through the Atlas" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Part 5 – Argan Oil Aguelmouss</h3>
+      <div class="iframeWrap">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/dXUXZHXJPJM" title="Part 5 – Argan Oil Aguelmouss" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Part 6 – Oasis Lodge Hotel</h3>
+      <div class="iframeWrap">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/2pmv6gddYDw" title="Part 6 – Oasis Lodge Hotel" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Part 7 – The Sahara Desert</h3>
+      <div class="iframeWrap">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/30JojXt6I54" title="Part 7 – The Sahara Desert" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Part 8 – Talouse Women’s Coop</h3>
+      <div class="iframeWrap">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/BxU6yC1H9Dg" title="Part 8 – Talouse Women’s Coop" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Coming Soon</h2>
+      <ul>
+        <li>Desert Camp</li>
+        <li>Hotel Kasbah</li>
+        <li>A Berber Town in Morocco</li>
+        <li>You won’t believe the beauty</li>
+        <li>Discover Amazraoute’s Museum</li>
+        <li>Fint</li>
+        <li>Palm View Palace</li>
+        <li>Tamegroute Village</li>
+        <li>Ait Benhaddou</li>
+        <li>The Caravan Trails of Morocco</li>
+        <li>Sand Coffee Marrakech</li>
+        <li>Walking Tour of Marrakech</li>
+        <li>Café de France</li>
+        <li>Argana Restaurant</li>
+        <li>Dune Rooftop Bar, Marrakech</li>
+        <li>Riad Zoraida</li>
+        <li>Morocco Recap</li>
+      </ul>
+      <p class="smallNote" style="text-align:left;">
+        As soon as each video is live, we’ll add it here as the next numbered part.
+      </p>
     </div>
   </section>
 
