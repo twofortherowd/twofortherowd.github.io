@@ -505,26 +505,6 @@
       border:1px solid rgba(0,0,0,.12);
       font-weight:900;
     }
-
-    /* NEW: map + key stops side-by-side */
-    .moroccoTopGrid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:12px;
-      max-width: 1000px;
-      margin: 0 auto;
-      align-items:start;
-    }
-    .moroccoTopGrid .card{
-      max-width:none; /* let the grid control width */
-      margin:0;
-    }
-    @media (max-width: 860px){
-      .moroccoTopGrid{
-        grid-template-columns: 1fr;
-      }
-    }
-
     @media (max-width: 760px){
       .routeGrid{ grid-template-columns: 1fr; }
     }
@@ -539,52 +519,30 @@
       main section{ padding-top: 12px; }
     }
 
-    /* ===== Morocco Route Map (ALL upgrades) ===== */
-
-    /* Map card "premium glow" */
-    .mapCard{
-      position:relative;
-      overflow:hidden;
-    }
-    .mapCard::before{
-      content:"";
-      position:absolute;
-      inset:-40px;
-      background: radial-gradient(circle at 25% 15%,
-        rgba(255,255,255,.55),
-        rgba(255,216,74,.18),
-        transparent 60%);
-      pointer-events:none;
-    }
-
-    /* Make map smaller */
+    /* ===== Morocco Route Map (smaller + premium) ===== */
     .routeMapWrap{
-      max-width:680px;
-      margin:0 auto;
-      position:relative;
-      z-index:1;
-    }
-    @media (max-width: 520px){
-      .routeMapWrap{ max-width:92%; }
+      max-width: 680px; /* smaller on desktop */
+      margin: 0 auto;
     }
 
-    /* Map styling + gentle hover */
+    .routeMapBtn{
+      border:0;
+      background:transparent;
+      padding:0;
+      display:block;
+      width:100%;
+      cursor: zoom-in;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     .routeMap{
       width:100%;
       height:auto;
       display:block;
       border:1px solid rgba(0,0,0,.10);
       border-radius:16px;
-      box-shadow:0 10px 25px rgba(0,0,0,.12);
-      background:rgba(255,255,255,.65);
-      transition: transform .25s ease, box-shadow .25s ease;
-      will-change: transform;
-      position:relative;
-      z-index:1;
-    }
-    .routeMap:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 16px 38px rgba(0,0,0,.16);
+      box-shadow: 0 10px 25px rgba(0,0,0,.12);
+      background: rgba(255,255,255,.65);
     }
 
     .routeStroke{
@@ -619,11 +577,78 @@
 
     .mapHint{
       font-size:13px;
-      opacity:.82;
+      opacity:.85;
       margin-top:10px;
-      text-align:center;
-      position:relative;
-      z-index:1;
+      text-align:left;
+    }
+
+    /* ===== Map Modal (tap-to-enlarge) ===== */
+    .mapModal{
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      background: rgba(0,0,0,.72);
+    }
+    .mapModal.open{ display:flex; }
+
+    .mapModalInner{
+      width: min(980px, 100%);
+      max-height: 92vh;
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.25);
+    }
+
+    .mapModalTopbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:10px 12px;
+      background: rgba(255,255,255,.95);
+      border-bottom: 1px solid rgba(0,0,0,.08);
+    }
+
+    .mapModalTitle{
+      font-weight: 900;
+      font-size: 14px;
+      text-align:left;
+    }
+
+    .mapCloseBtn{
+      border: 1px solid rgba(0,0,0,.12);
+      background: #fff;
+      border-radius: 12px;
+      padding: 8px 10px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(0,0,0,.10);
+    }
+
+    .mapModalBody{
+      max-height: calc(92vh - 46px);
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 12px;
+    }
+
+    .mapModalBody .routeMap{
+      width:100%;
+      height:auto;
+      border-radius:14px;
+    }
+
+    .mapZoomHint{
+      font-size: 13px;
+      opacity: .75;
+      margin: 10px 0 0;
+      text-align:left;
     }
   </style>
 
@@ -681,6 +706,46 @@
       window.addEventListener("scroll", toggle, {passive:true});
       toggle();
     }
+
+    /* ===== Map Modal logic ===== */
+    function openMapModal(){
+      const modal = document.getElementById("mapModal");
+      const body = document.getElementById("mapModalBody");
+      const svg = document.querySelector("#morocco .routeMap");
+
+      if(!modal || !body || !svg) return;
+
+      // Remove previous cloned SVG (keep hint paragraph)
+      body.querySelectorAll("svg").forEach(n => n.remove());
+
+      const clone = svg.cloneNode(true);
+      body.insertBefore(clone, body.firstChild);
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+
+      // lock background scroll
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMapModal(){
+      const modal = document.getElementById("mapModal");
+      if(!modal) return;
+
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      document.body.style.overflow = "";
+    }
+
+    window.addEventListener("click", (e) => {
+      const modal = document.getElementById("mapModal");
+      if(!modal || !modal.classList.contains("open")) return;
+      if(e.target === modal) closeMapModal();
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if(e.key === "Escape") closeMapModal();
+    });
 
     window.addEventListener("DOMContentLoaded", () => {
       const initialTab = TAB_IDS.includes(INITIAL_HASH) ? INITIAL_HASH : "home";
@@ -829,16 +894,15 @@
       <p>Along the way we met local artisans, visited women’s cooperatives producing traditional Moroccan products, explored ancient caravan routes, and discovered hidden oases that felt like something from another world.</p>
 
       <p>This Morocco series follows the full route of our journey — from city rooftops and bustling souks to remote desert dunes and mountain villages. Each stop along the way tells a different story about Morocco’s history, culture and landscapes.</p>
+
+      <h2>Our Route Through Morocco</h2>
     </div>
 
-    <!-- NEW: MAP + KEY STOPS SIDE-BY-SIDE -->
-    <div class="moroccoTopGrid">
+    <div class="card">
+      <h2>Route Map</h2>
 
-      <!-- MAP CARD -->
-      <div class="card mapCard">
-        <h2>Route Map</h2>
-
-        <div class="routeMapWrap" aria-label="Animated route map of Morocco">
+      <div class="routeMapWrap" aria-label="Tap to enlarge route map of Morocco">
+        <button class="routeMapBtn" type="button" onclick="openMapModal()" aria-label="Tap to enlarge route map">
           <svg class="routeMap" viewBox="0 0 900 520" role="img" aria-label="Morocco route map">
             <defs>
               <linearGradient id="paperGrad" x1="0" y1="0" x2="1" y2="1">
@@ -872,9 +936,11 @@
               </filter>
             </defs>
 
+            <!-- Background -->
             <rect x="0" y="0" width="900" height="520" fill="url(#paperGrad)"></rect>
             <rect x="0" y="0" width="900" height="520" fill="url(#dotPattern2)" opacity=".95"></rect>
 
+            <!-- Morocco silhouette (subtle) -->
             <path d="M240,80
                      C270,60 330,55 380,70
                      C410,82 445,92 500,90
@@ -890,12 +956,14 @@
                   stroke="rgba(0,0,0,.08)"
                   stroke-width="2"></path>
 
-            <g opacity=".10" transform="translate(760,88) rotate(10)">
+            <!-- Flag stamp (darker than before) -->
+            <g opacity=".18" transform="translate(760,88) rotate(10)">
               <rect x="-70" y="-40" width="140" height="80" rx="14" fill="#c1272d"></rect>
               <path d="M 0 -22 L 13 18 L -22 -4 L 22 -4 L -13 18 Z"
                     fill="none" stroke="#006233" stroke-width="5" stroke-linejoin="round"/>
             </g>
 
+            <!-- Route glow underlay -->
             <path
               d="M540,240 L495,220 L455,240 L420,260 L395,300 L380,340 L355,360 L420,290 L540,240"
               fill="none"
@@ -906,10 +974,12 @@
               opacity=".35"
               filter="url(#routeGlow)"
             />
+            <!-- Main route -->
             <path class="routeStroke"
               d="M540,240 L495,220 L455,240 L420,260 L395,300 L380,340 L355,360 L420,290 L540,240"
             />
 
+            <!-- 1 Marrakech -->
             <g class="pin p1">
               <circle cx="540" cy="240" r="12" fill="rgba(0,0,0,.88)"></circle>
               <circle cx="540" cy="240" r="6" fill="#ffd84a"></circle>
@@ -920,6 +990,7 @@
               </g>
             </g>
 
+            <!-- 2 Atlas -->
             <g class="pin p2">
               <circle cx="495" cy="220" r="11" fill="rgba(0,0,0,.88)"></circle>
               <circle cx="495" cy="220" r="5.5" fill="#ffd84a"></circle>
@@ -930,6 +1001,7 @@
               </g>
             </g>
 
+            <!-- 3 Ait Benhaddou -->
             <g class="pin p3">
               <circle cx="455" cy="240" r="11" fill="rgba(0,0,0,.88)"></circle>
               <circle cx="455" cy="240" r="5.5" fill="#ffd84a"></circle>
@@ -940,6 +1012,7 @@
               </g>
             </g>
 
+            <!-- 4 Ouarzazate -->
             <g class="pin p4">
               <circle cx="420" cy="260" r="11" fill="rgba(0,0,0,.88)"></circle>
               <circle cx="420" cy="260" r="5.5" fill="#ffd84a"></circle>
@@ -950,6 +1023,7 @@
               </g>
             </g>
 
+            <!-- 5 Zagora -->
             <g class="pin p5">
               <circle cx="395" cy="300" r="11" fill="rgba(0,0,0,.88)"></circle>
               <circle cx="395" cy="300" r="5.5" fill="#ffd84a"></circle>
@@ -960,6 +1034,7 @@
               </g>
             </g>
 
+            <!-- 6 Sahara -->
             <g class="pin p6">
               <circle cx="380" cy="340" r="11" fill="rgba(0,0,0,.88)"></circle>
               <circle cx="380" cy="340" r="5.5" fill="#ffd84a"></circle>
@@ -970,6 +1045,7 @@
               </g>
             </g>
 
+            <!-- 7 Tamegroute -->
             <g class="pin p7">
               <circle cx="355" cy="360" r="11" fill="rgba(0,0,0,.88)"></circle>
               <circle cx="355" cy="360" r="5.5" fill="#ffd84a"></circle>
@@ -980,6 +1056,7 @@
               </g>
             </g>
 
+            <!-- 8 Back north -->
             <g class="pin p8">
               <circle cx="420" cy="290" r="11" fill="rgba(0,0,0,.88)"></circle>
               <circle cx="420" cy="290" r="5.5" fill="#ffd84a"></circle>
@@ -991,16 +1068,17 @@
             </g>
 
           </svg>
-        </div>
-
-        <p class="mapHint">
-          This is a quick visual route guide (stylised). As the series grows, we’ll update the map pins to match each Part exactly.
-        </p>
+        </button>
       </div>
 
-      <!-- KEY STOPS CARD -->
-      <div class="card">
-        <h2>Key Stops</h2>
+      <p class="mapHint">
+        Tap the map to enlarge it (especially handy on the phone).
+      </p>
+    </div>
+
+    <div class="routeGrid" aria-label="Morocco route overview">
+      <div class="routeBox">
+        <h3>Key Stops</h3>
         <ul>
           <li>Marrakech</li>
           <li>Atlas Mountains</li>
@@ -1014,8 +1092,10 @@
           <li>Women’s cooperatives in Talouste and Aguelmouss</li>
           <li>Traditional kasbahs and desert towns</li>
         </ul>
+      </div>
 
-        <h3 style="margin-top:14px;">Follow the Journey</h3>
+      <div class="routeBox">
+        <h3>Follow the Journey</h3>
         <ul style="list-style:none; padding-left:0; margin:8px 0 0;">
           <li>🏜 Crossing the Sahara Desert</li>
           <li>🏔 Driving through the Atlas Mountains</li>
@@ -1043,7 +1123,6 @@
           <strong>Disclosure:</strong> If you book through our link, we may earn a small commission at no extra cost to you.
         </p>
       </div>
-
     </div>
 
     <h2>Morocco Videos</h2>
@@ -1311,7 +1390,7 @@
 
               <span class="platform" aria-label="Instagram">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 10.5zM18 6.8a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/>
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 10.5zM18 6.8a1 1.0 0 1 1-1 1 1 0 0 1 1-1z"/>
                 </svg>
                 Instagram
               </span>
@@ -1388,6 +1467,20 @@
 
 <div class="toTop" id="toTop">
   <a class="pill" href="#home" onclick="event.preventDefault(); show('home');" aria-label="Back to top">↑ Top</a>
+</div>
+
+<!-- Map Zoom Modal -->
+<div class="mapModal" id="mapModal" aria-hidden="true" role="dialog" aria-label="Enlarged route map">
+  <div class="mapModalInner" role="document">
+    <div class="mapModalTopbar">
+      <div class="mapModalTitle">Morocco Route Map</div>
+      <button class="mapCloseBtn" type="button" onclick="closeMapModal()" aria-label="Close map">Close ✕</button>
+    </div>
+
+    <div class="mapModalBody" id="mapModalBody">
+      <p class="mapZoomHint">Tip: pinch-to-zoom on your phone, then drag/scroll around.</p>
+    </div>
+  </div>
 </div>
 
 </body>
