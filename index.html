@@ -494,6 +494,21 @@
       margin:0;
     }
 
+    .shortGrid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:16px;
+      max-width:950px;
+      margin:0 auto;
+      justify-items:center;
+    }
+
+    .shortGrid .iframeWrap.short{
+      margin:0;
+      width:100%;
+      max-width:320px;
+    }
+
     .grid{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
@@ -913,6 +928,7 @@
       .heroBadgeRow{ gap:6px; }
       .card{ padding:18px; }
       p{ line-height:1.68; }
+      .shortGrid{ grid-template-columns:1fr; }
     }
 
     @media (max-width: 520px){
@@ -1188,7 +1204,7 @@
         <p>We booked our Morocco trip through <strong>TourRadar</strong>, and the tour itself was run by <strong>Morhara Morocco Tours</strong>. We also explored Marrakech on a walking tour with <strong>Ali from Get Marrakech</strong>, which gave us a brilliant intro to the city’s food, culture, history, and chaos.</p>
         <p>Over the course of the journey we travelled through the Atlas Mountains, visited Aït Benhaddou, stayed in desert locations, explored traditional villages, visited women’s cooperatives, and experienced a proper Sahara desert camp under the stars.</p>
         <p>This Morocco series follows the route of our journey and gives you a real feel for what a multi-day Morocco tour is actually like — the scenery, the stops, the pace, the good bits, and the little surprises along the way.</p>
-        </div>
+      </div>
 
       <div class="card">
         <h2>Route Map</h2>
@@ -1636,32 +1652,34 @@
     </section>
 
     <!-- REELS -->
-<section id="reels">
-  <h1>Reels & Shorts</h1>
+    <section id="reels">
+      <h1>Reels & Shorts</h1>
 
-  <div class="card">
-    <p>This is where the quick-hit stuff lives — travel reels, funny bits, short reviews, and the kind of clips that make people say, “Right, add that to the list.”</p>
-  </div>
+      <div class="card">
+        <p>This is where the quick-hit stuff lives — travel reels, funny bits, short reviews, and the kind of clips that make people say, “Right, add that to the list.”</p>
+      </div>
 
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/zwu2B4Q_QaI" title="Shorts video 1" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/PEQRwS4rTVI" title="Shorts video 2" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/ueyBfcQxNTg" title="Shorts video 3" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/DCCKVM5d3oc" title="Shorts video 4" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/_oVjZc-I6cg" title="Shorts video 5" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/RzSMfH-dDus" title="Shorts video 6" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/Q7XsYnMIcMQ" title="Shorts video 7" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/FKrVnmCNoWs" title="Shorts video 8" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/eM0wm_eMUW4" title="Shorts video 9" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/zSgvafzkVe8" title="Shorts video 10" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/NYxVTJZIk4A" title="Shorts video 11" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/YAfXvX6IEuA" title="Shorts video 12" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/485gQhKquvo" title="Shorts video 13" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/8nruOp2L53c" title="Shorts video 14" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/koDJ1hmqtnQ" title="Shorts video 15" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/lS9I6a85_Ts" title="Shorts video 16" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/QiLLpA5RH3I" title="Shorts video 17" allowfullscreen></iframe></div>
-  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/XqWMnS3cy2A" title="Shorts video 18" allowfullscreen></iframe></div>
-</section>
+      <div class="shortGrid">
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/zwu2B4Q_QaI" title="Shorts video 1" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/PEQRwS4rTVI" title="Shorts video 2" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/ueyBfcQxNTg" title="Shorts video 3" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/DCCKVM5d3oc" title="Shorts video 4" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/_oVjZc-I6cg" title="Shorts video 5" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/RzSMfH-dDus" title="Shorts video 6" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/Q7XsYnMIcMQ" title="Shorts video 7" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/FKrVnmCNoWs" title="Shorts video 8" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/eM0wm_eMUW4" title="Shorts video 9" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/zSgvafzkVe8" title="Shorts video 10" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/NYxVTJZIk4A" title="Shorts video 11" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/YAfXvX6IEuA" title="Shorts video 12" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/485gQhKquvo" title="Shorts video 13" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/8nruOp2L53c" title="Shorts video 14" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/koDJ1hmqtnQ" title="Shorts video 15" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/lS9I6a85_Ts" title="Shorts video 16" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/QiLLpA5RH3I" title="Shorts video 17" allowfullscreen></iframe></div>
+        <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/XqWMnS3cy2A" title="Shorts video 18" allowfullscreen></iframe></div>
+      </div>
+    </section>
 
     <!-- TOURRADAR -->
     <section id="tourradar">
