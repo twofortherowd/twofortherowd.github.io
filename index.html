@@ -80,9 +80,9 @@
     body{
       margin:0;
       font-family:"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size:14px;
+      font-size:13px;
       font-weight:400;
-      line-height:1.72;
+      line-height:1.68;
       letter-spacing:0;
       color:var(--text);
       text-align:center;
@@ -100,21 +100,21 @@
     }
 
     p{
-      margin:0 0 1rem;
+      margin:0 0 .9rem;
       font-size:1rem;
       font-weight:400;
-      line-height:1.75;
+      line-height:1.72;
       color:var(--text);
     }
 
     ul, ol{
-      margin:0 0 1rem 1.2rem;
-      padding-left:1.1rem;
+      margin:0 0 .95rem 1.15rem;
+      padding-left:1rem;
     }
 
     li{
-      margin-bottom:.45rem;
-      line-height:1.7;
+      margin-bottom:.4rem;
+      line-height:1.65;
       color:var(--text);
     }
 
@@ -126,24 +126,24 @@
       font-family:"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color:var(--accent);
       font-weight:800;
-      line-height:1.2;
+      line-height:1.18;
       letter-spacing:-0.02em;
       margin-top:0;
     }
 
     h1{
-      margin:10px 0 16px;
-      font-size:clamp(2rem, 4vw, 3rem);
+      margin:8px 0 14px;
+      font-size:clamp(1.85rem, 3.7vw, 2.7rem);
     }
 
     h2{
-      margin:20px 0 12px;
-      font-size:clamp(1.45rem, 2.5vw, 2rem);
+      margin:18px 0 10px;
+      font-size:clamp(1.3rem, 2.3vw, 1.8rem);
     }
 
     h3{
-      margin:16px 0 10px;
-      font-size:clamp(1.12rem, 1.9vw, 1.3rem);
+      margin:14px 0 8px;
+      font-size:clamp(1.05rem, 1.8vw, 1.22rem);
     }
 
     a{
@@ -177,7 +177,7 @@
       max-width:96%;
       height:auto;
       display:block;
-      margin:0 auto 18px auto;
+      margin:0 auto 16px auto;
     }
 
     .topline{
@@ -190,12 +190,12 @@
     }
 
     .email{
-      font-size:15px;
+      font-size:14px;
       font-weight:700;
       letter-spacing:.01em;
       background:rgba(255,255,255,.68);
       border:1px solid var(--border);
-      padding:9px 14px;
+      padding:8px 13px;
       border-radius:999px;
       box-shadow:var(--shadowSoft);
     }
@@ -210,13 +210,13 @@
 
     .pill{
       display:inline-block;
-      padding:10px 14px;
+      padding:9px 13px;
       text-decoration:none;
       color:var(--text);
       background:rgba(255,255,255,.9);
       border:1px solid rgba(0,0,0,.12);
       border-radius:999px;
-      font-size:14px;
+      font-size:13px;
       font-weight:700;
       line-height:1.2;
       box-shadow:0 3px 8px rgba(0,0,0,.08);
@@ -239,8 +239,8 @@
     }
 
     .pill.icon{
-      width:44px;
-      height:44px;
+      width:42px;
+      height:42px;
       padding:0;
       display:inline-flex;
       align-items:center;
@@ -248,8 +248,8 @@
     }
 
     .pill.icon svg{
-      width:22px;
-      height:22px;
+      width:21px;
+      height:21px;
       display:block;
       fill:currentColor;
     }
@@ -259,9 +259,9 @@
       color:#fff;
       border-color:#111;
       box-shadow:0 10px 24px rgba(0,0,0,.18);
-      font-size:15px;
+      font-size:14px;
       font-weight:700;
-      padding:12px 18px;
+      padding:11px 17px;
     }
 
     .pill.ctaPrimary:hover{
@@ -271,14 +271,14 @@
 
     .pill.ctaSecondary{
       background:rgba(255,255,255,.95);
-      font-size:15px;
+      font-size:14px;
       font-weight:700;
-      padding:12px 18px;
+      padding:11px 17px;
     }
 
     @media (max-width: 380px){
-      .pill.icon{ width:40px; height:40px; }
-      .pill.icon svg{ width:20px; height:20px; }
+      .pill.icon{ width:38px; height:38px; }
+      .pill.icon svg{ width:19px; height:19px; }
       .social{ gap:8px; }
     }
 
@@ -294,30 +294,30 @@
       border:0;
     }
 
-nav{
-  position:relative;
-  z-index:50;
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin:10px auto 12px;
-  padding:12px;
-  max-width:1100px;
-  border:1px solid rgba(0,0,0,.08);
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  border-radius:16px;
-  box-shadow:0 10px 28px rgba(0,0,0,.08);
-}
+    nav{
+      position:relative;
+      z-index:50;
+      display:flex;
+      gap:9px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin:10px auto 12px;
+      padding:11px;
+      max-width:1100px;
+      border:1px solid rgba(0,0,0,.08);
+      background:rgba(255,255,255,.55);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      border-radius:16px;
+      box-shadow:0 10px 28px rgba(0,0,0,.08);
+    }
 
     .tabBtn{
-      padding:10px 14px;
+      padding:9px 13px;
       border:1px solid rgba(0,0,0,.10);
       border-radius:12px;
       background:var(--cardSolid);
-      font-size:15px;
+      font-size:14px;
       font-weight:700;
       line-height:1.2;
       cursor:pointer;
@@ -357,7 +357,7 @@ nav{
       border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:24px;
+      padding:20px;
       text-align:left;
       max-width:900px;
       margin:16px auto;
@@ -394,50 +394,52 @@ nav{
 
     .heroIntro{
       display:grid;
-      gap:14px;
+      gap:12px;
       position:relative;
       z-index:1;
     }
 
-.heroBadge{
-  background:transparent;
-  border:none;
-  font-weight:600;
-  font-size:12px;
-  opacity:.8;
-}
+    .heroBadgeRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin:4px 0 8px;
+      justify-content:center;
+    }
 
-.heroBadge{
-  display:inline-block;
-  padding:6px 10px;
-  border-radius:8px;
-  background:rgba(255,255,255,.65);
-  border:1px solid rgba(0,0,0,.08);
-  font-size:12px;
-  font-weight:600;
-  letter-spacing:.2px;
-  box-shadow:none;
-}
+    .heroBadge{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:8px;
+      background:rgba(255,255,255,.65);
+      border:1px solid rgba(0,0,0,.08);
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:.2px;
+      box-shadow:none;
+      opacity:.9;
+    }
 
     .heroCtas{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
-      margin-top:8px;
+      gap:10px;
+      margin-top:6px;
     }
 
     .lead{
-      font-size:1.1rem;
+      font-size:1.05rem;
       font-weight:400;
-      line-height:1.75;
+      line-height:1.7;
       margin-top:0;
+      margin-bottom:.8rem;
     }
 
     .smallNote{
       max-width:900px;
-      margin:10px auto 0;
-      font-size:14px;
-      line-height:1.65;
+      margin:8px auto 0;
+      font-size:13px;
+      line-height:1.55;
       color:var(--muted);
       text-align:center;
     }
@@ -450,7 +452,7 @@ nav{
       width:100%;
       max-width:720px;
       border-radius:14px;
-      margin:10px auto 0;
+      margin:10px auto 6px;
       box-shadow:var(--shadow);
       background:#000;
       display:block;
@@ -539,20 +541,7 @@ nav{
       gap:12px;
       flex-wrap:wrap;
       justify-content:flex-start;
-      margin-top:14px;
-    }
-
-    .quickLinks{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:10px;
       margin-top:12px;
-    }
-
-    .quickLinks .pill{
-      text-align:center;
-      font-weight:700;
-      padding:12px 14px;
     }
 
     .formGrid{
@@ -562,7 +551,7 @@ nav{
 
     .field label{
       display:block;
-      font-size:15px;
+      font-size:14px;
       font-weight:700;
       margin:6px 0 6px;
     }
@@ -570,12 +559,12 @@ nav{
     .input,
     .textarea{
       width:100%;
-      padding:12px;
+      padding:11px 12px;
       border-radius:12px;
       border:1px solid rgba(0,0,0,.15);
       background:rgba(255,255,255,.92);
       font:inherit;
-      font-size:15px;
+      font-size:14px;
       line-height:1.5;
       color:var(--text);
     }
@@ -587,11 +576,11 @@ nav{
 
     .btn{
       display:inline-block;
-      padding:12px 16px;
+      padding:11px 15px;
       border:none;
       border-radius:12px;
       background:#fff;
-      font-size:15px;
+      font-size:14px;
       font-weight:700;
       line-height:1.2;
       cursor:pointer;
@@ -605,8 +594,8 @@ nav{
     }
 
     .disclosure{
-      font-size:13px;
-      line-height:1.6;
+      font-size:12px;
+      line-height:1.55;
       color:var(--muted);
       margin-top:10px;
       padding-top:10px;
@@ -615,13 +604,13 @@ nav{
 
     .tipBox{
       margin-top:16px;
-      padding:14px 16px;
+      padding:13px 15px;
       border-radius:14px;
       background:rgba(255,255,255,.74);
       border:1px solid rgba(0,0,0,.10);
       box-shadow:0 6px 14px rgba(0,0,0,.06);
-      font-size:15px;
-      line-height:1.7;
+      font-size:14px;
+      line-height:1.65;
     }
 
     .stats{
@@ -635,13 +624,13 @@ nav{
       background:rgba(255,255,255,.78);
       border:1px solid rgba(0,0,0,.10);
       border-radius:14px;
-      padding:14px;
+      padding:13px;
       box-shadow:0 6px 14px rgba(0,0,0,.08);
       text-align:left;
     }
 
     .stat .k{
-      font-size:12px;
+      font-size:11px;
       line-height:1.3;
       opacity:.75;
       font-weight:700;
@@ -651,9 +640,9 @@ nav{
     }
 
     .stat .v{
-      font-size:18px;
+      font-size:16px;
       font-weight:700;
-      line-height:1.35;
+      line-height:1.3;
     }
 
     .platforms{
@@ -673,7 +662,7 @@ nav{
       background:rgba(255,255,255,.72);
       border:1px solid rgba(0,0,0,.10);
       box-shadow:0 4px 10px rgba(0,0,0,.06);
-      font-size:14px;
+      font-size:13px;
       font-weight:700;
       line-height:1.1;
     }
@@ -696,11 +685,11 @@ nav{
     .tag,
     .seoTag{
       display:inline-block;
-      padding:8px 10px;
+      padding:7px 10px;
       border-radius:999px;
       border:1px solid rgba(0,0,0,.10);
       background:rgba(255,255,255,.82);
-      font-size:13px;
+      font-size:12px;
       font-weight:700;
       line-height:1.2;
       box-shadow:0 4px 10px rgba(0,0,0,.06);
@@ -713,8 +702,8 @@ nav{
     footer{
       margin-top:10px;
       padding:18px 0 10px;
-      font-size:14px;
-      line-height:1.6;
+      font-size:13px;
+      line-height:1.55;
       color:var(--muted);
       opacity:.95;
     }
@@ -738,7 +727,7 @@ nav{
       background:rgba(255,255,255,.72);
       border:1px solid rgba(0,0,0,.10);
       border-radius:14px;
-      padding:16px;
+      padding:15px;
       box-shadow:0 6px 14px rgba(0,0,0,.08);
       text-align:left;
     }
@@ -758,19 +747,12 @@ nav{
       margin-top:12px;
     }
 
-    .mt10{
+    .mapHint{
+      font-size:12px;
+      line-height:1.55;
+      color:var(--muted);
       margin-top:10px;
-    }
-
-    .highlight{
-      display:inline-block;
-      padding:7px 11px;
-      border-radius:999px;
-      background:#fff;
-      border:1px solid rgba(0,0,0,.12);
-      font-size:14px;
-      font-weight:700;
-      line-height:1.2;
+      text-align:left;
     }
 
     .routeMapWrap{
@@ -834,14 +816,6 @@ nav{
     .pin.p7{ animation-delay:2.05s; }
     .pin.p8{ animation-delay:2.35s; }
 
-    .mapHint{
-      font-size:13px;
-      line-height:1.6;
-      color:var(--muted);
-      margin-top:10px;
-      text-align:left;
-    }
-
     .mapModal{
       position:fixed;
       inset:0;
@@ -878,7 +852,7 @@ nav{
     }
 
     .mapModalTitle{
-      font-size:14px;
+      font-size:13px;
       font-weight:700;
       line-height:1.3;
       text-align:left;
@@ -889,7 +863,7 @@ nav{
       background:#fff;
       border-radius:12px;
       padding:8px 10px;
-      font-size:14px;
+      font-size:13px;
       font-weight:700;
       line-height:1.2;
       cursor:pointer;
@@ -910,8 +884,8 @@ nav{
     }
 
     .mapZoomHint{
-      font-size:13px;
-      line-height:1.6;
+      font-size:12px;
+      line-height:1.55;
       color:var(--muted);
       margin:10px 0 0;
       text-align:left;
@@ -930,19 +904,15 @@ nav{
 
     @media (max-width: 700px){
       .logo{ width:95%; }
-      .email{ font-size:14px; }
+      .email{ font-size:13px; }
       nav{ gap:8px; }
-      .tabBtn{ padding:10px 12px; }
+      .tabBtn{ padding:9px 11px; }
       .heroVideo{ max-width:100%; }
       main section{ padding-top:12px; }
-      .lead{ font-size:1.05rem; }
-      .heroBadgeRow{ gap:8px; }
-      .card{ padding:20px; }
-      p{ line-height:1.72; }
-    }
-
-    @media (max-width: 680px){
-      .quickLinks{ grid-template-columns:1fr; }
+      .lead{ font-size:1rem; }
+      .heroBadgeRow{ gap:6px; }
+      .card{ padding:18px; }
+      p{ line-height:1.68; }
     }
 
     @media (max-width: 520px){
@@ -1133,13 +1103,12 @@ nav{
             <span class="heroBadge">🌾 Gluten-free friendly</span>
           </div>
 
-                <video class="heroVideo" controls preload="metadata">
-        <source src="video/who-are-we.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-
-         
           <p class="lead"><strong>Two for the Row’d</strong> is what happens when two Irish people with a love of a good story, a bit of craic, and the odd adventure decide to bring the internet with them.</p>
+
+          <video class="heroVideo" controls preload="metadata">
+            <source src="video/who-are-we.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
 
           <p>We’re Nicola and Padraig — husband, wife, and travel partners in crime from Carlow — sharing honest travel reviews, hidden gems, hotel stays, gluten-free finds, road-trip moments, and the kind of real-world adventures that don’t come wrapped in a polished postcard.</p>
 
@@ -1162,11 +1131,16 @@ nav{
 
           <p>We’re proud TourRadar Ambassadors and we share the trips, tours, and travel experiences we’ve genuinely enjoyed — especially for people who want the adventure without the headache of planning every single detail themselves.</p>
 
-        <p class="disclosure">
-          <strong>Disclosure:</strong> Some links on this site may be affiliate links. If you book through them, we may earn a small commission at no extra cost to you. We only share things we genuinely rate.
-        </p>
-      </div>
+          <div class="heroCtas">
+            <a class="pill ctaPrimary" href="#morocco" onclick="event.preventDefault(); show('morocco');">Start with Morocco</a>
+            <a class="pill ctaSecondary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener">Browse Trips We Recommend</a>
+          </div>
 
+          <p class="disclosure">
+            <strong>Disclosure:</strong> Some links on this site may be affiliate links. If you book through them, we may earn a small commission at no extra cost to you. We only share things we genuinely rate.
+          </p>
+        </div>
+      </div>
 
       <div class="card">
         <h2>Why people follow along</h2>
@@ -1691,6 +1665,15 @@ nav{
 
         <p>If you’ve been searching for <strong>TourRadar reviews</strong>, <strong>TourRadar Morocco tours</strong>, <strong>Morocco tour reviews</strong>, or wondering <strong>is TourRadar worth it</strong>, our honest answer is yes — especially if you want less stress and more actual holiday.</p>
 
+        <div class="seoTags" aria-label="TourRadar topics">
+          <span class="seoTag">TourRadar reviews</span>
+          <span class="seoTag">TourRadar Morocco tours</span>
+          <span class="seoTag">best Morocco tours</span>
+          <span class="seoTag">multi-day tours Morocco</span>
+          <span class="seoTag">small group tours</span>
+          <span class="seoTag">is TourRadar worth it</span>
+        </div>
+
         <div class="links">
           <a class="pill ctaPrimary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener">
             Browse Trips We Recommend
@@ -1707,15 +1690,6 @@ nav{
         <p class="disclosure">
           <strong>Disclosure:</strong> If you book through our link, we may earn a small commission at no extra cost to you. Any available discounts or welcome offers are applied automatically where eligible.
         </p>
-
-        <div class="seoTags" aria-label="TourRadar topics">
-          <span class="seoTag">TourRadar reviews</span>
-          <span class="seoTag">TourRadar Morocco tours</span>
-          <span class="seoTag">best Morocco tours</span>
-          <span class="seoTag">multi-day tours Morocco</span>
-          <span class="seoTag">small group tours</span>
-          <span class="seoTag">is TourRadar worth it</span>
-        </div>
       </div>
     </section>
 
