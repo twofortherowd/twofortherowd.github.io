@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>
@@ -13,31 +12,62 @@
 
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Two for the Row’d</title>
-  <meta name="description" content="Nicola & Padraig — Irish travel storytellers sharing hidden gems, gluten-free finds, and real-world adventures." />
+  <title>Two for the Row’d | Honest Travel Reviews, Hidden Gems & TourRadar Morocco Tours</title>
+  <meta name="description" content="Nicola & Padraig of Two for the Row’d share honest travel reviews, hidden gems, gluten-free finds, hotel stays, and TourRadar Morocco tour experiences with real videos, tips, and recommendations." />
 
-  <!-- Basic SEO / Sharing -->
   <link rel="canonical" href="https://twofortherowd.com/" />
   <meta name="theme-color" content="#ffd84a" />
 
-  <meta property="og:title" content="Two for the Row’d" />
-  <meta property="og:description" content="Irish travel storytellers sharing hidden gems, gluten-free finds, and real-world adventures." />
+  <meta property="og:title" content="Two for the Row’d | Honest Travel Reviews & TourRadar Morocco Tours" />
+  <meta property="og:description" content="Real travel, no fluff. Honest travel reviews, hidden gems, gluten-free finds, hotel stays, and our TourRadar Morocco tour experience." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://twofortherowd.com/" />
   <meta property="og:image" content="https://twofortherowd.com/img/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Two for the Row’d",
+    "url":"https://twofortherowd.com/",
+    "description":"Irish travel storytellers sharing honest travel reviews, hidden gems, gluten-free finds, hotel stays, and TourRadar Morocco tour experiences.",
+    "publisher":{
+      "@type":"Organization",
+      "name":"Two for the Row’d",
+      "url":"https://twofortherowd.com/",
+      "sameAs":[
+        "https://www.instagram.com/twofortherowd25",
+        "https://www.tiktok.com/@twofortherowd",
+        "https://www.youtube.com/@twofortherowd"
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Nicola",
+    "url":"https://twofortherowd.com/"
+  }
+  </script>
+
   <style>
     :root{
       --bg:#ffd84a;
       --text:#1b1b1b;
-      --card: rgba(255,255,255,.75);
+      --card: rgba(255,255,255,.78);
       --cardSolid:#ffffff;
       --border: rgba(0,0,0,.10);
       --shadow: 0 10px 25px rgba(0,0,0,.12);
       --shadowSoft: 0 6px 14px rgba(0,0,0,.10);
       --radius:16px;
       --radius2:18px;
+      --accent:#111111;
+      --soft:#fff7d1;
+      --goldGlow: rgba(255,255,255,.45);
     }
 
     *{ box-sizing:border-box; }
@@ -46,10 +76,13 @@
     body{
       margin:0;
       font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background:var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.35), transparent 30%),
+        radial-gradient(circle at top right, rgba(255,255,255,.22), transparent 25%),
+        linear-gradient(180deg, #ffd84a 0%, #ffd84a 60%, #ffdc5c 100%);
       color:var(--text);
       text-align:center;
-      line-height:1.5;
+      line-height:1.55;
     }
 
     .wrap{
@@ -58,7 +91,21 @@
       padding:0 14px 28px;
     }
 
-    header{ padding:18px 16px 8px; }
+    header{
+      padding:18px 16px 8px;
+      position:relative;
+    }
+
+    header::after{
+      content:"";
+      display:block;
+      width:min(220px, 50%);
+      height:6px;
+      margin:8px auto 0;
+      border-radius:999px;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.9), transparent);
+      opacity:.7;
+    }
 
     .logo{
       width:720px;
@@ -98,20 +145,21 @@
     .pill{
       text-decoration:none;
       color:var(--text);
-      background:rgba(255,255,255,.75);
+      background:rgba(255,255,255,.85);
       border:1px solid rgba(0,0,0,.12);
       border-radius:999px;
       font-weight:800;
       font-size:14px;
       box-shadow: 0 3px 8px rgba(0,0,0,.08);
-      transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+      transition: transform .16s ease, background .16s ease, box-shadow .16s ease;
       display:inline-block;
       padding:10px 14px;
+      will-change: transform;
     }
 
     .pill:hover{
       background:#fff;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
       box-shadow: 0 6px 14px rgba(0,0,0,.12);
     }
 
@@ -136,6 +184,26 @@
       fill: currentColor;
     }
 
+    .pill.ctaPrimary{
+      background:#111;
+      color:#fff;
+      border-color:#111;
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+      font-size:15px;
+      padding:12px 18px;
+    }
+
+    .pill.ctaPrimary:hover{
+      background:#000;
+      color:#fff;
+    }
+
+    .pill.ctaSecondary{
+      background:rgba(255,255,255,.92);
+      font-size:15px;
+      padding:12px 18px;
+    }
+
     @media (max-width: 380px){
       .pill.icon{ width:40px; height:40px; }
       .pill.icon svg{ width:20px; height:20px; }
@@ -151,15 +219,22 @@
     }
 
     nav{
-      border-top: 1px solid rgba(0,0,0,.06);
-      border-bottom: 1px solid rgba(0,0,0,.08);
+      position:sticky;
+      top:0;
+      z-index:50;
+      border:1px solid rgba(0,0,0,.08);
       display:flex;
       gap:10px;
       justify-content:center;
       flex-wrap:wrap;
       margin:10px auto 12px;
-      padding:10px 12px;
+      padding:12px;
       max-width:1100px;
+      background:rgba(255,255,255,.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius:16px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.08);
     }
 
     .tabBtn{
@@ -170,13 +245,19 @@
       font-weight:900;
       cursor:pointer;
       box-shadow: var(--shadowSoft);
-      transition: transform .12s ease, background .12s ease;
+      transition: transform .16s ease, background .16s ease;
+      will-change: transform;
     }
-    .tabBtn:hover{ transform:translateY(-1px); }
+
+    .tabBtn:hover{
+      transform:translateY(-2px);
+    }
+
     .tabBtn[aria-selected="true"]{
       background:rgba(0,0,0,.08);
       border-color: rgba(0,0,0,.18);
     }
+
     .tabBtn:focus-visible{
       outline:3px solid rgba(0,0,0,.35);
       outline-offset:3px;
@@ -189,27 +270,104 @@
       animation: fadeIn .18s ease;
       scroll-margin-top: 20px;
     }
-    main section.active{ display:block; }
+
+    main section.active{
+      display:block;
+    }
 
     @keyframes fadeIn{
       from{ opacity:0; transform: translateY(4px); }
       to{ opacity:1; transform: translateY(0); }
     }
 
-    h1{ margin:10px 0 14px; font-size:34px; letter-spacing:-.4px; }
-    h2{ margin:18px 0 10px; }
-    h3{ margin:14px 0 8px; }
+    h1{
+      margin:10px 0 14px;
+      font-size:34px;
+      letter-spacing:-.6px;
+      line-height:1.05;
+    }
+
+    h2{
+      margin:18px 0 10px;
+      letter-spacing:-.3px;
+    }
+
+    h3{
+      margin:14px 0 8px;
+    }
 
     .card{
       background:var(--card);
       border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow: var(--shadow);
-      padding:18px;
+      padding:20px;
       text-align:left;
       max-width:900px;
       margin:16px auto;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(3px);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(0,0,0,.14);
+    }
+
+    .heroCard{
+      background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,247,209,.96));
+      position:relative;
+      overflow:hidden;
+    }
+
+    .heroCard::before{
+      content:"";
+      position:absolute;
+      inset:auto -60px -60px auto;
+      width:220px;
+      height:220px;
+      background: radial-gradient(circle, rgba(255,255,255,.55), transparent 70%);
+      pointer-events:none;
+    }
+
+    .heroIntro{
+      display:grid;
+      gap:14px;
+      position:relative;
+      z-index:1;
+    }
+
+    .heroBadgeRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:6px 0 2px;
+    }
+
+    .heroBadge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.08);
+      font-size:13px;
+      font-weight:800;
+      box-shadow: 0 6px 14px rgba(0,0,0,.06);
+    }
+
+    .heroCtas{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:8px;
+    }
+
+    .lead{
+      font-size:18px;
+      line-height:1.6;
+      margin-top:0;
     }
 
     .smallNote{
@@ -242,6 +400,7 @@
       position:relative;
       aspect-ratio: 16 / 9;
     }
+
     iframe{
       position:absolute;
       inset:0;
@@ -253,6 +412,18 @@
     .iframeWrap.short{
       max-width:420px;
       aspect-ratio: 9 / 16;
+    }
+
+    .videoGrid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:16px;
+      max-width:1000px;
+      margin:0 auto;
+    }
+
+    .videoGrid .card{
+      margin:0;
     }
 
     .grid{
@@ -274,6 +445,7 @@
       display:block;
       background:#fff;
       object-position:center;
+      filter: saturate(1.02) contrast(1.02);
     }
 
     .grid img:hover{
@@ -281,7 +453,9 @@
       box-shadow: 0 16px 35px rgba(0,0,0,.20);
     }
 
-    .grid img.np11{ object-position: center 20%; }
+    .grid img.np11{
+      object-position: center 20%;
+    }
 
     .extraRow{
       display:grid;
@@ -291,6 +465,7 @@
       margin:14px auto 0;
       justify-items:center;
     }
+
     .extraRow img{
       width:100%;
       border-radius:var(--radius2);
@@ -301,7 +476,9 @@
       transition: transform .25s ease, box-shadow .25s ease;
       display:block;
       object-position:center;
+      filter: saturate(1.02) contrast(1.02);
     }
+
     .extraRow img:hover{
       transform: translateY(-4px);
       box-shadow: 0 16px 35px rgba(0,0,0,.20);
@@ -310,19 +487,25 @@
     @media (max-width: 900px){
       .grid{ grid-template-columns: repeat(2, 1fr); max-width:900px; }
       .extraRow{ grid-template-columns: repeat(2, 1fr); max-width:900px; }
+      .stats{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 760px){
+      .videoGrid{ grid-template-columns: 1fr; }
     }
 
     @media (max-width: 520px){
       .grid{ grid-template-columns: 1fr; }
       .extraRow{ grid-template-columns: 1fr; }
+      .stats{ grid-template-columns: 1fr; }
     }
 
     .links{
       display:flex;
-      gap:10px;
+      gap:12px;
       flex-wrap:wrap;
       justify-content:flex-start;
-      margin-top:10px;
+      margin-top:14px;
     }
 
     .quickLinks{
@@ -331,16 +514,21 @@
       gap:10px;
       margin-top:12px;
     }
+
     .quickLinks .pill{
       text-align:center;
       font-weight:900;
       padding:12px 14px;
     }
+
     @media (max-width: 680px){
       .quickLinks{ grid-template-columns: 1fr; }
     }
 
-    .formGrid{ display:grid; gap:10px; }
+    .formGrid{
+      display:grid;
+      gap:10px;
+    }
 
     .field label{
       display:block;
@@ -357,7 +545,10 @@
       font: inherit;
     }
 
-    .textarea{ min-height:140px; resize:vertical; }
+    .textarea{
+      min-height:140px;
+      resize:vertical;
+    }
 
     .btn{
       display:inline-block;
@@ -368,9 +559,14 @@
       font-weight:900;
       cursor:pointer;
       box-shadow: var(--shadowSoft);
-      transition: transform .12s ease;
+      transition: transform .16s ease;
+      will-change: transform;
     }
-    .btn:hover{ transform: translateY(-1px); }
+
+    .btn:hover{
+      transform: translateY(-2px);
+    }
+
     .btn:focus-visible{
       outline:3px solid rgba(0,0,0,.35);
       outline-offset:3px;
@@ -378,10 +574,19 @@
 
     .disclosure{
       font-size:13px;
-      opacity:.85;
+      opacity:.88;
       margin-top:10px;
       padding-top:10px;
       border-top:1px dashed rgba(0,0,0,.18);
+    }
+
+    .tipBox{
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:14px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(0,0,0,.10);
+      box-shadow: 0 6px 14px rgba(0,0,0,.06);
     }
 
     .stats{
@@ -390,6 +595,7 @@
       gap:10px;
       margin:12px 0 6px;
     }
+
     .stat{
       background: rgba(255,255,255,.75);
       border:1px solid rgba(0,0,0,.10);
@@ -398,6 +604,7 @@
       box-shadow: 0 6px 14px rgba(0,0,0,.08);
       text-align:left;
     }
+
     .stat .k{
       font-size:12px;
       opacity:.75;
@@ -406,16 +613,11 @@
       text-transform:uppercase;
       margin-bottom:4px;
     }
+
     .stat .v{
       font-size:18px;
       font-weight:900;
       line-height:1.15;
-    }
-    @media (max-width: 900px){
-      .stats{ grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 520px){
-      .stats{ grid-template-columns: 1fr; }
     }
 
     .platforms{
@@ -453,11 +655,30 @@
       gap:8px;
       margin-top:10px;
     }
+
     .tag{
       display:inline-block;
       padding:8px 10px;
       border-radius:999px;
       background: rgba(255,255,255,.75);
+      border:1px solid rgba(0,0,0,.10);
+      font-weight:800;
+      font-size:13px;
+      box-shadow: 0 4px 10px rgba(0,0,0,.06);
+    }
+
+    .seoTags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .seoTag{
+      display:inline-block;
+      padding:8px 10px;
+      border-radius:999px;
+      background:#fff;
       border:1px solid rgba(0,0,0,.10);
       font-weight:800;
       font-size:13px;
@@ -479,32 +700,36 @@
       display:none;
     }
 
-    /* Morocco extras */
     .routeGrid{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:12px;
       margin-top:10px;
     }
+
     .routeBox{
       background: rgba(255,255,255,.70);
       border:1px solid rgba(0,0,0,.10);
       border-radius:14px;
       padding:14px;
       box-shadow: 0 6px 14px rgba(0,0,0,.08);
+      text-align:left;
     }
+
     .routeBox ul{
       margin:8px 0 0;
       padding-left:18px;
     }
+
     .highlight{
       display:inline-block;
-      padding:6px 10px;
+      padding:7px 11px;
       border-radius:999px;
       background:#fff;
       border:1px solid rgba(0,0,0,.12);
       font-weight:900;
     }
+
     @media (max-width: 760px){
       .routeGrid{ grid-template-columns: 1fr; }
     }
@@ -517,11 +742,12 @@
       .tabBtn{ padding:10px 12px; }
       .heroVideo{ max-width:100%; }
       main section{ padding-top: 12px; }
+      .lead{ font-size:17px; }
+      .heroBadgeRow{ gap:8px; }
     }
 
-    /* ===== Morocco Route Map (smaller + premium) ===== */
     .routeMapWrap{
-      max-width: 680px; /* smaller on desktop */
+      max-width: 680px;
       margin: 0 auto;
     }
 
@@ -556,7 +782,10 @@
       animation: drawRoute 2.2s ease forwards;
       filter: url(#softShadow2);
     }
-    @keyframes drawRoute{ to{ stroke-dashoffset: 0; } }
+
+    @keyframes drawRoute{
+      to{ stroke-dashoffset: 0; }
+    }
 
     .pin{
       transform-origin: center;
@@ -564,7 +793,10 @@
       transform: scale(.2);
       animation: popPin .35s ease forwards;
     }
-    @keyframes popPin{ to{ opacity:1; transform: scale(1); } }
+
+    @keyframes popPin{
+      to{ opacity:1; transform: scale(1); }
+    }
 
     .pin.p1{ animation-delay: .25s; }
     .pin.p2{ animation-delay: .55s; }
@@ -582,7 +814,6 @@
       text-align:left;
     }
 
-    /* ===== Map Modal (tap-to-enlarge) ===== */
     .mapModal{
       position: fixed;
       inset: 0;
@@ -593,7 +824,10 @@
       padding: 14px;
       background: rgba(0,0,0,.72);
     }
-    .mapModal.open{ display:flex; }
+
+    .mapModal.open{
+      display:flex;
+    }
 
     .mapModalInner{
       width: min(980px, 100%);
@@ -707,7 +941,6 @@
       toggle();
     }
 
-    /* ===== Map Modal logic ===== */
     function openMapModal(){
       const modal = document.getElementById("mapModal");
       const body = document.getElementById("mapModalBody");
@@ -715,7 +948,6 @@
 
       if(!modal || !body || !svg) return;
 
-      // Remove previous cloned SVG (keep hint paragraph)
       body.querySelectorAll("svg").forEach(n => n.remove());
 
       const clone = svg.cloneNode(true);
@@ -723,8 +955,6 @@
 
       modal.classList.add("open");
       modal.setAttribute("aria-hidden","false");
-
-      // lock background scroll
       document.body.style.overflow = "hidden";
     }
 
@@ -764,780 +994,838 @@
       if(yearEl) yearEl.textContent = new Date().getFullYear();
     });
   </script>
-
 </head>
 
 <body>
+  <header>
+    <img src="img/Logo.jpg" class="logo" alt="Two for the Row’d logo">
 
-<header>
-  <img src="img/Logo.jpg" class="logo" alt="Two for the Row’d logo">
+    <div class="topline">
+      <div class="email">twofortherowd@gmail.com</div>
 
-  <div class="topline">
-    <div class="email">twofortherowd@gmail.com</div>
+      <div class="social" aria-label="Social links">
+        <a class="pill icon" href="https://www.facebook.com/share/1DKADAR7dV/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.5 1.6-1.5h1.6V5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.7V11H6.6v3h2.7v8h4.2z"/></svg>
+          <span class="sr-only">Facebook</span>
+        </a>
 
-    <div class="social" aria-label="Social links">
-      <a class="pill icon" href="https://www.facebook.com/share/1DKADAR7dV/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.5 1.6-1.5h1.6V5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.7V11H6.6v3h2.7v8h4.2z"/></svg>
-        <span class="sr-only">Facebook</span>
-      </a>
+        <a class="pill icon" href="https://www.instagram.com/twofortherowd25?igsh=MnptN2M5bDlqMXRx&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 10.5zM18 6.8a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+          <span class="sr-only">Instagram</span>
+        </a>
 
-      <a class="pill icon" href="https://www.instagram.com/twofortherowd25?igsh=MnptN2M5bDlqMXRx&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 10.5zM18 6.8a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
-        <span class="sr-only">Instagram</span>
-      </a>
+        <a class="pill icon" href="https://www.tiktok.com/@twofortherowd?_r=1&_t=ZN-93qLG9ldk18" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3c.6 3.5 2.7 5.6 6 5.9V12c-2.1 0-4-.7-5.6-2v6.4c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1V14c-.3-.2-.6-.3-.9-.3-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5V3h3.1z"/></svg>
+          <span class="sr-only">TikTok</span>
+        </a>
 
-      <a class="pill icon" href="https://www.tiktok.com/@twofortherowd?_r=1&_t=ZN-93qLG9ldk18" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3c.6 3.5 2.7 5.6 6 5.9V12c-2.1 0-4-.7-5.6-2v6.4c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1V14c-.3-.2-.6-.3-.9-.3-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5V3h3.1z"/></svg>
-        <span class="sr-only">TikTok</span>
-      </a>
-
-      <a class="pill icon" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
-        <span class="sr-only">YouTube</span>
-      </a>
-    </div>
-  </div>
-</header>
-
-<nav aria-label="Site navigation">
-  <button class="tabBtn" data-tab="home" onclick="show('home')" aria-selected="true">Home</button>
-  <button class="tabBtn" data-tab="morocco" onclick="show('morocco')" aria-selected="false">Morocco Series</button>
-  <button class="tabBtn" data-tab="brew" onclick="show('brew')" aria-selected="false">Brew for Two</button>
-  <button class="tabBtn" data-tab="hidden" onclick="show('hidden')" aria-selected="false">Hidden Ireland</button>
-  <button class="tabBtn" data-tab="hotel" onclick="show('hotel')" aria-selected="false">Hotel Stays</button>
-  <button class="tabBtn" data-tab="reels" onclick="show('reels')" aria-selected="false">Reels & Shorts</button>
-  <button class="tabBtn" data-tab="tourradar" onclick="show('tourradar')" aria-selected="false">TourRadar</button>
-  <button class="tabBtn" data-tab="ask" onclick="show('ask')" aria-selected="false">Ask Us</button>
-  <button class="tabBtn" data-tab="work" onclick="show('work')" aria-selected="false">Work With Us</button>
-</nav>
-
-<main class="wrap">
-
-  <!-- HOME -->
-  <section id="home" class="active">
-    <div class="card">
-      <h2>About Us</h2>
-
-      <p><strong>Two for the Row’d</strong> is what happens when two Irish people who love a good story, a bit of craic, and the odd adventure decide to bring the internet with them.</p>
-
-      <p>We’re Nicola and Padraig — husband, wife, and travel partners in crime from Carlow — and we document the places we go, the things we see, the food we eat (especially the gluten-free gems), and the little moments that make travel memorable.</p>
-
-      <p><strong>Not the polished postcard version.<br>The real one.</strong></p>
-
-      <p>We share travel the way it actually happens: getting lost, finding hidden gems, chatting to locals, laughing at ourselves, learning bits of history along the way, and always coming home with a story to tell.</p>
-
-      <p>From heritage spots around Ireland to far-flung corners of the world, our content blends:</p>
-
-      <ul>
-        <li>Storytelling</li>
-        <li>Humour</li>
-        <li>Local history</li>
-        <li>Practical tips for real travellers</li>
-        <li>A strong dose of Irish personality</li>
-      </ul>
-
-      <p>Across Instagram, TikTok, Facebook and YouTube, our growing audience follows along because it feels like they’re travelling with us, not watching from a distance.</p>
-
-      <p>We’re proud <strong>TourRadar Ambassadors</strong>, partnering with one of the world’s leading adventure travel platforms to inspire people to see more of the world — one trip, one story, one reel at a time.</p>
-
-      <div class="quickLinks" aria-label="Quick links">
-        <a class="pill" href="#morocco" onclick="event.preventDefault(); show('morocco');">Morocco Series</a>
-        <a class="pill" href="#tourradar" onclick="event.preventDefault(); show('tourradar');">Get €50 off on TourRadar</a>
-        <a class="pill" href="https://tinyurl.com/4azpatpn" target="_blank" rel="noopener">TourRadar Deals</a>
-        <a class="pill" href="#work" onclick="event.preventDefault(); show('work');">Work With Us</a>
-        <a class="pill" href="mailto:twofortherowd@gmail.com">Email Us</a>
-      </div>
-
-      <p class="disclosure">
-        <strong>Disclosure:</strong> Some links on this site may be affiliate links. If you book through them, we may earn a small commission at no extra cost to you. We only share things we genuinely recommend.
-      </p>
-    </div>
-
-    <video class="heroVideo" controls preload="metadata">
-      <source src="video/who-are-we.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <div class="smallNote">
-      If it takes a moment to load, hang tight — it’s worth it.
-    </div>
-
-    <div class="grid" aria-label="Two for the Row’d photos">
-      <img loading="lazy" src="img/NP2.jpeg" alt="Two for the Row’d travel photo">
-      <img loading="lazy" src="img/NP6.jpeg" alt="Two for the Row’d travel photo">
-      <img loading="lazy" src="img/NP7.jpeg" alt="Two for the Row’d travel photo">
-      <img loading="lazy" src="img/NP9.jpeg" alt="Two for the Row’d travel photo">
-      <img loading="lazy" src="img/NP10.jpeg" alt="Two for the Row’d travel photo">
-      <img class="np11" loading="lazy" src="img/NP11.jpeg" alt="Two for the Row’d travel photo">
-    </div>
-
-    <div class="extraRow" aria-label="More Two for the Row’d photos">
-      <img loading="lazy" src="img/NP1.jpeg" alt="Two for the Row’d travel photo">
-      <img loading="lazy" src="img/NP3.jpeg" alt="Two for the Row’d travel photo">
-      <img loading="lazy" src="img/NP4.jpeg" alt="Two for the Row’d travel photo">
-    </div>
-  </section>
-
-  <!-- MOROCCO SERIES -->
-  <section id="morocco">
-    <h1>Morocco Series</h1>
-
-    <div class="card">
-      <h2>Our Morocco Journey</h2>
-
-      <p>Morocco had been on our travel list for a long time, and this adventure brought us through some of the most incredible landscapes and cultural experiences we’ve ever seen. From the vibrant streets of Marrakech to the vast silence of the Sahara Desert, this journey took us across mountains, deserts, ancient towns and traditional villages.</p>
-
-      <p>Our trip was booked through <strong>TourRadar</strong> and the tour itself was run by the fantastic team at <strong>Morhara Morocco Tours</strong>, who guided us through some of the most breathtaking parts of the country. We also explored the historic streets of Marrakech on a walking tour with <strong>Ali from Get Marrakech</strong>, which gave us a brilliant introduction to the city's culture, food and history.</p>
-
-      <p>Over the course of the journey we travelled through the dramatic peaks of the Atlas Mountains, visited traditional Berber towns, explored UNESCO heritage sites, and experienced the magic of the Sahara — including an unforgettable night in a desert camp under the stars.</p>
-
-      <p>Along the way we met local artisans, visited women’s cooperatives producing traditional Moroccan products, explored ancient caravan routes, and discovered hidden oases that felt like something from another world.</p>
-
-      <p>This Morocco series follows the full route of our journey — from city rooftops and bustling souks to remote desert dunes and mountain villages. Each stop along the way tells a different story about Morocco’s history, culture and landscapes.</p>
-
-      <h2>Our Route Through Morocco</h2>
-    </div>
-
-    <div class="card">
-      <h2>Route Map</h2>
-
-      <div class="routeMapWrap" aria-label="Tap to enlarge route map of Morocco">
-        <button class="routeMapBtn" type="button" onclick="openMapModal()" aria-label="Tap to enlarge route map">
-          <svg class="routeMap" viewBox="0 0 900 520" role="img" aria-label="Morocco route map">
-            <defs>
-              <linearGradient id="paperGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="rgba(255,255,255,.88)"/>
-                <stop offset="1" stop-color="rgba(255,216,74,.22)"/>
-              </linearGradient>
-
-              <pattern id="dotPattern2" width="18" height="18" patternUnits="userSpaceOnUse">
-                <circle cx="3" cy="3" r="1.1" fill="rgba(0,0,0,.035)"/>
-              </pattern>
-
-              <linearGradient id="routeGrad2" x1="330" y1="400" x2="560" y2="190" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="rgba(0,0,0,.80)"/>
-                <stop offset="1" stop-color="rgba(0,0,0,.40)"/>
-              </linearGradient>
-
-              <filter id="softShadow2" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,.16)"/>
-              </filter>
-
-              <filter id="routeGlow" x="-40%" y="-40%" width="180%" height="180%">
-                <feGaussianBlur stdDeviation="3.5" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-
-              <filter id="labelShadow" x="-30%" y="-30%" width="160%" height="160%">
-                <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,.18)"/>
-              </filter>
-            </defs>
-
-            <!-- Background -->
-            <rect x="0" y="0" width="900" height="520" fill="url(#paperGrad)"></rect>
-            <rect x="0" y="0" width="900" height="520" fill="url(#dotPattern2)" opacity=".95"></rect>
-
-            <!-- Morocco silhouette (subtle) -->
-            <path d="M240,80
-                     C270,60 330,55 380,70
-                     C410,82 445,92 500,90
-                     C560,88 610,110 640,150
-                     C675,195 690,235 675,295
-                     C660,355 620,395 570,425
-                     C520,455 470,470 410,465
-                     C350,458 300,440 270,410
-                     C240,380 220,340 220,290
-                     C220,235 205,205 200,165
-                     C195,125 210,95 240,80 Z"
-                  fill="rgba(0,0,0,.035)"
-                  stroke="rgba(0,0,0,.08)"
-                  stroke-width="2"></path>
-
-            <!-- Flag stamp (darker than before) -->
-            <g opacity=".18" transform="translate(760,88) rotate(10)">
-              <rect x="-70" y="-40" width="140" height="80" rx="14" fill="#c1272d"></rect>
-              <path d="M 0 -22 L 13 18 L -22 -4 L 22 -4 L -13 18 Z"
-                    fill="none" stroke="#006233" stroke-width="5" stroke-linejoin="round"/>
-            </g>
-
-            <!-- Route glow underlay -->
-            <path
-              d="M540,240 L495,220 L455,240 L420,260 L395,300 L380,340 L355,360 L420,290 L540,240"
-              fill="none"
-              stroke="rgba(255,216,74,.85)"
-              stroke-width="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              opacity=".35"
-              filter="url(#routeGlow)"
-            />
-            <!-- Main route -->
-            <path class="routeStroke"
-              d="M540,240 L495,220 L455,240 L420,260 L395,300 L380,340 L355,360 L420,290 L540,240"
-            />
-
-            <!-- 1 Marrakech -->
-            <g class="pin p1">
-              <circle cx="540" cy="240" r="12" fill="rgba(0,0,0,.88)"></circle>
-              <circle cx="540" cy="240" r="6" fill="#ffd84a"></circle>
-              <circle cx="540" cy="240" r="18" fill="rgba(255,216,74,.18)"></circle>
-              <g transform="translate(560,224)" filter="url(#labelShadow)">
-                <rect x="0" y="0" rx="10" ry="10" width="118" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
-                <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">1 • Marrakech</text>
-              </g>
-            </g>
-
-            <!-- 2 Atlas -->
-            <g class="pin p2">
-              <circle cx="495" cy="220" r="11" fill="rgba(0,0,0,.88)"></circle>
-              <circle cx="495" cy="220" r="5.5" fill="#ffd84a"></circle>
-              <circle cx="495" cy="220" r="17" fill="rgba(255,216,74,.18)"></circle>
-              <g transform="translate(515,196)" filter="url(#labelShadow)">
-                <rect x="0" y="0" rx="10" ry="10" width="94" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
-                <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">2 • Atlas</text>
-              </g>
-            </g>
-
-            <!-- 3 Ait Benhaddou -->
-            <g class="pin p3">
-              <circle cx="455" cy="240" r="11" fill="rgba(0,0,0,.88)"></circle>
-              <circle cx="455" cy="240" r="5.5" fill="#ffd84a"></circle>
-              <circle cx="455" cy="240" r="17" fill="rgba(255,216,74,.18)"></circle>
-              <g transform="translate(475,252)" filter="url(#labelShadow)">
-                <rect x="0" y="0" rx="10" ry="10" width="146" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
-                <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">3 • Ait Benhaddou</text>
-              </g>
-            </g>
-
-            <!-- 4 Ouarzazate -->
-            <g class="pin p4">
-              <circle cx="420" cy="260" r="11" fill="rgba(0,0,0,.88)"></circle>
-              <circle cx="420" cy="260" r="5.5" fill="#ffd84a"></circle>
-              <circle cx="420" cy="260" r="17" fill="rgba(255,216,74,.18)"></circle>
-              <g transform="translate(440,270)" filter="url(#labelShadow)">
-                <rect x="0" y="0" rx="10" ry="10" width="132" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
-                <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">4 • Ouarzazate</text>
-              </g>
-            </g>
-
-            <!-- 5 Zagora -->
-            <g class="pin p5">
-              <circle cx="395" cy="300" r="11" fill="rgba(0,0,0,.88)"></circle>
-              <circle cx="395" cy="300" r="5.5" fill="#ffd84a"></circle>
-              <circle cx="395" cy="300" r="17" fill="rgba(255,216,74,.18)"></circle>
-              <g transform="translate(292,288)" filter="url(#labelShadow)">
-                <rect x="0" y="0" rx="10" ry="10" width="104" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
-                <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">5 • Zagora</text>
-              </g>
-            </g>
-
-            <!-- 6 Sahara -->
-            <g class="pin p6">
-              <circle cx="380" cy="340" r="11" fill="rgba(0,0,0,.88)"></circle>
-              <circle cx="380" cy="340" r="5.5" fill="#ffd84a"></circle>
-              <circle cx="380" cy="340" r="17" fill="rgba(255,216,74,.18)"></circle>
-              <g transform="translate(270,330)" filter="url(#labelShadow)">
-                <rect x="0" y="0" rx="10" ry="10" width="104" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
-                <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">6 • Sahara</text>
-              </g>
-            </g>
-
-            <!-- 7 Tamegroute -->
-            <g class="pin p7">
-              <circle cx="355" cy="360" r="11" fill="rgba(0,0,0,.88)"></circle>
-              <circle cx="355" cy="360" r="5.5" fill="#ffd84a"></circle>
-              <circle cx="355" cy="360" r="17" fill="rgba(255,216,74,.18)"></circle>
-              <g transform="translate(240,372)" filter="url(#labelShadow)">
-                <rect x="0" y="0" rx="10" ry="10" width="134" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
-                <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">7 • Tamegroute</text>
-              </g>
-            </g>
-
-            <!-- 8 Back north -->
-            <g class="pin p8">
-              <circle cx="420" cy="290" r="11" fill="rgba(0,0,0,.88)"></circle>
-              <circle cx="420" cy="290" r="5.5" fill="#ffd84a"></circle>
-              <circle cx="420" cy="290" r="17" fill="rgba(255,216,74,.18)"></circle>
-              <g transform="translate(442,292)" filter="url(#labelShadow)">
-                <rect x="0" y="0" rx="10" ry="10" width="124" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
-                <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">8 • Back north</text>
-              </g>
-            </g>
-
-          </svg>
-        </button>
-      </div>
-
-      <p class="mapHint">
-        Tap the map to enlarge it (especially handy on the phone).
-      </p>
-    </div>
-
-    <div class="routeGrid" aria-label="Morocco route overview">
-      <div class="routeBox">
-        <h3>Key Stops</h3>
-        <ul>
-          <li>Marrakech</li>
-          <li>Atlas Mountains</li>
-          <li>Ait Benhaddou</li>
-          <li>Berber villages and the Caravan Trails</li>
-          <li>Fint Oasis</li>
-          <li>Zagora and the edge of the Sahara</li>
-          <li>Desert Camp in the Sahara</li>
-          <li>Tamegroute Village</li>
-          <li>Amazraoute Museum</li>
-          <li>Women’s cooperatives in Talouste and Aguelmouss</li>
-          <li>Traditional kasbahs and desert towns</li>
-        </ul>
-      </div>
-
-      <div class="routeBox">
-        <h3>Follow the Journey</h3>
-        <ul style="list-style:none; padding-left:0; margin:8px 0 0;">
-          <li>🏜 Crossing the Sahara Desert</li>
-          <li>🏔 Driving through the Atlas Mountains</li>
-          <li>🏛 Exploring ancient kasbahs and caravan routes</li>
-          <li>🫖 Moroccan food, cafés and rooftop views</li>
-          <li>🐪 Desert camps and star-filled skies</li>
-          <li>🧶 Traditional crafts and women’s cooperatives</li>
-        </ul>
-
-        <p style="margin-top:12px;">
-          Each stop on our route has its own story — and we’re bringing you along for the full adventure.
-        </p>
-
-        <p style="margin:10px 0 0;">
-          <span class="highlight">Discount code: NicolaR50</span>
-        </p>
-
-        <div class="links" style="margin-top:10px;">
-          <a class="pill" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=Morocco+Tour" target="_blank" rel="noopener">
-            Book the Morocco Tour
-          </a>
-        </div>
-
-        <p class="disclosure" style="margin-top:10px;">
-          <strong>Disclosure:</strong> If you book through our link, we may earn a small commission at no extra cost to you.
-        </p>
+        <a class="pill icon" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+          <span class="sr-only">YouTube</span>
+        </a>
       </div>
     </div>
+  </header>
 
-<h2>Morocco Videos</h2>
+  <nav aria-label="Site navigation">
+    <button class="tabBtn" data-tab="home" onclick="show('home')" aria-selected="true">Home</button>
+    <button class="tabBtn" data-tab="morocco" onclick="show('morocco')" aria-selected="false">Morocco Series</button>
+    <button class="tabBtn" data-tab="brew" onclick="show('brew')" aria-selected="false">Brew for Two</button>
+    <button class="tabBtn" data-tab="hidden" onclick="show('hidden')" aria-selected="false">Hidden Ireland</button>
+    <button class="tabBtn" data-tab="hotel" onclick="show('hotel')" aria-selected="false">Hotel Stays</button>
+    <button class="tabBtn" data-tab="reels" onclick="show('reels')" aria-selected="false">Reels & Shorts</button>
+    <button class="tabBtn" data-tab="tourradar" onclick="show('tourradar')" aria-selected="false">TourRadar</button>
+    <button class="tabBtn" data-tab="ask" onclick="show('ask')" aria-selected="false">Ask Us</button>
+    <button class="tabBtn" data-tab="work" onclick="show('work')" aria-selected="false">Work With Us</button>
+  </nav>
 
-<div class="card">
-  <h3>Part 1 – Dublin to Marrakech</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/8sJj521AVo8" title="Part 1 – Dublin to Marrakech" allowfullscreen></iframe>
-  </div>
-</div>
+  <main class="wrap">
+    <!-- HOME -->
+    <section id="home" class="active">
+      <div class="card heroCard">
+        <div class="heroIntro">
+          <h1>Real travel, no fluff</h1>
 
-<div class="card">
-  <h3>Part 2 – Grand Mogador Menara Marrakech</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/dmtF1M-rzFk" title="Part 2 – Grand Mogador Menara Marrakech" allowfullscreen></iframe>
-  </div>
-</div>
+          <div class="heroBadgeRow" aria-label="What we cover">
+            <span class="heroBadge">🇮🇪 Hidden gems in Ireland</span>
+            <span class="heroBadge">🏨 Honest hotel stays</span>
+            <span class="heroBadge">☕ Café finds</span>
+            <span class="heroBadge">🌍 Tour-backed adventures</span>
+            <span class="heroBadge">🌾 Gluten-free friendly</span>
+          </div>
 
-<div class="card">
-  <h3>Part 3 – Les Jardins de Ouzazarte</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/ZTdiMwEIw3U" title="Part 3 – Les Jardins de Ouzazarte" allowfullscreen></iframe>
-  </div>
-</div>
+          <p class="lead"><strong>Two for the Row’d</strong> is what happens when two Irish people with a love of a good story, a bit of craic, and the odd adventure decide to bring the internet with them.</p>
 
-<div class="card">
-  <h3>Part 4 – Travelling through the Atlas</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/65d2mpohVo0" title="Part 4 – Travelling through the Atlas" allowfullscreen></iframe>
-  </div>
-</div>
+          <p>We’re Nicola and Padraig — husband, wife, and travel partners in crime from Carlow — sharing honest travel reviews, hidden gems, hotel stays, gluten-free finds, road-trip moments, and the kind of real-world adventures that don’t come wrapped in a polished postcard.</p>
 
-<div class="card">
-  <h3>Part 5 – Argan Oil Aguelmouss</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/dXUXZHXJPJM" title="Part 5 – Argan Oil Aguelmouss" allowfullscreen></iframe>
-  </div>
-</div>
+          <p><strong>The real version. The funny version. The “we nearly missed that” version.</strong></p>
 
-<div class="card">
-  <h3>Part 6 – Oasis Lodge Hotel</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/2pmv6gddYDw" title="Part 6 – Oasis Lodge Hotel" allowfullscreen></iframe>
-  </div>
-</div>
+          <p>We share travel the way it actually happens: getting lost, finding brilliant spots by accident, chatting to locals, eating well, learning bits of history, and always coming home with a story.</p>
 
-<div class="card">
-  <h3>Part 7 – The Sahara Desert</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/30JojXt6I54" title="Part 7 – The Sahara Desert" allowfullscreen></iframe>
-  </div>
-</div>
+          <p>From hidden places in Ireland to Morocco desert tours, city breaks, cafés, and small group adventures, our content blends:</p>
 
-<div class="card">
-  <h3>Part 8 – Talouse Women’s Co-op</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/BxU6yC1H9Dg" title="Part 8 – Talouse Women’s Co-op" allowfullscreen></iframe>
-  </div>
-</div>
+          <ul>
+            <li>Honest travel reviews</li>
+            <li>Humour and storytelling</li>
+            <li>Hidden gems and local history</li>
+            <li>Gluten-free travel finds</li>
+            <li>Practical tips for real travellers</li>
+            <li>Hotel stays and tour experiences we’d genuinely recommend</li>
+          </ul>
 
-<div class="card">
-  <h3>Part 9 – The Desert Camp</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/UgXF_vmRBtU" title="Part 9 – The Desert Camp" allowfullscreen></iframe>
-  </div>
-</div>
+          <p>Across Instagram, TikTok, Facebook and YouTube, our audience follows along because it feels like travelling with us — not being sold to from a distance.</p>
 
-<div class="card">
-  <h3>Part 10 – Desert Paradise</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/ghG4GeFna3U" title="Part 10 – Desert Paradise" allowfullscreen></iframe>
-  </div>
-</div>
+          <p>We’re proud TourRadar Ambassadors and we share the trips, tours, and travel experiences we’ve genuinely enjoyed — especially for people who want the adventure without the headache of planning every single detail themselves.</p>
 
-<div class="card">
-  <h3>Part 11 – Discovering the Beauty of Berber Morocco</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/CCBaRghdM90" title="Part 11 – Discovering the Beauty of Berber Morocco" allowfullscreen></iframe>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Part 12 – Kasbah Tazentoute</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/BWbyYA8C5b8" title="Part 12 – Kasbah Tazentoute" allowfullscreen></iframe>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Part 13 – Amazraou Museum</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/R0SmQLruczM" title="Part 13 – Amazraou Museum" allowfullscreen></iframe>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Part 14 – Tamegroute Village</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/KqbKl74j0ro" title="Part 14 – Tamegroute Village" allowfullscreen></iframe>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Part 15 – A Berber Town</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/ePGzmPhlXOg" title="Part 15 – A Berber Town" allowfullscreen></iframe>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Part 16 – From Aït Benhaddou to the Edge of the Sahara</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/r6v3it_5BxA" title="Part 16 – From Aït Benhaddou to the Edge of the Sahara" allowfullscreen></iframe>
-  </div>
-</div>
-
-<div class="card">
-  <h3>Part 17 – Local Family Shares Mint Tea</h3>
-  <div class="iframeWrap short">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/kbKx6r13AuY" title="Part 17 – Local Family Shares Mint Tea" allowfullscreen></iframe>
-  </div>
-</div>
-
-<div class="card">
-  <h2>Coming Soon</h2>
-  <ul>
-    <li>Fint</li>
-    <li>Palm View Palace</li>
-    <li>The Caravan Trails of Morocco</li>
-    <li>Sand Coffee Marrakech</li>
-    <li>Walking Tour of Marrakech</li>
-    <li>Café de France</li>
-    <li>Argana Restaurant</li>
-    <li>Dune Rooftop Bar, Marrakech</li>
-    <li>Riad Zoraida</li>
-    <li>Morocco Recap</li>
-  </ul>
-  <p class="smallNote" style="text-align:left;">
-    As soon as each video is live, we’ll add it here as the next numbered part.
-  </p>
-</div>
-  </section>
-
-  <!-- BREW -->
-  <section id="brew">
-    <h1>Brew for Two</h1>
-
-    <div class="card">
-      <p><strong>Brew for Two</strong> is our nationwide quest to find seriously good coffee — one café at a time.</p>
-      <p>We rate:</p>
-      <ul>
-        <li>Taste</li>
-        <li>Strength (will it wake the dead?)</li>
-        <li>Presentation</li>
-        <li>Vibes</li>
-        <li>Gluten-free treat potential (non-negotiable)</li>
-      </ul>
-    </div>
-
-    <div class="iframeWrap">
-      <iframe loading="lazy" src="https://www.youtube.com/embed/LJuH3nCk-wo" title="Brew for Two video 1" allowfullscreen></iframe>
-    </div>
-    <div class="iframeWrap">
-      <iframe loading="lazy" src="https://www.youtube.com/embed/tVcyL096Tt0" title="Brew for Two video 2" allowfullscreen></iframe>
-    </div>
-    <div class="iframeWrap">
-      <iframe loading="lazy" src="https://www.youtube.com/embed/l-8KEQGANAM" title="Brew for Two — The Wandering Elk" allowfullscreen></iframe>
-    </div>
-  </section>
-
-  <!-- HIDDEN IRELAND -->
-  <section id="hidden">
-    <h1>Hidden Ireland</h1>
-
-    <div class="card">
-      <p>Little corners, big stories. These are the places around Ireland that surprised us — the kind of spots you’d drive past a hundred times… until you finally stop.</p>
-    </div>
-
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/B_FI9F3tlNc" title="Hidden Ireland video 1" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/lZo2oaNYat8" title="Hidden Ireland video 2" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/vGSWZw-wPGc" title="Hidden Ireland video 3" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/P2W4kTX8o2Q" title="Hidden Ireland video 4" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/F95_h49sL0U" title="Hidden Ireland video 5" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/kB5AbOkWUZs" title="Hidden Ireland video 6" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/7EwSwlstqoY" title="Hidden Ireland video 7" allowfullscreen></iframe></div>
-
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/n9TnoC9jYVw" title="Hidden Ireland — Short 8" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/GJq_daIOK_Q" title="Hidden Ireland — Short 9" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/XmB1wPN_lZ8" title="Hidden Ireland — Short 10" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/C-5H3VxAiuM" title="Hidden Ireland — Short 11" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/-0qZWJGrWAk" title="Hidden Ireland — Short 12" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/4O_qWCiQp6I" title="Hidden Ireland — Short 13" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/vBAJJGr0Lvc" title="Hidden Ireland — Short 14" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/t1L4vsIhpTM" title="Hidden Ireland — Short 15" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/bsfdbZol4iA" title="Hidden Ireland — Short 16" allowfullscreen></iframe></div>
-  </section>
-
-  <!-- HOTEL STAYS -->
-  <section id="hotel">
-    <h1>Hotel Stays</h1>
-
-    <div class="card">
-      <p><strong>Hotel Stays</strong> is where we share the real deal on the places we stay — the good, the gorgeous, and the “would we come back?” moment.</p>
-      <p>Expect quick, honest reviews, room peeks, and the bits you actually want to know before you book.</p>
-    </div>
-
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/8rgFhGusUz4" title="Hotel Stay review 1" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/gIFmEE2o5cw" title="Hotel Stay review 2" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/92x1qDOXEPo" title="Hotel Stay review 3" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/UyapEmAYNcg" title="Hotel Stay review 4" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/NTR7--xMfGs" title="Hotel Stay review 5" allowfullscreen></iframe></div>
-  </section>
-
-  <!-- REELS -->
-  <section id="reels">
-    <h1>Reels & Shorts</h1>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/zwu2B4Q_QaI" title="Shorts video 1" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/PEQRwS4rTVI" title="Shorts video 2" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/ueyBfcQxNTg" title="Shorts video 3" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/DCCKVM5d3oc" title="Shorts video 4" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/_oVjZc-I6cg" title="Shorts video 5" allowfullscreen></iframe></div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/RzSMfH-dDus" title="Shorts video 6" allowfullscreen></iframe></div>
-  </section>
-
-  <!-- TOURRADAR -->
-  <section id="tourradar">
-    <h1>TourRadar</h1>
-
-    <div class="card">
-      <p><strong>TourRadar</strong> is where you go when you want the adventure without the headache of planning it.</p>
-      <p>It’s a global platform packed with multi-day, small-group tours run by trusted local operators — covering everything from culture and heritage to wildlife, foodie trips, and proper bucket-list adventures. Transport, accommodation, guides, and experiences are all built in. You just pick the trip and go.</p>
-
-      <p><strong>€50 off your tour</strong><br>
-      Use our ambassador code at checkout:<br>
-      <strong>NicolaR50</strong></p>
-
-      <div class="links">
-        <a class="pill" href="https://tinyurl.com/4x2xwmwv" target="_blank" rel="noopener">TourRadar Main Page</a>
-        <a class="pill" href="https://tinyurl.com/4azpatpn" target="_blank" rel="noopener">Current Deals</a>
-      </div>
-
-      <p class="disclosure">
-        <strong>Tip:</strong> If you’re booking a big trip, check “Current Deals” first — it’s often where the best discounts live.
-      </p>
-    </div>
-  </section>
-
-  <!-- ASK -->
-  <section id="ask">
-    <h1>Ask Two for the Row’d</h1>
-
-    <div class="card">
-      <p>Planning a trip?</p>
-      <p><strong>Tell us where you're heading and what kind of experience you're after — we’ll point you in the right direction.</strong></p>
-
-      <form action="https://formspree.io/f/xojnjzne" method="POST" class="formGrid">
-        <input type="hidden" name="_subject" value="New Ask Two for the Row’d Submission">
-        <input type="hidden" name="_next" value="https://twofortherowd.com/#ask">
-
-        <div class="field">
-          <label for="ask-name">Your Name</label>
-          <input class="input" type="text" id="ask-name" name="name" required>
-        </div>
-
-        <div class="field">
-          <label for="ask-email">Your Email</label>
-          <input class="input" type="email" id="ask-email" name="email" required>
-        </div>
-
-        <div class="field">
-          <label for="ask-destination">Where are you going?</label>
-          <input class="input" type="text" id="ask-destination" name="destination" required>
-        </div>
-
-        <div class="field">
-          <label for="ask-details">Tell us what you're looking for</label>
-          <textarea class="textarea" id="ask-details" name="message"
-            placeholder="Food? Hidden gems? Gluten-free spots? Budget tips? Chill vibes? Adventure?" required></textarea>
-        </div>
-
-        <div>
-          <button class="btn" type="submit">Send Question</button>
-        </div>
-
-        <p class="smallNote">
-          We read every message. Give us a little detail and we’ll give you proper recommendations.
-        </p>
-      </form>
-    </div>
-  </section>
-
-  <!-- WORK WITH US -->
-  <section id="work">
-    <h1>Work With Us</h1>
-
-    <div class="card">
-      <h2>Work With Us</h2>
-
-      <p>We love partnering with brands, tourism boards, cafés, hotels and heritage spaces — especially those that value real storytelling and honest recommendations.</p>
-
-      <h3 style="margin:14px 0 6px;">Media Kit Preview</h3>
-
-      <div class="stats" aria-label="Media kit preview stats">
-        <div class="stat">
-          <div class="k">Community</div>
-          <div class="v">
-            <div class="platforms" aria-label="Platforms">
-              <span class="platform" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/>
-                </svg>
-                YouTube
-              </span>
-
-              <span class="platform" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.5 1.6-1.5h1.6V5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.7V11H6.6v3h2.7v8h4.2z"/>
-                </svg>
-                Facebook
-              </span>
-
-              <span class="platform" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 10.5zM18 6.8a1 1.0 0 1 1-1 1 1 0 0 1 1-1z"/>
-                </svg>
-                Instagram
-              </span>
-
-              <span class="platform" aria-label="TikTok">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M14 3c.6 3.5 2.7 5.6 6 5.9V12c-2.1 0-4-.7-5.6-2v6.4c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1V14c-.3-.2-.6-.3-.9-.3-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5V3h3.1z"/>
-                </svg>
-                TikTok
-              </span>
-            </div>
+          <div class="heroCtas">
+            <a class="pill ctaPrimary" href="#morocco" onclick="event.preventDefault(); show('morocco');">Start with Morocco</a>
+            <a class="pill ctaSecondary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener">Browse Trips We Recommend</a>
           </div>
         </div>
 
-        <div class="stat">
-          <div class="k">Total Views to Date</div>
-          <div class="v">250,000+</div>
+        <div class="quickLinks" aria-label="Quick links">
+          <a class="pill" href="#morocco" onclick="event.preventDefault(); show('morocco');">Morocco Series</a>
+          <a class="pill" href="#tourradar" onclick="event.preventDefault(); show('tourradar');">Our TourRadar Page</a>
+          <a class="pill" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener">Browse Trips We Recommend</a>
+          <a class="pill" href="https://tinyurl.com/4azpatpn" target="_blank" rel="noopener">Current Tour Deals</a>
+          <a class="pill" href="#work" onclick="event.preventDefault(); show('work');">Work With Us</a>
+          <a class="pill" href="mailto:twofortherowd@gmail.com">Email Us</a>
         </div>
 
-        <div class="stat">
-          <div class="k">Audience</div>
-          <div class="v">Ireland + travellers</div>
+        <p class="disclosure">
+          <strong>Disclosure:</strong> Some links on this site may be affiliate links. If you book through them, we may earn a small commission at no extra cost to you. We only share things we genuinely rate.
+        </p>
+      </div>
+
+      <video class="heroVideo" controls preload="metadata">
+        <source src="video/who-are-we.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="smallNote">
+        If it takes a moment to load, hang tight — it’s worth it.
+      </div>
+
+      <div class="card">
+        <h2>Why people follow along</h2>
+
+        <div class="seoTags" aria-label="Why follow Two for the Row’d">
+          <span class="seoTag">honest travel reviews</span>
+          <span class="seoTag">Irish humour</span>
+          <span class="seoTag">hidden gems</span>
+          <span class="seoTag">gluten-free travel finds</span>
+          <span class="seoTag">hotel stays</span>
+          <span class="seoTag">road trips</span>
+          <span class="seoTag">real-world itineraries</span>
+          <span class="seoTag">travel without the fluff</span>
         </div>
 
-        <div class="stat">
-          <div class="k">Niche</div>
-          <div class="v">Gluten-free friendly</div>
+        <p style="margin-top:14px;">
+          We keep it useful, funny, and real. No generic “top 10” waffle. Just places, trips, cafés, hotels and tours we’ve actually experienced and can properly talk about.
+        </p>
+      </div>
+
+      <div class="grid" aria-label="Two for the Row’d photos">
+        <img loading="lazy" src="img/NP2.jpeg" alt="Nicola and Padraig travelling together">
+        <img loading="lazy" src="img/NP6.jpeg" alt="Two for the Row’d travel moment">
+        <img loading="lazy" src="img/NP7.jpeg" alt="Travel photo from Two for the Row’d">
+        <img loading="lazy" src="img/NP9.jpeg" alt="Travel storytelling image from Two for the Row’d">
+        <img loading="lazy" src="img/NP10.jpeg" alt="Travel creators Nicola and Padraig">
+        <img class="np11" loading="lazy" src="img/NP11.jpeg" alt="Irish travel creators on their travels">
+      </div>
+
+      <div class="extraRow" aria-label="More Two for the Row’d photos">
+        <img loading="lazy" src="img/NP1.jpeg" alt="Travel photo of Nicola and Padraig">
+        <img loading="lazy" src="img/NP3.jpeg" alt="Adventure travel photo">
+        <img loading="lazy" src="img/NP4.jpeg" alt="Travel content creators in action">
+      </div>
+    </section>
+
+    <!-- MOROCCO SERIES -->
+    <section id="morocco">
+      <h1>Morocco Series</h1>
+
+      <div class="card">
+        <h2>Our Morocco Journey</h2>
+        <p>If you’re looking for an honest review of a Morocco tour, this is the page for you.</p>
+        <p>Morocco had been on our list for ages, and this trip brought us through some of the most incredible landscapes and experiences we’ve ever had — from the busy streets of Marrakech to the silence of the Sahara Desert, from the Atlas Mountains to ancient kasbahs and traditional Berber towns.</p>
+        <p>We booked our Morocco trip through <strong>TourRadar</strong>, and the tour itself was run by <strong>Morhara Morocco Tours</strong>. We also explored Marrakech on a walking tour with <strong>Ali from Get Marrakech</strong>, which gave us a brilliant intro to the city’s food, culture, history, and chaos.</p>
+        <p>Over the course of the journey we travelled through the Atlas Mountains, visited Aït Benhaddou, stayed in desert locations, explored traditional villages, visited women’s cooperatives, and experienced a proper Sahara desert camp under the stars.</p>
+        <p>This Morocco series follows the route of our journey and gives you a real feel for what a multi-day Morocco tour is actually like — the scenery, the stops, the pace, the good bits, and the little surprises along the way.</p>
+        <h2>Our Route Through Morocco</h2>
+      </div>
+
+      <div class="card">
+        <h2>Route Map</h2>
+
+        <div class="routeMapWrap" aria-label="Tap to enlarge route map of Morocco">
+          <button class="routeMapBtn" type="button" onclick="openMapModal()" aria-label="Tap to enlarge route map">
+            <svg class="routeMap" viewBox="0 0 900 520" role="img" aria-label="Morocco route map">
+              <defs>
+                <linearGradient id="paperGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="rgba(255,255,255,.88)"/>
+                  <stop offset="1" stop-color="rgba(255,216,74,.22)"/>
+                </linearGradient>
+
+                <pattern id="dotPattern2" width="18" height="18" patternUnits="userSpaceOnUse">
+                  <circle cx="3" cy="3" r="1.1" fill="rgba(0,0,0,.035)"/>
+                </pattern>
+
+                <linearGradient id="routeGrad2" x1="330" y1="400" x2="560" y2="190" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="rgba(0,0,0,.80)"/>
+                  <stop offset="1" stop-color="rgba(0,0,0,.40)"/>
+                </linearGradient>
+
+                <filter id="softShadow2" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,.16)"/>
+                </filter>
+
+                <filter id="routeGlow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur stdDeviation="3.5" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+
+                <filter id="labelShadow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,.18)"/>
+                </filter>
+              </defs>
+
+              <rect x="0" y="0" width="900" height="520" fill="url(#paperGrad)"></rect>
+              <rect x="0" y="0" width="900" height="520" fill="url(#dotPattern2)" opacity=".95"></rect>
+
+              <path d="M240,80 C270,60 330,55 380,70 C410,82 445,92 500,90 C560,88 610,110 640,150 C675,195 690,235 675,295 C660,355 620,395 570,425 C520,455 470,470 410,465 C350,458 300,440 270,410 C240,380 220,340 220,290 C220,235 205,205 200,165 C195,125 210,95 240,80 Z" fill="rgba(0,0,0,.035)" stroke="rgba(0,0,0,.08)" stroke-width="2"></path>
+
+              <g opacity=".18" transform="translate(760,88) rotate(10)">
+                <rect x="-70" y="-40" width="140" height="80" rx="14" fill="#c1272d"></rect>
+                <path d="M 0 -22 L 13 18 L -22 -4 L 22 -4 L -13 18 Z" fill="none" stroke="#006233" stroke-width="5" stroke-linejoin="round"/>
+              </g>
+
+              <path d="M540,240 L495,220 L455,240 L420,260 L395,300 L380,340 L355,360 L420,290 L540,240"
+                    fill="none"
+                    stroke="rgba(255,216,74,.85)"
+                    stroke-width="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    opacity=".35"
+                    filter="url(#routeGlow)" />
+
+              <path class="routeStroke" d="M540,240 L495,220 L455,240 L420,260 L395,300 L380,340 L355,360 L420,290 L540,240" />
+
+              <g class="pin p1">
+                <circle cx="540" cy="240" r="12" fill="rgba(0,0,0,.88)"></circle>
+                <circle cx="540" cy="240" r="6" fill="#ffd84a"></circle>
+                <circle cx="540" cy="240" r="18" fill="rgba(255,216,74,.18)"></circle>
+                <g transform="translate(560,224)" filter="url(#labelShadow)">
+                  <rect x="0" y="0" rx="10" ry="10" width="118" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
+                  <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">1 • Marrakech</text>
+                </g>
+              </g>
+
+              <g class="pin p2">
+                <circle cx="495" cy="220" r="11" fill="rgba(0,0,0,.88)"></circle>
+                <circle cx="495" cy="220" r="5.5" fill="#ffd84a"></circle>
+                <circle cx="495" cy="220" r="17" fill="rgba(255,216,74,.18)"></circle>
+                <g transform="translate(515,196)" filter="url(#labelShadow)">
+                  <rect x="0" y="0" rx="10" ry="10" width="94" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
+                  <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">2 • Atlas</text>
+                </g>
+              </g>
+
+              <g class="pin p3">
+                <circle cx="455" cy="240" r="11" fill="rgba(0,0,0,.88)"></circle>
+                <circle cx="455" cy="240" r="5.5" fill="#ffd84a"></circle>
+                <circle cx="455" cy="240" r="17" fill="rgba(255,216,74,.18)"></circle>
+                <g transform="translate(475,252)" filter="url(#labelShadow)">
+                  <rect x="0" y="0" rx="10" ry="10" width="146" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
+                  <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">3 • Ait Benhaddou</text>
+                </g>
+              </g>
+
+              <g class="pin p4">
+                <circle cx="420" cy="260" r="11" fill="rgba(0,0,0,.88)"></circle>
+                <circle cx="420" cy="260" r="5.5" fill="#ffd84a"></circle>
+                <circle cx="420" cy="260" r="17" fill="rgba(255,216,74,.18)"></circle>
+                <g transform="translate(440,270)" filter="url(#labelShadow)">
+                  <rect x="0" y="0" rx="10" ry="10" width="132" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
+                  <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">4 • Ouarzazate</text>
+                </g>
+              </g>
+
+              <g class="pin p5">
+                <circle cx="395" cy="300" r="11" fill="rgba(0,0,0,.88)"></circle>
+                <circle cx="395" cy="300" r="5.5" fill="#ffd84a"></circle>
+                <circle cx="395" cy="300" r="17" fill="rgba(255,216,74,.18)"></circle>
+                <g transform="translate(292,288)" filter="url(#labelShadow)">
+                  <rect x="0" y="0" rx="10" ry="10" width="104" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
+                  <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">5 • Zagora</text>
+                </g>
+              </g>
+
+              <g class="pin p6">
+                <circle cx="380" cy="340" r="11" fill="rgba(0,0,0,.88)"></circle>
+                <circle cx="380" cy="340" r="5.5" fill="#ffd84a"></circle>
+                <circle cx="380" cy="340" r="17" fill="rgba(255,216,74,.18)"></circle>
+                <g transform="translate(270,330)" filter="url(#labelShadow)">
+                  <rect x="0" y="0" rx="10" ry="10" width="104" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
+                  <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">6 • Sahara</text>
+                </g>
+              </g>
+
+              <g class="pin p7">
+                <circle cx="355" cy="360" r="11" fill="rgba(0,0,0,.88)"></circle>
+                <circle cx="355" cy="360" r="5.5" fill="#ffd84a"></circle>
+                <circle cx="355" cy="360" r="17" fill="rgba(255,216,74,.18)"></circle>
+                <g transform="translate(240,372)" filter="url(#labelShadow)">
+                  <rect x="0" y="0" rx="10" ry="10" width="134" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
+                  <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">7 • Tamegroute</text>
+                </g>
+              </g>
+
+              <g class="pin p8">
+                <circle cx="420" cy="290" r="11" fill="rgba(0,0,0,.88)"></circle>
+                <circle cx="420" cy="290" r="5.5" fill="#ffd84a"></circle>
+                <circle cx="420" cy="290" r="17" fill="rgba(255,216,74,.18)"></circle>
+                <g transform="translate(442,292)" filter="url(#labelShadow)">
+                  <rect x="0" y="0" rx="10" ry="10" width="124" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/>
+                  <text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">8 • Back north</text>
+                </g>
+              </g>
+            </svg>
+          </button>
+        </div>
+
+        <p class="mapHint">
+          Tap the map to enlarge it — especially handy on the phone.
+        </p>
+      </div>
+
+      <div class="routeGrid" aria-label="Morocco route overview">
+        <div class="routeBox">
+          <h3>Key Stops</h3>
+          <ul>
+            <li>Marrakech</li>
+            <li>Atlas Mountains</li>
+            <li>Ait Benhaddou</li>
+            <li>Berber villages and caravan routes</li>
+            <li>Fint Oasis</li>
+            <li>Zagora and the edge of the Sahara</li>
+            <li>Desert camp in the Sahara</li>
+            <li>Tamegroute Village</li>
+            <li>Amazraou Museum</li>
+            <li>Women’s cooperatives in Talouste and Aguelmouss</li>
+            <li>Traditional kasbahs and desert towns</li>
+          </ul>
+        </div>
+
+        <div class="routeBox">
+          <h3>Thinking of doing a Morocco tour?</h3>
+          <ul style="list-style:none; padding-left:0; margin:8px 0 0;">
+            <li>🏜 Sahara desert camp experience</li>
+            <li>🏔 Atlas Mountains road trip views</li>
+            <li>🏛 Ancient kasbahs and heritage sites</li>
+            <li>🫖 Rooftop cafés, mint tea and local food</li>
+            <li>🐪 Desert landscapes and star-filled skies</li>
+            <li>🧶 Traditional crafts and women’s cooperatives</li>
+          </ul>
+
+          <p style="margin-top:12px;">
+            We’ve done the trip, filmed the route, and shared the real experience — so if you’re browsing Morocco tours, this is a good place to start.
+          </p>
+
+          <p style="margin:10px 0 0;">
+            <span class="highlight">Browse the trips we actually rate</span>
+          </p>
+
+          <div class="links" style="margin-top:12px;">
+            <a class="pill ctaPrimary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener">
+              Browse Trips We Recommend
+            </a>
+            <a class="pill ctaSecondary" href="https://tinyurl.com/4azpatpn" target="_blank" rel="noopener">
+              See Current Deals
+            </a>
+          </div>
+
+          <p class="disclosure" style="margin-top:10px;">
+            <strong>Disclosure:</strong> If you book through our link, we may earn a small commission at no extra cost to you. Any available discounts or welcome offers are applied automatically where eligible.
+          </p>
         </div>
       </div>
 
-      <p class="smallNote" style="text-align:left; margin-top:8px;">
-        We can share platform-specific insights (reach, saves, watch time, audience location) on request.
-      </p>
+      <h2>Morocco Videos</h2>
 
-      <h3 style="margin:14px 0 6px;">What we can deliver</h3>
-      <ul>
-        <li>Reels / TikToks / Shorts (story-led, human, and genuinely engaging)</li>
-        <li>Hotel stay review + room tour</li>
-        <li>Gluten-free food spotlight (menu + experience)</li>
-        <li>Facebook post + story set</li>
-        <li>Website feature + long-term link placement (great for affiliates)</li>
-      </ul>
+      <div class="videoGrid">
+        <div class="card">
+          <h3>Part 1 – Dublin to Marrakech</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/8sJj521AVo8" title="Part 1 – Dublin to Marrakech" allowfullscreen></iframe>
+          </div>
+        </div>
 
-      <h3 style="margin:14px 0 6px;">Best fit partners</h3>
-      <div class="tagRow" aria-label="Partner niches">
-        <span class="tag">Boutique hotels</span>
-        <span class="tag">Heritage sites</span>
-        <span class="tag">Tour operators</span>
-        <span class="tag">Cafés & foodie spots</span>
-        <span class="tag">Gluten-free friendly venues</span>
-        <span class="tag">Irish stays & weekends</span>
+        <div class="card">
+          <h3>Part 2 – Grand Mogador Menara Marrakech</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/dmtF1M-rzFk" title="Part 2 – Grand Mogador Menara Marrakech" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 3 – Les Jardins de Ouzazarte</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/ZTdiMwEIw3U" title="Part 3 – Les Jardins de Ouzazarte" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 4 – Travelling through the Atlas</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/65d2mpohVo0" title="Part 4 – Travelling through the Atlas" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 5 – Argan Oil Aguelmouss</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/dXUXZHXJPJM" title="Part 5 – Argan Oil Aguelmouss" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 6 – Oasis Lodge Hotel</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/2pmv6gddYDw" title="Part 6 – Oasis Lodge Hotel" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 7 – The Sahara Desert</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/30JojXt6I54" title="Part 7 – The Sahara Desert" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 8 – Talouse Women’s Co-op</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/BxU6yC1H9Dg" title="Part 8 – Talouse Women’s Co-op" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 9 – The Desert Camp</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/UgXF_vmRBtU" title="Part 9 – The Desert Camp" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 10 – Desert Paradise</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/ghG4GeFna3U" title="Part 10 – Desert Paradise" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 11 – Discovering the Beauty of Berber Morocco</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/CCBaRghdM90" title="Part 11 – Discovering the Beauty of Berber Morocco" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 12 – Kasbah Tazentoute</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/BWbyYA8C5b8" title="Part 12 – Kasbah Tazentoute" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 13 – Amazraou Museum</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/R0SmQLruczM" title="Part 13 – Amazraou Museum" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 14 – Tamegroute Village</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/KqbKl74j0ro" title="Part 14 – Tamegroute Village" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 15 – A Berber Town</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/ePGzmPhlXOg" title="Part 15 – A Berber Town" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 16 – From Aït Benhaddou to the Edge of the Sahara</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/r6v3it_5BxA" title="Part 16 – From Aït Benhaddou to the Edge of the Sahara" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Part 17 – Local Family Shares Mint Tea</h3>
+          <div class="iframeWrap short">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/kbKx6r13AuY" title="Part 17 – Local Family Shares Mint Tea" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
 
-      <div class="links" style="margin-top:14px;">
-        <a class="pill" href="media/two-for-the-rowd-media-kit.pdf" target="_blank" rel="noopener">
-          Download Our Media Kit (PDF)
-        </a>
-        <a class="pill" href="mailto:twofortherowd@gmail.com">
-          Email Us
-        </a>
+      <div class="card">
+        <h2>Coming Soon</h2>
+        <ul>
+          <li>Fint Oasis</li>
+          <li>Palm View Palace</li>
+          <li>The Caravan Trails of Morocco</li>
+          <li>Sand Coffee Marrakech</li>
+          <li>Walking Tour of Marrakech</li>
+          <li>Café de France</li>
+          <li>Argana Restaurant</li>
+          <li>Dune Rooftop Bar, Marrakech</li>
+          <li>Riad Zoraida</li>
+          <li>Morocco Recap</li>
+        </ul>
+        <p class="smallNote" style="text-align:left;">
+          As soon as each video is live, we’ll add it here as the next numbered part.
+        </p>
       </div>
 
-      <p class="disclosure">
-        <strong>Brands:</strong> Send us your dates + deliverables and we’ll reply with a simple proposal.
-      </p>
-    </div>
-  </section>
+      <div class="card">
+        <h2>Why this Morocco trip worked for us</h2>
+        <p>If you like the idea of seeing a lot without having to organise every transfer, hotel, guide, and route yourself, this kind of Morocco tour makes life much easier.</p>
+        <p>For us, the biggest win was being able to focus on the experience — the Atlas Mountains, Marrakech, desert camps, kasbahs, mint tea stops, and all the little moments in between — instead of spending the whole trip worrying about logistics.</p>
 
-  <footer>
-    © <span id="year"></span> Two for the Row’d • Built with love & a bit of chaos
-  </footer>
+        <div class="seoTags" aria-label="Morocco travel topics">
+          <span class="seoTag">Morocco tour review</span>
+          <span class="seoTag">TourRadar Morocco</span>
+          <span class="seoTag">Morocco desert tour</span>
+          <span class="seoTag">Marrakech to Sahara</span>
+          <span class="seoTag">Atlas Mountains tour</span>
+          <span class="seoTag">Aït Benhaddou trip</span>
+          <span class="seoTag">Sahara desert camp</span>
+          <span class="seoTag">Morocco travel videos</span>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <!-- BREW -->
+    <section id="brew">
+      <h1>Brew for Two</h1>
 
-<div class="toTop" id="toTop">
-  <a class="pill" href="#home" onclick="event.preventDefault(); show('home');" aria-label="Back to top">↑ Top</a>
-</div>
+      <div class="card">
+        <p><strong>Brew for Two</strong> is our ongoing mission to find seriously good coffee — one café at a time.</p>
+        <p>We rate the coffee, the atmosphere, the service, the presentation, and very importantly… the gluten-free treat potential.</p>
+        <p>If you like café reviews, hidden coffee spots, Irish coffee stops, and travel content with a bit of personality, this is your corner of the site.</p>
 
-<!-- Map Zoom Modal -->
-<div class="mapModal" id="mapModal" aria-hidden="true" role="dialog" aria-label="Enlarged route map">
-  <div class="mapModalInner" role="document">
-    <div class="mapModalTopbar">
-      <div class="mapModalTitle">Morocco Route Map</div>
-      <button class="mapCloseBtn" type="button" onclick="closeMapModal()" aria-label="Close map">Close ✕</button>
-    </div>
+        <div class="seoTags" aria-label="Coffee and cafe topics">
+          <span class="seoTag">coffee reviews Ireland</span>
+          <span class="seoTag">best cafés Ireland</span>
+          <span class="seoTag">gluten-free cafés</span>
+          <span class="seoTag">coffee stops Ireland</span>
+          <span class="seoTag">Brew for Two</span>
+        </div>
+      </div>
 
-    <div class="mapModalBody" id="mapModalBody">
-      <p class="mapZoomHint">Tip: pinch-to-zoom on your phone, then drag/scroll around.</p>
+      <div class="iframeWrap">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/LJuH3nCk-wo" title="Brew for Two video 1" allowfullscreen></iframe>
+      </div>
+      <div class="iframeWrap">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/tVcyL096Tt0" title="Brew for Two video 2" allowfullscreen></iframe>
+      </div>
+      <div class="iframeWrap">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/l-8KEQGANAM" title="Brew for Two — The Wandering Elk" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- HIDDEN IRELAND -->
+    <section id="hidden">
+      <h1>Hidden Ireland</h1>
+
+      <div class="card">
+        <p><strong>Hidden Ireland</strong> is where we share the places around Ireland that surprised us — the ones with character, history, scenery, and stories.</p>
+        <p>These are the spots you might drive past a hundred times until one day you stop… and realise you’ve been missing something class.</p>
+        <p>If you’re searching for hidden gems in Ireland, unusual places to visit, Irish day trips, road trip inspiration, and local history with a bit of craic, this is for you.</p>
+
+        <div class="seoTags" aria-label="Hidden Ireland topics">
+          <span class="seoTag">hidden gems Ireland</span>
+          <span class="seoTag">places to visit in Ireland</span>
+          <span class="seoTag">Irish road trips</span>
+          <span class="seoTag">day trips Ireland</span>
+          <span class="seoTag">Hidden Ireland travel</span>
+        </div>
+      </div>
+
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/B_FI9F3tlNc" title="Hidden Ireland video 1" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/lZo2oaNYat8" title="Hidden Ireland video 2" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/vGSWZw-wPGc" title="Hidden Ireland video 3" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/P2W4kTX8o2Q" title="Hidden Ireland video 4" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/F95_h49sL0U" title="Hidden Ireland video 5" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/kB5AbOkWUZs" title="Hidden Ireland video 6" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/7EwSwlstqoI" title="Hidden Ireland video 7" allowfullscreen></iframe></div>
+
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/n9TnoC9jYVw" title="Hidden Ireland short 8" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/GJq_daIOK_Q" title="Hidden Ireland short 9" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/XmB1wPN_lZ8" title="Hidden Ireland short 10" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/C-5H3VxAiuM" title="Hidden Ireland short 11" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/-0qZWJGrWAk" title="Hidden Ireland short 12" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/4O_qWCiQp6I" title="Hidden Ireland short 13" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/vBAJJGr0Lvc" title="Hidden Ireland short 14" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/t1L4vsIhpTM" title="Hidden Ireland short 15" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/bsfdbZol4iA" title="Hidden Ireland short 16" allowfullscreen></iframe></div>
+    </section>
+
+    <!-- HOTEL STAYS -->
+    <section id="hotel">
+      <h1>Hotel Stays</h1>
+
+      <div class="card">
+        <p><strong>Hotel Stays</strong> is where we share honest hotel reviews, room tours, first impressions, and the bits you actually want to know before booking.</p>
+        <p>No over-polished nonsense — just real hotel stay content, good finds, and whether we’d actually go back.</p>
+
+        <div class="seoTags" aria-label="Hotel stay topics">
+          <span class="seoTag">hotel reviews</span>
+          <span class="seoTag">honest hotel stays</span>
+          <span class="seoTag">travel hotel reviews</span>
+          <span class="seoTag">room tour videos</span>
+          <span class="seoTag">best hotels Ireland and abroad</span>
+        </div>
+      </div>
+
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/8rgFhGusUz4" title="Hotel Stay review 1" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/gIFmEE2o5cw" title="Hotel Stay review 2" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/92x1qDOXEPo" title="Hotel Stay review 3" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/UyapEmAYNcg" title="Hotel Stay review 4" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/NTR7--xMfGs" title="Hotel Stay review 5" allowfullscreen></iframe></div>
+    </section>
+
+    <!-- REELS -->
+    <section id="reels">
+      <h1>Reels & Shorts</h1>
+
+      <div class="card">
+        <p>This is where the quick-hit stuff lives — travel reels, funny bits, short reviews, and the kind of clips that make people say, “Right, add that to the list.”</p>
+      </div>
+
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/zwu2B4Q_QaI" title="Shorts video 1" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/PEQRwS4rTVI" title="Shorts video 2" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/ueyBfcQxNTg" title="Shorts video 3" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/DCCKVM5d3oc" title="Shorts video 4" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/_oVjZc-I6cg" title="Shorts video 5" allowfullscreen></iframe></div>
+      <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/RzSMfH-dDus" title="Shorts video 6" allowfullscreen></iframe></div>
+    </section>
+
+    <!-- TOURRADAR -->
+    <section id="tourradar">
+      <h1>TourRadar</h1>
+
+      <div class="card">
+        <h2>Adventure without the planning headache</h2>
+
+        <p class="lead"><strong>TourRadar</strong> is ideal if you want the trip without having to organise every hotel, transfer, route, and excursion yourself.</p>
+
+        <p>We used TourRadar for our Morocco trip and it made life much easier. Instead of spending the whole holiday worrying about logistics, we got to focus on the experience — Marrakech, the Atlas Mountains, desert camps, local guides, stunning scenery, and all the little unexpected moments that make a trip memorable.</p>
+
+        <p>If you’ve been searching for <strong>TourRadar reviews</strong>, <strong>TourRadar Morocco tours</strong>, <strong>Morocco tour reviews</strong>, or wondering <strong>is TourRadar worth it</strong>, our honest answer is yes — especially if you want less stress and more actual holiday.</p>
+
+        <div class="links">
+          <a class="pill ctaPrimary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener">
+            Browse Trips We Recommend
+          </a>
+          <a class="pill ctaSecondary" href="https://tinyurl.com/4azpatpn" target="_blank" rel="noopener">
+            See Current Deals
+          </a>
+        </div>
+
+        <div class="tipBox">
+          <strong>Tip:</strong> If you’re even half-thinking about a trip, open the link now and have a browse. It’s a handy way to save the good ones for later without trying to remember where you saw them.
+        </div>
+
+        <p class="disclosure">
+          <strong>Disclosure:</strong> If you book through our link, we may earn a small commission at no extra cost to you. Any available discounts or welcome offers are applied automatically where eligible.
+        </p>
+
+        <div class="seoTags" aria-label="TourRadar topics">
+          <span class="seoTag">TourRadar reviews</span>
+          <span class="seoTag">TourRadar Morocco tours</span>
+          <span class="seoTag">best Morocco tours</span>
+          <span class="seoTag">multi-day tours Morocco</span>
+          <span class="seoTag">small group tours</span>
+          <span class="seoTag">is TourRadar worth it</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASK -->
+    <section id="ask">
+      <h1>Ask Two for the Row’d</h1>
+
+      <div class="card">
+        <p>Planning a trip?</p>
+        <p><strong>Tell us where you’re heading and what kind of experience you’re after — we’ll point you in the right direction.</strong></p>
+
+        <form action="https://formspree.io/f/xojnjzne" method="POST" class="formGrid">
+          <input type="hidden" name="_subject" value="New Ask Two for the Row’d Submission">
+          <input type="hidden" name="_next" value="https://twofortherowd.com/#ask">
+
+          <div class="field">
+            <label for="ask-name">Your Name</label>
+            <input class="input" type="text" id="ask-name" name="name" required>
+          </div>
+
+          <div class="field">
+            <label for="ask-email">Your Email</label>
+            <input class="input" type="email" id="ask-email" name="email" required>
+          </div>
+
+          <div class="field">
+            <label for="ask-destination">Where are you going?</label>
+            <input class="input" type="text" id="ask-destination" name="destination" required>
+          </div>
+
+          <div class="field">
+            <label for="ask-details">Tell us what you're looking for</label>
+            <textarea class="textarea" id="ask-details" name="message" placeholder="Food? Hidden gems? Gluten-free spots? Budget tips? Chill vibes? Adventure?" required></textarea>
+          </div>
+
+          <div>
+            <button class="btn" type="submit">Send Question</button>
+          </div>
+
+          <p class="smallNote">
+            We read every message. Give us a little detail and we’ll give you proper recommendations.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- WORK WITH US -->
+    <section id="work">
+      <h1>Work With Us</h1>
+
+      <div class="card">
+        <h2>Brands, hotels, cafés, tourism boards & tour operators</h2>
+
+        <p>We love partnering with brands and places that value real storytelling, honest recommendations, and content with a bit of personality.</p>
+        <p>If you want polished-but-human travel content, Irish humour, strong audience trust, and videos that actually feel like someone was there, you’re in the right place.</p>
+
+        <h3 style="margin:14px 0 6px;">Media Kit Preview</h3>
+
+        <div class="stats" aria-label="Media kit preview stats">
+          <div class="stat">
+            <div class="k">Community</div>
+            <div class="v">
+              <div class="platforms" aria-label="Platforms">
+                <span class="platform" aria-label="YouTube">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/>
+                  </svg>
+                  YouTube
+                </span>
+
+                <span class="platform" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.5 1.6-1.5h1.6V5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.7V11H6.6v3h2.7v8h4.2z"/>
+                  </svg>
+                  Facebook
+                </span>
+
+                <span class="platform" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 10.5zM18 6.8a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/>
+                  </svg>
+                  Instagram
+                </span>
+
+                <span class="platform" aria-label="TikTok">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 3c.6 3.5 2.7 5.6 6 5.9V12c-2.1 0-4-.7-5.6-2v6.4c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1V14c-.3-.2-.6-.3-.9-.3-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5V3h3.1z"/>
+                  </svg>
+                  TikTok
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="k">Total Views to Date</div>
+            <div class="v">250,000+</div>
+          </div>
+
+          <div class="stat">
+            <div class="k">Audience</div>
+            <div class="v">Ireland + travellers</div>
+          </div>
+
+          <div class="stat">
+            <div class="k">Niche</div>
+            <div class="v">Travel + gluten-free friendly</div>
+          </div>
+        </div>
+
+        <p class="smallNote" style="text-align:left; margin-top:8px;">
+          We can share platform-specific insights like reach, watch time, audience location, and saves on request.
+        </p>
+
+        <h3 style="margin:14px 0 6px;">What we can deliver</h3>
+        <ul>
+          <li>Reels, TikToks and Shorts with story-led hooks</li>
+          <li>Hotel stay review and room tour content</li>
+          <li>Gluten-free food spotlights</li>
+          <li>Facebook posts and story sets</li>
+          <li>Website features and long-term link placement</li>
+        </ul>
+
+        <h3 style="margin:14px 0 6px;">Best fit partners</h3>
+        <div class="tagRow" aria-label="Partner niches">
+          <span class="tag">Boutique hotels</span>
+          <span class="tag">Tour operators</span>
+          <span class="tag">Heritage sites</span>
+          <span class="tag">Cafés & foodie spots</span>
+          <span class="tag">Gluten-free friendly venues</span>
+          <span class="tag">Irish stays & weekends</span>
+        </div>
+
+        <div class="links" style="margin-top:14px;">
+          <a class="pill" href="media/two-for-the-rowd-media-kit.pdf" target="_blank" rel="noopener">
+            Download Our Media Kit (PDF)
+          </a>
+          <a class="pill" href="mailto:twofortherowd@gmail.com">
+            Email Us
+          </a>
+        </div>
+
+        <p class="disclosure">
+          <strong>Brands:</strong> Send us your dates and deliverables and we’ll come back with a simple proposal.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Two for the Row’d • Built with love, caffeine, and a bit of chaos
+    </footer>
+  </main>
+
+  <div class="toTop" id="toTop">
+    <a class="pill" href="#home" onclick="event.preventDefault(); show('home');" aria-label="Back to top">↑ Top</a>
+  </div>
+
+  <div class="mapModal" id="mapModal" aria-hidden="true" role="dialog" aria-label="Enlarged route map">
+    <div class="mapModalInner" role="document">
+      <div class="mapModalTopbar">
+        <div class="mapModalTitle">Morocco Route Map</div>
+        <button class="mapCloseBtn" type="button" onclick="closeMapModal()" aria-label="Close map">Close ✕</button>
+      </div>
+
+      <div class="mapModalBody" id="mapModalBody">
+        <p class="mapZoomHint">Tip: pinch-to-zoom on your phone, then drag or scroll around.</p>
+      </div>
     </div>
   </div>
-</div>
-
 </body>
 </html>
