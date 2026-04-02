@@ -266,7 +266,8 @@
     .pill:focus-visible,
     .tabBtn:focus-visible,
     .btn:focus-visible,
-    .mapCloseBtn:focus-visible{
+    .mapCloseBtn:focus-visible,
+    .promoClose:focus-visible{
       outline:3px solid rgba(0,0,0,.35);
       outline-offset:3px;
     }
@@ -940,6 +941,65 @@
       text-align:left;
     }
 
+    .promoModal{
+      position:fixed;
+      inset:0;
+      z-index:10000;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+      background:rgba(0,0,0,.58);
+    }
+
+    .promoModal.open{
+      display:flex;
+    }
+
+    .promoBox{
+      width:min(560px, 100%);
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,247,209,.98));
+      border:1px solid rgba(0,0,0,.10);
+      border-radius:22px;
+      box-shadow:0 20px 60px rgba(0,0,0,.28);
+      padding:24px 22px 20px;
+      position:relative;
+      text-align:left;
+    }
+
+    .promoClose{
+      position:absolute;
+      top:12px;
+      right:12px;
+      width:40px;
+      height:40px;
+      border:none;
+      border-radius:999px;
+      background:#fff;
+      box-shadow:0 6px 14px rgba(0,0,0,.12);
+      font-size:22px;
+      line-height:1;
+      cursor:pointer;
+    }
+
+    .promoBox h2{
+      margin:0 40px 10px 0;
+    }
+
+    .promoActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    .promoSub{
+      font-size:13px;
+      line-height:1.55;
+      color:var(--muted);
+      margin-top:12px;
+    }
+
     @media (max-width: 900px){
       .grid{ grid-template-columns:repeat(2, 1fr); max-width:900px; }
       .extraRow{ grid-template-columns:repeat(2, 1fr); max-width:900px; }
@@ -973,14 +1033,20 @@
       }
 
       .links,
-      .heroCtas{
+      .heroCtas,
+      .promoActions{
         flex-direction:column;
         align-items:stretch;
       }
 
       .links .pill,
-      .heroCtas .pill{
+      .heroCtas .pill,
+      .promoActions .pill{
         text-align:center;
+      }
+
+      .promoBox{
+        padding:22px 18px 18px;
       }
     }
   </style>
@@ -1066,14 +1132,42 @@
       document.body.style.overflow = "";
     }
 
+    function openPromoModal(){
+      const modal = document.getElementById("promoModal");
+      if(!modal) return;
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePromoModal(){
+      const modal = document.getElementById("promoModal");
+      if(!modal) return;
+
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      document.body.style.overflow = "";
+      sessionStorage.setItem("moroccoPromoClosed", "true");
+    }
+
     window.addEventListener("click", (e) => {
-      const modal = document.getElementById("mapModal");
-      if(!modal || !modal.classList.contains("open")) return;
-      if(e.target === modal) closeMapModal();
+      const mapModal = document.getElementById("mapModal");
+      if(mapModal && mapModal.classList.contains("open") && e.target === mapModal){
+        closeMapModal();
+      }
+
+      const promoModal = document.getElementById("promoModal");
+      if(promoModal && promoModal.classList.contains("open") && e.target === promoModal){
+        closePromoModal();
+      }
     });
 
     window.addEventListener("keydown", (e) => {
-      if(e.key === "Escape") closeMapModal();
+      if(e.key === "Escape"){
+        closeMapModal();
+        closePromoModal();
+      }
     });
 
     window.addEventListener("DOMContentLoaded", () => {
@@ -1091,6 +1185,13 @@
 
       const yearEl = document.getElementById("year");
       if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+      const promoAlreadyClosed = sessionStorage.getItem("moroccoPromoClosed");
+      if(initialTab === "home" && !promoAlreadyClosed){
+        setTimeout(() => {
+          openPromoModal();
+        }, 700);
+      }
     });
   </script>
 </head>
@@ -1193,23 +1294,15 @@
         </div>
       </div>
 
-<div class="card">
-  <h2>Thinking of booking the Morocco Tour we did?</h2>
-  
-  <p class="lead"><strong>This is the exact tour we booked — and honestly, we couldn’t fault it.</strong></p>
-  
-  <p>From Marrakech to the Atlas Mountains, desert camps, local guides, and all the stops in between — everything was organised for us, which meant we could actually enjoy the experience instead of stressing about logistics.</p>
-  
-  <p>If you want the same route, the same experience, and a proper feel for Morocco without having to plan every detail yourself, you can check it out below.</p>
+      <div class="card">
+        <h2>Looking for a TourRadar discount code?</h2>
+        <p><strong>You’re not the only one.</strong> A lot of people land here looking for a TourRadar discount code, promo code, or the best TourRadar deals before they book.</p>
+        <p>Here’s the honest version: public codes are not always the main way to save. Very often, the best value comes from <strong>live TourRadar deals, sale pricing, and partner offers</strong> that are already built into the booking flow.</p>
+        <p>So if you’re searching for a <strong>TourRadar promo code</strong> or wondering how to get money off a TourRadar trip, the best move is to check the current offers through our link below.</p>
 
-  <div class="links">
-    <a class="pill ctaPrimary" href="YOUR-AFFILIATE-LINK-HERE" target="_blank" rel="noopener">Book here</a>
-  </div>
-
-  <p class="smallNote">
-    This is the exact tour we did through TourRadar. If you book through our link, we may earn a small commission at no extra cost to you.
-  </p>
-</div>
+        <div class="links">
+          <a class="pill ctaPrimary" href="#savings" onclick="event.preventDefault(); show('savings');">Read our TourRadar savings guide</a>
+        </div>
 
         <div class="seoTags" aria-label="TourRadar search topics">
           <span class="seoTag">TourRadar discount code</span>
@@ -1269,23 +1362,20 @@
         <p>This Morocco series follows the route of our journey and gives you a real feel for what a multi-day Morocco tour is actually like — the scenery, the stops, the pace, the good bits, and the little surprises along the way.</p>
       </div>
 
-     <div class="card">
-  <h2>Thinking of booking the Morocco Tour we did?</h2>
-  
-  <p class="lead"><strong>This is the exact tour we booked — and honestly, we couldn’t fault it.</strong></p>
-  
-  <p>From Marrakech to the Atlas Mountains, desert camps, local guides, and all the stops in between — everything was organised for us, which meant we could actually enjoy the experience instead of stressing about logistics.</p>
-  
-  <p>If you want the same route, the same experience, and a proper feel for Morocco without having to plan every detail yourself, you can check it out below.</p>
+      <div class="card">
+        <h2>Thinking of booking the Morocco Tour we did?</h2>
+        <p class="lead"><strong>This is the exact tour we booked — and honestly, we couldn’t fault it.</strong></p>
+        <p>From Marrakech to the Atlas Mountains, desert camps, local guides, and all the stops in between — everything was organised for us, which meant we could actually enjoy the experience instead of stressing about logistics.</p>
+        <p>If you want the same route, the same experience, and a proper feel for Morocco without having to plan every detail yourself, you can check it out below.</p>
 
-  <div class="links">
-    <a class="pill ctaPrimary" href="YOUR-AFFILIATE-LINK-HERE" target="_blank" rel="noopener">Book here</a>
-  </div>
+        <div class="links">
+          <a class="pill ctaPrimary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp&fbclid=IwY2xjawQ7PfhleHRuA2FlbQIxMABicmlkETFqV2ZHb0Ftb2JIV1ZGZVFTc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHnsrfTUfYILHmRHFEHSfI4761p6VAZZXCnnQCuL4JxFi5mhtq0YP_N2U_wD6_aem_w0dgv6YrnoAN6iA6xl7Vuw" target="_blank" rel="noopener">Book here</a>
+        </div>
 
-  <p class="smallNote">
-    This is the exact tour we did through TourRadar. If you book through our link, we may earn a small commission at no extra cost to you.
-  </p>
-</div>
+        <p class="smallNote">
+          This is the exact tour we did through TourRadar. If you book through our link, we may earn a small commission at no extra cost to you.
+        </p>
+      </div>
 
       <div class="card">
         <h2>Route Map</h2>
@@ -1506,12 +1596,12 @@
 
       <div class="card">
         <h2>Adventure without the planning headache</h2>
-        
+
         <p>
-  Looking for a TourRadar discount code?
-  <a href="tourradar-discount-code.html"><strong>See how to get the best deal here</strong></a>.
-      </p>
-      
+          Looking for a TourRadar discount code?
+          <a href="tourradar-discount-code.html"><strong>See how to get the best deal here</strong></a>.
+        </p>
+
         <p class="lead"><strong>TourRadar</strong> is ideal if you want the trip without having to organise every hotel, transfer, route, and excursion yourself.</p>
         <p>We used TourRadar for our Morocco trip and it made life much easier. Instead of spending the whole holiday worrying about logistics, we got to focus on the experience — Marrakech, the Atlas Mountains, desert camps, local guides, stunning scenery, and all the little unexpected moments that make a trip memorable.</p>
         <p>If you’ve been searching for <strong>TourRadar reviews</strong>, <strong>TourRadar Morocco tours</strong>, <strong>Morocco tour reviews</strong>, or wondering <strong>is TourRadar worth it</strong>, our honest answer is yes — especially if you want less stress and more actual holiday.</p>
@@ -1738,6 +1828,29 @@
       <div class="mapModalBody" id="mapModalBody">
         <p class="mapZoomHint">Tip: pinch-to-zoom on your phone, then drag or scroll around.</p>
       </div>
+    </div>
+  </div>
+
+  <div class="promoModal" id="promoModal" aria-hidden="true" role="dialog" aria-label="Morocco tour popup">
+    <div class="promoBox" role="document">
+      <button class="promoClose" type="button" onclick="closePromoModal()" aria-label="Close popup">×</button>
+
+      <h2>Thinking of booking the Morocco Tour we did?</h2>
+
+      <p class="lead"><strong>This is the exact tour we booked — and honestly, we couldn’t fault it.</strong></p>
+
+      <p>From Marrakech to the Atlas Mountains, desert camps, local guides, and all the stops in between — everything was organised for us, which meant we could actually enjoy the experience instead of stressing about logistics.</p>
+
+      <p>If you want the same route, the same experience, and a proper feel for Morocco without having to plan every detail yourself, you can check it out below.</p>
+
+      <div class="promoActions">
+        <a class="pill ctaPrimary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp&fbclid=IwY2xjawQ7PfhleHRuA2FlbQIxMABicmlkETFqV2ZHb0Ftb2JIV1ZGZVFTc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHnsrfTUfYILHmRHFEHSfI4761p6VAZZXCnnQCuL4JxFi5mhtq0YP_N2U_wD6_aem_w0dgv6YrnoAN6iA6xl7Vuw" target="_blank" rel="noopener">Book here</a>
+        <button class="pill ctaSecondary" type="button" onclick="closePromoModal()">Maybe later</button>
+      </div>
+
+      <p class="promoSub">
+        This is the exact tour we did through TourRadar. If you book through our link, we may earn a small commission at no extra cost to you.
+      </p>
     </div>
   </div>
 </body>
