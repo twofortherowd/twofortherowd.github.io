@@ -10,6 +10,9 @@
     gtag('config', 'G-H7SPF3M3X8');
   </script>
 
+  <!-- GetYourGuide Analytics -->
+  <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
+
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Two for the Row’d | Honest Travel Reviews, Hidden Gems & TourRadar Tips</title>
@@ -1019,7 +1022,7 @@
   </style>
 
   <script>
-    const TAB_IDS = ["home","morocco","brew","hidden","hotel","reels","tourradar","deals","ask","work"];
+    const TAB_IDS = ["home","morocco","brew","hidden","hotel","reels","tourradar","deals","gyg","ask","work"];
 
     const INITIAL_HASH = (location.hash || "").replace("#", "");
     if (location.hash) {
@@ -1203,6 +1206,7 @@
     <button class="tabBtn" data-tab="reels" onclick="show('reels')" aria-selected="false">Reels & Shorts</button>
     <button class="tabBtn" data-tab="tourradar" onclick="show('tourradar')" aria-selected="false">TourRadar</button>
     <button class="tabBtn" data-tab="deals" onclick="show('deals')" aria-selected="false">TourRadar Deals</button>
+    <button class="tabBtn" data-tab="gyg" onclick="show('gyg')" aria-selected="false">GetYourGuide Picks</button>
     <button class="tabBtn" data-tab="ask" onclick="show('ask')" aria-selected="false">Ask Us</button>
     <button class="tabBtn" data-tab="work" onclick="show('work')" aria-selected="false">Work With Us</button>
   </nav>
@@ -1342,6 +1346,15 @@
         <p class="smallNote">
           This is the exact tour we did through TourRadar. If you book through our link, we may earn a small commission at no extra cost to you.
         </p>
+      </div>
+
+      <div class="card">
+        <h2>Doing Morocco your own way?</h2>
+        <p>If you're not booking a full multi-day tour and just want great things to do in Marrakech, we’ve also put together some activities and day tours worth checking out.</p>
+
+        <div class="links">
+          <a class="pill ctaPrimary" href="#gyg" onclick="event.preventDefault(); show('gyg');">See Marrakech activities</a>
+        </div>
       </div>
 
       <div class="card">
@@ -1625,6 +1638,47 @@
         <div class="links">
           <a class="pill ctaPrimary" href="#morocco" onclick="event.preventDefault(); show('morocco');">Read our Morocco experience</a>
         </div>
+      </div>
+    </section>
+
+    <!-- GETYOURGUIDE PICKS -->
+    <section id="gyg">
+      <h1>GetYourGuide Picks</h1>
+
+      <div class="card">
+        <h2>Things to do in Marrakech & beyond</h2>
+        <p class="lead"><strong>If you’re not doing a full tour and just want brilliant things to do, this is where GetYourGuide comes in.</strong></p>
+        <p>We’ve partnered with GetYourGuide to share activities, day trips, and experiences that are easy to book and genuinely worth doing.</p>
+        <p>From guided walking tours and Atlas Mountain day trips to cultural experiences, food tours, and desert add-ons, these are the kinds of things we’d recommend if you want to explore Morocco without planning everything from scratch.</p>
+        <p><strong>Perfect for:</strong></p>
+
+        <ul>
+          <li>Short stays in Marrakech</li>
+          <li>Adding experiences onto a bigger trip</li>
+          <li>Day tours without long commitments</li>
+          <li>First-time visitors who want structure without stress</li>
+        </ul>
+
+        <div class="seoTags" aria-label="GetYourGuide topics">
+          <span class="seoTag">Marrakech activities</span>
+          <span class="seoTag">things to do in Marrakech</span>
+          <span class="seoTag">Marrakech day tours</span>
+          <span class="seoTag">Morocco experiences</span>
+          <span class="seoTag">GetYourGuide Marrakech</span>
+        </div>
+
+        <p class="disclosure">
+          <strong>Disclosure:</strong> If you book through these links, we may earn a small commission at no extra cost to you. We only share experiences we genuinely rate.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Browse Marrakech activities</h2>
+        <div data-gyg-href="https://widget.getyourguide.com/default/city.frame"
+             data-gyg-location-id="208"
+             data-gyg-locale-code="en-US"
+             data-gyg-widget="city"
+             data-gyg-partner-id="VYORXUN"></div>
       </div>
     </section>
 
