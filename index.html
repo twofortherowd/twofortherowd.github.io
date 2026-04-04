@@ -15,14 +15,14 @@
 
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Two for the Row’d | Honest Travel Reviews, Hidden Gems & TourRadar Tips</title>
-  <meta name="description" content="Two for the Row’d share honest travel reviews, hidden gems, hotel stays, gluten-free finds, Morocco tour experiences, and practical TourRadar tips from real trips." />
+  <title>Two for the Row’d | Honest Travel Reviews, Hidden Gems & Travel Essentials</title>
+  <meta name="description" content="Two for the Row’d share honest travel reviews, hidden gems, hotel stays, gluten-free finds, Morocco tour experiences, GetYourGuide picks, TourRadar tips, and travel essentials we actually use." />
 
   <link rel="canonical" href="https://twofortherowd.com/" />
   <meta name="theme-color" content="#ffd84a" />
 
-  <meta property="og:title" content="Two for the Row’d | Honest Travel Reviews, Hidden Gems & TourRadar Tips" />
-  <meta property="og:description" content="Honest travel reviews, hidden gems, gluten-free finds, hotel stays, Morocco travel stories, and practical TourRadar tips from Two for the Row’d." />
+  <meta property="og:title" content="Two for the Row’d | Honest Travel Reviews, Hidden Gems & Travel Essentials" />
+  <meta property="og:description" content="Honest travel reviews, hidden gems, gluten-free finds, hotel stays, Morocco travel stories, practical TourRadar tips, and travel essentials we actually use." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://twofortherowd.com/" />
   <meta property="og:image" content="https://twofortherowd.com/img/og.jpg" />
@@ -34,7 +34,7 @@
     "@type":"WebSite",
     "name":"Two for the Row’d",
     "url":"https://twofortherowd.com/",
-    "description":"Irish travel storytellers sharing honest travel reviews, hidden gems, gluten-free finds, hotel stays, TourRadar tips, current deals, and Morocco tour experiences.",
+    "description":"Irish travel storytellers sharing honest travel reviews, hidden gems, gluten-free finds, hotel stays, travel essentials, TourRadar tips, GetYourGuide picks, and Morocco tour experiences.",
     "publisher":{
       "@type":"Organization",
       "name":"Two for the Row’d",
@@ -728,6 +728,36 @@
       overflow:hidden;
     }
 
+    .productGrid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:16px;
+      max-width:1000px;
+      margin:0 auto;
+    }
+
+    .productCard{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px;
+      text-align:left;
+      backdrop-filter:blur(3px);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+
+    .productCard:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 36px rgba(0,0,0,.14);
+    }
+
+    .productIcon{
+      font-size:28px;
+      line-height:1;
+      margin-bottom:10px;
+    }
+
     footer{
       margin-top:10px;
       padding:18px 0 10px;
@@ -983,6 +1013,7 @@
       .grid{ grid-template-columns:repeat(2, 1fr); max-width:900px; }
       .extraRow{ grid-template-columns:repeat(2, 1fr); max-width:900px; }
       .stats{ grid-template-columns:repeat(2, 1fr); }
+      .productGrid{ grid-template-columns:1fr; }
     }
 
     @media (max-width: 760px){
@@ -1031,7 +1062,7 @@
   </style>
 
   <script>
-    const TAB_IDS = ["home","morocco","brew","hidden","hotel","reels","tourradar","deals","gyg","ask","work"];
+    const TAB_IDS = ["home","amazon","morocco","brew","hidden","hotel","reels","tourradar","deals","gyg","ask","work"];
 
     const INITIAL_HASH = (location.hash || "").replace("#", "");
     if (location.hash) {
@@ -1198,26 +1229,25 @@
           <span class="sr-only">TikTok</span>
         </a>
 
-<a class="pill icon" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener" aria-label="YouTube">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
-  <span class="sr-only">YouTube</span>
-</a>
+        <a class="pill icon" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+          <span class="sr-only">YouTube</span>
+        </a>
 
-<!-- TourRadar -->
-<a class="pill" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored">
-  TourRadar
-</a>
+        <a class="pill" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored">
+          TourRadar
+        </a>
 
-<!-- GetYourGuide -->
-<a class="pill" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored">
-  GetYourGuide
-</a>
+        <a class="pill" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored">
+          GetYourGuide
+        </a>
       </div>
     </div>
   </header>
 
   <nav aria-label="Site navigation">
     <button class="tabBtn" data-tab="home" onclick="show('home')" aria-selected="true">Home</button>
+    <button class="tabBtn" data-tab="amazon" onclick="show('amazon')" aria-selected="false">Amazon Favourites</button>
     <button class="tabBtn" data-tab="morocco" onclick="show('morocco')" aria-selected="false">Morocco Series</button>
     <button class="tabBtn" data-tab="brew" onclick="show('brew')" aria-selected="false">Brew for Two</button>
     <button class="tabBtn" data-tab="hidden" onclick="show('hidden')" aria-selected="false">Hidden Ireland</button>
@@ -1285,6 +1315,26 @@
       </div>
 
       <div class="card">
+        <h2>Travel essentials we actually use</h2>
+        <p><strong>Not every travel gadget is worth packing.</strong> We’ve started putting together the bits we genuinely rate — the practical things that make travelling easier, cheaper, and a lot less stressful.</p>
+        <p>From luggage scales to packing cubes and travel adapters, these are the simple things we’d actually recommend after using them ourselves.</p>
+        <p><a href="#amazon" onclick="event.preventDefault(); show('amazon');"><strong>See our Amazon favourites here →</strong></a></p>
+
+        <div class="links">
+          <a class="pill ctaPrimary" href="#amazon" onclick="event.preventDefault(); show('amazon');">See our Amazon favourites</a>
+        </div>
+
+        <div class="seoTags" aria-label="Travel essentials topics">
+          <span class="seoTag">travel essentials</span>
+          <span class="seoTag">Amazon travel finds</span>
+          <span class="seoTag">travel gadgets</span>
+          <span class="seoTag">packing tips</span>
+          <span class="seoTag">airport essentials</span>
+          <span class="seoTag">travel accessories</span>
+        </div>
+      </div>
+
+      <div class="card">
         <h2>Looking for a TourRadar discount code?</h2>
         <p><strong>You’re not the only one.</strong> A lot of people land here looking for TourRadar discounts, current deals, or the best way to save before they book.</p>
         <p>Instead of relying on random coupon sites, we’ve put together a dedicated page that explains how TourRadar savings usually work, including live offers, sale pricing, and first-click booking tips.</p>
@@ -1319,7 +1369,7 @@
         </div>
 
         <p class="mt12">
-          We keep it useful, funny, and real. No generic waffle. Just places, trips, cafés, hotels and tours we’ve actually experienced and can properly talk about.
+          We keep it useful, funny, and real. No generic waffle. Just places, trips, cafés, hotels, tours and travel bits we’ve actually experienced and can properly talk about.
         </p>
       </div>
 
@@ -1343,33 +1393,97 @@
           Two for the Row’d is affiliated with
         </p>
 
-        <div style="
-          display:flex;
-          justify-content:center;
-          align-items:center;
-          gap:40px;
-          flex-wrap:wrap;
-        ">
+        <div style="display:flex; justify-content:center; align-items:center; gap:40px; flex-wrap:wrap;">
           <a href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored">
-            <img src="img/img-tourradar-logo.png" alt="TourRadar logo" style="
-              height:38px;
-              opacity:0.85;
-              transition:0.3s ease;
-            " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+            <img src="img/img-tourradar-logo.png" alt="TourRadar logo" style="height:38px; opacity:0.85; transition:0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
           </a>
 
           <a href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored">
-            <img src="img/img-getyourguide-logo.png" alt="GetYourGuide logo" style="
-              height:38px;
-              opacity:0.85;
-              transition:0.3s ease;
-            " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+            <img src="img/img-getyourguide-logo.png" alt="GetYourGuide logo" style="height:38px; opacity:0.85; transition:0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
           </a>
         </div>
 
         <p class="smallNote">
           If you book through our links, we may earn a small commission at no extra cost to you.
         </p>
+      </div>
+    </section>
+
+    <!-- AMAZON -->
+    <section id="amazon">
+      <h1>Amazon Favourites</h1>
+
+      <div class="card heroCard">
+        <div class="heroIntro">
+          <h2>Travel essentials we actually use</h2>
+          <p class="lead"><strong>These are the travel bits we genuinely rate — the simple things that make holidays easier, less stressful, and a lot more comfortable.</strong></p>
+
+          <video class="heroVideo" controls preload="metadata">
+            <source src="video/amazon-sales1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <p>Over the years, and after a few stressful airport moments of our own, these are the things we keep reaching for when we travel. They’re practical, easy to pack, and actually useful rather than gimmicky.</p>
+
+          <p>From avoiding overweight baggage fees to sleeping a bit better on flights, these are the travel products we’d happily recommend.</p>
+
+          <div class="seoTags" aria-label="Amazon favourites topics">
+            <span class="seoTag">travel essentials</span>
+            <span class="seoTag">Amazon travel favourites</span>
+            <span class="seoTag">best travel gadgets</span>
+            <span class="seoTag">flight essentials</span>
+            <span class="seoTag">holiday packing must-haves</span>
+            <span class="seoTag">travel accessories we use</span>
+          </div>
+
+          <p class="disclosure">
+            <strong>Disclosure:</strong> This page contains affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.
+          </p>
+        </div>
+      </div>
+
+      <div class="productGrid">
+        <div class="productCard">
+          <div class="productIcon">⚖️</div>
+          <h3>Luggage Scale</h3>
+          <p>A tiny thing that can save you a lot of airport stress. We always check our bags before leaving the house now rather than standing at check-in hoping for the best.</p>
+          <div class="links">
+            <a class="pill ctaPrimary" href="https://amzn.to/3OlRUUA" target="_blank" rel="noopener sponsored nofollow">View on Amazon</a>
+          </div>
+        </div>
+
+        <div class="productCard">
+          <div class="productIcon">🎒</div>
+          <h3>Packing Cubes</h3>
+          <p>These make packing far less chaotic and help you fit so much more into your suitcase. Handy for keeping outfits, chargers, and random bits organised too.</p>
+          <div class="links">
+            <a class="pill ctaPrimary" href="https://amzn.to/3NHZoBe" target="_blank" rel="noopener sponsored nofollow">View on Amazon</a>
+          </div>
+        </div>
+
+        <div class="productCard">
+          <div class="productIcon">🔌</div>
+          <h3>Travel Adapter</h3>
+          <p>One of those things you only forget once. A good adapter is a must if you're heading abroad and don’t want the panic of realising nothing fits the plug socket.</p>
+          <div class="links">
+            <a class="pill ctaPrimary" href="https://amzn.to/4e3w7LQ" target="_blank" rel="noopener sponsored nofollow">View on Amazon</a>
+          </div>
+        </div>
+
+        <div class="productCard">
+          <div class="productIcon">😴</div>
+          <h3>Travel Pillow</h3>
+          <p>Flights are much more bearable with a decent travel pillow. This is one of those comfort buys that ends up being well worth it, especially on longer journeys.</p>
+          <div class="links">
+            <a class="pill ctaPrimary" href="https://amzn.to/3OlSv8L" target="_blank" rel="noopener sponsored nofollow">View on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Why we picked these</h2>
+        <p>We didn’t want this page full of random Amazon clutter. These are the kinds of products that solve actual travel problems — packing better, staying organised, avoiding surprise baggage fees, and making flights a bit more comfortable.</p>
+        <p>If we add more to this page over time, it’ll only be things we’d genuinely use ourselves.</p>
       </div>
     </section>
 
