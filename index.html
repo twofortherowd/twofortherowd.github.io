@@ -1534,69 +1534,65 @@
 
         <div class="routeMapWrap" aria-label="Tap to enlarge route map of Morocco">
           <button class="routeMapBtn" type="button" onclick="openMapModal()" aria-label="Tap to enlarge route map">
-            <svg class="routeMap" viewBox="0 0 900 520" role="img" aria-label="Morocco route map">
-              <defs>
-                <linearGradient id="paperGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="rgba(255,255,255,.88)"/>
-                  <stop offset="1" stop-color="rgba(255,216,74,.22)"/>
-                </linearGradient>
+<svg class="routeMap" viewBox="0 0 900 520" role="img" aria-label="Morocco route map">
+  <defs>
+    <linearGradient id="routeGrad2" x1="330" y1="400" x2="560" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="rgba(0,0,0,.80)"/>
+      <stop offset="1" stop-color="rgba(0,0,0,.40)"/>
+    </linearGradient>
 
-                <pattern id="dotPattern2" width="18" height="18" patternUnits="userSpaceOnUse">
-                  <circle cx="3" cy="3" r="1.1" fill="rgba(0,0,0,.035)"/>
-                </pattern>
+    <filter id="softShadow2" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,.16)"/>
+    </filter>
+  </defs>
 
-                <linearGradient id="routeGrad2" x1="330" y1="400" x2="560" y2="190" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="rgba(0,0,0,.80)"/>
-                  <stop offset="1" stop-color="rgba(0,0,0,.40)"/>
-                </linearGradient>
+  <!-- Morocco shape -->
+  <path d="M240,80 C270,60 330,55 380,70 C410,82 445,92 500,90 C560,88 610,110 640,150 C675,195 690,235 675,295 C660,355 620,395 570,425 C520,455 470,470 410,465 C350,458 300,440 270,410 C240,380 220,340 220,290 C220,235 205,205 200,165 C195,125 210,95 240,80 Z"
+        fill="rgba(0,0,0,.04)"
+        stroke="rgba(0,0,0,.08)"
+        stroke-width="2"></path>
 
-                <filter id="softShadow2" x="-30%" y="-30%" width="160%" height="160%">
-                  <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,.16)"/>
-                </filter>
+  <!-- Route line -->
+  <path id="routePath"
+        d="M540,240 L495,220 L455,240 L420,260 L395,300 L380,340 L355,360 L420,290 L540,240"
+        fill="none"
+        stroke="url(#routeGrad2)"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-dasharray="1000"
+        stroke-dashoffset="1000"
+        filter="url(#softShadow2)">
+  </path>
 
-                <filter id="routeGlow" x="-40%" y="-40%" width="180%" height="180%">
-                  <feGaussianBlur stdDeviation="3.5" result="blur"/>
-                  <feMerge>
-                    <feMergeNode in="blur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
+  <!-- Animated draw -->
+  <animate xlink:href="#routePath"
+           attributeName="stroke-dashoffset"
+           from="1000"
+           to="0"
+           dur="2s"
+           fill="freeze" />
 
-                <filter id="labelShadow" x="-30%" y="-30%" width="160%" height="160%">
-                  <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,.18)"/>
-                </filter>
-              </defs>
+  <!-- Jeep -->
+  <g id="jeep" transform="translate(0,0)">
+    <rect x="-12" y="-6" width="24" height="12" rx="3" fill="#111"/>
+    <circle cx="-7" cy="7" r="3" fill="#111"/>
+    <circle cx="7" cy="7" r="3" fill="#111"/>
+    <animateMotion dur="4s" fill="freeze" rotate="auto">
+      <mpath href="#routePath" />
+    </animateMotion>
+  </g>
 
-              <rect x="0" y="0" width="900" height="520" fill="url(#paperGrad)"></rect>
-              <rect x="0" y="0" width="900" height="520" fill="url(#dotPattern2)" opacity=".95"></rect>
+  <!-- Stops -->
+  <circle cx="540" cy="240" r="6" fill="#000"/>
+  <circle cx="495" cy="220" r="6" fill="#000"/>
+  <circle cx="455" cy="240" r="6" fill="#000"/>
+  <circle cx="420" cy="260" r="6" fill="#000"/>
+  <circle cx="395" cy="300" r="6" fill="#000"/>
+  <circle cx="380" cy="340" r="6" fill="#000"/>
+  <circle cx="355" cy="360" r="6" fill="#000"/>
 
-              <path d="M240,80 C270,60 330,55 380,70 C410,82 445,92 500,90 C560,88 610,110 640,150 C675,195 690,235 675,295 C660,355 620,395 570,425 C520,455 470,470 410,465 C350,458 300,440 270,410 C240,380 220,340 220,290 C220,235 205,205 200,165 C195,125 210,95 240,80 Z" fill="rgba(0,0,0,.035)" stroke="rgba(0,0,0,.08)" stroke-width="2"></path>
-
-              <g opacity=".18" transform="translate(760,88) rotate(10)">
-                <rect x="-70" y="-40" width="140" height="80" rx="14" fill="#c1272d"></rect>
-                <path d="M 0 -22 L 13 18 L -22 -4 L 22 -4 L -13 18 Z" fill="none" stroke="#006233" stroke-width="5" stroke-linejoin="round"/>
-              </g>
-
-              <path d="M540,240 L495,220 L455,240 L420,260 L395,300 L380,340 L355,360 L420,290 L540,240"
-                    fill="none"
-                    stroke="rgba(255,216,74,.85)"
-                    stroke-width="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    opacity=".35"
-                    filter="url(#routeGlow)" />
-
-              <path class="routeStroke" d="M540,240 L495,220 L455,240 L420,260 L395,300 L380,340 L355,360 L420,290 L540,240" />
-
-              <g class="pin p1"><circle cx="540" cy="240" r="12" fill="rgba(0,0,0,.88)"></circle><circle cx="540" cy="240" r="6" fill="#ffd84a"></circle><circle cx="540" cy="240" r="18" fill="rgba(255,216,74,.18)"></circle><g transform="translate(560,224)" filter="url(#labelShadow)"><rect x="0" y="0" rx="10" ry="10" width="118" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/><text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">1 • Marrakech</text></g></g>
-              <g class="pin p2"><circle cx="495" cy="220" r="11" fill="rgba(0,0,0,.88)"></circle><circle cx="495" cy="220" r="5.5" fill="#ffd84a"></circle><circle cx="495" cy="220" r="17" fill="rgba(255,216,74,.18)"></circle><g transform="translate(515,196)" filter="url(#labelShadow)"><rect x="0" y="0" rx="10" ry="10" width="94" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/><text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">2 • Atlas</text></g></g>
-              <g class="pin p3"><circle cx="455" cy="240" r="11" fill="rgba(0,0,0,.88)"></circle><circle cx="455" cy="240" r="5.5" fill="#ffd84a"></circle><circle cx="455" cy="240" r="17" fill="rgba(255,216,74,.18)"></circle><g transform="translate(475,252)" filter="url(#labelShadow)"><rect x="0" y="0" rx="10" ry="10" width="146" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/><text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">3 • Ait Benhaddou</text></g></g>
-              <g class="pin p4"><circle cx="420" cy="260" r="11" fill="rgba(0,0,0,.88)"></circle><circle cx="420" cy="260" r="5.5" fill="#ffd84a"></circle><circle cx="420" cy="260" r="17" fill="rgba(255,216,74,.18)"></circle><g transform="translate(440,270)" filter="url(#labelShadow)"><rect x="0" y="0" rx="10" ry="10" width="132" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/><text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">4 • Ouarzazate</text></g></g>
-              <g class="pin p5"><circle cx="395" cy="300" r="11" fill="rgba(0,0,0,.88)"></circle><circle cx="395" cy="300" r="5.5" fill="#ffd84a"></circle><circle cx="395" cy="300" r="17" fill="rgba(255,216,74,.18)"></circle><g transform="translate(292,288)" filter="url(#labelShadow)"><rect x="0" y="0" rx="10" ry="10" width="104" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/><text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">5 • Zagora</text></g></g>
-              <g class="pin p6"><circle cx="380" cy="340" r="11" fill="rgba(0,0,0,.88)"></circle><circle cx="380" cy="340" r="5.5" fill="#ffd84a"></circle><circle cx="380" cy="340" r="17" fill="rgba(255,216,74,.18)"></circle><g transform="translate(270,330)" filter="url(#labelShadow)"><rect x="0" y="0" rx="10" ry="10" width="104" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/><text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">6 • Sahara</text></g></g>
-              <g class="pin p7"><circle cx="355" cy="360" r="11" fill="rgba(0,0,0,.88)"></circle><circle cx="355" cy="360" r="5.5" fill="#ffd84a"></circle><circle cx="355" cy="360" r="17" fill="rgba(255,216,74,.18)"></circle><g transform="translate(240,372)" filter="url(#labelShadow)"><rect x="0" y="0" rx="10" ry="10" width="134" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/><text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">7 • Tamegroute</text></g></g>
-              <g class="pin p8"><circle cx="420" cy="290" r="11" fill="rgba(0,0,0,.88)"></circle><circle cx="420" cy="290" r="5.5" fill="#ffd84a"></circle><circle cx="420" cy="290" r="17" fill="rgba(255,216,74,.18)"></circle><g transform="translate(442,292)" filter="url(#labelShadow)"><rect x="0" y="0" rx="10" ry="10" width="124" height="26" fill="rgba(255,255,255,.95)" stroke="rgba(0,0,0,.12)"/><text x="12" y="18" font-family="Arial,system-ui" font-size="12" font-weight="900" fill="rgba(0,0,0,.88)">8 • Back north</text></g></g>
-            </svg>
+</svg>
           </button>
         </div>
 
