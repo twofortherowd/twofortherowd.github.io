@@ -1202,37 +1202,48 @@
       .proof-item { flex: 1 1 100px; }
     }
 
-    @media (max-width: 560px) {
+@media (max-width: 560px) {
   .shortGrid { grid-template-columns: 1fr; }
-
-  nav {
-    position: static;
-    top: auto;
-    gap: 6px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: stretch;
-    padding: 10px;
-  }
-
-  .tabBtn {
-  width: 100%;
-  padding: 7px 8px;
-  font-size: 11px;
-  text-align: center;
-}
-
-  .hero-ctas, .links, .promoActions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
+  nav { gap: 6px; }
+  .tabBtn { padding: 8px 10px; font-size: 12px; }
+  .hero-ctas, .links, .promoActions { flex-direction: column; align-items: stretch; }
   .hero-ctas .btn-primary, .hero-ctas .btn-gold,
   .links .btn-primary, .links .btn-outline,
-  .promoActions .btn-primary, .promoActions .btn-outline {
-    text-align: center;
-    justify-content: center;
+  .promoActions .btn-primary, .promoActions .btn-outline { text-align: center; justify-content: center; }
+
+  /* 👇 ADD THIS PART */
+  .header-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
+
+  .header-bar > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .email-badge {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pill {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .pill.icon {
+    flex: 0 0 auto;
+  }
+
+  /* optional nicer layout */
+  .pill:not(.icon) {
+    flex: 1 1 45%;
+  }
+}
 }
     }
 
