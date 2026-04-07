@@ -1203,13 +1203,37 @@
     }
 
     @media (max-width: 560px) {
-      .shortGrid { grid-template-columns: 1fr; }
-      nav { gap: 6px; }
-      .tabBtn { padding: 8px 10px; font-size: 12px; }
-      .hero-ctas, .links, .promoActions { flex-direction: column; align-items: stretch; }
-      .hero-ctas .btn-primary, .hero-ctas .btn-gold,
-      .links .btn-primary, .links .btn-outline,
-      .promoActions .btn-primary, .promoActions .btn-outline { text-align: center; justify-content: center; }
+  .shortGrid { grid-template-columns: 1fr; }
+
+  nav {
+    position: static;
+    top: auto;
+    gap: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    padding: 10px;
+  }
+
+  .tabBtn {
+  width: 100%;
+  padding: 7px 8px;
+  font-size: 11px;
+  text-align: center;
+}
+
+  .hero-ctas, .links, .promoActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-ctas .btn-primary, .hero-ctas .btn-gold,
+  .links .btn-primary, .links .btn-outline,
+  .promoActions .btn-primary, .promoActions .btn-outline {
+    text-align: center;
+    justify-content: center;
+  }
+}
     }
 
     @media (max-width: 480px) {
