@@ -1210,7 +1210,13 @@
 
 @media (max-width: 560px) {
   .shortGrid { grid-template-columns: 1fr; }
-  nav { gap: 6px; }
+
+  nav {
+    position: static;
+    top: auto;
+    gap: 6px;
+  }
+
   .tabBtn { padding: 8px 10px; font-size: 12px; }
   .hero-ctas, .links, .promoActions { flex-direction: column; align-items: stretch; }
   .hero-ctas .btn-primary, .hero-ctas .btn-gold,
