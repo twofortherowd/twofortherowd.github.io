@@ -105,9 +105,8 @@
     }
 
     body {
-  margin: 0;
-  overflow-x: hidden;
-  font-family: var(--font-body);
+      margin: 0;
+      font-family: var(--font-body);
       font-size: 15px;
       font-weight: 400;
       line-height: 1.7;
@@ -239,7 +238,7 @@
        NAVIGATION
     ============================================================ */
     nav {
-      position: relative;
+      position: sticky;
       top: 0;
       z-index: 100;
       display: flex;
@@ -1391,7 +1390,7 @@
     <img src="img/Logo.jpg" class="logo" alt="Two for the Row'd logo">
 
     <div class="header-bar">
-      <span class="email-badge">twofortherowd@gmail.com</span>
+      <span class="email-badge"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6b2b1a9a0a9b4b2aea3b4a9b1a286a1aba7afaae8a5a9ab">[email&#160;protected]</a></span>
 
       <div style="display:flex;gap:8px;flex-wrap:nowrap;align-items:center;" aria-label="Social links">
 
@@ -1439,7 +1438,6 @@
     <button class="tabBtn" data-tab="hotel"      onclick="show('hotel')"      aria-selected="false">Hotel Stays</button>
     <button class="tabBtn" data-tab="reels"      onclick="show('reels')"      aria-selected="false">Reels &amp; Shorts</button>
     <button class="tabBtn" data-tab="tourradar"  onclick="show('tourradar')"  aria-selected="false">TourRadar</button>
-    <button class="tabBtn" data-tab="deals"      onclick="show('deals')"      aria-selected="false">TourRadar Deals</button>
     <button class="tabBtn" data-tab="gyg"        onclick="show('gyg')"        aria-selected="false">GetYourGuide Picks</button>
     <button class="tabBtn" data-tab="ask"        onclick="show('ask')"        aria-selected="false">Ask Us</button>
     <button class="tabBtn" data-tab="work"       onclick="show('work')"       aria-selected="false">Work With Us</button>
@@ -1473,7 +1471,7 @@
             Watch our Morocco trip →
           </a>
           <a class="btn-gold" href="tourradar-discount-code.html">
-            TourRadar Discount Code (2026)
+            Planning a tour? Read this first →
           </a>
           <a class="btn-outline" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored">
             Browse tours we recommend
@@ -1584,11 +1582,11 @@
           <div class="feat-arrow">See hotel reviews →</div>
         </div>
 
-        <div class="feat-card" onclick="window.location='tourradar-discount-code.html';" role="button" tabindex="0" aria-label="TourRadar discount guide">
-          <span class="feat-tag">💰 Deals</span>
-          <div class="feat-title">TourRadar Discount Code (2026) — how to get the best deal</div>
-          <p class="feat-sub">Instead of random coupon sites, here's how TourRadar savings actually work and where to check live offers first.</p>
-          <div class="feat-arrow">Read the guide →</div>
+        <div class="feat-card" onclick="show('brew');" role="button" tabindex="0" aria-label="Go to Brew for Two">
+          <span class="feat-tag">☕ Brew for Two</span>
+          <div class="feat-title">On a mission to find the best coffee in Ireland — one café at a time</div>
+          <p class="feat-sub">Honest café reviews, gluten-free treat ratings, hidden coffee spots and the ones genuinely worth stopping for.</p>
+          <div class="feat-arrow">See the reviews →</div>
         </div>
 
       </div>
@@ -1630,17 +1628,15 @@
       <div class="card" style="text-align:center;">
         <p style="font-weight:700;font-size:15px;margin-bottom:16px;text-align:center;">Two for the Row'd is affiliated with</p>
         <div class="logo-strip">
-  <a href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored">
-    <img src="img/img-tourradar-logo.png" alt="TourRadar logo">
-  </a>
-  <a href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored">
-    <img src="img/img-getyourguide-logo.png" alt="GetYourGuide logo">
-  </a>
-  <a href="https://amzn.to/4crDBXG" target="_blank" rel="noopener sponsored nofollow"
-     onclick="fbq('track','ViewContent');">
-    <img src="img/img-amazon-logo.png" alt="Amazon logo">
-  </a>
-</div>
+          <a href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored">
+            <img src="img/img-tourradar-logo.png" alt="TourRadar logo">
+          </a>
+          <a href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored">
+            <img src="img/img-getyourguide-logo.png" alt="GetYourGuide logo">
+          </a>
+        </div>
+        <p class="smallNote">If you book through our links, we may earn a small commission at no extra cost to you.</p>
+      </div>
 
     </section>
 
@@ -2237,7 +2233,7 @@
 
         <div class="links">
           <a class="btn-outline" href="media/two-for-the-rowd-media-kit.pdf" target="_blank" rel="noopener">Download Media Kit (PDF)</a>
-          <a class="btn-primary" href="mailto:twofortherowd@gmail.com">Email Us</a>
+          <a class="btn-primary" href="/cdn-cgi/l/email-protection#3440435b525b46405c51465b4350745359555d581a575b59">Email Us</a>
         </div>
 
         <p class="disclosure"><strong>Brands:</strong> Send us your dates and deliverables and we'll come back with a simple proposal.</p>
@@ -2288,10 +2284,4 @@
       <p class="promoSub">Or if you're here for Morocco — <a href="#morocco" onclick="closePromoModal(); show('morocco');" style="font-weight:700;color:var(--ink);">read our full tour review here →</a></p>
 
       <p class="promoSub" style="margin-top:8px;">
-        <button style="background:none;border:none;font-family:var(--font-body);font-size:12px;color:var(--muted);cursor:pointer;padding:0;text-decoration:underline;" onclick="closePromoModal()">No thanks, just browsing</button>
-      </p>
-    </div>
-  </div>
-
-</body>
-</html>
+        <button style="background:none;border:none;font-family:var(--font-body);font-size:12px;color:var(
