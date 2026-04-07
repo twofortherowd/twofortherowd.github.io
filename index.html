@@ -166,12 +166,15 @@
     /* ============================================================
    HEADER
 ============================================================ */
-
-.social-links {
+    .social-links,
+.affiliate-links {
   display: flex;
-  gap: 8px;
+  justify-content: center;
   align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
+
     header {
       padding: 22px 16px 10px;
       text-align: center;
@@ -1211,62 +1214,88 @@
 @media (max-width: 560px) {
   .shortGrid { grid-template-columns: 1fr; }
 
- nav {
-  position: static;
-  top: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-  padding: 10px;
-}
-  .hero-ctas, .links, .promoActions { flex-direction: column; align-items: stretch; }
-  .hero-ctas .btn-primary, .hero-ctas .btn-gold,
-  .links .btn-primary, .links .btn-outline,
-  .promoActions .btn-primary, .promoActions .btn-outline { text-align: center; justify-content: center; }
+  .logo {
+    max-width: 84%;
+    margin: 0 auto 14px;
+  }
 
-  /* 👇 ADD THIS PART */
+  .email-badge {
+    width: auto;
+    max-width: 100%;
+    padding: 7px 14px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  nav {
+    position: static;
+    top: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 10px;
+    margin: 6px auto 12px;
+  }
+
+  .tabBtn {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .hero-ctas,
+  .links,
+  .promoActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-gold,
+  .links .btn-primary,
+  .links .btn-outline,
+  .promoActions .btn-primary,
+  .promoActions .btn-outline {
+    text-align: center;
+    justify-content: center;
+  }
+
   .header-bar {
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
 
-  .header-bar > div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
+  .social-links {
+    margin-top: 2px;
   }
 
-  .email-badge {
+  .affiliate-links {
     width: 100%;
-    text-align: center;
+    margin-top: 2px;
   }
 
-  .pill {
-    flex: 1 1 auto;
-    text-align: center;
-  }
-
-  .pill.icon {
-    flex: 0 0 auto;
-  }
-
-  /* optional nicer layout */
-  .pill:not(.icon) {
+  .affiliate-links .pill {
     flex: 1 1 45%;
+    text-align: center;
   }
 }
 
-    @media (max-width: 480px) {
-      .grid, .extraRow, .stats { grid-template-columns: 1fr; }
-      .logo-strip { gap: 28px; }
-    }
+@media (max-width: 480px) {
+  .grid,
+  .extraRow,
+  .stats {
+    grid-template-columns: 1fr;
+  }
 
-    @media (max-width: 380px) {
-      .pill.icon { width: 36px; height: 36px; }
-      .pill.icon svg { width: 18px; height: 18px; }
-    }
+  .logo-strip {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 380px) {
+  .pill.icon { width: 36px; height: 36px; }
+  .pill.icon svg { width: 18px; height: 18px; }
+}
 
     /* ============================================================
        MISC UTILITIES
@@ -1446,38 +1475,34 @@
 </span>
 
     <div class="social-links" aria-label="Social links">
+  <a class="pill icon" href="https://www.facebook.com/share/1DKADAR7dV/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.5 1.6-1.5h1.6V5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.7V11H6.6v3h2.7v8h4.2z"/></svg>
+    <span class="sr-only">Facebook</span>
+  </a>
 
-        <a class="pill icon" href="https://www.facebook.com/share/1DKADAR7dV/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.5 1.6-1.5h1.6V5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.7V11H6.6v3h2.7v8h4.2z"/></svg>
-          <span class="sr-only">Facebook</span>
-        </a>
+  <a class="pill icon" href="https://www.instagram.com/twofortherowd25?igsh=MnptN2M5bDlqMXRx&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 10.5zM18 6.8a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+    <span class="sr-only">Instagram</span>
+  </a>
 
-        <a class="pill icon" href="https://www.instagram.com/twofortherowd25?igsh=MnptN2M5bDlqMXRx&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 10.5zM18 6.8a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
-          <span class="sr-only">Instagram</span>
-        </a>
+  <a class="pill icon" href="https://www.tiktok.com/@twofortherowd?_r=1&_t=ZN-93qLG9ldk18" target="_blank" rel="noopener" aria-label="TikTok">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3c.6 3.5 2.7 5.6 6 5.9V12c-2.1 0-4-.7-5.6-2v6.4c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1V14c-.3-.2-.6-.3-.9-.3-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5V3h3.1z"/></svg>
+    <span class="sr-only">TikTok</span>
+  </a>
 
-        <a class="pill icon" href="https://www.tiktok.com/@twofortherowd?_r=1&_t=ZN-93qLG9ldk18" target="_blank" rel="noopener" aria-label="TikTok">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3c.6 3.5 2.7 5.6 6 5.9V12c-2.1 0-4-.7-5.6-2v6.4c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1V14c-.3-.2-.6-.3-.9-.3-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5V3h3.1z"/></svg>
-          <span class="sr-only">TikTok</span>
-        </a>
+  <a class="pill icon" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener" aria-label="YouTube">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+    <span class="sr-only">YouTube</span>
+  </a>
+</div>
 
-        <a class="pill icon" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
-          <span class="sr-only">YouTube</span>
-        </a>
-
-        <a class="pill" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored"
-           onclick="fbq('track','InitiateCheckout');">TourRadar</a>
-
-        <a class="pill" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored"
-           onclick="fbq('track','ViewContent');">GetYourGuide</a>
-
-        <a class="pill" href="https://amzn.to/4crDBXG" target="_blank" rel="noopener sponsored nofollow"
-           onclick="fbq('track','ViewContent');">Amazon</a>
-      </div>
-    </div>
-  </header>
+<div class="affiliate-links">
+  <a class="pill" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">TourRadar</a>
+  <a class="pill" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">GetYourGuide</a>
+  <a class="pill" href="https://amzn.to/4crDBXG" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">Amazon</a>
+</div>
+</div>
+</header>
 
   <!-- ============================================================
        NAVIGATION
@@ -2349,5 +2374,17 @@ Plan better trips, <em>avoid the rubbish</em> —<br>we show you what’s actual
 
       <p class="promoSub">Or if you're here for Morocco — <a href="#morocco" onclick="closePromoModal(); show('morocco');" style="font-weight:700;color:var(--ink);">read our full tour review here →</a></p>
 
+            <p class="promoSub">Or if you're here for Morocco — <a href="#morocco" onclick="closePromoModal(); show('morocco');" style="font-weight:700;color:var(--ink);">read our full tour review here →</a></p>
+
       <p class="promoSub" style="margin-top:8px;">
-        <button style="background:none;border:none;font-family:var(--font-body);font-size:12px;color:var(
+        <button
+          type="button"
+          onclick="closePromoModal()"
+          style="background:none;border:none;font-family:var(--font-body);font-size:12px;color:var(--muted);cursor:pointer;padding:0;">
+          No thanks
+        </button>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
