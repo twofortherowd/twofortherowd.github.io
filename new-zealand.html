@@ -30,7 +30,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <title>New Zealand Travel Guide — Christchurch, Queenstown, Milford Sound & More | Two for the Row'd</title>
+  <title>New Zealand — mountains, lakes & unreal scenery | Two for the Row'd</title>
   <meta name="description" content="From Christchurch to Queenstown, Milford Sound, Rotorua and the Bay of Islands — our New Zealand adventure packed with glaciers, glowworms and wild scenery." />
   <link rel="canonical" href="https://twofortherowd.com/new-zealand.html" />
 
@@ -50,15 +50,19 @@
     .iframe{aspect-ratio:16/9;position:relative;border-radius:14px;overflow:hidden;margin:16px 0}
     .iframe iframe{position:absolute;inset:0;width:100%;height:100%}
     .portrait{aspect-ratio:9/16;max-width:320px;margin:auto}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
-    .grid img{width:100%;border-radius:12px}
-    .btn{display:inline-block;padding:14px 22px;border-radius:10px;font-weight:700;text-decoration:none}
-    .primary{background:#1a1208;color:#fff}
-    .gold{background:var(--gold);color:#1a1208}
-    .tags{margin-top:10px}
-    .tag{display:inline-block;background:#eee;padding:6px 10px;border-radius:999px;margin:4px;font-size:12px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px;align-items:start}
+    .grid img{width:100%;border-radius:12px;display:block;object-fit:cover}
+    .grid img:nth-child(1), .grid img:nth-child(2), .grid img:nth-child(4), .grid img:nth-child(5), .grid img:nth-child(6), .grid img:nth-child(7){aspect-ratio:4/3}
+    .grid img:nth-child(3){aspect-ratio:2/3}
+    .grid img:nth-child(8){aspect-ratio:16/9}
     .highlight{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
     .highlight div{background:#fff;border-radius:12px;padding:14px;border:1px solid var(--border)}
+    .pack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:10px}
+    .pack-item{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px}
+    .pack-icon{font-size:22px;margin-bottom:6px}
+    .pack-title{font-weight:700;font-size:14px;margin-bottom:4px}
+    .pack-text{font-size:13px;color:#4a3f28;line-height:1.5}
+    .pack-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid rgba(0,0,0,.12)}
   </style>
 </head>
 
@@ -121,15 +125,15 @@
   <div class="card">
     <h2>Our photos</h2>
     <div class="grid">
-      <img src="img/nz.jpg">
-      <img src="img/nz1.jpg">
-      <img src="img/nz2.jpg">
-      <img src="img/nz3.jpg">
-      <img src="img/nz4.jpg">
-      <img src="img/nz5.jpg">
-      <img src="img/nz6.jpg">
-      <img src="img/nz7.jpg">
-      <img src="img/nz8.jpg">
+      <img src="img/nz.jpg" alt="New Zealand beach and cliffs — Two for the Row'd" loading="lazy">
+      <img src="img/nz1.jpg" alt="New Zealand coastal scenery — Two for the Row'd" loading="lazy">
+      <img src="img/nz2.jpg" alt="Maori cultural performance in New Zealand — Two for the Row'd" loading="lazy">
+      <img src="img/nz3.jpg" alt="New Zealand mountain landscape — Two for the Row'd" loading="lazy">
+      <img src="img/nz4.jpg" alt="Bay of Islands view — Two for the Row'd" loading="lazy">
+      <img src="img/nz5.jpg" alt="New Zealand green hills and water — Two for the Row'd" loading="lazy">
+      <img src="img/nz6.jpg" alt="Rapids Jet in Taupo — Two for the Row'd" loading="lazy">
+      <img src="img/nz7.jpg" alt="Rotorua geothermal steam — Two for the Row'd" loading="lazy">
+      <img src="img/nz8.jpg" alt="New Zealand wide landscape view — Two for the Row'd" loading="lazy">
     </div>
   </div>
 
@@ -139,18 +143,91 @@
   </div>
 
   <div class="card">
-    <h2>What to pack</h2>
-    <ul>
-      <li><a href="https://amzn.to/3OjJY6a">Adaptor</a></li>
-      <li><a href="https://amzn.to/41XJZju">Power bank</a></li>
-      <li><a href="https://amzn.to/4tC4r5e">Backpack</a></li>
-      <li><a href="https://amzn.to/47QjMXw">Water bottle</a></li>
-      <li><a href="https://amzn.to/4mlylrZ">First aid</a></li>
-      <li><a href="https://amzn.to/4ci9mS3">Repellent</a></li>
-      <li><a href="https://amzn.to/4vqpV76">Sunscreen</a></li>
-      <li><a href="https://amzn.to/4c3cH8F">Hiking boots</a></li>
-      <li><a href="https://amzn.to/4slndgp">eSIM</a></li>
-    </ul>
+    <h2>What to pack for New Zealand</h2>
+    <p style="color:#4a3f28;font-size:14px;margin-bottom:14px;">
+      New Zealand can mean beaches, boats, scenic drives, cooler evenings and proper adventure days all in one trip.
+      These are the things we'd bring without hesitation.
+    </p>
+
+    <div class="pack-grid">
+      <div class="pack-item">
+        <div class="pack-icon">📶</div>
+        <div class="pack-title">eSIM</div>
+        <p class="pack-text">Handy for maps, bookings and staying connected while moving between towns and scenic stops.</p>
+        <a class="pack-btn" href="https://amzn.to/4slndgp" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+      </div>
+
+      <div class="pack-item">
+        <div class="pack-icon">🔌</div>
+        <div class="pack-title">Travel adaptor</div>
+        <p class="pack-text">One of those essentials that is boring until you forget it.</p>
+        <a class="pack-btn" href="https://amzn.to/3OjJY6a" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+      </div>
+
+      <div class="pack-item">
+        <div class="pack-icon">🔋</div>
+        <div class="pack-title">Power bank</div>
+        <p class="pack-text">Long travel days and lots of photo stops will drain your phone faster than you think.</p>
+        <a class="pack-btn" href="https://amzn.to/41XJZju" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+      </div>
+
+      <div class="pack-item">
+        <div class="pack-icon">🎒</div>
+        <div class="pack-title">Small backpack</div>
+        <p class="pack-text">Perfect for day trips, boats, scenic stops and keeping the essentials handy.</p>
+        <a class="pack-btn" href="https://amzn.to/4tC4r5e" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+      </div>
+
+      <div class="pack-item">
+        <div class="pack-icon">💧</div>
+        <div class="pack-title">Water bottle</div>
+        <p class="pack-text">Always useful when you're out all day exploring or doing activity-based stops.</p>
+        <a class="pack-btn" href="https://amzn.to/47QjMXw" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+      </div>
+
+      <div class="pack-item">
+        <div class="pack-icon">🩹</div>
+        <div class="pack-title">Personal first aid kit</div>
+        <p class="pack-text">Brilliant for blisters, small cuts, headaches and the random little things that always happen on trips.</p>
+        <a class="pack-btn" href="https://amzn.to/4mlylrZ" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+      </div>
+
+      <div class="pack-item">
+        <div class="pack-icon">🦟</div>
+        <div class="pack-title">Insect repellent</div>
+        <p class="pack-text">Worth having for evenings, nature stops and anywhere near water.</p>
+        <a class="pack-btn" href="https://amzn.to/4ci9mS3" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+      </div>
+
+      <div class="pack-item">
+        <div class="pack-icon">☀️</div>
+        <div class="pack-title">Sunscreen</div>
+        <p class="pack-text">You can still get badly caught by the sun even when it feels cooler.</p>
+        <a class="pack-btn" href="https://amzn.to/4vqpV76" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+      </div>
+
+      <div class="pack-item">
+        <div class="pack-icon">👒</div>
+        <div class="pack-title">Wide brim hat</div>
+        <p class="pack-text">Great for boat days, scenic walks and bright sunny stops.</p>
+        <a class="pack-btn" href="https://amzn.to/4tXLKcH" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+      </div>
+
+      <div class="pack-item">
+        <div class="pack-icon">🧴</div>
+        <div class="pack-title">Travel toiletries</div>
+        <p class="pack-text">Keeps things organised and makes moving from stop to stop far easier.</p>
+        <a class="pack-btn" href="https://amzn.to/423383r" target="_blank" rel="noopener sponsored nofollow" style="margin-right:6px;">Men's →</a>
+        <a class="pack-btn" href="https://amzn.to/41optIE" target="_blank" rel="noopener sponsored nofollow">Women's →</a>
+      </div>
+
+      <div class="pack-item">
+        <div class="pack-icon">🥾</div>
+        <div class="pack-title">Hiking boots</div>
+        <p class="pack-text">Very handy for walking trails, uneven ground and generally being ready for adventure days.</p>
+        <a class="pack-btn" href="https://amzn.to/4c3cH8F" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+      </div>
+    </div>
   </div>
 
 </div>
