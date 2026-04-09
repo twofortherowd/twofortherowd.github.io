@@ -50,11 +50,26 @@
     .iframe{aspect-ratio:16/9;position:relative;border-radius:14px;overflow:hidden;margin:16px 0}
     .iframe iframe{position:absolute;inset:0;width:100%;height:100%}
     .portrait{aspect-ratio:9/16;max-width:320px;margin:auto}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px;align-items:start}
-    .grid img{width:100%;border-radius:12px;display:block;object-fit:cover}
-    .grid img:nth-child(1), .grid img:nth-child(2), .grid img:nth-child(4), .grid img:nth-child(5), .grid img:nth-child(6), .grid img:nth-child(7){aspect-ratio:4/3}
-    .grid img:nth-child(3){aspect-ratio:2/3}
-    .grid img:nth-child(8){aspect-ratio:16/9}
+    .grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:16px;
+}
+
+.grid img {
+  width:100%;
+  border-radius:12px;
+  display:block;
+  object-fit:cover;
+  aspect-ratio:4/3;
+}
+
+/* make the tall Maori image stand out */
+.grid img:nth-child(3) {
+  grid-row: span 2;
+  aspect-ratio:auto;
+}
     .highlight{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
     .highlight div{background:#fff;border-radius:12px;padding:14px;border:1px solid var(--border)}
     .pack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:10px}
