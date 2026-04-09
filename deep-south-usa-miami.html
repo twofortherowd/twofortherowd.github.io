@@ -203,7 +203,6 @@
       top: auto;
       z-index: 1;
     }
-
     .backBar a {
       display: inline-flex; align-items: center; gap: 6px;
       font-size: 13px; font-weight: 700; text-decoration: none; color: var(--ink);
@@ -278,61 +277,44 @@
     .hero-lead { font-size: 1.05rem; line-height: 1.7; color: var(--ink-soft); margin-bottom: 20px; }
 
     /* Route strip */
-    .route-strip {
-      display: flex; align-items: center; flex-wrap: wrap;
-      gap: 6px; margin: 14px 0;
-    }
-    .route-stop {
-      background: rgba(255,255,255,.8); border: 1px solid var(--border);
-      border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 700;
-    }
+    .route-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+    .route-stop { background: rgba(255,255,255,.8); border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 700; }
     .route-arrow { color: var(--muted); font-size: 14px; }
 
     /* States strip */
-    .states-strip {
-      display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0;
-    }
-    .state-pill {
-      background: rgba(192,57,43,.08); border: 1px solid rgba(192,57,43,.2);
-      border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600;
-      color: var(--red);
+    .states-strip { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+    .state-pill { background: rgba(192,57,43,.08); border: 1px solid rgba(192,57,43,.2); border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600; color: var(--red); }
+
+    /* Landscape video embed (16:9) */
+    .iframeWrapLandscape {
+      border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-md);
+      background: #000; position: relative; aspect-ratio: 16/9;
+      width: 100%; margin: 16px 0;
     }
 
-    /* Photo grids */
-    .photo-grid-2 {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 10px; margin: 16px 0;
-    }
-    .photo-grid-3 {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 10px; margin: 16px 0;
-    }
-    .photo-grid-2 img, .photo-grid-3 img {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover;
-      border-radius: 12px; box-shadow: var(--shadow-md); display: block;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .photo-grid-2 img:hover, .photo-grid-3 img:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-
-    /* Video embed */
-    .iframeWrap {
+    /* Portrait video embed (9:16) */
+    .iframeWrapPortrait {
       border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-md);
       background: #000; position: relative; aspect-ratio: 9/16;
       max-width: 320px; margin: 0 auto;
     }
+
     iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-    /* GYG widget */
-    .gygWidgetWrap {
-      margin-top: 14px; padding: 10px; border-radius: 14px;
-      background: rgba(255,255,255,.55); border: 1px solid var(--border); overflow: hidden;
+    /* Photo grids */
+    .photo-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 16px 0; }
+    .photo-grid-2 img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border-radius: 12px; box-shadow: var(--shadow-md); display: block;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
+    .photo-grid-2 img:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 
-    /* Highlights grid */
-    .highlights-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 12px; margin-top: 10px;
-    }
+    /* GYG widget */
+    .gygWidgetWrap { margin-top: 14px; padding: 10px; border-radius: 14px; background: rgba(255,255,255,.55); border: 1px solid var(--border); overflow: hidden; }
+
+    /* Highlights */
+    .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 10px; }
     .highlight-item { background: rgba(255,255,255,.75); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
     .highlight-icon { font-size: 22px; margin-bottom: 6px; }
     .highlight-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
@@ -340,26 +322,15 @@
 
     /* Quote block */
     .quote-block {
-      border-left: 3px solid var(--gold);
-      padding: 12px 18px;
-      margin: 16px 0;
-      background: rgba(255,216,74,.08);
-      border-radius: 0 12px 12px 0;
-      font-style: italic;
-      font-size: 15px;
-      color: var(--ink-soft);
-      line-height: 1.7;
+      border-left: 3px solid var(--gold); padding: 12px 18px; margin: 16px 0;
+      background: rgba(255,216,74,.08); border-radius: 0 12px 12px 0;
+      font-style: italic; font-size: 15px; color: var(--ink-soft); line-height: 1.7;
     }
 
     /* FAQ */
     .faqItem { border-bottom: 1px dashed var(--border-mid); padding: 14px 0; }
     .faqItem:last-child { border-bottom: none; padding-bottom: 0; }
-    .faqQ {
-      font-family: var(--font-display); font-size: 1rem; font-weight: 700;
-      color: var(--ink); margin-bottom: 0; cursor: pointer;
-      display: flex; justify-content: space-between; align-items: flex-start;
-      gap: 10px; user-select: none;
-    }
+    .faqQ { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; user-select: none; }
     .faqQ::after { content: "+"; font-size: 1.4rem; line-height: 1; font-weight: 400; flex-shrink: 0; color: var(--muted); transition: transform .2s ease; }
     .faqItem.open .faqQ::after { transform: rotate(45deg); }
     .faqA { font-size: 14px; line-height: 1.7; color: var(--ink-soft); display: none; padding-top: 10px; }
@@ -378,25 +349,17 @@
     .breadcrumb span { opacity: .5; }
 
     /* Section divider */
-    .section-divider {
-      display: flex; align-items: center; gap: 12px;
-      margin: 8px 0 16px;
-      font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink);
-    }
-    .section-divider::before, .section-divider::after {
-      content: ""; flex: 1; height: 1px; background: var(--border-mid);
-    }
+    .section-divider { display: flex; align-items: center; gap: 12px; margin: 8px 0 16px; font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); }
+    .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border-mid); }
 
     footer { margin-top: 10px; padding: 20px 0 12px; font-size: 13px; line-height: 1.6; color: var(--muted); text-align: center; }
     footer a { color: var(--muted); font-weight: 600; }
 
     @media (max-width: 640px) {
-      .photo-grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .photo-grid-2 { grid-template-columns: 1fr; }
       .links { flex-direction: column; }
       .links a { text-align: center; justify-content: center; }
-    }
-    @media (max-width: 420px) {
-      .photo-grid-3, .photo-grid-2 { grid-template-columns: 1fr; }
+      .route-strip { justify-content: center; }
     }
   </style>
 </head>
@@ -413,7 +376,7 @@
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="https://twofortherowd.com/">Home</a>
       <span>›</span>
-      <a href="https://twofortherowd.com/#gyg">GetYourGuide Picks</a>
+      <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
       <span>›</span>
       <span>Deep South USA — New York to Miami</span>
     </nav>
@@ -437,8 +400,21 @@
         extraordinary trips we've ever done.
       </p>
 
+      <!-- ── HIGHLIGHTS VIDEO ── -->
+      <h3 style="margin-bottom:10px;">Watch our highlights video first 🎬</h3>
+      <div class="iframeWrapLandscape">
+        <iframe loading="lazy"
+          src="https://www.youtube.com/embed/ZYabnwYA43o"
+          title="Deep South USA Road Trip Highlights — Two for the Row'd"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px;text-align:center;">
+        Our Deep South highlights video — New York to Miami through 14 states
+      </p>
+
       <!-- Route strip -->
-      <div class="route-strip">
+      <div class="route-strip" style="margin-top:20px;">
         <span class="route-stop">✈️ Dublin</span>
         <span class="route-arrow">→</span>
         <span class="route-stop">🗽 New York</span>
@@ -519,8 +495,8 @@
       </p>
       <p>
         The food, the music, and the people were all wonderful. And as Irish travellers, the warmth
-        we encountered everywhere was something else — everyone we met had a story about their link
-        to Ireland and the craic was ninety.
+        we encountered everywhere was something else entirely — everyone we met had a story about
+        their link to Ireland and the craic was ninety.
       </p>
       <p>
         By the time we reached Miami — mojito in hand, humidity rising, hurricane season officially
@@ -538,7 +514,7 @@
         <div class="highlight-item">
           <div class="highlight-icon">🎸</div>
           <div class="highlight-title">Graceland, Memphis</div>
-          <p class="highlight-text">The single standout moment of the whole trip. Seeing where Elvis Presley lived, all his memorabilia, his cars, his outfits — and his final resting place. Absolutely fantastic.</p>
+          <p class="highlight-text">The single standout moment of the whole trip. Seeing where Elvis lived, all his memorabilia, his cars, his outfits — and his final resting place. Absolutely fantastic.</p>
         </div>
 
         <div class="highlight-item">
@@ -562,7 +538,7 @@
         <div class="highlight-item">
           <div class="highlight-icon">⛰️</div>
           <div class="highlight-title">The Smoky Mountains</div>
-          <p class="highlight-text">Glorious views, winding mountain roads, black bears on the roadside, and the brilliant Dolly Parton Stampede dinner show in Gatlinburg. Brilliant crack.</p>
+          <p class="highlight-text">Glorious views, winding mountain roads, black bears on the roadside, and the brilliant Dolly Parton Stampede dinner show in Gatlinburg. Brilliant craic.</p>
         </div>
 
         <div class="highlight-item">
@@ -589,7 +565,7 @@
         Miami is electric. South Beach, the Art Deco architecture, the boat-lined waterways,
         the food scene, the nightlife — it's a city that earns its reputation. We did the open-top
         bus tour to get our bearings, a boat cruise around Biscayne Bay and the celebrity mansions
-        of Star Island, and then headed out to the Everglades — which was in a different league entirely.
+        of Star Island, and then headed out to the Everglades.
       </p>
       <p>
         And the mojitos. <strong>The best mojitos we have ever had anywhere in the world.</strong>
@@ -619,20 +595,20 @@
       </p>
       <p>
         The moment you leave Miami's skyline behind and head into the vast, flat wilderness of the
-        Everglades National Park, you feel like you've entered a completely different world. The sawgrass
-        prairies stretch to the horizon in every direction. The silence — broken only by birdsong and
-        the distant roar of an airboat — is extraordinary after weeks in busy cities.
+        Everglades National Park, you feel like you've entered a completely different world. The
+        sawgrass prairies stretch to the horizon in every direction. The silence — broken only by
+        birdsong and the distant roar of an airboat — is extraordinary after weeks in busy cities.
       </p>
       <p>
-        The airboat ride through the mangroves and waterways is the centrepiece of any Everglades visit.
-        Skimming across the surface of the water at speed, spotting alligators in the grass, herons
-        overhead, turtles on every log — it's one of those experiences that's genuinely hard to put
-        into words. We loved every second of it.
+        The airboat ride through the mangroves and waterways is the centrepiece of any Everglades
+        visit. Skimming across the surface of the water at speed, spotting alligators in the grass,
+        herons overhead, turtles on every log — it's one of those experiences that's genuinely hard
+        to put into words. We loved every second of it.
       </p>
 
-      <!-- Everglades video -->
+      <!-- Everglades reel -->
       <div style="margin:20px 0;">
-        <div class="iframeWrap">
+        <div class="iframeWrapPortrait">
           <iframe loading="lazy"
             src="https://www.youtube.com/embed/2IPmY_6s1CM"
             title="Everglades airboat tour Miami — Two for the Row'd"
@@ -655,8 +631,8 @@
       <p style="color:var(--ink-soft);font-size:14px;">
         This brilliant bundle covers all three Miami experiences in one booking — the Everglades
         airboat tour, a boat cruise around Biscayne Bay and the celebrity mansions, and the
-        open-top bus tour of South Beach and the Art Deco district. If you're spending a few days
-        in Miami this is the most efficient and brilliant way to do it all.
+        open-top bus tour of South Beach and the Art Deco district. The most efficient and
+        brilliant way to do Miami properly in a few days.
       </p>
       <div class="gygWidgetWrap">
         <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="1" data-gyg-partner-id="VYORXUN" data-gyg-q="Miami Bundle: Everglades, Boat Cruise &amp; Open-Top Bus Tour">
@@ -683,7 +659,8 @@
           we have ever done. The variety is extraordinary: the buzz of New York, the history of
           Washington DC, country music in Nashville, the blues in Memphis, the magic of New Orleans,
           the beauty of the Smoky Mountains, and the heat and energy of Miami at the end.
-          Every single day had something completely new to offer.
+          Every single day had something completely new to offer. Watch our highlights video at
+          the top of the page to get a feel for the whole trip.
         </div>
       </div>
 
@@ -708,7 +685,8 @@
           An airboat tour through the sawgrass prairies and mangroves is unlike anything else.
           Alligators, herons, turtles, the sheer scale of the wilderness — it is a completely
           different world from the Miami skyline you left an hour earlier. Easily done as a day
-          trip and absolutely worth adding to any Florida itinerary.
+          trip and absolutely worth adding to any Florida itinerary. Watch our reel above
+          before you book.
         </div>
       </div>
 
@@ -782,6 +760,7 @@
     <p>
       © <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp;
       <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp;
+      <a href="https://twofortherowd.com/#destinations">Our destinations</a> &nbsp;•&nbsp;
       <a href="https://twofortherowd.com/#gyg">More GetYourGuide picks</a>
     </p>
   </footer>
