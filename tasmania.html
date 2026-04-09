@@ -40,16 +40,144 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {font-family:'DM Sans',sans-serif;background:#f7faf9;color:#1a1208;margin:0;}
-    .wrap{max-width:860px;margin:auto;padding:20px;}
-    .card{background:white;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 8px 24px rgba(0,0,0,0.08);}
-    h1,h2{font-family:'Playfair Display',serif;}
-    h1{font-size:2.2rem;}
-    h2{margin-top:0;}
-    .btn{display:inline-block;padding:12px 18px;background:#1a1208;color:#fff;text-decoration:none;border-radius:10px;font-weight:700;margin-top:10px;}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
-    img{width:100%;border-radius:12px;}
-    .highlight{margin-bottom:10px;}
+    :root{
+      --bg:#f7faf9;
+      --card:#ffffff;
+      --ink:#1a1208;
+      --ink-soft:#5a5147;
+      --gold:#ffd84a;
+      --gold-dark:#d9b72f;
+      --border:#e8e3db;
+      --shadow:0 8px 24px rgba(0,0,0,.08);
+    }
+
+    * { box-sizing:border-box; }
+
+    body{
+      font-family:'DM Sans',sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      margin:0;
+      line-height:1.7;
+    }
+
+    .wrap{
+      max-width:860px;
+      margin:auto;
+      padding:20px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:16px;
+      padding:24px;
+      margin-bottom:16px;
+      box-shadow:var(--shadow);
+    }
+
+    h1,h2,h3{
+      font-family:'Playfair Display',serif;
+      color:var(--ink);
+      margin-top:0;
+      line-height:1.2;
+    }
+
+    h1{ font-size:2.2rem; }
+    h2{ margin-bottom:12px; }
+    h3{ margin-bottom:12px; }
+
+    p{ margin:0 0 1rem; }
+
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      background:#1a1208;
+      color:#fff;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:700;
+      margin-top:10px;
+    }
+
+    .btn:hover{
+      opacity:.92;
+    }
+
+    .highlight{
+      margin-bottom:10px;
+    }
+
+    .section-label{
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:#7b7268;
+      margin:6px 0 10px;
+    }
+
+    .photo-grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .photo-grid-2 img{
+      width:100%;
+      border-radius:12px;
+      display:block;
+      box-shadow:0 4px 14px rgba(0,0,0,.08);
+      object-fit:cover;
+    }
+
+    .highlights-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .highlight-item{
+      background:#fcfbf7;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:16px;
+    }
+
+    .highlight-icon{
+      font-size:22px;
+      margin-bottom:6px;
+    }
+
+    .highlight-title{
+      font-weight:700;
+      font-size:14px;
+      margin-bottom:6px;
+      color:var(--ink);
+    }
+
+    .highlight-text{
+      font-size:13px;
+      color:var(--ink-soft);
+      line-height:1.55;
+    }
+
+    .disclosure{
+      font-size:12px;
+      line-height:1.55;
+      color:#7b7268;
+      margin-top:14px;
+      padding-top:12px;
+      border-top:1px dashed #d8d1c7;
+    }
+
+    @media (max-width:640px){
+      .wrap{ padding:14px; }
+      .card{ padding:18px; }
+      .photo-grid-2{ grid-template-columns:1fr; }
+      h1{ font-size:1.9rem; }
+    }
   </style>
 
 </head>
@@ -58,261 +186,255 @@
 
 <div class="wrap">
 
-<!-- HERO -->
-<div class="card">
-  <h1>Tasmania — <em>Australia’s wild side we didn’t expect</em></h1>
+  <!-- HERO -->
+  <div class="card">
+    <h1>Tasmania — <em>Australia’s wild side we didn’t expect</em></h1>
 
-  <p>
-    Tasmania completely caught us off guard — in the best way possible.
-    We flew from Sydney to Hobart thinking we were heading for “a nice scenic few days”…
-    and ended up in one of the most jaw-droppingly beautiful places we’ve ever been.
-  </p>
+    <p>
+      Tasmania completely caught us off guard — in the best way possible.
+      We flew from Sydney to Hobart thinking we were heading for “a nice scenic few days”…
+      and ended up in one of the most jaw-droppingly beautiful places we’ve ever been.
+    </p>
 
-  <p>
-    Think dramatic coastlines, empty roads, unreal national parks, and views that make you stop the car
-    every 10 minutes just to take it in.
-  </p>
-
-</div>
-
-<!-- STORY -->
-<div class="card">
-  <h2>The trip — how it all played out</h2>
-
-  <p>
-    We landed into Hobart, hopped onto this tour, and basically let Tasmania do its thing.
-    No stress, no overplanning — just pure exploring.
-  </p>
-
-  <p>
-    First up: <strong>Cradle Mountain</strong>. Proper wild. Mist rolling in, lakes that look fake,
-    and that quiet you only get in places that feel untouched.
-  </p>
-
-  <p>
-    Then <strong>Russell Falls</strong> — straight out of a postcard. One of those spots where you just stand there thinking,
-    “how is this real?”
-  </p>
-
-  <p>
-    And then came the <strong>Bay of Fires</strong>.
-    Bright orange rocks, white sand, and that ridiculous turquoise water.
-    Genuinely one of the most beautiful coastlines we’ve ever seen.
-  </p>
-
-  <p>
-    But the one that stayed with us?
-    <strong>Wineglass Bay.</strong>
-    The walk, the view from above, the curve of the beach — it’s the kind of place that makes you stop and just take it in.
-  </p>
-
-</div>
-
-<!-- HIGHLIGHTS -->
-<div class="card">
-  <h2>The highlights</h2>
-
-  <div class="highlight"><strong>🏔️ Cradle Mountain</strong> — raw, wild, unforgettable scenery</div>
-  <div class="highlight"><strong>🔥 Bay of Fires</strong> — orange rocks + turquoise water = madness</div>
-  <div class="highlight"><strong>🏖️ Wineglass Bay</strong> — one of the best views in Australia</div>
-  <div class="highlight"><strong>🌿 Freycinet National Park</strong> — unreal coastal landscapes</div>
-  <div class="highlight"><strong>💧 Russell Falls</strong> — peaceful, hidden gem vibes</div>
-
-</div>
-
-<!-- TOUR -->
-<div class="card">
-  <h2>The exact Tasmania tour we did</h2>
-
-  <p>
-    If you want to see Tasmania properly without stressing about routes, driving, or planning —
-    this is the one we did.
-  </p>
-
-  <a class="btn" href="https://www.tourradar.com/t/256571?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank">
-    Book the Tasmania tour →
-  </a>
-
-</div>
-
-<!-- PHOTOS -->
-<div class="card" style="padding:20px;">
-  <h3 style="margin-bottom:12px;">Our photos</h3>
-
-  <!-- two tall portraits together -->
-  <div class="photo-grid-2" style="align-items:start;">
-    <img src="img/taz.jpg" alt="Tasmania kangaroo — Two for the Row'd" loading="lazy" style="aspect-ratio:3/5; object-fit:cover;">
-    <img src="img/taz3.jpg" alt="Tasmania bird — Two for the Row'd" loading="lazy" style="aspect-ratio:3/5; object-fit:cover;">
+    <p>
+      Think dramatic coastlines, empty roads, unreal national parks, and views that make you stop the car
+      every 10 minutes just to take it in.
+    </p>
   </div>
 
-  <!-- landscape rows -->
-  <div class="photo-grid-2">
-    <img src="img/taz1.jpg" alt="Tasmania mountains — Two for the Row'd" loading="lazy">
-    <img src="img/taz4.jpg" alt="Tasmania wildlife — Two for the Row'd" loading="lazy">
+  <!-- STORY -->
+  <div class="card">
+    <h2>The trip — how it all played out</h2>
+
+    <p>
+      We landed into Hobart, hopped onto this tour, and basically let Tasmania do its thing.
+      No stress, no overplanning — just pure exploring.
+    </p>
+
+    <p>
+      First up: <strong>Cradle Mountain</strong>. Proper wild. Mist rolling in, lakes that look fake,
+      and that quiet you only get in places that feel untouched.
+    </p>
+
+    <p>
+      Then <strong>Russell Falls</strong> — straight out of a postcard. One of those spots where you just stand there thinking,
+      “how is this real?”
+    </p>
+
+    <p>
+      And then came the <strong>Bay of Fires</strong>. Bright orange rocks, white sand, and that ridiculous turquoise water.
+      Genuinely one of the most beautiful coastlines we’ve ever seen.
+    </p>
+
+    <p>
+      But the one that stayed with us? <strong>Wineglass Bay.</strong>
+      The walk, the view from above, the curve of the beach — it’s the kind of place that makes you stop and just take it in.
+    </p>
   </div>
 
-  <div class="photo-grid-2">
-    <img src="img/taz5.jpg" alt="Tasmania travel moment — Two for the Row'd" loading="lazy">
-    <img src="img/taz6.jpg" alt="Tasmania lake view — Two for the Row'd" loading="lazy">
+  <!-- HIGHLIGHTS -->
+  <div class="card">
+    <h2>The highlights</h2>
+
+    <div class="highlight"><strong>🏔️ Cradle Mountain</strong> — raw, wild, unforgettable scenery</div>
+    <div class="highlight"><strong>🔥 Bay of Fires</strong> — orange rocks + turquoise water = madness</div>
+    <div class="highlight"><strong>🏖️ Wineglass Bay</strong> — one of the best views in Australia</div>
+    <div class="highlight"><strong>🌿 Freycinet National Park</strong> — unreal coastal landscapes</div>
+    <div class="highlight"><strong>💧 Russell Falls</strong> — peaceful, hidden gem vibes</div>
   </div>
 
-  <div class="photo-grid-2">
-    <img src="img/taz2.jpg" alt="Tasmania scenic view — Two for the Row'd" loading="lazy">
-    <img src="img/taz7.jpg" alt="Tasmania harbour view — Two for the Row'd" loading="lazy">
-  </div>
-</div>
+  <!-- TOUR -->
+  <div class="card">
+    <h2>The exact Tasmania tour we did</h2>
 
-<!-- GYG -->
-<div class="card">
-  <h2>Things to do in Tasmania</h2>
+    <p>
+      If you want to see Tasmania properly without stressing about routes, driving, or planning —
+      this is the one we did.
+    </p>
 
-  <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame"
-       data-gyg-locale-code="en-US"
-       data-gyg-widget="activities"
-       data-gyg-number-of-items="6"
-       data-gyg-partner-id="VYORXUN"
-       data-gyg-q="tasmania">
+    <a class="btn" href="https://www.tourradar.com/t/256571?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">
+      Book the Tasmania tour →
+    </a>
   </div>
 
-</div>
-<!-- AMAZON TASMANIA PACKING -->
-<p class="section-label">What to pack for Tasmania</p>
-<div class="card">
-  <h2>Tasmania packing essentials — what we'd bring</h2>
-  <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">
-    Tasmania is absolutely stunning but the weather has a mind of its own. One minute it feels calm and mild,
-    the next you're freezing on a lookout, being lashed on by wind, or wondering why you didn't pack better shoes.
-    These are the things we'd bring without hesitation.
-  </p>
+  <!-- PHOTOS -->
+  <div class="card" style="padding:20px;">
+    <h3>Our photos</h3>
 
-  <div class="highlights-grid">
-
-    <div class="highlight-item">
-      <div class="highlight-icon">🧥</div>
-      <div class="highlight-title">Waterproof jacket & trousers</div>
-      <p class="highlight-text">Tasmania can turn on you fast. A proper waterproof set is worth its weight in gold when the wind picks up or the rain arrives out of nowhere.</p>
-      <a href="https://amzn.to/4vDse6X" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
+    <!-- two portrait images together -->
+    <div class="photo-grid-2">
+      <img src="img/taz.jpg" alt="Tasmania kangaroo — Two for the Row'd" loading="lazy" style="aspect-ratio:3/5;">
+      <img src="img/taz3.jpg" alt="Tasmania bird — Two for the Row'd" loading="lazy" style="aspect-ratio:3/5;">
     </div>
 
-    <div class="highlight-item">
-      <div class="highlight-icon">🥾</div>
-      <div class="highlight-title">Waterproof boots</div>
-      <p class="highlight-text">Between coastal walks, lookouts and national parks, decent waterproof boots make a huge difference. Dry feet and good grip are non-negotiable.</p>
-      <a href="https://amzn.to/4c3cH8F" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
+    <!-- landscape rows -->
+    <div class="photo-grid-2">
+      <img src="img/taz1.jpg" alt="Tasmania mountain view — Two for the Row'd" loading="lazy" style="aspect-ratio:4/3;">
+      <img src="img/taz4.jpg" alt="Tasmania wildlife — Two for the Row'd" loading="lazy" style="aspect-ratio:4/3;">
     </div>
 
-    <div class="highlight-item">
-      <div class="highlight-icon">👟</div>
-      <div class="highlight-title">Waterproof shoe spray</div>
-      <p class="highlight-text">Even if your boots are decent, a waterproof spray top-up is a smart move before travelling. Handy, cheap, and it helps keep the misery out.</p>
-      <a href="https://amzn.to/4eaQO8C" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
+    <div class="photo-grid-2">
+      <img src="img/taz5.jpg" alt="Tasmania travel moment — Two for the Row'd" loading="lazy" style="aspect-ratio:4/3;">
+      <img src="img/taz6.jpg" alt="Tasmania lake view — Two for the Row'd" loading="lazy" style="aspect-ratio:4/3;">
     </div>
 
-    <div class="highlight-item">
-      <div class="highlight-icon">🔥</div>
-      <div class="highlight-title">Hand warmers</div>
-      <p class="highlight-text">Ideal for cold mornings, scenic stops and any day where Tasmania decides to feel a lot less Australian than expected. Tiny but very satisfying.</p>
-      <a href="https://amzn.to/4cfKWs2" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
+    <div class="photo-grid-2">
+      <img src="img/taz2.jpg" alt="Tasmania scenic view — Two for the Row'd" loading="lazy" style="aspect-ratio:4/3;">
+      <img src="img/taz7.jpg" alt="Tasmania harbour view — Two for the Row'd" loading="lazy" style="aspect-ratio:4/3;">
     </div>
-
-    <div class="highlight-item">
-      <div class="highlight-icon">📱</div>
-      <div class="highlight-title">Waterproof phone pouch</div>
-      <p class="highlight-text">Because you will be taking photos constantly and Tasmania is not above throwing rain, sea spray or general chaos at your phone while you're doing it.</p>
-      <a href="https://amzn.to/4sA3Dx6" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
-    </div>
-
-    <div class="highlight-item">
-      <div class="highlight-icon">🔭</div>
-      <div class="highlight-title">Binoculars</div>
-      <p class="highlight-text">Brilliant for wildlife spotting, distant views and properly taking in the scale of the landscapes. One of those things you're delighted you brought.</p>
-      <a href="https://amzn.to/3QdBNsJ" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
-    </div>
-
-    <div class="highlight-item">
-      <div class="highlight-icon">📶</div>
-      <div class="highlight-title">eSIM</div>
-      <p class="highlight-text">Handy for maps, bookings and staying connected without relying on patchy roaming. Always worth sorting before a road-trip style adventure.</p>
-      <a href="https://amzn.to/4stX8fd" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
-    </div>
-
-    <div class="highlight-item">
-      <div class="highlight-icon">💧</div>
-      <div class="highlight-title">Water bottle</div>
-      <p class="highlight-text">Long days out, windy walks and a lot of driving mean you’ll use this far more than you think. Simple but essential.</p>
-      <a href="https://amzn.to/47QjMXw" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
-    </div>
-
-    <div class="highlight-item">
-      <div class="highlight-icon">🩹</div>
-      <div class="highlight-title">Personal first aid kit</div>
-      <p class="highlight-text">Always handy when you're out exploring all day. Blisters, headaches, random little mishaps — best to have it and not need it.</p>
-      <a href="https://amzn.to/4mlylrZ" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
-    </div>
-
-    <div class="highlight-item">
-      <div class="highlight-icon">🎒</div>
-      <div class="highlight-title">Small backpack</div>
-      <p class="highlight-text">Perfect for day trips, lookouts, snacks, layers and all the extra bits you suddenly need when the weather starts acting up.</p>
-      <a href="https://amzn.to/4tC4r5e" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
-    </div>
-
-    <div class="highlight-item">
-      <div class="highlight-icon">🔋</div>
-      <div class="highlight-title">Power bank</div>
-      <p class="highlight-text">Between maps, photos and videos, your phone battery will take a hammering. This saves a lot of annoyance.</p>
-      <a href="https://amzn.to/41XJZju" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
-    </div>
-
-    <div class="highlight-item">
-      <div class="highlight-icon">🔌</div>
-      <div class="highlight-title">Travel adaptor</div>
-      <p class="highlight-text">Australia uses different plugs, so this is one of those easy things to forget and deeply regret if you do.</p>
-      <a href="https://amzn.to/4tAcVK9" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
-        View on Amazon →
-      </a>
-    </div>
-
   </div>
 
-  <p class="disclosure">
-    <strong>Disclosure:</strong> These are Amazon affiliate links. If you buy through them we may earn a small commission at no extra cost to you. These are all things we'd genuinely pack for a Tasmania trip.
-  </p>
-</div>
+  <!-- GYG -->
+  <div class="card">
+    <h2>Things to do in Tasmania</h2>
 
-<!-- CTA -->
-<div class="card">
-  <h2>Would we go back?</h2>
+    <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame"
+         data-gyg-locale-code="en-US"
+         data-gyg-widget="activities"
+         data-gyg-number-of-items="6"
+         data-gyg-partner-id="VYORXUN"
+         data-gyg-q="tasmania">
+      <span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/tasmania-l209/">GetYourGuide</a></span>
+    </div>
+  </div>
 
-  <p>
-    In a heartbeat.
-    Tasmania is one of those places that sneaks up on you —
-    and then you can’t stop thinking about it after.
-  </p>
+  <!-- AMAZON TASMANIA PACKING -->
+  <p class="section-label">What to pack for Tasmania</p>
+  <div class="card">
+    <h2>Tasmania packing essentials — what we'd bring</h2>
+    <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">
+      Tasmania is absolutely stunning but the weather has a mind of its own. One minute it feels calm and mild,
+      the next you're freezing on a lookout, being lashed by wind, or wondering why you didn't pack better shoes.
+      These are the things we'd bring without hesitation.
+    </p>
 
-</div>
+    <div class="highlights-grid">
+
+      <div class="highlight-item">
+        <div class="highlight-icon">🧥</div>
+        <div class="highlight-title">Waterproof jacket & trousers</div>
+        <p class="highlight-text">Tasmania can turn on you fast. A proper waterproof set is worth its weight in gold when the wind picks up or the rain arrives out of nowhere.</p>
+        <a href="https://amzn.to/4vDse6X" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">🥾</div>
+        <div class="highlight-title">Waterproof boots</div>
+        <p class="highlight-text">Between coastal walks, lookouts and national parks, decent waterproof boots make a huge difference. Dry feet and good grip are non-negotiable.</p>
+        <a href="https://amzn.to/4c3cH8F" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">👟</div>
+        <div class="highlight-title">Waterproof shoe spray</div>
+        <p class="highlight-text">Even if your boots are decent, a waterproof spray top-up is a smart move before travelling. Handy, cheap, and it helps keep the misery out.</p>
+        <a href="https://amzn.to/4eaQO8C" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">🔥</div>
+        <div class="highlight-title">Hand warmers</div>
+        <p class="highlight-text">Ideal for cold mornings, scenic stops and any day where Tasmania decides to feel a lot less Australian than expected. Tiny but very satisfying.</p>
+        <a href="https://amzn.to/4cfKWs2" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">📱</div>
+        <div class="highlight-title">Waterproof phone pouch</div>
+        <p class="highlight-text">Because you will be taking photos constantly and Tasmania is not above throwing rain, sea spray or general chaos at your phone while you're doing it.</p>
+        <a href="https://amzn.to/4sA3Dx6" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">🔭</div>
+        <div class="highlight-title">Binoculars</div>
+        <p class="highlight-text">Brilliant for wildlife spotting, distant views and properly taking in the scale of the landscapes. One of those things you're delighted you brought.</p>
+        <a href="https://amzn.to/3QdBNsJ" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">📶</div>
+        <div class="highlight-title">eSIM</div>
+        <p class="highlight-text">Handy for maps, bookings and staying connected without relying on patchy roaming. Always worth sorting before a road-trip style adventure.</p>
+        <a href="https://amzn.to/4stX8fd" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">💧</div>
+        <div class="highlight-title">Water bottle</div>
+        <p class="highlight-text">Long days out, windy walks and a lot of driving mean you’ll use this far more than you think. Simple but essential.</p>
+        <a href="https://amzn.to/47QjMXw" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">🩹</div>
+        <div class="highlight-title">Personal first aid kit</div>
+        <p class="highlight-text">Always handy when you're out exploring all day. Blisters, headaches, random little mishaps — best to have it and not need it.</p>
+        <a href="https://amzn.to/4mlylrZ" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">🎒</div>
+        <div class="highlight-title">Small backpack</div>
+        <p class="highlight-text">Perfect for day trips, lookouts, snacks, layers and all the extra bits you suddenly need when the weather starts acting up.</p>
+        <a href="https://amzn.to/4tC4r5e" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">🔋</div>
+        <div class="highlight-title">Power bank</div>
+        <p class="highlight-text">Between maps, photos and videos, your phone battery will take a hammering. This saves a lot of annoyance.</p>
+        <a href="https://amzn.to/41XJZju" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-icon">🔌</div>
+        <div class="highlight-title">Travel adaptor</div>
+        <p class="highlight-text">Australia uses different plugs, so this is one of those easy things to forget and deeply regret if you do.</p>
+        <a href="https://amzn.to/4tAcVK9" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">
+          View on Amazon →
+        </a>
+      </div>
+
+    </div>
+
+    <p class="disclosure">
+      <strong>Disclosure:</strong> These are Amazon affiliate links. If you buy through them we may earn a small commission at no extra cost to you. These are all things we'd genuinely pack for a Tasmania trip.
+    </p>
+  </div>
+
+  <!-- CTA -->
+  <div class="card">
+    <h2>Would we go back?</h2>
+
+    <p>
+      In a heartbeat.
+      Tasmania is one of those places that sneaks up on you —
+      and then you can’t stop thinking about it after.
+    </p>
+  </div>
 
 </div>
 
