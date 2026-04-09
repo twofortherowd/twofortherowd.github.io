@@ -1333,7 +1333,7 @@ nav {
   </style>
 
   <script>
-    const TAB_IDS = ["home","amazon","morocco","brew","hidden","hotel","reels","tourradar","deals","gyg","ask","work"];
+   const TAB_IDS = ["home","amazon","morocco","brew","hidden","hotel","reels","tourradar","deals","gyg","ask","work","destinations"];
     const INITIAL_HASH = (location.hash || "").replace("#","");
     if (location.hash) history.replaceState(null,"",location.pathname+location.search);
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
@@ -1520,6 +1520,7 @@ nav {
     <button class="tabBtn" data-tab="gyg"        onclick="show('gyg')"        aria-selected="false">GetYourGuide Picks</button>
     <button class="tabBtn" data-tab="ask"        onclick="show('ask')"        aria-selected="false">Ask Us</button>
     <button class="tabBtn" data-tab="work"       onclick="show('work')"       aria-selected="false">Work With Us</button>
+    <button class="tabBtn" data-tab="destinations" onclick="show('destinations')" aria-selected="false">Our Destinations</button>
   </nav>
 
   <main class="wrap">
@@ -3040,6 +3041,77 @@ Trusted by 400,000+ viewers — we test hotels, tours and travel gear properly, 
 
 </section>
 <!-- END WORK WITH US SECTION -->
+    <!-- ==========================================================
+     DESTINATIONS
+========================================================== -->
+<section id="destinations">
+  <h1 class="pageTitle">Our Destinations</h1>
+
+  <div class="card heroCard">
+    <div class="hero-eyebrow">
+      <span class="badge">🌍 57 countries</span>
+      <span class="badge outline">Honest reviews</span>
+      <span class="badge outline">Real experiences</span>
+    </div>
+    <h2>Places we've been — and what we actually did there</h2>
+    <p class="hero-lead">
+      Between us we've visited 57 countries. These are the destinations where we've documented
+      our experiences properly — honest write-ups, real photos, videos, and the activities
+      worth booking if you're heading the same way.
+    </p>
+  </div>
+
+  <p class="section-label">Our destination guides</p>
+
+  <div class="featured-grid">
+
+    <div class="feat-card" onclick="window.location.href='/morocco-tour-review.html'" role="button" tabindex="0" aria-label="Morocco tour review">
+      <span class="feat-tag gold">🇲🇦 Morocco</span>
+      <div class="feat-title">Morocco — our complete tour review</div>
+      <p class="feat-sub">Marrakech, Atlas Mountains, Sahara desert camp, local guides and an honest take on booking through TourRadar. 26 videos, route map, full FAQ.</p>
+      <div class="feat-arrow">Read the full review →</div>
+    </div>
+
+    <div class="feat-card" onclick="window.location.href='/vancouver-canada-experiences.html'" role="button" tabindex="0" aria-label="Canada Rockies trip">
+      <span class="feat-tag" style="background:rgba(255,0,0,.08);border-color:rgba(255,0,0,.2);color:#c0392b;">🇨🇦 Canada</span>
+      <div class="feat-title">Canada — Calgary Stampede, the Rockies & Vancouver</div>
+      <p class="feat-sub">The ultimate Canada road trip — Calgary Stampede, driving the Icefields Parkway, a seaplane over Vancouver, and an Alaskan cruise to finish.</p>
+      <div class="feat-arrow">Read the full guide →</div>
+    </div>
+
+    <div class="feat-card" onclick="window.location.href='/deep-south-usa-miami.html'" role="button" tabindex="0" aria-label="Deep South USA road trip">
+      <span class="feat-tag" style="background:rgba(26,58,92,.08);border-color:rgba(26,58,92,.2);color:#1a3a5c;">🇺🇸 USA</span>
+      <div class="feat-title">Deep South USA — New York to Miami through 14 states</div>
+      <p class="feat-sub">4,000km from New York to Miami — Nashville, Graceland, New Orleans, the Smoky Mountains, NASA and the Everglades. One of the greatest trips we've ever done.</p>
+      <div class="feat-arrow">Read the full guide →</div>
+    </div>
+
+    <div class="feat-card" onclick="window.location.href='/hidden-ireland-gems.html'" role="button" tabindex="0" aria-label="Hidden Ireland gems">
+      <span class="feat-tag" style="background:rgba(45,106,79,.1);border-color:rgba(45,106,79,.25);color:#2d6a4f;">🇮🇪 Ireland</span>
+      <div class="feat-title">Hidden Ireland — 22 gems most tourists never find</div>
+      <p class="feat-sub">Ancient ruins, secret beaches, forgotten castles, and villages worth stopping in. The places around Ireland that surprised us most — all on video.</p>
+      <div class="feat-arrow">Start exploring →</div>
+    </div>
+
+  </div>
+
+  <div class="card" style="text-align:center;">
+    <h2>More destinations coming</h2>
+    <p style="color:var(--ink-soft);max-width:520px;margin:0 auto 16px;">
+      We've visited 57 countries between us and we're adding destination guides regularly.
+      Follow us on social to be the first to know when a new one goes live.
+    </p>
+    <div class="links" style="justify-content:center;">
+      <a class="btn-primary" href="https://www.instagram.com/twofortherowd25" target="_blank" rel="noopener">
+        Follow on Instagram →
+      </a>
+      <a class="btn-outline" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener">
+        Subscribe on YouTube →
+      </a>
+    </div>
+  </div>
+
+</section>
 
     <footer>
       © <span id="year"></span> Two for the Row'd &nbsp;•&nbsp; Built with love, caffeine, and a bit of chaos
