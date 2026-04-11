@@ -1333,7 +1333,7 @@ nav {
   </style>
 
   <script>
-   const TAB_IDS = ["home","amazon","morocco","brew","hidden","hotel","reels","tourradar","deals","gyg","ask","work","destinations"];
+   const TAB_IDS = ["home","amazon","morocco","brew","hidden","hotel","reels","tourradar","deals","gyg","ask","work",""];
     const INITIAL_HASH = (location.hash || "").replace("#","");
     if (location.hash) history.replaceState(null,"",location.pathname+location.search);
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
@@ -3108,6 +3108,12 @@ nav {
   <span class="feat-tag" style="background:rgba(14,124,107,.08);border-color:rgba(14,124,107,.2);color:#0e7c6b;">🇲🇶 Martinique</span>
   <div class="feat-title">Martinique — a year living on the Island of Flowers</div>
   <p class="feat-sub">Sun, sand, sea, tropical storms and the friendliest people you'll ever meet. Nicola spent a year teaching here and it's a place that stays with you forever.</p>
+  <div class="feat-arrow">Read the full guide →</div>
+</div>
+    <div class="feat-card" onclick="window.location.href='/lisbon.html'" role="button" tabindex="0" aria-label="Lisbon">
+  <span class="feat-tag" style="background:rgba(4,106,56,.08);border-color:rgba(4,106,56,.2);color:#046A38;">🇵🇹 Lisbon</span>
+  <div class="feat-title">Lisbon, Sintra & Cascais — hills, history and one brilliant city</div>
+  <p class="feat-sub">Stunning monuments, great gluten-free food, the hop-on hop-off bus and brilliant day trips to Sintra, Colares and Cascais. One of our favourite European city breaks.</p>
   <div class="feat-arrow">Read the full guide →</div>
 </div>
   </div>
