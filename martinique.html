@@ -298,7 +298,7 @@
       background: #000; position: relative; aspect-ratio: 9/16;
       max-width: 320px; margin: 0 auto;
     }
-    .videoWrapPortrait video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .videoWrapPortrait iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
     .photo-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 16px 0; }
     .photo-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0; }
@@ -551,13 +551,12 @@
 
       <div style="margin:20px 0;">
         <div class="videoWrapPortrait">
-          <video
-            src="videos/fort-de-france.mp4"
+          <iframe
+            src="https://www.youtube.com/embed/3mbWSfXn5yM"
             title="Fort-de-France — where to eat, drink and have fun"
-            controls
-            playsinline
-            preload="metadata">
-          </video>
+            allowfullscreen
+            loading="lazy">
+          </iframe>
         </div>
         <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:10px;">Fort-de-France — where to eat, drink and have fun</p>
       </div>
