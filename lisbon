@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H7SPF3M3X8');
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '981657641071814');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"
+  /></noscript>
+
+  <!-- GetYourGuide -->
+  <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
+
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <!-- ═══ SEO ═══ -->
+  <title>Lisbon, Sintra & Cascais — Our Guide to Portugal's Best | Two for the Row'd</title>
+  <meta name="description" content="Our 2023 trip to Lisbon — stunning monuments, hilly streets, great gluten-free food, the hop-on hop-off bus and brilliant day trips to Sintra, Colares and Cascais." />
+  <link rel="canonical" href="https://twofortherowd.com/lisbon.html" />
+  <meta name="theme-color" content="#ffd84a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lisbon, Sintra & Cascais — Our Guide to Portugal's Best" />
+  <meta property="og:description" content="Our 2023 trip to Lisbon — stunning monuments, hilly streets, great gluten-free food and brilliant day trips to Sintra, Colares and Cascais." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://twofortherowd.com/lisbon.html" />
+  <meta property="og:image" content="https://twofortherowd.com/img/lis.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ═══ SCHEMA ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Lisbon, Sintra & Cascais — Our Guide to Portugal's Best",
+    "description": "Our 2023 trip to Lisbon — stunning monuments, hilly streets, great gluten-free food and brilliant day trips to Sintra, Colares and Cascais.",
+    "author": {
+      "@type": "Person",
+      "name": "Nicola and Padraig",
+      "url": "https://twofortherowd.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Two for the Row'd",
+      "url": "https://twofortherowd.com"
+    },
+    "url": "https://twofortherowd.com/lisbon.html",
+    "image": "https://twofortherowd.com/img/lis.jpg"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Lisbon worth visiting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely — Lisbon is one of the best city break destinations in Europe. It has stunning architecture, incredible food, a brilliant atmosphere and more to see than you can fit into one trip. The day trips alone to Sintra and Cascais make it worth it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the hop-on hop-off bus worth it in Lisbon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — especially given how hilly Lisbon is. The hop-on hop-off bus is a great way to cover a lot of ground without destroying your legs on the steep streets. It hits all the main sights and gives you a brilliant overview of the city."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Sintra worth a day trip from Lisbon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Without question. Sintra is one of the most beautiful places in Portugal — fairytale palaces, lush hillside gardens and incredible views. It is only about 40 minutes from Lisbon by train and is an absolute must on any visit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Cascais worth visiting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cascais is a gorgeous coastal town just along the coast from Lisbon — easy to reach by train and well worth a half day or full day. It has a lovely relaxed atmosphere, great seafood, beautiful beaches and a very different feel to the busy city."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Lisbon good for gluten-free food?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — Lisbon has a good range of gluten-free options and awareness of dietary requirements is generally good in restaurants. Portuguese cuisine naturally includes a lot of fresh fish, grilled meats and rice dishes which tend to be naturally gluten-free. It is worth doing a bit of research before you go but you will eat very well."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many days do you need in Lisbon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We would recommend at least four to five days to do Lisbon justice — that gives you time to explore the city properly, do the hop-on hop-off bus, visit Belém and its monuments, and still have time for day trips to Sintra and Cascais. You could easily fill a week without running out of things to do."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold:       #ffd84a;
+      --gold-dark:  #e8c235;
+      --gold-pale:  #fff9e0;
+      --ink:        #1a1208;
+      --ink-soft:   #4a3f28;
+      --muted:      #7a6e58;
+      --cream:      #fdf8ef;
+      --white:      #ffffff;
+      --border:     rgba(26,18,8,.10);
+      --border-mid: rgba(26,18,8,.16);
+      --card-bg:    rgba(255,255,255,.88);
+      --shadow-sm:  0 2px 8px rgba(26,18,8,.07);
+      --shadow-md:  0 8px 24px rgba(26,18,8,.10);
+      --shadow-lg:  0 16px 48px rgba(26,18,8,.13);
+      --radius-sm:  10px;
+      --radius-md:  16px;
+      --radius-lg:  22px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'DM Sans', 'Segoe UI', Arial, sans-serif;
+      --red:        #c0392b;
+      --red-light:  #e74c3c;
+      --ocean:      #2f80ed;
+      --ocean-soft: #eaf4ff;
+      --green:      #2d6a4f;
+      --portugal:   #046A38;
+      --portugal-red: #d62828;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(4,106,56,.10) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(255,216,74,.15) 0%, transparent 55%);
+    }
+
+    * { position: relative; z-index: 1; }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); color: var(--ink); line-height: 1.18; margin-top: 0; }
+    h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 14px; }
+    h2 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); font-weight: 700; margin-bottom: 10px; }
+    h3 { font-size: clamp(1.05rem, 1.8vw, 1.25rem); font-weight: 700; margin-bottom: 8px; }
+    p { margin: 0 0 .9rem; }
+    p:last-child { margin-bottom: 0; }
+    ul, ol { margin: 0 0 .9rem; padding-left: 1.3rem; }
+    li { margin-bottom: .35rem; }
+    a { color: inherit; }
+    strong { font-weight: 700; }
+
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 60px; }
+
+    .backBar {
+      background: rgba(253,248,239,.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .backBar a {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 700; text-decoration: none; color: var(--ink);
+      padding: 7px 14px; border-radius: 999px; background: var(--white);
+      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .backBar a:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .backBar .site-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--ink); text-decoration: none; }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      padding: 24px 26px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(4px);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .heroCard { background: linear-gradient(160deg, #ffffff 0%, #edf7f0 45%, #fffbe8 100%); border-color: rgba(4,106,56,.2); }
+    .redCard { background: linear-gradient(160deg, #ffffff 0%, #fff5f5 55%, #ffe0e0 100%); border-color: rgba(214,40,40,.2); }
+    .greenCard { background: linear-gradient(160deg, #ffffff 0%, #edf7f0 55%, #cceedd 100%); border-color: rgba(4,106,56,.2); }
+    .blueCard { background: linear-gradient(160deg, #ffffff 0%, #f4faff 55%, #dceeff 100%); border-color: rgba(47,128,237,.18); }
+    .goldCard { background: linear-gradient(160deg, #ffffff 0%, #fffbe8 55%, #fff3c0 100%); border-color: rgba(232,194,53,.3); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 22px; background: var(--ink); color: var(--white);
+      border: none; border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: 14px; font-weight: 700;
+      text-decoration: none; cursor: pointer;
+      box-shadow: 0 6px 20px rgba(26,18,8,.2);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn-primary:hover { background: #2e2410; transform: translateY(-2px); color: var(--white); }
+
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 22px; background: var(--gold); color: var(--ink);
+      border: 1px solid var(--gold-dark); border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: 14px; font-weight: 700;
+      text-decoration: none; cursor: pointer;
+      box-shadow: 0 6px 18px rgba(232,194,53,.35);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); color: var(--ink); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; background: var(--white); color: var(--ink);
+      border: 1.5px solid var(--border-mid); border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: 14px; font-weight: 700;
+      text-decoration: none; cursor: pointer; box-shadow: var(--shadow-sm);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-outline:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); color: var(--ink); }
+
+    .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+
+    .badge { display: inline-block; padding: 4px 11px; border-radius: 999px; font-size: 12px; font-weight: 700; background: var(--gold); color: var(--ink); border: 1px solid var(--gold-dark); }
+    .badge.outline { background: rgba(255,255,255,.8); border-color: var(--border-mid); color: var(--ink-soft); }
+    .badge.green { background: rgba(4,106,56,.10); border-color: rgba(4,106,56,.25); color: var(--portugal); }
+    .badge.red { background: rgba(214,40,40,.10); border-color: rgba(214,40,40,.25); color: var(--portugal-red); }
+
+    .eyebrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .10em; text-transform: uppercase; color: var(--muted); margin: 6px 0 10px; }
+
+    .hero-headline { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.12; margin-bottom: 14px; }
+    .hero-headline em { font-style: italic; color: var(--portugal); }
+    .hero-lead { font-size: 1.05rem; line-height: 1.7; color: var(--ink-soft); margin-bottom: 20px; }
+
+    .route-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+    .route-stop { background: rgba(255,255,255,.8); border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 700; }
+    .route-arrow { color: var(--muted); font-size: 14px; }
+
+    .states-strip { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+    .state-pill { background: rgba(4,106,56,.08); border: 1px solid rgba(4,106,56,.2); border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600; color: var(--portugal); }
+
+    .photo-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 16px 0; }
+    .photo-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0; }
+    .photo-grid-2 img, .photo-grid-3 img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border-radius: 12px; box-shadow: var(--shadow-md); display: block;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .photo-grid-2 img:hover, .photo-grid-3 img:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+    .gygWidgetWrap { margin-top: 14px; padding: 10px; border-radius: 14px; background: rgba(255,255,255,.55); border: 1px solid var(--border); overflow: hidden; }
+
+    .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 10px; }
+    .highlight-item { background: rgba(255,255,255,.75); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
+    .highlight-icon { font-size: 22px; margin-bottom: 6px; }
+    .highlight-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+    .highlight-text { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+
+    .quote-block {
+      border-left: 3px solid var(--portugal); padding: 12px 18px; margin: 16px 0;
+      background: rgba(4,106,56,.06); border-radius: 0 12px 12px 0;
+      font-style: italic; font-size: 15px; color: var(--ink-soft); line-height: 1.7;
+    }
+
+    .faqItem { border-bottom: 1px dashed var(--border-mid); padding: 14px 0; }
+    .faqItem:last-child { border-bottom: none; padding-bottom: 0; }
+    .faqQ { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; user-select: none; }
+    .faqQ::after { content: "+"; font-size: 1.4rem; line-height: 1; font-weight: 400; flex-shrink: 0; color: var(--muted); transition: transform .2s ease; }
+    .faqItem.open .faqQ::after { transform: rotate(45deg); }
+    .faqA { font-size: 14px; line-height: 1.7; color: var(--ink-soft); display: none; padding-top: 10px; }
+    .faqItem.open .faqA { display: block; }
+
+    .tagRow { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+    .tag { display: inline-block; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,.8); font-size: 12px; font-weight: 600; color: var(--ink-soft); }
+
+    .disclosure { font-size: 12px; line-height: 1.55; color: var(--muted); margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--border-mid); }
+
+    .breadcrumb { font-size: 12px; color: var(--muted); margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; font-weight: 600; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb span { opacity: .5; }
+
+    .section-divider { display: flex; align-items: center; gap: 12px; margin: 8px 0 16px; font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); }
+    .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border-mid); }
+
+    footer { margin-top: 10px; padding: 20px 0 12px; font-size: 13px; line-height: 1.6; color: var(--muted); text-align: center; }
+    footer a { color: var(--muted); font-weight: 600; }
+
+    @media (max-width: 640px) {
+      .photo-grid-2, .photo-grid-3 { grid-template-columns: 1fr; }
+      .links { flex-direction: column; }
+      .links a { text-align: center; justify-content: center; }
+      .route-strip { justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="backBar">
+    <a href="https://twofortherowd.com/" aria-label="Back to Two for the Row'd">← Back to Two for the Row'd</a>
+    <a class="site-name" href="https://twofortherowd.com/">Two for the Row'd 🇮🇪</a>
+  </div>
+
+  <div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="https://twofortherowd.com/">Home</a>
+      <span>›</span>
+      <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
+      <span>›</span>
+      <span>Lisbon</span>
+    </nav>
+
+    <!-- ── HERO ──────────────────────────────────────────── -->
+    <div class="card heroCard">
+      <div class="eyebrow">
+        <span class="badge">🇵🇹 Portugal</span>
+        <span class="badge outline">Lisbon · Sintra · Cascais · Colares</span>
+        <span class="badge green">Visited 2023</span>
+      </div>
+
+      <h1 class="hero-headline">
+        Lisbon —<br><em>hills, history and one brilliant city</em>
+      </h1>
+
+      <p class="hero-lead">
+        Lisbon completely won us over. A city full of stunning monuments, beautiful viewpoints,
+        incredible food and more character than you can take in on one visit. Yes, there are a
+        lot of hills — but that is part of the charm. We did the hop-on hop-off bus, explored
+        Belém, headed out to the fairytale town of Sintra, discovered the gorgeous coastal village
+        of Colares and finished with a lovely stop in Cascais. Portugal at its absolute best.
+      </p>
+
+      <div class="route-strip" style="margin-top:20px;">
+        <span class="route-stop">🏙️ Lisbon</span>
+        <span class="route-arrow">→</span>
+        <span class="route-stop">🚌 Hop-on Hop-off</span>
+        <span class="route-arrow">→</span>
+        <span class="route-stop">⛪ Belém</span>
+        <span class="route-arrow">→</span>
+        <span class="route-stop">🏰 Sintra</span>
+        <span class="route-arrow">→</span>
+        <span class="route-stop">🌿 Colares</span>
+        <span class="route-arrow">→</span>
+        <span class="route-stop">🌊 Cascais</span>
+      </div>
+
+      <p style="font-size:13px;font-weight:700;color:var(--muted);margin:14px 0 8px;letter-spacing:.06em;text-transform:uppercase;">What this trip gave us:</p>
+      <div class="states-strip">
+        <span class="state-pill">Stunning monuments</span>
+        <span class="state-pill">Hilly streets & trams</span>
+        <span class="state-pill">Great GF food</span>
+        <span class="state-pill">Hop-on hop-off views</span>
+        <span class="state-pill">Sintra palaces</span>
+        <span class="state-pill">Colares charm</span>
+        <span class="state-pill">Cascais coast</span>
+        <span class="state-pill">Pastel de nata</span>
+      </div>
+
+      <div class="links">
+        <a class="btn-primary" href="https://www.tourradar.com/t/319411?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+          Book a Lisbon tour on TourRadar →
+        </a>
+        <a class="btn-outline" href="https://twofortherowd.com/#destinations">
+          See all our destinations →
+        </a>
+      </div>
+
+      <div class="tagRow">
+        <span class="tag">Lisbon travel guide</span>
+        <span class="tag">Sintra day trip</span>
+        <span class="tag">Cascais guide</span>
+        <span class="tag">Lisbon hop-on hop-off</span>
+        <span class="tag">Portugal from Ireland</span>
+        <span class="tag">Lisbon gluten free</span>
+        <span class="tag">Belém Lisbon</span>
+        <span class="tag">Colares Portugal</span>
+      </div>
+    </div>
+
+    <!-- ── THE STORY ─────────────────────────────────────── -->
+    <div class="section-divider">🇵🇹 The Trip</div>
+
+    <p class="section-label">The story</p>
+    <div class="card">
+      <h2>Hills, history and a city that has it all.</h2>
+
+      <div class="quote-block">
+        "Lisbon is one of those cities that surprises you — not because you didn't expect it to be good,
+        but because it turns out to be even better than you hoped. Every corner has something worth stopping for."
+      </div>
+
+      <p>
+        We visited Lisbon in 2023 and it immediately jumped to the top of our European city break list.
+        The city has a brilliantly lived-in feel — grand squares and monasteries sitting alongside tiny
+        neighbourhood cafés, colourful tiled buildings and trams rattling up impossibly steep streets.
+      </p>
+      <p>
+        The hop-on hop-off bus was genuinely one of the best decisions we made. Given how hilly Lisbon is,
+        it takes the hard work out of getting between the main sights and gives you a great overview of the
+        city before you decide where to spend more time. Highly recommend it as a starting point.
+      </p>
+      <p>
+        Belém was a highlight — the Jerónimos Monastery is extraordinary, the Tower of Belém is iconic,
+        and while you're there you are legally required to stop for a pastel de nata at the original
+        Pastéis de Belém. Non-negotiable.
+      </p>
+      <p>
+        The gluten-free options in Lisbon were genuinely impressive too — Portuguese cuisine lends itself
+        well to GF eating and we never struggled to find something brilliant on the menu.
+      </p>
+      <p>
+        And the day trips — Sintra, Colares and Cascais — added a completely different dimension to the trip.
+        Each one felt like its own world, and all three are easy to reach from the city.
+      </p>
+    </div>
+
+    <!-- ── HIGHLIGHTS ─────────────────────────────────────── -->
+    <div class="card redCard">
+      <h2>The highlights — what stood out most</h2>
+
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <div class="highlight-icon">🚌</div>
+          <div class="highlight-title">Hop-on Hop-off Bus</div>
+          <p class="highlight-text">The best way to tackle Lisbon's hills and get your bearings. Hits all the major sights and saves your legs for the parts that really matter.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">⛪</div>
+          <div class="highlight-title">Jerónimos Monastery</div>
+          <p class="highlight-text">One of the most stunning buildings we have ever seen — the Manueline architecture is jaw-dropping inside and out. An absolute must in Belém.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🏰</div>
+          <div class="highlight-title">Sintra</div>
+          <p class="highlight-text">Fairytale palaces perched on forested hillsides — Sintra is unlike anywhere else in Europe and a brilliant day trip from Lisbon.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🌿</div>
+          <div class="highlight-title">Colares</div>
+          <p class="highlight-text">A gorgeous, quiet village near Sintra that most visitors skip entirely. Charming streets, lovely atmosphere and well worth including in a day out.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🌊</div>
+          <div class="highlight-title">Cascais</div>
+          <p class="highlight-text">A beautiful coastal town with a relaxed, easy vibe — great seafood, lovely beaches and a completely different feel to the busy city.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🥐</div>
+          <div class="highlight-title">The Food</div>
+          <p class="highlight-text">Fresh seafood, grilled meats, incredible pastries and great gluten-free options throughout. Lisbon is a seriously good food city.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PHOTOS ─────────────────────────────────────────── -->
+    <div class="card blueCard">
+      <h2>Lisbon in pictures</h2>
+      <p>From the grand squares and monastery cloisters to the tower and the streets — a glimpse of what makes Lisbon so special.</p>
+
+      <div class="photo-grid-2">
+        <img src="img/lis.jpg" alt="Praça do Comércio Lisbon — Two for the Row'd" loading="lazy">
+        <img src="img/lis2.jpg" alt="Sunset over the Tagus Lisbon — Two for the Row'd" loading="lazy">
+        <img src="img/lis3.jpg" alt="Teatro Nacional Lisbon — Two for the Row'd" loading="lazy">
+        <img src="img/lis4.jpg" alt="Jerónimos Monastery gardens Lisbon — Two for the Row'd" loading="lazy">
+      </div>
+      <div class="photo-grid-2">
+        <img src="img/lis5.jpg" alt="Jerónimos Monastery Lisbon — Two for the Row'd" loading="lazy">
+        <img src="img/lis6.jpg" alt="Jerónimos Monastery doorway Lisbon — Two for the Row'd" loading="lazy">
+        <img src="img/lis7.jpg" alt="Belém Tower Lisbon — Two for the Row'd" loading="lazy">
+        <img src="img/lis9.jpg" alt="Monument Lisbon — Two for the Row'd" loading="lazy">
+      </div>
+    </div>
+
+    <!-- ── BOOK THE TOUR ──────────────────────────────────── -->
+    <div class="card heroCard">
+      <h2>Book a Lisbon tour through TourRadar</h2>
+      <p class="hero-lead" style="font-size:15px;">
+        <strong>Want to explore Lisbon and Portugal with everything taken care of? TourRadar has a great range of Portugal tours to suit every style of trip.</strong>
+      </p>
+      <p>
+        Whether you want a city-focused break or a wider Portugal tour that takes in Lisbon, Sintra, the Algarve
+        and beyond — having the route and logistics sorted means you can focus on actually enjoying it.
+        Lisbon is a city that rewards proper time and attention, and a guided tour is a brilliant way to
+        make sure you don't miss anything.
+      </p>
+      <div class="links">
+        <a class="btn-primary" href="https://www.tourradar.com/t/319411?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+          Book a Lisbon tour on TourRadar →
+        </a>
+      </div>
+      <p class="disclosure">
+        <strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.
+      </p>
+    </div>
+
+    <!-- ── LISBON GYG ─────────────────────────────────────── -->
+    <div class="section-divider">🚌 Lisbon Activities</div>
+
+    <p class="section-label">Things to do in Lisbon</p>
+    <div class="card">
+      <h2>Book Lisbon experiences with GetYourGuide</h2>
+      <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">
+        The hop-on hop-off bus is our top pick — but there is plenty more to explore. Browse Lisbon activities, tours and experiences here:
+      </p>
+      <div class="gygWidgetWrap">
+        <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="5" data-gyg-partner-id="VYORXUN" data-gyg-q="lisbon">
+          <span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/lisbon-l42/">GetYourGuide</a></span>
+        </div>
+      </div>
+      <p class="disclosure">
+        <strong>Disclosure:</strong> If you book through these links we may earn a small commission at no extra cost to you.
+      </p>
+    </div>
+
+    <!-- ── SINTRA ──────────────────────────────────────────── -->
+    <div class="section-divider">🏰 Sintra</div>
+
+    <p class="section-label">The must-do day trip</p>
+    <div class="card greenCard">
+      <h2>Sintra — fairytale palaces and forested hillsides</h2>
+      <p>
+        If you are visiting Lisbon and you do not make it to Sintra, you are missing one of the most
+        extraordinary places in all of Portugal. Just 40 minutes by train from the city, Sintra feels
+        like stepping into a completely different world — colourful palaces perched on misty hilltops,
+        lush gardens and winding cobbled streets full of pastry shops and palace views.
+      </p>
+      <p>
+        The Pena Palace is the iconic one — vivid, dramatic and unlike anything else you will have seen.
+        But even just wandering the town itself and taking in the atmosphere is worth the trip out.
+        Give yourself a full day here — you will want it.
+      </p>
+
+      <div class="gygWidgetWrap">
+        <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="3" data-gyg-partner-id="VYORXUN" data-gyg-q="sintra">
+          <span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/sintra-l99/">GetYourGuide</a></span>
+        </div>
+      </div>
+      <p class="disclosure">
+        <strong>Disclosure:</strong> If you book through these links we may earn a small commission at no extra cost to you.
+      </p>
+    </div>
+
+    <!-- ── CASCAIS ─────────────────────────────────────────── -->
+    <div class="section-divider">🌊 Cascais</div>
+
+    <p class="section-label">The lovely coastal town</p>
+    <div class="card blueCard">
+      <h2>Cascais — easy, breezy and well worth the trip</h2>
+      <p>
+        Cascais is one of those places that just feels right the moment you arrive. A short train ride
+        along the coast from Lisbon, it has a completely different pace — relaxed, pretty and full of
+        great seafood restaurants, lovely beaches and a charming old town centre that is perfect for
+        an afternoon wander.
+      </p>
+      <p>
+        It works brilliantly as a half day or a full day out from Lisbon — you can even combine it
+        with a stop in Estoril on the way. A lovely way to end a trip to the Lisbon area.
+      </p>
+
+      <div class="gygWidgetWrap">
+        <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="5" data-gyg-partner-id="VYORXUN" data-gyg-q="caiscais">
+          <span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/cascais-l100/">GetYourGuide</a></span>
+        </div>
+      </div>
+      <p class="disclosure">
+        <strong>Disclosure:</strong> If you book through these links we may earn a small commission at no extra cost to you.
+      </p>
+    </div>
+
+    <!-- ── FAQ ────────────────────────────────────────────── -->
+    <p class="section-label">Common questions</p>
+    <div class="card">
+      <h2>Lisbon FAQ</h2>
+
+      <div class="faqItem open">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          Is Lisbon worth visiting?
+        </div>
+        <div class="faqA">
+          Absolutely — Lisbon is one of the best city break destinations in Europe. It has stunning
+          architecture, incredible food, a brilliant atmosphere and more to see than you can fit into
+          one trip. The day trips alone to Sintra and Cascais make it worth it. We would go back
+          in a heartbeat.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          Is the hop-on hop-off bus worth it in Lisbon?
+        </div>
+        <div class="faqA">
+          Yes — especially given how hilly Lisbon is. The hop-on hop-off bus is a brilliant way to
+          cover a lot of ground without destroying your legs on the steep streets. It hits all the
+          main sights and gives you a great overview of the city. We really recommend doing it on
+          your first day to get your bearings.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          Is Sintra worth a day trip from Lisbon?
+        </div>
+        <div class="faqA">
+          Without question. Sintra is one of the most beautiful places in Portugal — fairytale palaces,
+          lush hillside gardens and incredible views. It is only about 40 minutes from Lisbon by train
+          and is an absolute must on any visit. Give yourself a full day and go early to beat the crowds.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          Is Cascais worth visiting?
+        </div>
+        <div class="faqA">
+          Cascais is a gorgeous coastal town just along the coast from Lisbon — easy to reach by train
+          and well worth a half day or full day. It has a lovely relaxed atmosphere, great seafood,
+          beautiful beaches and a very different feel to the busy city. A really lovely way to finish
+          a Lisbon trip.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          Is Lisbon good for gluten-free food?
+        </div>
+        <div class="faqA">
+          Yes — Lisbon has a really good range of gluten-free options and awareness of dietary
+          requirements is generally good in restaurants. Portuguese cuisine naturally includes a lot
+          of fresh fish, grilled meats and rice dishes which tend to be naturally gluten-free.
+          We found it one of the easier European cities for GF eating.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          How many days do you need in Lisbon?
+        </div>
+        <div class="faqA">
+          We would recommend at least four to five days to do Lisbon justice — that gives you time
+          to explore the city properly, do the hop-on hop-off bus, visit Belém and its monuments,
+          and still have time for day trips to Sintra and Cascais. You could easily fill a week
+          without running out of things to do.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── PACKING ─────────────────────────────────────────── -->
+    <p class="section-label">What to pack for Lisbon</p>
+    <div class="card">
+      <h2>Lisbon packing essentials — what we'd bring</h2>
+      <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">
+        Lisbon is walkable but hilly — comfortable shoes are non-negotiable. It is warm and sunny
+        for much of the year but can be cooler in winter and spring. These are the things we'd
+        pack without hesitation.
+      </p>
+
+      <div class="highlights-grid">
+
+        <div class="highlight-item">
+          <div class="highlight-icon">👟</div>
+          <div class="highlight-title">Comfortable walking shoes</div>
+          <p class="highlight-text">Lisbon's hills and cobbled streets will test your footwear. Comfortable, supportive shoes are the single most important thing you can pack — your feet will thank you.</p>
+          <a href="https://amzn.to/4c3cH8F" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">☀️</div>
+          <div class="highlight-title">Sunscreen</div>
+          <p class="highlight-text">Portugal gets serious sunshine — especially from spring onwards. High SPF is essential for long days out exploring, on the hop-on hop-off bus or day tripping to Sintra and Cascais.</p>
+          <a href="https://amzn.to/4vqpV76" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🎒</div>
+          <div class="highlight-title">Small day backpack</div>
+          <p class="highlight-text">Perfect for day trips to Sintra and Cascais — light enough to carry all day without getting in the way, with room for a water bottle, camera and a layer.</p>
+          <a href="https://amzn.to/4tC4r5e" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">💧</div>
+          <div class="highlight-title">Water bottle</div>
+          <p class="highlight-text">You will get through a lot of water walking around Lisbon in the heat. A reusable bottle saves money and keeps you hydrated on long days out.</p>
+          <a href="https://amzn.to/47QjMXw" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🔋</div>
+          <div class="highlight-title">Portable power bank</div>
+          <p class="highlight-text">Full days out sightseeing, using maps and taking photos will drain your battery fast. A power bank means you never miss a moment or get lost.</p>
+          <a href="https://amzn.to/41XJZju" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">📶</div>
+          <div class="highlight-title">eSIM card</div>
+          <p class="highlight-text">Handy for maps, bookings and staying connected without relying on hotel Wi-Fi or paying roaming charges — especially useful on day trips outside the city.</p>
+          <a href="https://amzn.to/4t4uoL3" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🔌</div>
+          <div class="highlight-title">Travel adaptor</div>
+          <p class="highlight-text">Portugal uses Type F plugs — different to Ireland. Don't arrive on day one with nothing charged after your flight.</p>
+          <a href="https://amzn.to/4tAcVK9" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">👕</div>
+          <div class="highlight-title">Lightweight linen trousers</div>
+          <p class="highlight-text">Breathable and cool for warm Lisbon days — and smart enough for dinner out in the evening. Perfect for the heat without looking too casual.</p>
+          <a href="https://amzn.to/4cbiFmA" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🧥</div>
+          <div class="highlight-title">Light layer / jacket</div>
+          <p class="highlight-text">Lisbon can be breezy, especially along the waterfront and in the evenings. A light jacket is worth having even in summer — and essential in spring or autumn.</p>
+          <a href="https://amzn.to/4mlylrZ" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🧴</div>
+          <div class="highlight-title">Travel toiletries</div>
+          <p class="highlight-text">Compact travel toiletries keep packing easy and save precious luggage space — especially on a short city break where you want to travel light.</p>
+          <a href="https://amzn.to/423383r" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;margin-right:6px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">Men's →</a>
+          <a href="https://amzn.to/41optIE" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">Women's →</a>
+        </div>
+
+      </div>
+
+      <p class="disclosure">
+        <strong>Disclosure:</strong> These are Amazon affiliate links. If you buy through them we may earn a small commission at no extra cost to you.
+        These are all things we'd genuinely pack for a Lisbon trip.
+      </p>
+    </div>
+
+    <!-- ── FINAL CTA ───────────────────────────────────────── -->
+    <div class="card heroCard" style="text-align:center;">
+      <h2 style="text-align:center;">Planning your own Lisbon trip?</h2>
+      <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">
+        Lisbon is one of Europe's great city break destinations — and with Sintra, Colares and Cascais
+        on the doorstep, it punches well above its weight. Book a tour that handles the logistics
+        and just enjoy one of our favourite cities in Europe.
+      </p>
+      <div class="links" style="justify-content:center;">
+        <a class="btn-primary" href="https://www.tourradar.com/t/319411?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+          Book a Lisbon tour on TourRadar →
+        </a>
+        <a class="btn-gold" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">
+          Browse Lisbon activities on GYG →
+        </a>
+        <a class="btn-outline" href="https://twofortherowd.com/">
+          Back to main site →
+        </a>
+      </div>
+      <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">
+        Affiliate disclosure: if you book through our links we may earn a small commission at no cost to you.
+        We only recommend trips and experiences we'd be happy to stand over.
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>
+      © <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp;
+      <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp;
+      <a href="https://twofortherowd.com/#destinations">Our destinations</a> &nbsp;•&nbsp;
+      <a href="https://twofortherowd.com/#gyg">More GetYourGuide picks</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
