@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H7SPF3M3X8');
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '981657641071814');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"
+  /></noscript>
+
+  <!-- GetYourGuide -->
+  <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
+
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <!-- ═══ SEO ═══ -->
+  <title>Kenya Safari Honeymoon — The Big Five, Maasai Mara & Nairobi | Two for the Row'd</title>
+  <meta name="description" content="The middle leg of our 3-week honeymoon — a Kenya safari with 5 nights, three drives a day, the Big Five, a Maasai Mara tribe visit, Rothschild's giraffes in Nairobi and Karen Blixen's house." />
+  <link rel="canonical" href="https://twofortherowd.com/kenya.html" />
+  <meta name="theme-color" content="#ffd84a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kenya Safari Honeymoon — The Big Five, Maasai Mara & Nairobi" />
+  <meta property="og:description" content="The middle leg of our 3-week honeymoon — Kenya safari, the Big Five, Maasai Mara tribe, Rothschild's giraffes, Karen Blixen's house and being serenaded on the elephant deck." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://twofortherowd.com/kenya.html" />
+  <meta property="og:image" content="https://twofortherowd.com/img/ken1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ═══ SCHEMA ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Kenya Safari Honeymoon — The Big Five, Maasai Mara & Nairobi",
+    "description": "The middle leg of our 3-week honeymoon — Kenya safari, the Big Five, Maasai Mara tribe, Rothschild's giraffes, Karen Blixen's house and being serenaded on the elephant deck.",
+    "author": {
+      "@type": "Person",
+      "name": "Nicola and Padraig",
+      "url": "https://twofortherowd.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Two for the Row'd",
+      "url": "https://twofortherowd.com"
+    },
+    "url": "https://twofortherowd.com/kenya.html",
+    "image": "https://twofortherowd.com/img/ken1.jpg"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is a Kenya safari worth it for a honeymoon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely — a Kenya safari is one of the most extraordinary and romantic experiences you can have on a honeymoon. The wildlife, the landscapes, the early morning drives and the sheer sense of adventure make it genuinely unforgettable. Combine it with Zanzibar or the Maldives for the ultimate honeymoon experience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you see the Big Five in Kenya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — Kenya is one of the best places in the world to see the Big Five. Lion, elephant, leopard, buffalo and rhino are all present across Kenya's national parks and reserves. We were lucky enough to see all five during our safari, along with giraffes, hyenas, eagles and much more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is it like to visit the Maasai Mara tribe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Visiting the Maasai Mara community was one of the most culturally rich and genuinely moving experiences of our entire honeymoon. The warmth of the welcome, the insight into their way of life and the privilege of spending time with them was something we will never forget. Being serenaded by the tribe during a romantic dinner on the elephant deck was a truly magical moment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the Giraffe Centre in Nairobi worth visiting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — the Rothschild's Giraffe Centre in Nairobi is a brilliant experience and one of the highlights of any Kenya trip. Getting up close with these beautiful and endangered animals is something completely special — and the centre does important conservation work that makes it all the more worthwhile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Karen Blixen's house worth visiting in Nairobi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — Karen Blixen's house, made famous by the film Out of Africa, is a fascinating visit and a wonderful slice of Kenya's colonial history. The house is beautifully preserved and the setting, with the Ngong Hills in the background, is exactly as beautiful as you would hope."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many safari drives a day do you do in Kenya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On our safari we did three drives a day — an early morning drive starting at 5.30am, a midday drive and an evening drive. Each one brought something different and new. The early morning drives were particularly special — the light, the stillness and the wildlife activity at that hour made every early alarm completely worth it."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold:       #ffd84a;
+      --gold-dark:  #e8c235;
+      --gold-pale:  #fff9e0;
+      --ink:        #1a1208;
+      --ink-soft:   #4a3f28;
+      --muted:      #7a6e58;
+      --cream:      #fdf8ef;
+      --white:      #ffffff;
+      --border:     rgba(26,18,8,.10);
+      --border-mid: rgba(26,18,8,.16);
+      --card-bg:    rgba(255,255,255,.88);
+      --shadow-sm:  0 2px 8px rgba(26,18,8,.07);
+      --shadow-md:  0 8px 24px rgba(26,18,8,.10);
+      --shadow-lg:  0 16px 48px rgba(26,18,8,.13);
+      --radius-sm:  10px;
+      --radius-md:  16px;
+      --radius-lg:  22px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'DM Sans', 'Segoe UI', Arial, sans-serif;
+      --kenya:      #006600;
+      --kenya-red:  #BB0000;
+      --savanna:    #c8860a;
+      --earth:      #8B4513;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,134,10,.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(255,216,74,.18) 0%, transparent 55%);
+    }
+
+    * { position: relative; z-index: 1; }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); color: var(--ink); line-height: 1.18; margin-top: 0; }
+    h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 14px; }
+    h2 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); font-weight: 700; margin-bottom: 10px; }
+    h3 { font-size: clamp(1.05rem, 1.8vw, 1.25rem); font-weight: 700; margin-bottom: 8px; }
+    p { margin: 0 0 .9rem; }
+    p:last-child { margin-bottom: 0; }
+    ul, ol { margin: 0 0 .9rem; padding-left: 1.3rem; }
+    li { margin-bottom: .35rem; }
+    a { color: inherit; }
+    strong { font-weight: 700; }
+
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 60px; }
+
+    .backBar {
+      background: rgba(253,248,239,.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .backBar a {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 700; text-decoration: none; color: var(--ink);
+      padding: 7px 14px; border-radius: 999px; background: var(--white);
+      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .backBar a:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .backBar .site-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--ink); text-decoration: none; }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      padding: 24px 26px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(4px);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .heroCard { background: linear-gradient(160deg, #ffffff 0%, #fdf5e0 45%, #fff8e8 100%); border-color: rgba(200,134,10,.25); }
+    .redCard { background: linear-gradient(160deg, #ffffff 0%, #fff5f0 55%, #fde0d0 100%); border-color: rgba(187,0,0,.2); }
+    .greenCard { background: linear-gradient(160deg, #ffffff 0%, #f0f8f0 55%, #d0ecd0 100%); border-color: rgba(0,102,0,.2); }
+    .earthCard { background: linear-gradient(160deg, #fdf8f0 0%, #f5ead8 55%, #ecdfc0 100%); border-color: rgba(139,69,19,.2); }
+    .savCard { background: linear-gradient(160deg, #ffffff 0%, #fdf5e0 55%, #fae8b8 100%); border-color: rgba(200,134,10,.2); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 22px; background: var(--ink); color: var(--white);
+      border: none; border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: 14px; font-weight: 700;
+      text-decoration: none; cursor: pointer;
+      box-shadow: 0 6px 20px rgba(26,18,8,.2);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn-primary:hover { background: #2e2410; transform: translateY(-2px); color: var(--white); }
+
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 22px; background: var(--gold); color: var(--ink);
+      border: 1px solid var(--gold-dark); border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: 14px; font-weight: 700;
+      text-decoration: none; cursor: pointer;
+      box-shadow: 0 6px 18px rgba(232,194,53,.35);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); color: var(--ink); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; background: var(--white); color: var(--ink);
+      border: 1.5px solid var(--border-mid); border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: 14px; font-weight: 700;
+      text-decoration: none; cursor: pointer; box-shadow: var(--shadow-sm);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-outline:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); color: var(--ink); }
+
+    .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+
+    .badge { display: inline-block; padding: 4px 11px; border-radius: 999px; font-size: 12px; font-weight: 700; background: var(--gold); color: var(--ink); border: 1px solid var(--gold-dark); }
+    .badge.outline { background: rgba(255,255,255,.8); border-color: var(--border-mid); color: var(--ink-soft); }
+    .badge.green { background: rgba(0,102,0,.10); border-color: rgba(0,102,0,.25); color: var(--kenya); }
+    .badge.savanna { background: rgba(200,134,10,.12); border-color: rgba(200,134,10,.3); color: var(--savanna); }
+
+    .eyebrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .10em; text-transform: uppercase; color: var(--muted); margin: 6px 0 10px; }
+
+    .hero-headline { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.12; margin-bottom: 14px; }
+    .hero-headline em { font-style: italic; color: var(--savanna); }
+    .hero-lead { font-size: 1.05rem; line-height: 1.7; color: var(--ink-soft); margin-bottom: 20px; }
+
+    .route-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+    .route-stop { background: rgba(255,255,255,.8); border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 700; }
+    .route-arrow { color: var(--muted); font-size: 14px; }
+
+    .states-strip { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+    .state-pill { background: rgba(200,134,10,.08); border: 1px solid rgba(200,134,10,.2); border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600; color: var(--savanna); }
+
+    .iframeWrapPortrait {
+      border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-md);
+      background: #000; position: relative; aspect-ratio: 9/16;
+      max-width: 320px; margin: 0 auto;
+    }
+    .iframeWrapPortrait iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    .reels-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 20px 0; }
+
+    .photo-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 16px 0; }
+    .photo-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0; }
+    .photo-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 16px 0; }
+    .photo-grid-2 img, .photo-grid-3 img, .photo-grid-4 img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border-radius: 12px; box-shadow: var(--shadow-md); display: block;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .photo-grid-2 img:hover, .photo-grid-3 img:hover, .photo-grid-4 img:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+    .gygWidgetWrap { margin-top: 14px; padding: 10px; border-radius: 14px; background: rgba(255,255,255,.55); border: 1px solid var(--border); overflow: hidden; }
+
+    .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 10px; }
+    .highlight-item { background: rgba(255,255,255,.75); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
+    .highlight-icon { font-size: 22px; margin-bottom: 6px; }
+    .highlight-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+    .highlight-text { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+
+    .quote-block {
+      border-left: 3px solid var(--savanna); padding: 12px 18px; margin: 16px 0;
+      background: rgba(200,134,10,.06); border-radius: 0 12px 12px 0;
+      font-style: italic; font-size: 15px; color: var(--ink-soft); line-height: 1.7;
+    }
+
+    .faqItem { border-bottom: 1px dashed var(--border-mid); padding: 14px 0; }
+    .faqItem:last-child { border-bottom: none; padding-bottom: 0; }
+    .faqQ { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; user-select: none; }
+    .faqQ::after { content: "+"; font-size: 1.4rem; line-height: 1; font-weight: 400; flex-shrink: 0; color: var(--muted); transition: transform .2s ease; }
+    .faqItem.open .faqQ::after { transform: rotate(45deg); }
+    .faqA { font-size: 14px; line-height: 1.7; color: var(--ink-soft); display: none; padding-top: 10px; }
+    .faqItem.open .faqA { display: block; }
+
+    .tagRow { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+    .tag { display: inline-block; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,.8); font-size: 12px; font-weight: 600; color: var(--ink-soft); }
+
+    .disclosure { font-size: 12px; line-height: 1.55; color: var(--muted); margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--border-mid); }
+
+    .breadcrumb { font-size: 12px; color: var(--muted); margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; font-weight: 600; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb span { opacity: .5; }
+
+    .section-divider { display: flex; align-items: center; gap: 12px; margin: 8px 0 16px; font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); }
+    .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border-mid); }
+
+    footer { margin-top: 10px; padding: 20px 0 12px; font-size: 13px; line-height: 1.6; color: var(--muted); text-align: center; }
+    footer a { color: var(--muted); font-weight: 600; }
+
+    @media (max-width: 640px) {
+      .photo-grid-2, .photo-grid-3, .photo-grid-4 { grid-template-columns: 1fr; }
+      .reels-grid { grid-template-columns: 1fr; }
+      .links { flex-direction: column; }
+      .links a { text-align: center; justify-content: center; }
+      .route-strip { justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="backBar">
+    <a href="https://twofortherowd.com/" aria-label="Back to Two for the Row'd">← Back to Two for the Row'd</a>
+    <a class="site-name" href="https://twofortherowd.com/">Two for the Row'd 🇮🇪</a>
+  </div>
+
+  <div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="https://twofortherowd.com/">Home</a>
+      <span>›</span>
+      <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
+      <span>›</span>
+      <span>Kenya</span>
+    </nav>
+
+    <!-- ── HERO ──────────────────────────────────────────── -->
+    <div class="card heroCard">
+      <div class="eyebrow">
+        <span class="badge">🇰🇪 Kenya</span>
+        <span class="badge outline">Safari · Maasai Mara · Nairobi · Naivasha</span>
+        <span class="badge savanna">Honeymoon 2023 💍</span>
+      </div>
+
+      <h1 class="hero-headline">
+        Kenya —<br><em>the Big Five and the trip of a lifetime</em>
+      </h1>
+
+      <p class="hero-lead">
+        The middle leg of our three-week honeymoon — and the one that left us completely speechless.
+        Five nights on safari in Kenya, three drives a day starting at 5.30am, the Big Five ticked
+        off in full, a visit to the Maasai Mara community, being serenaded on the elephant deck
+        during a romantic dinner, Rothschild's giraffes in Nairobi, Karen Blixen's house and bumpy
+        roads that were absolutely part of the magic. Kenya is extraordinary. There are no other words.
+      </p>
+
+      <div class="route-strip" style="margin-top:20px;">
+        <span class="route-stop">✈️ Nairobi</span>
+        <span class="route-arrow">→</span>
+        <span class="route-stop">🦒 Giraffe Centre</span>
+        <span class="route-arrow">→</span>
+        <span class="route-stop">🏡 Karen Blixen</span>
+        <span class="route-arrow">→</span>
+        <span class="route-stop">🌿 Naivasha</span>
+        <span class="route-arrow">→</span>
+        <span class="route-stop">🦁 Safari Drives</span>
+        <span class="route-arrow">→</span>
+        <span class="route-stop">🗺️ Maasai Mara</span>
+        <span class="route-arrow">→</span>
+        <span class="route-stop">🦅 Eagle Spotting</span>
+      </div>
+
+      <p style="font-size:13px;font-weight:700;color:var(--muted);margin:14px 0 8px;letter-spacing:.06em;text-transform:uppercase;">What this trip gave us:</p>
+      <div class="states-strip">
+        <span class="state-pill">The Big Five ✅</span>
+        <span class="state-pill">Lions, elephants, giraffes</span>
+        <span class="state-pill">Maasai Mara community</span>
+        <span class="state-pill">Serenaded on elephant deck 🎵</span>
+        <span class="state-pill">Rothschild's giraffes 🦒</span>
+        <span class="state-pill">Karen Blixen's house</span>
+        <span class="state-pill">Eagle spotting 🦅</span>
+        <span class="state-pill">5.30am wake-up calls ⏰</span>
+        <span class="state-pill">Bumpy roads 🛻</span>
+      </div>
+
+      <div class="links">
+        <a class="btn-primary" href="https://www.tourradar.com/t/200106?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+          Book a Kenya safari on TourRadar →
+        </a>
+        <a class="btn-outline" href="https://twofortherowd.com/#destinations">
+          See all our destinations →
+        </a>
+      </div>
+
+      <div class="tagRow">
+        <span class="tag">Kenya safari honeymoon</span>
+        <span class="tag">Big Five Kenya</span>
+        <span class="tag">Maasai Mara tribe visit</span>
+        <span class="tag">Nairobi Giraffe Centre</span>
+        <span class="tag">Karen Blixen Nairobi</span>
+        <span class="tag">Kenya from Ireland</span>
+        <span class="tag">Naivasha Kenya</span>
+        <span class="tag">Kenya safari tips</span>
+      </div>
+    </div>
+
+    <!-- ── THE STORY ─────────────────────────────────────── -->
+    <div class="section-divider">🇰🇪 The Safari</div>
+
+    <p class="section-label">The story</p>
+    <div class="card">
+      <h2>The most extraordinary five nights of our lives.</h2>
+
+      <div class="quote-block">
+        "Nothing can fully prepare you for your first morning on an African safari. The light,
+        the silence, the sense of space — and then, suddenly, a lion. It changes you."
+      </div>
+
+      <p>
+        After an incredible first night at our hotel in Kenya — a truly stunning property that set
+        the tone for everything that followed — we were picked up the next morning by our safari
+        truck and divided into groups. We ended up with two English people and their daughter, and
+        from the very first drive we knew we had landed in brilliant company. The five of us spent
+        the next five nights together and they made the whole experience even more special.
+      </p>
+      <p>
+        The rhythm of safari life quickly became our favourite thing in the world. Up at 5.30am
+        for the morning drive — the best one, when the light is golden and the animals are most
+        active. Back for breakfast. Out again at midday. Back for lunch. Out again in the evening.
+        Three drives a day, every day, and every single one delivered something new and extraordinary.
+      </p>
+      <p>
+        We saw the Big Five — lion, elephant, leopard, buffalo and rhino — along with giraffes,
+        hyenas, zebras, eagles and more wildlife than we could keep track of. Every corner of the
+        savanna seemed to hold something breathtaking. The bumpy roads were all part of the
+        experience — and the whole package meant we barely spent a penny during the day beyond
+        tips for the driver and guide, who were both wonderful.
+      </p>
+      <p>
+        The visit to the Maasai Mara community was one of the most genuinely moving experiences
+        of the entire honeymoon. The warmth of the welcome, the insight into their way of life
+        and the privilege of spending time with them was something we will carry with us for the
+        rest of our lives. And being serenaded by the tribe on the elephant deck during a romantic
+        dinner — as the African sun went down around us — was a moment of pure, perfect magic.
+      </p>
+      <p>
+        In Nairobi, we visited the Rothschild's Giraffe Centre — getting up close with these
+        magnificent and endangered animals is something completely special — and Karen Blixen's
+        house, made famous by Out of Africa, which was as beautiful and evocative as we had hoped.
+      </p>
+    </div>
+
+    <!-- ── HIGHLIGHTS ─────────────────────────────────────── -->
+    <div class="card redCard">
+      <h2>The highlights — what stood out most</h2>
+
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <div class="highlight-icon">🦁</div>
+          <div class="highlight-title">The Big Five</div>
+          <p class="highlight-text">Lion, elephant, leopard, buffalo and rhino — we saw them all. Every sighting was extraordinary but seeing a lion up close on that first morning was something we will never forget.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🌅</div>
+          <div class="highlight-title">Morning Drives</div>
+          <p class="highlight-text">Worth every 5.30am alarm. The golden morning light on the savanna, the stillness and the sheer abundance of wildlife at that hour made every early start completely worthwhile.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🗺️</div>
+          <div class="highlight-title">Maasai Mara Visit</div>
+          <p class="highlight-text">One of the most culturally rich and moving experiences of the whole honeymoon — spending time with the Maasai community and witnessing their extraordinary way of life was a genuine privilege.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🎵</div>
+          <div class="highlight-title">Serenaded on the Elephant Deck</div>
+          <p class="highlight-text">Being serenaded by the Maasai tribe on the elephant deck during a romantic dinner as the African sun set around us — an utterly magical and completely unforgettable honeymoon moment.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🦒</div>
+          <div class="highlight-title">Rothschild's Giraffes</div>
+          <p class="highlight-text">The Giraffe Centre in Nairobi is an extraordinary experience — getting up close with these beautiful endangered animals and the incredible conservation work being done for them.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🏡</div>
+          <div class="highlight-title">Karen Blixen's House</div>
+          <p class="highlight-text">The Out of Africa setting in real life — beautifully preserved, fascinatingly evocative and with the Ngong Hills in the background exactly as you would hope. A wonderful Nairobi stop.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PHOTOS ─────────────────────────────────────────── -->
+    <div class="section-divider">📸 Kenya in Pictures</div>
+
+    <div class="card earthCard">
+      <h2>The savanna, the wildlife and the people</h2>
+      <p>28 photos from five extraordinary nights in Kenya — the Big Five, the Maasai community, the giraffes, the eagle and everything in between.</p>
+
+      <div class="photo-grid-4">
+        <img src="img/ken1.jpg" alt="Kenya safari wildlife — Two for the Row'd" loading="lazy">
+        <img src="img/ken2.jpg" alt="Kenya safari landscape — Two for the Row'd" loading="lazy">
+        <img src="img/ken3.jpg" alt="Kenya safari animals — Two for the Row'd" loading="lazy">
+        <img src="img/ken4.jpg" alt="Kenya safari scene — Two for the Row'd" loading="lazy">
+      </div>
+      <div class="photo-grid-4">
+        <img src="img/ken5.jpg" alt="Kenya wildlife — Two for the Row'd" loading="lazy">
+        <img src="img/ken6.jpg" alt="Kenya savanna — Two for the Row'd" loading="lazy">
+        <img src="img/ken7.jpg" alt="Kenya safari drive — Two for the Row'd" loading="lazy">
+        <img src="img/ken8.jpg" alt="Kenya animals — Two for the Row'd" loading="lazy">
+      </div>
+      <div class="photo-grid-4">
+        <img src="img/ken9.jpg" alt="Kenya safari — Two for the Row'd" loading="lazy">
+        <img src="img/ken10.jpg" alt="Kenya wildlife — Two for the Row'd" loading="lazy">
+        <img src="img/ken11.jpg" alt="Kenya landscape — Two for the Row'd" loading="lazy">
+        <img src="img/ken12.jpg" alt="Kenya safari scene — Two for the Row'd" loading="lazy">
+      </div>
+      <div class="photo-grid-4">
+        <img src="img/ken13.jpg" alt="Kenya animals — Two for the Row'd" loading="lazy">
+        <img src="img/ken14.jpg" alt="Kenya safari — Two for the Row'd" loading="lazy">
+        <img src="img/ken15.jpg" alt="Kenya wildlife — Two for the Row'd" loading="lazy">
+        <img src="img/ken16.jpg" alt="Kenya savanna — Two for the Row'd" loading="lazy">
+      </div>
+      <div class="photo-grid-4">
+        <img src="img/ken17.jpg" alt="Kenya safari — Two for the Row'd" loading="lazy">
+        <img src="img/ken18.jpg" alt="Kenya animals — Two for the Row'd" loading="lazy">
+        <img src="img/ken19.jpg" alt="Kenya landscape — Two for the Row'd" loading="lazy">
+        <img src="img/ken20.jpg" alt="Kenya wildlife — Two for the Row'd" loading="lazy">
+      </div>
+      <div class="photo-grid-4">
+        <img src="img/ken21.jpg" alt="Kenya safari — Two for the Row'd" loading="lazy">
+        <img src="img/ken22.jpg" alt="Kenya animals — Two for the Row'd" loading="lazy">
+        <img src="img/ken23.jpg" alt="Kenya landscape — Two for the Row'd" loading="lazy">
+        <img src="img/ken24.JPG" alt="Kenya safari scene — Two for the Row'd" loading="lazy">
+      </div>
+      <div class="photo-grid-4">
+        <img src="img/ken25.jpg" alt="Kenya wildlife — Two for the Row'd" loading="lazy">
+        <img src="img/ken26.JPG" alt="Kenya safari — Two for the Row'd" loading="lazy">
+        <img src="img/ken27.JPG" alt="Kenya animals — Two for the Row'd" loading="lazy">
+        <img src="img/ken28.JPG" alt="Kenya landscape — Two for the Row'd" loading="lazy">
+      </div>
+    </div>
+
+    <!-- ── REELS ───────────────────────────────────────────── -->
+    <div class="section-divider">🎬 Our Kenya Reels</div>
+
+    <p class="section-label">Watch our shorts</p>
+    <div class="card savCard">
+      <h2>Naivasha, the Maasai serenade, eagle spotting & the giraffes</h2>
+      <p>Four reels from our Kenya honeymoon — the beautiful Lake Naivasha, being serenaded by the Maasai tribe on the elephant deck, spotting an eagle on safari and spending time with the Rothschild's giraffes in Nairobi.</p>
+
+      <div class="reels-grid">
+        <div>
+          <div class="iframeWrapPortrait">
+            <iframe src="https://www.youtube.com/embed/ryWR51JIGOI"
+              title="Naivasha Kenya — Two for the Row'd"
+              allowfullscreen loading="lazy">
+            </iframe>
+          </div>
+          <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:10px;">🌿 Naivasha, Kenya</p>
+        </div>
+        <div>
+          <div class="iframeWrapPortrait">
+            <iframe src="https://www.youtube.com/embed/zSgvafzkVe8"
+              title="Maasai serenade elephant deck Kenya — Two for the Row'd"
+              allowfullscreen loading="lazy">
+            </iframe>
+          </div>
+          <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:10px;">🎵 Serenaded by the Maasai</p>
+        </div>
+        <div>
+          <div class="iframeWrapPortrait">
+            <iframe src="https://www.youtube.com/embed/XdG0bxRuO5I"
+              title="Eagle spotting Kenya safari — Two for the Row'd"
+              allowfullscreen loading="lazy">
+            </iframe>
+          </div>
+          <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:10px;">🦅 Spotting an eagle on safari</p>
+        </div>
+        <div>
+          <div class="iframeWrapPortrait">
+            <iframe src="https://www.youtube.com/embed/PEQRwS4rTVI"
+              title="Rothschild giraffes Nairobi — Two for the Row'd"
+              allowfullscreen loading="lazy">
+            </iframe>
+          </div>
+          <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:10px;">🦒 Rothschild's giraffes, Nairobi</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BOOK THE TOUR ──────────────────────────────────── -->
+    <div class="card heroCard">
+      <h2>Book a Kenya safari through TourRadar</h2>
+      <p class="hero-lead" style="font-size:15px;">
+        <strong>A Kenya safari is one of the greatest travel experiences on earth — and TourRadar has brilliant options to help you plan every detail.</strong>
+      </p>
+      <p>
+        Whether you want a classic Big Five safari, a Maasai Mara cultural experience, a
+        honeymoon package or a wider East Africa adventure combining Kenya with Tanzania
+        or Zanzibar — having the logistics handled means you can focus entirely on the
+        experience. And trust us — you will want to be fully present for every single moment.
+      </p>
+      <div class="links">
+        <a class="btn-primary" href="https://www.tourradar.com/t/200106?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+          Book a Kenya safari on TourRadar →
+        </a>
+      </div>
+      <p class="disclosure">
+        <strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.
+      </p>
+    </div>
+
+    <!-- ── GYG ────────────────────────────────────────────── -->
+    <div class="card">
+      <h2>Book Kenya experiences with GetYourGuide</h2>
+      <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">
+        From Nairobi day trips and Giraffe Centre visits to Maasai Mara safaris and multi-day adventures — browse Kenya activities here:
+      </p>
+      <div class="gygWidgetWrap">
+        <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="10" data-gyg-partner-id="VYORXUN" data-gyg-q="kenya">
+          <span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/kenya-l169122/">GetYourGuide</a></span>
+        </div>
+      </div>
+      <p class="disclosure">
+        <strong>Disclosure:</strong> If you book through these links we may earn a small commission at no extra cost to you.
+      </p>
+    </div>
+
+    <!-- ── FAQ ────────────────────────────────────────────── -->
+    <p class="section-label">Common questions</p>
+    <div class="card">
+      <h2>Kenya Safari FAQ</h2>
+
+      <div class="faqItem open">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          Is a Kenya safari worth it for a honeymoon?
+        </div>
+        <div class="faqA">
+          Absolutely — a Kenya safari is one of the most extraordinary and romantic experiences
+          you can have on a honeymoon. The wildlife, the landscapes, the early morning drives
+          and the sheer sense of adventure make it genuinely unforgettable. Combine it with
+          Zanzibar or the Maldives for the ultimate honeymoon experience.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          Can you see the Big Five in Kenya?
+        </div>
+        <div class="faqA">
+          Yes — Kenya is one of the best places in the world to see the Big Five. Lion,
+          elephant, leopard, buffalo and rhino are all present across Kenya's national parks
+          and reserves. We were lucky enough to see all five during our safari, along with
+          giraffes, hyenas, eagles and much more.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          What is it like to visit the Maasai Mara tribe?
+        </div>
+        <div class="faqA">
+          Visiting the Maasai Mara community was one of the most culturally rich and genuinely
+          moving experiences of our entire honeymoon. The warmth of the welcome, the insight
+          into their way of life and the privilege of spending time with them was something we
+          will never forget. Being serenaded by the tribe during a romantic dinner on the
+          elephant deck was a truly magical moment.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          Is the Giraffe Centre in Nairobi worth visiting?
+        </div>
+        <div class="faqA">
+          Yes — the Rothschild's Giraffe Centre in Nairobi is a brilliant experience and one
+          of the highlights of any Kenya trip. Getting up close with these beautiful and
+          endangered animals is something completely special — and the centre does important
+          conservation work that makes it all the more worthwhile.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          Is Karen Blixen's house worth visiting in Nairobi?
+        </div>
+        <div class="faqA">
+          Yes — Karen Blixen's house, made famous by the film Out of Africa, is a fascinating
+          visit and a wonderful slice of Kenya's colonial history. The house is beautifully
+          preserved and the setting, with the Ngong Hills in the background, is exactly as
+          beautiful as you would hope.
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
+          How many safari drives a day do you do in Kenya?
+        </div>
+        <div class="faqA">
+          On our safari we did three drives a day — an early morning drive starting at 5.30am,
+          a midday drive and an evening drive. Each one brought something different and new.
+          The early morning drives were particularly special — the light, the stillness and
+          the wildlife activity at that hour made every early alarm completely worth it.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── PACKING ─────────────────────────────────────────── -->
+    <p class="section-label">What to pack for a Kenya safari</p>
+    <div class="card">
+      <h2>Kenya safari packing essentials — what we'd bring</h2>
+      <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">
+        Safari packing is all about practicality — neutral colours, layers for early mornings
+        and hot afternoons, and protection from the sun and insects. These are the things
+        we would not leave home without.
+      </p>
+
+      <div class="highlights-grid">
+
+        <div class="highlight-item">
+          <div class="highlight-icon">☀️</div>
+          <div class="highlight-title">High SPF sunscreen</div>
+          <p class="highlight-text">The African sun is intense — especially on open safari drives. High SPF is absolutely essential and you will go through more than you expect on long days out in the vehicle.</p>
+          <a href="https://amzn.to/4vqpV76" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🦟</div>
+          <div class="highlight-title">Insect repellent</div>
+          <p class="highlight-text">Essential in Kenya — mosquitoes are present and malaria prophylaxis is strongly recommended. Consult your doctor before travel and bring strong repellent for evenings outdoors.</p>
+          <a href="https://amzn.to/4ci9mS3" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🧥</div>
+          <div class="highlight-title">Light jacket or layer</div>
+          <p class="highlight-text">Early morning safari drives at 5.30am can be surprisingly cool — a light layer is essential before the sun comes up fully. You will peel it off by mid-morning.</p>
+          <a href="https://amzn.to/48ITeb0" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">👒</div>
+          <div class="highlight-title">Wide brimmed hat</div>
+          <p class="highlight-text">Essential for open safari vehicles where you are exposed to the sun for hours. A wide brimmed hat keeps you comfortable and protected on long drives across the savanna.</p>
+          <a href="https://amzn.to/4tXLKcH" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">💧</div>
+          <div class="highlight-title">Water bottle</div>
+          <p class="highlight-text">Staying hydrated is crucial on long safari drives in the heat. A good reusable water bottle is one of the most important things you can pack for any African safari.</p>
+          <a href="https://amzn.to/47QjMXw" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🔋</div>
+          <div class="highlight-title">Portable power bank</div>
+          <p class="highlight-text">With three safari drives a day your camera and phone will be working overtime. A power bank keeps you ready for every wildlife encounter — and there will be many.</p>
+          <a href="https://amzn.to/41XJZju" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🎒</div>
+          <div class="highlight-title">Small day backpack</div>
+          <p class="highlight-text">For carrying water, sunscreen, a layer and your camera gear on safari drives. Keep it light and neutral coloured — bright colours are not ideal on the savanna.</p>
+          <a href="https://amzn.to/4tC4r5e" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">📶</div>
+          <div class="highlight-title">eSIM card</div>
+          <p class="highlight-text">Connectivity can be limited on safari but useful in Nairobi and larger towns. An eSIM keeps you connected without roaming charges when signal is available.</p>
+          <a href="https://amzn.to/4t4uoL3" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🔌</div>
+          <div class="highlight-title">Travel adaptor</div>
+          <p class="highlight-text">Kenya uses Type G plugs — the same as the UK and Ireland actually, but always worth double checking your specific resort or lodge before you travel.</p>
+          <a href="https://amzn.to/4tAcVK9" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🩹</div>
+          <div class="highlight-title">Personal first aid kit</div>
+          <p class="highlight-text">Always worth having on any safari — for blisters, bites, headaches and anything else that comes up on long days out in the bush.</p>
+          <a href="https://amzn.to/4mlylrZ" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🧴</div>
+          <div class="highlight-title">Travel toiletries</div>
+          <p class="highlight-text">Compact travel toiletries keep packing light and easy — important on a multi-destination honeymoon where you are moving between countries.</p>
+          <a href="https://amzn.to/423383r" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;margin-right:6px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">Men's →</a>
+          <a href="https://amzn.to/41optIE" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">Women's →</a>
+        </div>
+
+      </div>
+
+      <p class="disclosure">
+        <strong>Disclosure:</strong> These are Amazon affiliate links. If you buy through them we may earn a small commission at no extra cost to you.
+        These are all things we'd genuinely pack for a Kenya safari.
+      </p>
+    </div>
+
+    <!-- ── FINAL CTA ───────────────────────────────────────── -->
+    <div class="card heroCard" style="text-align:center;">
+      <h2 style="text-align:center;">Planning your own Kenya safari?</h2>
+      <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">
+        Kenya is one of the greatest wildlife destinations on earth — and a safari here is
+        an experience that will stay with you for the rest of your life. Book it. Go early.
+        Stay late. And never underestimate the 5.30am alarm.
+      </p>
+      <div class="links" style="justify-content:center;">
+        <a class="btn-primary" href="https://www.tourradar.com/t/200106?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+          Book a Kenya safari on TourRadar →
+        </a>
+        <a class="btn-gold" href="https://www.getyourguide.com/kenya-l169122/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">
+          Browse Kenya activities on GYG →
+        </a>
+        <a class="btn-outline" href="https://twofortherowd.com/">
+          Back to main site →
+        </a>
+      </div>
+      <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">
+        Affiliate disclosure: if you book through our links we may earn a small commission at no cost to you.
+        We only recommend trips and experiences we'd be happy to stand over.
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>
+      © <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp;
+      <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp;
+      <a href="https://twofortherowd.com/#destinations">Our destinations</a> &nbsp;•&nbsp;
+      <a href="https://twofortherowd.com/#gyg">More GetYourGuide picks</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
