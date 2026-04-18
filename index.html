@@ -1335,7 +1335,7 @@ nav {
 
   <script>
     /* ── FIXED: added "destinations", removed trailing "" ── */
-    const TAB_IDS = ["home","amazon","morocco","brew","hidden","hotel","reels","tourradar","deals","gyg","ask","work","destinations"];
+    const TAB_IDS = ["home","amazon","morocco","brew","hidden","hotel","reels","tourradar","deals","gyg","ask","work","destinations","map"];
     const INITIAL_HASH = (location.hash || "").replace("#","");
     if (location.hash) history.replaceState(null,"",location.pathname+location.search);
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
@@ -1513,6 +1513,7 @@ nav {
   <nav aria-label="Site navigation">
     <button class="tabBtn" data-tab="home"         onclick="show('home')"         aria-selected="true">Home</button>
 <button class="tabBtn" data-tab="destinations" onclick="show('destinations')" aria-selected="false">Our Destinations</button>
+    <button class="tabBtn" data-tab="map"        onclick="show('map')"        aria-selected="false">Where We've Been</button>
     <button class="tabBtn" data-tab="hidden"     onclick="show('hidden')"     aria-selected="false">Hidden Ireland</button>
     <button class="tabBtn" data-tab="hotel"      onclick="show('hotel')"      aria-selected="false">Hotel Stays</button>
     <button class="tabBtn" data-tab="brew"       onclick="show('brew')"       aria-selected="false">Brew for Two</button>
@@ -1548,7 +1549,7 @@ nav {
             <div class="proof-label">total views across platforms</div>
           </div>
           <div class="proof-item">
-            <div class="proof-num">63 countries</div>
+            <div class="proof-num">57 countries</div>
             <div class="proof-label">between us and still going</div>
           </div>
           <div class="proof-item">
@@ -1567,13 +1568,13 @@ nav {
      <div class="card" style="text-align:center;">
   <h2 style="text-align:left;">Two for the Row'd — the real story</h2>
        <p style="text-align:left;font-style:italic;color:var(--muted);font-size:14px;margin-bottom:16px;border-left:3px solid var(--gold);padding-left:12px;">
-  Fáilte! Nicola agus Pádraig is ainm dúinn agus is Éireannaigh muid! Táimid inár gconaí i gCeatharlach agus is aoibhinn linn bheith ag taisteal. Táimid tar éis 63 tír a fheiceáil agus níl sé i gceist againn stopadh! 🇮🇪
+  Fáilte! Nicola agus Pádraig is ainm dúinn agus is Éireannaigh muid! Táimid inár gconaí i gCeatharlach agus is aoibhinn linn bheith ag taisteal. Táimid tar éis 57 tír a fheiceáil agus níl sé i gceist againn stopadh! 🇮🇪
 </p>
 
   <p style="text-align:left;">
     We're <strong>Nicola and Padraig</strong> — a husband and wife team from Carlow with a
     serious case of wanderlust and absolutely no intention of slowing down. Between us we've
-    visited 63 countries and we're only getting started.
+    visited 57 countries and we're only getting started.
   </p>
 
   <p style="text-align:left;">
@@ -3009,13 +3010,13 @@ nav {
 
   <div class="card heroCard">
     <div class="hero-eyebrow">
-      <span class="badge">🌍 63 countries</span>
+      <span class="badge">🌍 57 countries</span>
       <span class="badge outline">Honest reviews</span>
       <span class="badge outline">Real experiences</span>
     </div>
     <h2>Places we've been — and what we actually did there</h2>
     <p class="hero-lead">
-      Between us we've visited 63 countries. These are the destinations where we've documented
+      Between us we've visited 57 countries. These are the destinations where we've documented
       our experiences properly — honest write-ups, real photos, videos, and the activities
       worth booking if you're heading the same way.
     </p>
@@ -3170,7 +3171,7 @@ nav {
   <div class="card" style="text-align:center;">
     <h2>More destinations coming</h2>
     <p style="color:var(--ink-soft);max-width:520px;margin:0 auto 16px;">
-      We've visited 63 countries between us and we're adding destination guides regularly.
+      We've visited 57 countries between us and we're adding destination guides regularly.
       Follow us on social to be the first to know when a new one goes live.
     </p>
     <div class="links" style="justify-content:center;">
@@ -3184,6 +3185,284 @@ nav {
   </div>
 
 </section>
+
+    <!-- ==========================================================
+         WHERE WE'VE BEEN
+    ========================================================== -->
+    <section id="map">
+      <h1 class="pageTitle">Where We've Been</h1>
+
+      <!-- HERO CARD -->
+      <div class="card heroCard">
+        <div class="hero-eyebrow">
+          <span class="badge">🌍 63 countries</span>
+          <span class="badge outline">6 continents</span>
+          <span class="badge outline">And still going</span>
+        </div>
+        <p style="color:var(--ink-soft);font-size:15px;line-height:1.7;margin-bottom:0;">
+          Here's everywhere we've been between us — and we're nowhere near done. Hover over any gold country to see its name. The ones we've written up properly are over in <a href="#destinations" onclick="event.preventDefault();show('destinations');" style="color:#b8780a;font-weight:700;">Our Destinations</a>.
+        </p>
+      </div>
+
+      <!-- STAT STRIP -->
+      <div class="card" style="padding:20px 24px;">
+        <div class="proof-strip" aria-label="Travel stats" style="border-top:none;padding-top:0;margin-top:0;">
+          <div class="proof-item">
+            <div class="proof-num">63</div>
+            <div class="proof-label">countries visited</div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-num">6</div>
+            <div class="proof-label">continents explored</div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-num">Europe</div>
+            <div class="proof-label">34 countries — our home patch</div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-num">Africa</div>
+            <div class="proof-label">6 countries across the continent</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP CARD -->
+      <div class="card" style="padding:20px 24px;">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">Hover a country to see its name. Smaller territories like Gibraltar, Vatican City and Martinique are too small to appear at this scale but we've been there!</p>
+        <div id="tfrMap" style="width:100%;border-radius:var(--radius-md);overflow:hidden;"></div>
+        <div id="tfrTooltip" style="font-size:14px;font-weight:700;color:#b8780a;min-height:22px;margin-top:10px;padding:4px 0;"></div>
+        <div style="display:flex;align-items:center;gap:20px;margin-top:12px;font-size:13px;color:var(--muted);">
+          <span style="display:flex;align-items:center;gap:6px;">
+            <span style="width:14px;height:14px;border-radius:3px;background:#e8c235;display:inline-block;border:1px solid #c8a230;"></span>
+            Visited
+          </span>
+          <span style="display:flex;align-items:center;gap:6px;">
+            <span style="width:14px;height:14px;border-radius:3px;background:#d4cfc4;display:inline-block;border:1px solid #bbb6aa;"></span>
+            Not yet
+          </span>
+        </div>
+      </div>
+
+      <!-- FULL COUNTRY LIST -->
+      <div class="card">
+        <h2>The full list</h2>
+        <p style="color:var(--ink-soft);font-size:14px;margin-bottom:16px;">Every country we've set foot in, between us — including territories and islands.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px;">
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇦🇱 Albania</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇦🇺 Australia</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇦🇹 Austria</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇧🇪 Belgium</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇧🇬 Bulgaria</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇨🇦 Canada</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇨🇿 Czechia</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇩🇰 Denmark</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇩🇲 Dominica</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇪🇪 Estonia</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇸🇿 Eswatini</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇫🇮 Finland</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇫🇷 France</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇩🇪 Germany</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇬🇮 Gibraltar</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇬🇷 Greece</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇬🇵 Guadeloupe</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇭🇺 Hungary</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇮🇸 Iceland</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇮🇪 Ireland</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇮🇹 Italy</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇯🇲 Jamaica</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇰🇪 Kenya</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇱🇻 Latvia</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇱🇸 Lesotho</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇱🇮 Liechtenstein</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇱🇹 Lithuania</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇱🇺 Luxembourg</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇲🇻 Maldives</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇲🇹 Malta</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇲🇶 Martinique</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇲🇽 Mexico</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇲🇨 Monaco</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇲🇦 Morocco</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇳🇱 Netherlands</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇳🇿 New Zealand</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇳🇴 Norway</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇵🇸 Palestine</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇵🇱 Poland</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇵🇹 Portugal</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇷🇴 Romania</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇷🇺 Russia</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇱🇨 Saint Lucia</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇸🇬 Singapore</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇸🇽 Sint Maarten</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇸🇰 Slovakia</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇿🇦 South Africa</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇪🇸 Spain</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇸🇪 Sweden</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇨🇭 Switzerland</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇹🇿 Tanzania</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇹🇳 Tunisia</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇦🇪 UAE</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇬🇧 United Kingdom</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇺🇸 USA</span>
+          <span style="font-size:13px;padding:6px 10px;background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.35);border-radius:8px;font-weight:600;">🇻🇦 Vatican City</span>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="card heroCard" style="text-align:center;">
+        <h2 style="text-align:center;">Want the detail on any of these?</h2>
+        <p style="text-align:center;color:var(--ink-soft);font-size:14px;max-width:520px;margin:0 auto 20px;">We've written up honest guides for the destinations we've documented properly — photos, videos, hotels, activities and everything worth knowing before you go.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+          <a class="btn-primary" href="#destinations" onclick="event.preventDefault();show('destinations');">Browse our destination guides →</a>
+          <a class="btn-outline" href="#ask" onclick="event.preventDefault();show('ask');">Ask us about a specific place</a>
+        </div>
+      </div>
+
+      <script>
+      (function() {
+        if (document.getElementById('tfrMapLoaded')) return;
+        var tag = document.createElement('div');
+        tag.id = 'tfrMapLoaded';
+        document.body.appendChild(tag);
+
+        var visited = new Set([
+          "Albania","Austria","Belgium","Bulgaria","Czechia","Denmark","Estonia",
+          "Finland","France","Germany","Greece","Hungary","Iceland","Ireland","Italy",
+          "Latvia","Liechtenstein","Lithuania","Luxembourg","Malta","Monaco","Netherlands",
+          "Norway","Poland","Portugal","Romania","Russia","Slovakia","Spain","Sweden",
+          "Switzerland","United Kingdom","Eswatini","Kenya","Lesotho","Morocco",
+          "South Africa","Tunisia","Tanzania","Singapore","Maldives",
+          "United Arab Emirates","Canada","Dominica","Jamaica","Mexico",
+          "Saint Lucia","United States of America","Australia","New Zealand","Palestine"
+        ]);
+
+        var nameAliases = {
+          "Czechia":["Czech Republic","Czechia"],
+          "United States of America":["United States","USA","United States of America"],
+          "United Arab Emirates":["United Arab Emirates","UAE"],
+          "Tanzania":["United Republic of Tanzania","Tanzania"],
+          "Russia":["Russia","Russian Federation"],
+          "Saint Lucia":["Saint Lucia","St. Lucia"]
+        };
+
+        function isVisited(name) {
+          if (visited.has(name)) return true;
+          for (var key in nameAliases) {
+            if (nameAliases[key].indexOf(name) > -1 && visited.has(key)) return true;
+          }
+          return false;
+        }
+
+        var countryNames = {
+          "004":"Afghanistan","008":"Albania","012":"Algeria","024":"Angola",
+          "032":"Argentina","036":"Australia","040":"Austria","050":"Bangladesh",
+          "056":"Belgium","064":"Bhutan","068":"Bolivia","076":"Brazil",
+          "100":"Bulgaria","116":"Cambodia","120":"Cameroon","124":"Canada",
+          "144":"Sri Lanka","152":"Chile","156":"China","170":"Colombia",
+          "178":"Republic of the Congo","180":"Democratic Republic of the Congo",
+          "191":"Croatia","192":"Cuba","203":"Czechia","208":"Denmark",
+          "214":"Dominican Republic","218":"Ecuador","818":"Egypt",
+          "222":"El Salvador","231":"Ethiopia","246":"Finland","250":"France",
+          "276":"Germany","288":"Ghana","300":"Greece","320":"Guatemala",
+          "324":"Guinea","332":"Haiti","340":"Honduras","348":"Hungary",
+          "356":"India","360":"Indonesia","364":"Iran","368":"Iraq",
+          "372":"Ireland","376":"Israel","380":"Italy","388":"Jamaica",
+          "392":"Japan","400":"Jordan","398":"Kazakhstan","404":"Kenya",
+          "408":"North Korea","410":"South Korea","414":"Kuwait","418":"Laos",
+          "422":"Lebanon","430":"Liberia","434":"Libya","440":"Lithuania",
+          "442":"Luxembourg","450":"Madagascar","454":"Malawi","458":"Malaysia",
+          "484":"Mexico","504":"Morocco","508":"Mozambique","516":"Namibia",
+          "524":"Nepal","528":"Netherlands","554":"New Zealand","558":"Nicaragua",
+          "566":"Nigeria","578":"Norway","586":"Pakistan","275":"Palestine",
+          "591":"Panama","600":"Paraguay","604":"Peru","608":"Philippines",
+          "616":"Poland","620":"Portugal","642":"Romania","643":"Russia",
+          "646":"Rwanda","682":"Saudi Arabia","686":"Senegal","694":"Sierra Leone",
+          "703":"Slovakia","706":"Somalia","710":"South Africa","724":"Spain",
+          "729":"Sudan","752":"Sweden","756":"Switzerland","760":"Syria",
+          "762":"Tajikistan","764":"Thailand","792":"Turkey","800":"Uganda",
+          "804":"Ukraine","784":"United Arab Emirates","826":"United Kingdom",
+          "840":"United States of America","858":"Uruguay","860":"Uzbekistan",
+          "862":"Venezuela","704":"Vietnam","887":"Yemen","894":"Zambia",
+          "716":"Zimbabwe","788":"Tunisia","834":"Tanzania","748":"Eswatini",
+          "426":"Lesotho","466":"Mali","478":"Mauritania","562":"Niger",
+          "352":"Iceland","428":"Latvia","233":"Estonia","470":"Malta",
+          "492":"Monaco","438":"Liechtenstein","702":"Singapore","462":"Maldives",
+          "212":"Dominica","662":"Saint Lucia"
+        };
+
+        function loadD3(cb) {
+          if (window.d3 && window.topojson) { cb(); return; }
+          var s1 = document.createElement('script');
+          s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js';
+          s1.onload = function() {
+            var s2 = document.createElement('script');
+            s2.src = 'https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js';
+            s2.onload = cb;
+            document.head.appendChild(s2);
+          };
+          document.head.appendChild(s1);
+        }
+
+        function drawMap() {
+          var container = document.getElementById('tfrMap');
+          var tooltip   = document.getElementById('tfrTooltip');
+          if (!container || !tooltip) return;
+
+          var w = 840, h = 440;
+          var svg = d3.select(container).append('svg')
+            .attr('viewBox', '0 0 ' + w + ' ' + h)
+            .attr('width', '100%')
+            .style('background', '#d4e8f5')
+            .style('display', 'block');
+
+          var proj = d3.geoNaturalEarth1().scale(130).translate([w/2, h/2]);
+          var path = d3.geoPath(proj);
+
+          d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function(world) {
+            var features = topojson.feature(world, world.objects.countries).features;
+
+            svg.selectAll('path')
+              .data(features)
+              .join('path')
+              .attr('d', path)
+              .attr('fill', function(d) {
+                var id  = String(d.id).padStart(3,'0');
+                var nm  = countryNames[id] || '';
+                return isVisited(nm) ? '#e8c235' : '#c8c3b5';
+              })
+              .attr('stroke', '#fff')
+              .attr('stroke-width', 0.4)
+              .on('mouseover', function(event, d) {
+                var id  = String(d.id).padStart(3,'0');
+                var nm  = countryNames[id] || '';
+                var vis = isVisited(nm);
+                d3.select(this).attr('fill', vis ? '#ffd84a' : '#b0ab9e');
+                if (nm) {
+                  tooltip.textContent = (vis ? '✓ ' : '') + nm;
+                  tooltip.style.color = vis ? '#b8780a' : 'var(--muted,#7a6e58)';
+                }
+              })
+              .on('mouseout', function(event, d) {
+                var id = String(d.id).padStart(3,'0');
+                var nm = countryNames[id] || '';
+                d3.select(this).attr('fill', isVisited(nm) ? '#e8c235' : '#c8c3b5');
+                tooltip.textContent = '';
+              });
+
+            var graticule = d3.geoGraticule()();
+            svg.append('path')
+              .datum(graticule)
+              .attr('d', path)
+              .attr('fill', 'none')
+              .attr('stroke', 'rgba(255,255,255,0.25)')
+              .attr('stroke-width', 0.3);
+          });
+        }
+
+        loadD3(drawMap);
+      })();
+      </script>
+    </section>
+    <!-- END WHERE WE'VE BEEN SECTION -->
 
     <footer>
       © <span id="year"></span> Two for the Row'd &nbsp;•&nbsp; Built with love, caffeine, and a bit of chaos
