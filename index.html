@@ -130,11 +130,14 @@
     .mapHint{font-size:12px;color:var(--muted);margin-top:8px;text-align:left;}
     .videoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:880px;margin:0 auto;}
     .videoGrid .card{margin:0;}
-    .shortGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:880px;margin:0 auto;justify-items:center;align-items:start;}
+
+    /* ── SHORTS GRID — compact 4-column layout ── */
+    .shortGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:880px;margin:0 auto;}
     .iframeWrap{max-width:880px;margin:12px auto;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md);background:#000;position:relative;aspect-ratio:16/9;}
-    .iframeWrap.short{max-width:380px;aspect-ratio:9/16;}
-    .shortGrid .iframeWrap.short{margin:0;width:100%;max-width:300px;}
+    .iframeWrap.short{aspect-ratio:9/16;max-width:100%;margin:0;}
+    .shortGrid .iframeWrap.short{width:100%;margin:0;}
     iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+
     .productGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:880px;margin:0 auto;}
     .productCard{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-md);padding:20px;text-align:left;backdrop-filter:blur(4px);transition:transform .18s ease,box-shadow .18s ease;}
     .productCard:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
@@ -178,11 +181,43 @@
     .faqItem.open .faqA{display:block;}
     .lead{font-size:1.05rem;line-height:1.72;}
     .pageTitle{font-family:var(--font-display);font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;text-align:center;margin:12px 0 20px;color:var(--ink);}
-    @media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr);}.stats{grid-template-columns:repeat(2,1fr);}.productGrid{grid-template-columns:1fr;}.aff-grid{grid-template-columns:1fr;}.featured-grid{grid-template-columns:1fr;}}
-    @media(max-width:680px){.videoGrid{grid-template-columns:1fr;}.proof-strip{gap:10px;}.proof-item{flex:1 1 100px;}}
-    @media(max-width:560px){.shortGrid{grid-template-columns:1fr;}.logo{max-width:84%;margin:0 auto 14px;}.email-badge{width:auto;max-width:100%;padding:7px 14px;font-size:12px;text-align:center;}nav{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px;margin:6px auto 12px;}.tabBtn{padding:8px 10px;font-size:12px;}.hero-ctas,.links{flex-direction:column;align-items:stretch;}.hero-ctas .btn-primary,.hero-ctas .btn-gold,.links .btn-primary,.links .btn-outline{text-align:center;justify-content:center;}.header-bar{flex-direction:column;align-items:center;gap:10px;}.affiliate-links{width:100%;margin-top:2px;}.affiliate-links .pill{flex:1 1 45%;text-align:center;}}
-    @media(max-width:480px){.grid,.stats{grid-template-columns:1fr;}.logo-strip{gap:28px;}}
-    @media(max-width:380px){.pill.icon{width:36px;height:36px;}.pill.icon svg{width:18px;height:18px;}}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:820px){
+      .grid{grid-template-columns:repeat(2,1fr);}
+      .stats{grid-template-columns:repeat(2,1fr);}
+      .productGrid{grid-template-columns:1fr;}
+      .aff-grid{grid-template-columns:1fr;}
+      .featured-grid{grid-template-columns:1fr;}
+      /* 3 columns on tablet */
+      .shortGrid{grid-template-columns:repeat(3,1fr);}
+    }
+    @media(max-width:680px){
+      .videoGrid{grid-template-columns:1fr;}
+      .proof-strip{gap:10px;}
+      .proof-item{flex:1 1 100px;}
+      /* 2 columns on mobile */
+      .shortGrid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media(max-width:560px){
+      .logo{max-width:84%;margin:0 auto 14px;}
+      .email-badge{width:auto;max-width:100%;padding:7px 14px;font-size:12px;text-align:center;}
+      nav{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px;margin:6px auto 12px;}
+      .tabBtn{padding:8px 10px;font-size:12px;}
+      .hero-ctas,.links{flex-direction:column;align-items:stretch;}
+      .hero-ctas .btn-primary,.hero-ctas .btn-gold,.links .btn-primary,.links .btn-outline{text-align:center;justify-content:center;}
+      .header-bar{flex-direction:column;align-items:center;gap:10px;}
+      .affiliate-links{width:100%;margin-top:2px;}
+      .affiliate-links .pill{flex:1 1 45%;text-align:center;}
+    }
+    @media(max-width:480px){
+      .grid,.stats{grid-template-columns:1fr;}
+      .logo-strip{gap:28px;}
+    }
+    @media(max-width:380px){
+      .pill.icon{width:36px;height:36px;}
+      .pill.icon svg{width:18px;height:18px;}
+    }
   </style>
   <script>
     const TAB_IDS=["home","destinations","map","morocco","hidden","brew","hotel","shop","work"];
@@ -235,6 +270,7 @@
 </nav>
 
 <main class="wrap">
+
 <!-- HOME -->
 <section id="home" class="active">
   <div class="card heroCard">
@@ -345,6 +381,7 @@
     <p class="email-note">No spam, unsubscribe any time.</p>
   </div>
 </section>
+
 <!-- OUR DESTINATIONS -->
 <section id="destinations">
   <h1 class="pageTitle">Our Destinations</h1>
@@ -387,6 +424,7 @@
     </div>
   </div>
 </section>
+
 <!-- WHERE WE'VE BEEN -->
 <section id="map">
   <h1 class="pageTitle">Where We've Been</h1>
@@ -439,6 +477,7 @@
   })();
   </script>
 </section>
+
 <!-- MOROCCO -->
 <section id="morocco">
   <h1 class="pageTitle">Morocco Series</h1>
@@ -589,6 +628,7 @@
     <p class="disclosure" style="text-align:center;max-width:520px;margin:16px auto 0;">Affiliate disclosure: if you book through our links we may earn a small commission at no cost to you.</p>
   </div>
 </section>
+
 <!-- HIDDEN IRELAND -->
 <section id="hidden">
   <h1 class="pageTitle">Hidden Ireland</h1>
@@ -660,11 +700,11 @@
     <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/2pmv6gddYDw" title="Hotel 7" allowfullscreen></iframe></div>
   </div>
 </section>
+
 <!-- SHOP & TOURS -->
 <section id="shop">
   <h1 class="pageTitle">Shop &amp; Tours</h1>
 
-  <!-- TOURRADAR -->
   <div class="card heroCard">
     <div class="hero-eyebrow"><span class="badge">🧭 TourRadar</span><span class="badge outline">Our honest review</span></div>
     <h2>Adventure without the planning headache</h2>
@@ -697,7 +737,6 @@
     </div>
   </div>
 
-  <!-- GETYOURGUIDE -->
   <div class="shopDivider">
     <div class="card heroCard" style="margin-top:16px;">
       <div class="hero-eyebrow"><span class="badge">🎟 GetYourGuide</span><span class="badge outline">Our top picks</span></div>
@@ -714,7 +753,6 @@
     <div class="card"><h2>Browse Wroclaw experiences</h2><p>A lovely pick for city exploring, guided tours and cultural stops.</p><div class="gygWidgetWrap"><div data-gyg-widget="auto" data-gyg-partner-id="VYORXUN" data-gyg-cmp="Wroclaw"></div></div></div>
   </div>
 
-  <!-- AMAZON -->
   <div class="shopDivider">
     <div class="card heroCard" style="margin-top:16px;">
       <div class="hero-eyebrow"><span class="badge">📦 Amazon</span><span class="badge outline">Travel favourites</span></div>
