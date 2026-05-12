@@ -23,7 +23,7 @@
   </script>
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can you visit Jersey as a day trip from France?","acceptedAnswer":{"@type":"Answer","text":"Yes — Condor Ferries runs fast ferries from St Malo in Brittany to St Helier in Jersey in around one hour. If you are spending time in northern Brittany, Jersey makes a brilliant day trip or short break. St Malo is about 20km from Plancoët and is the most convenient departure point for the Channel Islands from that part of France."}},{"@type":"Question","name":"Is Jersey worth visiting?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — Jersey is one of those places that surprises you with how charming and beautiful it is. The harbour at St Helier is lovely, Mont Orgueil Castle is genuinely impressive, the seafood is excellent and the unique mix of French and English culture gives it a character you won't find anywhere else. It is technically British but feels like a little corner of France that hasn't quite decided which side it prefers."}},{"@type":"Question","name":"Is Guernsey worth visiting?","acceptedAnswer":{"@type":"Answer","text":"Yes — Guernsey is a fascinating island, particularly for anyone interested in World War II history. The German Occupation of the Channel Islands from 1940 to 1945 left an extraordinary mark on Guernsey — the German Underground Hospital and the Occupation Museum are genuinely moving and historically fascinating. The island is beautiful too, with dramatic cliff scenery and the lovely capital St Peter Port."}},{"@type":"Question","name":"What is the German Underground Hospital in Guernsey?","acceptedAnswer":{"@type":"Answer","text":"The German Underground Hospital — officially La Valette Underground Military Museum — is a network of tunnels built by forced labourers during the German Occupation of Guernsey from 1940 to 1945. It is one of the most extensive German fortifications in the Channel Islands and a deeply sobering and historically important place to visit. The conditions in which it was built and what it represents make it one of the most powerful WWII sites in the British Isles."}},{"@type":"Question","name":"How narrow are the roads in Guernsey?","acceptedAnswer":{"@type":"Answer","text":"Very. Guernsey's country lanes are notoriously narrow — often barely wide enough for one car, with high hedges on both sides and no room for error. If you bring your own car over on the ferry, approach the countryside roads with caution and patience. The reward for getting through them is extraordinary cliff scenery at the other end, which makes it entirely worthwhile."}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can you visit Jersey as a day trip from France?","acceptedAnswer":{"@type":"Answer","text":"Yes — Condor Ferries runs fast ferries from St Malo in Brittany to St Helier in Jersey in around one hour. If you are spending time in northern Brittany, Jersey makes a brilliant day trip or short break. St Malo is about 20km from Plancoët and is the most convenient departure point for the Channel Islands from that part of France."}},{"@type":"Question","name":"Is Jersey worth visiting?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — Jersey is one of those places that surprises you with how charming and beautiful it is. The harbour at St Helier is lovely, Mont Orgueil Castle is genuinely impressive, the seafood is excellent and the unique mix of French and English culture gives it a character you won't find anywhere else."}},{"@type":"Question","name":"Is Guernsey worth visiting?","acceptedAnswer":{"@type":"Answer","text":"Yes — Guernsey is a fascinating island, particularly for anyone interested in World War II history. The German Occupation of the Channel Islands from 1940 to 1945 left an extraordinary mark on Guernsey — the German Underground Hospital and the Occupation Museum are genuinely moving and historically fascinating."}},{"@type":"Question","name":"What is the German Underground Hospital in Guernsey?","acceptedAnswer":{"@type":"Answer","text":"The German Underground Hospital is a network of tunnels built by forced labourers during the German Occupation of Guernsey from 1940 to 1945. It is one of the most extensive German fortifications in the Channel Islands and a deeply sobering and historically important place to visit."}},{"@type":"Question","name":"How narrow are the roads in Guernsey?","acceptedAnswer":{"@type":"Answer","text":"Very. Guernsey's country lanes are notoriously narrow — often barely wide enough for one car, with high hedges on both sides and no room for error. The reward for getting through them is extraordinary cliff scenery at the other end, which makes it entirely worthwhile."}}]}
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,7 +54,6 @@
     .jerseyCard{background:linear-gradient(160deg,#ffffff 0%,#fff5f5 55%,#ffe0e0 100%);border-color:rgba(192,57,43,.2);}
     .guernseyCard{background:linear-gradient(160deg,#ffffff 0%,#f0faf4 55%,#d8f3e8 100%);border-color:rgba(45,106,79,.2);}
     .blueCard{background:linear-gradient(160deg,#ffffff 0%,#f4faff 55%,#dceeff 100%);border-color:rgba(47,128,237,.18);}
-    .darkCard{background:linear-gradient(160deg,#1a1a2e 0%,#16213e 55%,#0f3460 100%);border-color:rgba(100,100,180,.3);}
     .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--ink);color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 20px rgba(26,18,8,.2);transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
     .btn-primary:hover{background:#2e2410;transform:translateY(-2px);color:var(--white);}
     .btn-gold{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px rgba(232,194,53,.35);transition:transform .15s ease,box-shadow .15s ease;}
@@ -64,7 +63,6 @@
     .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
     .badge{display:inline-block;padding:4px 11px;border-radius:999px;font-size:12px;font-weight:700;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);}
     .badge.outline{background:rgba(255,255,255,.8);border-color:var(--border-mid);color:var(--ink-soft);}
-    .badge.red{background:rgba(192,57,43,.12);border-color:rgba(192,57,43,.3);color:var(--jersey-red);}
     .badge.green{background:rgba(45,106,79,.12);border-color:rgba(45,106,79,.3);color:var(--guernsey-green);}
     .eyebrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;}
     .section-label{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);margin:6px 0 10px;}
@@ -74,6 +72,9 @@
     .route-strip{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0;}
     .route-stop{background:rgba(255,255,255,.8);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;}
     .route-arrow{color:var(--muted);font-size:14px;}
+    .photo-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0;}
+    .photo-grid-2 img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-md);display:block;transition:transform .2s ease,box-shadow .2s ease;}
+    .photo-grid-2 img:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
     .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:10px;}
     .highlight-item{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px;}
     .highlight-icon{font-size:22px;margin-bottom:6px;}
@@ -100,7 +101,7 @@
     .section-divider::before,.section-divider::after{content:"";flex:1;height:1px;background:var(--border-mid);}
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
-    @media(max-width:640px){.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}}
+    @media(max-width:640px){.photo-grid-2{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}}
   </style>
 </head>
 <body>
@@ -143,18 +144,15 @@
       <span class="route-stop">🇬🇬 Guernsey</span>
     </div>
 
-   <div class="photo-grid-2" style="margin-top:16px;">
-      <img src="img/ch4.jpg" alt="Mont Orgueil Castle Jersey — Two for the Row'd" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;">
-      <img src="img/ch1.jpg" alt="St Peter Port harbour Guernsey — Two for the Row'd" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;">
+    <div class="photo-grid-2">
+      <img src="img/ch4.jpg" alt="Mont Orgueil Castle Jersey — Two for the Row'd" loading="lazy">
+      <img src="img/ch1.jpg" alt="St Peter Port harbour Guernsey — Two for the Row'd" loading="lazy">
     </div>
 
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/207883?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Jersey & Guernsey tours on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/207883?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Channel Islands tours on TourRadar →</a>
+      <a class="btn-outline" href="https://twofortherowd.com/#destinations">See all our destinations →</a>
     </div>
-    <p class="disclosure"><strong>Disclosure:</strong> Affiliate link — if you book through it we may earn a small commission at no extra cost to you.</p>
-  </div>
-
-  <!-- GUERNSEY -->
 
     <div class="tagRow">
       <span class="tag">Jersey travel guide</span>
@@ -169,7 +167,7 @@
     </div>
   </div>
 
-  <!-- THE CONTEXT -->
+  <!-- THE STORY -->
   <div class="section-divider">🌊 The Story</div>
   <div class="card">
     <h2>A month in Brittany — and two islands just across the water</h2>
@@ -192,7 +190,7 @@
       <div class="highlight-item">
         <div class="highlight-icon">🏰</div>
         <div class="highlight-title">Mont Orgueil Castle, Gorey</div>
-        <p class="highlight-text">One of the most impressive medieval castles in the British Isles — perched dramatically on a rocky headland above the pretty fishing village of Gorey. The views from the top over the coast of Normandy are extraordinary. A genuinely impressive site that dates back to the 13th century.</p>
+        <p class="highlight-text">One of the most impressive medieval castles in the British Isles — perched dramatically on a rocky headland above the pretty fishing village of Gorey. The views from the top over the coast of Normandy are extraordinary. Dates back to the 13th century.</p>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">⚓</div>
@@ -202,22 +200,22 @@
       <div class="highlight-item">
         <div class="highlight-icon">🗺️</div>
         <div class="highlight-title">La Hougue Bie — Prehistoric Site</div>
-        <p class="highlight-text">A Neolithic passage tomb dating back 6,000 years — one of the best preserved prehistoric monuments in Europe. The mound is remarkable, the underground passage is extraordinary and the museum on site puts it all brilliantly in context.</p>
+        <p class="highlight-text">A Neolithic passage tomb dating back 6,000 years — one of the best preserved prehistoric monuments in Europe. The mound is remarkable, the underground passage is extraordinary and the museum on site puts it brilliantly in context.</p>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🦞</div>
         <div class="highlight-title">The Seafood</div>
-        <p class="highlight-text">Jersey's seafood is outstanding — the island's position in the rich waters of the English Channel means the lobster, crab, oysters and fish are as fresh as it gets. Do not leave without eating at the harbour. Jersey Royal potatoes and Jersey cream on the side, naturally.</p>
+        <p class="highlight-text">Jersey's seafood is outstanding — lobster, crab, oysters and fish as fresh as it gets. Do not leave without eating at the harbour. Jersey Royal potatoes and Jersey cream on the side, naturally.</p>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🇫🇷🇬🇧</div>
         <div class="highlight-title">The French-English Character</div>
-        <p class="highlight-text">Jersey has a genuinely unique cultural identity — Norman French roots, centuries of English influence and a Crown dependency status that makes it neither fully one nor the other. The bilingual signs, the architecture and the food all reflect a place that has quietly created its own identity on its own terms.</p>
+        <p class="highlight-text">Jersey has a genuinely unique cultural identity — Norman French roots, centuries of English influence and a Crown dependency status that makes it neither fully one nor the other. The bilingual signs, the architecture and the food all reflect a place that has quietly created its own identity.</p>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🏖️</div>
         <div class="highlight-title">The Coastline</div>
-        <p class="highlight-text">Jersey's coastline is spectacular — dramatic headlands, beautiful bays and some of the finest beaches in the Channel Islands. St Brelade's Bay and St Ouen's Bay are particularly stunning. The island is small enough to see a great deal in a day.</p>
+        <p class="highlight-text">Jersey's coastline is spectacular — dramatic headlands, beautiful bays and some of the finest beaches in the Channel Islands. St Brelade's Bay and St Ouen's Bay are particularly stunning. Small enough to see a great deal in a day.</p>
       </div>
     </div>
 
@@ -240,42 +238,39 @@
       <div class="highlight-item">
         <div class="highlight-icon">🏥</div>
         <div class="highlight-title">German Underground Hospital</div>
-        <p class="highlight-text">One of the most extensive German fortifications in the Channel Islands — a network of tunnels built by forced labourers during the Occupation. Walking through the underground wards, operating theatres and corridors is a deeply sobering and historically important experience. Essential if you visit Guernsey.</p>
+        <p class="highlight-text">A network of tunnels built by forced labourers during the Occupation. Walking through the underground wards, operating theatres and corridors is a deeply sobering and historically important experience. Essential if you visit Guernsey.</p>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🪖</div>
         <div class="highlight-title">The Occupation Museum</div>
-        <p class="highlight-text">An extraordinary collection of artefacts, photographs and records from the five-year German Occupation of Guernsey. The museum tells the story of how the islanders lived — and survived — under occupation, with a human detail and honesty that makes it genuinely moving.</p>
+        <p class="highlight-text">An extraordinary collection of artefacts, photographs and records from the five-year German Occupation. The museum tells the story of how the islanders lived — and survived — under occupation, with a human detail that makes it genuinely moving.</p>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🏘️</div>
         <div class="highlight-title">St Peter Port</div>
-        <p class="highlight-text">Guernsey's capital is a lovely harbour town — step streets running up from the waterfront, colourful Georgian townhouses, Castle Cornet guarding the approach to the harbour and a genuine sense of a place that knows exactly what it is and is very comfortable with it.</p>
+        <p class="highlight-text">Guernsey's capital is a lovely harbour town — step streets running up from the waterfront, colourful Georgian townhouses, Castle Cornet guarding the harbour approach and a genuine sense of a place that knows exactly what it is.</p>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🌊</div>
         <div class="highlight-title">The Cliff Views</div>
-        <p class="highlight-text">Get to the cliff edge and Guernsey absolutely rewards the effort. The south coast in particular has spectacular coastal scenery — dramatic cliffs dropping to turquoise water below, wildflowers on the headlands and views that stretch to the other Channel Islands on a clear day.</p>
+        <p class="highlight-text">Get to the cliff edge and Guernsey absolutely rewards the effort. The south coast has spectacular coastal scenery — dramatic cliffs dropping to turquoise water, wildflowers on the headlands and views stretching to the other Channel Islands on a clear day.</p>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🚗</div>
         <div class="highlight-title">The Roads (Bring Your Nerve)</div>
-        <p class="highlight-text">A word of honest warning — Guernsey's country lanes are genuinely, magnificently narrow. Hedge-lined, single-track, no room for error. Nicola brought her car over and can confirm they are absolutely shocking. Take it slowly, pull in whenever you can and remember the views at the end are worth every white-knuckle moment.</p>
+        <p class="highlight-text">A word of honest warning — Guernsey's country lanes are genuinely, magnificently narrow. Hedge-lined, single-track, no room for error. Nicola brought her car over and can confirm they are absolutely shocking. Take it slowly and remember the views at the end are worth every white-knuckle moment.</p>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">📖</div>
         <div class="highlight-title">Victor Hugo's House</div>
-        <p class="highlight-text">The great French author spent 15 years in exile in Guernsey and wrote Les Misérables here. Hauteville House in St Peter Port — where he lived and worked — is open to visitors and is a fascinating window into the life of one of literature's giants.</p>
+        <p class="highlight-text">The great French author spent 15 years in exile in Guernsey and wrote Les Misérables here. Hauteville House in St Peter Port is open to visitors and is a fascinating window into the life of one of literature's giants.</p>
       </div>
     </div>
 
-        <div class="photo-grid-2">
-      <img src="img/ch2.jpg" alt="Guernsey cliff coastline — Two for the Row'd" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;">
-      <img src="img/ch3.jpg" alt="Guernsey coastal scenery — Two for the Row'd" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;">
+    <div class="photo-grid-2">
+      <img src="img/ch2.jpg" alt="Guernsey cliff coastline — Two for the Row'd" loading="lazy">
+      <img src="img/ch3.jpg" alt="Guernsey coastal scenery — Two for the Row'd" loading="lazy">
     </div>
-
-    <div class="fun-box">
-      🚗 <strong>Honest road warning:</strong>
 
     <div class="fun-box">
       🚗 <strong>Honest road warning:</strong> If you bring your car to Guernsey, the main roads are fine. But venture into the countryside lanes and you will encounter hedges so close on both sides that wing mirrors become a theoretical concept. It is completely worth it for the cliff scenery. Just go slowly and breathe.
@@ -286,15 +281,15 @@
   <div class="section-divider">⛴️ Getting There from France</div>
   <div class="card blueCard">
     <h2>Ferry from St Malo — the most convenient option from Brittany</h2>
-    <p>If you are based in northern Brittany — Plancoët, Dinan, St Malo itself — the ferry to the Channel Islands is the most convenient and enjoyable way to visit. Condor Ferries operates fast ferry services from St Malo to both Jersey (St Helier) and Guernsey (St Peter Port), with crossings taking around one hour.</p>
-    <p>St Malo is one of the great Channel ports — worth exploring in its own right, with its dramatic walled old town, beautiful beaches and strong maritime history. A morning crossing from St Malo to Jersey or Guernsey gives you a full day on the island before returning in the evening — an excellent day trip from almost anywhere in northern Brittany.</p>
-    <p>If you want to take your car over to Guernsey (which Nicola would recommend — the island is larger and more rewarding with your own transport, terrifying lanes notwithstanding), you simply drive onto the car ferry at St Malo. Book in advance, especially in summer.</p>
+    <p>If you are based in northern Brittany — Plancoët, Dinan, St Malo itself — the ferry to the Channel Islands is the most convenient and enjoyable way to visit. Condor Ferries operates fast ferry services from St Malo to both Jersey (St Helier) and Guernsey (St Peter Port), with crossings taking around one to two hours.</p>
+    <p>St Malo is one of the great Channel ports — worth exploring in its own right, with its dramatic walled old town, beautiful beaches and strong maritime history. A morning crossing from St Malo gives you a full day on the island before returning in the evening — an excellent day trip from almost anywhere in northern Brittany.</p>
+    <p>If you want to take your car over to Guernsey — which Nicola would recommend, the island is larger and more rewarding with your own transport, terrifying lanes notwithstanding — you simply drive onto the car ferry at St Malo. Book in advance, especially in summer.</p>
 
     <div class="highlights-grid">
       <div class="highlight-item">
         <div class="highlight-icon">⏱️</div>
         <div class="highlight-title">Crossing time</div>
-        <p class="highlight-text">St Malo to Jersey: approximately 1 hour 15 minutes on the fast ferry. St Malo to Guernsey: approximately 2 hours. Check Condor Ferries for current schedules.</p>
+        <p class="highlight-text">St Malo to Jersey: approximately 1 hour 15 minutes on the fast ferry. St Malo to Guernsey: approximately 2 hours. Check Condor Ferries for current schedules and prices.</p>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🚗</div>
@@ -304,7 +299,7 @@
       <div class="highlight-item">
         <div class="highlight-icon">🛂</div>
         <div class="highlight-title">Passport required</div>
-        <p class="highlight-text">The Channel Islands are British Crown dependencies — not EU territory. Irish citizens need a passport to visit. French citizens are an exception but all other nationalities should carry a valid passport.</p>
+        <p class="highlight-text">The Channel Islands are British Crown dependencies — not EU territory. Irish citizens need a valid passport to visit. Don't forget it at the hotel.</p>
       </div>
     </div>
   </div>
