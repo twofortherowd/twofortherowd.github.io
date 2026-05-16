@@ -24,7 +24,7 @@
   </script>
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a Deep South USA road trip worth doing?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — it is one of the great American road trips. The variety is extraordinary: the Liberty Bell in Philadelphia, the history of Washington DC, the beauty of the Blue Ridge Mountains, country music in Nashville, the blues in Memphis, the magic of New Orleans, Gulf of Mexico beaches at Pensacola, Kennedy Space Center in Orlando and the Everglades in Miami. Every single day had something completely new to offer."}},{"@type":"Question","name":"How long does a New York to Miami road trip take?","acceptedAnswer":{"@type":"Answer","text":"To do it properly — stopping in the major cities and taking in the highlights — allow at least two weeks. The direct distance is around 2,000km but doing the Deep South route through 14 states covers over 4,000km. Rushing it would be a mistake."}},{"@type":"Question","name":"Is the Everglades worth visiting from Miami?","acceptedAnswer":{"@type":"Answer","text":"Yes — genuinely one of the most unique and extraordinary places we have ever been. An airboat tour through the sawgrass prairies and mangroves is unlike anything else. Alligators, herons, turtles and the sheer scale of the wilderness make it a completely different world from the Miami skyline you left an hour earlier."}},{"@type":"Question","name":"What are the best things to do in New Orleans?","acceptedAnswer":{"@type":"Answer","text":"The French Quarter is unmissable — cobblestone streets, jazz on every corner, incredible Cajun food and an atmosphere unlike anywhere else in America. The Mississippi Riverboat dinner cruise with a Dixieland jazz band is brilliant. New Orleans is utterly one of a kind."}},{"@type":"Question","name":"Is Graceland worth visiting?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — Graceland was the single standout moment of our entire trip. Seeing where Elvis Presley lived, walked, ate and was buried is extraordinary. The memorabilia, the jungle room, the cars, the costumes and then his grave in the garden. It moved us both more than we expected. If you do nothing else on the way south, go to Graceland."}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a Deep South USA road trip worth doing?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — it is one of the great American road trips. The variety is extraordinary: the Liberty Bell in Philadelphia, the history of Washington DC, the beauty of the Blue Ridge Mountains, country music in Nashville, the blues in Memphis, the magic of New Orleans, Gulf of Mexico beaches at Pensacola, Kennedy Space Center and the Everglades in Miami. Every single day had something completely new to offer."}},{"@type":"Question","name":"How long does a New York to Miami road trip take?","acceptedAnswer":{"@type":"Answer","text":"To do it properly — stopping in the major cities and taking in the highlights — allow at least two weeks. The direct distance is around 2,000km but doing the Deep South route through 14 states covers over 4,000km. Rushing it would be a mistake."}},{"@type":"Question","name":"Is the Everglades worth visiting from Miami?","acceptedAnswer":{"@type":"Answer","text":"Yes — genuinely one of the most unique and extraordinary places we have ever been. An airboat tour through the sawgrass prairies and mangroves is unlike anything else. Alligators, herons, turtles and the sheer scale of the wilderness make it a completely different world from the Miami skyline you left an hour earlier."}},{"@type":"Question","name":"What are the best things to do in New Orleans?","acceptedAnswer":{"@type":"Answer","text":"The French Quarter is unmissable — cobblestone streets, jazz on every corner, incredible Cajun food and an atmosphere unlike anywhere else in America. The Mississippi Riverboat dinner cruise with a Dixieland jazz band is brilliant. New Orleans is utterly one of a kind."}},{"@type":"Question","name":"Is Graceland worth visiting?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — Graceland was the single standout moment of our entire trip. Seeing where Elvis Presley lived, walked, ate and was buried is extraordinary. The memorabilia, the jungle room, the cars, the costumes and then his grave in the garden. It moved us both more than we expected. If you do nothing else on the way south, go to Graceland."}}]}
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,9 +107,12 @@
     .breadcrumb span{opacity:.5;}
     .section-divider{display:flex;align-items:center;gap:12px;margin:8px 0 16px;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--ink);}
     .section-divider::before,.section-divider::after{content:"";flex:1;height:1px;background:var(--border-mid);}
+    .also-usa{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px;}
+    .also-usa-item{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);transition:transform .15s ease,box-shadow .15s ease;display:block;}
+    .also-usa-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);color:var(--ink);}
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
-    @media(max-width:640px){.photo-grid-2{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}}
+    @media(max-width:640px){.photo-grid-2{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}.also-usa{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -465,7 +468,34 @@
     <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">Affiliate disclosure: if you book through our links we may earn a small commission at no cost to you. We only recommend experiences we've done ourselves.</p>
   </div>
 
-</div>
+  <!-- *** ALSO IN THE USA — added here, after final CTA, before footer *** -->
+  <div class="section-divider">🇺🇸 Also in the USA</div>
+  <div class="card" style="text-align:left;">
+    <h2>More of our USA guides</h2>
+    <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">The Deep South was part of a longer love affair with America. Here are our other USA guides.</p>
+    <div class="also-usa">
+      <a href="/los-angeles.html" class="also-usa-item">
+        <div style="font-size:22px;margin-bottom:6px;">🎬</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Los Angeles</div>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;margin:0;">Hollywood, Warner Bros., Santa Monica, Venice Beach and Griffith Observatory — 3 brilliant nights on the West Coast.</p>
+        <span style="font-size:13px;font-weight:700;color:var(--red-light);margin-top:8px;display:inline-block;">Read the LA guide →</span>
+      </a>
+      <a href="/hawaii.html" class="also-usa-item">
+        <div style="font-size:22px;margin-bottom:6px;">🌺</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Hawaii — Island Hopping</div>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;margin:0;">Big Island, Oahu, Maui & Kauai — volcanoes, shark cage diving and the Nā Pali Coast by helicopter.</p>
+        <span style="font-size:13px;font-weight:700;color:var(--red-light);margin-top:8px;display:inline-block;">Read the Hawaii guide →</span>
+      </a>
+      <a href="/alaska-cruise.html" class="also-usa-item">
+        <div style="font-size:22px;margin-bottom:6px;">🐻❄️</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Alaska</div>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;margin:0;">Dog sledding in Juneau, bear watching at Icy Strait Point and the Hubbard Glacier.</p>
+        <span style="font-size:13px;font-weight:700;color:var(--red-light);margin-top:8px;display:inline-block;">Read the Alaska guide →</span>
+      </a>
+    </div>
+  </div>
+
+</div><!-- end .wrap -->
 
 <footer>
   <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#destinations">Our destinations</a></p>
