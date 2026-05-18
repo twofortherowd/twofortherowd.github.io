@@ -1,6 +1,3 @@
-# Slovakia.html — Bratislava Day Trip Page
-
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -26,6 +23,9 @@
   fbq('init', '981657641071814');
   fbq('track', 'PageView');
   </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"
+  /></noscript>
 
   <!-- GetYourGuide -->
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
@@ -33,359 +33,634 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+  <!-- SEO -->
   <title>Bratislava Day Trip from Vienna — Slovakia in a Day | Two for the Row'd</title>
-  <meta name="description" content="Our 2010 day trip from Vienna to Bratislava by bus — Bratislava Castle, the Old Town, quirky statues, cheap beer, Slovak food and the atmosphere of post-communist Eastern Europe." />
-
+  <meta name="description" content="Our 2010 Bratislava day trip from Vienna by bus — Bratislava Old Town, Michael's Gate, Bratislava Castle, the quirky Čumil statue, Blue Church, UFO Bridge, cheap beer, Slovak food and Eastern Europe nostalgia." />
   <link rel="canonical" href="https://twofortherowd.com/slovakia.html" />
   <meta name="theme-color" content="#ffd84a" />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Bratislava Day Trip from Vienna — Slovakia in a Day" />
-  <meta property="og:description" content="Our honest Bratislava day trip guide from Vienna — castles, cobbled streets, cheap beer, quirky statues and old Eastern European charm." />
+  <meta property="og:description" content="A nostalgic 2010 Bratislava day trip from Vienna — cobbled Old Town streets, Bratislava Castle, quirky statues, cheap beer, garlic soup and post-communist contrasts." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://twofortherowd.com/slovakia.html" />
   <meta property="og:image" content="https://twofortherowd.com/img/bratislava1.jpg" />
-
   <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bratislava Day Trip from Vienna — Slovakia in a Day",
+    "description": "An Irish couple's nostalgic Bratislava day trip from Vienna by bus in 2010 — Bratislava Old Town, Michael's Gate, Main Square, Primate's Palace, St Martin's Cathedral, Bratislava Castle, Čumil, Schöne Náci, the Blue Church, UFO Bridge, cheap beer and Slovak food.",
+    "author": {
+      "@type": "Person",
+      "name": "Nicola and Padraig",
+      "url": "https://twofortherowd.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Two for the Row'd",
+      "url": "https://twofortherowd.com"
+    },
+    "url": "https://twofortherowd.com/slovakia.html",
+    "image": "https://twofortherowd.com/img/bratislava1.jpg"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Bratislava worth a day trip from Vienna?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Bratislava is one of the easiest day trips from Vienna. The bus journey takes around an hour, the Old Town is compact and walkable, and you can see Bratislava Castle, Michael's Gate, Main Square, St Martin's Cathedral, the quirky statues and the Danube in a single day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can you see in Bratislava in one day?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In one day in Bratislava you can see the Old Town, Michael's Gate, Main Square, Primate's Palace, St Martin's Cathedral, Bratislava Castle, Čumil the sewer statue, Schöne Náci, the Blue Church and the UFO Bridge over the Danube."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long is the bus from Vienna to Bratislava?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The bus from Vienna to Bratislava usually takes around one hour, making it one of the easiest cross-border capital city day trips in Europe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Bratislava famous for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bratislava is famous for its compact Old Town, Bratislava Castle, quirky street statues like Čumil, the Blue Church, the UFO Bridge, cheap beer and its position on the Danube close to Austria and Hungary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was Bratislava cheap compared to Vienna?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. In 2010 Bratislava felt much cheaper than Vienna, especially for beer, cafés and hearty Slovak food. That contrast was part of the appeal of doing it as a day trip from Austria."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      background:#fdf8ef;
-      color:#1a1208;
-      line-height:1.7;
+    :root{
+      --gold:#ffd84a;--gold-dark:#e8c235;
+      --ink:#1a1208;--ink-soft:#4a3f28;--muted:#7a6e58;
+      --cream:#fdf8ef;--white:#ffffff;
+      --border:rgba(26,18,8,.10);--border-mid:rgba(26,18,8,.16);
+      --card-bg:rgba(255,255,255,.88);
+      --shadow-sm:0 2px 8px rgba(26,18,8,.07);
+      --shadow-md:0 8px 24px rgba(26,18,8,.10);
+      --shadow-lg:0 16px 48px rgba(26,18,8,.13);
+      --radius-sm:10px;--radius-md:16px;--radius-lg:22px;
+      --font-display:'Playfair Display',Georgia,serif;
+      --font-body:'DM Sans','Segoe UI',Arial,sans-serif;
+      --slovak-blue:#225da8;
+      --slovak-blue-dark:#173f73;
+      --slovak-red:#d7141a;
+      --danube:#2e7bb4;
+      --stone:#6f7378;
+      --beer:#c8860a;
     }
 
-    .wrap{
-      max-width:900px;
-      margin:0 auto;
-      padding:20px;
-    }
+    *,*::before,*::after{box-sizing:border-box;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{margin:0;font-family:var(--font-body);font-size:15px;font-weight:400;line-height:1.7;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 80% 60% at 10% 0%,rgba(34,93,168,.12) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 90% 100%,rgba(255,216,74,.15) 0%,transparent 55%);}
+    *{position:relative;z-index:1;}
+    h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.18;margin-top:0;}
+    h1{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;margin-bottom:14px;}
+    h2{font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:700;margin-bottom:10px;}
+    h3{font-size:clamp(1.05rem,1.8vw,1.25rem);font-weight:700;margin-bottom:8px;}
+    p{margin:0 0 .9rem;}p:last-child{margin-bottom:0;}
+    ul,ol{margin:0 0 .9rem;padding-left:1.3rem;}li{margin-bottom:.35rem;}
+    a{color:inherit;}strong{font-weight:700;}
+    .wrap{max-width:860px;margin:0 auto;padding:0 16px 60px;}
 
-    .card{
-      background:white;
-      border-radius:18px;
-      padding:28px;
-      margin-bottom:18px;
-      box-shadow:0 6px 20px rgba(0,0,0,.08);
-    }
+    .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+    .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
+    .backBar a:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
 
-    h1,h2,h3{
-      font-family:Georgia,serif;
-    }
+    .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:16px;display:flex;flex-wrap:wrap;gap:4px;align-items:center;}
+    .breadcrumb a{color:var(--muted);text-decoration:none;font-weight:600;}
+    .breadcrumb a:hover{color:var(--ink);}
+    .breadcrumb span{opacity:.5;}
 
-    .hero{
-      background:linear-gradient(135deg,#fffbe8,#fff2c0);
-    }
+    .card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-md);padding:24px 26px;margin-bottom:16px;backdrop-filter:blur(4px);transition:transform .18s ease,box-shadow .18s ease;}
+    .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+    .heroCard{background:linear-gradient(160deg,#ffffff 0%,#eef6ff 48%,#d9ebff 100%);border-color:rgba(34,93,168,.22);}
+    .blueCard{background:linear-gradient(160deg,#ffffff 0%,#f0f7ff 55%,#d8eaff 100%);border-color:rgba(34,93,168,.2);}
+    .goldCard{background:linear-gradient(160deg,#ffffff 0%,#fffbe8 55%,#fff3c4 100%);border-color:rgba(232,194,53,.3);}
+    .redCard{background:linear-gradient(160deg,#ffffff 0%,#fff5f5 55%,#ffe0e0 100%);border-color:rgba(215,20,26,.18);}
+    .greyCard{background:linear-gradient(160deg,#ffffff 0%,#f4f4f2 55%,#ddddda 100%);border-color:rgba(111,115,120,.20);}
+    .darkCard{background:linear-gradient(160deg,#191919 0%,#2b2d31 60%,#3b3e44 100%);border-color:rgba(255,255,255,.12);color:#fff;}
+    .darkCard h2,.darkCard h3{color:#fff;}
+    .darkCard p{color:rgba(255,255,255,.84);}
 
-    .route-strip{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:16px;
-    }
+    .btn-primary,.btn-gold,.btn-blue,.btn-outline{display:inline-flex;align-items:center;gap:8px;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+    .btn-primary{padding:13px 22px;background:var(--ink);color:var(--white);border:none;box-shadow:0 6px 20px rgba(26,18,8,.2);}
+    .btn-primary:hover{background:#2e2410;transform:translateY(-2px);color:var(--white);}
+    .btn-gold{padding:13px 22px;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);box-shadow:0 6px 18px rgba(232,194,53,.35);}
+    .btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px);color:var(--ink);}
+    .btn-blue{padding:13px 22px;background:var(--slovak-blue);color:var(--white);border:1px solid var(--slovak-blue-dark);box-shadow:0 6px 18px rgba(34,93,168,.28);}
+    .btn-blue:hover{background:var(--slovak-blue-dark);transform:translateY(-2px);color:var(--white);}
+    .btn-outline{padding:12px 20px;background:var(--white);color:var(--ink);border:1.5px solid var(--border-mid);box-shadow:var(--shadow-sm);}
+    .btn-outline:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);color:var(--ink);}
+    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
 
-    .route-stop{
-      background:white;
-      border-radius:999px;
-      padding:6px 12px;
-      font-size:13px;
-      font-weight:700;
-    }
+    .badge{display:inline-block;padding:4px 11px;border-radius:999px;font-size:12px;font-weight:700;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);}
+    .badge.outline{background:rgba(255,255,255,.8);border-color:var(--border-mid);color:var(--ink-soft);}
+    .badge.blue{background:rgba(34,93,168,.12);border-color:rgba(34,93,168,.32);color:var(--slovak-blue);}
+    .badge.red{background:rgba(215,20,26,.10);border-color:rgba(215,20,26,.28);color:var(--slovak-red);}
+    .eyebrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;}
+    .section-label{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);margin:6px 0 10px;}
+    .hero-headline{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.65rem);font-weight:800;line-height:1.12;margin-bottom:14px;}
+    .hero-headline em{font-style:italic;color:var(--slovak-blue);}
+    .hero-lead{font-size:1.05rem;line-height:1.7;color:var(--ink-soft);margin-bottom:20px;}
 
-    .photo-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:10px;
-      margin-top:18px;
-    }
+    .route-strip{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0;}
+    .route-stop{background:rgba(255,255,255,.8);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;}
+    .route-arrow{color:var(--muted);font-size:14px;}
+    .vibe-strip{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0;}
+    .vibe-pill{background:rgba(34,93,168,.08);border:1px solid rgba(34,93,168,.22);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:600;color:var(--slovak-blue);}
 
-    .photo-grid img{
-      width:100%;
-      border-radius:12px;
-      aspect-ratio:4/3;
-      object-fit:cover;
-    }
+    .photo-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0;}
+    .photo-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0;}
+    .photo-grid-2 img,.photo-grid-3 img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-md);display:block;transition:transform .2s ease,box-shadow .2s ease;}
+    .photo-grid-2 img:hover,.photo-grid-3 img:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
 
-    .highlight-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:12px;
-      margin-top:16px;
-    }
+    .section-divider{display:flex;align-items:center;gap:12px;margin:8px 0 16px;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--ink);}
+    .section-divider::before,.section-divider::after{content:"";flex:1;height:1px;background:var(--border-mid);}
+    .quote-block{border-left:3px solid var(--slovak-blue);padding:12px 18px;margin:16px 0;background:rgba(34,93,168,.07);border-radius:0 12px 12px 0;font-style:italic;font-size:15px;color:var(--ink-soft);line-height:1.7;}
+    .quote-block.gold{border-left-color:var(--gold-dark);background:rgba(255,216,74,.14);}
+    .quote-block.dark{border-left-color:var(--gold);background:rgba(255,216,74,.08);color:rgba(255,255,255,.9);}
 
-    .highlight{
-      background:#fffdf4;
-      border:1px solid rgba(0,0,0,.08);
-      border-radius:14px;
-      padding:16px;
-    }
+    .stop-card{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:10px;}
+    .stop-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--slovak-blue);margin-bottom:4px;}
+    .stop-title{font-family:var(--font-display);font-size:1.05rem;font-weight:700;margin-bottom:6px;}
+    .stop-card p{font-size:14px;color:var(--ink-soft);margin:0;}
 
-    .button{
-      display:inline-block;
-      padding:12px 18px;
-      border-radius:10px;
-      background:#ffd84a;
-      color:#1a1208;
-      text-decoration:none;
-      font-weight:700;
-      margin-top:10px;
-    }
+    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:10px;}
+    .highlight-item{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px;}
+    .highlight-icon{font-size:22px;margin-bottom:6px;}
+    .highlight-title{font-weight:700;font-size:14px;margin-bottom:4px;}
+    .highlight-text{font-size:13px;color:var(--ink-soft);line-height:1.5;}
 
-    .faq{
-      margin-top:18px;
-      border-top:1px dashed rgba(0,0,0,.2);
-      padding-top:18px;
-    }
+    .statue-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px;}
+    .statue-card{background:rgba(255,255,255,.80);border:1px solid var(--border);border-radius:14px;padding:18px;text-align:center;}
+    .statue-icon{font-size:28px;margin-bottom:7px;}
+    .statue-name{font-family:var(--font-display);font-weight:700;font-size:1.08rem;margin-bottom:5px;}
+    .statue-text{font-size:13px;color:var(--ink-soft);line-height:1.55;margin:0;}
 
-    @media(max-width:700px){
-      .photo-grid{
-        grid-template-columns:1fr 1fr;
-      }
-    }
+    .food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px;}
+    .food-item{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:12px;padding:14px;text-align:center;}
+    .food-icon{font-size:24px;margin-bottom:6px;}
+    .food-name{font-weight:700;font-size:13px;margin-bottom:4px;}
+    .food-desc{font-size:12px;color:var(--ink-soft);line-height:1.4;margin:0;}
 
-    @media(max-width:480px){
-      .photo-grid{
-        grid-template-columns:1fr;
-      }
+    .gygWidgetWrap{margin-top:14px;padding:10px;border-radius:14px;background:rgba(255,255,255,.55);border:1px solid var(--border);overflow:hidden;}
+    .activity-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px;}
+    .activity-tag{display:inline-block;padding:5px 11px;border-radius:999px;border:1px solid rgba(34,93,168,.2);background:rgba(34,93,168,.06);font-size:12px;font-weight:600;color:var(--slovak-blue);}
+    .tagRow{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+    .tag{display:inline-block;padding:6px 11px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.8);font-size:12px;font-weight:600;color:var(--ink-soft);}
+    .disclosure{font-size:12px;line-height:1.55;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px dashed var(--border-mid);}
+
+    .faqItem{border-bottom:1px dashed var(--border-mid);padding:14px 0;}
+    .faqItem:last-child{border-bottom:none;padding-bottom:0;}
+    .faqQ{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;user-select:none;}
+    .faqQ::after{content:"+";font-size:1.4rem;line-height:1;font-weight:400;flex-shrink:0;color:var(--muted);transition:transform .2s ease;}
+    .faqItem.open .faqQ::after{transform:rotate(45deg);}
+    .faqA{font-size:14px;line-height:1.7;color:var(--ink-soft);display:none;padding-top:10px;}
+    .faqItem.open .faqA{display:block;}
+
+    .also-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px;}
+    .also-item{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);transition:transform .15s ease,box-shadow .15s ease;display:block;}
+    .also-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);color:var(--ink);}
+
+    footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
+    footer a{color:var(--muted);font-weight:600;}
+
+    @media(max-width:640px){
+      .photo-grid-2,.photo-grid-3{grid-template-columns:1fr;}
+      .links{flex-direction:column;}
+      .links a{text-align:center;justify-content:center;}
+      .route-strip{justify-content:center;}
+      .food-grid{grid-template-columns:repeat(2,1fr);}
+      .also-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
 
 <body>
 
+<div class="backBar">
+  <a href="https://twofortherowd.com/">← Back to Two for the Row'd</a>
+  <a href="https://twofortherowd.com/" style="font-family:var(--font-display);font-size:15px;font-weight:700;">Two for the Row'd 🇮🇪</a>
+</div>
+
 <div class="wrap">
 
-  <div class="card hero">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="https://twofortherowd.com/">Home</a>
+    <span>›</span>
+    <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
+    <span>›</span>
+    <span>Slovakia — Bratislava</span>
+  </nav>
 
-    <p><strong>🇸🇰 Slovakia • 2010 • Day Trip from Vienna</strong></p>
+  <!-- HERO -->
+  <div class="card heroCard">
+    <div class="eyebrow">
+      <span class="badge">🇸🇰 Slovakia</span>
+      <span class="badge outline">Bratislava day trip</span>
+      <span class="badge blue">Vienna by bus · Old Town · Castle · Cheap beer</span>
+    </div>
 
-    <h1>Bratislava — the easiest and cheapest capital city escape from Vienna</h1>
+    <h1 class="hero-headline">Bratislava —<br><em>the one-hour bus trip from Vienna into another world</em></h1>
 
-    <p>
-      Back in 2010, day trips from Vienna to Bratislava were unbelievably popular.
-      You could hop on a cheap coach in Austria and suddenly find yourself in a completely different country and culture barely an hour later.
-      For us, Bratislava felt like stepping into a quieter, rough-around-the-edges version of Vienna — full of cobbled streets, quirky statues, Communist-era contrasts and giant cheap beers.
+    <p class="hero-lead">
+      Back in 2010, a day trip from Vienna to Bratislava felt like one of the great little European travel hacks.
+      You could leave polished, elegant Austria on an early coach and be in another capital city — and another country —
+      in about an hour. Bratislava felt smaller, cheaper, rougher around the edges and much less polished than Vienna.
+      And that was exactly what made it memorable: cobbled streets, a big white castle over the Danube, quirky statues,
+      cheap beer, hearty Slovak food and that unmistakable post-Communist East-meets-West atmosphere.
     </p>
 
     <div class="route-strip">
-      <div class="route-stop">🇦🇹 Vienna</div>
-      <div class="route-stop">🚌 1 Hour Bus</div>
-      <div class="route-stop">🇸🇰 Bratislava</div>
-      <div class="route-stop">🏰 Castle Views</div>
-      <div class="route-stop">🍺 Cheap Beer</div>
-      <div class="route-stop">📸 Quirky Statues</div>
+      <span class="route-stop">🇦🇹 Vienna</span>
+      <span class="route-arrow">→</span>
+      <span class="route-stop">🚌 1 hour by bus</span>
+      <span class="route-arrow">→</span>
+      <span class="route-stop">🇸🇰 Bratislava</span>
+      <span class="route-arrow">→</span>
+      <span class="route-stop">🏰 Castle views</span>
+      <span class="route-arrow">→</span>
+      <span class="route-stop">🍺 Cheap beers</span>
+      <span class="route-arrow">→</span>
+      <span class="route-stop">📸 Quirky statues</span>
     </div>
 
-    <a class="button" href="https://www.tourradar.com/t/268601?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">
-      Browse Slovakia tours →
-    </a>
+    <div class="vibe-strip">
+      <span class="vibe-pill">🚌 Classic Vienna day trip</span>
+      <span class="vibe-pill">🏰 Bratislava Castle</span>
+      <span class="vibe-pill">🚪 Michael's Gate</span>
+      <span class="vibe-pill">🛸 UFO Bridge</span>
+      <span class="vibe-pill">💙 Blue Church</span>
+      <span class="vibe-pill">🍲 Garlic soup in bread bowls</span>
+      <span class="vibe-pill">🍺 Massive cheap beers</span>
+    </div>
 
-  </div>
+    <div class="links">
+      <a class="btn-primary" href="https://www.tourradar.com/t/268601?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Slovakia tours on TourRadar →</a>
+      <a class="btn-blue" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1279863&k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fc359-bratislava%2F3-hotel%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Find Bratislava hotels on Klook →</a>
+      <a class="btn-outline" href="https://twofortherowd.com/#destinations">See all our destinations →</a>
+    </div>
 
-  <div class="card">
-    <h2>What Bratislava felt like in 2010</h2>
-
-    <p>
-      In 2010 Bratislava still had a strong "between East and West" atmosphere.
-      Vienna felt polished, elegant and wealthy — while Bratislava still carried visible reminders of its Communist past.
-    </p>
-
-    <p>
-      We remember old trams rattling through the streets, Soviet-style apartment blocks outside the centre, and prices that felt unbelievably cheap compared to Austria.
-      At the time loads of Irish and British tourists described Bratislava as “Vienna's rough-around-the-edges cousin” — and honestly, that was part of its charm.
-    </p>
-
-    <p>
-      The compact Old Town was incredibly easy to explore in a few hours. We spent most of the day simply wandering around cobbled streets, popping into cafés and taking photos.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>What we saw in Bratislava</h2>
-
-    <div class="highlight-grid">
-
-      <div class="highlight">
-        <h3>🏰 Bratislava Castle</h3>
-        <p>
-          The huge white castle overlooking the city is the image most people remember from Bratislava.
-          We walked uphill to it for panoramic views over the Danube, Austria and even Hungary on a clear day.
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>🚪 Michael's Gate</h3>
-        <p>
-          The famous medieval tower and one of the best-known landmarks in the city.
-          It felt like walking through a gateway into old Eastern Europe.
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>⛪ St. Martin's Cathedral</h3>
-        <p>
-          One of the city's most historic buildings and once the coronation church of Hungarian kings.
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>📸 The quirky statues</h3>
-        <p>
-          Everyone photographed Čumil peeking out of the sewer and Schöne Náci tipping his hat.
-          Back then these statues were absolutely iconic Bratislava tourist photos.
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>💙 The Blue Church</h3>
-        <p>
-          One of the most photogenic churches we've ever seen — pastel blue from top to bottom and completely different to anything else in Europe.
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>🛸 The UFO Bridge</h3>
-        <p>
-          The Most SNP bridge crossing the Danube with its UFO-style observation tower felt very futuristic compared to the old medieval streets.
-        </p>
-      </div>
-
+    <div class="tagRow">
+      <span class="tag">Bratislava day trip from Vienna</span>
+      <span class="tag">Bratislava Old Town</span>
+      <span class="tag">Bratislava Castle</span>
+      <span class="tag">Čumil statue Bratislava</span>
+      <span class="tag">Blue Church Bratislava</span>
+      <span class="tag">UFO Bridge Bratislava</span>
+      <span class="tag">Slovak food</span>
+      <span class="tag">Vienna to Bratislava by bus</span>
     </div>
   </div>
 
-  <div class="card">
-    <h2>Food, beer and café culture</h2>
-
-    <p>
-      One of the biggest memories from Bratislava was just how cheap everything felt compared to Vienna.
-      We sat around cafés in the Old Town with massive beers, hearty Slovak food and people-watched for hours.
-    </p>
-
-    <p>
-      Around that time, typical Slovak dishes tourists tried included:
-    </p>
-
-    <ul>
-      <li>🥣 Garlic soup served in bread bowls</li>
-      <li>🥔 Potato dishes</li>
-      <li>🍖 Schnitzel</li>
-      <li>🥟 Dumplings</li>
-      <li>🍲 Goulash</li>
-      <li>🍺 Huge inexpensive beers</li>
-    </ul>
+  <!-- PHOTOS -->
+  <div class="photo-grid-2">
+    <img src="img/bratislava1.jpg" alt="Bratislava Old Town — Two for the Row'd" loading="lazy">
+    <img src="img/bratislava2.jpg" alt="Bratislava Castle — Two for the Row'd" loading="lazy">
+    <img src="img/bratislava3.jpg" alt="Bratislava Slovakia — Two for the Row'd" loading="lazy">
+    <img src="img/bratislava4.jpg" alt="Blue Church Bratislava — Two for the Row'd" loading="lazy">
   </div>
 
+  <!-- THE STORY -->
+  <div class="section-divider">🚌 The Story</div>
   <div class="card">
-    <h2>Why Bratislava day trips were so popular</h2>
-
+    <h2>The classic 2010 Vienna day trip — cheap coach, new country, different atmosphere</h2>
+    <div class="quote-block">
+      "There was something brilliant about getting on a cheap early coach in Vienna and arriving in another capital city barely an hour later. It felt like proper travelling — not complicated, not fancy, just a quick hop across the border into a place that felt completely different."
+    </div>
     <p>
-      Honestly, most people who did Bratislava day trips from Vienna around 2010 remember the same things:
+      A Vienna to Bratislava day trip was incredibly popular around 2010 because it was cheap, easy and had that wonderful novelty of crossing into a different country for the day. This was before every city break was documented to death online, so Bratislava still felt like a bit of a discovery — especially if you had just come from Vienna's polished boulevards, palaces and cafés.
     </p>
-
-    <ul>
-      <li>how tiny and walkable the centre was</li>
-      <li>how easy it was to explore in a few hours</li>
-      <li>how cheap everything felt compared to Vienna</li>
-      <li>the panoramic castle views</li>
-      <li>the quirky statues</li>
-      <li>and the novelty of casually visiting another capital city by bus for the day</li>
-    </ul>
-
     <p>
-      It genuinely felt adventurous at the time — especially before cheap flights and constant city breaks became as common as they are now.
+      Once we arrived, we mostly stayed around the compact Old Town, which is exactly what makes Bratislava so easy as a day trip. You do not need a complicated itinerary. You wander, look up at the towers, stop for coffee or beer, find the funny statues, walk up to the castle, take in the Danube views and suddenly the day is gone.
+    </p>
+    <p>
+      What stood out most was the contrast. Bratislava felt quieter and less polished than Austria. There were old trams, Soviet-style apartment blocks beyond the centre, cheaper prices and a sense that the city was still sitting between East and West. People often called it Vienna's rough-around-the-edges cousin — and honestly, that was half the charm.
     </p>
   </div>
 
-  <div class="card">
-    <h2>Bratislava — our photos</h2>
+  <!-- OLD TOWN -->
+  <div class="section-divider">🏰 Bratislava Old Town</div>
+  <div class="card blueCard">
+    <h2>The tiny, walkable Old Town — cobbled streets, towers and cafés</h2>
+    <p>
+      Bratislava's Old Town is compact, charming and ridiculously easy to explore in a few hours. It does not have the grandeur of Vienna or Prague, but it has its own smaller-scale charm: pastel façades, cobbled lanes, cafés spilling into squares, old churches and a slightly sleepy feeling that makes it perfect for wandering.
+    </p>
 
-    <div class="photo-grid">
-      <img src="img/bratislava.jpg" alt="Bratislava Old Town">
-      <img src="img/bratislava2.jpg" alt="Bratislava Castle">
-      <img src="img/bratislava3.jpg" alt="Bratislava Slovakia">
-      <img src="img/bratislava4.jpg" alt="Blue Church Bratislava">
-      <img src="img/bratislava5.jpg" alt="Bratislava street statues">
-      <img src="img/bratislava6.jpg" alt="Danube and UFO Bridge Bratislava">
+    <div class="stop-card">
+      <div class="stop-label">Medieval gate</div>
+      <div class="stop-title">🚪 Michael's Gate</div>
+      <p>Michael's Gate is one of Bratislava's most recognisable landmarks — a medieval tower and the only preserved city gate from the old fortifications. Walking under it felt like the proper entrance into old Bratislava.</p>
+    </div>
+
+    <div class="stop-card">
+      <div class="stop-label">Main square</div>
+      <div class="stop-title">🏛️ Main Square</div>
+      <p>The heart of the Old Town, surrounded by historic buildings, cafés and the kind of central-European atmosphere that makes you want to sit down with a coffee and people-watch for far too long.</p>
+    </div>
+
+    <div class="stop-card">
+      <div class="stop-label">Palace</div>
+      <div class="stop-title">🎀 Primate's Palace</div>
+      <p>A beautiful neoclassical palace in the Old Town, known for its elegant pink façade and Hall of Mirrors. Even from the outside, it adds a very grand note to the otherwise compact city centre.</p>
+    </div>
+
+    <div class="stop-card">
+      <div class="stop-label">Cathedral</div>
+      <div class="stop-title">⛪ St Martin's Cathedral</div>
+      <p>One of the most important churches in Bratislava and historically the coronation church of Hungarian kings. It sits below the castle and gives the city that strong Central European history feel.</p>
+    </div>
+
+    <div class="activity-list">
+      <span class="activity-tag">🚪 Michael's Gate</span>
+      <span class="activity-tag">🏛️ Main Square</span>
+      <span class="activity-tag">🎀 Primate's Palace</span>
+      <span class="activity-tag">⛪ St Martin's Cathedral</span>
+      <span class="activity-tag">☕ Old Town cafés</span>
+      <span class="activity-tag">📸 Cobbled streets</span>
     </div>
   </div>
 
-  <div class="card">
-    <h2>Things to do in Bratislava</h2>
-
-    <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="5" data-gyg-partner-id="VYORXUN" data-gyg-q="bratislava">
-      <span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/bratislava-l765/">GetYourGuide</a></span>
+  <!-- CASTLE -->
+  <div class="section-divider">🏰 Bratislava Castle</div>
+  <div class="card goldCard">
+    <h2>The big white castle above the Danube</h2>
+    <p>
+      Bratislava Castle is the image everyone remembers: a huge white rectangular castle sitting high above the city, looking down over the Danube. We walked uphill to it for the views, and it was absolutely worth the effort.
+    </p>
+    <div class="quote-block gold">
+      "From the castle you get the full geography lesson: the Danube below you, Austria just across the border, Hungary not far away, and this small Slovak capital sitting right at the meeting point of Central Europe."
     </div>
+    <p>
+      On a clear day, the views stretch towards Austria and Hungary, which is what makes Bratislava feel so unusual. It is not just another city break — it is a capital city squeezed between borders, histories and cultures. That is what gave the day trip such a sense of place.
+    </p>
+    <p>
+      The walk up also gives you a brilliant perspective on the contrast between the pretty Old Town below, the Danube cutting through the city and the more Communist-era apartment blocks and newer districts beyond the centre.
+    </p>
+  </div>
 
-    <p style="margin-top:16px;">
-      Looking for hotels in Bratislava?
+  <!-- STATUES -->
+  <div class="section-divider">📸 The Quirky Statues</div>
+  <div class="card redCard">
+    <h2>The silly little statues everyone photographed</h2>
+    <p>
+      Bratislava's street statues were a massive part of the tourist experience back then. They gave the city a bit of humour and personality, and everyone seemed to be wandering around trying to find them.
     </p>
 
-    <a class="button" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1279863&k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fc359-bratislava%2F3-hotel%2F" target="_blank" rel="noopener sponsored">
-      Browse Bratislava hotels on Klook →
-    </a>
-  </div>
-
-  <div class="card">
-    <h2>What we'd pack for Bratislava</h2>
-
-    <div class="highlight-grid">
-
-      <div class="highlight">
-        <h3>🎒 Small day backpack</h3>
-        <p>Perfect for day trips and walking around the Old Town.</p>
-        <a class="button" href="https://amzn.to/4tC4r5e" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+    <div class="statue-grid">
+      <div class="statue-card">
+        <div class="statue-icon">🕳️</div>
+        <div class="statue-name">Čumil</div>
+        <p class="statue-text">The famous man peeking out of the sewer. Probably the most photographed thing in Bratislava after the castle. A completely random little statue that somehow became a symbol of the city.</p>
       </div>
-
-      <div class="highlight">
-        <h3>🔋 Portable power bank</h3>
-        <p>Essential for photos, maps and keeping your phone alive all day.</p>
-        <a class="button" href="https://amzn.to/41XJZju" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
+      <div class="statue-card">
+        <div class="statue-icon">🎩</div>
+        <div class="statue-name">Schöne Náci</div>
+        <p class="statue-text">The elegant gentleman tipping his hat in the Old Town. Sweet, old-fashioned and very Bratislava — the kind of statue you only really appreciate when you stumble across it.</p>
       </div>
-
-      <div class="highlight">
-        <h3>👟 Comfortable walking shoes</h3>
-        <p>The Old Town is all cobbled streets and hills up towards the castle.</p>
-        <a class="button" href="https://amzn.to/4c3cH8F" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
-      </div>
-
-      <div class="highlight">
-        <h3>📱 Phone lanyard</h3>
-        <p>Ideal for quick photos around the city without constantly searching your pockets.</p>
-        <a class="button" href="https://amzn.to/4sA3Dx6" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>
-      </div>
-
     </div>
   </div>
 
-  <div class="card faq">
+  <!-- EAST MEETS WEST -->
+  <div class="section-divider">🧱 East Meets West</div>
+  <div class="card darkCard">
+    <h2>The post-Communist contrast that made Bratislava feel different</h2>
+    <div class="quote-block dark">
+      "Vienna felt like imperial Europe. Bratislava felt like a city still figuring itself out after the 20th century — and that made it far more interesting than we expected."
+    </div>
+    <p>
+      In 2010, Bratislava still had a very visible East-meets-West atmosphere. The Old Town was pretty and walkable, but outside the centre you could still see Soviet-era apartment blocks, older trams and a quieter, less polished version of Europe.
+    </p>
+    <p>
+      That contrast was part of why the day trip worked so well. Vienna was grand, expensive and immaculate. Bratislava was cheaper, smaller, rougher around the edges and more surprising. It was the kind of place where you could feel history layered into the streets without needing every building to be postcard-perfect.
+    </p>
+    <div class="activity-list">
+      <span class="activity-tag" style="background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.18);color:#fff;">🚋 Old trams</span>
+      <span class="activity-tag" style="background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.18);color:#fff;">🏢 Soviet-style blocks</span>
+      <span class="activity-tag" style="background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.18);color:#fff;">💶 Cheaper than Vienna</span>
+      <span class="activity-tag" style="background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.18);color:#fff;">🌍 East-meets-West atmosphere</span>
+    </div>
+  </div>
+
+  <!-- BLUE CHURCH AND UFO -->
+  <div class="section-divider">💙 Blue Church & UFO Bridge</div>
+  <div class="card blueCard">
+    <h2>The photogenic extras — pastel blue church and the UFO over the Danube</h2>
+    <p>
+      Beyond the classic Old Town and castle route, two other Bratislava sights stuck out: the Blue Church and the Most SNP, better known as the UFO Bridge.
+    </p>
+
+    <div class="highlights-grid">
+      <div class="highlight-item">
+        <div class="highlight-icon">💙</div>
+        <div class="highlight-title">The Blue Church</div>
+        <p class="highlight-text">One of the prettiest and most unusual churches in Europe — pastel blue, delicate and almost fairytale-like. It is incredibly photogenic and very different from the heavier medieval feel of the Old Town.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">🛸</div>
+        <div class="highlight-title">Most SNP / UFO Bridge</div>
+        <p class="highlight-text">The bridge across the Danube with a UFO-shaped observation deck on top. It gives Bratislava that odd futuristic edge beside all the medieval streets and older Communist-era architecture.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOD -->
+  <div class="section-divider">🍺 Food, Beer & Cafés</div>
+  <div class="card goldCard">
+    <h2>Cheap beers, hearty Slovak food and Old Town cafés</h2>
+    <p>
+      One of the big memories from Bratislava was how cheap everything felt compared to Vienna. We sat around cafés in the Old Town, had massive beers and ate the kind of hearty Central European food that is exactly what you want after a day of walking.
+    </p>
+
+    <div class="food-grid">
+      <div class="food-item"><div class="food-icon">🍲</div><div class="food-name">Goulash</div><p class="food-desc">Rich, warming and exactly the kind of thing tourists expected from Central Europe.</p></div>
+      <div class="food-item"><div class="food-icon">🥖</div><div class="food-name">Garlic soup</div><p class="food-desc">Often served in bread bowls — iconic, filling and very memorable.</p></div>
+      <div class="food-item"><div class="food-icon">🥟</div><div class="food-name">Dumplings</div><p class="food-desc">Heavy, hearty and perfect with meat dishes and sauces.</p></div>
+      <div class="food-item"><div class="food-icon">🥔</div><div class="food-name">Potato dishes</div><p class="food-desc">Slovak food loves potatoes, and frankly so do we.</p></div>
+      <div class="food-item"><div class="food-icon">🍖</div><div class="food-name">Schnitzel</div><p class="food-desc">Not uniquely Slovak, but very common and very welcome after sightseeing.</p></div>
+      <div class="food-item"><div class="food-icon">🍺</div><div class="food-name">Cheap beer</div><p class="food-desc">The thing everyone remembers from Bratislava in 2010: huge beers that felt shockingly cheap after Vienna.</p></div>
+    </div>
+  </div>
+
+  <!-- WHY GO -->
+  <div class="section-divider">⭐ Why This Day Trip Worked</div>
+  <div class="card greyCard">
+    <h2>Why Bratislava was such a good Vienna day trip</h2>
+    <div class="highlights-grid">
+      <div class="highlight-item"><div class="highlight-icon">🚌</div><div class="highlight-title">So easy from Vienna</div><p class="highlight-text">One early coach, about an hour on the road, and suddenly you are in another capital city. That novelty never gets old.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🚶</div><div class="highlight-title">Tiny, walkable centre</div><p class="highlight-text">The Old Town is compact enough to explore without stress, making it perfect for a few hours rather than a full city break.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🏰</div><div class="highlight-title">Castle views</div><p class="highlight-text">The walk up to Bratislava Castle gives you the Danube, Austria, Hungary and the whole shape of the city in one panorama.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">📸</div><div class="highlight-title">Quirky photo stops</div><p class="highlight-text">Čumil, Schöne Náci, the UFO Bridge and the Blue Church gave the city a playful side that people really remembered.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">💶</div><div class="highlight-title">Cheaper than Austria</div><p class="highlight-text">Food and drink felt noticeably cheaper than Vienna, which made the day trip even more appealing.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🧱</div><div class="highlight-title">Different atmosphere</div><p class="highlight-text">It was not as polished as Vienna — and that made it feel more adventurous, more surprising and more memorable.</p></div>
+    </div>
+  </div>
+
+  <!-- TOURRADAR -->
+  <div class="section-divider">🧭 Book Slovakia Tours</div>
+  <div class="card goldCard">
+    <h2>Book a Slovakia or Central Europe tour through TourRadar</h2>
+    <p>
+      Bratislava works brilliantly as part of a wider Central Europe route — Vienna, Bratislava, Budapest and Prague all combine beautifully if you want an easy multi-country trip.
+    </p>
+    <div class="links">
+      <a class="btn-primary" href="https://www.tourradar.com/t/268601?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Slovakia tours on TourRadar →</a>
+    </div>
+    <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
+  </div>
+
+  <!-- GYG -->
+  <div class="section-divider">🎫 Book Bratislava Experiences</div>
+  <div class="card blueCard">
+    <h2>Book Bratislava activities — GetYourGuide</h2>
+    <p style="color:var(--ink-soft);font-size:14px;">Walking tours, food tours, castle visits, Danube experiences and day trips — Bratislava is easy to explore independently, but a good guided tour gives the city much more context.</p>
+    <div class="gygWidgetWrap">
+      <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="5" data-gyg-partner-id="VYORXUN" data-gyg-q="bratislava">
+        <span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/bratislava-l765/">GetYourGuide</a></span>
+      </div>
+    </div>
+    <p class="disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
+  </div>
+
+  <!-- KLOOK -->
+  <div class="card greyCard">
+    <h2>Find Bratislava hotels on Klook</h2>
+    <p style="color:var(--ink-soft);font-size:14px;">We only visited as a day trip, but Bratislava would also work as an overnight stop between Vienna and Budapest if you want a slower Central Europe route.</p>
+    <div class="links">
+      <a class="btn-blue" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1279863&k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fc359-bratislava%2F3-hotel%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Bratislava hotels on Klook →</a>
+    </div>
+    <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
+  </div>
+
+  <!-- FAQ -->
+  <p class="section-label">Common questions</p>
+  <div class="card">
     <h2>Bratislava FAQ</h2>
 
-    <h3>Is Bratislava worth a day trip from Vienna?</h3>
-    <p>
-      Absolutely. Bratislava is one of the easiest and most interesting day trips from Vienna.
-      It only takes around an hour by bus and feels completely different culturally.
-    </p>
+    <div class="faqItem open">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is Bratislava worth a day trip from Vienna?</div>
+      <div class="faqA">Yes. Bratislava is one of the easiest day trips from Vienna. The bus journey takes around an hour, the Old Town is compact and walkable, and you can see Bratislava Castle, Michael's Gate, Main Square, St Martin's Cathedral, the quirky statues and the Danube in a single day.</div>
+    </div>
 
-    <h3>How long do you need in Bratislava?</h3>
-    <p>
-      The compact Old Town can comfortably be explored in one day.
-      Most people arrive in the morning and leave in the evening.
-    </p>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What can you see in Bratislava in one day?</div>
+      <div class="faqA">In one day you can see Bratislava Old Town, Michael's Gate, Main Square, Primate's Palace, St Martin's Cathedral, Bratislava Castle, Čumil the sewer statue, Schöne Náci, the Blue Church and the UFO Bridge over the Danube. You will also have time for lunch, coffee and a couple of very cheap beers.</div>
+    </div>
 
-    <h3>What is Bratislava famous for?</h3>
-    <p>
-      Bratislava is famous for Bratislava Castle, its quirky street statues, Communist-era contrasts, cheap beer and its location on the Danube.
-    </p>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">How long is the bus from Vienna to Bratislava?</div>
+      <div class="faqA">The bus from Vienna to Bratislava usually takes around one hour, which is why it became such a popular day trip. It feels strangely brilliant to leave one European capital and arrive in another before you have even finished your coffee.</div>
+    </div>
 
-    <h3>Was Bratislava cheap in 2010?</h3>
-    <p>
-      Compared to Vienna — absolutely yes. Food, drinks and transport all felt significantly cheaper back then.
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What is Bratislava famous for?</div>
+      <div class="faqA">Bratislava is famous for its compact Old Town, Bratislava Castle, Michael's Gate, quirky street statues like Čumil, the Blue Church, the UFO Bridge, cheap beer and its location on the Danube close to Austria and Hungary.</div>
+    </div>
+
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Was Bratislava cheap in 2010?</div>
+      <div class="faqA">Compared to Vienna, yes. Food, beer and cafés felt much cheaper, which was one of the big reasons the day trip was so popular with Irish and UK travellers at the time.</div>
+    </div>
+  </div>
+
+  <!-- PACKING -->
+  <p class="section-label">What to pack for Bratislava</p>
+  <div class="card">
+    <h2>Bratislava day trip packing essentials</h2>
+    <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">For a Vienna to Bratislava day trip, keep it light. You need comfortable shoes, a charged phone, a small bag and layers for walking up to the castle and wandering the Old Town.</p>
+    <div class="highlights-grid">
+      <div class="highlight-item"><div class="highlight-icon">🎒</div><div class="highlight-title">Small day backpack</div><p class="highlight-text">Perfect for a day trip from Vienna — room for water, jacket, snacks and souvenirs without dragging a suitcase around cobbled streets.</p><a href="https://amzn.to/4tC4r5e" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a></div>
+      <div class="highlight-item"><div class="highlight-icon">🔋</div><div class="highlight-title">Portable power bank</div><p class="highlight-text">You will use your phone constantly for maps, photos, bus tickets and translating menus. A power bank saves the day.</p><a href="https://amzn.to/41XJZju" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a></div>
+      <div class="highlight-item"><div class="highlight-icon">👟</div><div class="highlight-title">Comfortable walking shoes</div><p class="highlight-text">Bratislava is compact but cobbled, and the castle walk is uphill. Do not do it in silly shoes.</p><a href="https://amzn.to/4c3cH8F" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a></div>
+      <div class="highlight-item"><div class="highlight-icon">🧥</div><div class="highlight-title">Light waterproof jacket</div><p class="highlight-text">Central European weather can change quickly. A light waterproof layer is ideal for a full day out.</p><a href="https://amzn.to/4vDse6X" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a></div>
+      <div class="highlight-item"><div class="highlight-icon">🔌</div><div class="highlight-title">Travel adaptor</div><p class="highlight-text">Slovakia uses European two-pin plugs. Handy if you are charging devices in cafés, hotels or on a longer Central Europe trip.</p><a href="https://amzn.to/3OjJY6a" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a></div>
+      <div class="highlight-item"><div class="highlight-icon">📶</div><div class="highlight-title">eSIM card</div><p class="highlight-text">Useful for crossing borders, navigating and checking bus times without worrying about data roaming.</p><a href="https://amzn.to/4t4uoL3" target="_blank" rel="noopener sponsored nofollow" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);">View on Amazon →</a></div>
+    </div>
+    <p class="disclosure"><strong>Disclosure:</strong> These are Amazon affiliate links. If you buy through them we may earn a small commission at no extra cost to you.</p>
+  </div>
+
+  <!-- ALSO NEARBY -->
+  <div class="section-divider">🌍 Also Nearby</div>
+  <div class="card">
+    <h2>More Central Europe guides</h2>
+    <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">Bratislava works brilliantly with Vienna, Budapest and Prague as part of a wider Central Europe route.</p>
+    <div class="also-grid">
+      <a href="/budapest.html" class="also-item">
+        <div style="font-size:22px;margin-bottom:6px;">🇭🇺</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Budapest</div>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;margin:0;">Thermal baths, ruin bars, Danube views and grand old Central European drama.</p>
+        <span style="font-size:13px;font-weight:700;color:var(--slovak-blue);margin-top:8px;display:inline-block;">Read the Budapest guide →</span>
+      </a>
+      <a href="/prague.html" class="also-item">
+        <div style="font-size:22px;margin-bottom:6px;">🇨🇿</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Prague</div>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;margin:0;">A fairytale medieval city of bridges, towers and cobbled streets.</p>
+        <span style="font-size:13px;font-weight:700;color:var(--slovak-blue);margin-top:8px;display:inline-block;">Read the Prague guide →</span>
+      </a>
+      <a href="/lithuania.html" class="also-item">
+        <div style="font-size:22px;margin-bottom:6px;">🇱🇹</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px;">Lithuania — Vilnius</div>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;margin:0;">Medieval Old Town, Trakai Island Castle and a Lithuanian wedding I'll never forget.</p>
+        <span style="font-size:13px;font-weight:700;color:var(--slovak-blue);margin-top:8px;display:inline-block;">Read the Lithuania guide →</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="card heroCard" style="text-align:center;">
+    <h2 style="text-align:center;">Planning your own Bratislava day trip?</h2>
+    <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">
+      Take the early bus from Vienna, wander the Old Town, climb up to Bratislava Castle, find Čumil, stop for garlic soup and a giant beer, and enjoy one of Europe's easiest little cross-border adventures.
     </p>
+    <div class="links" style="justify-content:center;">
+      <a class="btn-primary" href="https://www.tourradar.com/t/268601?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Slovakia tours on TourRadar →</a>
+      <a class="btn-gold" href="https://www.getyourguide.com/bratislava-l765/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book Bratislava experiences on GYG →</a>
+      <a class="btn-blue" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1279863&k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fc359-bratislava%2F3-hotel%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Find hotels on Klook →</a>
+      <a class="btn-outline" href="https://twofortherowd.com/">Back to main site →</a>
+    </div>
+    <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">Affiliate disclosure: if you book through our links we may earn a small commission at no cost to you. We only recommend experiences we would genuinely consider ourselves.</p>
   </div>
 
 </div>
 
+<footer>
+  <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#destinations">Our destinations</a></p>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
-```
