@@ -188,13 +188,14 @@
     @media(max-width:380px){.pill.icon{width:36px;height:36px;}.pill.icon svg{width:18px;height:18px;}}
   </style>
   <script>
-    const TAB_IDS = ["home","destinations","map","morocco","hidden","brew","hotel","shop","work"];
+   const TAB_IDS = ["home","destinations","map","morocco","hidden","carlow","brew","hotel","shop","work"];
     const SECTION_FILES = {
       home:         "section-home.html",
       destinations: "section-destinations.html",
       map:          "section-map.html",
       morocco:      "section-morocco.html",
       hidden:       "section-hidden.html",
+      carlow:       "section-carlow.html",
       brew:         "section-brew.html",
       hotel:        "section-hotel.html",
       shop:         "section-shop.html",
@@ -360,6 +361,7 @@
   <button class="tabBtn" data-tab="map"          onclick="show('map')"          aria-selected="false">Where We've Been</button>
   <button class="tabBtn" data-tab="morocco"      onclick="show('morocco')"      aria-selected="false">Morocco Series</button>
   <button class="tabBtn" data-tab="hidden"       onclick="show('hidden')"       aria-selected="false">Hidden Ireland</button>
+  <button class="tabBtn" data-tab="carlow"       onclick="show('carlow')"       aria-selected="false">🇮🇪 Carlow</button>
   <button class="tabBtn" data-tab="brew"         onclick="show('brew')"         aria-selected="false">Brew for Two</button>
   <button class="tabBtn" data-tab="hotel"        onclick="show('hotel')"        aria-selected="false">Hotel Stays</button>
   <button class="tabBtn" data-tab="shop"         onclick="show('shop')"         aria-selected="false">Shop &amp; Tours</button>
@@ -372,6 +374,7 @@
   <section id="map"                     ></section>
   <section id="morocco"                 ></section>
   <section id="hidden"                  ></section>
+  <section id="carlow"                  ></section>
   <section id="brew"                    ></section>
   <section id="hotel"                   ></section>
   <section id="shop"                    ></section>
