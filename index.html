@@ -7,6 +7,9 @@
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','981657641071814');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"/></noscript>
+  <!-- MailerLite Universal -->
+  <script>(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account','2378028');</script>
+  <!-- End MailerLite Universal -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Two for the Row'd | Irish Travel Couple — Morocco Tours, Hidden Ireland Gems &amp; Honest Reviews</title>
@@ -81,6 +84,15 @@
     .proof-item:last-child{border-right:none;margin-right:0;}
     .proof-num{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.1;}
     .proof-label{font-size:12px;color:var(--muted);line-height:1.35;margin-top:2px;}
+
+    /* ── FREE GUIDE BANNER ── */
+    .guide-banner{background:linear-gradient(135deg,var(--gold) 0%,#ffe87a 100%);border:1px solid var(--gold-dark);border-radius:var(--radius-md);box-shadow:0 10px 32px rgba(232,194,53,.3);padding:20px 24px;text-align:center;max-width:880px;margin:0 auto 16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;}
+    .guide-banner-text{flex:1 1 260px;text-align:left;}
+    .guide-banner-text h3{margin-bottom:4px;font-size:1.1rem;}
+    .guide-banner-text p{font-size:13px;color:var(--ink-soft);margin:0;}
+    .btn-guide{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--ink);color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;white-space:nowrap;cursor:pointer;box-shadow:0 6px 20px rgba(26,18,8,.2);transition:transform .15s ease,background .15s ease;}
+    .btn-guide:hover{background:#2e2410;transform:translateY(-2px);}
+
     .email-capture-card{background:linear-gradient(135deg,var(--gold) 0%,#ffe87a 100%);border:1px solid var(--gold-dark);border-radius:var(--radius-md);box-shadow:0 10px 32px rgba(232,194,53,.3);padding:24px;text-align:left;max-width:880px;margin:0 auto 16px;}
     .email-capture-card h2{color:var(--ink);margin-bottom:6px;}
     .email-capture-card p{color:var(--ink-soft);font-size:14px;margin-bottom:16px;}
@@ -181,7 +193,7 @@
     .section-loading{text-align:center;padding:60px 20px;color:var(--muted);font-size:14px;}
     .section-loading::after{content:"";display:inline-block;width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--gold-dark);border-radius:50%;animation:spin .7s linear infinite;margin-left:8px;vertical-align:middle;}
     @keyframes spin{to{transform:rotate(360deg);}}
-    @media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr);}.stats{grid-template-columns:repeat(2,1fr);}.productGrid{grid-template-columns:1fr;}.aff-grid{grid-template-columns:1fr;}.featured-grid{grid-template-columns:1fr;}.shortGrid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr);}.stats{grid-template-columns:repeat(2,1fr);}.productGrid{grid-template-columns:1fr;}.aff-grid{grid-template-columns:1fr;}.featured-grid{grid-template-columns:1fr;}.shortGrid{grid-template-columns:repeat(3,1fr);}.guide-banner{flex-direction:column;text-align:center;}.guide-banner-text{text-align:center;}}
     @media(max-width:680px){.videoGrid{grid-template-columns:1fr;}.proof-strip{gap:10px;}.proof-item{flex:1 1 100px;}.shortGrid{grid-template-columns:repeat(2,1fr);}}
     @media(max-width:560px){.logo{max-width:84%;margin:0 auto 14px;}.email-badge{width:auto;max-width:100%;padding:7px 14px;font-size:12px;text-align:center;}nav{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px;margin:6px auto 12px;}.tabBtn{padding:8px 10px;font-size:12px;}.hero-ctas,.links{flex-direction:column;align-items:stretch;}.hero-ctas .btn-primary,.hero-ctas .btn-gold,.links .btn-primary,.links .btn-outline{text-align:center;justify-content:center;}.header-bar{flex-direction:column;align-items:center;gap:10px;}.affiliate-links{width:100%;margin-top:2px;}.affiliate-links .pill{flex:1 1 45%;text-align:center;}}
     @media(max-width:480px){.grid,.stats{grid-template-columns:1fr;}.logo-strip{gap:28px;}}
@@ -216,7 +228,6 @@
         .then(html => {
           el.innerHTML = html;
           loaded[tab] = true;
-          // Re-run any inline scripts in the loaded content
           el.querySelectorAll("script").forEach(old => {
             const s = document.createElement("script");
             if (old.src) s.src = old.src; else s.textContent = old.textContent;
@@ -325,14 +336,6 @@
       if (yearEl) yearEl.textContent = new Date().getFullYear();
       if (initialTab === "home") setupExitIntent();
     });
-    function handleEmailSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector("button");
-      btn.textContent = "You're in! 🎉";
-      btn.disabled = true;
-      fbq("track","Lead");
-      setTimeout(() => { btn.textContent = "Sent!"; }, 2000);
-    }
   </script>
 </head>
 <body>
@@ -350,10 +353,22 @@
     <div class="affiliate-links">
       <a class="pill" href="https://www.tourradar.com/?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=general" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">TourRadar</a>
       <a class="pill" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">GetYourGuide</a>
-      <a class="pill" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262030&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Klook</a><a class="pill" href="https://amzn.to/4crDBXG" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">Amazon</a>
+      <a class="pill" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262030&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Klook</a>
+      <a class="pill" href="https://amzn.to/4crDBXG" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">Amazon</a>
     </div>
   </div>
 </header>
+
+<!-- FREE GUIDE BANNER -->
+<div style="max-width:1080px;margin:0 auto;padding:0 16px 4px;">
+  <div class="guide-banner">
+    <div class="guide-banner-text">
+      <h3>🎁 Free Guide — 10 Deadly Irish Hidden Gems!</h3>
+      <p>Quirky spots most Irish people have never heard of. No Cliffs of Moher. No Blarney Stone. Just the good stuff — delivered straight to your inbox.</p>
+    </div>
+    <button class="btn-guide ml-onclick-form" onclick="ml('show', 'ZiCglE', true)">Grab your free guide →</button>
+  </div>
+</div>
 
 <nav aria-label="Site navigation">
   <button class="tabBtn" data-tab="home"         onclick="show('home')"         aria-selected="true">Home</button>
@@ -397,18 +412,17 @@
   </div>
 </div>
 
+<!-- EXIT INTENT POPUP — now powered by MailerLite -->
 <div class="promoModal" id="promoModal" aria-hidden="true" role="dialog" aria-label="Newsletter signup popup">
   <div class="promoBox" role="document">
     <button class="promoClose" type="button" onclick="closePromoModal()" aria-label="Close popup">×</button>
-    <h2>Before you go — stay in the loop! ✉️</h2>
-    <p class="lead"><strong>Get our travel tips, hidden gems and honest reviews straight to your inbox.</strong></p>
-    <p>Whenever we post something worth reading — a new hotel review, a hidden Irish spot, a tour tip or a café find — we'll send it your way. No spam, unsubscribe any time.</p>
-    <form class="email-form" onsubmit="handleEmailSubmit(event);closePromoModal();" action="https://formspree.io/f/xojnjzne" method="POST" style="margin-top:16px;">
-      <input type="hidden" name="_subject" value="Newsletter Signup">
-      <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
-      <button type="submit">Sign me up →</button>
-    </form>
-    <p class="promoSub">Or if you're here for Morocco — <a href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="closePromoModal();fbq('track','InitiateCheckout');" style="font-weight:700;color:var(--ink);">book your Morocco trip here →</a></p>
+    <h2>🎁 Before you go — grab your free guide!</h2>
+    <p class="lead"><strong>10 Deadly Irish Hidden Gems most people have never heard of.</strong></p>
+    <p>Drop your email and we'll send it straight to you — plus our free monthly newsletter packed with hidden gems, honest reviews and travel tips. No spam, unsubscribe any time. 💛</p>
+    <div style="margin-top:16px;">
+      <button class="btn-gold ml-onclick-form" onclick="ml('show', 'ZiCglE', true);closePromoModal();" style="width:100%;justify-content:center;font-size:15px;padding:15px 22px;">Get our free guide →</button>
+    </div>
+    <p class="promoSub" style="margin-top:12px;">Or if you're here for Morocco — <a href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="closePromoModal();fbq('track','InitiateCheckout');" style="font-weight:700;color:var(--ink);">book your Morocco trip here →</a></p>
     <p class="promoSub" style="margin-top:8px;"><button type="button" onclick="closePromoModal()" style="background:none;border:none;font-family:var(--font-body);font-size:12px;color:var(--muted);cursor:pointer;padding:0;">No thanks</button></p>
   </div>
 </div>
