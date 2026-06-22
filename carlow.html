@@ -85,7 +85,7 @@
       .tagRow::after{content:"";position:absolute;bottom:0;left:0;right:0;height:30px;background:linear-gradient(transparent,var(--cream));}
       div[style*="minmax(200px,1fr)"]{grid-template-columns:1fr!important;}
       div[style*="minmax(240px,1fr)"]{grid-template-columns:1fr!important;}
-      .shortGrid{grid-template-columns:repeat(2,1fr)!important;}
+      .shortGrid{grid-template-columns:repeat(2,1fr)!important;max-width:100%!important;}
       .card{padding:16px 18px;}
     }
     @media(max-width:420px){
@@ -219,7 +219,7 @@
   <div class="card">
     <h2 style="margin-bottom:6px;">22 saints, one county — and a sugar factory that shaped a town</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:16px;">The early Christian heritage of Carlow is extraordinary — and the industrial history of the county is just as fascinating.</p>
-    <div class="shortGrid" style="grid-template-columns:repeat(2,1fr);max-width:480px;">
+    <div class="shortGrid" style="grid-template-columns:repeat(2,1fr);">
       <div style="display:flex;flex-direction:column;gap:8px;">
         <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/7mn6PNwWCyw" title="22 saints Carlow" allowfullscreen></iframe></div>
         <div style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#2d6a4f;text-align:center;">⛪ Early Christian heritage</div>
