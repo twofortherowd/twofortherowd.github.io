@@ -1,91 +1,82 @@
-<h1 class="pageTitle">Hotel Stays</h1>
+<h1 class="pageTitle">Hotel Stays 🏨</h1>
 
-<div class="card">
-  <p><strong>Hotel Stays</strong> is where we share honest hotel reviews, room tours, first impressions, and the bits you actually want to know before booking.</p>
-  <p>No over-polished nonsense — just real hotel stay content, hidden gems, surprising finds, and whether we'd actually go back.</p>
-  <div class="seoTags">
-    <span class="seoTag">hotel reviews</span>
-    <span class="seoTag">honest hotel stays</span>
-    <span class="seoTag">room tour videos</span>
-    <span class="seoTag">best hotels Ireland and abroad</span>
-    <span class="seoTag">travel accommodation</span>
-  </div>
-</div>
+<style>
+  /* Portrait videos in hotel grid — cap height on desktop too */
+  .hotelGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:880px;margin:0 auto 16px;}
+  .hotelGrid .card{margin:0;}
+  .hotelGrid .iframeWrap.short{aspect-ratio:unset;height:280px;}
+  @media(max-width:680px){
+    .hotelGrid{grid-template-columns:repeat(2,1fr)!important;gap:10px;}
+    .hotelGrid .iframeWrap.short{height:180px;}
+  }
+</style>
 
-<div class="card heroCard">
+<!-- HERO -->
+<div class="card heroCard" style="max-width:880px;margin:0 auto 16px;">
   <div class="hero-eyebrow">
-    <span class="badge">🏨 Hotel Search</span>
-    <span class="badge outline">Powered by Klook</span>
+    <span class="badge">🏨 Hotel Stays</span>
+    <span class="badge outline">9 hotels reviewed</span>
+    <span class="badge outline">Ireland · Morocco · Poland · Maldives</span>
   </div>
-  <h2>Find hotels for your next trip</h2>
-  <p style="color:var(--ink-soft);font-size:14px;max-width:720px;">Looking for somewhere to stay? Browse hotels worldwide through Klook — ideal for city breaks, beach holidays, road trips and longer adventures.</p>
-  <div style="margin-top:18px;">
-    <a class="btn-gold" href="https://affiliate.klook.com/redirect?aid=117926&aff_adid=1280035&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Search hotels on Klook →</a>
-  </div>
-  <p class="disclosure" style="margin-top:16px;"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
+  <h2 style="margin-bottom:8px;">Honest hotel reviews — from Maldives overwater bungalows to budget Dublin city stays</h2>
+  <p style="color:var(--ink-soft);font-size:14px;line-height:1.7;margin-bottom:0;">We've stayed in everything from a riad in Marrakech to a resort island in the Maldives — and a fair few Irish hotels in between. No over-polished nonsense. Just room tours, first impressions, and whether we'd actually go back.</p>
 </div>
 
-<div class="card">
-  <h2>Recent hotel stays & room tours</h2>
-  <p style="color:var(--ink-soft);font-size:14px;">From budget stays to surprisingly good finds — honest room tours from our travels around Ireland and beyond.</p>
-</div>
+<!-- VIDEOS -->
+<p class="section-label" style="max-width:880px;margin:6px auto 10px;">All hotel reviews</p>
+<div class="hotelGrid">
 
-<div class="videoGrid" style="max-width:880px;margin:0 auto 16px;grid-template-columns:repeat(2,1fr);">
-
-  <div class="card" style="margin:0;">
-    <h3>Camden Court Hotel, Dublin</h3>
+  <div class="card">
+    <h3>Camden Court Hotel, Dublin 🇮🇪</h3>
     <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/8rgFhGusUz4" title="Camden Court Hotel Dublin" allowfullscreen></iframe></div>
   </div>
 
-  <div class="card" style="margin:0;">
-    <h3>Shannon Springs Hotel</h3>
+  <div class="card">
+    <h3>Shannon Springs Hotel 🇮🇪</h3>
     <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/gIFmEE2o5cw" title="Shannon Springs Hotel" allowfullscreen></iframe></div>
   </div>
 
-  <div class="card" style="margin:0;">
-    <h3>Academy Plaza Hotel, Dublin</h3>
+  <div class="card">
+    <h3>Academy Plaza Hotel, Dublin 🇮🇪</h3>
     <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/92x1qDOXEPo" title="Academy Plaza Hotel Dublin" allowfullscreen></iframe></div>
   </div>
 
-  <div class="card" style="margin:0;">
-    <h3>The Art Hotel, Wrocław 🇵🇱</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/UyapEmAYNcg" title="The Art Hotel Wroclaw" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card" style="margin:0;">
-    <h3>Tullamore Court Hotel</h3>
+  <div class="card">
+    <h3>Tullamore Court Hotel 🇮🇪</h3>
     <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/NTR7--xMfGs" title="Tullamore Court Hotel" allowfullscreen></iframe></div>
   </div>
 
-  <div class="card" style="margin:0;">
+  <div class="card">
     <h3>Grand Mogador Menara, Marrakech 🇲🇦</h3>
     <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/dmtF1M-rzFk" title="Grand Mogador Menara Marrakech" allowfullscreen></iframe></div>
   </div>
 
-  <div class="card" style="margin:0;">
+  <div class="card">
+    <h3>Riad Zoraida, Marrakech 🇲🇦</h3>
+    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/dmtF1M-rzFk" title="Riad Zoraida Marrakech" allowfullscreen></iframe></div>
+  </div>
+
+  <div class="card">
     <h3>Palm View Palace, Morocco 🇲🇦</h3>
     <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/ghG4GeFna3U" title="Palm View Palace Morocco" allowfullscreen></iframe></div>
   </div>
 
-  <div class="card" style="margin:0;">
+  <div class="card">
+    <h3>The Art Hotel, Wrocław 🇵🇱</h3>
+    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/UyapEmAYNcg" title="The Art Hotel Wroclaw" allowfullscreen></iframe></div>
+  </div>
+
+  <div class="card">
     <h3>Meeru Island Resort, Maldives 🇲🇻</h3>
     <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/Q7XsYnMIcMQ" title="Meeru Island Maldives" allowfullscreen></iframe></div>
   </div>
 
-  <div class="card" style="margin:0;">
-    <h3>Riad Zoraida, Marrakech 🇲🇦</h3>
-    <a href="https://www.instagram.com/reel/DXzOXB5ES-v/" target="_blank" rel="noopener" style="display:block;text-decoration:none;">
-      <div style="aspect-ratio:9/16;background:linear-gradient(160deg,#1a0a00 0%,#3a1a00 100%);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;box-shadow:0 8px 24px rgba(26,18,8,.10);">
-        <div style="width:56px;height:56px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.3);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        <div style="text-align:center;padding:0 16px;">
-          <div style="color:#fff;font-weight:700;font-size:14px;margin-bottom:4px;">Riad Zoraida, Marrakech</div>
-          <div style="color:rgba(255,255,255,.6);font-size:12px;">Watch on Instagram →</div>
-        </div>
-        <div style="font-size:28px;">🇲🇦</div>
-      </div>
-    </a>
-  </div>
+</div>
 
+<!-- KLOOK CTA -->
+<div class="card" style="max-width:880px;margin:0 auto 16px;background:linear-gradient(160deg,#ffffff 0%,#fff0ee 55%,#ffd8d0 100%);border-color:rgba(224,92,42,.2);">
+  <h2 style="margin-bottom:6px;">Looking for your next hotel?</h2>
+  <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">Klook has hotels worldwide alongside experiences and skip-the-line tickets — handy to have everything in one place when you're planning a trip.</p>
+  <a class="btn-gold" href="https://affiliate.klook.com/redirect?aid=117926&aff_adid=1280035&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Search hotels on Klook →</a>
+  <p class="disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
 </div>
