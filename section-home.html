@@ -76,24 +76,17 @@
   <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/DCCKVM5d3oc" title="Shorts 4" allowfullscreen></iframe></div>
 </div>
 
-<p class="section-label">Ask us anything</p>
-<div class="card">
-  <h2>Planning a trip? Ask us.</h2>
-  <p><strong>Tell us where you're heading and what kind of experience you're after — we'll point you in the right direction.</strong></p>
-  <form action="https://formspree.io/f/xojnjzne" method="POST" class="formGrid">
-    <input type="hidden" name="_subject" value="New Ask Two for the Row'd Submission">
-    <div class="field"><label for="ask-name">Your Name</label><input class="input" type="text" id="ask-name" name="name" required></div>
-    <div class="field"><label for="ask-email">Your Email</label><input class="input" type="email" id="ask-email" name="email" required></div>
-    <div class="field"><label for="ask-destination">Where are you going?</label><input class="input" type="text" id="ask-destination" name="destination" required></div>
-    <div class="field"><label for="ask-details">Tell us what you're looking for</label><textarea class="textarea" id="ask-details" name="message" placeholder="Food? Hidden gems? Gluten-free spots? Budget tips?" required></textarea></div>
-    <div><button class="btn" type="submit">Send Question</button></div>
-    <p class="smallNote" style="text-align:left;margin:8px 0 0;">We read every message. Give us a little detail and we'll give you proper recommendations.</p>
-  </form>
-</div>
-
 <!-- NEWSLETTER -->
-<div style="background:linear-gradient(135deg,#ffd84a 0%,#ffe87a 100%);border:1px solid #e8c235;border-radius:16px;box-shadow:0 10px 32px rgba(232,194,53,.3);padding:20px 24px;text-align:center;max-width:880px;margin:0 auto 16px;">
+<div style="background:linear-gradient(135deg,#ffd84a 0%,#ffe87a 100%);border:1px solid #e8c235;border-radius:16px;box-shadow:0 10px 32px rgba(232,194,53,.3);padding:20px 24px;text-align:center;max-width:880px;margin:16px auto;">
   <h2 style="margin-bottom:6px;">✈️ Join the Two for the Row'd Travel Club</h2>
   <p style="font-size:14px;color:#4a3f28;margin-bottom:16px;">Real travel. Honest reviews. Hidden gems. And the occasional travel disaster — straight to your inbox.</p>
   <a href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;background:#1a1208;color:#fff;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;">Get our newsletter →</a>
 </div>
+
+<style>
+  /* Mobile: keep shortGrid at 2 cols, cap video height */
+  @media(max-width:680px){
+    .shortGrid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important;}
+    .shortGrid .iframeWrap.short{aspect-ratio:unset!important;height:180px;}
+  }
+</style>
