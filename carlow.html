@@ -80,16 +80,23 @@
     .tag{display:inline-block;padding:6px 11px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.8);font-size:12px;font-weight:600;color:var(--ink-soft);}
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
+
+    /* ── Video grid: always 2 cols on mobile, cap height so videos don't dominate ── */
     @media(max-width:640px){
       .tagRow{max-height:76px;overflow:hidden;position:relative;}
       .tagRow::after{content:"";position:absolute;bottom:0;left:0;right:0;height:30px;background:linear-gradient(transparent,var(--cream));}
       div[style*="minmax(200px,1fr)"]{grid-template-columns:1fr!important;}
       div[style*="minmax(240px,1fr)"]{grid-template-columns:1fr!important;}
-      .shortGrid{grid-template-columns:repeat(2,1fr)!important;max-width:100%!important;}
       .card{padding:16px 18px;}
-    }
-    @media(max-width:420px){
-      .shortGrid{grid-template-columns:1fr!important;}
+
+      /* Always 2 columns on mobile — never collapses to 1 */
+      .shortGrid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important;}
+
+      /* Cap video height so 2 tall portrait videos side-by-side aren't overwhelming */
+      .iframeWrap.short{aspect-ratio:unset!important;height:180px;}
+
+      /* Tighten caption text at small size */
+      .shortGrid [style*="font-family:var(--font-display)"] {font-size:11px!important;}
     }
   </style>
 </head>
