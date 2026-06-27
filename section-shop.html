@@ -7,6 +7,27 @@
   .shop-section-label{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
   .btn-green{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:#2d6a4f;color:#fff;border:1px solid #1e4d38;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px rgba(45,106,79,.3);transition:transform .15s ease,box-shadow .15s ease;}
   .btn-green:hover{background:#1e4d38;transform:translateY(-2px);color:#fff;}
+  .btn-amazon{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:#FF9900;color:#1a1208;border:1px solid #e68a00;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:13px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 4px 14px rgba(255,153,0,.3);transition:transform .15s ease,box-shadow .15s ease;}
+  .btn-amazon:hover{background:#e68a00;transform:translateY(-2px);color:#1a1208;}
+  .productGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;max-width:880px;margin:0 auto 14px;}
+  .productCard{background:rgba(255,255,255,.88);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease;}
+  .productCard:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
+  .productIcon{font-size:28px;margin-bottom:8px;}
+  .productCard h3{font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:6px;color:var(--ink);}
+  .productCard p{font-size:13px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;}
+  .featured-pick{background:linear-gradient(135deg,#ffd84a 0%,#ffe87a 100%);border:2px solid #e8c235;border-radius:var(--radius-md);padding:24px 26px;margin-bottom:20px;max-width:880px;box-shadow:0 10px 32px rgba(232,194,53,.3);}
+  .featured-pick .pick-label{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:#8a6200;margin-bottom:8px;}
+  .featured-pick h3{font-family:var(--font-display);font-size:1.4rem;font-weight:800;margin-bottom:8px;color:var(--ink);}
+  .featured-pick p{font-size:14px;color:var(--ink-soft);line-height:1.7;margin-bottom:14px;}
+  .amazon-sub-header{display:flex;align-items:center;gap:12px;margin:24px 0 14px;max-width:880px;}
+  .amazon-sub-header::after{content:"";flex:1;height:1px;background:var(--border-mid);}
+  .amazon-sub-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+  .spacegoods-card{background:linear-gradient(160deg,#1a1208 0%,#2e2015 100%);border:1px solid rgba(255,216,74,.2);border-radius:var(--radius-md);padding:20px;color:#fff;}
+  .spacegoods-card h3{color:#ffd84a;font-family:var(--font-display);}
+  .spacegoods-card p{color:rgba(255,255,255,.8);font-size:13px;line-height:1.6;margin-bottom:12px;}
+  .btn-space{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:#ffd84a;color:#1a1208;border:1px solid #e8c235;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:13px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .15s ease;}
+  .btn-space:hover{background:#e8c235;transform:translateY(-2px);color:#1a1208;}
+  @media(max-width:560px){.productGrid{grid-template-columns:repeat(2,1fr);}.featured-pick{padding:18px 16px;}}
 </style>
 
 <!-- ── CARLOW WALKING TOUR ── -->
@@ -98,45 +119,259 @@
 <!-- ── AMAZON ── -->
 <div class="shop-section">
   <div class="shop-section-header">
-    <span class="shop-section-label">📦 Amazon — Travel Essentials</span>
+    <span class="shop-section-label">📦 Amazon — Travel Gear We Actually Use</span>
   </div>
-  <div class="card" style="background:linear-gradient(160deg,#ffffff 0%,#fffbe8 55%,#fff3c4 100%);border-color:rgba(232,194,53,.3);margin-bottom:14px;">
-    <h2>The travel bits we actually bring</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;">
-      <div style="flex:1;min-width:200px;">
-        <p class="lead">Simple things that make every trip easier — the stuff we reach for every single time we pack.</p>
-        <p style="font-size:14px;color:var(--ink-soft);">No random picks. Just the things that have actually earned their place in our bags over 60+ countries.</p>
-      </div>
-      <video style="width:140px;flex-shrink:0;border-radius:14px;box-shadow:var(--shadow-md);aspect-ratio:9/16;object-fit:cover;display:block;" controls preload="metadata">
-        <source src="video/amazon-sales1.mp4" type="video/mp4">
-      </video>
-    </div>
-    <p class="disclosure" style="margin-top:14px;"><strong>Disclosure:</strong> This section contains affiliate links. If you buy through them we may earn a small commission at no extra cost to you.</p>
+
+  <div class="card" style="background:linear-gradient(160deg,#ffffff 0%,#fffbe8 55%,#fff3c4 100%);border-color:rgba(232,194,53,.3);margin-bottom:20px;">
+    <h2>🛍️ 40+ products we've personally used across 60+ countries</h2>
+    <p style="color:var(--ink-soft);font-size:15px;line-height:1.7;margin-bottom:6px;">No random picks, no paid placements. Just the things that have genuinely earned their place in our bags — trip after trip, country after country. Every product below comes with our honest opinion of why we pack it.</p>
+    <p class="disclosure"><strong>Disclosure:</strong> This section contains Amazon affiliate links. If you buy through them we may earn a small commission at no extra cost to you.</p>
   </div>
+
+  <!-- NICOLA'S PICK -->
+  <div class="featured-pick">
+    <div class="pick-label">⭐ Nicola's Pick This Month — June 2026</div>
+    <h3>🌡️ Cooling Blanket</h3>
+    <p>We got this during one of Ireland's heatwaves and genuinely could not believe the difference. It's not cold — it's just never traps heat, which is exactly what you want on those nights when the duvet becomes the enemy. We've since brought it travelling and it's become a non-negotiable in hot countries. Lightweight, packs down small, washes easily. One of those purchases you wonder how you managed without.</p>
+    <a class="btn-amazon" href="https://amzn.to/4aqlMqL" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View Cooling Blanket on Amazon →</a>
+  </div>
+
+  <!-- EXISTING 4 -->
+  <div class="amazon-sub-header"><span class="amazon-sub-label">✈️ The Basics — What's Always in Our Bags</span></div>
   <div class="productGrid">
     <div class="productCard">
       <div class="productIcon">⚖️</div>
       <h3>Luggage Scale</h3>
-      <p>A tiny thing that saves a lot of airport stress. We weigh our bags before we leave the house every single time now.</p>
-      <div class="links"><a class="btn-primary" href="https://amzn.to/3OlRUUA" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a></div>
+      <p>A tiny thing that saves a lot of airport stress. We weigh our bags before we leave the house every single time now. Worth every cent.</p>
+      <a class="btn-amazon" href="https://amzn.to/3OlRUUA" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
     </div>
     <div class="productCard">
       <div class="productIcon">🎒</div>
       <h3>Packing Cubes</h3>
-      <p>These genuinely changed how we pack. Less chaos, more space, and you can actually find things when you arrive.</p>
-      <div class="links"><a class="btn-primary" href="https://amzn.to/3NHZoBe" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a></div>
+      <p>These genuinely changed how we pack. Less chaos, more space, and you can actually find things when you arrive. We use a set for every trip.</p>
+      <a class="btn-amazon" href="https://amzn.to/3NHZoBe" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
     </div>
     <div class="productCard">
       <div class="productIcon">🔌</div>
       <h3>Travel Adapter</h3>
-      <p>You only forget this once. A universal adapter covers almost everywhere and it's one less thing to panic about.</p>
-      <div class="links"><a class="btn-primary" href="https://amzn.to/4e3w7LQ" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a></div>
+      <p>You only forget this once. A universal adapter covers almost everywhere — one less thing to panic about at the airport gate.</p>
+      <a class="btn-amazon" href="https://amzn.to/4e3w7LQ" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
     </div>
     <div class="productCard">
       <div class="productIcon">😴</div>
       <h3>Travel Pillow</h3>
-      <p>Long flights are a different experience with a decent pillow. Worth every cent once you're past the four-hour mark.</p>
-      <div class="links"><a class="btn-primary" href="https://amzn.to/3OlSv8L" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a></div>
+      <p>Long flights are a completely different experience with a decent pillow. Worth every cent once you're past the four-hour mark.</p>
+      <a class="btn-amazon" href="https://amzn.to/3OlSv8L" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
     </div>
   </div>
+
+  <!-- FLIGHT ESSENTIALS -->
+  <div class="amazon-sub-header"><span class="amazon-sub-label">✈️ Flight Essentials</span></div>
+  <div class="productGrid">
+    <div class="productCard">
+      <div class="productIcon">🧦</div>
+      <h3>Compression Socks</h3>
+      <p>Long-haul flights do horrible things to your legs. These actually work — we both wear them now on anything over four hours. Your ankles will thank you.</p>
+      <a class="btn-amazon" href="https://amzn.to/3SwmWLk" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">📍</div>
+      <h3>AirTags</h3>
+      <p>We started using these after a bag went missing in Lisbon. Now they go in every checked bag, every time. Total peace of mind at the carousel.</p>
+      <a class="btn-amazon" href="https://amzn.to/440f0V2" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🇮🇪</div>
+      <h3>Irish Passport Wallet</h3>
+      <p>Keeps your passport, cards and boarding pass together in one place. Simple idea, saves so much rooting around at check-in. The Irish one is a lovely touch too.</p>
+      <a class="btn-amazon" href="https://amzn.to/43Vv9ev" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+  </div>
+
+  <!-- CRUISE MUST-HAVES -->
+  <div class="amazon-sub-header"><span class="amazon-sub-label">🚢 Cruise Must-Haves</span></div>
+  <div class="productGrid">
+    <div class="productCard">
+      <div class="productIcon">🧲</div>
+      <h3>Magnetic Hooks</h3>
+      <p>Cruise cabin walls are magnetic and storage is always tight. These hooks are genuinely one of the best cruise hacks — hang bags, lanyards, coats, anything.</p>
+      <a class="btn-amazon" href="https://amzn.to/4bdEMJj" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🪪</div>
+      <h3>Lanyards</h3>
+      <p>Your cruise card needs to be on you at all times. A lanyard sounds like a small thing until you've spent ten minutes rooting through your bag at every door.</p>
+      <a class="btn-amazon" href="https://amzn.to/4g5QA3P" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">👜</div>
+      <h3>Laundry Bag</h3>
+      <p>Keeps dirty clothes separate in the cabin. Sounds obvious until you've mixed up clean and dirty at 6am trying to pack for a port day.</p>
+      <a class="btn-amazon" href="https://amzn.to/4v0j170" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🚪</div>
+      <h3>Over-the-Door Organiser</h3>
+      <p>Cruise bathrooms are tiny. This hangs over the door and suddenly you have space for everything. An absolute game changer for a week at sea.</p>
+      <a class="btn-amazon" href="https://amzn.to/4whoCHd" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🌊</div>
+      <h3>Motion Sickness Bands</h3>
+      <p>We don't always need these, but when you do, you really do. Drug-free, no drowsiness, and they actually work. Don't leave without them if you're at all susceptible.</p>
+      <a class="btn-amazon" href="https://amzn.to/3Ss4seZ" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">📱</div>
+      <h3>Waterproof Phone Pouch</h3>
+      <p>For water excursions, beach days and anywhere your phone shouldn't go but you want it anyway. Fits around your neck, keeps everything dry.</p>
+      <a class="btn-amazon" href="https://amzn.to/4eJqd1c" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+  </div>
+
+  <!-- HOT WEATHER -->
+  <div class="amazon-sub-header"><span class="amazon-sub-label">🌞 Hot Weather Essentials</span></div>
+  <div class="productGrid">
+    <div class="productCard">
+      <div class="productIcon">🌡️</div>
+      <h3>Cooling Blanket ⭐</h3>
+      <p>Nicola's pick this month for good reason. Never traps heat, packs small, makes hot nights genuinely manageable. A revelation.</p>
+      <a class="btn-amazon" href="https://amzn.to/4aqlMqL" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🛏️</div>
+      <h3>Cooling Mattress Protector</h3>
+      <p>Goes under the sheet and pulls heat away from your body. Pairs perfectly with the cooling blanket for genuinely restful sleep in hot countries.</p>
+      <a class="btn-amazon" href="https://amzn.to/3SyTtAn" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">💨</div>
+      <h3>Neck Fan</h3>
+      <p>Looks ridiculous, works brilliantly. Hands-free cooling for sightseeing in the heat. We used ours in Morocco and Jamaica and it was worth every slagging we got.</p>
+      <a class="btn-amazon" href="https://amzn.to/4eH2PkU" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🧊</div>
+      <h3>Cooling Towel</h3>
+      <p>Wet it, wring it out, instant cool. Perfect for long days out in the heat — safari drives, walking tours, beach days. Takes up almost no space.</p>
+      <a class="btn-amazon" href="https://amzn.to/4g4XWVd" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🌬️</div>
+      <h3>Portable USB Fan</h3>
+      <p>For hotel rooms and apartments where the aircon is either non-existent or set to arctic. Plugs into any USB port and makes a real difference overnight.</p>
+      <a class="btn-amazon" href="https://amzn.to/4f4ycqW" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+  </div>
+
+  <!-- ELECTROLYTES -->
+  <div class="amazon-sub-header"><span class="amazon-sub-label">💧 Staying Hydrated</span></div>
+  <div class="productGrid">
+    <div class="productCard">
+      <div class="productIcon">⚡</div>
+      <h3>Electrolyte Sachets</h3>
+      <p>Hot countries, long days, lots of walking — you lose more than you think. These go in the water bottle and keep you properly hydrated rather than just full of water.</p>
+      <a class="btn-amazon" href="https://amzn.to/4vD0u1I" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard spacegoods-card">
+      <div class="productIcon">🚀</div>
+      <h3>Spacegoods — Nicola's Daily Ritual</h3>
+      <p>We discovered Spacegoods a while back and now we don't travel without the Hydrodust for hydration and the Rainbow Dust coffee for a clean, calm energy boost without the jitters. Not a supplement company selling promises — these actually work. Use Nicola's link for a discount.</p>
+      <a class="btn-space" href="https://www.spacegoods.com/NICOLA66188" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Shop Spacegoods — Nicola's discount link →</a>
+    </div>
+  </div>
+
+  <!-- CAMERA GEAR -->
+  <div class="amazon-sub-header"><span class="amazon-sub-label">🎥 Our Camera &amp; Content Gear</span></div>
+  <div class="productGrid">
+    <div class="productCard">
+      <div class="productIcon">📱</div>
+      <h3>iPhone Mount</h3>
+      <p>This is what we use to film nearly every reel and talking-head clip. Secure, versatile and works with any tripod. Non-negotiable for content creators on the road.</p>
+      <a class="btn-amazon" href="https://amzn.to/3QtKaBb" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🎬</div>
+      <h3>Travel Tripod</h3>
+      <p>Compact enough to go everywhere, sturdy enough to actually use. We've had cheap tripods collapse mid-shot in enough countries to know the difference.</p>
+      <a class="btn-amazon" href="https://amzn.to/4gIyrcn" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🎙️</div>
+      <h3>Microphone</h3>
+      <p>Phone audio is never as good as it sounds in your head. A clip-on mic makes a visible difference to video quality — especially outdoors or in noisy places.</p>
+      <a class="btn-amazon" href="https://amzn.to/4vsEUge" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🤳</div>
+      <h3>Selfie Stick</h3>
+      <p>This is the one we use for nearly every reel where we're both in shot. Lightweight, extends well, folds down to nothing. Gets the angle right every time.</p>
+      <a class="btn-amazon" href="https://amzn.to/3SocaXx" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">💾</div>
+      <h3>Memory Cards</h3>
+      <p>We shoot a lot. Running out of storage mid-trip is not an option. Buy more than you think you need — you'll always use them.</p>
+      <a class="btn-amazon" href="https://amzn.to/4ezbZkD" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+  </div>
+
+  <!-- ROAD TRIPS -->
+  <div class="amazon-sub-header"><span class="amazon-sub-label">🚗 Road Trip Essentials</span></div>
+  <div class="productGrid">
+    <div class="productCard">
+      <div class="productIcon">📲</div>
+      <h3>Phone Holder</h3>
+      <p>Hands-free navigation is non-negotiable on a road trip. This one stays put, adjusts easily and doesn't block your view. We've driven through 14 US states with it.</p>
+      <a class="btn-amazon" href="https://amzn.to/4uWpeAL" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🔋</div>
+      <h3>Car Charger</h3>
+      <p>Between Google Maps, Spotify and two phones, the battery drains fast. A dual-port fast charger means you arrive with a full phone instead of a dead one.</p>
+      <a class="btn-amazon" href="https://amzn.to/4vJHU87" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🧺</div>
+      <h3>Cool Bag</h3>
+      <p>For long driving days, picnics, beach stops and keeping drinks cold in the boot. We started bringing one on every road trip and wonder why we ever didn't.</p>
+      <a class="btn-amazon" href="https://amzn.to/4eLt1em" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+  </div>
+
+  <!-- TRAVEL COMFORT -->
+  <div class="amazon-sub-header"><span class="amazon-sub-label">☕ Travel Comfort</span></div>
+  <div class="productGrid">
+    <div class="productCard">
+      <div class="productIcon">☕</div>
+      <h3>Travel Kettle</h3>
+      <p>Some hotel rooms don't have one. We don't function before a cup of tea. Problem solved. Folds flat, works everywhere, worth its weight in sanity.</p>
+      <a class="btn-amazon" href="https://amzn.to/4ewSol8" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🫖</div>
+      <h3>Travel Mug</h3>
+      <p>For airport mornings, long drives and anywhere you don't want to pay €5 for a coffee. Keeps things hot for hours and fits in a car cup holder.</p>
+      <a class="btn-amazon" href="https://amzn.to/4xSrwDG" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🍴</div>
+      <h3>Travel Cutlery</h3>
+      <p>Picnics, airport food, long train journeys — this set lives in the day bag now. Bamboo, lightweight, washes easily. Sounds small, used constantly.</p>
+      <a class="btn-amazon" href="https://amzn.to/4wbY4qH" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">😴</div>
+      <h3>Eye Mask</h3>
+      <p>For flights, overnight trains, hotels with thin curtains and anywhere sleep matters. The cheap ones fall off. A good one stays put and actually blocks the light.</p>
+      <a class="btn-amazon" href="https://amzn.to/4w6XPx0" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
+      <div class="productIcon">🔇</div>
+      <h3>Ear Plugs</h3>
+      <p>Noisy hotels, loud flights, Padraig snoring after a long travel day. These are in every bag we own. You only need them once to never travel without them again.</p>
+      <a class="btn-amazon" href="https://amzn.to/4xO3hqp" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+  </div>
+
 </div>
