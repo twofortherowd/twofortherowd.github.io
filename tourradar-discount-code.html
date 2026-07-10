@@ -105,9 +105,14 @@
     .breadcrumb a{color:var(--muted);text-decoration:none;font-weight:600;}
     .breadcrumb a:hover{color:var(--ink);}
     .breadcrumb span{opacity:.5;}
+    .trustLink{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.75);border:1px solid var(--border-mid);border-radius:var(--radius-md);padding:16px 18px;margin-top:16px;}
+    .trustLink .trustIcon{font-size:1.6rem;flex-shrink:0;}
+    .trustLink .trustBody{flex:1;}
+    .trustLink .trustBody strong{display:block;font-family:var(--font-display);font-size:1rem;margin-bottom:2px;}
+    .trustLink .trustBody span{font-size:13px;color:var(--ink-soft);}
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
-    @media(max-width:640px){.tour-grid{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.proof-item{flex:1 1 100px;}}
+    @media(max-width:640px){.tour-grid{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.proof-item{flex:1 1 100px;}.trustLink{flex-direction:column;text-align:center;}}
   </style>
 </head>
 <body>
@@ -130,33 +135,45 @@
   <div class="card heroCard">
     <div class="eyebrow">
       <span class="badge">Updated 2026</span>
-      <span class="badge outline">🇮🇪 TourRadar Ambassadors</span>
+      <span class="badge outline">🇮🇪 TourRadar RISE Ambassadors</span>
       <span class="badge outline">Honest guide — no fluff</span>
     </div>
     <h1 class="hero-headline">TourRadar Promo Code &amp; Discount 2026 —<br><em>€50 off your first booking</em></h1>
-    <p class="hero-lead">We're Nicola and Padraig — Irish TourRadar Ambassadors who booked our Morocco trip through TourRadar and would do it again tomorrow. This is our honest guide to how the <strong>TourRadar promo code</strong> and <strong>first time discount</strong> actually work in 2026, what the €50 offer is about, and the best way to save money before you book.</p>
+
+    <p class="hero-lead"><strong>Looking for a TourRadar promo code?</strong> There isn't a public code to type in for 2026 — but new users may get <strong>€50 off automatically</strong> through our official TourRadar partner link. That's the TourRadar first time discount, and it's the real answer to what most people searching this page actually want to know.</p>
+
+    <p class="hero-lead" style="margin-top:-8px;">We're Nicola and Padraig — Irish TourRadar RISE Ambassadors who booked our Morocco trip through TourRadar and would do it again tomorrow. Below we explain exactly how the <strong>TourRadar first time discount</strong> works, why "RISE Ambassador" actually means something, and the best way to save before you book.</p>
 
     <div class="offer-box">
       <div class="offer-amount">€50 off</div>
-      <div class="offer-label">New TourRadar users may be eligible for €50 off their first booking</div>
-      <a class="btn-primary" href="https://www.tourradar.com/profile/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Check if the €50 offer is available for you →</a>
+      <div class="offer-label">New TourRadar users may qualify for €50 off their first booking</div>
+      <a class="btn-primary" href="https://www.tourradar.com/profile/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Check if you qualify for the €50 first-time discount →</a>
+    </div>
+
+    <div class="trustLink">
+      <div class="trustIcon">🤔</div>
+      <div class="trustBody">
+        <strong>Still wondering if TourRadar is worth it?</strong>
+        <span>We booked our Morocco tour through TourRadar — here's our honest review of the booking process, the tour itself, and whether we'd use them again.</span>
+      </div>
+      <a class="btn-outline" href="/is-tourradar-worth-it.html">Read our honest review →</a>
     </div>
 
     <div class="highlight">
-      💡 <strong>The short answer:</strong> skip the coupon sites — the codes are almost always outdated. The real savings come from the <strong>TourRadar first time discount</strong>, seasonal deals, tour-specific offers, and booking through a trusted partner link. New users may be eligible for €50 off their first booking — click our link to check if it's currently active.
+      💡 <strong>The short answer:</strong> skip the coupon sites — sites like Honey, Coupert and CouponBirds often list TourRadar promo codes, but most are expired or simply don't work at checkout. The real savings come from the <strong>TourRadar first-time discount</strong>, seasonal deals, tour-specific offers, and booking through a trusted partner link. New users may be eligible for €50 off their first booking — click our link to check if it's currently active.
     </div>
 
-    <p>If you're a <strong>first-time TourRadar user</strong>, the <strong>TourRadar first time discount</strong> is the best saving available — up to €50 off, automatically applied at checkout. No promo code to hunt down, no coupon sites. Just click through our partner link and it'll show if it's active for you right now.</p>
+    <p>If you're a <strong>first-time TourRadar user</strong>, the <strong>TourRadar first time discount</strong> is the best saving available — up to €50 off, automatically applied. No promo code to hunt down, no coupon sites. Just click through our partner link and it'll show if it's active for you right now.</p>
 
     <div class="links">
-      <a class="btn-gold" href="https://www.tourradar.com/profile/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Check live TourRadar deals →</a>
+      <a class="btn-gold" href="https://www.tourradar.com/profile/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See today's TourRadar discounts →</a>
       <a class="btn-outline" href="/morocco-tour-review.html">Read our Morocco tour review →</a>
     </div>
 
     <div class="proof-strip">
       <div class="proof-item"><div class="proof-num">60+</div><div class="proof-label">countries visited between us</div></div>
       <div class="proof-item"><div class="proof-num">✅</div><div class="proof-label">booked Morocco through TourRadar ourselves</div></div>
-      <div class="proof-item"><div class="proof-num">🇮🇪</div><div class="proof-label">official TourRadar ambassadors from Ireland</div></div>
+      <div class="proof-item"><div class="proof-num">🇮🇪</div><div class="proof-label">official TourRadar RISE Ambassadors from Ireland</div></div>
     </div>
 
     <div class="tagRow">
@@ -173,16 +190,27 @@
 
   <p class="section-label">The €50 first time discount</p>
   <div class="card heroCard">
-    <h2>Is there really a TourRadar promo code or first time discount?</h2>
+    <h2>How the TourRadar first-time discount works</h2>
     <p>Yes — a <strong>€50 first-booking discount</strong> does exist for new TourRadar users. But it's not always a manual promo code you type in at checkout.</p>
     <div class="highlight">
-      In most cases the TourRadar first time discount appears automatically for new users, depending on your device, browser, and whether a campaign is currently active. The best way to check if it's available to you is to click through our partner link below — if it's active, it'll show up during your search or at checkout. No TourRadar coupon code needed.
+      In most cases the TourRadar first-time discount appears automatically for new users, depending on your device, browser, and whether a campaign is currently active. The best way to check if it's available to you is to click through our partner link below — if it's active, it'll show up during your search or at checkout. No TourRadar coupon code needed.
     </div>
+    <h3 style="margin-top:16px;">Who qualifies for the TourRadar first-time discount?</h3>
+    <p>Generally, the first-time discount is aimed at new TourRadar users who haven't booked with them before. If you're a returning customer, you likely won't see the same €50 offer — but seasonal sales and tour-specific deals are usually still worth checking.</p>
+    <h3 style="margin-top:16px;">Can existing customers get the TourRadar first-time discount?</h3>
+    <p>Not usually — the first-time discount is specifically designed for new customers. If you've booked with TourRadar before, keep an eye on Black Friday and January sale periods instead, which tend to apply to everyone.</p>
     <p>If you're a first-time TourRadar user, this is genuinely worth checking before you book anything. Even if the €50 offer isn't active right now, there are usually other TourRadar deals worth having a look at.</p>
     <div class="links">
-      <a class="btn-gold" href="https://www.tourradar.com/profile/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Check if the €50 offer is available →</a>
+      <a class="btn-gold" href="https://www.tourradar.com/profile/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Check if you qualify for the €50 first-time discount →</a>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> This is our affiliate link. If you book through it we may earn a small commission at no extra cost to you. The €50 offer availability depends on current TourRadar campaigns.</p>
+  </div>
+
+  <p class="section-label">Why trust us on this</p>
+  <div class="card">
+    <h2>We're official TourRadar RISE Ambassadors</h2>
+    <p>You'll see us mention "TourRadar RISE Ambassador" around this page, and it's worth explaining what that actually means: <strong>TourRadar has approved us to recommend tours through our own partner profile</strong>, based on our track record as genuine travellers and content creators — not just anyone can put up a partner link.</p>
+    <p>That doesn't mean we're paid to say TourRadar is perfect. It means we've been vetted by TourRadar itself, we've booked and travelled on one of their tours ourselves (Morocco — see our full <a href="/morocco-tour-review.html" style="font-weight:700;color:#b8780a;">day-by-day review here</a>), and we only link to tours we'd book again.</p>
   </div>
 
   <p class="section-label">How it actually works</p>
@@ -234,12 +262,16 @@
       <div class="faqA">The TourRadar first time discount is a €50 offer available to new users on their first booking. It appears automatically at checkout depending on whether the campaign is currently active — no code required. Click through our partner link to check current availability.</div>
     </div>
     <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Who qualifies for the TourRadar first-time discount?</div>
+      <div class="faqA">New TourRadar users who haven't booked with them before. If you've already booked a TourRadar tour, keep an eye on Black Friday and January sale periods instead, which tend to be open to everyone.</div>
+    </div>
+    <div class="faqItem">
       <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Do I need a TourRadar coupon code to get a discount?</div>
       <div class="faqA">Not usually. Most TourRadar discounts are applied automatically through seasonal deals, partner links, or tour-specific offers. There is rarely a coupon code to manually enter at checkout. The best approach is to click through our link and see what's currently active.</div>
     </div>
     <div class="faqItem">
-      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Why do TourRadar coupon codes on other sites not work?</div>
-      <div class="faqA">Because they're almost always outdated. TourRadar pricing changes frequently and the platform doesn't rely on publicly posted discount codes. The real savings come from seasonal sales, tour-specific deals, and booking through partner links.</div>
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Why do TourRadar coupon codes on sites like Honey or Coupert not work?</div>
+      <div class="faqA">Because they're almost always outdated. TourRadar pricing changes frequently and the platform doesn't rely on publicly posted discount codes, so codes listed on sites like Honey, Coupert or CouponBirds are usually expired well before they get taken down. The real savings come from seasonal sales, tour-specific deals, and booking through partner links.</div>
     </div>
     <div class="faqItem">
       <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What is the best way to save money on TourRadar?</div>
@@ -251,7 +283,7 @@
     </div>
     <div class="faqItem">
       <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is TourRadar worth booking through?</div>
-      <div class="faqA">In our experience, yes — especially for multi-day trips where the logistics would otherwise take ages to sort yourself. We booked our Morocco trip through TourRadar and would do it again without hesitation.<br><br><a href="/morocco-tour-review.html" style="font-weight:700;color:#b8780a;">Read our full Morocco tour review →</a></div>
+      <div class="faqA">In our experience, yes — especially for multi-day trips where the logistics would otherwise take ages to sort yourself. We booked our Morocco trip through TourRadar and would do it again without hesitation.<br><br><a href="/is-tourradar-worth-it.html" style="font-weight:700;color:#b8780a;">Read our full honest TourRadar review →</a> &nbsp;·&nbsp; <a href="/morocco-tour-review.html" style="font-weight:700;color:#b8780a;">See our day-by-day Morocco itinerary →</a></div>
     </div>
     <div class="faqItem">
       <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Can you book TourRadar tours from Ireland?</div>
@@ -261,18 +293,18 @@
 
   <div class="card goldCard" style="text-align:center;">
     <h2 style="text-align:center;color:var(--ink);">Ready to check what's available?</h2>
-    <p style="text-align:center;color:var(--ink-soft);max-width:540px;margin:0 auto 20px;">Deals change regularly — the easiest thing to do is check what's live right now. If the TourRadar first time discount is running, it'll show up automatically when you click through. No promo code needed.</p>
+    <p style="text-align:center;color:var(--ink-soft);max-width:540px;margin:0 auto 20px;">Deals change regularly — the easiest thing to do is check what's live right now. If the TourRadar first-time discount is running, it'll show up automatically when you click through. No promo code needed.</p>
     <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://www.tourradar.com/profile/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Check the €50 offer now →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/profile/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Check if you qualify for the €50 discount →</a>
       <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book our Morocco tour →</a>
     </div>
-    <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">Affiliate disclosure: we're TourRadar Ambassadors. If you book through our links we may earn a small commission at no cost to you. We only recommend tours we've done ourselves.</p>
+    <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">Affiliate disclosure: we're TourRadar RISE Ambassadors. If you book through our links we may earn a small commission at no cost to you. We only recommend tours we've done ourselves.</p>
   </div>
 
 </div>
 
 <footer>
-  <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="/morocco-tour-review.html">Morocco tour review</a></p>
+  <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="/is-tourradar-worth-it.html">Is TourRadar worth it?</a> &nbsp;•&nbsp; <a href="/morocco-tour-review.html">Morocco tour review</a></p>
 </footer>
 <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
