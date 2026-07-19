@@ -84,3 +84,26 @@
 <div class="card" style="max-width:880px;margin:0 auto 16px;background:linear-gradient(160deg,#ffffff 0%,#fff0ee 55%,#ffd8d0 100%);border-color:rgba(224,92,42,.2);">
   <h2 style="margin-bottom:6px;">Looking for your next hotel?</h2>
   <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">Klook has hotels worldwide alongside experiences and skip-the-line tickets — handy to have everything in one place when you're planning a trip.</p>
+  <a class="btn-gold" href="https://affiliate.klook.com/redirect?aid=117926&aff_adid=1280035&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Search hotels on Klook →</a>
+  <p class="disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
+</div>
+
+<script>
+(function(){
+  function processInstagramEmbeds(){
+    if (window.instgrm && window.instgrm.Embeds) {
+      window.instgrm.Embeds.process();
+    }
+  }
+  if (window.instgrm) {
+    // Script already loaded elsewhere on the page — just re-run processing
+    processInstagramEmbeds();
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://www.instagram.com/embed.js';
+    s.async = true;
+    s.onload = processInstagramEmbeds;
+    document.body.appendChild(s);
+  }
+})();
+</script>
