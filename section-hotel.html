@@ -53,9 +53,7 @@
 
   <div class="card">
     <h3>Riad Zoraida, Marrakech 🇲🇦</h3>
-    <div style="max-height:280px;overflow:hidden;border-radius:12px;display:flex;justify-content:center;background:#000;">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DXzOXB5ES-v/" data-instgrm-version="14" style="margin:0;max-width:280px;min-width:280px;width:100%;"></blockquote>
-    </div>
+    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.instagram.com/reel/DXzOXB5ES-v/embed" title="Riad Zoraida Marrakech" allowfullscreen></iframe></div>
   </div>
 
   <div class="card">
@@ -87,23 +85,3 @@
   <a class="btn-gold" href="https://affiliate.klook.com/redirect?aid=117926&aff_adid=1280035&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Search hotels on Klook →</a>
   <p class="disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
 </div>
-
-<script>
-(function(){
-  function processInstagramEmbeds(){
-    if (window.instgrm && window.instgrm.Embeds) {
-      window.instgrm.Embeds.process();
-    }
-  }
-  if (window.instgrm) {
-    // Script already loaded elsewhere on the page — just re-run processing
-    processInstagramEmbeds();
-  } else {
-    var s = document.createElement('script');
-    s.src = 'https://www.instagram.com/embed.js';
-    s.async = true;
-    s.onload = processInstagramEmbeds;
-    document.body.appendChild(s);
-  }
-})();
-</script>
