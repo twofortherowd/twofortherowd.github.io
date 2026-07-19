@@ -227,7 +227,9 @@ header{
       shop:         "section-shop.html",
       work:         "section-work.html"
     };
-    const loaded = {};
+    /* "home" content ships inline in the initial HTML for indexability,
+       so it's pre-marked as loaded and won't be re-fetched/overwritten. */
+    const loaded = { home: true };
     const INITIAL_HASH = (location.hash || "").replace("#","");
     if (location.hash) history.replaceState(null,"",location.pathname+location.search);
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
@@ -397,7 +399,108 @@ header{
 </nav>
 
 <main class="wrap">
-  <section id="home"         class="active"></section>
+  <section id="home" class="active">
+<div class="card heroCard"> 
+  <div class="hero-eyebrow"> 
+    <span class="badge">🇮🇪 Irish travel couple</span>
+    <span class="badge outline">TourRadar Ambassadors</span>
+    <span class="badge outline">400,000+ views</span>
+    <span class="badge outline">🏅 Accredited Tour Guide</span>
+  </div>
+
+  <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:16px;">
+    <div style="flex:1 1 0;min-width:0;">
+      <h2 style="margin-bottom:10px;">We're Nicola and Pádraig — an Irish couple who has visited 60+ countries & territories and can't stop talking about it.</h2>
+      <p style="color:var(--ink-soft);font-size:14px;margin:0;">We're from Carlow, we've been pretty much everywhere, and we tell the honest version of every trip — including when things aren't perfect. That's why people follow along.</p>
+    </div>
+    <img src="img/NP11.jpeg" alt="Nicola and Pádraig" style="width:110px;height:110px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 4px 16px rgba(26,18,8,.15);border:3px solid var(--white);">
+  </div>
+
+  <div class="proof-strip">
+    <div class="proof-item"><div class="proof-num">400,000+</div><div class="proof-label">total views across platforms</div></div>
+    <div class="proof-item"><div class="proof-num">60+ countries</div><div class="proof-label">between us and still going</div></div>
+    <div class="proof-item"><div class="proof-num">TourRadar</div><div class="proof-label">official ambassadors</div></div>
+    <div class="proof-item"><div class="proof-num">Accredited</div><div class="proof-label">tour guide — fully qualified</div></div>
+  </div>
+</div>
+
+<div class="card" style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+  <a href="https://youtu.be/-RGroKocork" target="_blank" rel="noopener" onclick="fbq('track','ViewContent');" style="flex:0 0 auto;display:block;position:relative;width:220px;max-width:100%;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-md);">
+    <img src="https://i.ytimg.com/vi/-RGroKocork/hqdefault.jpg" alt="Nicola on the How Is He Podcast" style="width:100%;display:block;">
+    <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,18,8,.15);">
+      <svg viewBox="0 0 68 48" style="width:52px;height:auto;"><path d="M66.5 7.7c-.8-2.9-2.9-5-5.8-5.8C55.8 0 34 0 34 0S12.2 0 7.3 1.9c-2.9.8-5 2.9-5.8 5.8C0 12.6 0 24 0 24s0 11.4 1.5 16.3c.8 2.9 2.9 5 5.8 5.8C12.2 48 34 48 34 48s21.8 0 26.7-1.9c2.9-.8 5-2.9 5.8-5.8C68 35.4 68 24 68 24s0-11.4-1.5-16.3z" fill="#ff0000"/><path d="M45 24 27 14v20z" fill="#fff"/></svg>
+    </span>
+  </a>
+  <div style="flex:1 1 240px;">
+    <span class="badge outline">🎙️ As Featured On</span>
+    <h3 style="margin:8px 0 6px;">Nicola sat down with the How Is He Podcast</h3>
+    <p style="color:var(--ink-soft);font-size:14px;margin-bottom:10px;">How Two for the Row'd got started, life on the road as a couple, and the honest side of travel we don't always show on Instagram.</p>
+    <a class="btn-outline" href="https://youtu.be/-RGroKocork" target="_blank" rel="noopener" onclick="fbq('track','ViewContent');">Watch the episode →</a>
+  </div>
+</div>
+
+<div class="card" style="background:linear-gradient(135deg,#ffd84a 0%,#ffe87a 100%);border-color:rgba(232,194,53,.4);text-align:center;">
+  <h2 style="margin-bottom:8px;">☀️ Summer 2026 Travel Deals</h2>
+  <p style="color:var(--ink-soft);max-width:520px;margin:0 auto 16px;">Greece, Japan, Thailand, Vietnam, Mallorca, Prague, Edinburgh, Dubai and more — book through our trusted partners.</p>
+  <a class="btn-primary" href="/summer-deals.html" onclick="fbq('track','ViewContent');">See all summer deals →</a>
+</div>
+
+<p class="section-label">What we get up to</p>
+<div class="featured-grid">
+  <div class="feat-card" onclick="show('morocco');" role="button" tabindex="0"><span class="feat-tag gold">Morocco series</span><div class="feat-title">Our complete Morocco tour review — what it's actually like</div><p class="feat-sub">Route map, 26 videos, desert camps, local guides and an honest take on booking through TourRadar.</p><div class="feat-arrow">Watch the full series →</div></div>
+  <div class="feat-card" onclick="show('hidden');" role="button" tabindex="0"><span class="feat-tag">🇮🇪 Hidden Ireland</span><div class="feat-title">22 hidden Irish gems most tourists drive straight past</div><p class="feat-sub">Short clips from around Ireland — history, scenery, craic, and the spots worth stopping for.</p><div class="feat-arrow">Start watching →</div></div>
+  <div class="feat-card" onclick="show('hotel');" role="button" tabindex="0"><span class="feat-tag">🏨 Hotel stays</span><div class="feat-title">Honest hotel reviews — what you actually want to know before you book</div><p class="feat-sub">Room tours, first impressions and the real verdict. No over-polished nonsense.</p><div class="feat-arrow">See hotel reviews →</div></div>
+  <div class="feat-card" onclick="show('brew');" role="button" tabindex="0"><span class="feat-tag">☕ Brew for Two</span><div class="feat-title">On a mission to find the best coffee in Ireland — one café at a time</div><p class="feat-sub">Honest café reviews, gluten-free treat ratings, hidden coffee spots and the ones genuinely worth stopping for.</p><div class="feat-arrow">See the reviews →</div></div>
+</div>
+
+<div class="grid" style="grid-template-columns:repeat(3,1fr);">
+  <img loading="lazy" src="img/NP2.jpeg" alt="Nicola and Padraig travelling together">
+  <img loading="lazy" src="img/NP6.jpeg" alt="Two for the Row'd travel moment">
+  <img loading="lazy" src="img/NP7.jpeg" alt="Travel photo from Two for the Row'd">
+  <img loading="lazy" src="img/NP9.jpeg" alt="Travel storytelling image">
+  <img loading="lazy" src="img/NP10.jpeg" alt="Travel creators Nicola and Padraig">
+  <img class="np11" loading="lazy" src="img/NP11.jpeg" alt="Irish travel creators on their travels">
+</div>
+
+<p class="section-label">Things we actually use and recommend</p>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:880px;margin:0 auto 16px;">
+  <a class="aff-card" href="https://www.tourradar.com/profile/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');" style="padding:16px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><span style="font-size:22px;">🧭</span><span class="aff-title" style="margin:0;">TourRadar</span></div>
+    <p class="aff-desc" style="margin-bottom:6px;">How we booked Morocco — stress-free, everything organised. <strong>New users may get €50 off</strong> their first booking.</p>
+    <span class="aff-cta">Browse tours →</span>
+  </a>
+  <a class="aff-card" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');" style="padding:16px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><span style="font-size:22px;">🎟</span><span class="aff-title" style="margin:0;">GetYourGuide</span></div>
+    <p class="aff-desc" style="margin-bottom:6px;">Day trips, city tours and experiences worldwide — easy to book, genuinely worth doing.</p>
+    <span class="aff-cta">See our top picks →</span>
+  </a>
+  <a class="aff-card" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262030&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');" style="padding:16px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><span style="font-size:22px;">🎫</span><span class="aff-title" style="margin:0;">Klook</span></div>
+    <p class="aff-desc" style="margin-bottom:6px;">Skip-the-line tickets, city passes and experiences — often cheaper than booking at the door.</p>
+    <span class="aff-cta">Browse Klook →</span>
+  </a>
+  <a class="aff-card" href="https://amzn.to/4crDBXG" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');" style="padding:16px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><span style="font-size:22px;">📦</span><span class="aff-title" style="margin:0;">Amazon travel picks</span></div>
+    <p class="aff-desc" style="margin-bottom:6px;">Packing cubes, luggage scales, travel pillows, adapters — stuff we actually use ourselves.</p>
+    <span class="aff-cta">Shop our list →</span>
+  </a>
+</div>
+
+<p class="section-label">Reels &amp; Shorts</p>
+<div class="shortGrid">
+  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/zwu2B4Q_QaI" title="Shorts 1" allowfullscreen></iframe></div>
+  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/PEQRwS4rTVI" title="Shorts 2" allowfullscreen></iframe></div>
+  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/ueyBfcQxNTg" title="Shorts 3" allowfullscreen></iframe></div>
+  <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/DCCKVM5d3oc" title="Shorts 4" allowfullscreen></iframe></div>
+</div>
+
+<!-- NEWSLETTER -->
+<div style="background:linear-gradient(135deg,#ffd84a 0%,#ffe87a 100%);border:1px solid #e8c235;border-radius:16px;box-shadow:0 10px 32px rgba(232,194,53,.3);padding:20px 24px;text-align:center;max-width:880px;margin:0 auto 16px;">
+  <h2 style="margin-bottom:6px;">✈️ Join the Two for the Row'd Mailing List</h2>
+  <p style="font-size:14px;color:#4a3f28;margin-bottom:16px;">Real travel. Honest reviews. Hidden gems — straight to your inbox.</p>
+  <a href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;background:#1a1208;color:#fff;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;">Get our newsletter →</a>
+</div>
+  </section>
   <section id="destinations"            ></section>
   <section id="map"                     ></section>
   <section id="morocco"                 ></section>
