@@ -7,7 +7,22 @@
   .brew-meta{font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:8px;}
   .brewGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:880px;margin:0 auto 16px;}
   .brewGrid .card{margin:0;display:flex;flex-direction:column;}
-  .brewGrid .iframeWrap{flex:1;}
+  .brewGrid .iframeWrap{
+    position:relative;
+    width:100%;
+    padding-top:56.25%; /* 16:9 aspect ratio */
+    height:0;
+    overflow:hidden;
+    border-radius:8px;
+  }
+  .brewGrid .iframeWrap iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:0;
+  }
   @media(max-width:680px){
     .brewGrid{grid-template-columns:1fr!important;gap:10px;}
   }
@@ -17,7 +32,7 @@
 <div class="card" style="max-width:880px;margin:0 auto 16px;background:linear-gradient(160deg,#ffffff 0%,#fdf3e3 55%,#f5e0c0 100%);border-color:rgba(160,80,20,.2);">
   <div class="hero-eyebrow">
     <span class="badge" style="background:#a05014;color:#fff;border-color:#7a3a0a;">☕ Brew for Two</span>
-    <span class="badge outline">9 cafés reviewed</span>
+    <span class="badge outline">12 cafés reviewed</span>
     <span class="badge outline">🌾 Gluten-free ratings included</span>
   </div>
   <h2 style="margin-bottom:8px;">On a mission to find seriously good coffee — one café at a time</h2>
@@ -81,7 +96,7 @@
   <div class="card">
     <h3>Rath's, Carlow</h3>
     <div class="brew-meta">Carlow Town</div>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://youtube.com/embed/ZNh8SdVvDIw" title="Rath's Carlow" allowfullscreen></iframe></div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/ZNh8SdVvDIw" title="Rath's Carlow" allowfullscreen></iframe></div>
     <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
       <span class="brew-verdict stars">☕☕☕☕ Coffee</span>
       <span class="brew-verdict gf">🌾 GF options</span>
@@ -101,6 +116,36 @@
     <h3>Tower and Bean, Timahoe</h3>
     <div class="brew-meta">Timahoe, Co. Laois</div>
     <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/sI1YIwB4upg" title="Tower and Bean Timahoe" allowfullscreen></iframe></div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
+      <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
+      <span class="brew-verdict gf">🌾 GF options</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Third Space, Mountain View Markets, Kilkenny</h3>
+    <div class="brew-meta">Mountain View Markets, Co. Kilkenny</div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/4Qd2pI6f824" title="Third Space Mountain View Markets Kilkenny" allowfullscreen></iframe></div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
+      <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
+      <span class="brew-verdict gf">🌾 GF options</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Johnstown Garden Centre, Naas</h3>
+    <div class="brew-meta">Naas, Co. Kildare</div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/EL31fuenyd8" title="Johnstown Garden Centre Naas" allowfullscreen></iframe></div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
+      <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
+      <span class="brew-verdict gf">🌾 GF options</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Shankill Castle, Kilkenny</h3>
+    <div class="brew-meta">Paulstown, Co. Kilkenny</div>
+    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/rOzahPzcJjU" title="Shankill Castle Kilkenny" allowfullscreen></iframe></div>
     <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
       <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
       <span class="brew-verdict gf">🌾 GF options</span>
