@@ -184,6 +184,9 @@
     .route-arrow { color: var(--muted); font-size: 14px; }
     .states-strip { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
     .state-pill { background: rgba(0,35,149,.08); border: 1px solid rgba(0,35,149,.2); border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600; color: var(--france-blue); }
+    .iframeWrapLandscape { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-md); background: #000; position: relative; aspect-ratio: 16/9; width: 100%; margin: 16px 0; }
+    .iframeWrapPortrait { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-md); background: #000; position: relative; aspect-ratio: 9/16; max-width: 320px; margin: 0 auto; }
+    iframe, video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
     .photo-grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin: 16px 0; }
     .photo-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 16px 0; }
     .photo-grid-2 img, .photo-grid-3 img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; box-shadow: var(--shadow-md); display: block; transition: transform .2s ease, box-shadow .2s ease; }
@@ -320,12 +323,13 @@
   <div class="card blueCard">
     <h2>Nine regions down — our France map so far</h2>
     <p style="color:var(--ink-soft);font-size:14px;">A quick look at the regions of France we've properly explored between us — watch it fill in below.</p>
-    <div class="iframeWrapLandscape">
-      <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    <div class="iframeWrapPortrait">
+      <video controls playsinline preload="metadata">
         <source src="img/french-regions.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
+    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:10px;">Our France regions map — watch it fill in!</p>
     <div class="states-strip" style="margin-top:14px;">
       <span class="state-pill">✅ Brittany (Bretagne)</span>
       <span class="state-pill">✅ Normandy (Normandie)</span>
