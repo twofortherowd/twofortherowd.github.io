@@ -21,45 +21,15 @@
 <p class="section-label" style="max-width:880px;margin:6px auto 10px;">The route</p>
 <div class="card" style="max-width:880px;margin:0 auto 16px;">
   <p style="font-size:14px;color:var(--ink-soft);margin-bottom:12px;">Marrakech → Atlas Mountains → Aït Benhaddou → Ouarzazate → Aguelmouss → Oasis Lodge → Sahara Desert</p>
-  <div class="routeMapWrap">
-    <button class="routeMapBtn" type="button" onclick="openMapModal()" aria-label="Tap to enlarge route map">
-      <svg class="routeMap" viewBox="0 0 900 540" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Morocco route map" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5e6c8"/><stop offset="60%" stop-color="#e8d5a3"/><stop offset="100%" stop-color="#d4b87a"/></linearGradient>
-          <linearGradient id="moroccoFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c8a96e" stop-opacity="0.35"/><stop offset="100%" stop-color="#a07840" stop-opacity="0.20"/></linearGradient>
-          <linearGradient id="routeGrad2" x1="0" y1="0" x2="1" y2="1" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#c0392b"/><stop offset="50%" stop-color="#e67e22"/><stop offset="100%" stop-color="#8e44ad"/></linearGradient>
-          <filter id="softShadow2" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="rgba(0,0,0,0.25)"/></filter>
-          <filter id="pinGlow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(180,60,20,0.45)"/></filter>
-          <pattern id="sandPattern" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="none"/><circle cx="1" cy="1" r="0.5" fill="rgba(150,110,50,0.12)"/><circle cx="5" cy="5" r="0.4" fill="rgba(150,110,50,0.08)"/></pattern>
-          <radialGradient id="vignette" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="transparent"/><stop offset="100%" stop-color="rgba(0,0,0,0.08)"/></radialGradient>
-          <style>.pin{opacity:0;animation:popPin .4s cubic-bezier(.17,.67,.3,1.3) forwards;}@keyframes popPin{to{opacity:1;}}.p1{animation-delay:.3s;}.p2{animation-delay:.8s;}.p3{animation-delay:1.15s;}.p4{animation-delay:1.5s;}.p5{animation-delay:1.85s;}.p6{animation-delay:2.2s;}.place{font-family:Georgia,serif;font-size:34px;font-weight:bold;fill:#2c1a0e;}.subplace{font-family:Georgia,serif;font-size:20px;fill:#7a4a20;font-style:italic;}</style>
-        </defs>
-        <rect width="900" height="540" fill="url(#bgGrad)" rx="16"/>
-        <rect width="900" height="540" fill="url(#sandPattern)" rx="16"/>
-        <rect width="900" height="540" fill="url(#vignette)" rx="16"/>
-        <path d="M200,72 C225,55 275,48 330,52 C375,56 420,65 465,70 C510,75 555,78 590,95 C630,115 665,145 685,185 C705,228 710,270 700,315 C690,360 665,400 630,430 C595,460 550,480 495,488 C440,496 385,490 340,472 C295,454 260,425 240,390 C218,353 210,308 212,268 C214,228 200,198 195,162 C190,126 198,88 200,72 Z" fill="url(#moroccoFill)" stroke="rgba(120,80,30,0.30)" stroke-width="1.5" stroke-dasharray="6,4"/>
-        <g opacity="0.22" fill="#7a5c2e"><polygon points="340,210 355,185 370,210"/><polygon points="360,215 378,188 396,215"/><polygon points="380,208 400,178 420,208"/><polygon points="402,212 422,182 442,212"/><polygon points="422,205 445,173 468,205"/></g>
-        <text x="410" y="236" font-family="Georgia,serif" font-size="34" fill="rgba(100,70,20,0.55)" text-anchor="middle" letter-spacing="2" font-style="italic">ATLAS MOUNTAINS</text>
-        <text x="585" y="430" font-family="Georgia,serif" font-size="34" fill="rgba(100,70,20,0.45)" text-anchor="middle" letter-spacing="2" font-style="italic">SAHARA</text>
-        <path id="routePath" d="M320,175 C345,200 370,215 410,225 C440,232 470,238 500,250 C525,260 540,272 555,295 C568,316 570,345 565,375 C560,400 550,422 535,440" fill="none" stroke="url(#routeGrad2)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="900" stroke-dashoffset="900" filter="url(#softShadow2)"><animate attributeName="stroke-dashoffset" from="900" to="0" dur="2.2s" fill="freeze"/></path>
-        <g id="jeep"><rect x="-11" y="-5" width="22" height="11" rx="3" fill="#2c1a0e"/><circle cx="-6" cy="6.5" r="3" fill="#2c1a0e"/><circle cx="6" cy="6.5" r="3" fill="#2c1a0e"/><animateMotion dur="4.5s" fill="freeze" rotate="auto" begin="0.3s"><mpath href="#routePath"/></animateMotion></g>
-        <g class="pin p1" filter="url(#pinGlow)"><circle cx="395" cy="226" r="8" fill="rgba(255,255,255,0.92)" stroke="#c0392b" stroke-width="2"/><circle cx="395" cy="226" r="3.5" fill="#c0392b"/><text x="355" y="214" class="place" text-anchor="end">Marrakech</text><text x="355" y="230" class="subplace" text-anchor="end">Start</text><line x1="387" y1="223" x2="362" y2="220" stroke="rgba(120,70,20,0.35)" stroke-width="1" stroke-dasharray="3,2"/></g>
-        <g class="pin p2" filter="url(#pinGlow)"><circle cx="455" cy="242" r="7" fill="rgba(255,255,255,0.90)" stroke="#e67e22" stroke-width="1.8"/><circle cx="455" cy="242" r="3" fill="#e67e22"/><text x="490" y="233" class="place" text-anchor="start">Aït Benhaddou</text><text x="490" y="249" class="subplace" text-anchor="start">UNESCO Kasbah</text><line x1="462" y1="241" x2="484" y2="240" stroke="rgba(120,70,20,0.35)" stroke-width="1" stroke-dasharray="3,2"/></g>
-        <g class="pin p3" filter="url(#pinGlow)"><circle cx="485" cy="255" r="7" fill="rgba(255,255,255,0.90)" stroke="#e67e22" stroke-width="1.8"/><circle cx="485" cy="255" r="3" fill="#e67e22"/><text x="448" y="270" class="place" text-anchor="end">Ouarzazate</text><text x="448" y="286" class="subplace" text-anchor="end">Door of the Desert</text><line x1="478" y1="257" x2="454" y2="268" stroke="rgba(120,70,20,0.35)" stroke-width="1" stroke-dasharray="3,2"/></g>
-        <g class="pin p4" filter="url(#pinGlow)"><circle cx="520" cy="285" r="7" fill="rgba(255,255,255,0.90)" stroke="#e67e22" stroke-width="1.8"/><circle cx="520" cy="285" r="3" fill="#e67e22"/><text x="548" y="279" class="place" text-anchor="start">Aguelmouss</text><text x="548" y="295" class="subplace" text-anchor="start">Argan Oil Co-op</text><line x1="527" y1="285" x2="542" y2="284" stroke="rgba(120,70,20,0.35)" stroke-width="1" stroke-dasharray="3,2"/></g>
-        <g class="pin p5" filter="url(#pinGlow)"><circle cx="540" cy="315" r="7" fill="rgba(255,255,255,0.90)" stroke="#e67e22" stroke-width="1.8"/><circle cx="540" cy="315" r="3" fill="#e67e22"/><text x="565" y="311" class="place" text-anchor="start">Oasis Lodge</text><text x="565" y="327" class="subplace" text-anchor="start">Desert Gateway</text><line x1="547" y1="315" x2="559" y2="315" stroke="rgba(120,70,20,0.35)" stroke-width="1" stroke-dasharray="3,2"/></g>
-        <g class="pin p6" filter="url(#pinGlow)"><circle cx="535" cy="385" r="8" fill="rgba(255,255,255,0.92)" stroke="#8e44ad" stroke-width="2"/><circle cx="535" cy="385" r="3.5" fill="#8e44ad"/><text x="492" y="376" class="place" text-anchor="end">Sahara Desert</text><text x="492" y="392" class="subplace" text-anchor="end">Desert Camp</text><line x1="528" y1="384" x2="497" y2="382" stroke="rgba(120,70,20,0.35)" stroke-width="1" stroke-dasharray="3,2"/></g>
-        <g transform="translate(820,88)"><circle r="28" fill="rgba(255,255,255,0.7)" stroke="rgba(120,80,30,0.30)" stroke-width="1.5"/><polygon points="0,-20 -5,0 5,0" fill="#c0392b"/><polygon points="0,20 -5,0 5,0" fill="rgba(80,50,20,0.4)"/><line x1="-20" y1="0" x2="-10" y2="0" stroke="rgba(80,50,20,0.4)" stroke-width="1.5"/><line x1="10" y1="0" x2="20" y2="0" stroke="rgba(80,50,20,0.4)" stroke-width="1.5"/><text y="-25" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="bold" fill="#c0392b">N</text><text y="33" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="rgba(80,50,20,0.6)">S</text><text x="27" y="3" text-anchor="start" font-family="Georgia,serif" font-size="9" fill="rgba(80,50,20,0.6)">E</text><text x="-27" y="3" text-anchor="end" font-family="Georgia,serif" font-size="9" fill="rgba(80,50,20,0.6)">W</text></g>
-        <rect x="18" y="18" width="210" height="72" rx="10" fill="rgba(255,255,255,0.78)" stroke="rgba(120,80,30,0.20)" stroke-width="1"/>
-        <text x="30" y="40" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#2c1a0e" letter-spacing="0.5">🇲🇦 Morocco Route</text>
-        <text x="30" y="55" font-family="Georgia,serif" font-size="10" fill="#7a4a20" font-style="italic">Two for the Row'd</text>
-        <circle cx="30" cy="68" r="4" fill="#c0392b"/><text x="40" y="72" font-family="Georgia,serif" font-size="9" fill="#4a3010">Start/End</text>
-        <circle cx="90" cy="68" r="4" fill="#e67e22"/><text x="100" y="72" font-family="Georgia,serif" font-size="9" fill="#4a3010">Stop</text>
-        <circle cx="135" cy="68" r="4" fill="#8e44ad"/><text x="145" y="72" font-family="Georgia,serif" font-size="9" fill="#4a3010">Highlight</text>
-      </svg>
-    </button>
+  <div class="routeMapWrap" style="position:relative;">
+    <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 8px 24px rgba(26,18,8,.10);">
+      <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+        <source src="img/morocco-map.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
-  <p class="mapHint">Tap the map to enlarge — especially handy on the phone.</p>
+  <p class="mapHint">Our Morocco route, mapped out — Marrakech to the Sahara and back.</p>
 </div>
 
 <!-- BOOK CTA -->
