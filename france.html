@@ -184,6 +184,16 @@
     .route-arrow { color: var(--muted); font-size: 14px; }
     .states-strip { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
     .state-pill { background: rgba(0,35,149,.08); border: 1px solid rgba(0,35,149,.2); border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600; color: var(--france-blue); }
+    .state-pill-clickable { cursor: pointer; font-family: var(--font-body); transition: transform .15s ease, box-shadow .15s ease, background .15s ease; }
+    .state-pill-clickable:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); background: rgba(0,35,149,.14); }
+    .state-pill-clickable:focus-visible { outline: 2px solid var(--france-blue); outline-offset: 2px; }
+    .regionModalOverlay { display: none; position: fixed; inset: 0; background: rgba(26,18,8,.55); z-index: 999; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(2px); }
+    .regionModalOverlay.open { display: flex; }
+    .regionModalBox { background: var(--cream); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); max-width: 520px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 28px 26px 24px; position: relative; }
+    .regionModalClose { position: absolute; top: 14px; right: 16px; background: rgba(0,35,149,.08); border: 1px solid rgba(0,35,149,.2); border-radius: 999px; width: 32px; height: 32px; font-size: 18px; line-height: 1; cursor: pointer; color: var(--ink); display: flex; align-items: center; justify-content: center; font-family: var(--font-body); }
+    .regionModalClose:hover { background: rgba(0,35,149,.16); }
+    .regionModalTitle { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; margin-bottom: 14px; padding-right: 30px; }
+    .regionModalBody p { font-size: 14px; line-height: 1.7; color: var(--ink-soft); }
     .iframeWrapLandscape { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-md); background: #000; position: relative; aspect-ratio: 16/9; width: 100%; margin: 16px 0; }
     .iframeWrapPortrait { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-md); background: #000; position: relative; aspect-ratio: 9/16; max-width: 320px; margin: 0 auto; }
     iframe, video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
@@ -321,7 +331,7 @@
   <!-- REGIONS MAP VIDEO -->
   <div class="section-divider">🗺️ Regions We've Explored</div>
   <div class="card blueCard">
-    <h2>Nine regions down — our France map so far</h2>
+    <h2>Ten regions down — our France map so far</h2>
     <p style="color:var(--ink-soft);font-size:14px;">A quick look at the regions of France we've properly explored between us — watch it fill in below.</p>
     <div class="iframeWrapPortrait">
       <video controls playsinline preload="metadata">
@@ -329,19 +339,93 @@
         Your browser does not support the video tag.
       </video>
     </div>
-    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:10px;">Our France regions map — watch it fill in!</p>
-    <div class="states-strip" style="margin-top:14px;">
-      <span class="state-pill">✅ Brittany (Bretagne)</span>
-      <span class="state-pill">✅ Normandy (Normandie)</span>
-      <span class="state-pill">✅ Centre-Val de Loire</span>
-      <span class="state-pill">✅ Grand Est (Alsace)</span>
-      <span class="state-pill">✅ Provence-Alpes-Côte d'Azur</span>
-      <span class="state-pill">✅ Auvergne-Rhône-Alpes</span>
-      <span class="state-pill">✅ Hauts-de-France</span>
-      <span class="state-pill">✅ Nouvelle-Aquitaine</span>
-      <span class="state-pill">✅ Occitanie</span>
+    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:6px;">👆 Tap any region below to read more about it</p>
+    <div class="states-strip" style="margin-top:10px;">
+      <button type="button" class="state-pill state-pill-clickable" onclick="openRegionModal('brittany')">✅ Brittany (Bretagne)</button>
+      <button type="button" class="state-pill state-pill-clickable" onclick="openRegionModal('normandy')">✅ Normandy (Normandie)</button>
+      <button type="button" class="state-pill state-pill-clickable" onclick="openRegionModal('loire')">✅ Centre-Val de Loire</button>
+      <button type="button" class="state-pill state-pill-clickable" onclick="openRegionModal('alsace')">✅ Grand Est (Alsace)</button>
+      <button type="button" class="state-pill state-pill-clickable" onclick="openRegionModal('provence')">✅ Provence-Alpes-Côte d'Azur</button>
+      <button type="button" class="state-pill state-pill-clickable" onclick="openRegionModal('rhone')">✅ Auvergne-Rhône-Alpes</button>
+      <button type="button" class="state-pill state-pill-clickable" onclick="openRegionModal('hautsdefrance')">✅ Hauts-de-France</button>
+      <button type="button" class="state-pill state-pill-clickable" onclick="openRegionModal('aquitaine')">✅ Nouvelle-Aquitaine</button>
+      <button type="button" class="state-pill state-pill-clickable" onclick="openRegionModal('occitanie')">✅ Occitanie</button>
+      <button type="button" class="state-pill state-pill-clickable" onclick="openRegionModal('paris')">✅ Île-de-France (Paris)</button>
     </div>
   </div>
+
+  <!-- REGION MODAL -->
+  <div class="regionModalOverlay" id="regionModalOverlay" onclick="if(event.target===this)closeRegionModal();">
+    <div class="regionModalBox" role="dialog" aria-modal="true" aria-labelledby="regionModalTitle">
+      <button type="button" class="regionModalClose" onclick="closeRegionModal();" aria-label="Close">✕</button>
+      <h3 class="regionModalTitle" id="regionModalTitle"></h3>
+      <div class="regionModalBody" id="regionModalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    var regionData = {
+      brittany: {
+        title: "🌊 Brittany (Bretagne)",
+        body: "<p>Brittany was one of our earliest French loves, and it still feels different to anywhere else in the country. Nicola spent a whole month there back in 2010, driving the coastal roads with no fixed plan, just following whatever small town looked interesting next. Plancoët became our unofficial base — the kind of place that never makes a guidebook but stays with you for years.</p><p>There's a Celtic thread running through Brittany that Irish visitors pick up on almost immediately — the language, the music, even the stubbornness of the culture in holding onto its own identity. It's the closest we've felt to home while still being genuinely somewhere else.</p>"
+      },
+      normandy: {
+        title: "🪖 Normandy (Normandie)",
+        body: "<p>Normandy asks something different of you than most of France. We went in expecting a history lesson and came away with something closer to a gut punch. Standing on the D-Day beaches, then walking through the American Cemetery, is one of those experiences where you stop taking photos and just stand there for a while.</p><p>It's not all weight and solemnity, though — Mont Saint-Michel rising out of the tidal bay is one of the most theatrical sights we've ever seen, especially at dusk when the light does something almost unfair to how beautiful it already is. Normandy holds both of those things at once, and somehow it works.</p>"
+      },
+      loire: {
+        title: "🏰 Centre-Val de Loire",
+        body: "<p>The Loire Valley is where we go when we want France to feel like a fairy tale for a few days. Château after château, each one trying to outdo the last — Chambord's scale, Chenonceau spanning the river, Villandry's gardens laid out like something from a painting.</p><p>We'll admit the entry tickets add up fast if you're doing it solo, which is exactly why we ended up booking a guided tour on one visit — it meant we actually got to enjoy the châteaux instead of spending half the day working out logistics between them. Worth it, and we'd do it that way again.</p>"
+      },
+      alsace: {
+        title: "🎄 Grand Est (Alsace)",
+        body: "<p>Alsace was our most recent discovery, and it might be the one that surprised us most. Colmar doesn't look like anywhere else in France — half-timbered houses in every colour, canals, a Germanic influence running through the food and the architecture that makes the whole region feel like its own small country.</p><p>We spent our days wandering the Alsace Wine Route between villages that all seemed to compete for \"most charming,\" and crossed the border into Basel for an afternoon just because we could. If you catch it at Christmas, when the markets open across the region, we imagine it's even better — that's next on our list.</p>"
+      },
+      provence: {
+        title: "☀️ Provence-Alpes-Côte d'Azur",
+        body: "<p>Provence is the region we associate most with just slowing down. Driving through the lavender fields in full bloom, windows down, no particular schedule to keep — it's one of those travel memories that doesn't need embellishing, it was just genuinely that good.</p><p>Then in 2024 we pushed further along the coast into Cannes and Nice, and the whole mood shifted from rural and slow to glamorous and fast. The train from Nice to Monaco cost us next to nothing and dropped us into superyachts and the Casino de Monte-Carlo within twenty minutes — one of the best value afternoons we've ever had anywhere.</p>"
+      },
+      rhone: {
+        title: "🍷 Auvergne-Rhône-Alpes",
+        body: "<p>Lyon completely won us over, and it did it through food. We didn't have a plan beyond wandering Vieux Lyon and stopping wherever looked good, and that turned out to be the entire point — this is a city built for exactly that kind of aimless, hungry exploring.</p><p>We also spent time in Vichy, which surprised us with its grand Belle Époque buildings and the strange quiet of its thermal spa culture. It carries some heavy Second World War history, but today it's a genuinely peaceful place to walk along the river and slow the pace right down.</p>"
+      },
+      hautsdefrance: {
+        title: "🏛️ Hauts-de-France",
+        body: "<p>Lille wasn't somewhere we expected to fall for, and that's probably why it stuck with us. The Flemish architecture around the Grand Place gives it a completely different feel to the rest of France — it doesn't look or feel like \"typical\" France at all, in the best way.</p><p>It's an easy short break too, close enough to the Eurostar and ferry routes that it works brilliantly as a long weekend rather than needing to build a whole trip around it. Good food, good coffee, far fewer crowds than the bigger cities.</p>"
+      },
+      aquitaine: {
+        title: "🎨 Nouvelle-Aquitaine",
+        body: "<p>The Dordogne gave us one of the most genuinely mind-bending experiences we've had in any country — the Lascaux Caves. Walking through the recreated cave complex, looking at artwork made by people over 17,000 years ago, has a way of making every other kind of \"old\" building suddenly feel quite young.</p><p>It's a quieter, greener part of France than people expect, and that's exactly what made it stand out to us — no crowds, no queues, just genuinely remarkable history sitting in the middle of the countryside.</p>"
+      },
+      occitanie: {
+        title: "🙏 Occitanie",
+        body: "<p>Occitanie is where we went for Lourdes, and it's not a region we can talk about lightly. Whatever your own beliefs, there's something in the atmosphere there — the quiet, the scale of the pilgrimage, the sense that this place matters enormously to an enormous number of people — that stays with you.</p><p>It's a very different kind of \"highlight\" to a château or a beach, but that's part of what we love about France as a whole — it holds space for the spiritual and reflective just as easily as it does the glamorous and indulgent.</p>"
+      },
+      paris: {
+        title: "🗼 Île-de-France (Paris)",
+        body: "<p>Paris almost didn't make it onto our regions map, which feels a bit mad given how much of our France story runs through it — but that's Paris for you, it's easy to take for granted precisely because we keep going back. The déjà vu of turning a corner and seeing the Eiffel Tower again never actually wears off, no matter how many times it happens.</p><p>What keeps drawing us back isn't the obvious stuff, though that's brilliant too — it's the version of Paris that doesn't show up in the postcards. A proper café where nobody rushes you, a museum queue that turns into a conversation with the person next to you, the reliably unfair amount of good food available on almost any street you choose. We don't buy the \"rude Parisians\" stereotype for a second — every visit chips away at it a bit more.</p>"
+      }
+    };
+
+    function openRegionModal(key) {
+      var data = regionData[key];
+      if (!data) return;
+      document.getElementById('regionModalTitle').textContent = data.title;
+      document.getElementById('regionModalBody').innerHTML = data.body;
+      var overlay = document.getElementById('regionModalOverlay');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRegionModal() {
+      document.getElementById('regionModalOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeRegionModal();
+    });
+  </script>
 
   <!-- THE STORY -->
   <div class="section-divider">🇫🇷 Our France Story</div>
