@@ -214,7 +214,7 @@ header{
     @media(max-width:380px){.pill.icon{width:36px;height:36px;}.pill.icon svg{width:18px;height:18px;}}
   </style>
   <script>
-   const TAB_IDS = ["home","destinations","map","morocco","hidden","carlow","brew","hotel","shop","work"];
+  const TAB_IDS = ["home","destinations","map","morocco","hidden","carlow","brew","hotel","shop","work","newsletters"];
     const SECTION_FILES = {
       home:         "section-home.html",
       destinations: "section-destinations.html",
@@ -225,7 +225,8 @@ header{
       brew:         "section-brew.html",
       hotel:        "section-hotel.html",
       shop:         "section-shop.html",
-      work:         "section-work.html"
+      work:         "section-work.html",
+      newsletters:  "section-newsletters.html"
     };
     /* "home" content ships inline in the initial HTML for indexability,
        so it's pre-marked as loaded and won't be re-fetched/overwritten. */
@@ -501,7 +502,7 @@ header{
   <a href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;background:#1a1208;color:#fff;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;">Get our newsletter →</a>
 </div>
   </section>
-  <section id="destinations"            ></section>
+<section id="destinations"            ></section>
   <section id="map"                     ></section>
   <section id="morocco"                 ></section>
   <section id="hidden"                  ></section>
@@ -510,6 +511,7 @@ header{
   <section id="hotel"                   ></section>
   <section id="shop"                    ></section>
   <section id="work"                    ></section>
+  <section id="newsletters"             ></section>
 
   <footer>© <span id="year"></span> Two for the Row'd &nbsp;•&nbsp; Built with love, caffeine, and a bit of chaos</footer>
 </main>
