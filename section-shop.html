@@ -19,6 +19,7 @@
   .featured-pick .pick-label{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:#8a6200;margin-bottom:8px;}
   .featured-pick h3{font-family:var(--font-display);font-size:1.4rem;font-weight:800;margin-bottom:8px;color:var(--ink);}
   .featured-pick p{font-size:14px;color:var(--ink-soft);line-height:1.7;margin-bottom:14px;}
+  .featured-pick .aff-microtext{display:block;font-size:11px;color:#6b5730;margin-top:8px;font-style:italic;}
   .amazon-sub-header{display:flex;align-items:center;gap:12px;margin:24px 0 14px;max-width:880px;}
   .amazon-sub-header::after{content:"";flex:1;height:1px;background:var(--border-mid);}
   .amazon-sub-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
@@ -71,7 +72,7 @@
     <p>If you're even half-thinking about a trip, it's worth opening it up now and saving the tours you like. Prices and availability shift with dates and demand, and <strong>new users may be eligible for €50 off</strong> their first booking.</p>
     <p>Looking for a discount before you book? <a href="tourradar-discount-code.html"><strong>See our TourRadar Discount Code guide (2026) →</strong></a></p>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=general" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse tours on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/?utm_source=partner-traveller&utm_medium=ambassador&utm_campaign=general" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse tours on TourRadar →</a>
       <a class="btn-outline" onclick="show('morocco');">Read our Morocco experience →</a>
       <a class="btn-outline" href="/south-africa.html">See the South Africa safari tour we did →</a>
     </div>
@@ -130,21 +131,16 @@
 
   <!-- NICOLA'S PICK -->
   <div class="featured-pick">
-    <div class="pick-label">⭐ Nicola's Pick This Month — July 2026</div>
-    <h3>💨 Neck Fan</h3>
-    <p>Looks ridiculous, works brilliantly. This is the one we reach for on any hot sightseeing day — hands-free cooling that actually holds up in real heat, not just a gentle breeze for two minutes. We used ours in Morocco and Jamaica and it earned its space in the bag every single time, slagging from strangers included.</p>
-    <a class="btn-amazon" href="https://amzn.to/4pch4Tv" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View Neck Fan on Amazon →</a>
+    <div class="pick-label">⭐ Nicola's Pick This Month — August 2026</div>
+    <h3>⚖️ Luggage Scale</h3>
+    <p>August is peak everything at the airport — flights packed, queues brutal, and Ryanair and Aer Lingus giving nobody an inch on the weight limit. A luggage scale costs about the same as two airport coffees and saves you €75+ at the check-in desk when your case is 2kg over. We weigh every single bag before it leaves the house now, and we've never once been caught out. Boring purchase, brilliant investment — the kind of thing you'll wonder how you ever travelled without.</p>
+    <a class="btn-amazon" href="https://amzn.to/3OlRUUA" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View Luggage Scale on Amazon →</a>
+    <span class="aff-microtext">Affiliate link — we may earn a small commission at no extra cost to you.</span>
   </div>
 
-  <!-- EXISTING 4 -->
-  <div class="amazon-sub-header"><span class="amazon-sub-label">✈️ The Basics — What's Always in Our Bags</span></div>
+  <!-- EVERY FLIGHT, EVERY TRIP (merged Basics + Flight Essentials, minus Luggage Scale which is now the featured pick) -->
+  <div class="amazon-sub-header"><span class="amazon-sub-label">✈️ Every Flight, Every Trip</span></div>
   <div class="productGrid">
-    <div class="productCard">
-      <div class="productIcon">⚖️</div>
-      <h3>Luggage Scale</h3>
-      <p>A tiny thing that saves a lot of airport stress. We weigh our bags before we leave the house every single time now. Worth every cent.</p>
-      <a class="btn-amazon" href="https://amzn.to/3OlRUUA" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
-    </div>
     <div class="productCard">
       <div class="productIcon">🎒</div>
       <h3>Packing Cubes</h3>
@@ -163,11 +159,6 @@
       <p>Long flights are a completely different experience with a decent pillow. Worth every cent once you're past the four-hour mark.</p>
       <a class="btn-amazon" href="https://amzn.to/3OlSv8L" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
     </div>
-  </div>
-
-  <!-- FLIGHT ESSENTIALS -->
-  <div class="amazon-sub-header"><span class="amazon-sub-label">✈️ Flight Essentials</span></div>
-  <div class="productGrid">
     <div class="productCard">
       <div class="productIcon">🧦</div>
       <h3>Compression Socks</h3>
@@ -233,6 +224,12 @@
   <div class="amazon-sub-header"><span class="amazon-sub-label">🌞 Hot Weather Essentials</span></div>
   <div class="productGrid">
     <div class="productCard">
+      <div class="productIcon">💨</div>
+      <h3>Neck Fan</h3>
+      <p>Looks ridiculous, works brilliantly. Hands-free cooling that actually holds up in real heat, not just a gentle breeze for two minutes. We used ours in Morocco and Jamaica and it earned its space in the bag every single time.</p>
+      <a class="btn-amazon" href="https://amzn.to/4pch4Tv" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
+    </div>
+    <div class="productCard">
       <div class="productIcon">🌡️</div>
       <h3>Cooling Blanket</h3>
       <p>We got this during one of Ireland's heatwaves and genuinely could not believe the difference. Never traps heat, packs small, washes easily — a non-negotiable in hot countries.</p>
@@ -258,8 +255,8 @@
     </div>
   </div>
 
-  <!-- ELECTROLYTES -->
-  <div class="amazon-sub-header"><span class="amazon-sub-label">💧 Staying Hydrated</span></div>
+  <!-- HYDRATION & DAILY RITUALS (renamed from Staying Hydrated so Spacegoods fits properly) -->
+  <div class="amazon-sub-header"><span class="amazon-sub-label">💧 Hydration &amp; Daily Rituals</span></div>
   <div class="productGrid">
     <div class="productCard">
       <div class="productIcon">⚡</div>
@@ -271,7 +268,7 @@
       <div class="productIcon">🚀</div>
       <h3>Spacegoods — Nicola's Daily Ritual</h3>
       <p>We discovered Spacegoods a while back and now we don't travel without the Hydrodust for hydration and the Rainbow Dust coffee for a clean, calm energy boost without the jitters. Not a supplement company selling promises — these actually work. Use Nicola's link for a discount.</p>
-      <a class="btn-space" href="https://www.spacegoods.com/NICOLA66188" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Shop Spacegoods — Nicola's discount link →</a>
+      <a class="btn-space" href="https://www.spacegoods.com/NICOLA66188" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">Shop Spacegoods — Nicola's discount link →</a>
     </div>
   </div>
 
@@ -355,7 +352,7 @@
       <a class="btn-amazon" href="https://amzn.to/4wbY4qH" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
     </div>
     <div class="productCard">
-      <div class="productIcon">😴</div>
+      <div class="productIcon">🌙</div>
       <h3>Eye Mask</h3>
       <p>For flights, overnight trains, hotels with thin curtains and anywhere sleep matters. The cheap ones fall off. A good one stays put and actually blocks the light.</p>
       <a class="btn-amazon" href="https://amzn.to/4w6XPx0" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
