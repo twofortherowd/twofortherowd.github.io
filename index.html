@@ -209,7 +209,12 @@ header{
 .email-capture-card iframe{display:none!important;height:0!important;margin:0!important;padding:0!important;}
     @media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr);}.stats{grid-template-columns:repeat(2,1fr);}.productGrid{grid-template-columns:1fr;}.aff-grid{grid-template-columns:1fr;}.featured-grid{grid-template-columns:1fr;}.shortGrid{grid-template-columns:repeat(3,1fr);}.guide-banner{flex-direction:column;text-align:center;}.guide-banner-text{text-align:center;}}
     @media(max-width:680px){.videoGrid{grid-template-columns:1fr;}.proof-strip{gap:10px;}.proof-item{flex:1 1 100px;}.shortGrid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:560px){.logo{width:100%;max-width:100%;margin:0 auto 10px;}}
+    @media(max-width:560px){
+      .logo{width:100%;max-width:100%;margin:0 auto 10px;}
+      nav{gap:4px;padding:8px 8px;margin:6px auto 12px;}
+      .tabBtn{padding:6px 10px;font-size:12px;}
+      .affiliate-links{display:none;}
+    }
     @media(max-width:480px){.grid,.stats{grid-template-columns:1fr;}.logo-strip{gap:28px;}}
     @media(max-width:380px){.pill.icon{width:36px;height:36px;}.pill.icon svg{width:18px;height:18px;}}
   </style>
@@ -397,7 +402,7 @@ header{
   <button class="tabBtn" data-tab="hotel"        onclick="show('hotel')"        aria-selected="false">Hotel Stays</button>
   <button class="tabBtn" data-tab="shop"         onclick="show('shop')"         aria-selected="false">Shop &amp; Tours</button>
   <button class="tabBtn" data-tab="work"         onclick="show('work')"         aria-selected="false">Work With Us</button>
-  <button class="tabBtn" data-tab="newsletters"  onclick="show('newsletters')"  aria-selected="false"> Newsletter</button>
+  <button class="tabBtn" data-tab="newsletters"  onclick="show('newsletters')"  aria-selected="false">Newsletter</button>
 </nav>
 
 <main class="wrap">
@@ -481,10 +486,10 @@ header{
     <p class="aff-desc" style="margin-bottom:6px;">Skip-the-line tickets, city passes and experiences — often cheaper than booking at the door.</p>
     <span class="aff-cta">Browse Klook →</span>
   </a>
-  <a class="aff-card" href="https://amzn.to/4crDBXG" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');" style="padding:16px;">
+  <a class="aff-card" href="#" onclick="show('shop');fbq('track','ViewContent');return false;" style="padding:16px;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><span style="font-size:22px;">📦</span><span class="aff-title" style="margin:0;">Amazon travel picks</span></div>
-    <p class="aff-desc" style="margin-bottom:6px;">Packing cubes, luggage scales, travel pillows, adapters — stuff we actually use ourselves.</p>
-    <span class="aff-cta">Shop our list →</span>
+    <p class="aff-desc" style="margin-bottom:6px;">40+ things we actually pack — luggage scales, packing cubes, neck fans, cruise hacks and more.</p>
+    <span class="aff-cta">See our full Amazon list →</span>
   </a>
 </div>
 
@@ -501,6 +506,7 @@ header{
   <h2 style="margin-bottom:6px;">✈️ Join the Two for the Row'd Mailing List</h2>
   <p style="font-size:14px;color:#4a3f28;margin-bottom:16px;">Real travel. Honest reviews. Hidden gems — straight to your inbox.</p>
   <a href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;background:#1a1208;color:#fff;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;">Get our newsletter →</a>
+  <p style="font-size:12px;color:#4a3f28;margin:12px 0 0;">Curious what you'll get? <a href="#" onclick="show('newsletters');return false;" style="color:#1a1208;text-decoration:underline;font-weight:700;">Read past issues →</a></p>
 </div>
   </section>
 <section id="destinations"            ></section>
