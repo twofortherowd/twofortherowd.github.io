@@ -118,13 +118,11 @@
 .wash-gallery .wide{grid-column:1/-1;height:360px}
 @media(max-width:640px){.wash-gallery{grid-template-columns:1fr}.wash-gallery .wide{grid-column:auto;height:260px}.wash-gallery img{height:240px}}
 
-.nash-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+.nash-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
 .nash-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:13px;box-shadow:var(--shadow-md);display:block;transition:transform .2s ease,box-shadow .2s ease}
 .nash-gallery img:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.nash-gallery .feature{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;height:100%;min-height:360px}
-.shortWrap{max-width:390px;margin:18px auto 4px;position:relative;padding-bottom:min(177.78%,690px);height:0;overflow:hidden;border-radius:18px;box-shadow:var(--shadow-lg);background:#111}
-.shortWrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-@media(max-width:640px){.nash-gallery{grid-template-columns:repeat(2,1fr)}.nash-gallery .feature{grid-column:1/-1;grid-row:auto;min-height:260px}.shortWrap{max-width:330px}}
+@media(max-width:700px){.nash-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+@media(max-width:430px){.nash-gallery{grid-template-columns:1fr}}
 </style></head><body>
 <div class="backBar">
   <a href="/">← Back to Two for the Row'd</a>
@@ -162,7 +160,7 @@
 <div class="card">
   <h2>Our Nashville photos</h2>
   <div class="nash-gallery">
-    <img class="feature" src="/img/nashville.jpg" alt="Our visit to Nashville Tennessee during our Deep South road trip" loading="lazy">
+    <img src="/img/nashville.jpg" alt="Our visit to Nashville Tennessee during our Deep South road trip" loading="lazy">
     <img src="/img/nashville-2.jpg" alt="Nashville Tennessee during our USA road trip" loading="lazy">
     <img src="/img/nashville-3.jpg" alt="Exploring Nashville during our Deep South journey" loading="lazy">
     <img src="/img/nashville-4.jpg" alt="Our Nashville travel experience in Tennessee" loading="lazy">
