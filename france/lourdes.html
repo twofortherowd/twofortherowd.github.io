@@ -203,7 +203,20 @@
 <section class="card">
 <h2>Our Lourdes memories</h2>
 <p>Some of our own photos from Lourdes — the Sanctuary, its remarkable religious art, the Grotto area and the basilicas that dominate the pilgrimage site.</p>
-<div class="photo-grid-2">
+<div class="photo-grid-2 lourdes-gallery" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
+<style>
+.lourdes-gallery img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+@media(max-width:640px){
+  .lourdes-gallery{grid-template-columns:1fr !important;}
+  .lourdes-gallery img{height:230px;}
+}
+</style>
 <img src="../img/lourdes.jpg" alt="Religious mosaic at the Sanctuary of Our Lady of Lourdes, France" loading="lazy">
 <img src="../img/lourdes2.jpg" alt="Altar and religious artwork at the Sanctuary in Lourdes" loading="lazy">
 <img src="../img/lourdes3.jpg" alt="Grotto and religious monument at Lourdes, France" loading="lazy">
