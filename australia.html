@@ -132,6 +132,24 @@
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.photo-grid-2,.photo-grid-3{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}}
+  
+    /* Australia photo reliability fix */
+    .photo-grid-2 img{
+      display:block;
+      width:100%;
+      height:auto;
+      aspect-ratio:4/3;
+      object-fit:cover;
+      background:#f1eadc;
+    }
+    .destCardMedia img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      background:#f1eadc;
+    }
+
   </style>
 </head>
 <body>
@@ -273,7 +291,7 @@
 
       <!-- Sydney -->
       <a class="destCard" href="/australia/sydney.html">
-        <div class="destCardMedia"><img src="img/Oz.jpg" alt="Sydney Opera House — Two for the Row'd" loading="lazy"></div>
+        <div class="destCardMedia"><img src="/img/Oz.jpg" alt="Sydney Opera House — Two for the Row'd" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Sydney</div>
           <div class="destCardText">The Opera House, Bondi, the Blue Mountains — and two trips to Palm Beach for Home and Away. Brax was there on day two.</div>
@@ -303,7 +321,7 @@
 
       <!-- Alice Springs -->
       <a class="destCard" href="/australia/alice-springs.html">
-        <div class="destCardMedia"><img src="img/Oz5.jpg" alt="Northern Territory — Two for the Row'd" loading="lazy"></div>
+        <div class="destCardMedia"><img src="/img/Oz5.jpg" alt="Northern Territory — Two for the Row'd" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Alice Springs</div>
           <div class="destCardText">A memorable Red Centre stop — the Royal Flying Doctor Service museum, Outback pub atmosphere and the landscapes around Alice Springs.</div>
@@ -313,7 +331,7 @@
 
       <!-- Uluru -->
       <a class="destCard" href="/australia/uluru.html">
-        <div class="destCardMedia"><img src="img/Oz6.jpg" alt="Uluru landscape — Two for the Row'd" loading="lazy"></div>
+        <div class="destCardMedia"><img src="/img/Oz6.jpg" alt="Uluru landscape — Two for the Row'd" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Uluru</div>
           <div class="destCardText">Three unforgettable nights at the heart of the Red Centre. Some places are famous for a reason.</div>
@@ -441,15 +459,15 @@
     </div>
 
     <div class="photo-grid-2">
-      <img src="img/Oz.jpg" alt="Sydney Opera House — Two for the Row'd" loading="lazy">
-      <img src="img/Oz2.jpg" alt="Sydney harbour — Two for the Row'd" loading="lazy">
-      <img src="img/Oz7.jpg" alt="Sydney beach — Two for the Row'd" loading="lazy">
-      <img src="img/Oz10.jpg" alt="Sydney marina — Two for the Row'd" loading="lazy">
+      <img src="/img/Oz.jpg" alt="Sydney Opera House — Two for the Row'd" loading="lazy">
+      <img src="/img/Oz2.jpg" alt="Sydney harbour — Two for the Row'd" loading="lazy">
+      <img src="/img/Oz7.jpg" alt="Sydney beach — Two for the Row'd" loading="lazy">
+      <img src="/img/Oz10.jpg" alt="Sydney marina — Two for the Row'd" loading="lazy">
     </div>
 
     <div class="photo-grid-2" style="margin-top:0;">
-      <img src="img/Oz3.jpg" alt="Palm Beach Home and Away — Two for the Row'd" loading="lazy">
-      <img src="img/Oz4.jpg" alt="Palm Beach Australia — Two for the Row'd" loading="lazy">
+      <img src="/img/Oz3.jpg" alt="Palm Beach Home and Away — Two for the Row'd" loading="lazy">
+      <img src="/img/Oz4.jpg" alt="Palm Beach Australia — Two for the Row'd" loading="lazy">
     </div>
 
     <div class="links">
@@ -465,8 +483,8 @@
     <p><strong>Melbourne</strong> had a character completely different to Sydney, with a brilliant food and café scene. One of our highlights was Phillip Island's <strong>little penguins</strong> — seeing them waddle up the beach at dusk was genuinely magical.</p>
 
     <div class="photo-grid-2">
-      <img src="img/Oz8.jpg" alt="Australian landscape — Two for the Row'd" loading="lazy">
-      <img src="img/Oz9.jpg" alt="Australia — Two for the Row'd" loading="lazy">
+      <img src="/img/Oz8.jpg" alt="Australian landscape — Two for the Row'd" loading="lazy">
+      <img src="/img/Oz9.jpg" alt="Australia — Two for the Row'd" loading="lazy">
     </div>
 
     <div class="links">
@@ -482,8 +500,8 @@
     <p>After New Zealand, we travelled independently into Alice Springs for our Northern Territory adventure. We visited the <strong>Royal Flying Doctor Service museum</strong>, enjoyed the Outback pub atmosphere and then spent <strong>three nights at Uluru</strong>. Having several nights there gave us time to experience the Red Centre at a slower pace and appreciate the cultural significance of Uluru to the Anangu people.</p>
 
     <div class="photo-grid-2">
-      <img src="img/Oz5.jpg" alt="Northern Territory — Two for the Row'd" loading="lazy">
-      <img src="img/Oz6.jpg" alt="Uluru landscape — Two for the Row'd" loading="lazy">
+      <img src="/img/Oz5.jpg" alt="Northern Territory — Two for the Row'd" loading="lazy">
+      <img src="/img/Oz6.jpg" alt="Uluru landscape — Two for the Row'd" loading="lazy">
     </div>
 
     <div style="margin:16px 0;">
@@ -611,5 +629,22 @@
   <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="/new-zealand.html">New Zealand</a> &nbsp;•&nbsp; <a href="/tasmania.html">Tasmania</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#destinations">Our destinations</a></p>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('img[src*="/img/Oz"]').forEach(function (img) {
+        img.addEventListener('error', function () {
+          if (!this.dataset.retried) {
+            this.dataset.retried = '1';
+            var file = this.getAttribute('src').split('/').pop();
+            this.src = 'https://twofortherowd.com/img/' + file;
+          } else {
+            this.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
