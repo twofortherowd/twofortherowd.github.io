@@ -1,4 +1,4 @@
-<!doctype html> 
+<!doctype html>
 <html lang="en">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
@@ -203,6 +203,19 @@
 }
 </style>
 
+
+<style>
+/* Destination-specific crop corrections */
+.destCard[href="/australia/cairns.html"] .destCardMedia img{
+  object-position:center 35% !important;
+}
+/* Tasmania: use the user's Tasmanian devil photo and keep the animal centred. */
+.tasmaniaCard img,
+a[href="/australia/tasmania.html"] img{
+  object-position:center 58% !important;
+}
+</style>
+
 </head>
 <body>
 
@@ -401,7 +414,7 @@
     <div style="margin-top:22px;">
       <p style="font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:10px;">A linked journey</p>
       <a class="destCard destTasmania" href="/tasmania.html" style="max-width:100%;">
-        <div class="destCardMedia mediaGreen"><img src="/img/taz.jpg" alt="Tasmania landscape from our around-the-world trip" loading="lazy"></div>
+        <div class="destCardMedia mediaGreen"><img src="/img/Tasmania.jpg" alt="Tasmania landscape from our around-the-world trip" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Tasmania</div>
           <div class="destCardText">The unexpected showstopper of the whole trip — jaw-dropping wilderness and one of the most surprising places we visited. Tasmania has its own dedicated page.</div>
