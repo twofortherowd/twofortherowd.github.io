@@ -189,7 +189,20 @@
 <section class="card">
 <h2>Our Vichy memories</h2>
 <p>Some of our own photos from Vichy — leafy parks, elegant spa-town architecture and the grand buildings that give the city its distinctive Belle Époque character.</p>
-<div class="photo-grid-2">
+<div class="photo-grid-2 vichy-gallery" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
+<style>
+.vichy-gallery img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+@media(max-width:640px){
+  .vichy-gallery{grid-template-columns:1fr !important;}
+  .vichy-gallery img{height:230px;}
+}
+</style>
 <img src="../img/vichy.jpg" alt="Leafy park and water in Vichy, France" loading="lazy">
 <img src="../img/vichy2.jpg" alt="Elegant historic building in Vichy, France" loading="lazy">
 <img src="../img/vichy3.jpg" alt="Illuminated Belle Époque architecture in Vichy at night" loading="lazy">
