@@ -208,8 +208,21 @@
 <section class="card">
 <h2>Our Nice memories</h2>
 <p>Some of our own photos from Nice and the Côte d'Azur — blue Mediterranean views, grand architecture and the waterfront.</p>
-<div class="photo-grid-2">
-<img src="../img/nice .jpg" alt="View over Nice and the Mediterranean on our Côte d'Azur trip" loading="lazy">
+<div class="photo-grid-2 cotedazur-gallery" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
+<style>
+.cotedazur-gallery img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+@media(max-width:640px){
+  .cotedazur-gallery{grid-template-columns:1fr !important;}
+  .cotedazur-gallery img{height:230px;}
+}
+</style>
+<img src="../img/nice%20.jpg" alt="View over Nice and the Mediterranean on our Côte d'Azur trip" loading="lazy">
 <img src="../img/nice2.jpg" alt="Coastal view in Nice on the French Riviera" loading="lazy">
 <img src="../img/nice3.jpg" alt="Architecture and sightseeing in Nice, France" loading="lazy">
 <img src="../img/nice4.jpg" alt="Nice waterfront and marina on the Côte d'Azur" loading="lazy">
