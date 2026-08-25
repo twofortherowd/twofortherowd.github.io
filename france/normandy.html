@@ -237,7 +237,20 @@
 <section class="card">
 <h2>Our Normandy memories</h2>
 <p>Some of our own photos from Normandy — historic churches, remarkable interiors and reminders of the region's wartime history.</p>
-<div class="photo-grid-2">
+<div class="photo-grid-2 normandy-gallery" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
+<style>
+.normandy-gallery img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+@media(max-width:640px){
+  .normandy-gallery{grid-template-columns:1fr !important;}
+  .normandy-gallery img{height:230px;}
+}
+</style>
 <img src="../img/normandy.jpg" alt="Historic church architecture in Normandy, France" loading="lazy">
 <img src="../img/normandy2.jpg" alt="Interior of a historic church in Normandy on our France trip" loading="lazy">
 <img src="../img/normandy3.jpg" alt="Ornate historic religious detail in Normandy, France" loading="lazy">
