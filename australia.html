@@ -151,6 +151,58 @@
     }
 
   </style>
+
+<style>
+.destination-card img,
+.guide-card img,
+.dest-card img {
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  display:block;
+}
+@media(max-width:640px){
+  .destination-card img,
+  .guide-card img,
+  .dest-card img { height:190px; }
+}
+</style>
+
+
+<style>
+/* Final destination-card photo sizing */
+.destCardMedia{
+  height:155px !important;
+  overflow:hidden !important;
+  position:relative;
+}
+.destCardMedia img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  display:block !important;
+}
+.wildlife-memory{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:20px;
+  align-items:center;
+}
+.wildlife-memory img{
+  width:220px;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+  display:block;
+}
+@media(max-width:640px){
+  .destCardMedia{height:190px !important;}
+  .wildlife-memory{grid-template-columns:1fr;}
+  .wildlife-memory img{width:100%;height:240px;}
+}
+</style>
+
 </head>
 <body>
 
@@ -241,7 +293,7 @@
 
       <!-- Perth -->
       <a class="destCard" href="/australia/perth.html">
-        <div class="destCardMedia mediaGold"><span class="destCardIcon">🌇</span></div>
+        <div class="destCardMedia mediaGold"><img src="/img/Perth.jpg" alt="Perth skyline and coast from our Australia trip" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Perth</div>
           <div class="destCardText">Where our Australian chapter began — flying in from Singapore, a private taxi driver's city tour and a couple of nights in the most isolated major city on earth.</div>
@@ -251,7 +303,7 @@
 
       <!-- Cairns -->
       <a class="destCard" href="/australia/cairns.html">
-        <div class="destCardMedia mediaBlue"><span class="destCardIcon">🐠</span></div>
+        <div class="destCardMedia mediaBlue"><img src="/img/diving-GBR.jpg" alt="Diving on the Great Barrier Reef during our Cairns trip" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Cairns & the Great Barrier Reef</div>
           <div class="destCardText">Our base for two dives on the Great Barrier Reef — one of our favourite experiences of the entire adventure.</div>
@@ -261,7 +313,7 @@
 
       <!-- K'gari -->
       <a class="destCard" href="/australia/kgari.html">
-        <div class="destCardMedia mediaSand"><span class="destCardIcon">🏝️</span></div>
+        <div class="destCardMedia mediaSand"><img src="/img/fraser-island.jpg" alt="K'gari, formerly Fraser Island, on our Australia trip" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">K'gari (Fraser Island)</div>
           <div class="destCardText">The world's largest sand island — freshwater lakes among vast sand dunes, wild dingoes and one of Queensland's most extraordinary landscapes.</div>
@@ -271,17 +323,17 @@
 
       <!-- Whitsundays -->
       <a class="destCard" href="/australia/whitsundays.html">
-        <div class="destCardMedia mediaTeal"><span class="destCardIcon">⛵</span></div>
+        <div class="destCardMedia mediaTeal"><img src="/img/whitsundays.jpg" alt="Whitsundays and Daydream Island during our Australia travels" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">The Whitsundays</div>
-          <div class="destCardText">Our catamaran day on the Coral Sea, surrounded by the Whitsunday Islands and the famous white sand of Whitehaven Beach.</div>
+          <div class="destCardText">Our time in the Whitsundays included Daydream Island, surrounded by the Coral Sea and some of Queensland's most memorable island scenery.</div>
           <span class="destCardCTA">See the Whitsundays →</span>
         </div>
       </a>
 
       <!-- Byron Bay -->
       <a class="destCard" href="/australia/byron-bay.html">
-        <div class="destCardMedia mediaGreen"><span class="destCardIcon">🌴</span></div>
+        <div class="destCardMedia mediaGreen"><img src="/img/byron-bay.jpg" alt="Byron Bay beach during our East Coast Australia trip" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Byron Bay</div>
           <div class="destCardText">Australia's easternmost point — an easy-going East Coast stop, plus a memorable ranch overnight during our trip.</div>
@@ -300,8 +352,12 @@
       </a>
 
       <!-- Canberra -->
-      <a class="destCard" href="/australia/canberra.html">
-        <div class="destCardMedia mediaGold"><span class="destCardIcon">🏛️</span></div>
+      <a class="destCard" href="/australia/brisbane.html">
+<div class="destCardMedia"><img src="/img/brisbane.jpg" alt="Brisbane skyline during our Australia trip" loading="lazy"></div>
+<div class="destCardBody"><h3>Brisbane</h3><p>Queensland's river city — another stop from our Australia travels and a natural gateway to the wider south-east Queensland region.</p><span class="destCardLink">Read our Brisbane story →</span></div>
+</a>
+<a class="destCard" href="/australia/canberra.html">
+        <div class="destCardMedia mediaGold"><img src="/img/Canberra.jpg" alt="Canberra city architecture during our Australia trip" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Canberra</div>
           <div class="destCardText">Australia's planned capital — parliament, the National War Memorial and the lake at the heart of it, on the road south from Sydney.</div>
@@ -311,7 +367,7 @@
 
       <!-- Melbourne -->
       <a class="destCard" href="/australia/melbourne.html">
-        <div class="destCardMedia mediaRed"><span class="destCardIcon">🐧</span></div>
+        <div class="destCardMedia mediaRed"><img src="/img/twelve-apostles4.jpg" alt="Twelve Apostles on our Great Ocean Road trip from Melbourne" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Melbourne, Great Ocean Road & Twelve Apostles</div>
           <div class="destCardText">Coffee and laneways, a helicopter flight over the Twelve Apostles and the Phillip Island little penguins waddling up the beach at dusk.</div>
@@ -321,7 +377,7 @@
 
       <!-- Alice Springs -->
       <a class="destCard" href="/australia/alice-springs.html">
-        <div class="destCardMedia"><img src="/img/Oz5.jpg" alt="Northern Territory — Two for the Row'd" loading="lazy"></div>
+        <div class="destCardMedia mediaSand"><img src="/img/Alice-Springs.jpg" alt="Royal Flying Doctor Service aircraft in Alice Springs" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Alice Springs</div>
           <div class="destCardText">A memorable Red Centre stop — the Royal Flying Doctor Service museum, Outback pub atmosphere and the landscapes around Alice Springs.</div>
@@ -331,7 +387,7 @@
 
       <!-- Uluru -->
       <a class="destCard" href="/australia/uluru.html">
-        <div class="destCardMedia"><img src="/img/Oz6.jpg" alt="Uluru landscape — Two for the Row'd" loading="lazy"></div>
+        <div class="destCardMedia mediaRed"><img src="/img/Ayers-Rock.jpg" alt="Our visit to Uluru, then commonly called Ayers Rock" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Uluru</div>
           <div class="destCardText">Three unforgettable nights at the heart of the Red Centre. Some places are famous for a reason.</div>
@@ -345,7 +401,7 @@
     <div style="margin-top:22px;">
       <p style="font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:10px;">A linked journey</p>
       <a class="destCard destTasmania" href="/tasmania.html" style="max-width:100%;">
-        <div class="destCardMedia mediaGreen"><span class="destCardIcon">🏔️</span></div>
+        <div class="destCardMedia mediaGreen"><img src="/img/taz.jpg" alt="Tasmania landscape from our around-the-world trip" loading="lazy"></div>
         <div class="destCardBody">
           <div class="destCardTitle">Tasmania</div>
           <div class="destCardText">The unexpected showstopper of the whole trip — jaw-dropping wilderness and one of the most surprising places we visited. Tasmania has its own dedicated page.</div>
@@ -518,18 +574,55 @@
   </div>
 
   <!-- TOURRADAR -->
-  <div class="section-divider">🧭 Book an Australia Tour</div>
-  <div class="card heroCard">
-    <h2>Book an Australia tour through TourRadar</h2>
-    <p>Australia is enormous and the highlights are spread across a vast country. A structured tour takes the stress out of coordinating transport, accommodation and the route between stops — and means you see far more than you would trying to piece it all together yourself. TourRadar has brilliant Australia tours covering the East Coast, the Northern Territory and beyond.</p>
-    <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/272542?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Australia tours on TourRadar →</a>
-    </div>
-    <p class="disclosure"><strong>Disclosure:</strong> Affiliate link — if you book through it we may earn a small commission at no extra cost to you.</p>
-  </div>
+  
+<div class="section-divider">🐨 One Very Australian Memory</div>
+<section class="card">
+<div class="wildlife-memory">
+<img src="/img/koala.jpg" alt="Koala we saw during our Australia travels" loading="lazy">
+<div>
+<div class="eyebrow"><span class="badge">Our Australia archive</span></div>
+<h2>And yes — there had to be a koala</h2>
+<p>Among all the cities, road trips, beaches and huge landscapes, Australia's wildlife was part of the experience too. This little fella earns a place in the travel archive.</p>
+</div>
+</div>
+</section>
 
-  <!-- GYG -->
-  <div class="section-divider">🎟 Book Australia Experiences</div>
+<div class="section-divider">🧭 Explore Australia with TourRadar</div>
+<section class="card heroCard" id="australia-tourradar">
+<div class="eyebrow"><span class="badge">🇦🇺 Multi-day tours</span><span class="badge blue">TourRadar</span></div>
+<h2>Four very different ways to see Australia</h2>
+<p>Australia is enormous, so an organised multi-day trip can make a lot of sense if you'd rather have the route, transport and major arrangements brought together for you. These four options match different parts of the country and different styles of trip.</p>
+
+<div class="destination-grid">
+<a class="destination-card" href="https://www.tourradar.com/t/1869?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+<div class="dest-icon">🏔️</div><h3>Tasmania</h3>
+<p>A dedicated Tasmania itinerary for anyone who wants to spend proper time exploring the island rather than treating it as an add-on.</p>
+<span class="open-guide">View Tasmania tour →</span>
+</a>
+
+<a class="destination-card" href="https://www.tourradar.com/t/19089?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+<div class="dest-icon">🇦🇺</div><h3>Oz Intro — 10 Days</h3>
+<p>A compact Australia introduction if you want a structured first taste of the country without committing to a huge itinerary.</p>
+<span class="open-guide">View 10-day Oz Intro →</span>
+</a>
+
+<a class="destination-card" href="https://www.tourradar.com/t/248793?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+<div class="dest-icon">🌊</div><h3>Wet Coast</h3>
+<p>An East Coast-style adventure option for travellers who want the beaches, tropical side and social road-trip feel of Australia.</p>
+<span class="open-guide">View Wet Coast tour →</span>
+</a>
+
+<a class="destination-card" href="https://www.tourradar.com/t/157597?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+<div class="dest-icon">🚁</div><h3>Great Ocean Road</h3>
+<p>A natural fit with one of our own standout Australia memories — the Great Ocean Road and Twelve Apostles, which we saw by helicopter.</p>
+<span class="open-guide">View Great Ocean Road tour →</span>
+</a>
+</div>
+
+<p class="disclosure"><strong>Disclosure:</strong> These are affiliate links. If you book through them, we may earn a commission at no extra cost to you.</p>
+</section>
+
+<div class="section-divider">🎟 Book Australia Experiences</div>
   <div class="card">
     <h2>Book Australia experiences with GetYourGuide</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">Great Barrier Reef dives, Sydney Opera House tours, Twelve Apostles helicopter flights, Uluru experiences, Phillip Island penguin tours and much more:</p>
@@ -616,7 +709,7 @@
     <h2 style="text-align:center;">Planning your own Australia trip?</h2>
     <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">Dive the reef. Get out on the Whitsundays. Go to the Opera House. Drive to the Twelve Apostles. Spend three nights at Uluru. Australia rewards every bit of effort you put into it.</p>
     <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://www.tourradar.com/t/272542?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Australia tours on TourRadar →</a>
+      <a class="btn-primary" href="#australia-tourradar" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See our Australia tour picks →</a>
       <a class="btn-gold" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse activities on GYG →</a>
       <a class="btn-outline" href="https://twofortherowd.com/">Back to main site →</a>
     </div>
