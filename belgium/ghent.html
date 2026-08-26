@@ -100,6 +100,21 @@
     footer { margin-top: 10px; padding: 20px 0 12px; font-size: 13px; line-height: 1.6; color: var(--muted); text-align: center; }
     footer a { color: var(--muted); font-weight: 600; }
     @media (max-width: 768px) { .photo-grid-2 { grid-template-columns: 1fr; } .links { flex-direction: column; } .links a { text-align: center; justify-content: center; } }
+  
+    .ghent-feature-photo {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 12px;
+      margin: 16px 0;
+      box-shadow: var(--shadow-md);
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .ghent-feature-photo { height: 220px; }
+    }
+
   </style>
 
 <script>
@@ -193,7 +208,7 @@ function nextGhentPhoto(img){
         This is where Ghent differentiates itself from Bruges.
       </p>
 
-      <img src="/img/ghent2.jpg" data-candidates="/img/ghent2.jpg|/img/ghent2.jpeg|/img/ghent2.JPG|/img/ghent2.JPEG|/img/ghent2.png|/img/ghent2.PNG|/img/ghent2.webp|/img/ghent2.WEBP|/img/ghent.jpg|/img/ghent.jpeg|/img/ghent.JPG|/img/ghent.JPEG|/img/ghent.png|/img/ghent.PNG|/img/ghent.webp|/img/ghent.WEBP|/img/ghent3.jpg|/img/ghent3.jpeg|/img/ghent3.JPG|/img/ghent3.JPEG|/img/ghent3.png|/img/ghent3.PNG|/img/ghent3.webp|/img/ghent3.WEBP|/img/ghent4.jpg|/img/ghent4.jpeg|/img/ghent4.JPG|/img/ghent4.JPEG|/img/ghent4.png|/img/ghent4.PNG|/img/ghent4.webp|/img/ghent4.WEBP" data-candidate-index="0" onerror="nextGhentPhoto(this)" alt="Ghent canals and historic architecture" loading="lazy">
+      <img src="/img/ghent2.jpg" data-candidates="/img/ghent2.jpg|/img/ghent2.jpeg|/img/ghent2.JPG|/img/ghent2.JPEG|/img/ghent2.png|/img/ghent2.PNG|/img/ghent2.webp|/img/ghent2.WEBP|/img/ghent.jpg|/img/ghent.jpeg|/img/ghent.JPG|/img/ghent.JPEG|/img/ghent.png|/img/ghent.PNG|/img/ghent.webp|/img/ghent.WEBP|/img/ghent3.jpg|/img/ghent3.jpeg|/img/ghent3.JPG|/img/ghent3.JPEG|/img/ghent3.png|/img/ghent3.PNG|/img/ghent3.webp|/img/ghent3.WEBP|/img/ghent4.jpg|/img/ghent4.jpeg|/img/ghent4.JPG|/img/ghent4.JPEG|/img/ghent4.png|/img/ghent4.PNG|/img/ghent4.webp|/img/ghent4.WEBP" data-candidate-index="0" onerror="nextGhentPhoto(this)" alt="Ghent canals and historic architecture" loading="lazy" class="ghent-feature-photo">
 
       <h3>Graslei & Korenlei</h3>
       <p>
@@ -208,8 +223,8 @@ function nextGhentPhoto(img){
       </p>
 
       <div class="photo-grid-2" style="margin:16px 0;">
-        <img src="/img/ghent3.jpg" data-candidates="/img/ghent3.jpg|/img/ghent3.jpeg|/img/ghent3.JPG|/img/ghent3.JPEG|/img/ghent3.png|/img/ghent3.PNG|/img/ghent3.webp|/img/ghent3.WEBP|/img/ghent.jpg|/img/ghent.jpeg|/img/ghent.JPG|/img/ghent.JPEG|/img/ghent.png|/img/ghent.PNG|/img/ghent.webp|/img/ghent.WEBP|/img/ghent2.jpg|/img/ghent2.jpeg|/img/ghent2.JPG|/img/ghent2.JPEG|/img/ghent2.png|/img/ghent2.PNG|/img/ghent2.webp|/img/ghent2.WEBP|/img/ghent4.jpg|/img/ghent4.jpeg|/img/ghent4.JPG|/img/ghent4.JPEG|/img/ghent4.png|/img/ghent4.PNG|/img/ghent4.webp|/img/ghent4.WEBP" data-candidate-index="0" onerror="nextGhentPhoto(this)" alt="Ghent street scene" loading="lazy">
-        <img src="/img/ghent4.jpg" data-candidates="/img/ghent4.jpg|/img/ghent4.jpeg|/img/ghent4.JPG|/img/ghent4.JPEG|/img/ghent4.png|/img/ghent4.PNG|/img/ghent4.webp|/img/ghent4.WEBP|/img/ghent.jpg|/img/ghent.jpeg|/img/ghent.JPG|/img/ghent.JPEG|/img/ghent.png|/img/ghent.PNG|/img/ghent.webp|/img/ghent.WEBP|/img/ghent2.jpg|/img/ghent2.jpeg|/img/ghent2.JPG|/img/ghent2.JPEG|/img/ghent2.png|/img/ghent2.PNG|/img/ghent2.webp|/img/ghent2.WEBP|/img/ghent3.jpg|/img/ghent3.jpeg|/img/ghent3.JPG|/img/ghent3.JPEG|/img/ghent3.png|/img/ghent3.PNG|/img/ghent3.webp|/img/ghent3.WEBP" data-candidate-index="0" onerror="nextGhentPhoto(this)" alt="Ghent historic area" loading="lazy">
+        <img src="/img/ghent3.jpg" data-candidates="/img/ghent3.jpg|/img/ghent3.jpeg|/img/ghent3.JPG|/img/ghent3.JPEG|/img/ghent3.png|/img/ghent3.PNG|/img/ghent3.webp|/img/ghent3.WEBP|/img/ghent.jpg|/img/ghent.jpeg|/img/ghent.JPG|/img/ghent.JPEG|/img/ghent.png|/img/ghent.PNG|/img/ghent.webp|/img/ghent.WEBP|/img/ghent2.jpg|/img/ghent2.jpeg|/img/ghent2.JPG|/img/ghent2.JPEG|/img/ghent2.png|/img/ghent2.PNG|/img/ghent2.webp|/img/ghent2.WEBP|/img/ghent4.jpg|/img/ghent4.jpeg|/img/ghent4.JPG|/img/ghent4.JPEG|/img/ghent4.png|/img/ghent4.PNG|/img/ghent4.webp|/img/ghent4.WEBP" data-candidate-index="0" onerror="nextGhentPhoto(this)" alt="Ghent street scene" loading="lazy" class="ghent-feature-photo">
+        <img src="/img/ghent4.jpg" data-candidates="/img/ghent4.jpg|/img/ghent4.jpeg|/img/ghent4.JPG|/img/ghent4.JPEG|/img/ghent4.png|/img/ghent4.PNG|/img/ghent4.webp|/img/ghent4.WEBP|/img/ghent.jpg|/img/ghent.jpeg|/img/ghent.JPG|/img/ghent.JPEG|/img/ghent.png|/img/ghent.PNG|/img/ghent.webp|/img/ghent.WEBP|/img/ghent2.jpg|/img/ghent2.jpeg|/img/ghent2.JPG|/img/ghent2.JPEG|/img/ghent2.png|/img/ghent2.PNG|/img/ghent2.webp|/img/ghent2.WEBP|/img/ghent3.jpg|/img/ghent3.jpeg|/img/ghent3.JPG|/img/ghent3.JPEG|/img/ghent3.png|/img/ghent3.PNG|/img/ghent3.webp|/img/ghent3.WEBP" data-candidate-index="0" onerror="nextGhentPhoto(this)" alt="Ghent historic area" loading="lazy" class="ghent-feature-photo">
       </div>
 
       <h3>The food scene</h3>
