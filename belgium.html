@@ -348,7 +348,7 @@
       display: flex; flex-direction: column;
     }
     .dest-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .dest-card-img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; }
+    .dest-card-img { width: 100%; height: 190px; object-fit: cover; object-position: center; display: block; background: #f2efe6; }
     .dest-card-content { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
     .dest-card-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
     .dest-card-desc { font-size: 14px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 12px; flex: 1; }
@@ -404,6 +404,7 @@
 
     @media (max-width: 768px) {
       .destination-cards { grid-template-columns: 1fr; }
+      .dest-card-img { height: 210px; }
       .dest-tabs { justify-content: flex-start; }
       .dest-tab { font-size: 13px; padding: 8px 12px; }
     }
@@ -415,6 +416,20 @@
       .drive-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
+
+  <script>
+    function tryBelgiumImage(img) {
+      const exts = ['.jpg','.jpeg','.JPG','.JPEG','.png','.PNG','.webp','.WEBP'];
+      let i = Number(img.dataset.imgIndex || 0) + 1;
+      if (i < exts.length) {
+        img.dataset.imgIndex = i;
+        img.src = img.dataset.imgBase + exts[i];
+      } else {
+        img.onerror = null;
+      }
+    }
+  </script>
+
 </head>
 
 <body>
@@ -550,7 +565,7 @@
     <div class="destination-cards">
       <!-- Brussels -->
       <div class="dest-card">
-        <img src="img/brussels.jpg" data-img-base="img/brussels" alt="Grand Place Brussels Belgium" loading="lazy">
+        <img class="dest-card-img" src="img/brussels.jpg" data-img-base="img/brussels" data-img-index="0" onerror="tryBelgiumImage(this)" alt="Grand Place Brussels Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Brussels</h3>
           <p class="dest-card-desc">
@@ -562,7 +577,7 @@
 
       <!-- Bruges -->
       <div class="dest-card">
-        <img src="img/bruges.jpg" data-img-base="img/bruges" alt="Bruges canals Belgium" loading="lazy">
+        <img class="dest-card-img" src="img/bruges.jpg" data-img-base="img/bruges" data-img-index="0" onerror="tryBelgiumImage(this)" alt="Bruges canals Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Bruges</h3>
           <p class="dest-card-desc">
@@ -574,7 +589,7 @@
 
       <!-- Ghent -->
       <div class="dest-card">
-        <img src="img/ghent.jpg" data-img-base="img/ghent" alt="Ghent Belgium" loading="lazy">
+        <img class="dest-card-img" src="img/ghent.jpg" data-img-base="img/ghent" data-img-index="0" onerror="tryBelgiumImage(this)" alt="Ghent Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Ghent</h3>
           <p class="dest-card-desc">
@@ -586,7 +601,7 @@
 
       <!-- Antwerp -->
       <div class="dest-card">
-        <img src="img/antwerp.jpg" data-img-base="img/antwerp" alt="Antwerp Belgium" loading="lazy">
+        <img class="dest-card-img" src="img/antwerp.jpg" data-img-base="img/antwerp" data-img-index="0" onerror="tryBelgiumImage(this)" alt="Antwerp Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Antwerp</h3>
           <p class="dest-card-desc">
@@ -598,7 +613,7 @@
 
       <!-- Liège -->
       <div class="dest-card">
-        <img src="img/liege.jpg" data-img-base="img/liege" alt="Liège Belgium" loading="lazy">
+        <img class="dest-card-img" src="img/liege.jpg" data-img-base="img/liege" data-img-index="0" onerror="tryBelgiumImage(this)" alt="Liège Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Liège</h3>
           <p class="dest-card-desc">
@@ -610,7 +625,7 @@
 
       <!-- Spa -->
       <div class="dest-card">
-        <img src="img/spa.jpg" data-img-base="img/spa" alt="Spa Belgium" loading="lazy">
+        <img class="dest-card-img" src="img/spa.jpg" data-img-base="img/spa" data-img-index="0" onerror="tryBelgiumImage(this)" alt="Spa Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Spa</h3>
           <p class="dest-card-desc">
@@ -1088,24 +1103,5 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
-
-  <script>
-    // Image-extension fallback: Windows often hides extensions, while GitHub is case-sensitive.
-    // If .jpg is not the stored extension, try the common alternatives automatically.
-    document.querySelectorAll('img[data-img-base]').forEach(function(img){
-      const extensions = ['.jpg','.jpeg','.JPG','.JPEG','.png','.PNG','.webp','.WEBP'];
-      let index = 0;
-      img.addEventListener('error', function tryNext(){
-        index += 1;
-        if (index < extensions.length) {
-          img.src = img.dataset.imgBase + extensions[index];
-        } else {
-          img.removeEventListener('error', tryNext);
-        }
-      });
-    });
-  </script>
-
 </body>
 </html>
