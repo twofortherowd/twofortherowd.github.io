@@ -285,6 +285,20 @@
       .links a { text-align: center; justify-content: center; }
     }
   </style>
+
+<script>
+function nextImageCandidate(img){
+  const candidates = (img.dataset.candidates || '').split('|');
+  let i = Number(img.dataset.candidateIndex || 0) + 1;
+  if (i < candidates.length) {
+    img.dataset.candidateIndex = i;
+    img.src = candidates[i];
+  } else {
+    img.onerror = null;
+  }
+}
+</script>
+
 </head>
 
 <body>
@@ -327,7 +341,7 @@
         that transports you back in time. Bruges delivers everything you hope for.
       </p>
 
-      <img src="../img/bruges.jpg" data-img-base="../img/bruges" data-img-index="0" onerror="tryImageExt(this)" alt="Bruges historic centre and canals" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin:4px 0 18px;box-shadow:var(--shadow-md);">
+      <img src="/img/bruges.jpg" data-candidates="/img/bruges.jpg|/img/bruges.jpeg|/img/bruges.JPG|/img/bruges.JPEG|/img/bruges.png|/img/bruges.PNG|/img/bruges.webp|/img/bruges.WEBP" data-candidate-index="0" onerror="nextImageCandidate(this)" alt="Historic Bruges architecture and canals" style="width:100%;height:260px;object-fit:cover;border-radius:12px;display:block;">
 
       <div class="links">
         <a class="btn-primary" href="../belgium.html">
@@ -373,7 +387,7 @@
         Start at the Markt, the central square. The Belfry rises above you — the bell tower has dominated the square for centuries. Around it, historic guild houses and buildings, now cafés and restaurants. Sit with a Belgian beer and watch the square come alive.
       </p>
 
-      <img src="../img/bruges2.jpg" data-img-base="../img/bruges2" data-img-index="0" onerror="tryImageExt(this)" alt="Bruges medieval square and architecture" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;margin:16px 0;box-shadow:var(--shadow-md);">
+      <img src="/img/bruges2.jpg" data-candidates="/img/bruges2.jpg|/img/bruges2.jpeg|/img/bruges2.JPG|/img/bruges2.JPEG|/img/bruges2.png|/img/bruges2.PNG|/img/bruges2.webp|/img/bruges2.WEBP" data-candidate-index="0" onerror="nextImageCandidate(this)" alt="Bruges historic centre" style="width:100%;height:260px;object-fit:cover;border-radius:12px;display:block;" loading="lazy">
 
       <h3>The canals</h3>
       <p>
@@ -389,8 +403,8 @@
       </p>
 
       <div class="photo-grid-2" style="margin:16px 0;">
-        <img src="../img/bruges3.jpg" data-img-base="../img/bruges3" data-img-index="0" onerror="tryImageExt(this)" alt="Bruges canal and buildings" loading="lazy">
-        <img src="../img/bruges4.jpg" data-img-base="../img/bruges4" data-img-index="0" onerror="tryImageExt(this)" alt="Bruges historic street" loading="lazy">
+        <img src="/img/bruges3.jpg" data-candidates="/img/bruges3.jpg|/img/bruges3.jpeg|/img/bruges3.JPG|/img/bruges3.JPEG|/img/bruges3.png|/img/bruges3.PNG|/img/bruges3.webp|/img/bruges3.WEBP" data-candidate-index="0" onerror="nextImageCandidate(this)" alt="Bruges medieval architecture" style="width:100%;height:260px;object-fit:cover;border-radius:12px;display:block;" loading="lazy">
+        <img src="/img/bruges4.jpg" data-candidates="/img/bruges4.jpg|/img/bruges4.jpeg|/img/bruges4.JPG|/img/bruges4.JPEG|/img/bruges4.png|/img/bruges4.PNG|/img/bruges4.webp|/img/bruges4.WEBP" data-candidate-index="0" onerror="nextImageCandidate(this)" alt="Bruges streets and historic buildings" style="width:100%;height:260px;object-fit:cover;border-radius:12px;display:block;" loading="lazy">
       </div>
 
       <h3>Chocolate and cafés</h3>
