@@ -24,13 +24,45 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a Morocco guided tour worth it?","acceptedAnswer":{"@type":"Answer","text":"Yes — genuinely. The distances involved and the complexity of getting around Morocco make a guided tour much better value than trying to piece it together yourself. You see more, stress less, and get access to things you would never find on your own."}},{"@type":"Question","name":"Is TourRadar reliable for Morocco tours?","acceptedAnswer":{"@type":"Answer","text":"We booked our Morocco tour through TourRadar and had zero issues. It is a reputable, well-established platform and the booking process was smooth. We used Morhara Morocco Tours as the operator and would recommend them."}},{"@type":"Question","name":"How many days do you need in Morocco?","acceptedAnswer":{"@type":"Answer","text":"To do Morocco properly — including Marrakech, the Atlas Mountains, and the Sahara — you need at least 7 to 10 days. Anything less and you will be rushing."}},{"@type":"Question","name":"Is Marrakech enough on its own?","acceptedAnswer":{"@type":"Answer","text":"Marrakech is brilliant and worth 2 to 3 days on its own. But if you only visit Marrakech, you will miss the very best of Morocco — the desert, the kasbahs, and the Atlas Mountains. If you can, do the full tour."}},{"@type":"Question","name":"Should you do a guided tour or book Morocco independently?","acceptedAnswer":{"@type":"Answer","text":"For a first trip to Morocco, especially if you want to reach the Sahara, a guided tour is the better option. The road distances are long, logistics are complicated, and a local guide adds context and access you simply will not get solo."}},{"@type":"Question","name":"Is Morocco good for gluten-free travellers?","acceptedAnswer":{"@type":"Answer","text":"Better than you would expect. Tagines, grilled meats, rice dishes and lots of naturally gluten-free Moroccan food make it manageable. Just be clear when ordering and you will be fine."}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
   <style>
-    :root{--gold:#ffd84a;--gold-dark:#e8c235;--gold-pale:#fff9e0;--ink:#1a1208;--ink-soft:#4a3f28;--muted:#7a6e58;--cream:#fdf8ef;--white:#ffffff;--border:rgba(26,18,8,.10);--border-mid:rgba(26,18,8,.16);--card-bg:rgba(255,255,255,.88);--shadow-sm:0 2px 8px rgba(26,18,8,.07);--shadow-md:0 8px 24px rgba(26,18,8,.10);--shadow-lg:0 16px 48px rgba(26,18,8,.13);--radius-sm:10px;--radius-md:16px;--radius-lg:22px;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans','Segoe UI',Arial,sans-serif;--sand:#b8780a;--sand-light:#d4952a;}
+    :root{
+      --gold:#ffd84a;
+      --gold-dark:#e8c235;
+      --gold-pale:#fff9e0;
+      --ink:#1a1208;
+      --ink-soft:#4a3f28;
+      --muted:#7a6e58;
+      --cream:#fdf8ef;
+      --white:#ffffff;
+      --border:rgba(26,18,8,.10);
+      --border-mid:rgba(26,18,8,.16);
+      --card-bg:rgba(255,255,255,.90);
+      --shadow-sm:0 2px 8px rgba(26,18,8,.07);
+      --shadow-md:0 8px 24px rgba(26,18,8,.10);
+      --shadow-lg:0 16px 48px rgba(26,18,8,.13);
+      --shadow-xl:0 24px 64px rgba(26,18,8,.18);
+      --radius-sm:10px;
+      --radius-md:16px;
+      --radius-lg:22px;
+      --radius-xl:28px;
+      --font-display:'Playfair Display',Georgia,serif;
+      --font-body:'DM Sans','Segoe UI',Arial,sans-serif;
+      --font-hand:'Caveat',cursive;
+      --sand:#b8780a;
+      --sand-dark:#93600a;
+      --sand-light:#d4952a;
+      --terracotta:#c0552b;
+      --palm:#2d6a4f;
+    }
     *,*::before,*::after{box-sizing:border-box;}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-    body{margin:0;font-family:var(--font-body);font-size:15px;font-weight:400;line-height:1.7;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 80% 60% at 10% 0%,rgba(255,216,74,.22) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 90% 100%,rgba(184,120,10,.12) 0%,transparent 55%);}
+    body{margin:0;font-family:var(--font-body);font-size:15px;font-weight:400;line-height:1.7;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:
+      radial-gradient(ellipse 80% 60% at 10% 0%,rgba(255,216,74,.22) 0%,transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 100%,rgba(184,120,10,.12) 0%,transparent 55%),
+      radial-gradient(ellipse 50% 40% at 50% 40%,rgba(192,85,43,.06) 0%,transparent 60%);
+    }
     *{position:relative;z-index:1;}
     h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.18;margin-top:0;}
     h1{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;margin-bottom:14px;}
@@ -40,365 +72,588 @@
     ul,ol{margin:0 0 .9rem;padding-left:1.3rem;}li{margin-bottom:.35rem;}
     a{color:inherit;}strong{font-weight:700;}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-    .wrap{max-width:860px;margin:0 auto;padding:0 16px 60px;}
-    .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:static;top:auto;z-index:1;}
+
+    .wrap{max-width:900px;margin:0 auto;padding:0 16px 60px;}
+
+    /* TOP BAR */
+    .backBar{background:rgba(253,248,239,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:50;}
     .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
     .backBar a:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
-    .backBar .site-name{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--ink);text-decoration:none;}
-    .card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-md);padding:24px 26px;margin-bottom:16px;backdrop-filter:blur(4px);transition:transform .18s ease,box-shadow .18s ease;}
-    .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
-    .heroCard{background:linear-gradient(160deg,#ffffff 0%,#fffbe8 55%,#fff3c4 100%);border-color:rgba(232,194,53,.3);}
-    .goldCard{background:linear-gradient(135deg,var(--gold) 0%,#ffe87a 100%);border:1px solid var(--gold-dark);box-shadow:0 10px 32px rgba(232,194,53,.3);}
-    .sandCard{background:linear-gradient(160deg,#ffffff 0%,#fdf3e3 55%,#f5e0c0 100%);border-color:rgba(184,120,10,.2);}
-    .greenCard{background:linear-gradient(160deg,#ffffff 0%,#f0faf4 55%,#d8f3e8 100%);border-color:rgba(45,106,79,.2);}
-    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--ink);color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 20px rgba(26,18,8,.2);transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
-    .btn-primary:hover{background:#2e2410;transform:translateY(-2px);color:var(--white);}
-    .btn-gold{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px rgba(232,194,53,.35);transition:transform .15s ease,box-shadow .15s ease;}
-    .btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px);color:var(--ink);}
-    .btn-outline{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:var(--white);color:var(--ink);border:1.5px solid var(--border-mid);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
-    .btn-outline:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);color:var(--ink);}
-    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
-    .badge{display:inline-block;padding:4px 11px;border-radius:999px;font-size:12px;font-weight:700;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);}
-    .badge.outline{background:rgba(255,255,255,.8);border-color:var(--border-mid);color:var(--ink-soft);}
-    .badge.sand{background:rgba(184,120,10,.12);border-color:rgba(184,120,10,.3);color:var(--sand);}
-    .eyebrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;}
-    .section-label{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);margin:6px 0 10px;}
-    .hero-headline{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.12;margin-bottom:14px;}
-    .hero-headline em{font-style:italic;color:var(--sand);}
-    .hero-lead{font-size:1.05rem;line-height:1.7;color:var(--ink-soft);margin-bottom:20px;}
-    .route-strip{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0;}
-    .route-stop{background:rgba(255,255,255,.8);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;}
-    .route-arrow{color:var(--muted);font-size:14px;}
-    .diary-block{background:rgba(255,255,255,.7);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 14px 14px 0;padding:16px 20px;margin:16px 0;font-size:14px;line-height:1.75;color:var(--ink-soft);}
-    .diary-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:8px;}
-    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:10px;}
-    .highlight-item{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px;}
-    .highlight-icon{font-size:22px;margin-bottom:6px;}
-    .highlight-title{font-weight:700;font-size:14px;margin-bottom:4px;}
-    .highlight-text{font-size:13px;color:var(--ink-soft);line-height:1.5;}
-    .know-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px;}
-    .know-item{background:rgba(255,255,255,.72);border:1px solid var(--border);border-radius:14px;padding:16px;}
-    .know-icon{font-size:20px;margin-bottom:6px;}
-    .know-title{font-weight:700;font-size:14px;margin-bottom:4px;}
-    .know-text{font-size:13px;color:var(--ink-soft);line-height:1.5;}
-    .faqItem{border-bottom:1px dashed var(--border-mid);padding:14px 0;}
-    .faqItem:last-child{border-bottom:none;padding-bottom:0;}
-    .faqQ{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;user-select:none;}
-    .faqQ::after{content:"+";font-size:1.4rem;line-height:1;font-weight:400;flex-shrink:0;color:var(--muted);transition:transform .2s ease;}
-    .faqItem.open .faqQ::after{transform:rotate(45deg);}
-    .faqA{font-size:14px;line-height:1.7;color:var(--ink-soft);display:none;padding-top:10px;}
-    .faqItem.open .faqA{display:block;}
-    .tagRow{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
-    .tag{display:inline-block;padding:6px 11px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.8);font-size:12px;font-weight:600;color:var(--ink-soft);}
-    .disclosure{font-size:12px;line-height:1.55;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px dashed var(--border-mid);}
-    .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:16px;display:flex;flex-wrap:wrap;gap:4px;align-items:center;}
+    .brandMark{font-family:var(--font-display);font-size:15px;font-weight:700;background:none !important;border:none !important;box-shadow:none !important;padding:7px 8px !important;}
+
+    /* STICKY CHAPTER NAV */
+    .chapterNav{position:sticky;top:52px;z-index:40;background:rgba(253,248,239,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:8px 0;}
+    .chapterNavInner{max-width:900px;margin:0 auto;padding:0 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;}
+    .chapterNavInner::-webkit-scrollbar{display:none;}
+    .chapterNavInner a{flex-shrink:0;padding:6px 12px;font-size:12px;font-weight:700;text-decoration:none;color:var(--ink-soft);border-radius:999px;border:1px solid transparent;transition:all .15s ease;letter-spacing:.02em;}
+    .chapterNavInner a:hover{background:var(--white);border-color:var(--border);color:var(--ink);}
+
+    .breadcrumb{font-size:12px;color:var(--muted);margin:16px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center;}
     .breadcrumb a{color:var(--muted);text-decoration:none;font-weight:600;}
     .breadcrumb a:hover{color:var(--ink);}
     .breadcrumb span{opacity:.5;}
-    .section-divider{display:flex;align-items:center;gap:12px;margin:8px 0 16px;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--ink);}
-    .section-divider::before,.section-divider::after{content:"";flex:1;height:1px;background:var(--border-mid);}
-    .nav-tile{display:block;background:rgba(255,255,255,.9);border:1px solid var(--border);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink);transition:transform .15s ease,box-shadow .15s ease;}
-    .nav-tile:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);color:var(--ink);}
-    .nav-tile-icon{font-size:22px;margin-bottom:6px;}
-    .nav-tile strong{display:block;margin-bottom:2px;}
+
+    /* CARDS */
+    .card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:26px 28px;margin-bottom:16px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:transform .18s ease,box-shadow .18s ease;}
+    .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+    .heroCard{background:linear-gradient(160deg,#ffffff 0%,#fffbe8 45%,#fff3c4 100%);border-color:rgba(232,194,53,.35);padding:32px 30px 30px;}
+    .goldCard{background:linear-gradient(135deg,var(--gold) 0%,#ffe87a 100%);border:1px solid var(--gold-dark);box-shadow:0 10px 32px rgba(232,194,53,.3);}
+    .sandCard{background:linear-gradient(160deg,#ffffff 0%,#fdf3e3 55%,#f5e0c0 100%);border-color:rgba(184,120,10,.22);}
+    .greenCard{background:linear-gradient(160deg,#ffffff 0%,#f0faf4 55%,#d8f3e8 100%);border-color:rgba(45,106,79,.22);}
+    .terraCard{background:linear-gradient(160deg,#ffffff 0%,#fff4ee 55%,#fde0d2 100%);border-color:rgba(192,85,43,.22);}
+
+    /* HERO */
+    .hero{background:
+        linear-gradient(155deg,rgba(255,255,255,.85) 0%,rgba(255,251,232,.78) 40%,rgba(253,243,227,.8) 100%),
+        radial-gradient(ellipse at top left,rgba(255,216,74,.4) 0%,transparent 55%);
+      border:1px solid rgba(232,194,53,.4);
+      border-radius:var(--radius-xl);
+      padding:36px 30px 32px;
+      box-shadow:var(--shadow-lg);
+      margin-bottom:18px;
+      overflow:hidden;
+    }
+    .hero::before{content:"";position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(192,85,43,.10) 0%,transparent 70%);pointer-events:none;}
+    .hero::after{content:"";position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(184,120,10,.10) 0%,transparent 70%);pointer-events:none;}
+
+    .eyebrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:16px;}
+    .badge{display:inline-block;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:700;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);letter-spacing:.01em;}
+    .badge.outline{background:rgba(255,255,255,.85);border-color:var(--border-mid);color:var(--ink-soft);}
+    .badge.sand{background:rgba(184,120,10,.12);border-color:rgba(184,120,10,.32);color:var(--sand);}
+    .badge.terra{background:rgba(192,85,43,.12);border-color:rgba(192,85,43,.3);color:var(--terracotta);}
+
+    .hero-headline{font-family:var(--font-display);font-size:clamp(1.9rem,4.6vw,3rem);font-weight:800;line-height:1.1;margin-bottom:16px;letter-spacing:-.01em;}
+    .hero-headline em{font-style:italic;color:var(--sand);font-weight:800;}
+    .hero-lead{font-size:1.06rem;line-height:1.72;color:var(--ink-soft);margin-bottom:20px;max-width:640px;}
+
+    /* STATS STRIP */
+    .statsStrip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 20px;padding:20px 16px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.9);border-radius:var(--radius-md);backdrop-filter:blur(4px);}
+    .statItem{text-align:center;}
+    .statNum{font-family:var(--font-display);font-size:clamp(1.7rem,4vw,2.3rem);font-weight:900;line-height:1;color:var(--sand);letter-spacing:-.02em;margin-bottom:4px;}
+    .statLabel{font-size:11px;font-weight:600;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;line-height:1.3;}
+
+    /* ROUTE STRIP */
+    .route-strip{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:16px 0;padding:14px 16px;background:rgba(255,255,255,.55);border-radius:var(--radius-md);border:1px solid var(--border);}
+    .route-stop{background:var(--white);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;box-shadow:var(--shadow-sm);white-space:nowrap;}
+    .route-arrow{color:var(--muted);font-size:14px;font-weight:700;}
+
+    /* CTAs */
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;background:var(--ink);color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 20px rgba(26,18,8,.22);transition:transform .15s ease,box-shadow .15s ease,background .15s ease;letter-spacing:.005em;}
+    .btn-primary:hover{background:#2e2410;transform:translateY(-2px);color:var(--white);box-shadow:0 10px 26px rgba(26,18,8,.28);}
+    .btn-gold{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px rgba(232,194,53,.4);transition:transform .15s ease,box-shadow .15s ease;}
+    .btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px);color:var(--ink);}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--white);color:var(--ink);border:1.5px solid var(--border-mid);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
+    .btn-outline:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);color:var(--ink);}
+    .btn-read{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:var(--terracotta);color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:13.5px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px rgba(192,85,43,.28);transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+    .btn-read:hover{background:#a3431f;transform:translateY(-2px);color:var(--white);}
+    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+
+    /* CHAPTER HEADER (numbered — this trip runs day by day, so the sequence carries real meaning) */
+    .chapterHeader{margin:36px 0 18px;padding:0 4px;}
+    .chapterHeaderInner{display:flex;align-items:flex-end;gap:14px;padding-bottom:14px;border-bottom:2px solid var(--ink);}
+    .chapterNumber{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3rem);font-weight:900;line-height:.9;color:var(--sand);letter-spacing:-.02em;font-style:italic;}
+    .chapterTitle{flex:1;}
+    .chapterLabel{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+    .chapterName{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:var(--ink);line-height:1.1;letter-spacing:-.01em;}
+
+    .section-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:20px 0 10px;}
+
+    /* NAV TILES (jump-to) */
+    .destGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px;}
+    .nav-tile{display:block;background:rgba(255,255,255,.9);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;text-decoration:none;color:var(--ink);transition:transform .15s ease,box-shadow .15s ease;box-shadow:var(--shadow-sm);}
+    .nav-tile:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);color:var(--ink);}
+    .nav-tile-icon{font-size:24px;margin-bottom:8px;}
+    .nav-tile strong{display:block;margin-bottom:2px;font-family:var(--font-display);}
     .nav-tile-sub{font-size:12px;color:var(--muted);}
-    /* Video grid — portrait format */
-    .videoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:10px;}
+
+    /* DIARY BLOCK */
+    .diary-block{background:rgba(255,255,255,.72);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:18px 22px;margin:16px 0;font-size:14.5px;line-height:1.78;color:var(--ink-soft);}
+    .diary-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:10px;}
+
+    /* PULL QUOTE / FUN BOX / TIP BOX */
+    .quote-block{border-left:4px solid var(--gold);padding:14px 20px;margin:18px 0;background:rgba(255,216,74,.10);border-radius:0 var(--radius-md) var(--radius-md) 0;font-style:italic;font-size:15.5px;color:var(--ink-soft);line-height:1.7;font-family:var(--font-display);font-weight:400;}
+    .fun-box{background:rgba(255,216,74,.18);border:1px solid rgba(232,194,53,.45);border-radius:var(--radius-md);padding:16px 20px;margin:16px 0;font-size:14.5px;line-height:1.65;}
+    .fun-box strong{color:var(--terracotta);}
+    .tip-box{padding:14px 18px;border-radius:var(--radius-md);background:rgba(255,248,220,.65);border:1px solid rgba(232,194,53,.35);margin-top:4px;}
+    .tip-box p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+    .tip-box .tip-title{font-size:13px;font-weight:700;margin-bottom:6px;color:var(--ink);}
+
+    /* HIGHLIGHTS / KNOW GRID */
+    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:14px;}
+    .highlight-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px;transition:transform .18s ease,box-shadow .18s ease;}
+    .highlight-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
+    .highlight-icon{font-size:26px;margin-bottom:8px;line-height:1;}
+    .highlight-title{font-family:var(--font-display);font-weight:700;font-size:15px;margin-bottom:6px;line-height:1.25;}
+    .highlight-text{font-size:13px;color:var(--ink-soft);line-height:1.55;margin:0;}
+
+    /* VIDEO GROUPS */
+    .videoGroupLabel{padding:14px 20px 8px;margin-bottom:4px;}
+    .videoGroupLabel h3{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0;font-family:var(--font-body);}
+    .videoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:14px;}
     .iframeWrap{border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md);background:#000;position:relative;aspect-ratio:16/9;}
-    
     iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
-    footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
+
+    /* TAGS */
+    .tagRow{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+    .tag{display:inline-block;padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.85);font-size:12px;font-weight:600;color:var(--ink-soft);}
+
+    /* DISCLOSURE */
+    .disclosure{font-size:12px;line-height:1.55;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px dashed var(--border-mid);}
+
+    /* FAQ */
+    .faqItem{border-bottom:1px dashed var(--border-mid);padding:16px 0;}
+    .faqItem:last-child{border-bottom:none;padding-bottom:0;}
+    .faqQ{font-family:var(--font-display);font-size:1.02rem;font-weight:700;color:var(--ink);margin-bottom:0;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;user-select:none;line-height:1.35;}
+    .faqQ::after{content:"+";font-size:1.5rem;line-height:1;font-weight:400;flex-shrink:0;color:var(--terracotta);transition:transform .25s ease;}
+    .faqItem.open .faqQ::after{transform:rotate(45deg);}
+    .faqA{font-size:14px;line-height:1.72;color:var(--ink-soft);display:none;padding-top:12px;}
+    .faqItem.open .faqA{display:block;}
+
+    footer{margin-top:24px;padding:24px 0 16px;font-size:13px;line-height:1.7;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
-    @media(max-width:640px){.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}.videoGrid{grid-template-columns:1fr;}}
+    footer a:hover{color:var(--ink);}
+
+    @media(max-width:640px){
+      .wrap{padding:0 12px 40px;}
+      .hero{padding:26px 20px 22px;}
+      .card{padding:22px 20px;}
+      .links{flex-direction:column;}
+      .links a{text-align:center;justify-content:center;}
+      .route-strip{justify-content:center;padding:12px;}
+      .statsStrip{grid-template-columns:repeat(2,1fr);gap:10px;padding:16px 12px;}
+      .chapterNav{top:52px;}
+      .videoGrid{grid-template-columns:1fr;}
+      .chapterHeaderInner{gap:10px;}
+    }
   </style>
 </head>
 <body>
 
-  <div class="backBar">
-    <a href="https://twofortherowd.com/" aria-label="Back to Two for the Row'd">← Back to Two for the Row'd</a>
-    <a class="site-name" href="https://twofortherowd.com/">Two for the Row'd 🇮🇪</a>
-    <a href="https://twofortherowd.com/avis-circuit-maroc.html">🇫🇷 Lire en français</a>
+<div class="backBar">
+  <a href="https://twofortherowd.com/">← Back to Two for the Row'd</a>
+  <a class="brandMark" href="https://twofortherowd.com/">Two for the Row'd 🇮🇪</a>
+  <a href="https://twofortherowd.com/avis-circuit-maroc.html">🇫🇷 Lire en français</a>
+</div>
+
+<!-- STICKY CHAPTER NAV -->
+<nav class="chapterNav" aria-label="Morocco review sections">
+  <div class="chapterNavInner">
+    <a href="#marrakech">Marrakech</a>
+    <a href="#walking-tour">Walking Tour</a>
+    <a href="#atlas">Atlas Mountains</a>
+    <a href="#argan">Argan Co-op</a>
+    <a href="#sahara">Sahara</a>
+    <a href="#return">The Return</a>
+    <a href="#know">Before You Go</a>
+    <a href="#videos">Videos</a>
+    <a href="#faq">FAQ</a>
+    <a href="#book">Book It</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <nav class="breadcrumb">
+    <a href="https://twofortherowd.com/">Home</a>
+    <span>›</span>
+    <a href="https://twofortherowd.com/#morocco">Morocco Series</a>
+    <span>›</span>
+    <span>Morocco Tour Review</span>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">
+      <span class="badge">🇲🇦 Morocco</span>
+      <span class="badge outline">TourRadar × Morhara Tours</span>
+      <span class="badge sand">Marrakech · Atlas Mountains · Sahara</span>
+    </div>
+    <h1 class="hero-headline">Morocco —<br><em>mint tea, desert nights and getting wonderfully lost</em></h1>
+    <p class="hero-lead">We booked a multi-day Morocco tour through TourRadar with Morhara Morocco Tours — and what followed was one of the most colourful, chaotic, and genuinely magical trips we've ever done. A medina that swallowed us whole, a drive through the Atlas Mountains that took our breath away (partly the scenery, partly the altitude), a women's argan oil co-op that we're still talking about, and a night in the Sahara under more stars than we knew existed. This is our honest account. In Nicola's words. 😄</p>
+
+    <!-- STATS STRIP -->
+    <div class="statsStrip">
+      <div class="statItem">
+        <div class="statNum">7+</div>
+        <div class="statLabel">Days recommended<br>to do it properly</div>
+      </div>
+      <div class="statItem">
+        <div class="statNum">26</div>
+        <div class="statLabel">Videos<br>we filmed</div>
+      </div>
+      <div class="statItem">
+        <div class="statNum">2,000m+</div>
+        <div class="statLabel">Atlas Mountains<br>pass altitude</div>
+      </div>
+      <div class="statItem">
+        <div class="statNum">1</div>
+        <div class="statLabel">Unforgettable night<br>in the Sahara</div>
+      </div>
+    </div>
+
+    <!-- ROUTE STRIP -->
+    <div class="route-strip">
+      <span class="route-stop">✈️ Dublin</span>
+      <span class="route-arrow">→</span>
+      <span class="route-stop">🕌 Marrakech</span>
+      <span class="route-arrow">→</span>
+      <span class="route-stop">⛰️ Atlas Mountains</span>
+      <span class="route-arrow">→</span>
+      <span class="route-stop">🏰 Aït Benhaddou</span>
+      <span class="route-arrow">→</span>
+      <span class="route-stop">🫒 Argan Co-op</span>
+      <span class="route-arrow">→</span>
+      <span class="route-stop">🐪 Sahara Desert</span>
+      <span class="route-arrow">→</span>
+      <span class="route-stop">🕌 Back to Marrakech</span>
+    </div>
+
+    <div class="links">
+      <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See the exact tour we booked →</a>
+      <a class="btn-outline" href="https://twofortherowd.com/#morocco">Watch our full video series ↓</a>
+    </div>
+
+    <div class="tagRow">
+      <span class="tag">Morocco tour review 2026</span>
+      <span class="tag">TourRadar Morocco</span>
+      <span class="tag">Morhara Morocco Tours</span>
+      <span class="tag">Sahara desert camp</span>
+      <span class="tag">Atlas Mountains tour</span>
+      <span class="tag">Marrakech walking tour</span>
+      <span class="tag">Morocco first time visitor</span>
+      <span class="tag">gluten-free Morocco</span>
+      <span class="tag">Ireland to Morocco</span>
+      <span class="tag">is TourRadar worth it</span>
+    </div>
   </div>
 
-  <div class="wrap">
-
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="https://twofortherowd.com/">Home</a>
-      <span>›</span>
-      <a href="https://twofortherowd.com/#morocco">Morocco Series</a>
-      <span>›</span>
-      <span>Morocco Tour Review</span>
-    </nav>
-
-    <div class="card heroCard">
-      <div class="eyebrow">
-        <span class="badge">🇲🇦 Morocco</span>
-        <span class="badge outline">TourRadar × Morhara Tours</span>
-        <span class="badge sand">Marrakech · Atlas Mountains · Sahara</span>
-      </div>
-      <h1 class="hero-headline">Morocco —<br><em>mint tea, desert nights and getting wonderfully lost</em></h1>
-      <p class="hero-lead">We booked a multi-day Morocco tour through TourRadar with Morhara Morocco Tours — and what followed was one of the most colourful, chaotic, and genuinely magical trips we've ever done. A medina that swallowed us whole, a drive through the Atlas Mountains that took our breath away (partly the scenery, partly the altitude), a women's argan oil co-op that we're still talking about, and a night in the Sahara under more stars than we knew existed. This is our honest account. In Nicola's words. 😄</p>
-      <div class="route-strip">
-        <span class="route-stop">✈️ Dublin</span><span class="route-arrow">→</span>
-        <span class="route-stop">🕌 Marrakech</span><span class="route-arrow">→</span>
-        <span class="route-stop">⛰️ Atlas Mountains</span><span class="route-arrow">→</span>
-        <span class="route-stop">🏰 Aït Benhaddou</span><span class="route-arrow">→</span>
-        <span class="route-stop">🫒 Argan Co-op</span><span class="route-arrow">→</span>
-        <span class="route-stop">🐪 Sahara Desert</span><span class="route-arrow">→</span>
-        <span class="route-stop">🕌 Back to Marrakech</span>
-      </div>
-      <div class="links">
-        <a class="btn-outline" href="https://twofortherowd.com/#morocco">Watch our full Morocco video series →</a>
-      </div>
-      <div class="tagRow">
-        <span class="tag">Morocco tour review 2026</span>
-        <span class="tag">TourRadar Morocco</span>
-        <span class="tag">Morhara Morocco Tours</span>
-        <span class="tag">Sahara desert camp</span>
-        <span class="tag">Atlas Mountains tour</span>
-        <span class="tag">Marrakech walking tour</span>
-        <span class="tag">Morocco first time visitor</span>
-        <span class="tag">gluten-free Morocco</span>
-        <span class="tag">Ireland to Morocco</span>
-        <span class="tag">is TourRadar worth it</span>
+  <!-- CHAPTER 01 — JUMP TO -->
+  <div class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">01</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">Where to start</div>
+        <div class="chapterName">Explore Morocco with us</div>
       </div>
     </div>
-
-    <!-- EXPLORE MOROCCO WITH US — table of contents nav block -->
-    <p class="section-label">Jump to</p>
-    <div class="card" style="background:linear-gradient(135deg,#ffffff 0%,#fdf8ef 100%);border-color:rgba(26,18,8,.12);">
-      <h2>Explore Morocco with us</h2>
-      <p style="font-size:14px;color:var(--ink-soft);margin-bottom:14px;">A quick jump-to for the destinations below — plus our full Marrakech city guide if you want a city-focused deep dive rather than the full trip story.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">
-        <a class="nav-tile" href="/marrakech.html">
-          <div class="nav-tile-icon">🕌</div>
-          <strong>Marrakech city guide</strong>
-          <span class="nav-tile-sub">Full city-focused deep dive →</span>
-        </a>
-        <a class="nav-tile" href="#atlas">
-          <div class="nav-tile-icon">⛰️</div>
-          <strong>Atlas Mountains</strong>
-          <span class="nav-tile-sub">Read this section ↓</span>
-        </a>
-        <a class="nav-tile" href="#argan">
-          <div class="nav-tile-icon">🫒</div>
-          <strong>Argan co-operative</strong>
-          <span class="nav-tile-sub">Read this section ↓</span>
-        </a>
-        <a class="nav-tile" href="#sahara">
-          <div class="nav-tile-icon">🐪</div>
-          <strong>Sahara Desert</strong>
-          <span class="nav-tile-sub">Read this section ↓</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="section-divider">🕌 Marrakech — Arrival</div>
-    <p class="section-label">Night one — the Grand Mogador Menara</p>
-    <div class="card">
-      <h2>Arriving in Marrakech — sensory overload in the best possible way</h2>
-      <div class="diary-block">
-        <div class="diary-label">📓 Nicola's diary</div>
-        <p>Ryanair from Dublin, about three and a half hours, and suddenly you're somewhere that feels like another planet entirely. The airport is fine — straightforward enough — but the second you step outside, Morocco hits you all at once. The heat, the colour, the noise, the smell of spices on the air. I stood there for a full minute just taking it in.</p>
-        <p>We stayed our first night at the <strong>Grand Mogador Menara</strong> — right near the medina — and it was the perfect base to land in. Beautiful tiling, a rooftop pool I immediately claimed as my personal property, and the kind of breakfast spread that makes you want to cancel the rest of the day and just stay put.</p>
-        <p>That evening we wandered towards Jemaa el-Fnaa square and I nearly had a heart attack. Snake charmers, orange juice stalls, acrobats, food smoke billowing everywhere, a hundred people trying to sell you something — it's absolutely chaotic and I absolutely loved it. <strong>My advice: just say yes to the mint tea.</strong> It's offered everywhere and it is genuinely one of the best things you'll put in your mouth. 🍵</p>
-        <p>We got slightly lost trying to find our way back through the medina. By "slightly" I mean completely. The lanes all look the same and Google Maps gives up entirely after about three turns. We eventually found our way out by following a cat. He seemed confident. It worked. 😂</p>
-      </div>
-      <div style="padding:14px;border-radius:14px;background:rgba(255,248,220,.6);border:1px solid rgba(232,194,53,.3);margin-top:4px;">
-        <p style="font-size:13px;font-weight:700;margin-bottom:6px;">💡 Nicola's top tip for Marrakech</p>
-        <p style="font-size:13px;color:var(--ink-soft);margin:0;">Book a guided walking tour before you do anything else. We did ours with Ali from Get Marrakech and it completely changed how we saw the city. Without a guide, the medina will eat you alive — with one, it's the most fascinating place you'll ever walk through.</p>
-        <div class="links"><a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book the Marrakech walking tour with Ali →</a></div>
-      </div>
-    </div>
-
-    <div class="section-divider">🚶 The Marrakech Walking Tour</div>
-    <p class="section-label">With Ali from Get Marrakech</p>
-    <div class="card greenCard">
-      <h2>The walking tour — where Marrakech actually makes sense</h2>
-      <div class="diary-block">
-        <div class="diary-label">📓 Nicola's diary</div>
-        <p>We did Ali's walking tour the morning before our main tour began and honestly, it should be the first thing anyone does in Marrakech. Ali knows absolutely everything — the history of the medina, the souks (there's one for leather, one for spices, one for lanterns, one for everything you didn't know you needed), the tanneries that Padraig found fascinating and I found extraordinarily smelly, the hidden riads behind doors you'd never think to open.</p>
-        <p>He also showed us where to eat, what to order, and — crucially — how to haggle without embarrassing yourself. Apparently standing there with your mouth open saying "how much?!" is not a negotiating strategy. <strong>Bring cash</strong>, by the way — card machines are rare in the souks and you'll want to be buying things. Lots of things. We bought a rug. We don't regret the rug.</p>
-        <p>The other thing Ali pointed out: alcohol is very hard to find in Morocco outside of hotels. We're not big drinkers so it didn't bother us, but if you're expecting to find a pub on every corner like at home — you won't. Plan accordingly. 🍵</p>
-      </div>
-      <p class="disclosure"><strong>Disclosure:</strong> Affiliate link below — we may earn a small commission if you book.</p>
-    </div>
-
-    <div class="section-divider" id="atlas">⛰️ The Atlas Mountains</div>
-    <p class="section-label">Day 2 — picked up by our guide and heading south</p>
-    <div class="card">
-      <h2>Into the Atlas Mountains — spectacular, steep and slightly breathtaking</h2>
-      <div class="diary-block">
-        <div class="diary-label">📓 Nicola's diary</div>
-        <p>Our guide picked us up from the hotel the next morning and we were off. The drive out of Marrakech takes you through the city fringes and then suddenly — mountains. Enormous ones. The High Atlas range rose up in front of us and I genuinely gasped out loud, which Padraig found very funny.</p>
-        <p>The Tizi n'Tichka pass is something else entirely. We wound our way up through hairpin bends with views dropping away on both sides — Berber villages perched impossibly on cliff faces, terraced fields carved into the hillsides, the whole landscape completely unlike anything at home. I kept thinking it looked like a film set.</p>
-        <p>Speaking of film sets — we stopped at <strong>Aït Benhaddou</strong>, the ancient ksar that was used in Gladiator, Game of Thrones, and about fifteen other things you've definitely seen. Standing there looking up at it, I kept going "wait, THIS is where they filmed THAT bit!" The whole place is UNESCO World Heritage listed and it deserves every bit of it. Genuinely jaw-dropping.</p>
-        <p>One thing nobody warned us about: <strong>the altitude</strong>. The pass sits at over 2,000 metres and if you're not used to it, you'll feel it. I had a bit of a headache for a few hours — nothing serious, but drink plenty of water, take it easy, and don't be surprised if you feel a bit wobbly. It passes. 🏔️</p>
-      </div>
-    </div>
-
-    <div class="section-divider" id="argan">🫒 The Argan Oil Co-op</div>
-    <p class="section-label">One of the most unexpectedly moving stops on the whole trip</p>
-    <div class="card sandCard">
-      <h2>The women's argan oil co-operative — a highlight we didn't expect</h2>
-      <div class="diary-block">
-        <div class="diary-label">📓 Nicola's diary</div>
-        <p>I'll be honest, when our guide said we were stopping at an argan oil co-operative, I thought it was going to be a tourist trap. A little shop with overpriced products and a demo for the cameras. I was completely wrong.</p>
-        <p>The women's co-op at Aguelmouss employs local Berber women who crack the argan nuts by hand — a skill passed down through generations — and produce the oil themselves. Our guide explained what it meant for these women to have their own income, their own independence. I nearly cried, and I'm not a crier.</p>
-        <p>We watched them work, learned about the process, and then — yes, fine — I bought quite a lot of things from the shop. Face oil, cooking oil, some kind of hair treatment I'm still not sure how to use. <strong>Worth every dirham.</strong> Bring cash here too — this is exactly where you want to spend it. 🫒</p>
-      </div>
-    </div>
-
-    <div class="section-divider" id="sahara">🐪 The Sahara Desert</div>
-    <p class="section-label">The moment the whole trip was building towards</p>
-    <div class="card heroCard">
-      <h2>The Sahara — camel rides, camp fires and more stars than I knew existed</h2>
-      <div class="diary-block">
-        <div class="diary-label">📓 Nicola's diary</div>
-        <p>Right. I'm going to try and describe this properly, but I already know I'm going to fail, so bear with me.</p>
-        <p>We arrived at the edge of the dunes as the sun was getting low. The sand was this deep, warm orange colour and the dunes went on and on and on in every direction. We climbed onto our camels — which is a more athletic undertaking than it looks, and my camel had a very specific opinion about the pace he was willing to travel at — and set off into the desert.</p>
-        <p>The camp was a collection of Berber tents arranged around a fire pit. We had dinner there as darkness fell — <strong>tagine</strong>, obviously, which is the correct answer to every meal in Morocco as far as I'm concerned — and then the fire died down a bit and someone turned the stars on.</p>
-        <p>I have never in my life seen a sky like that. Not even close. No light pollution, no clouds, just an absolute carpet of stars from horizon to horizon. Padraig went quiet for a long time, which is how I know something has properly got to him. We sat there for about two hours just looking up. 🌌</p>
-        <p>One practical note: <strong>the Sahara gets cold at night.</strong> Like, properly cold. I was in a jumper, a jacket AND wrapped in a blanket and still a bit chilly. Don't make the mistake of packing only for the daytime heat.</p>
-      </div>
-    </div>
-
-    <div class="section-divider">🕌 Back to Marrakech</div>
-    <p class="section-label">The return — and final thoughts on Morocco's people</p>
-    <div class="card">
-      <h2>The journey back — and why the friendliness of Morocco caught us completely off guard</h2>
-      <div class="diary-block">
-        <div class="diary-label">📓 Nicola's diary</div>
-        <p>The drive back to Marrakech retraces some of the route and you see things differently on the way home — slower, more settled in yourself. We stopped for lunch at a riad restaurant in a little town I couldn't find on a map if you paid me, and had the best harira soup of the whole trip.</p>
-        <p>Something I want to say properly, because it's the thing I keep coming back to when I think about Morocco: <strong>the people are extraordinary.</strong> I don't mean that in a vague, tourist-brochure way. I mean genuinely — everywhere we went, we were welcomed. Conversations started out of nowhere. Tea was offered constantly. Our guide went out of his way, every single day, to make sure we understood not just what we were looking at, but why it mattered.</p>
-        <p>There's a warmth to Morocco that surprised us both. We arrived a bit nervous — first time in North Africa, lots of unknowns — and we left wishing we'd booked another week. That, I think, is the best review I can give any destination. 🧡</p>
-      </div>
-    </div>
-
-    <div class="section-divider">📋 Before you go</div>
-    <p class="section-label">The honest bits most reviews gloss over</p>
-    <div class="card">
-      <h2>Things to know before you book Morocco</h2>
-      <div class="know-grid">
-        <div class="know-item"><div class="know-icon">💵</div><div class="know-title">Bring cash — lots of it</div><p class="know-text">Card machines are scarce in the souks, markets and smaller restaurants. Get dirhams before you go or at the airport on arrival. You'll want them.</p></div>
-        <div class="know-item"><div class="know-icon">🍵</div><div class="know-title">Very little alcohol available</div><p class="know-text">Outside of hotels, alcohol is extremely hard to find. Morocco runs on mint tea and it's excellent — but manage your expectations if you're a pint-after-dinner person.</p></div>
-        <div class="know-item"><div class="know-icon">🥾</div><div class="know-title">Wear good shoes</div><p class="know-text">The medinas are cobbled, uneven and relentless. Comfortable, broken-in shoes are not optional. We learned this on day two and our feet reminded us about it for a week.</p></div>
-        <div class="know-item"><div class="know-icon">🌡️</div><div class="know-title">Don't go in summer</div><p class="know-text">Spring (March–May) is perfect — warm, not brutal. Summer temperatures can hit 45°C in Marrakech. Go in the heat of summer and you'll spend the whole trip indoors.</p></div>
-        <div class="know-item"><div class="know-icon">⛰️</div><div class="know-title">Watch for altitude sickness</div><p class="know-text">The Atlas Mountains pass sits above 2,000m. Headaches, dizziness and fatigue are common. Drink water, eat, take it slow. It passes but it catches people out.</p></div>
-        <div class="know-item"><div class="know-icon">🧊</div><div class="know-title">The desert is cold at night</div><p class="know-text">Pack a warm layer specifically for the Sahara camp. It cools dramatically once the sun drops and you'll be outside for a long time staring at stars. You'll thank yourself.</p></div>
-        <div class="know-item"><div class="know-icon">🗺️</div><div class="know-title">Get a guide for Marrakech</div><p class="know-text">The medina will absolutely swallow you. Google Maps gives up. A local guide turns the chaos into something you can actually understand and enjoy. Non-negotiable.</p></div>
-        <div class="know-item"><div class="know-icon">🤝</div><div class="know-title">Haggling is expected</div><p class="know-text">The first price in any souk is not the real price. Negotiating is part of the culture — enjoy it, be friendly about it, and don't take it too seriously.</p></div>
-      </div>
-    </div>
-
-    <!-- FULL VIDEO SERIES -->
-    <div class="section-divider">🎬 The Full Video Series</div>
-
-    <div class="card" style="text-align:center;margin-bottom:4px;">
-      <h2>Watch all 26 Morocco videos</h2>
-      <p style="color:var(--ink-soft);max-width:540px;margin:0 auto;">We filmed the whole trip — every stage from Dublin airport to the Sahara desert camp and back. Watch them all below, grouped by destination.</p>
-    </div>
-
-    <div class="card" style="padding:14px 20px 8px;margin-bottom:4px;"><h3 style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0;">✈️ Before the trip</h3></div>
-    <div class="videoGrid" style="margin-bottom:14px;">
-      <div class="card"><h3>Part 1 – Dublin to Marrakech</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/8sJj521AVo8" title="Part 1 – Dublin to Marrakech" allowfullscreen></iframe></div></div>
-    </div>
-
-    <div class="card" style="padding:14px 20px 8px;margin-bottom:4px;"><h3 style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0;">🕌 Marrakech</h3></div>
-    <div class="videoGrid" style="margin-bottom:14px;">
-      <div class="card"><h3>Part 2 – Grand Mogador Menara Hotel</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/dmtF1M-rzFk" title="Grand Mogador Menara Hotel" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Marrakech – On the Road</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/CCBaRghdM90" title="On the Road" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Marrakech – Steak in Marrakech</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/Hlbf2UWMm2A" title="Steak in Marrakech" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Marrakech – Café de France</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/NxI6ep4FsE4" title="Café de France" allowfullscreen></iframe></div></div>
-      </div>
-
-    <div class="card" style="padding:14px 20px 8px;margin-bottom:4px;"><h3 style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0;">⛰️ Atlas Mountains</h3></div>
-    <div class="videoGrid" style="margin-bottom:14px;">
-      <div class="card"><h3>Part 4 – Travelling Through the Atlas Mountains</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/65d2mpohVo0" title="Atlas Mountains" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Atlas – Mountain Scenery</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/ePGzmPhlXOg" title="Atlas Scenery" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Atlas – Villages &amp; Locals</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/gXvUuocNPcA" title="Mountain Villages" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Lunch at a Kasbah</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/BWbyYA8C5b8" title="Lunch at a Kasbah" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Jewish Museum in the Desert</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/R0SmQLruczM" title="Jewish Museum in the Desert" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Tamegroute – Pottery Making</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/KqbKl74j0ro" title="Tamegroute Pottery Making" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Part 3 – Les Jardins de Ouarzazate</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/ZTdiMwEIw3U" title="Ouarzazate" allowfullscreen></iframe></div></div>
-    </div>
-
-    <div class="card" style="padding:14px 20px 8px;margin-bottom:4px;"><h3 style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0;">🏰 Kasbahs &amp; Culture</h3></div>
-    <div class="videoGrid" style="margin-bottom:14px;">
-      <div class="card"><h3>Part 5 – Argan Oil Co-op, Aguelmouss</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/dXUXZHXJPJM" title="Argan Oil Co-op" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Part 8 – Talouse Women's Co-op</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/BxU6yC1H9Dg" title="Women's Co-op" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Aït Benhaddou – UNESCO Kasbah</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/gXvUuocNPcA" title="Ait Benhaddou" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Palm View Palace Hotel, Ouarzazate</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/ghG4GeFna3U" title="Palm View Palace Hotel" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Mint Tea with Locals</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/kbKx6r13AuY" title="Mint Tea with locals" allowfullscreen></iframe></div></div>
-    </div>
-
-    <div class="card" style="padding:14px 20px 8px;margin-bottom:4px;"><h3 style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0;">🐪 Desert Journey &amp; Sahara Camp</h3></div>
-    <div class="videoGrid" style="margin-bottom:14px;">
-      <div class="card"><h3>Part 7 – The Sahara Desert</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/30JojXt6I54" title="Sahara Desert" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Sahara – Driving Through the Desert</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/Z06hUQP7n-g" title="Driving Through the Desert" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Sahara – A Berber Village</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/Vc7DvHq4cus" title="A Berber Village in the Sahara" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Sahara – The Draa Region</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/0_BjvMG3Zl8" title="The Draa Region" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Sahara – Desert Camp</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/UgXF_vmRBtU" title="Desert Camp" allowfullscreen></iframe></div></div>
-    </div>
-
-    <div class="card" style="padding:14px 20px 8px;margin-bottom:4px;"><h3 style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0;">📸 More from the road</h3></div>
-    <div class="videoGrid" style="margin-bottom:14px;">
-      <div class="card"><h3>Morocco – Hidden Moments</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/bIBn17PI1_0" title="Hidden Moments" allowfullscreen></iframe></div></div>
-      <div class="card"><h3>Morocco – Final Day</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/Yf0kLJYxkPs" title="Final Day" allowfullscreen></iframe></div></div>
-    </div>
-
-    <div class="card" style="text-align:center;">
-      <div class="links" style="justify-content:center;">
-        <a class="btn-outline" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener">See everything on YouTube →</a>
-      </div>
-    </div>
-
-    <!-- FAQ -->
-    <p class="section-label">Common questions</p>
-    <div class="card">
-      <h2>Morocco FAQ — the questions we get asked most</h2>
-      <div class="faqItem open"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is a Morocco guided tour actually worth it?</div><div class="faqA">Yes — genuinely, and without hesitation. The distances and complexity of getting between Marrakech, the Atlas Mountains, and the Sahara make a guided tour dramatically better value than trying to piece it all together yourself. You see more, stress less, and get access to experiences — local guides, off-road routes, authentic stops — that you'd never find independently. We'd book it again tomorrow.</div></div>
-      <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is TourRadar reliable for booking Morocco tours?</div><div class="faqA">We used TourRadar for both our multi-day Morocco tour and our Marrakech walking tour, and had zero issues with either booking. It's a well-established platform, the booking process is straightforward, and customer support is responsive. The key is picking the right operator — we went with Morhara Morocco Tours and they were excellent.<br><br>If you're still weighing up whether TourRadar itself is worth booking through more generally, we've written a full honest breakdown here: <a href="/is-tourradar-worth-it.html" style="font-weight:700;color:#b8780a;">Is TourRadar Worth It? Our Honest Review →</a></div></div>
-      <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">How many days do you need to see Morocco properly?</div><div class="faqA">To do Morocco justice — including Marrakech, the Atlas Mountains, and the Sahara desert — you need at least 7 to 10 days. Anything shorter and you'll spend too much time in transit. The multi-day tour we did felt like exactly the right pace.</div></div>
-      <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">When is the best time to visit Morocco?</div><div class="faqA">Spring — March to May — is ideal. The weather is warm and pleasant, the crowds are manageable, and the landscape is often green after winter rains. Avoid summer if you can: Marrakech in July or August can hit 45°C and it is genuinely brutal. Autumn (September–November) is also excellent.</div></div>
-      <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Should you do a guided tour or book Morocco independently?</div><div class="faqA">For a first trip — especially if you want to reach the Sahara — go with a guided tour, no question. The road distances are enormous, the logistics are complicated, and a knowledgeable local guide adds layers of context and access that you simply won't get going solo. We met people on the trip who tried to piece it together themselves and missed half of what makes Morocco special.</div></div>
-      <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is Morocco good for gluten-free travellers?</div><div class="faqA">Much better than we expected. Tagines, slow-cooked lamb and chicken, grilled meats, rice, fresh salads — a lot of traditional Moroccan food is naturally gluten-free. Cross-contamination can be an issue in busier tourist spots, so being clear when ordering is important. We had no issues on our trip.</div></div>
-      <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What is the Sahara desert camp experience actually like?</div><div class="faqA">One of the best nights of our lives — genuinely. Arriving at the dunes by camel as the sun goes down, having dinner at the camp, sitting around a fire in the middle of the desert, and waking up at sunrise with nothing but sand dunes around you. It's not a luxury resort. It's better than that. The setting does all the work. Bring a warm layer — it gets cold once the sun drops.</div></div>
-      <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Can you fly to Morocco from Ireland?</div><div class="faqA">Yes — Ryanair flies direct from Dublin to Marrakech, which makes it very convenient for Irish travellers. Flight time is roughly 3 to 3.5 hours. It's one of the most straightforward long-haul-feeling destinations you can reach from Ireland without a long journey.</div></div>
-    </div>
-
-    <!-- TOURRADAR BOOKING — recommendation after the story -->
-    <p class="section-label">The tours we actually booked</p>
-    <div class="card sandCard">
-      <h2>The Morocco tour we booked — through TourRadar with Morhara Tours</h2>
-      <p>You've now seen what the trip was actually like for us — Marrakech, the Atlas Mountains, the co-operatives, the Sahara and everything in between. If you'd like to follow a similar route, these are the two tours we personally booked and would recommend.</p>
-      <div class="links">
-        <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See the multi-day Morocco tour →</a>
-        <a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">See the Marrakech walking tour with Ali →</a>
-      </div>
-      <p class="disclosure"><strong>Disclosure:</strong> Both are affiliate links. If you book through them we may earn a small commission at no extra cost to you. We only recommend tours we've actually done ourselves.</p>
-    </div>
-
-    <!-- FINAL CTA -->
-    <div class="card goldCard" style="text-align:center;">
-      <h2 style="text-align:center;color:var(--ink);">Ready to book your Morocco trip?</h2>
-      <p style="text-align:center;color:var(--ink-soft);max-width:540px;margin:0 auto 20px;">Whether you want the full multi-day experience including the Sahara, or just a brilliant few days exploring Marrakech properly — both tours are through TourRadar and both come with our genuine, personal recommendation.</p>
-      <div class="links" style="justify-content:center;">
-        <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See the exact Morocco tour we did →</a>
-        <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book the Marrakech walking tour →</a>
-        <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://twofortherowd.com/avis-circuit-maroc.html">🇫🇷 Lire l'avis en français →</a>
-        <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://twofortherowd.com/#morocco">Watch our full video series first →</a>
-      </div>
-      <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">Affiliate disclosure: if you book through our links, we may earn a small commission at no cost to you. We only recommend tours we have done ourselves and would happily book again.</p>
-    </div>
-
   </div>
 
-  <footer>
-    <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="/is-tourradar-worth-it.html">Is TourRadar worth it?</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#morocco">Watch Morocco videos</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/avis-circuit-maroc.html">🇫🇷 Version française</a></p>
-    <p style="margin-top:6px;font-size:11px;">This page contains affiliate links. If you book or buy through them we may earn a small commission at no extra cost to you.</p>
-  </footer>
+  <div class="card heroCard">
+    <p style="color:var(--ink-soft);font-size:1rem;max-width:640px;">A quick jump-to for the destinations below — plus our full Marrakech city guide if you want a city-focused deep dive rather than the full trip story.</p>
+    <div class="destGrid">
+      <a class="nav-tile" href="/marrakech.html">
+        <div class="nav-tile-icon">🕌</div>
+        <strong>Marrakech city guide</strong>
+        <span class="nav-tile-sub">Full city-focused deep dive →</span>
+      </a>
+      <a class="nav-tile" href="#atlas">
+        <div class="nav-tile-icon">⛰️</div>
+        <strong>Atlas Mountains</strong>
+        <span class="nav-tile-sub">Read this section ↓</span>
+      </a>
+      <a class="nav-tile" href="#argan">
+        <div class="nav-tile-icon">🫒</div>
+        <strong>Argan co-operative</strong>
+        <span class="nav-tile-sub">Read this section ↓</span>
+      </a>
+      <a class="nav-tile" href="#sahara">
+        <div class="nav-tile-icon">🐪</div>
+        <strong>Sahara Desert</strong>
+        <span class="nav-tile-sub">Read this section ↓</span>
+      </a>
+    </div>
+  </div>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <!-- CHAPTER 02 — MARRAKECH ARRIVAL -->
+  <div id="marrakech" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">02</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">Night one — the Grand Mogador Menara</div>
+        <div class="chapterName">Marrakech — sensory overload in the best possible way</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="diary-block">
+      <div class="diary-label">📓 Nicola's diary</div>
+      <p>Ryanair from Dublin, about three and a half hours, and suddenly you're somewhere that feels like another planet entirely. The airport is fine — straightforward enough — but the second you step outside, Morocco hits you all at once. The heat, the colour, the noise, the smell of spices on the air. I stood there for a full minute just taking it in.</p>
+      <p>We stayed our first night at the <strong>Grand Mogador Menara</strong> — right near the medina — and it was the perfect base to land in. Beautiful tiling, a rooftop pool I immediately claimed as my personal property, and the kind of breakfast spread that makes you want to cancel the rest of the day and just stay put.</p>
+      <p>That evening we wandered towards Jemaa el-Fnaa square and I nearly had a heart attack. Snake charmers, orange juice stalls, acrobats, food smoke billowing everywhere, a hundred people trying to sell you something — it's absolutely chaotic and I absolutely loved it. <strong>My advice: just say yes to the mint tea.</strong> It's offered everywhere and it is genuinely one of the best things you'll put in your mouth. 🍵</p>
+      <p>We got slightly lost trying to find our way back through the medina. By "slightly" I mean completely. The lanes all look the same and Google Maps gives up entirely after about three turns. We eventually found our way out by following a cat. He seemed confident. It worked. 😂</p>
+    </div>
+    <div class="tip-box">
+      <p class="tip-title">💡 Nicola's top tip for Marrakech</p>
+      <p>Book a guided walking tour before you do anything else. We did ours with Ali from Get Marrakech and it completely changed how we saw the city. Without a guide, the medina will eat you alive — with one, it's the most fascinating place you'll ever walk through.</p>
+      <div class="links"><a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book the Marrakech walking tour with Ali →</a></div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 03 — WALKING TOUR -->
+  <div id="walking-tour" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">03</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">With Ali from Get Marrakech</div>
+        <div class="chapterName">The walking tour — where Marrakech actually makes sense</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card greenCard">
+    <div class="diary-block">
+      <div class="diary-label">📓 Nicola's diary</div>
+      <p>We did Ali's walking tour the morning before our main tour began and honestly, it should be the first thing anyone does in Marrakech. Ali knows absolutely everything — the history of the medina, the souks (there's one for leather, one for spices, one for lanterns, one for everything you didn't know you needed), the tanneries that Padraig found fascinating and I found extraordinarily smelly, the hidden riads behind doors you'd never think to open.</p>
+      <p>He also showed us where to eat, what to order, and — crucially — how to haggle without embarrassing yourself. Apparently standing there with your mouth open saying "how much?!" is not a negotiating strategy. <strong>Bring cash</strong>, by the way — card machines are rare in the souks and you'll want to be buying things. Lots of things. We bought a rug. We don't regret the rug.</p>
+      <p>The other thing Ali pointed out: alcohol is very hard to find in Morocco outside of hotels. We're not big drinkers so it didn't bother us, but if you're expecting to find a pub on every corner like at home — you won't. Plan accordingly. 🍵</p>
+    </div>
+    <p class="disclosure"><strong>Disclosure:</strong> Affiliate link below — we may earn a small commission if you book.</p>
+  </div>
+
+  <!-- CHAPTER 04 — ATLAS MOUNTAINS -->
+  <div id="atlas" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">04</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">Day 2 — picked up by our guide and heading south</div>
+        <div class="chapterName">Into the Atlas Mountains — spectacular, steep and slightly breathtaking</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="diary-block">
+      <div class="diary-label">📓 Nicola's diary</div>
+      <p>Our guide picked us up from the hotel the next morning and we were off. The drive out of Marrakech takes you through the city fringes and then suddenly — mountains. Enormous ones. The High Atlas range rose up in front of us and I genuinely gasped out loud, which Padraig found very funny.</p>
+      <p>The Tizi n'Tichka pass is something else entirely. We wound our way up through hairpin bends with views dropping away on both sides — Berber villages perched impossibly on cliff faces, terraced fields carved into the hillsides, the whole landscape completely unlike anything at home. I kept thinking it looked like a film set.</p>
+      <p>Speaking of film sets — we stopped at <strong>Aït Benhaddou</strong>, the ancient ksar that was used in Gladiator, Game of Thrones, and about fifteen other things you've definitely seen. Standing there looking up at it, I kept going "wait, THIS is where they filmed THAT bit!" The whole place is UNESCO World Heritage listed and it deserves every bit of it. Genuinely jaw-dropping.</p>
+    </div>
+    <div class="quote-block">"Drink plenty of water, take it easy, and don't be surprised if you feel a bit wobbly. It passes."</div>
+    <p style="font-size:14.5px;color:var(--ink-soft);">One thing nobody warned us about: <strong>the altitude</strong>. The pass sits at over 2,000 metres and if you're not used to it, you'll feel it. I had a bit of a headache for a few hours — nothing serious, but pace yourself. 🏔️</p>
+  </div>
+
+  <!-- CHAPTER 05 — ARGAN CO-OP -->
+  <div id="argan" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">05</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">One of the most unexpectedly moving stops on the whole trip</div>
+        <div class="chapterName">The women's argan oil co-operative</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card sandCard">
+    <div class="diary-block">
+      <div class="diary-label">📓 Nicola's diary</div>
+      <p>I'll be honest, when our guide said we were stopping at an argan oil co-operative, I thought it was going to be a tourist trap. A little shop with overpriced products and a demo for the cameras. I was completely wrong.</p>
+      <p>The women's co-op at Aguelmouss employs local Berber women who crack the argan nuts by hand — a skill passed down through generations — and produce the oil themselves. Our guide explained what it meant for these women to have their own income, their own independence. I nearly cried, and I'm not a crier.</p>
+      <p>We watched them work, learned about the process, and then — yes, fine — I bought quite a lot of things from the shop. Face oil, cooking oil, some kind of hair treatment I'm still not sure how to use. <strong>Worth every dirham.</strong> Bring cash here too — this is exactly where you want to spend it. 🫒</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 06 — SAHARA -->
+  <div id="sahara" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">06</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">The moment the whole trip was building towards</div>
+        <div class="chapterName">The Sahara — camel rides, camp fires and a sky full of stars</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card heroCard">
+    <div class="diary-block">
+      <div class="diary-label">📓 Nicola's diary</div>
+      <p>Right. I'm going to try and describe this properly, but I already know I'm going to fail, so bear with me.</p>
+      <p>We arrived at the edge of the dunes as the sun was getting low. The sand was this deep, warm orange colour and the dunes went on and on and on in every direction. We climbed onto our camels — which is a more athletic undertaking than it looks, and my camel had a very specific opinion about the pace he was willing to travel at — and set off into the desert.</p>
+      <p>The camp was a collection of Berber tents arranged around a fire pit. We had dinner there as darkness fell — <strong>tagine</strong>, obviously, which is the correct answer to every meal in Morocco as far as I'm concerned — and then the fire died down a bit and someone turned the stars on.</p>
+      <p>I have never in my life seen a sky like that. Not even close. No light pollution, no clouds, just an absolute carpet of stars from horizon to horizon. Padraig went quiet for a long time, which is how I know something has properly got to him. We sat there for about two hours just looking up. 🌌</p>
+    </div>
+    <div class="fun-box">
+      🧊 <strong>Pack for the cold, not just the heat:</strong> the Sahara gets properly cold at night. I was in a jumper, a jacket AND wrapped in a blanket and still a bit chilly. Don't make the mistake of packing only for the daytime heat.
+    </div>
+  </div>
+
+  <!-- CHAPTER 07 — RETURN -->
+  <div id="return" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">07</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">The return — and final thoughts on Morocco's people</div>
+        <div class="chapterName">Back to Marrakech</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card terraCard">
+    <div class="diary-block">
+      <div class="diary-label">📓 Nicola's diary</div>
+      <p>The drive back to Marrakech retraces some of the route and you see things differently on the way home — slower, more settled in yourself. We stopped for lunch at a riad restaurant in a little town I couldn't find on a map if you paid me, and had the best harira soup of the whole trip.</p>
+      <p>Something I want to say properly, because it's the thing I keep coming back to when I think about Morocco: <strong>the people are extraordinary.</strong> I don't mean that in a vague, tourist-brochure way. I mean genuinely — everywhere we went, we were welcomed. Conversations started out of nowhere. Tea was offered constantly. Our guide went out of his way, every single day, to make sure we understood not just what we were looking at, but why it mattered.</p>
+      <p>There's a warmth to Morocco that surprised us both. We arrived a bit nervous — first time in North Africa, lots of unknowns — and we left wishing we'd booked another week. That, I think, is the best review I can give any destination. 🧡</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 08 — BEFORE YOU GO -->
+  <div id="know" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">08</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">The honest bits most reviews gloss over</div>
+        <div class="chapterName">Things to know before you book Morocco</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="highlights-grid">
+      <div class="highlight-item"><div class="highlight-icon">💵</div><div class="highlight-title">Bring cash — lots of it</div><p class="highlight-text">Card machines are scarce in the souks, markets and smaller restaurants. Get dirhams before you go or at the airport on arrival. You'll want them.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🍵</div><div class="highlight-title">Very little alcohol available</div><p class="highlight-text">Outside of hotels, alcohol is extremely hard to find. Morocco runs on mint tea and it's excellent — but manage your expectations if you're a pint-after-dinner person.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🥾</div><div class="highlight-title">Wear good shoes</div><p class="highlight-text">The medinas are cobbled, uneven and relentless. Comfortable, broken-in shoes are not optional. We learned this on day two and our feet reminded us about it for a week.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🌡️</div><div class="highlight-title">Don't go in summer</div><p class="highlight-text">Spring (March–May) is perfect — warm, not brutal. Summer temperatures can hit 45°C in Marrakech. Go in the heat of summer and you'll spend the whole trip indoors.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">⛰️</div><div class="highlight-title">Watch for altitude sickness</div><p class="highlight-text">The Atlas Mountains pass sits above 2,000m. Headaches, dizziness and fatigue are common. Drink water, eat, take it slow. It passes but it catches people out.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🧊</div><div class="highlight-title">The desert is cold at night</div><p class="highlight-text">Pack a warm layer specifically for the Sahara camp. It cools dramatically once the sun drops and you'll be outside for a long time staring at stars. You'll thank yourself.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🗺️</div><div class="highlight-title">Get a guide for Marrakech</div><p class="highlight-text">The medina will absolutely swallow you. Google Maps gives up. A local guide turns the chaos into something you can actually understand and enjoy. Non-negotiable.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🤝</div><div class="highlight-title">Haggling is expected</div><p class="highlight-text">The first price in any souk is not the real price. Negotiating is part of the culture — enjoy it, be friendly about it, and don't take it too seriously.</p></div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 09 — VIDEOS -->
+  <div id="videos" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">09</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">The full video series</div>
+        <div class="chapterName">Watch all 26 Morocco videos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="text-align:center;margin-bottom:16px;">
+    <p style="color:var(--ink-soft);max-width:540px;margin:0 auto;">We filmed the whole trip — every stage from Dublin airport to the Sahara desert camp and back. Watch them all below, grouped by destination.</p>
+  </div>
+
+  <div class="card videoGroupLabel"><h3>✈️ Before the trip</h3></div>
+  <div class="videoGrid">
+    <div class="card"><h3>Part 1 – Dublin to Marrakech</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/8sJj521AVo8" title="Part 1 – Dublin to Marrakech" allowfullscreen></iframe></div></div>
+  </div>
+
+  <div class="card videoGroupLabel"><h3>🕌 Marrakech</h3></div>
+  <div class="videoGrid">
+    <div class="card"><h3>Part 2 – Grand Mogador Menara Hotel</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/dmtF1M-rzFk" title="Grand Mogador Menara Hotel" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Marrakech – On the Road</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/CCBaRghdM90" title="On the Road" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Marrakech – Steak in Marrakech</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/Hlbf2UWMm2A" title="Steak in Marrakech" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Marrakech – Café de France</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/NxI6ep4FsE4" title="Café de France" allowfullscreen></iframe></div></div>
+  </div>
+
+  <div class="card videoGroupLabel"><h3>⛰️ Atlas Mountains</h3></div>
+  <div class="videoGrid">
+    <div class="card"><h3>Part 4 – Travelling Through the Atlas Mountains</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/65d2mpohVo0" title="Atlas Mountains" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Atlas – Mountain Scenery</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/ePGzmPhlXOg" title="Atlas Scenery" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Atlas – Villages &amp; Locals</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/gXvUuocNPcA" title="Mountain Villages" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Lunch at a Kasbah</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/BWbyYA8C5b8" title="Lunch at a Kasbah" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Jewish Museum in the Desert</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/R0SmQLruczM" title="Jewish Museum in the Desert" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Tamegroute – Pottery Making</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/KqbKl74j0ro" title="Tamegroute Pottery Making" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Part 3 – Les Jardins de Ouarzazate</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/ZTdiMwEIw3U" title="Ouarzazate" allowfullscreen></iframe></div></div>
+  </div>
+
+  <div class="card videoGroupLabel"><h3>🏰 Kasbahs &amp; Culture</h3></div>
+  <div class="videoGrid">
+    <div class="card"><h3>Part 5 – Argan Oil Co-op, Aguelmouss</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/dXUXZHXJPJM" title="Argan Oil Co-op" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Part 8 – Talouse Women's Co-op</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/BxU6yC1H9Dg" title="Women's Co-op" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Aït Benhaddou – UNESCO Kasbah</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/gXvUuocNPcA" title="Ait Benhaddou" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Palm View Palace Hotel, Ouarzazate</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/ghG4GeFna3U" title="Palm View Palace Hotel" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Mint Tea with Locals</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/kbKx6r13AuY" title="Mint Tea with locals" allowfullscreen></iframe></div></div>
+  </div>
+
+  <div class="card videoGroupLabel"><h3>🐪 Desert Journey &amp; Sahara Camp</h3></div>
+  <div class="videoGrid">
+    <div class="card"><h3>Part 7 – The Sahara Desert</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/30JojXt6I54" title="Sahara Desert" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Sahara – Driving Through the Desert</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/Z06hUQP7n-g" title="Driving Through the Desert" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Sahara – A Berber Village</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/Vc7DvHq4cus" title="A Berber Village in the Sahara" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Sahara – The Draa Region</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/0_BjvMG3Zl8" title="The Draa Region" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Sahara – Desert Camp</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/UgXF_vmRBtU" title="Desert Camp" allowfullscreen></iframe></div></div>
+  </div>
+
+  <div class="card videoGroupLabel"><h3>📸 More from the road</h3></div>
+  <div class="videoGrid">
+    <div class="card"><h3>Morocco – Hidden Moments</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/bIBn17PI1_0" title="Hidden Moments" allowfullscreen></iframe></div></div>
+    <div class="card"><h3>Morocco – Final Day</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/Yf0kLJYxkPs" title="Final Day" allowfullscreen></iframe></div></div>
+  </div>
+
+  <div class="card" style="text-align:center;">
+    <div class="links" style="justify-content:center;">
+      <a class="btn-outline" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener">See everything on YouTube →</a>
+    </div>
+  </div>
+
+  <!-- CHAPTER 10 — FAQ -->
+  <div id="faq" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">10</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">Common questions</div>
+        <div class="chapterName">Morocco FAQ — the questions we get asked most</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="faqItem open"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is a Morocco guided tour actually worth it?</div><div class="faqA">Yes — genuinely, and without hesitation. The distances and complexity of getting between Marrakech, the Atlas Mountains, and the Sahara make a guided tour dramatically better value than trying to piece it all together yourself. You see more, stress less, and get access to experiences — local guides, off-road routes, authentic stops — that you'd never find independently. We'd book it again tomorrow.</div></div>
+    <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is TourRadar reliable for booking Morocco tours?</div><div class="faqA">We used TourRadar for both our multi-day Morocco tour and our Marrakech walking tour, and had zero issues with either booking. It's a well-established platform, the booking process is straightforward, and customer support is responsive. The key is picking the right operator — we went with Morhara Morocco Tours and they were excellent.<br><br>If you're still weighing up whether TourRadar itself is worth booking through more generally, we've written a full honest breakdown here: <a href="/is-tourradar-worth-it.html" style="font-weight:700;color:var(--sand);">Is TourRadar Worth It? Our Honest Review →</a></div></div>
+    <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">How many days do you need to see Morocco properly?</div><div class="faqA">To do Morocco justice — including Marrakech, the Atlas Mountains, and the Sahara desert — you need at least 7 to 10 days. Anything shorter and you'll spend too much time in transit. The multi-day tour we did felt like exactly the right pace.</div></div>
+    <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">When is the best time to visit Morocco?</div><div class="faqA">Spring — March to May — is ideal. The weather is warm and pleasant, the crowds are manageable, and the landscape is often green after winter rains. Avoid summer if you can: Marrakech in July or August can hit 45°C and it is genuinely brutal. Autumn (September–November) is also excellent.</div></div>
+    <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Should you do a guided tour or book Morocco independently?</div><div class="faqA">For a first trip — especially if you want to reach the Sahara — go with a guided tour, no question. The road distances are enormous, the logistics are complicated, and a knowledgeable local guide adds layers of context and access that you simply won't get going solo. We met people on the trip who tried to piece it together themselves and missed half of what makes Morocco special.</div></div>
+    <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is Morocco good for gluten-free travellers?</div><div class="faqA">Much better than we expected. Tagines, slow-cooked lamb and chicken, grilled meats, rice, fresh salads — a lot of traditional Moroccan food is naturally gluten-free. Cross-contamination can be an issue in busier tourist spots, so being clear when ordering is important. We had no issues on our trip.</div></div>
+    <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What is the Sahara desert camp experience actually like?</div><div class="faqA">One of the best nights of our lives — genuinely. Arriving at the dunes by camel as the sun goes down, having dinner at the camp, sitting around a fire in the middle of the desert, and waking up at sunrise with nothing but sand dunes around you. It's not a luxury resort. It's better than that. The setting does all the work. Bring a warm layer — it gets cold once the sun drops.</div></div>
+    <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Can you fly to Morocco from Ireland?</div><div class="faqA">Yes — Ryanair flies direct from Dublin to Marrakech, which makes it very convenient for Irish travellers. Flight time is roughly 3 to 3.5 hours. It's one of the most straightforward long-haul-feeling destinations you can reach from Ireland without a long journey.</div></div>
+  </div>
+
+  <!-- CHAPTER 11 — BOOK IT -->
+  <div id="book" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">11</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">The tours we actually booked</div>
+        <div class="chapterName">Book your own Morocco adventure</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card sandCard">
+    <h2>The Morocco tour we booked — through TourRadar with Morhara Tours</h2>
+    <p>You've now seen what the trip was actually like for us — Marrakech, the Atlas Mountains, the co-operatives, the Sahara and everything in between. If you'd like to follow a similar route, these are the two tours we personally booked and would recommend.</p>
+    <div class="links">
+      <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See the multi-day Morocco tour →</a>
+      <a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">See the Marrakech walking tour with Ali →</a>
+    </div>
+    <p class="disclosure"><strong>Disclosure:</strong> Both are affiliate links. If you book through them we may earn a small commission at no extra cost to you. We only recommend tours we've actually done ourselves.</p>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="card goldCard" style="text-align:center;">
+    <div style="font-family:var(--font-hand);font-size:2.2rem;color:var(--terracotta);line-height:1;margin-bottom:8px;transform:rotate(-2deg);">One trip, a thousand cups of mint tea</div>
+    <h2 style="text-align:center;color:var(--ink);">Ready to book your Morocco trip?</h2>
+    <p style="text-align:center;color:var(--ink-soft);max-width:540px;margin:0 auto 20px;">Whether you want the full multi-day experience including the Sahara, or just a brilliant few days exploring Marrakech properly — both tours are through TourRadar and both come with our genuine, personal recommendation.</p>
+    <div class="links" style="justify-content:center;">
+      <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See the exact Morocco tour we did →</a>
+      <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book the Marrakech walking tour →</a>
+      <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://twofortherowd.com/avis-circuit-maroc.html">🇫🇷 Lire l'avis en français →</a>
+      <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://twofortherowd.com/#morocco">Watch our full video series first →</a>
+    </div>
+    <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">Affiliate disclosure: if you book through our links, we may earn a small commission at no cost to you. We only recommend tours we have done ourselves and would happily book again.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="/is-tourradar-worth-it.html">Is TourRadar worth it?</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#morocco">Watch Morocco videos</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/avis-circuit-maroc.html">🇫🇷 Version française</a></p>
+  <p style="margin-top:6px;font-size:11px;">This page contains affiliate links. If you book or buy through them we may earn a small commission at no extra cost to you.</p>
+</footer>
+
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
