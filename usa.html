@@ -147,6 +147,17 @@
     .glance-value{color:var(--ink);font-weight:500;}
     .glance-value strong{color:var(--usa-blue);}
 
+
+    /* TOURRADAR PICKS */
+    .tour-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px;}
+    .tour-pick{background:rgba(255,255,255,.82);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:8px;}
+    .tour-pick:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
+    .tour-pick h3{margin:0;font-size:1.08rem;}
+    .tour-pick p{font-size:13px;line-height:1.55;color:var(--ink-soft);margin:0;flex:1;}
+    .tour-pick a{font-size:13px;font-weight:800;color:var(--usa-blue);text-decoration:none;}
+    .tour-pick a:hover{text-decoration:underline;}
+    .tour-note{margin-top:16px;padding:14px 16px;border-radius:14px;background:rgba(23,74,126,.07);border:1px solid rgba(23,74,126,.14);font-size:13px;color:var(--ink-soft);}
+
     footer{margin-top:24px;padding:24px 0 16px;font-size:13px;line-height:1.7;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
 
@@ -159,7 +170,7 @@
       .route-strip{justify-content:center;}
       .chapterNav{top:52px;}
       .chapterHeaderInner{gap:10px;}
-      .journey-grid{grid-template-columns:1fr}
+      .journey-grid,.tour-grid{grid-template-columns:1fr}
       .dest-grid{grid-template-columns:repeat(2,1fr)}
       .stat-grid{grid-template-columns:repeat(2,1fr)}
       .photo-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:180px 150px}
@@ -180,6 +191,7 @@
     <a href="#photos">Photos</a>
     <a href="#adventures">Choose a Trip</a>
     <a href="#destinations">Destinations</a>
+    <a href="#tours">Tours</a>
     <a href="#more-photos">More Photos</a>
     <a href="#practical">Before You Go</a>
     <a href="#faq">FAQ</a>
@@ -356,10 +368,77 @@
   </div>
 </div>
 
-<!-- CHAPTER 05 — MORE PHOTOS -->
-<div id="more-photos" class="chapterHeader">
+
+<!-- CHAPTER 05 — TOURRADAR PICKS -->
+<div id="tours" class="chapterHeader">
   <div class="chapterHeaderInner">
     <div class="chapterNumber">05</div>
+    <div class="chapterTitle">
+      <div class="chapterLabel">Prefer to let someone else do the driving?</div>
+      <div class="chapterName">USA tours worth a look</div>
+    </div>
+  </div>
+</div>
+
+<div class="card blueCard">
+  <div class="eyebrow">
+    <span class="badge usa">🇺🇸 TourRadar USA picks</span>
+    <span class="badge outline">Multi-day tours</span>
+  </div>
+  <h2>Big American journeys, without planning every mile</h2>
+  <p style="color:var(--ink-soft);font-size:14px;">Having driven 4,000km from New York to Miami ourselves, we know how much planning a big American trip can involve. We loved having our own wheels, but if you'd rather leave the route, hotels and logistics to somebody else, these are some TourRadar itineraries we'd start with.</p>
+
+  <div class="tour-grid">
+    <div class="tour-pick">
+      <span class="badge sunset">🎸 Deep South</span>
+      <h3>Rhythms of the South</h3>
+      <p>An 11-day journey from Nashville to New Orleans, travelling through the musical heart of the South.</p>
+      <a href="https://www.tourradar.com/t/100013?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">View Rhythms of the South →</a>
+    </div>
+
+    <div class="tour-pick">
+      <span class="badge usa">🐻 Alaska</span>
+      <h3>Best of Alaska</h3>
+      <p>A bigger Alaska adventure for travellers who want to experience the state beyond a cruise itinerary.</p>
+      <a href="https://www.tourradar.com/t/81270?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">View Best of Alaska →</a>
+    </div>
+
+    <div class="tour-pick">
+      <span class="badge">🏞️ National Parks</span>
+      <h3>Best of Yellowstone</h3>
+      <p>A Yellowstone-focused option for anyone dreaming of America's extraordinary landscapes and wildlife.</p>
+      <a href="https://www.tourradar.com/t/118551?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">View Best of Yellowstone →</a>
+    </div>
+
+    <div class="tour-pick">
+      <span class="badge red">💦 New York + Canada</span>
+      <h3>Niagara Falls &amp; Toronto from NYC</h3>
+      <p>A handy three-day add-on from New York combining Niagara Falls with Toronto.</p>
+      <a href="https://www.tourradar.com/t/283325?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">View Niagara Falls &amp; Toronto →</a>
+    </div>
+
+    <div class="tour-pick">
+      <span class="badge usa">🗽 New York</span>
+      <h3>Holiday Magic in New York City</h3>
+      <p>A New York city break itinerary for travellers who'd prefer an organised experience in the Big Apple.</p>
+      <a href="https://www.tourradar.com/t/363540?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">View New York tour →</a>
+    </div>
+  </div>
+
+  <div class="tour-note">
+    <strong>Our pick, not our trip:</strong> these are tours we've selected as useful ideas for readers; our own USA journeys were independently planned and were not taken with TourRadar.
+  </div>
+
+  <div class="links">
+    <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored">Browse more USA tours on TourRadar →</a>
+  </div>
+  <p class="disclosure">Affiliate links — if you book through one of our TourRadar links, we may earn a commission at no extra cost to you.</p>
+</div>
+
+<!-- CHAPTER 06 — MORE PHOTOS -->
+<div id="more-photos" class="chapterHeader">
+  <div class="chapterHeaderInner">
+    <div class="chapterNumber">06</div>
     <div class="chapterTitle">
       <div class="chapterLabel">A few more from the road</div>
       <div class="chapterName">More of our USA photos</div>
@@ -378,10 +457,10 @@
   </div>
 </div>
 
-<!-- CHAPTER 06 — PRACTICAL INFO -->
+<!-- CHAPTER 07 — PRACTICAL INFO -->
 <div id="practical" class="chapterHeader">
   <div class="chapterHeaderInner">
-    <div class="chapterNumber">06</div>
+    <div class="chapterNumber">07</div>
     <div class="chapterTitle">
       <div class="chapterLabel">Ireland → USA</div>
       <div class="chapterName">What to know before you go</div>
@@ -400,10 +479,10 @@
   </ul>
 </div>
 
-<!-- CHAPTER 07 — FAQ -->
+<!-- CHAPTER 08 — FAQ -->
 <div id="faq" class="chapterHeader">
   <div class="chapterHeaderInner">
-    <div class="chapterNumber">07</div>
+    <div class="chapterNumber">08</div>
     <div class="chapterTitle">
       <div class="chapterLabel">Common questions</div>
       <div class="chapterName">USA travel FAQ</div>
