@@ -348,7 +348,7 @@
       display: flex; flex-direction: column;
     }
     .dest-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .dest-card-img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; }
+    .dest-card-img{width:100%;height:150px;object-fit:cover;object-position:center;display:block;background:#f2efe6;}
     .dest-card-content { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
     .dest-card-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
     .dest-card-desc { font-size: 14px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 12px; flex: 1; }
@@ -404,6 +404,7 @@
 
     @media (max-width: 768px) {
       .destination-cards { grid-template-columns: 1fr; }
+      .dest-card-img { height: 210px; }
       .dest-tabs { justify-content: flex-start; }
       .dest-tab { font-size: 13px; padding: 8px 12px; }
     }
@@ -415,6 +416,19 @@
       .drive-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
+
+  
+
+
+<script>
+function nextBelgiumPhoto(img){
+  const c=(img.dataset.candidates||'').split('|');
+  let i=Number(img.dataset.candidateIndex||0)+1;
+  if(i<c.length){img.dataset.candidateIndex=i;img.src=c[i];}
+  else{img.onerror=null;}
+}
+</script>
+
 </head>
 
 <body>
@@ -460,17 +474,6 @@
         <a class="btn-outline" href="https://twofortherowd.com/#destinations">
           See all our destinations →
         </a>
-      </div>
-
-      <div class="tagRow">
-        <span class="tag">Belgium travel guide</span>
-        <span class="tag">Belgium city breaks</span>
-        <span class="tag">Brussels Bruges Ghent Antwerp</span>
-        <span class="tag">Belgian beer culture</span>
-        <span class="tag">Belgium itinerary</span>
-        <span class="tag">Belgium train travel</span>
-        <span class="tag">Spa-Francorchamps</span>
-        <span class="tag">Belgium from Ireland</span>
       </div>
     </div>
 
@@ -561,11 +564,11 @@
     <div class="destination-cards">
       <!-- Brussels -->
       <div class="dest-card">
-        <img src="img/brussels.jpg" alt="Grand Place Brussels Belgium" loading="lazy">
+        <img class="dest-card-img" src="/img/brussels.jpg" data-candidates="/img/brussels.jpg|/img/brussels.jpeg|/img/brussels.JPG|/img/brussels.JPEG|/img/brussels.png|/img/brussels.PNG|/img/brussels.webp|/img/brussels.WEBP|/img/brussels2.jpg|/img/brussels2.jpeg|/img/brussels2.JPG|/img/brussels2.JPEG|/img/brussels2.png|/img/brussels2.PNG|/img/brussels2.webp|/img/brussels2.WEBP|/img/brussels3.jpg|/img/brussels3.jpeg|/img/brussels3.JPG|/img/brussels3.JPEG|/img/brussels3.png|/img/brussels3.PNG|/img/brussels3.webp|/img/brussels3.WEBP|/img/brussels4.jpg|/img/brussels4.jpeg|/img/brussels4.JPG|/img/brussels4.JPEG|/img/brussels4.png|/img/brussels4.PNG|/img/brussels4.webp|/img/brussels4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Brussels Belgium">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Brussels</h3>
           <p class="dest-card-desc">
-            The capital and Nicola's home for a year. Grand Place is one of Europe's most spectacular squares. The Atomium. Art Nouveau architecture. Beer culture. Neighbourhoods worth exploring. A city that becomes home.
+            My home for a year in 2005–06, and the city that made me fall for Belgium. Grand Place, the Atomium, Art Nouveau, brilliant cafés and beer culture — Brussels is a city that rewards you the longer you stay.
           </p>
           <a href="belgium/brussels.html" class="dest-card-button">Explore Brussels →</a>
         </div>
@@ -573,11 +576,11 @@
 
       <!-- Bruges -->
       <div class="dest-card">
-        <img src="img/bruges.jpg" alt="Bruges canals Belgium" loading="lazy">
+        <img class="dest-card-img" src="/img/bruges2.jpg" data-candidates="/img/bruges2.jpg|/img/bruges2.jpeg|/img/bruges2.JPG|/img/bruges2.JPEG|/img/bruges2.png|/img/bruges2.PNG|/img/bruges2.webp|/img/bruges2.WEBP|/img/bruges.jpg|/img/bruges.jpeg|/img/bruges.JPG|/img/bruges.JPEG|/img/bruges.png|/img/bruges.PNG|/img/bruges.webp|/img/bruges.WEBP|/img/bruges3.jpg|/img/bruges3.jpeg|/img/bruges3.JPG|/img/bruges3.JPEG|/img/bruges3.png|/img/bruges3.PNG|/img/bruges3.webp|/img/bruges3.WEBP|/img/bruges4.jpg|/img/bruges4.jpeg|/img/bruges4.JPG|/img/bruges4.JPEG|/img/bruges4.png|/img/bruges4.PNG|/img/bruges4.webp|/img/bruges4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Bruges Belgium">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Bruges</h3>
           <p class="dest-card-desc">
-            One of the world's most perfectly preserved medieval cities. Canals reflecting the buildings above. Chocolate shops. Cobbled streets. Bruges is postcard perfection — and it delivers.
+            Canals, stepped-gable houses, cobbled streets and a medieval centre that really is as beautiful as the photographs suggest. Bruges may be famous for chocolate and postcard views, but wandering it on foot is the real pleasure.
           </p>
           <a href="belgium/bruges.html" class="dest-card-button">Explore Bruges →</a>
         </div>
@@ -585,11 +588,11 @@
 
       <!-- Ghent -->
       <div class="dest-card">
-        <img src="img/ghent.jpg" alt="Ghent Belgium" loading="lazy">
+        <img class="dest-card-img" src="/img/ghent2.jpg" data-candidates="/img/ghent2.jpg|/img/ghent2.jpeg|/img/ghent2.JPG|/img/ghent2.JPEG|/img/ghent2.png|/img/ghent2.PNG|/img/ghent2.webp|/img/ghent2.WEBP|/img/ghent.jpg|/img/ghent.jpeg|/img/ghent.JPG|/img/ghent.JPEG|/img/ghent.png|/img/ghent.PNG|/img/ghent.webp|/img/ghent.WEBP|/img/ghent3.jpg|/img/ghent3.jpeg|/img/ghent3.JPG|/img/ghent3.JPEG|/img/ghent3.png|/img/ghent3.PNG|/img/ghent3.webp|/img/ghent3.WEBP|/img/ghent4.jpg|/img/ghent4.jpeg|/img/ghent4.JPG|/img/ghent4.JPEG|/img/ghent4.png|/img/ghent4.PNG|/img/ghent4.webp|/img/ghent4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Ghent Belgium">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Ghent</h3>
           <p class="dest-card-desc">
-            Don't call it Bruges' younger sibling. Ghent is vibrant, artistic and gritty in the best way. Medieval architecture meets contemporary culture. Canals, brilliant restaurants, a distinctly cool edge.
+            Ghent has a personality entirely of its own: medieval towers and canals alongside a lively, lived-in city centre. Historic, atmospheric and full of character, it was one of the Belgian cities I loved exploring while living here.
           </p>
           <a href="belgium/ghent.html" class="dest-card-button">Explore Ghent →</a>
         </div>
@@ -597,11 +600,11 @@
 
       <!-- Antwerp -->
       <div class="dest-card">
-        <img src="img/antwerp.jpg" alt="Antwerp Belgium" loading="lazy">
+        <img class="dest-card-img" src="/img/antwerp2.jpg" data-candidates="/img/antwerp2.jpg|/img/antwerp2.jpeg|/img/antwerp2.JPG|/img/antwerp2.JPEG|/img/antwerp2.png|/img/antwerp2.PNG|/img/antwerp2.webp|/img/antwerp2.WEBP|/img/antwerp.jpg|/img/antwerp.jpeg|/img/antwerp.JPG|/img/antwerp.JPEG|/img/antwerp.png|/img/antwerp.PNG|/img/antwerp.webp|/img/antwerp.WEBP|/img/antwerp3.jpg|/img/antwerp3.jpeg|/img/antwerp3.JPG|/img/antwerp3.JPEG|/img/antwerp3.png|/img/antwerp3.PNG|/img/antwerp3.webp|/img/antwerp3.WEBP|/img/antwerp4.jpg|/img/antwerp4.jpeg|/img/antwerp4.JPG|/img/antwerp4.JPEG|/img/antwerp4.png|/img/antwerp4.PNG|/img/antwerp4.webp|/img/antwerp4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Antwerp Belgium">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Antwerp</h3>
           <p class="dest-card-desc">
-            Port city with Flemish pride. The Cathedral of Our Lady. Diamond district. World-class art and architecture. Rubens. Fashion. A city with serious cultural weight and atmosphere.
+            Antwerp mixes grand Flemish architecture with the Scheldt, Rubens, the Cathedral of Our Lady, diamonds and fashion. It feels confident and completely different again from Brussels, Bruges or Ghent.
           </p>
           <a href="belgium/antwerp.html" class="dest-card-button">Explore Antwerp →</a>
         </div>
@@ -609,11 +612,11 @@
 
       <!-- Liège -->
       <div class="dest-card">
-        <img src="img/liege.jpg" alt="Liège Belgium" loading="lazy">
+        <img class="dest-card-img" src="/img/liege.jpg" data-candidates="/img/liege.jpg|/img/liege.jpeg|/img/liege.JPG|/img/liege.JPEG|/img/liege.png|/img/liege.PNG|/img/liege.webp|/img/liege.WEBP|/img/liege2.jpg|/img/liege2.jpeg|/img/liege2.JPG|/img/liege2.JPEG|/img/liege2.png|/img/liege2.PNG|/img/liege2.webp|/img/liege2.WEBP|/img/liege3.jpg|/img/liege3.jpeg|/img/liege3.JPG|/img/liege3.JPEG|/img/liege3.png|/img/liege3.PNG|/img/liege3.webp|/img/liege3.WEBP|/img/liege4.jpg|/img/liege4.jpeg|/img/liege4.JPG|/img/liege4.JPEG|/img/liege4.png|/img/liege4.PNG|/img/liege4.webp|/img/liege4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Liege Belgium">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Liège</h3>
           <p class="dest-card-desc">
-            The Walloon character. French-speaking, lively, with a gritty charm that feels distinctly different from the Flemish cities. Historic architecture. Street markets. Genuine warmth.
+            French-speaking Liège brings a completely different side of Belgium into the mix. Set on the Meuse, it has historic streets, a lively centre and an unmistakably Walloon character — plus the waffle that bears its name.
           </p>
           <a href="belgium/liege.html" class="dest-card-button">Explore Liège →</a>
         </div>
@@ -621,11 +624,11 @@
 
       <!-- Spa -->
       <div class="dest-card">
-        <img src="img/spa.jpg" alt="Spa Belgium" loading="lazy">
+        <img class="dest-card-img" src="/img/spa2.jpg" data-candidates="/img/spa2.jpg|/img/spa2.jpeg|/img/spa2.JPG|/img/spa2.JPEG|/img/spa2.png|/img/spa2.PNG|/img/spa2.webp|/img/spa2.WEBP|/img/spa.jpg|/img/spa.jpeg|/img/spa.JPG|/img/spa.JPEG|/img/spa.png|/img/spa.PNG|/img/spa.webp|/img/spa.WEBP|/img/spa3.jpg|/img/spa3.jpeg|/img/spa3.JPG|/img/spa3.JPEG|/img/spa3.png|/img/spa3.PNG|/img/spa3.webp|/img/spa3.WEBP|/img/spa4.jpg|/img/spa4.jpeg|/img/spa4.JPG|/img/spa4.JPEG|/img/spa4.png|/img/spa4.PNG|/img/spa4.webp|/img/spa4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Spa Belgium">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Spa</h3>
           <p class="dest-card-desc">
-            Historic spa town in the Ardennes. Famous for its mineral springs. Home to Spa-Francorchamps, one of the world's greatest Formula 1 circuits. Where Nicola had an unforgettable weekend.
+            A historic spa town in the Ardennes with one enormous extra draw: Spa-Francorchamps. I came here for the 2005 Belgian Grand Prix, had pit passes for the weekend and hoped in vain to meet my F1 hero Jacques Villeneuve. An unforgettable trip.
           </p>
           <a href="belgium/spa.html" class="dest-card-button">Explore Spa →</a>
         </div>
@@ -1099,6 +1102,5 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
