@@ -112,14 +112,75 @@
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.photo-grid-3{grid-template-columns:repeat(2,1fr);}.photo-grid-2{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}}
     @media(max-width:420px){.photo-grid-3,.photo-grid-2{grid-template-columns:1fr;}}
+
+    /* Sticky chapter navigation */
+    .chapterNav{position:sticky;top:0;z-index:60;background:rgba(253,248,239,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);box-shadow:0 5px 18px rgba(26,18,8,.06);margin-bottom:20px;}
+    .chapterInner{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:9px 14px;scrollbar-width:none;}
+    .chapterInner::-webkit-scrollbar{display:none;}
+    .chapterInner a{white-space:nowrap;text-decoration:none;font-size:12px;font-weight:700;padding:9px 12px;border-radius:999px;transition:.2s;}
+    .chapterInner a:hover{background:rgba(255,216,74,.28);color:var(--blue);}
+    html{scroll-padding-top:72px;}
+
+    /* Interactive Rockies route */
+    .routeMapIntro{max-width:700px;color:var(--ink-soft);font-size:14px;}
+    .interactiveRoute{display:grid;grid-template-columns:235px minmax(0,1fr);min-height:540px;margin-top:16px;overflow:hidden;border:1px solid var(--border);border-radius:16px;background:#fff;}
+    .rockiesSidebar{background:#fff;border-right:1px solid var(--border);overflow:auto;max-height:540px;}
+    .rockiesSidebarHead{padding:16px;background:linear-gradient(135deg,#8b4513,#a0522d);color:#fff;border-bottom:3px solid #d4861d;}
+    .rockiesSidebarHead strong{display:block;font-family:var(--font-display);font-size:16px;}
+    .rockiesSidebarHead span{font-size:11px;opacity:.86;}
+    .rockiesSteps{padding:8px;}
+    .rockiesStep{width:100%;border:0;border-left:3px solid #d4861d;background:#fafafa;text-align:left;padding:10px;margin:4px 0;border-radius:7px;cursor:pointer;font-family:var(--font-body);color:var(--ink);}
+    .rockiesStep:hover,.rockiesStep.active{background:#fff4df;}
+    .rockiesStep.active{box-shadow:inset 0 0 0 1px rgba(212,134,29,.28);}
+    .rockiesStepNo{display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:50%;background:#d4861d;color:#fff;font-size:11px;font-weight:800;margin-right:7px;}
+    .rockiesStepName{font-weight:700;font-size:12px;}
+    #rockiesRouteMap{min-height:540px;width:100%;z-index:1;}
+    .rockies-marker{background:#d4861d;color:#fff;border:3px solid #fff;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,.25);}
+    .rockies-marker.active{background:#fff;color:#d4861d;border-color:#d4861d;width:40px;height:40px;}
+    .routeMapCaption{margin-top:10px;font-size:11px;color:var(--muted);text-align:center;}
+
+    /* Drive From Home */
+    .dfh-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px;}
+    .dfh-city{background:rgba(255,255,255,.82);border:1px solid var(--border);border-radius:14px;padding:18px;}
+    .dfh-city p{font-size:13px;color:var(--muted);margin-bottom:10px;}
+    .dfh-links{display:flex;gap:8px;flex-wrap:wrap;}
+    .dfh-links a{display:inline-flex;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:12px;font-weight:700;background:#fff;border:1px solid var(--border-mid);}
+
+    @media(max-width:700px){
+      .interactiveRoute{grid-template-columns:1fr;min-height:0;}
+      .rockiesSidebar{border-right:0;border-bottom:1px solid var(--border);max-height:none;}
+      .rockiesSteps{display:flex;overflow-x:auto;gap:5px;}
+      .rockiesStep{min-width:150px;margin:0;}
+      #rockiesRouteMap{min-height:410px;}
+      .dfh-grid{grid-template-columns:1fr;}
+    }
+
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 </head>
 <body>
 
 <div class="backBar">
   <a href="https://twofortherowd.com/">← Back to Two for the Row'd</a>
-  <a href="https://twofortherowd.com/" style="font-family:var(--font-display);font-size:15px;font-weight:700;">Two for the Row'd 🇮🇪</a>
+  <a href="/canada.html" style="font-family:var(--font-display);font-size:15px;font-weight:700;">🇨🇦 Canada Hub →</a>
 </div>
+
+<nav class="chapterNav" aria-label="Rockies and Vancouver chapter navigation">
+  <div class="chapterInner">
+    <a href="#route-map">🗺️ Our Route</a>
+    <a href="#calgary">🤠 Calgary</a>
+    <a href="#rockies">⛰️ Rockies</a>
+    <a href="#itinerary">📅 Itinerary</a>
+    <a href="#icefield">🧊 Icefield</a>
+    <a href="#lakes">💎 Lakes</a>
+    <a href="#vancouver">🌊 Vancouver</a>
+    <a href="#drive">🚗 Drive From Home</a>
+    <a href="#alaska">🚢 Alaska</a>
+    <a href="#faq">❓ FAQ</a>
+    <a href="#packing">🎒 Packing</a>
+  </div>
+</nav>
 
 <div class="wrap">
 
@@ -128,7 +189,9 @@
     <span>›</span>
     <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
     <span>›</span>
-    <span>Canada — Rockies Trip 2024</span>
+    <a href="/canada.html">Canada</a>
+    <span>›</span>
+    <span>Rockies &amp; Vancouver 2024</span>
   </nav>
 
   <!-- HERO -->
@@ -161,7 +224,7 @@
 
     <div class="links">
       <a class="btn-gold" href="https://www.getyourguide.com/s/?q=Vancouver&lc=189&et=17883&searchSource=3&src=search_bar" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Canada activities →</a>
-      <a class="btn-outline" href="https://twofortherowd.com/#destinations">See all our destinations →</a>
+      <a class="btn-outline" href="/canada.html">Explore our full Canada guide →</a>
     </div>
 
     <div class="tagRow">
@@ -177,20 +240,40 @@
     </div>
   </div>
 
+
+  <!-- INTERACTIVE ROUTE MAP -->
+  <div id="route-map" class="section-divider">🗺️ Our 2024 Route</div>
+  <div class="card blueCard">
+    <div class="eyebrow">
+      <span class="badge">Interactive map</span>
+      <span class="badge outline">Calgary → Rockies → Vancouver</span>
+    </div>
+    <h2>Follow our route through Western Canada</h2>
+    <p class="routeMapIntro">This really shows the scale of the trip. We started in Calgary, headed deep into the Canadian Rockies, and finished on the Pacific coast in Vancouver. Click a stop to zoom in, or drag and zoom the map yourself.</p>
+    <div class="interactiveRoute">
+      <aside class="rockiesSidebar" aria-label="Rockies route stops">
+        <div class="rockiesSidebarHead"><strong>🏔️ Rocky Mountains Journey</strong><span>7 stops through Western Canada</span></div>
+        <div class="rockiesSteps" id="rockiesSteps"></div>
+      </aside>
+      <div id="rockiesRouteMap" aria-label="Interactive map of our Calgary, Rockies and Vancouver route"></div>
+    </div>
+    <p class="routeMapCaption">Interactive map © OpenStreetMap contributors. Route lines show the order of the featured stops rather than turn-by-turn driving directions.</p>
+  </div>
+
   <!-- CALGARY -->
-  <div class="section-divider">🤠 Calgary</div>
+  <div id="calgary" class="section-divider">🤠 Calgary</div>
   <div class="card">
     <h2>Calgary — where the adventure begins</h2>
     <p>Calgary is the gateway to the Canadian Rockies and a brilliant city in its own right. The skyline is stunning, the people are some of the friendliest we've encountered anywhere, and the food scene is seriously underrated. But the real reason to time your Canada trip for early July is simple — <strong>the Calgary Stampede</strong>.</p>
     <p>The Stampede is genuinely one of the greatest events on earth. Ten days of world-class rodeo, chuckwagon racing, incredible live music, insane fairground rides, and an atmosphere that's completely unique. Every single person in the city gets involved — Stetsons on, boots out, party on. We absolutely loved every second of it. Beyond the Stampede, Calgary itself is worth a couple of days — we did a sightseeing tour of the city which gave us a brilliant overview before we headed into the mountains.</p>
 
     <div class="photo-grid-3">
-      <img src="img/calgary1.jpg" alt="Calgary city — Two for the Row'd" loading="lazy">
-      <img src="img/calgary2.jpg" alt="Calgary Stampede — Two for the Row'd" loading="lazy">
-      <img src="img/calgary3.jpg" alt="Calgary Canada 2024 — Two for the Row'd" loading="lazy">
-      <img src="img/calgary4.jpg" alt="Calgary sightseeing — Two for the Row'd" loading="lazy">
-      <img src="img/calgary5.jpg" alt="Calgary city centre — Two for the Row'd" loading="lazy">
-      <img src="img/calgary6.jpg" alt="Calgary travel — Two for the Row'd" loading="lazy">
+      <img src="/img/calgary1.jpg" alt="Calgary city — Two for the Row'd" loading="lazy">
+      <img src="/img/calgary2.jpg" alt="Calgary Stampede — Two for the Row'd" loading="lazy">
+      <img src="/img/calgary3.jpg" alt="Calgary Canada 2024 — Two for the Row'd" loading="lazy">
+      <img src="/img/calgary4.jpg" alt="Calgary sightseeing — Two for the Row'd" loading="lazy">
+      <img src="/img/calgary5.jpg" alt="Calgary city centre — Two for the Row'd" loading="lazy">
+      <img src="/img/calgary6.jpg" alt="Calgary travel — Two for the Row'd" loading="lazy">
     </div>
 
     <h3>Book the Calgary sightseeing tour we did</h3>
@@ -203,7 +286,7 @@
   </div>
 
   <!-- THE ROCKIES -->
-  <div class="section-divider">⛰️ The Canadian Rockies</div>
+  <div id="rockies" class="section-divider">⛰️ The Canadian Rockies</div>
   <div class="card blueCard">
     <h2>The Canadian Rockies — nothing prepares you for it</h2>
     <p>Between us we've been to 57 countries. We've seen mountains in New Zealand, Norway, Nepal and Switzerland. And the Canadian Rockies still stopped us in our tracks. The scale is extraordinary. Driving west from Calgary, the mountains appear on the horizon and just keep getting bigger. By the time you reach Banff and then Lake Louise, you're genuinely pinching yourself.</p>
@@ -211,7 +294,7 @@
   </div>
 
   <!-- DAY BY DAY ITINERARY -->
-  <div class="section-divider">📅 The 3-Day Rockies Itinerary</div>
+  <div id="itinerary" class="section-divider">📅 The 3-Day Rockies Itinerary</div>
   <div class="card goldCard">
     <h2>Day by day — Calgary through the Rockies</h2>
 
@@ -261,7 +344,7 @@
   </div>
 
   <!-- ICEFIELD EXPLORER -->
-  <div class="section-divider">🧊 The Icefield Explorer</div>
+  <div id="icefield" class="section-divider">🧊 The Icefield Explorer</div>
   <div class="card greenCard">
     <h2>The Icefield Explorer — walking on the Athabasca Glacier</h2>
     <p>One of the most extraordinary and unusual experiences of the entire trip. The Columbia Icefield is one of the largest icefields in North America — and the Icefield Explorer takes you right out onto the Athabasca Glacier in a specially designed vehicle so you can actually step out and walk on the ice. Standing on a glacier that has been there for thousands of years, surrounded by mountains, with the ice crunching under your feet — it's one of those moments that genuinely makes you stop and take it all in.</p>
@@ -283,7 +366,7 @@
   </div>
 
   <!-- THE LAKES -->
-  <div class="section-divider">💎 The Lakes of Canada</div>
+  <div id="lakes" class="section-divider">💎 The Lakes of Canada</div>
   <div class="card blueCard">
     <h2>The Lakes of the Canadian Rockies — genuinely unreal</h2>
     <p>Nothing prepares you for the colour of the lakes in the Canadian Rockies. The turquoise and jade hues come from glacial rock flour suspended in the water — and no filter, no camera setting, no photo does it justice. You simply have to be there. Lake Louise, Moraine Lake, Peyto Lake, Bow Lake, Emerald Lake, Maligne Lake — each one more beautiful than the last. Watch our reel and you'll see exactly why we kept stopping every five minutes.</p>
@@ -297,18 +380,18 @@
   </div>
 
   <!-- VANCOUVER -->
-  <div class="section-divider">🌊 Vancouver</div>
+  <div id="vancouver" class="section-divider">🌊 Vancouver</div>
   <div class="card">
     <h2>Vancouver — the perfect end to a perfect trip</h2>
     <p>After the mountains, arriving in Vancouver felt like landing in a completely different world. Glass towers, ocean views, mountains still visible on the horizon — it's one of the most visually striking cities on earth. We arrived a few days before our Alaskan cruise departed, which gave us just enough time to explore properly.</p>
     <p>The highlight was the <strong>Panorama Seaplane tour</strong> — taking off from the downtown waterfront and flying over the city, Burrard Inlet and the surrounding mountains. One of the most spectacular things we've done anywhere in the world. We also did the hop-on hop-off bus which was perfect for covering Vancouver's different neighbourhoods at our own pace.</p>
 
     <div class="photo-grid-3">
-      <img src="img/Vancouver1.jpg" alt="Vancouver city — Two for the Row'd" loading="lazy">
-      <img src="img/Vancouver2.jpg" alt="Vancouver Canada — Two for the Row'd" loading="lazy">
-      <img src="img/Vancouver3.jpg" alt="Vancouver sightseeing — Two for the Row'd" loading="lazy">
-      <img src="img/Vancouver4.jpg" alt="Vancouver travel — Two for the Row'd" loading="lazy">
-      <img src="img/Vancouver5.jpg" alt="Vancouver waterfront — Two for the Row'd" loading="lazy">
+      <img src="/img/Vancouver1.jpg" alt="Vancouver city — Two for the Row'd" loading="lazy">
+      <img src="/img/Vancouver2.jpg" alt="Vancouver Canada — Two for the Row'd" loading="lazy">
+      <img src="/img/Vancouver3.jpg" alt="Vancouver sightseeing — Two for the Row'd" loading="lazy">
+      <img src="/img/Vancouver4.jpg" alt="Vancouver travel — Two for the Row'd" loading="lazy">
+      <img src="/img/Vancouver5.jpg" alt="Vancouver waterfront — Two for the Row'd" loading="lazy">
     </div>
   </div>
 
@@ -348,21 +431,51 @@
     <p class="disclosure"><strong>Disclosure:</strong> If you book through these links we may earn a small commission at no extra cost to you.</p>
   </div>
 
-  <!-- ALASKA CRUISE -->
-  <div class="section-divider">🚢 The Alaskan Cruise</div>
+
+  <!-- DRIVE FROM HOME -->
+  <div id="drive" class="section-divider">🚗 Drive Western Canada From Home</div>
   <div class="card greenCard">
-    <h2>Setting sail for Alaska — the perfect finale</h2>
+    <div class="eyebrow">
+      <span class="badge outline">Two for the Row'd × Drive From Home</span>
+      <span class="badge blue">Virtual city drives</span>
+    </div>
+    <h2>Explore both ends of our Canadian adventure</h2>
+    <p style="color:var(--ink-soft);font-size:14px;">Our friends at Drive From Home let you explore the two cities that bookended this trip — Calgary before we headed into the Rockies, and Vancouver where the Canadian leg finished.</p>
+    <div class="dfh-grid">
+      <div class="dfh-city">
+        <h3>🤠 Calgary</h3>
+        <p>Start where we started — gateway to the Rockies and home of the Stampede.</p>
+        <div class="dfh-links">
+          <a href="https://drivefromhome.com/cities/calgary-alberta/" target="_blank" rel="noopener">City guide →</a>
+          <a href="https://drivefromhome.com/city/?city=YYC" target="_blank" rel="noopener">Start driving →</a>
+        </div>
+      </div>
+      <div class="dfh-city">
+        <h3>🌊 Vancouver</h3>
+        <p>Finish on Canada's Pacific coast, just as we did before sailing to Alaska.</p>
+        <div class="dfh-links">
+          <a href="https://drivefromhome.com/cities/vancouver/" target="_blank" rel="noopener">City guide →</a>
+          <a href="https://drivefromhome.com/city/?city=YVR" target="_blank" rel="noopener">Start driving →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALASKA CRUISE -->
+  <div id="alaska" class="section-divider">🚢 Where We Went Next — Alaska</div>
+  <div class="card greenCard">
+    <h2>From Vancouver, we sailed north to Alaska</h2>
     <p>Vancouver is one of the most popular embarkation points for Alaskan cruises — and once you arrive you immediately understand why. Sailing out of Vancouver Harbour with the city skyline behind you and the mountains ahead is a genuinely spectacular departure. The Inside Passage route from Vancouver up through British Columbia and into Alaska is considered one of the great cruising routes in the world — glaciers calving into the sea, humpback whales breaching alongside the ship, bald eagles overhead.</p>
     <p>If you're already going to Vancouver — and you absolutely should be — seriously consider adding an Alaskan cruise onto the end of your trip. It turns a brilliant holiday into an extraordinary one.</p>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/304400?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See the Alaska cruise on TourRadar →</a>
+      <a class="btn-primary" href="/alaska-cruise.html" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See the Alaska cruise on TourRadar →</a>
       <a class="btn-outline" href="/alaska-cruise.html">Read our full Alaska diary →</a>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> If you book through our link we may earn a small commission at no extra cost to you.</p>
   </div>
 
   <!-- FAQ -->
-  <p class="section-label">Common questions</p>
+  <p id="faq" class="section-label">Common questions</p>
   <div class="card">
     <h2>Canada trip FAQ</h2>
     <div class="faqItem open">
@@ -392,7 +505,7 @@
   </div>
 
   <!-- PACKING -->
-  <p class="section-label">What to pack for Canada</p>
+  <p id="packing" class="section-label">What to pack for Canada</p>
   <div class="card">
     <h2>Canada packing essentials — what we'd bring</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">From the Rockies to Vancouver — Canada covers a huge range of terrain and weather. These are the things we'd pack without hesitation for a Calgary to Vancouver trip.</p>
@@ -415,7 +528,7 @@
     <p style="text-align:center;color:var(--ink-soft);max-width:540px;margin:0 auto 20px;">Whether you want the full Rockies experience, the Icefield Explorer, a seaplane over Vancouver or all of the above — start with GetYourGuide for activities and TourRadar for the Alaskan cruise.</p>
     <div class="links" style="justify-content:center;">
       <a class="btn-gold" href="https://www.getyourguide.com/s/?q=Vancouver&lc=189&et=17883&searchSource=3&src=search_bar" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Canada activities on GYG →</a>
-      <a class="btn-primary" href="https://www.tourradar.com/t/304400?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Alaska cruise on TourRadar →</a>
+      <a class="btn-primary" href="/alaska-cruise.html" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Alaska cruise on TourRadar →</a>
       <a class="btn-outline" href="https://twofortherowd.com/">Back to main site →</a>
     </div>
     <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">Affiliate disclosure: if you book through our links we may earn a small commission at no cost to you. We only recommend experiences we've done ourselves.</p>
@@ -427,5 +540,53 @@
   <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="/alaska-cruise.html">Alaska cruise diary</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#destinations">Our destinations</a></p>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<script>
+(function(){
+  const stops=[
+    {id:1,name:"Calgary",emoji:"🤠",lat:51.044733,lng:-114.071883,desc:"Starting point — Calgary, the Stampede and our gateway to the Rockies."},
+    {id:2,name:"Banff",emoji:"🏔️",lat:51.496846,lng:-115.928056,desc:"Banff National Park — mountain scenery and our overnight base."},
+    {id:3,name:"Lake Louise",emoji:"🏞️",lat:51.425371,lng:-116.177255,desc:"The famous glacier-fed turquoise lake backed by Victoria Glacier."},
+    {id:4,name:"Yoho National Park",emoji:"🌲",lat:51.414560,lng:-116.532437,desc:"Emerald Lake, Natural Bridge and dramatic Rocky Mountain scenery."},
+    {id:5,name:"Columbia Icefield & Athabasca Glacier",emoji:"🧊",lat:52.189723,lng:-117.257821,desc:"The Icefield Explorer and our chance to actually walk on the glacier."},
+    {id:6,name:"Jasper",emoji:"🏔️",lat:52.873383,lng:-117.954294,desc:"Jasper National Park — wildlife, lakes and huge alpine landscapes."},
+    {id:7,name:"Vancouver",emoji:"🌊",lat:49.282729,lng:-123.120738,desc:"The Canadian finish — Vancouver, seaplanes and the Pacific coast."}
+  ];
+  if(typeof L==="undefined") return;
+  const mapEl=document.getElementById("rockiesRouteMap");
+  if(!mapEl||mapEl.dataset.ready) return;
+  mapEl.dataset.ready="1";
+  const map=L.map("rockiesRouteMap",{scrollWheelZoom:false});
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:"&copy; OpenStreetMap contributors",maxZoom:18}).addTo(map);
+
+  const route=stops.map(s=>[s.lat,s.lng]);
+  L.polyline(route,{color:"#d4861d",weight:3,opacity:.78,dashArray:"7,7"}).addTo(map);
+  map.fitBounds(L.latLngBounds(route),{padding:[28,28]});
+
+  const markers={}; let active=null;
+  function icon(id,on){
+    return L.divIcon({html:'<div class="rockies-marker'+(on?' active':'')+'">'+id+'</div>',className:"",iconSize:on?[40,40]:[34,34],iconAnchor:on?[20,20]:[17,17],popupAnchor:[0,-20]});
+  }
+  function activate(id,zoom){
+    document.querySelectorAll("#rockiesSteps .rockiesStep").forEach(b=>b.classList.toggle("active",Number(b.dataset.id)===id));
+    if(active&&markers[active]) markers[active].setIcon(icon(active,false));
+    active=id; const m=markers[id]; m.setIcon(icon(id,true));
+    if(zoom) map.setView(m.getLatLng(),7,{animate:true});
+    m.openPopup();
+  }
+  stops.forEach(s=>{
+    const m=L.marker([s.lat,s.lng],{icon:icon(s.id,false)})
+      .bindPopup('<strong style="color:#a65d0b">Stop '+s.id+': '+s.name+' '+s.emoji+'</strong><br><span style="font-size:12px">'+s.desc+'</span>')
+      .addTo(map);
+    m.on("click",()=>activate(s.id,true)); markers[s.id]=m;
+    const b=document.createElement("button"); b.type="button"; b.className="rockiesStep"; b.dataset.id=s.id;
+    b.innerHTML='<span class="rockiesStepNo">'+s.id+'</span><span class="rockiesStepName">'+s.name+' '+s.emoji+'</span>';
+    b.addEventListener("click",()=>activate(s.id,true)); document.getElementById("rockiesSteps").appendChild(b);
+  });
+  activate(1,false);
+  setTimeout(()=>map.invalidateSize(),150);
+})();
+</script>
+
 </body>
 </html>
