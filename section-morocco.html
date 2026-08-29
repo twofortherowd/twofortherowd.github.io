@@ -68,7 +68,102 @@
     footer{padding:20px 16px 28px;font-size:13px;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:680px){.videoGrid{grid-template-columns:1fr;}.hero-ctas,.links{flex-direction:column;}.hero-ctas a,.links a{width:100%;}.card{padding:20px 18px;}}
+
+    .moroccoRouteIntro{font-size:14px;color:var(--ink-soft);margin-bottom:14px;}
+    .interactiveMoroccoRoute{
+      display:grid;
+      grid-template-columns:240px minmax(0,1fr);
+      min-height:540px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:#fff;
+      box-shadow:var(--shadow-sm);
+    }
+    .moroccoRouteSidebar{
+      background:#fff;
+      border-right:1px solid var(--border);
+      overflow:auto;
+      max-height:540px;
+    }
+    .moroccoRouteHead{
+      padding:16px;
+      background:linear-gradient(135deg,#d4861d 0%,#c0552b 100%);
+      color:#fff;
+      border-bottom:3px solid var(--gold);
+    }
+    .moroccoRouteHead strong{
+      display:block;
+      font-family:var(--font-display);
+      font-size:16px;
+      margin-bottom:2px;
+    }
+    .moroccoRouteHead span{font-size:11px;opacity:.9;}
+    .moroccoRouteSteps{padding:8px;}
+    .moroccoRouteStep{
+      width:100%;
+      border:0;
+      border-left:3px solid var(--gold);
+      background:#fafafa;
+      text-align:left;
+      padding:10px;
+      margin:4px 0;
+      border-radius:7px;
+      cursor:pointer;
+      color:var(--ink);
+      font-family:var(--font-body);
+      transition:.2s ease;
+    }
+    .moroccoRouteStep:hover,.moroccoRouteStep.active{background:#fff4df;}
+    .moroccoRouteStep.active{box-shadow:inset 0 0 0 1px rgba(212,134,29,.28);}
+    .moroccoRouteNo{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:25px;
+      height:25px;
+      border-radius:50%;
+      background:#d4861d;
+      color:#fff;
+      font-size:11px;
+      font-weight:800;
+      margin-right:7px;
+    }
+    .moroccoRouteName{font-size:12px;font-weight:700;}
+    #moroccoRouteMap{min-height:540px;width:100%;z-index:1;}
+    .morocco-marker{
+      background:#d4861d;
+      color:#fff;
+      border:3px solid #fff;
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:13px;
+      box-shadow:0 2px 8px rgba(0,0,0,.25);
+    }
+    .morocco-marker.active{
+      background:#fff;
+      color:#d4861d;
+      border-color:#d4861d;
+      width:40px;
+      height:40px;
+    }
+    .mapHint strong{color:var(--ink-soft);}
+    @media(max-width:700px){
+      .interactiveMoroccoRoute{grid-template-columns:1fr;min-height:0;}
+      .moroccoRouteSidebar{border-right:0;border-bottom:1px solid var(--border);max-height:none;}
+      .moroccoRouteSteps{display:flex;overflow-x:auto;gap:5px;}
+      .moroccoRouteStep{min-width:155px;margin:0;}
+      #moroccoRouteMap{min-height:410px;}
+    }
+
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 </head>
 <body>
 
@@ -95,7 +190,7 @@
   </div>
   <h2 class="hero-headline" style="font-size:clamp(1.5rem,3vw,2.2rem);">We did the Morocco tour everyone talks about.<br><em>Here's our completely honest review.</em></h2>
   <p class="hero-lead">Marrakech medinas, Atlas Mountain passes, an argan oil co-op that nearly made Nicola cry, and a night in the Sahara under more stars than we knew existed. All of it organised through TourRadar with Morhara Morocco Tours.</p>
-  <p style="font-size:14px;color:var(--ink-soft);margin-bottom:16px;">Below you'll find our route, the Marrakech walking tour we loved, a few useful facts before you go, six of our favourite videos and the booking links. The <strong>full honest review</strong> — Nicola's diary, packing list, what to know before you go, and all 26 videos — is on the dedicated review page.</p>
+  <p style="font-size:14px;color:var(--ink-soft);margin-bottom:16px;">Below you'll find our interactive route map, the Marrakech walking tour we loved, a few useful facts before you go, six of our favourite videos and the booking links. The <strong>full honest review</strong> — Nicola's diary, packing list, what to know before you go, and all 26 videos — is on the dedicated review page.</p>
   <div class="hero-ctas">
     <a class="btn-primary" href="/morocco-tour-review.html" target="_blank" rel="noopener">Read the full Morocco review →</a>
     <a class="btn-outline" href="/avis-circuit-maroc.html" target="_blank" rel="noopener">🇫🇷 Lire l'avis en français →</a>
@@ -106,16 +201,26 @@
 <!-- ROUTE MAP -->
 <p class="section-label" style="max-width:880px;margin:6px auto 10px;">The route</p>
 <div class="card" style="max-width:880px;margin:0 auto 16px;">
-  <p style="font-size:14px;color:var(--ink-soft);margin-bottom:12px;">Marrakech → Atlas Mountains → Aït Benhaddou → Ouarzazate → Aguelmouss → Oasis Lodge → Sahara Desert</p>
-  <div class="routeMapWrap" style="position:relative;">
-    <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 8px 24px rgba(26,18,8,.10);">
-      <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-        <source src="/img/morocco-map.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+  <div class="hero-eyebrow">
+    <span class="badge">🗺️ Interactive route</span>
+    <span class="badge outline">8 stops</span>
+    <span class="badge outline">Marrakech → Sahara</span>
   </div>
-  <p class="mapHint">Our Morocco route, mapped out — Marrakech to the Sahara and back.</p>
+  <h2 style="margin-bottom:6px;">Follow our journey across Morocco</h2>
+  <p class="moroccoRouteIntro">This is much better than the old route video — you can now see the actual geography of the trip. We started in Marrakech, crossed the High Atlas, travelled through kasbah country and the Draa region, and finished out in the Sahara. Click any stop to zoom in.</p>
+
+  <div class="interactiveMoroccoRoute">
+    <aside class="moroccoRouteSidebar" aria-label="Morocco route stops">
+      <div class="moroccoRouteHead">
+        <strong>🇲🇦 Morocco Journey</strong>
+        <span>8 stops through mountains &amp; desert</span>
+      </div>
+      <div class="moroccoRouteSteps" id="moroccoRouteSteps"></div>
+    </aside>
+    <div id="moroccoRouteMap" aria-label="Interactive map of our Morocco route"></div>
+  </div>
+
+  <p class="mapHint"><strong>Our Morocco route:</strong> Marrakech → Tizi n'Tichka Pass → Aït Benhaddou → Ouarzazate → Tamegroute → Aguelmouss → Draa Valley &amp; Desert → Sahara Desert Camp.</p>
 </div>
 
 <!-- MARRAKECH WALKING TOUR -->
@@ -200,5 +305,85 @@
   <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Home</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#destinations">All destinations</a></p>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<script>
+(function(){
+  const stops=[
+    {id:1,name:"Marrakech",emoji:"🕌",lat:31.6225224,lng:-7.9898258,desc:"Starting point — the medina, souks and Jemaa el-Fnaa."},
+    {id:2,name:"Tizi n'Tichka Pass",emoji:"⛰️",lat:31.2862964,lng:-7.3810637,desc:"Across the High Atlas on the spectacular mountain pass."},
+    {id:3,name:"Aït Benhaddou",emoji:"🏰",lat:31.047043,lng:-7.1318996,desc:"The extraordinary UNESCO-listed ksar of Aït Benhaddou."},
+    {id:4,name:"Ouarzazate",emoji:"🏨",lat:30.9335436,lng:-6.937016,desc:"Gateway to the desert and Morocco's famous film country."},
+    {id:5,name:"Tamegroute",emoji:"🏺",lat:30.2638799,lng:-5.6799816,desc:"A village known for its traditional pottery and craftsmanship."},
+    {id:6,name:"Aguelmouss",emoji:"🫒",lat:30.0,lng:-5.8,desc:"The women's argan oil co-operative that became one of our memorable stops."},
+    {id:7,name:"Draa Valley & Desert",emoji:"🏜️",lat:29.8,lng:-5.5,desc:"Berber villages, desert landscapes and the Draa region."},
+    {id:8,name:"Sahara Desert Camp",emoji:"🐪",lat:31.0895958,lng:-3.9647526,desc:"The finish — camel ride, desert camp and a night under the Sahara stars."}
+  ];
+
+  if(typeof L==="undefined") return;
+  const mapEl=document.getElementById("moroccoRouteMap");
+  if(!mapEl||mapEl.dataset.ready) return;
+  mapEl.dataset.ready="1";
+
+  const map=L.map("moroccoRouteMap",{scrollWheelZoom:false});
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+    attribution:"&copy; OpenStreetMap contributors",
+    maxZoom:18
+  }).addTo(map);
+
+  const route=stops.map(s=>[s.lat,s.lng]);
+  L.polyline(route,{color:"#d4861d",weight:3,opacity:.78,dashArray:"7,7"}).addTo(map);
+  map.fitBounds(L.latLngBounds(route),{padding:[28,28]});
+
+  const markers={};
+  let active=null;
+
+  function icon(id,on){
+    return L.divIcon({
+      html:'<div class="morocco-marker'+(on?' active':'')+'">'+id+'</div>',
+      className:"",
+      iconSize:on?[40,40]:[34,34],
+      iconAnchor:on?[20,20]:[17,17],
+      popupAnchor:[0,-20]
+    });
+  }
+
+  function activate(id,zoom){
+    document.querySelectorAll("#moroccoRouteSteps .moroccoRouteStep")
+      .forEach(b=>b.classList.toggle("active",Number(b.dataset.id)===id));
+
+    if(active&&markers[active]) markers[active].setIcon(icon(active,false));
+    active=id;
+
+    const m=markers[id];
+    m.setIcon(icon(id,true));
+    if(zoom) map.setView(m.getLatLng(),7,{animate:true});
+    m.openPopup();
+  }
+
+  stops.forEach(s=>{
+    const marker=L.marker([s.lat,s.lng],{icon:icon(s.id,false)})
+      .bindPopup(
+        '<strong style="color:#c0552b">Stop '+s.id+': '+s.name+' '+s.emoji+'</strong>'+
+        '<br><span style="font-size:12px">'+s.desc+'</span>'
+      )
+      .addTo(map);
+
+    marker.on("click",()=>activate(s.id,true));
+    markers[s.id]=marker;
+
+    const button=document.createElement("button");
+    button.type="button";
+    button.className="moroccoRouteStep";
+    button.dataset.id=s.id;
+    button.innerHTML='<span class="moroccoRouteNo">'+s.id+'</span><span class="moroccoRouteName">'+s.name+' '+s.emoji+'</span>';
+    button.addEventListener("click",()=>activate(s.id,true));
+    document.getElementById("moroccoRouteSteps").appendChild(button);
+  });
+
+  activate(1,false);
+  setTimeout(()=>map.invalidateSize(),150);
+})();
+</script>
+
 </body>
 </html>
