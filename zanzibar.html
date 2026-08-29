@@ -338,6 +338,14 @@
     .section-divider { display: flex; align-items: center; gap: 12px; margin: 8px 0 16px; font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); }
     .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border-mid); }
 
+    .explore-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 12px; }
+    .explore-card { background: rgba(255,255,255,.9); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 22px; box-shadow: var(--shadow-md); transition: transform .18s ease, box-shadow .18s ease; text-decoration: none; }
+    .explore-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .explore-card h3 { margin-bottom: 8px; font-size: 1.15rem; }
+    .explore-card p { font-size: 14px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 12px; }
+    .explore-card .cta { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--ink); }
+    .explore-card .cta::after { content: "→"; }
+
     footer { margin-top: 10px; padding: 20px 0 12px; font-size: 13px; line-height: 1.6; color: var(--muted); text-align: center; }
     footer a { color: var(--muted); font-weight: 600; }
 
@@ -346,6 +354,7 @@
       .links { flex-direction: column; }
       .links a { text-align: center; justify-content: center; }
       .route-strip { justify-content: center; }
+      .explore-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -380,39 +389,8 @@
       </h1>
 
       <p class="hero-lead">
-        We began our honeymoon in 2023 on the extraordinary island of Zanzibar — and what a
-        way to start. Four nights based in the atmospheric Stone Town, a full island tour that
-        took us to a magical cave swim, a day trip out to Prison Island with its giant tortoises,
-        and a wonderfully meandering local-guided wander through the labyrinthine streets of
-        the old city. Zanzibar is diverse, fascinating, warm-hearted and utterly unlike anywhere
-        else on earth. Bring cash. Mind the potholes. Love every minute.
+        We began our honeymoon in 2023 on the extraordinary island of Zanzibar — and what a way to start. Four nights based in the atmospheric Stone Town, a full island tour that took us to a magical cave swim, a day trip out to Prison Island with its giant tortoises, and a wonderfully meandering local-guided wander through the labyrinthine streets of the old city. Zanzibar is diverse, fascinating, warm-hearted and utterly unlike anywhere else on earth.
       </p>
-
-      <div class="route-strip" style="margin-top:20px;">
-        <span class="route-stop">🏘️ Stone Town</span>
-        <span class="route-arrow">→</span>
-        <span class="route-stop">🗺️ Island Tour</span>
-        <span class="route-arrow">→</span>
-        <span class="route-stop">🏊 Cave Swim</span>
-        <span class="route-arrow">→</span>
-        <span class="route-stop">🐢 Prison Island</span>
-        <span class="route-arrow">→</span>
-        <span class="route-stop">🚶 Local Guide</span>
-        <span class="route-arrow">→</span>
-        <span class="route-stop">🌅 Zanzibar Sunsets</span>
-      </div>
-
-      <p style="font-size:13px;font-weight:700;color:var(--muted);margin:14px 0 8px;letter-spacing:.06em;text-transform:uppercase;">What this island gave us:</p>
-      <div class="states-strip">
-        <span class="state-pill">Honeymoon magic 💍</span>
-        <span class="state-pill">Stone Town exploring</span>
-        <span class="state-pill">Magical cave swim</span>
-        <span class="state-pill">Prison Island tortoises 🐢</span>
-        <span class="state-pill">Local guided wander</span>
-        <span class="state-pill">Cultural diversity</span>
-        <span class="state-pill">Haggling in the bazaars</span>
-        <span class="state-pill">Legendary potholes 🕳️</span>
-      </div>
 
       <div class="links">
         <a class="btn-primary" href="https://www.tourradar.com/t/273425?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
@@ -429,58 +407,38 @@
         <span class="tag">Prison Island Zanzibar</span>
         <span class="tag">Zanzibar island tour</span>
         <span class="tag">Zanzibar from Ireland</span>
-        <span class="tag">Stone Town hotels</span>
         <span class="tag">Zanzibar travel tips</span>
         <span class="tag">Spice Island Tanzania</span>
       </div>
     </div>
 
-    <!-- ── THE STORY ─────────────────────────────────────── -->
-    <div class="section-divider">🇹🇿 The Trip</div>
+    <!-- ── EXPLORE OUR JOURNEY ───────────────────────────── -->
+    <div class="section-divider">🗺️ Explore our Zanzibar journey</div>
 
-    <p class="section-label">The honeymoon story</p>
-    <div class="card">
-      <h2>The most extraordinary start to a honeymoon we could have imagined.</h2>
-
-      <div class="quote-block">
-        "Zanzibar is one of those places that hits you the moment you arrive and never quite
-        lets go. The smells, the sounds, the heat, the history — it is completely and utterly
-        unlike anywhere else we have ever been."
-      </div>
-
-      <p>
-        We chose Zanzibar as the first stop on our 2023 honeymoon — and it set the bar
-        extraordinarily high. Based in Stone Town for four nights, we were immediately
-        immersed in one of the most atmospheric and historically rich places we have ever
-        stayed. The old city is a UNESCO World Heritage Site and every narrow lane tells
-        a story — the Arabic architecture, the ornate carved wooden doors, the mosques and
-        churches standing almost side by side, the scent of spices drifting through the air.
-      </p>
-      <p>
-        One of the things that struck us most was the remarkable harmony between Zanzibar's
-        different religious communities. The island is predominantly Muslim, but Christianity
-        is also very much present — and the two coexist with a warmth and mutual respect that
-        is genuinely inspiring. It gave the whole place a feeling of peace and openness that
-        we have rarely encountered.
-      </p>
-      <p>
-        The island tour was extraordinary — a full day taking in the diversity of Zanzibar's
-        landscapes and communities, culminating in a swim in a cave that was one of those
-        genuinely magical travel moments you never forget. Prison Island was a brilliant half
-        day — the giant Aldabra tortoises alone are worth the boat trip — and having a local
-        guide show us around Stone Town gave us a completely different perspective on the city.
-      </p>
-      <p>
-        A few practical notes for anyone planning a visit: bring plenty of cash — cards are
-        not widely accepted and the markets and bazaars run entirely on haggling. And prepare
-        yourself for the roads. The potholes in Zanzibar are legendary. Go with the flow,
-        hold on tight and enjoy the ride.
-      </p>
+    <p class="section-label">Three unforgettable experiences</p>
+    <div class="explore-grid">
+      <a href="https://twofortherowd.com/zanzibar/stone-town.html" class="explore-card">
+        <h3>🏘️ Stone Town</h3>
+        <p>UNESCO World Heritage site, labyrinthine streets, carved wooden doors and one of the most atmospheric places we've ever stayed for four nights.</p>
+        <span class="cta">Explore Stone Town</span>
+      </a>
+      <a href="https://twofortherowd.com/zanzibar/prison-island.html" class="explore-card">
+        <h3>🐢 Prison Island</h3>
+        <p>A brilliant half-day trip from Stone Town featuring giant Aldabra tortoises, fascinating island history and a beautiful boat journey.</p>
+        <span class="cta">Explore Prison Island</span>
+      </a>
+      <a href="https://twofortherowd.com/zanzibar/island-tour.html" class="explore-card">
+        <h3>🏊 Island Tour & Cave Swim</h3>
+        <p>Our full-day Zanzibar adventure exploring diverse landscapes and communities, culminating in a magical natural cave swim.</p>
+        <span class="cta">Explore the Island Tour</span>
+      </a>
     </div>
 
     <!-- ── HIGHLIGHTS ─────────────────────────────────────── -->
+    <div class="section-divider">✨ What made Zanzibar special</div>
+
     <div class="card redCard">
-      <h2>The highlights — what stood out most</h2>
+      <h2>The island at a glance</h2>
 
       <div class="highlights-grid">
         <div class="highlight-item">
@@ -524,37 +482,36 @@
       <p>From the iconic carved doors of Stone Town and the turquoise waters to the local musicians, the boats and the golden light of a Zanzibar evening.</p>
 
       <div class="photo-grid-3">
-        <img src="img/zanz2.jpg" alt="Zanzibar coastline beach — Two for the Row'd" loading="lazy">
-        <img src="img/zanz3.jpg" alt="Stone Town building balcony Zanzibar — Two for the Row'd" loading="lazy">
-        <img src="img/zanz4.jpg" alt="Carved wooden door Stone Town Zanzibar — Two for the Row'd" loading="lazy">
+        <img src="/img/zanz2.jpg" alt="Zanzibar coastline beach — Two for the Row'd" loading="lazy">
+        <img src="/img/zanz3.jpg" alt="Stone Town building balcony Zanzibar — Two for the Row'd" loading="lazy">
+        <img src="/img/zanz4.jpg" alt="Carved wooden door Stone Town Zanzibar — Two for the Row'd" loading="lazy">
       </div>
       <div class="photo-grid-3">
-        <img src="img/zanz6.jpg" alt="Group photo with local musicians Zanzibar — Two for the Row'd" loading="lazy" style="object-position: center top;">
-        <img src="img/zanz7.jpg" alt="Group selfie on boat pier Zanzibar — Two for the Row'd" loading="lazy" style="object-position: center top;">
-        <img src="img/zanz8.jpg" alt="Boat on water at sunset Zanzibar — Two for the Row'd" loading="lazy">
+        <img src="/img/zanz6.jpg" alt="Group photo with local musicians Zanzibar — Two for the Row'd" loading="lazy" style="object-position: center top;">
+        <img src="/img/zanz7.jpg" alt="Group selfie on boat pier Zanzibar — Two for the Row'd" loading="lazy" style="object-position: center top;">
+        <img src="/img/zanz8.jpg" alt="Boat on water at sunset Zanzibar — Two for the Row'd" loading="lazy">
       </div>
     </div>
 
-    <!-- ── REEL ───────────────────────────────────────────── -->
-    <div class="section-divider">🎬 Our Zanzibar Reel</div>
-
-    <p class="section-label">Watch our short</p>
+    <!-- ── PRISON ISLAND VIDEO TEASER ───────────────────────── -->
+    <div class="section-divider">🎬 From our honeymoon</div>
     <div class="card warmCard">
-      <h2>Zanzibar — the Spice Island on film</h2>
+      <h2>Watch our Prison Island visit</h2>
       <p>
-        Stone Town, the island's extraordinary diversity, the colours and the atmosphere —
-        our Zanzibar honeymoon reel captures what makes this island so special.
+        One of our Zanzibar excursions took us across the water from Stone Town to Prison Island.
+        We filmed a short from our visit — including the island atmosphere and our time there.
       </p>
-
-      <div style="margin:20px 0;">
-        <div class="iframeWrapPortrait">
-          <iframe src="https://www.youtube.com/embed/wbAy0PnmZRI"
-            title="Zanzibar — Two for the Row'd"
-            allowfullscreen loading="lazy">
-          </iframe>
-        </div>
-        <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:10px;">Zanzibar — the Spice Island 🌴</p>
+      <div class="links">
+        <a class="btn-primary" href="/zanzibar/prison-island.html">🐢 See our Prison Island visit →</a>
       </div>
+    </div>
+
+    <!-- ── MORE OF OUR ZANZIBAR PHOTOS ───────────────────── -->
+    <p class="section-label">More from our honeymoon</p>
+    <div class="photo-grid-3">
+      <img src="/img/zanzi4.jpg" alt="Traditional dhow on the Zanzibar coast" loading="lazy">
+      <img src="/img/zanzi8.jpg" alt="Turquoise shoreline and palm trees in Zanzibar" loading="lazy">
+      <img src="/img/zanzibar3.jpg" alt="Nicola and Padraig enjoying a drink during their Zanzibar honeymoon" loading="lazy">
     </div>
 
     <!-- ── BOOK THE TOUR ──────────────────────────────────── -->
@@ -579,6 +536,21 @@
       </p>
     </div>
 
+    <!-- ── KLOOK HOTELS ───────────────────────────────────── -->
+    <div class="card blueCard">
+      <h2>Find a hotel in Zanzibar with Klook</h2>
+      <p>
+        If you're planning your own Zanzibar stay, you can browse accommodation options across the island with Klook.
+      </p>
+      <div class="links">
+        <a class="btn-primary" target="_blank" rel="sponsored noopener"
+           href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1406934&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fhotels%2Fsearchresult%2F%3Froom_num%3D1%26adult_num%3D2%26child_num%3D0%26stype%3Ddistrict%26svalue%3D5033%26override%3DZanzibar%26title%3DZanzibar%26currency%3DUSD">
+          🏨 Browse Zanzibar hotels on Klook →
+        </a>
+      </div>
+      <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
+    </div>
+
     <!-- ── GYG ────────────────────────────────────────────── -->
     <div class="card">
       <h2>Book Zanzibar experiences with GetYourGuide</h2>
@@ -593,6 +565,24 @@
       <p class="disclosure">
         <strong>Disclosure:</strong> If you book through these links we may earn a small commission at no extra cost to you.
       </p>
+    </div>
+
+    <!-- ── DAR ES SALAAM / DRIVE FROM HOME ───────────────── -->
+    <div class="section-divider">🇹🇿 Our route to Zanzibar</div>
+    <div class="card greenCard">
+      <h2>A stopover in Dar es Salaam</h2>
+      <p>
+        Our journey to Zanzibar also included a stopover in Dar es Salaam on the Tanzanian mainland.
+        We weren't there for a full city stay, so we're not pretending this was an in-depth visit —
+        but it was part of our honeymoon route before Zanzibar.
+      </p>
+      <p>
+        Drive From Home has a virtual Dar es Salaam experience if you'd like to explore more of the city from home.
+      </p>
+      <div class="links">
+        <a class="btn-gold" target="_blank" rel="noopener" href="https://drivefromhome.com/cities/dar-es-salaam/">🌍 Explore Dar es Salaam →</a>
+        <a class="btn-outline" target="_blank" rel="noopener" href="https://drivefromhome.com/city/?city=DAR">🚗 Start driving virtually →</a>
+      </div>
     </div>
 
     <!-- ── FAQ ────────────────────────────────────────────── -->
