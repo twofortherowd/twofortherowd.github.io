@@ -290,20 +290,126 @@
     footer { margin-top: 10px; padding: 20px 0 12px; font-size: 13px; line-height: 1.6; color: var(--muted); text-align: center; }
     footer a { color: var(--muted); font-weight: 600; }
 
+
+
+    .routeMapCard { overflow:hidden; }
+    .routeMapIntro { max-width:680px; color:var(--ink-soft); font-size:14px; }
+    .routeMapWrap {
+      margin-top:16px; padding:16px; border:1px solid var(--border);
+      border-radius:16px; background:linear-gradient(145deg,#f8fcff,#edf6fa);
+      overflow:hidden;
+    }
+    .routeMapWrap svg { display:block; width:100%; height:auto; }
+    .routeLegend {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(165px,1fr));
+      gap:8px; margin-top:14px;
+    }
+    .routeLegendItem {
+      display:flex; align-items:center; gap:8px; padding:8px 10px;
+      border-radius:10px; background:rgba(255,255,255,.82);
+      border:1px solid var(--border); font-size:12px; font-weight:700;
+    }
+    .routeLegendNo {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:24px; height:24px; border-radius:50%; flex:0 0 24px;
+      background:var(--canada-red); color:#fff; font-size:11px; font-weight:800;
+    }
+    .mapNote { margin-top:10px; font-size:11px; color:var(--muted); text-align:center; }
+
+
+    .interactiveRoute {
+      display:grid; grid-template-columns:230px minmax(0,1fr);
+      min-height:520px; margin-top:16px; overflow:hidden;
+      border:1px solid var(--border); border-radius:16px; background:#fff;
+    }
+    .routeSidebar { background:#fff; border-right:1px solid var(--border); overflow:auto; max-height:520px; }
+    .routeSidebarHead { padding:16px; background:var(--ink); color:#fff; border-bottom:3px solid var(--canada-red); }
+    .routeSidebarHead strong { display:block; font-family:var(--font-display); font-size:16px; }
+    .routeSidebarHead span { font-size:11px; opacity:.8; }
+    .routeSteps { padding:8px; }
+    .routeStep { width:100%; border:0; border-left:3px solid var(--canada-red); background:#fafafa; text-align:left; padding:10px; margin:4px 0; border-radius:7px; cursor:pointer; font-family:var(--font-body); color:var(--ink); }
+    .routeStep:hover,.routeStep.active { background:var(--canada-soft); }
+    .routeStep.active { box-shadow:inset 0 0 0 1px rgba(216,6,33,.22); }
+    .routeStepNo { display:inline-flex; align-items:center; justify-content:center; width:25px; height:25px; border-radius:50%; background:var(--canada-red); color:#fff; font-size:11px; font-weight:800; margin-right:7px; }
+    .routeStepName { font-weight:700; font-size:12px; }
+    #easternCanadaMap { min-height:520px; width:100%; z-index:1; }
+    .ec-marker { background:var(--canada-red); color:#fff; border:3px solid #fff; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px; box-shadow:0 2px 8px rgba(0,0,0,.25); }
+    .ec-marker.active { background:#fff; color:var(--canada-red); border-color:var(--canada-red); width:40px; height:40px; }
+    .routeMapCaption { margin-top:10px; font-size:11px; color:var(--muted); text-align:center; }
+    @media(max-width:700px){
+      .interactiveRoute { grid-template-columns:1fr; min-height:0; }
+      .routeSidebar { border-right:0; border-bottom:1px solid var(--border); max-height:none; }
+      .routeSteps { display:flex; overflow-x:auto; gap:5px; }
+      .routeStep { min-width:145px; margin:0; }
+      #easternCanadaMap { min-height:410px; }
+    }
+
+    /* Sticky chapter navigation */
+    .chapterNav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,.95); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border); box-shadow: 0 5px 18px rgba(26,18,8,.06);
+      margin-bottom: 20px;
+    }
+    .chapterInner {
+      max-width: 900px; margin: 0 auto; display: flex; gap: 4px;
+      overflow-x: auto; padding: 9px 14px; scrollbar-width: none;
+    }
+    .chapterInner::-webkit-scrollbar { display: none; }
+    .chapterInner a {
+      white-space: nowrap; text-decoration: none; font-size: 12px; font-weight: 700;
+      padding: 9px 12px; border-radius: 999px; transition: .2s;
+    }
+    .chapterInner a:hover { background: var(--gold-pale); color: var(--canada-red); }
+    html { scroll-padding-top: 72px; }
+
+    .dfh-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(205px,1fr));
+      gap:12px; margin-top:16px;
+    }
+    .dfh-city {
+      background:rgba(255,255,255,.82); border:1px solid var(--border);
+      border-radius:14px; padding:16px;
+    }
+    .dfh-city h3 { margin-bottom:4px; }
+    .dfh-city p { font-size:12px; color:var(--muted); margin-bottom:10px; }
+    .dfh-links { display:flex; gap:7px; flex-wrap:wrap; }
+    .dfh-links a {
+      display:inline-flex; padding:8px 10px; border-radius:8px; text-decoration:none;
+      font-size:12px; font-weight:700; background:#fff; border:1px solid var(--border-mid);
+    }
+
     @media (max-width: 640px) {
       .links { flex-direction: column; }
       .links a { text-align: center; justify-content: center; }
       .route-strip { justify-content: center; }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 </head>
 
 <body>
 
   <div class="backBar">
     <a href="https://twofortherowd.com/" aria-label="Back to Two for the Row'd">← Back to Two for the Row'd</a>
-    <a href="https://twofortherowd.com/" style="font-family:var(--font-display);font-size:15px;font-weight:700;">Two for the Row'd 🇮🇪</a>
+    <a href="/canada.html" style="font-family:var(--font-display);font-size:15px;font-weight:700;">🇨🇦 Canada Hub →</a>
   </div>
+
+  <nav class="chapterNav" aria-label="Eastern Canada chapter navigation">
+    <div class="chapterInner">
+      <a href="#story">🍁 The Trip</a>
+      <a href="#route-map">🗺️ Our Route</a>
+      <a href="#destinations">📍 Destinations</a>
+      <a href="#highlights">✨ Highlights</a>
+      <a href="#video">🎬 Video</a>
+      <a href="#drive">🚗 Drive From Home</a>
+      <a href="#book">🎫 Tours</a>
+      <a href="#faq">❓ FAQ</a>
+      <a href="#packing">🎒 Packing</a>
+      <a href="#car">🚘 Car Hire</a>
+    </div>
+  </nav>
 
   <div class="wrap">
 
@@ -311,6 +417,8 @@
       <a href="https://twofortherowd.com/">Home</a>
       <span>›</span>
       <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
+      <span>›</span>
+      <a href="/canada.html">Canada</a>
       <span>›</span>
       <span>Eastern Canada</span>
     </nav>
@@ -339,6 +447,8 @@
       </p>
 
       <div class="route-strip" style="margin-top:20px;">
+        <span class="route-stop">🏙️ Toronto</span>
+        <span class="route-arrow">→</span>
         <span class="route-stop">🏙️ Montréal</span>
         <span class="route-arrow">→</span>
         <span class="route-stop">🥁 Ottawa</span>
@@ -368,8 +478,8 @@
         <a class="btn-primary" href="https://www.tourradar.com/srp/vn-region-eastern-canada-10-day?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=general" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
           Browse Eastern Canada tours on TourRadar →
         </a>
-        <a class="btn-outline" href="https://twofortherowd.com/#destinations">
-          See all our destinations →
+        <a class="btn-outline" href="/canada.html">
+          Explore our full Canada guide →
         </a>
       </div>
 
@@ -386,7 +496,7 @@
     </div>
 
     <!-- ── THE STORY ─────────────────────────────────────── -->
-    <div class="section-divider">🍁 The Trip</div>
+    <div id="story" class="section-divider">🍁 The Trip</div>
 
     <p class="section-label">Toronto to Newfoundland — an unforgettable journey</p>
     <div class="card">
@@ -435,8 +545,29 @@
       </p>
     </div>
 
+
+    <!-- ── ROUTE MAP ───────────────────────────────────────── -->
+    <div id="route-map" class="section-divider">🗺️ Our 2009 Route</div>
+    <div class="card blueCard routeMapCard">
+      <div class="eyebrow">
+        <span class="badge red">Interactive map</span>
+        <span class="badge outline">Toronto → Newfoundland</span>
+      </div>
+      <h2>Follow our Eastern Canada journey</h2>
+      <p class="routeMapIntro">This is the map we wanted — a proper geographic view of just how far we travelled. Click any stop to zoom in, or drag and zoom the map yourself.</p>
+
+      <div class="interactiveRoute">
+        <aside class="routeSidebar" aria-label="Route stops">
+          <div class="routeSidebarHead"><strong>🍁 East Coast Journey</strong><span>8 stops across Eastern Canada</span></div>
+          <div class="routeSteps" id="ecRouteSteps"></div>
+        </aside>
+        <div id="easternCanadaMap" aria-label="Interactive map of our Eastern Canada route"></div>
+      </div>
+      <p class="routeMapCaption">Interactive map © OpenStreetMap contributors. Route lines show the order of our stops rather than turn-by-turn driving directions.</p>
+    </div>
+
     <!-- ── DESTINATIONS BREAKDOWN ─────────────────────────── -->
-    <div class="section-divider">📍 The Destinations</div>
+    <div id="destinations" class="section-divider">📍 The Destinations</div>
 
     <div class="card blueCard">
       <h2>Six incredible stops — each one its own story</h2>
@@ -513,7 +644,7 @@
     </div>
 
     <!-- ── VIDEO ──────────────────────────────────────────── -->
-    <div class="section-divider">🎬 Our Eastern Canada Video</div>
+    <div id="video" class="section-divider">🎬 Our Eastern Canada Video</div>
 
     <div class="card darkCard">
       <h2>Watch our Eastern Canada video</h2>
@@ -523,6 +654,27 @@
           title="Eastern Canada — Two for the Row'd"
           allowfullscreen loading="lazy">
         </iframe>
+      </div>
+    </div>
+
+
+    <!-- ── DRIVE FROM HOME ─────────────────────────────────── -->
+    <div id="drive" class="section-divider">🚗 Drive Eastern Canada From Home</div>
+    <div class="card greenCard">
+      <div class="eyebrow">
+        <span class="badge outline">Two for the Row'd × Drive From Home</span>
+        <span class="badge blue">Virtual city drives</span>
+      </div>
+      <h2>Retrace our Eastern Canada trip — from your sofa</h2>
+      <p style="color:var(--ink-soft);font-size:14px;">Explore seven of the stops from our journey with our friends at Drive From Home. Open the city guide for inspiration, or jump straight behind the virtual wheel and start exploring.</p>
+      <div class="dfh-grid">
+        <div class="dfh-city"><h3>🏙️ Toronto</h3><p>Our starting point in 2009.</p><div class="dfh-links"><a href="https://drivefromhome.com/cities/toronto/" target="_blank" rel="noopener">City guide →</a><a href="https://drivefromhome.com/city/?city=YTO" target="_blank" rel="noopener">Start driving →</a></div></div>
+        <div class="dfh-city"><h3>🇫🇷 Montréal</h3><p>French-Canadian city life.</p><div class="dfh-links"><a href="https://drivefromhome.com/cities/montreal/" target="_blank" rel="noopener">City guide →</a><a href="https://drivefromhome.com/city/?city=YMQ" target="_blank" rel="noopener">Start driving →</a></div></div>
+        <div class="dfh-city"><h3>⚜️ Québec City</h3><p>Historic streets and French heritage.</p><div class="dfh-links"><a href="https://drivefromhome.com/cities/quebec-city/" target="_blank" rel="noopener">City guide →</a><a href="https://drivefromhome.com/city/?city=YQB" target="_blank" rel="noopener">Start driving →</a></div></div>
+        <div class="dfh-city"><h3>🥁 Ottawa</h3><p>Canada's capital.</p><div class="dfh-links"><a href="https://drivefromhome.com/cities/ottawa/" target="_blank" rel="noopener">City guide →</a><a href="https://drivefromhome.com/city/?city=YOW" target="_blank" rel="noopener">Start driving →</a></div></div>
+        <div class="dfh-city"><h3>🏝️ Charlottetown</h3><p>Prince Edward Island.</p><div class="dfh-links"><a href="https://drivefromhome.com/cities/charlottetown-prince-edward-island/" target="_blank" rel="noopener">City guide →</a><a href="https://drivefromhome.com/city/?city=YYG" target="_blank" rel="noopener">Start driving →</a></div></div>
+        <div class="dfh-city"><h3>⚓ Halifax</h3><p>Nova Scotia's waterfront capital.</p><div class="dfh-links"><a href="https://drivefromhome.com/cities/halifax-novascotia/" target="_blank" rel="noopener">City guide →</a><a href="https://drivefromhome.com/city/?city=YHZ" target="_blank" rel="noopener">Start driving →</a></div></div>
+        <div class="dfh-city"><h3>🇮🇪 St John's</h3><p>Gateway to our Newfoundland adventure.</p><div class="dfh-links"><a href="https://drivefromhome.com/cities/st-johns-newfoundland-and-labrador/" target="_blank" rel="noopener">City guide →</a><a href="https://drivefromhome.com/city/?city=YYT" target="_blank" rel="noopener">Start driving →</a></div></div>
       </div>
     </div>
 
@@ -565,7 +717,7 @@
     </div>
 
     <!-- ── FAQ ────────────────────────────────────────────── -->
-    <p class="section-label">Common questions</p>
+    <p id="faq" class="section-label">Common questions</p>
     <div class="card">
       <h2>Eastern Canada FAQ</h2>
 
@@ -602,7 +754,7 @@
     </div>
 
     <!-- ── PACKING ─────────────────────────────────────────── -->
-    <p class="section-label">What to pack for Eastern Canada</p>
+    <p id="packing" class="section-label">What to pack for Eastern Canada</p>
     <div class="card">
       <h2>Eastern Canada packing essentials — what we'd bring</h2>
       <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">
@@ -700,7 +852,7 @@
       </p>
     </div>
 
-    <div class="section-divider">🚗 Car Rental</div>
+    <div id="car" class="section-divider">🚗 Car Rental</div>
 <div class="card heroCard">
   <h2>Hiring a car? Check Klook 🚗</h2>
   <p style="color:var(--ink-soft);font-size:14px;">We drove ourselves around on this trip and having our own wheels made all the difference — the freedom to stop when you want, go off the beaten track and not be tied to a tour bus schedule. If you're planning to hire a car, Klook has competitive rates worth checking before you book anywhere else.</p>
@@ -726,8 +878,8 @@
         <a class="btn-gold" href="https://www.getyourguide.com/ottawa-l285/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">
           Browse Ottawa activities on GYG →
         </a>
-        <a class="btn-outline" href="https://twofortherowd.com/">
-          Back to main site →
+        <a class="btn-outline" href="/canada.html">
+          Explore our full Canada guide →
         </a>
       </div>
       <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">
@@ -749,6 +901,73 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+
+  <script>
+  (function(){
+    const stops = [
+      {id:1,name:"Toronto",lat:43.6548253,lng:-79.388447,desc:"Our starting point in Ontario."},
+      {id:2,name:"Montréal",lat:45.5018869,lng:-73.5673919,desc:"French-Canadian culture, historic streets and city energy."},
+      {id:3,name:"Québec City",lat:46.8130816,lng:-71.2074596,desc:"Historic Québec City and its unmistakably French character."},
+      {id:4,name:"Ottawa",lat:45.4200572,lng:-75.7003397,desc:"Canada's capital and our memorable Pow Wow experience."},
+      {id:5,name:"Niagara Falls",lat:43.0896084,lng:-79.0849647,desc:"The thundering natural spectacle of Niagara Falls."},
+      {id:6,name:"Prince Edward Island",lat:46.3188025,lng:-63.146101,desc:"Red soil, beaches and the gentle charm of PEI."},
+      {id:7,name:"Nova Scotia",lat:44.8857087,lng:-63.1005273,desc:"Atlantic coastline, maritime heritage and Halifax."},
+      {id:8,name:"Newfoundland & Irish Loop",lat:47.5556097,lng:-52.7452511,desc:"The unforgettable Irish connection that finished our journey."}
+    ];
+    if(typeof L === "undefined") return;
+    const mapEl=document.getElementById("easternCanadaMap");
+    if(!mapEl || mapEl.dataset.ready) return;
+    mapEl.dataset.ready="1";
+    const map=L.map("easternCanadaMap",{scrollWheelZoom:false});
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+      attribution:"&copy; OpenStreetMap contributors",maxZoom:18
+    }).addTo(map);
+
+    const markers={};
+    const route=stops.map(s=>[s.lat,s.lng]);
+    L.polyline(route,{color:"#D80621",weight:3,opacity:.72,dashArray:"7,7"}).addTo(map);
+    const bounds=L.latLngBounds(route);
+    map.fitBounds(bounds,{padding:[28,28]});
+
+    function icon(id,active){
+      return L.divIcon({
+        html:'<div class="ec-marker'+(active?' active':'')+'">'+id+'</div>',
+        className:"",
+        iconSize:active?[40,40]:[34,34],
+        iconAnchor:active?[20,20]:[17,17],
+        popupAnchor:[0,-20]
+      });
+    }
+
+    stops.forEach(s=>{
+      const marker=L.marker([s.lat,s.lng],{icon:icon(s.id,false)})
+        .bindPopup('<strong style="color:#D80621">Stop '+s.id+': '+s.name+'</strong><br><span style="font-size:12px">'+s.desc+'</span>')
+        .addTo(map);
+      marker.on("click",()=>activate(s.id,true));
+      markers[s.id]=marker;
+
+      const b=document.createElement("button");
+      b.type="button"; b.className="routeStep"; b.dataset.id=s.id;
+      b.innerHTML='<span class="routeStepNo">'+s.id+'</span><span class="routeStepName">'+s.name+'</span>';
+      b.addEventListener("click",()=>activate(s.id,true));
+      document.getElementById("ecRouteSteps").appendChild(b);
+    });
+
+    let active=null;
+    function activate(id,zoom){
+      document.querySelectorAll("#ecRouteSteps .routeStep").forEach(b=>b.classList.toggle("active",Number(b.dataset.id)===id));
+      if(active && markers[active]) markers[active].setIcon(icon(active,false));
+      active=id;
+      const m=markers[id];
+      m.setIcon(icon(id,true));
+      if(zoom) map.setView(m.getLatLng(),6,{animate:true});
+      m.openPopup();
+    }
+    activate(1,false);
+    setTimeout(()=>map.invalidateSize(),150);
+  })();
   </script>
 
 </body>
