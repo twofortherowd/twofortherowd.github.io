@@ -11,6 +11,9 @@
 <meta property="og:title" content="USA Travel Guides — New York, Deep South, Hawaii, Alaska & Los Angeles | Two for the Row'd"/>
 <meta property="og:description" content="Explore our first-hand USA adventures: New York, the Deep South, Hawaii, Alaska and Los Angeles, with individual destination guides from our own trips."/>
 <meta property="og:type" content="website"/><meta property="og:url" content="https://twofortherowd.com/usa.html"/><meta property="og:image" content="https://twofortherowd.com/img/LAX.jpeg"/><meta name="twitter:card" content="summary_large_image"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "USA Travel Guides — Two for the Row'd", "description": "First-hand USA travel guides from Two for the Row'd covering New York, a Deep South road trip, Hawaii island hopping, an Alaska cruise and Los Angeles.", "url": "https://twofortherowd.com/usa.html", "publisher": {"@type": "Organization", "name": "Two for the Row'd", "url": "https://twofortherowd.com/"}}</script>
 
@@ -177,6 +180,25 @@
       .photo-mosaic img:first-child{grid-column:1/3;grid-row:auto}
     }
     @media(max-width:430px){.dest-grid{grid-template-columns:1fr}}
+
+    /* USA MASTER JOURNEY MAP */
+    .usaMapCard{padding:18px;overflow:hidden;}
+    .usaMapIntro{padding:4px 6px 14px;}
+    #usaJourneyMap{height:620px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1;}
+    .usaMapLegend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--ink-soft);}
+    .usaMapLegendItem{display:flex;align-items:center;gap:6px;}
+    .usaMapDot{width:11px;height:11px;border-radius:50%;display:inline-block;}
+    .usaMapPopup{font-family:var(--font-body);min-width:190px;}
+    .usaMapTrip{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;}
+    .usaMapTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px;}
+    .usaMapText{font-size:12px;color:var(--ink-soft);line-height:1.5;}
+    .usaMapLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--usa-blue);text-decoration:none;}
+    @media(max-width:640px){
+      .usaMapCard{padding:12px;}
+      #usaJourneyMap{height:500px;border-radius:12px;}
+      .usaMapLegend{gap:9px;font-size:11px;}
+    }
+
 </style></head><body>
 
 <div class="backBar">
@@ -188,6 +210,7 @@
 <nav class="chapterNav" aria-label="USA hub sections">
   <div class="chapterNavInner">
     <a href="#glance">At a Glance</a>
+    <a href="#journey-map">Journey Map</a>
     <a href="#photos">Photos</a>
     <a href="#adventures">Choose a Trip</a>
     <a href="#destinations">Destinations</a>
@@ -279,10 +302,36 @@
   </div>
 </div>
 
+
+<!-- USA INTERACTIVE MASTER JOURNEY MAP -->
+<div id="journey-map" class="chapterHeader">
+  <div class="chapterHeaderInner">
+    <div class="chapterNumber">02</div>
+    <div class="chapterTitle">
+      <div class="chapterLabel">Four trips across one enormous country</div>
+      <div class="chapterName">Our USA journeys on the map</div>
+    </div>
+  </div>
+</div>
+
+<div class="card usaMapCard">
+  <div class="usaMapIntro">
+    <h2>From New York to Miami, Hawaii, Alaska and Los Angeles</h2>
+    <p>This map brings our four American adventures together in one place. The orange route follows our Deep South road trip from New York to Miami; blue covers our four-island Hawaii trip; teal follows the Alaska Inside Passage; and gold marks our Los Angeles stay. <strong>Tap any marker</strong> for the story and the matching guide.</p>
+  </div>
+  <div id="usaJourneyMap" aria-label="Interactive map of our USA journeys"></div>
+  <div class="usaMapLegend" aria-label="Map legend">
+    <span class="usaMapLegendItem"><span class="usaMapDot" style="background:#e8562a"></span>Deep South</span>
+    <span class="usaMapLegendItem"><span class="usaMapDot" style="background:#174a7e"></span>Hawaii</span>
+    <span class="usaMapLegendItem"><span class="usaMapDot" style="background:#00a8cc"></span>Alaska</span>
+    <span class="usaMapLegendItem"><span class="usaMapDot" style="background:#d4a900"></span>Los Angeles</span>
+  </div>
+</div>
+
 <!-- CHAPTER 02 — PHOTOS -->
 <div id="photos" class="chapterHeader">
   <div class="chapterHeaderInner">
-    <div class="chapterNumber">02</div>
+    <div class="chapterNumber">03</div>
     <div class="chapterTitle">
       <div class="chapterLabel">No stock photos here</div>
       <div class="chapterName">America through our lens</div>
@@ -304,7 +353,7 @@
 <!-- CHAPTER 03 — CHOOSE YOUR ADVENTURE -->
 <div id="adventures" class="chapterHeader">
   <div class="chapterHeaderInner">
-    <div class="chapterNumber">03</div>
+    <div class="chapterNumber">04</div>
     <div class="chapterTitle">
       <div class="chapterLabel">Pick your starting point</div>
       <div class="chapterName">Four trips, four completely different Americas</div>
@@ -337,7 +386,7 @@
 <!-- CHAPTER 04 — DESTINATIONS -->
 <div id="destinations" class="chapterHeader">
   <div class="chapterHeaderInner">
-    <div class="chapterNumber">04</div>
+    <div class="chapterNumber">05</div>
     <div class="chapterTitle">
       <div class="chapterLabel">Every stop, one by one</div>
       <div class="chapterName">Explore by destination</div>
@@ -372,7 +421,7 @@
 <!-- CHAPTER 05 — TOURRADAR PICKS -->
 <div id="tours" class="chapterHeader">
   <div class="chapterHeaderInner">
-    <div class="chapterNumber">05</div>
+    <div class="chapterNumber">06</div>
     <div class="chapterTitle">
       <div class="chapterLabel">Prefer to let someone else do the driving?</div>
       <div class="chapterName">USA tours worth a look</div>
@@ -438,7 +487,7 @@
 <!-- CHAPTER 06 — MORE PHOTOS -->
 <div id="more-photos" class="chapterHeader">
   <div class="chapterHeaderInner">
-    <div class="chapterNumber">06</div>
+    <div class="chapterNumber">07</div>
     <div class="chapterTitle">
       <div class="chapterLabel">A few more from the road</div>
       <div class="chapterName">More of our USA photos</div>
@@ -460,7 +509,7 @@
 <!-- CHAPTER 07 — PRACTICAL INFO -->
 <div id="practical" class="chapterHeader">
   <div class="chapterHeaderInner">
-    <div class="chapterNumber">07</div>
+    <div class="chapterNumber">08</div>
     <div class="chapterTitle">
       <div class="chapterLabel">Ireland → USA</div>
       <div class="chapterName">What to know before you go</div>
@@ -482,7 +531,7 @@
 <!-- CHAPTER 08 — FAQ -->
 <div id="faq" class="chapterHeader">
   <div class="chapterHeaderInner">
-    <div class="chapterNumber">08</div>
+    <div class="chapterNumber">09</div>
     <div class="chapterTitle">
       <div class="chapterLabel">Common questions</div>
       <div class="chapterName">USA travel FAQ</div>
@@ -528,4 +577,327 @@
 
 <footer><p>© <span id="year"></span> <a href="/">Two for the Row'd</a> · <a href="/#destinations">All destinations</a></p></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<script>
+(function(){
+  if(typeof L === 'undefined') return;
+  const el=document.getElementById('usaJourneyMap');
+  if(!el) return;
+
+  const map=L.map(el,{scrollWheelZoom:false}).setView([39,-98],4);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    attribution:'&copy; OpenStreetMap contributors',maxZoom:19
+  }).addTo(map);
+
+  const allStops=[
+    // DEEP SOUTH ROAD TRIP (Orange/Sunset: #e8562a)
+    {
+      journey: 'deep-south',
+      step: 1,
+      location: 'New York',
+      lat: 40.7128,
+      lng: -74.0060,
+      notes: 'Starting point: Ellis Island, Broadway, Times Square, the Jets.',
+      color: '#e8562a',
+      url: '/usa/new-york.html'
+    },
+    {
+      journey: 'deep-south',
+      step: 2,
+      location: 'Philadelphia',
+      lat: 39.9526,
+      lng: -75.1652,
+      notes: 'Historic Philadelphia & Amish Country. Independence Hall, the Liberty Bell.',
+      color: '#e8562a',
+      url: '/usa/philadelphia.html'
+    },
+    {
+      journey: 'deep-south',
+      step: 3,
+      location: 'Washington DC',
+      lat: 38.9072,
+      lng: -77.0369,
+      notes: 'Monuments, memorials & Arlington. The nation\'s capital and its history.',
+      color: '#e8562a',
+      url: '/usa/washington-dc.html'
+    },
+    {
+      journey: 'deep-south',
+      step: 4,
+      location: 'Williamsburg',
+      lat: 37.2707,
+      lng: -76.7075,
+      notes: 'Colonial history & living museum. One of our favourite surprises.',
+      color: '#e8562a',
+      url: '/usa/williamsburg.html'
+    },
+    {
+      journey: 'deep-south',
+      step: 5,
+      location: 'Gatlinburg & Smokies',
+      lat: 35.7142,
+      lng: -83.5107,
+      notes: 'Great Smoky Mountains National Park and Dolly Parton\'s Stampede.',
+      color: '#e8562a',
+      url: '/usa/gatlinburg-smokies.html'
+    },
+    {
+      journey: 'deep-south',
+      step: 6,
+      location: 'Nashville',
+      lat: 36.1627,
+      lng: -86.7816,
+      notes: 'Country music capital. Music City and the Grand Ole Opry.',
+      color: '#e8562a',
+      url: '/usa/nashville.html'
+    },
+    {
+      journey: 'deep-south',
+      step: 7,
+      location: 'Memphis',
+      lat: 35.1495,
+      lng: -90.0490,
+      notes: 'Beale Street and Graceland. The home of Elvis and the blues.',
+      color: '#e8562a',
+      url: '/usa/memphis.html'
+    },
+    {
+      journey: 'deep-south',
+      step: 8,
+      location: 'New Orleans',
+      lat: 29.9511,
+      lng: -90.2623,
+      notes: 'Steamboat NATCHEZ and Oak Alley Plantation. Jazz, food, and history.',
+      color: '#e8562a',
+      url: '/usa/new-orleans.html'
+    },
+    {
+      journey: 'deep-south',
+      step: 9,
+      location: 'Kennedy Space Center',
+      lat: 28.3896,
+      lng: -80.6052,
+      notes: 'NASA, Apollo, and the Space Shuttle story. The story of American space exploration.',
+      color: '#e8562a',
+      url: '/usa/kennedy-space-center.html'
+    },
+    {
+      journey: 'deep-south',
+      step: 10,
+      location: 'Everglades',
+      lat: 25.3951,
+      lng: -80.6864,
+      notes: 'South Florida wetlands. Airboat tours and our alligator encounter.',
+      color: '#e8562a',
+      url: '/usa/everglades.html'
+    },
+    {
+      journey: 'deep-south',
+      step: 11,
+      location: 'Miami',
+      lat: 25.7617,
+      lng: -80.1918,
+      notes: 'The finish line. Art Deco, beaches, and the warm Atlantic.',
+      color: '#e8562a',
+      url: '/usa/miami.html'
+    },
+
+    // HAWAII ISLAND HOPPING (Blue: #174a7e)
+    {
+      journey: 'hawaii',
+      step: 1,
+      location: 'Big Island',
+      lat: 19.4193,
+      lng: -155.5922,
+      notes: 'Volcanoes, Kilauea, and Hawaii Volcanoes National Park. Active lava and crater views.',
+      color: '#174a7e',
+      url: '/hawaii.html'
+    },
+    {
+      journey: 'hawaii',
+      step: 2,
+      location: 'Oahu',
+      lat: 21.3099,
+      lng: -157.8581,
+      notes: 'Adventure and history. Diamond Head, Pearl Harbor, Honolulu beaches.',
+      color: '#174a7e',
+      url: '/hawaii.html'
+    },
+    {
+      journey: 'hawaii',
+      step: 3,
+      location: 'Maui',
+      lat: 20.7984,
+      lng: -156.3319,
+      notes: 'Road to Hana — one of the world\'s most scenic drives. Haleakala National Park.',
+      color: '#174a7e',
+      url: '/hawaii.html'
+    },
+    {
+      journey: 'hawaii',
+      step: 4,
+      location: 'Kauai',
+      lat: 22.0960,
+      lng: -159.5338,
+      notes: 'Nā Pali Coast. Extraordinary cliffs, remote beaches, and island magic.',
+      color: '#174a7e',
+      url: '/hawaii.html'
+    },
+
+    // ALASKA INSIDE PASSAGE CRUISE (Teal: #00a8cc)
+    {
+      journey: 'alaska',
+      step: 1,
+      location: 'Icy Strait Point',
+      lat: 58.2548,
+      lng: -135.3208,
+      notes: 'Hoonah and bear watching. Wilderness and Alaska\'s raw beauty.',
+      color: '#00a8cc',
+      url: '/alaska-cruise.html'
+    },
+    {
+      journey: 'alaska',
+      step: 2,
+      location: 'Hubbard Glacier',
+      lat: 60.3136,
+      lng: -142.0597,
+      notes: 'Scenic glacier cruising. Calving icebergs and the Inside Passage.',
+      color: '#00a8cc',
+      url: '/alaska-cruise.html'
+    },
+    {
+      journey: 'alaska',
+      step: 3,
+      location: 'Juneau',
+      lat: 58.3019,
+      lng: -134.4197,
+      notes: 'Dog sledding and the Red Dog Saloon. Alaska\'s capital with northern charm.',
+      color: '#00a8cc',
+      url: '/alaska-cruise.html'
+    },
+    {
+      journey: 'alaska',
+      step: 4,
+      location: 'Ketchikan',
+      lat: 55.3422,
+      lng: -131.6461,
+      notes: 'Creek Street and the Lumberjack Show. Totem poles and rainforests.',
+      color: '#00a8cc',
+      url: '/alaska-cruise.html'
+    },
+
+    // LOS ANGELES (Gold: #d4a900)
+    {
+      journey: 'la',
+      step: 1,
+      location: 'Hollywood',
+      lat: 34.0901,
+      lng: -118.3268,
+      notes: 'Hollywood Sign, TCL Chinese Theatre, Walk of Fame.',
+      color: '#d4a900',
+      url: '/los-angeles.html'
+    },
+    {
+      journey: 'la',
+      step: 2,
+      location: 'Warner Bros Studio',
+      lat: 34.1545,
+      lng: -118.3509,
+      notes: 'Studio tour and behind-the-scenes look at Hollywood magic.',
+      color: '#d4a900',
+      url: '/los-angeles.html'
+    },
+    {
+      journey: 'la',
+      step: 3,
+      location: 'Griffith Observatory',
+      lat: 34.1181,
+      lng: -118.2441,
+      notes: 'Views over Los Angeles and the Hollywood sign at sunset.',
+      color: '#d4a900',
+      url: '/los-angeles.html'
+    },
+    {
+      journey: 'la',
+      step: 4,
+      location: 'Santa Monica Pier',
+      lat: 34.0195,
+      lng: -118.4912,
+      notes: 'The iconic pier, beach, and famous carousel.',
+      color: '#d4a900',
+      url: '/los-angeles.html'
+    },
+    {
+      journey: 'la',
+      step: 5,
+      location: 'Venice Beach',
+      lat: 33.9850,
+      lng: -118.4695,
+      notes: 'Boardwalk, beach culture, and street performers.',
+      color: '#d4a900',
+      url: '/los-angeles.html'
+    }
+  ];
+
+  const deepSouthRoute=[
+    [40.7128, -74.0060],  // New York
+    [39.9526, -75.1652],  // Philadelphia
+    [38.9072, -77.0369],  // Washington DC
+    [37.2707, -76.7075],  // Williamsburg
+    [35.7142, -83.5107],  // Gatlinburg
+    [36.1627, -86.7816],  // Nashville
+    [35.1495, -90.0490],  // Memphis
+    [29.9511, -90.2623],  // New Orleans
+    [28.3896, -80.6052],  // Kennedy Space Center
+    [25.3951, -80.6864],  // Everglades
+    [25.7617, -80.1918]   // Miami
+  ];
+  const hawaiiRoute=[
+    [19.4193, -155.5922], // Big Island
+    [21.3099, -157.8581], // Oahu
+    [20.7984, -156.3319], // Maui
+    [22.0960, -159.5338]  // Kauai
+  ];
+  const alaskaRoute=[
+    [58.2548, -135.3208], // Icy Strait Point
+    [60.3136, -142.0597], // Hubbard Glacier
+    [58.3019, -134.4197], // Juneau
+    [55.3422, -131.6461]  // Ketchikan
+  ];
+
+  function icon(color){
+    return L.divIcon({
+      className:'',
+      html:'<div style="background:'+color+';width:26px;height:26px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(26,18,8,.28)"></div>',
+      iconSize:[26,26],iconAnchor:[13,13],popupAnchor:[0,-12]
+    });
+  }
+
+  const labels={'deep-south':'Deep South Road Trip','hawaii':'Hawaii Island Hopping','alaska':'Alaska Inside Passage','la':'Los Angeles'};
+
+  allStops.forEach(s=>{
+    const marker=L.marker([s.lat,s.lng],{icon:icon(s.color)}).addTo(map);
+    const link=s.url?'<a class="usaMapLink" href="'+s.url+'">Explore our guide →</a>':'';
+    marker.bindPopup(
+      '<div class="usaMapPopup">'+
+      '<div class="usaMapTrip" style="color:'+s.color+'">'+labels[s.journey]+' · Stop '+s.step+'</div>'+
+      '<div class="usaMapTitle">'+s.location+'</div>'+
+      '<div class="usaMapText">'+s.notes+'</div>'+link+
+      '</div>',{maxWidth:280}
+    );
+  });
+
+  [
+    [deepSouthRoute,'#e8562a'],
+    [hawaiiRoute,'#174a7e'],
+    [alaskaRoute,'#00a8cc']
+  ].forEach(r=>L.polyline(r[0],{color:r[1],weight:3,opacity:.6,dashArray:'8,5',lineCap:'round',lineJoin:'round'}).addTo(map));
+
+  /* Mainland view by default keeps the hub useful on phones; Hawaii and Alaska
+     remain visible by panning/zooming, with all markers loaded. */
+  map.setView([39,-98],4);
+  setTimeout(()=>map.invalidateSize(),250);
+})();
+</script>
+
 </body></html>
