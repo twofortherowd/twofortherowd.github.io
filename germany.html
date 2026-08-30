@@ -40,7 +40,9 @@
   ]}
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 
@@ -189,6 +191,17 @@
     .hotelCityNote{font-size:10.5px;color:var(--muted);display:block;margin-top:2px;line-height:1.25;}.hotelCityCta{font-size:11px;font-weight:800;color:var(--ger-red);display:block;margin-top:8px;}
     .klookCallout{margin:14px 0;padding:14px 16px;border-radius:14px;background:rgba(255,216,74,.13);border:1px solid rgba(232,194,53,.32);font-size:13px;color:var(--ink-soft);}
     @media(max-width:700px){.hotelCityGrid{grid-template-columns:repeat(2,1fr);}.hotelCity:last-child{grid-column:1/-1;}}
+
+/* GERMANY INTERACTIVE JOURNEY MAP */
+.germanyMapCard{padding:18px;overflow:hidden}.germanyMapIntro{padding:4px 6px 14px}
+#germanyJourneyMap{height:610px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1}
+.germanyMapLegend{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--muted)}
+.germanyMapLegendItem{display:flex;align-items:center;gap:6px}.germanyMapDot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.germanyPopup{font-family:var(--font-body);min-width:190px}.germanyPopupTrip{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+.germanyPopupTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px}.germanyPopupText{font-size:12px;color:var(--ink-soft);line-height:1.5}
+.germanyPopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--ger-red);text-decoration:none}
+@media(max-width:640px){.germanyMapCard{padding:12px}#germanyJourneyMap{height:500px;border-radius:12px}.germanyMapLegend{gap:9px;font-size:11px}}
+
 </style>
 </head>
 <body>
@@ -210,6 +223,8 @@
   </nav>
 
   <nav class="chapterNav" aria-label="Germany page sections">
+    <a href="https://twofortherowd.com/#map">🌍 Destinations</a>
+    <a href="#germany-map">🗺️ Germany Map</a>
     <a href="#at-a-glance">At a Glance</a>
     <a href="#destinations">Destinations</a>
     <a href="#video">Video</a>
@@ -265,6 +280,23 @@
     </div>
 
   <p class="handCaption">From an Interrail stop to a year living in Köln ✨</p>
+
+
+  <!-- INTERACTIVE GERMANY MAP -->
+  <section id="germany-map" class="card germanyMapCard">
+    <div class="germanyMapIntro">
+      <div class="eyebrow"><span class="badge">🗺️ Interactive map</span><span class="badge outline">Germany since 2005</span></div>
+      <h2>Follow our Germany story</h2>
+      <p style="color:var(--ink-soft);max-width:690px;">From the 2005 Interrail route through Berlin, Leipzig, Cologne and Munich to the year Nicola later spent living in Cologne and the day trips that followed, this map brings the whole Germany story together. <strong>Tap a marker</strong> to see the stop and open its guide where we have one.</p>
+    </div>
+    <div id="germanyJourneyMap" aria-label="Interactive map of Two for the Row'd Germany journeys"></div>
+    <div class="germanyMapLegend">
+      <span class="germanyMapLegendItem"><span class="germanyMapDot" style="background:#DD0000"></span>2005 Interrail</span>
+      <span class="germanyMapLegendItem"><span class="germanyMapDot" style="background:#c0392b"></span>Cologne home</span>
+      <span class="germanyMapLegendItem"><span class="germanyMapDot" style="background:#f5a623"></span>Day trips & visits</span>
+      <span class="germanyMapLegendItem"><span class="germanyMapDot" style="background:#4a6fa5"></span>Other cities</span>
+    </div>
+  </section>
 
   <!-- EXPLORE GERMANY -->
   <div id="destinations" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">01</div><div class="chapterTitle"><div class="chapterLabel">Choose your stop</div><div class="chapterName">Explore Germany</div></div></div></div>
@@ -546,6 +578,135 @@
 </footer>
 
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+
+<script>
+(function(){
+  if(typeof L==='undefined') return;
+  const el=document.getElementById('germanyJourneyMap'); if(!el) return;
+  const map=L.map(el,{scrollWheelZoom:false}).setView([51.5,10],6);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+  const stops=[
+    // 2005 INTERRAIL ROUTE (Red)
+    {
+      trip: 'interrail',
+      stop: 'Berlin',
+      lat: 52.5200,
+      lng: 13.4050,
+      notes: 'First stop on the 2005 interrail adventure. History, culture and the starting point for the journey south.',
+      color: '#DD0000',
+      icon: '🏛️',
+      url: '/germany/berlin.html'
+    },
+    {
+      trip: 'interrail',
+      stop: 'Leipzig',
+      lat: 51.3397,
+      lng: 12.3731,
+      notes: 'Historic city at the heart of East Germany. Music, culture and a natural stop on the interrail route.',
+      color: '#DD0000',
+      icon: '🎵'
+    },
+    {
+      trip: 'cologne-home',
+      stop: 'Cologne',
+      lat: 50.9365,
+      lng: 6.9523,
+      notes: 'Nicola lived here for a year. Learned German. Found out what it means to be a true Kölner. The Rhine, the Cathedral, the Dom.',
+      color: '#c0392b',
+      icon: '🏰',
+      url: '/germany/cologne.html'
+    },
+    {
+      trip: 'interrail',
+      stop: 'Munich',
+      lat: 48.1351,
+      lng: 11.5820,
+      notes: 'The final stop on the 2005 interrail trip. Biergartens, beer culture and Bavarian charm.',
+      color: '#DD0000',
+      icon: '🍺',
+      url: '/germany/munich.html'
+    },
+
+    // DAY TRIPS & VISITS
+    {
+      trip: 'visits',
+      stop: 'Heidelberg',
+      lat: 49.4134,
+      lng: 8.7077,
+      notes: 'One of the prettiest small cities in Germany. Student town on the Neckar River with romantic hillside views.',
+      color: '#f5a623',
+      icon: '🏘️',
+      url: '/germany/heidelberg.html'
+    },
+    {
+      trip: 'visits',
+      stop: 'Dachau',
+      lat: 48.2688,
+      lng: 11.4635,
+      notes: 'A deeply moving and important memorial site. Sobering and educational — an easy day trip from Munich.',
+      color: '#f5a623',
+      icon: '🕯️'
+    },
+    {
+      trip: 'visits',
+      stop: 'Frankfurt',
+      lat: 50.1109,
+      lng: 8.6821,
+      notes: 'Well-connected stopover. Modern city on the Main River with financial district and museums.',
+      color: '#f5a623',
+      icon: '💼',
+      url: '/germany/frankfurt.html'
+    },
+
+    // OTHER CITIES
+    {
+      trip: 'other',
+      stop: 'Bonn',
+      lat: 50.7365,
+      lng: 7.1558,
+      notes: 'Former capital of West Germany. On the Rhine between Cologne and Frankfurt.',
+      color: '#4a6fa5',
+      icon: '🏛️'
+    },
+    {
+      trip: 'other',
+      stop: 'Düsseldorf',
+      lat: 51.2277,
+      lng: 6.7735,
+      notes: 'Modern German city on the Rhine. Art, fashion and contemporary culture.',
+      color: '#4a6fa5',
+      icon: '🎨'
+    },
+    {
+      trip: 'other',
+      stop: 'Aachen',
+      lat: 50.7753,
+      lng: 6.0839,
+      notes: 'Historic city at the tri-border of Germany, Belgium and the Netherlands. Charlemagne\'s capital.',
+      color: '#4a6fa5',
+      icon: '👑'
+    }
+  ];
+  const route=[[52.5200,13.4050],[51.3397,12.3731],[50.9365,6.9523],[48.1351,11.5820]];
+  L.polyline(route,{color:'#DD0000',weight:3,opacity:.65,dashArray:'8,5',lineCap:'round',lineJoin:'round'}).addTo(map);
+  function markerIcon(color){
+    return L.divIcon({className:'',html:'<div style="background:'+color+';width:28px;height:28px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(26,18,8,.25)"></div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]});
+  }
+  function tripLabel(s){
+    if(s.trip==='interrail') return '🚂 2005 Interrail';
+    if(s.trip==='cologne-home') return '🏰 Cologne Home';
+    if(s.trip==='visits') return '🚗 Day Trip / Visit';
+    return '🌍 Germany';
+  }
+  stops.forEach(s=>{
+    const marker=L.marker([s.lat,s.lng],{icon:markerIcon(s.color)}).addTo(map);
+    const link=s.url?'<a class="germanyPopupLink" href="'+s.url+'">Open our guide →</a>':'';
+    marker.bindPopup('<div class="germanyPopup"><div class="germanyPopupTrip" style="color:'+s.color+'">'+tripLabel(s)+'</div><div class="germanyPopupTitle">'+s.icon+' '+s.stop+'</div><div class="germanyPopupText">'+s.notes+'</div>'+link+'</div>',{maxWidth:285});
+  });
+  setTimeout(()=>map.invalidateSize(),250);
+})();
+</script>
 
 </body>
 </html>
