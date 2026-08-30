@@ -107,6 +107,31 @@
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:680px){.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.destLinks{grid-template-columns:1fr;}}
       @media(max-width:680px){div[style*="grid-template-columns:repeat(2,1fr)"],div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}}
+  
+    /* Responsive editorial photos: prevents portrait shots becoming enormous */
+    .storyPhoto{
+      display:block;
+      width:auto;
+      max-width:100%;
+      max-height:520px;
+      object-fit:contain;
+      margin:14px auto;
+      border-radius:12px;
+      box-shadow:var(--shadow-md);
+    }
+    @media(max-width:680px){
+      .storyPhoto{max-height:360px;max-width:100%;margin:12px auto;}
+      .photoFull{
+        display:block;
+        width:auto;
+        max-width:100%;
+        max-height:420px;
+        object-fit:contain;
+        margin:14px auto;
+      }
+      .photoGridImg,.destCardImg,.photoStripImg{max-height:280px;}
+    }
+
   </style>
 </head>
 <body>
@@ -162,7 +187,7 @@
 
   <!-- ARRIVAL HERO IMAGE -->
   <div class="card">
-    <img src="/img/IMG_2164.JPG" alt="Signal Hill sign in Table Mountain National Park, Cape Town" style="width:100%;margin:0 0 16px;border-radius:12px;box-shadow:var(--shadow-md);" loading="lazy">
+    <img src="/img/IMG_2164.JPG" alt="Signal Hill sign in Table Mountain National Park, Cape Town" loading="lazy" class="storyPhoto">
   </div>
 
   <!-- CITY TOUR & TABLE MOUNTAIN -->
@@ -194,16 +219,16 @@
     <p>Day 4 was dedicated entirely to the Cape Peninsula — one of the greatest day trips on earth. Leaving Cape Town early, the tour takes you on a scenic coastal drive south, each turn revealing new landscapes.</p>
     
     <h3>Hout Bay</h3>
-    <img src="/img/IMG_2278.JPG" alt="Dramatic Cape Peninsula coastal landscape" style="width:100%;margin:14px 0;border-radius:12px;box-shadow:var(--shadow-md);" loading="lazy">
+    <img src="/img/IMG_2278.JPG" alt="Dramatic Cape Peninsula coastal landscape" loading="lazy" class="storyPhoto">
     <p>The first major stop is Hout Bay, a beautiful working fishing village with a bustling fisherman's wharf where you can watch the boats, see the daily catch being unloaded and buy fresh seafood. The bay itself is dramatic — mountains rising steeply above the water, the curve of the beach, the Atlantic light. On our visit, sea eagles soared overhead and the village had the authentic working-port feel that makes it so much more interesting than a manufactured tourist attraction.</p>
 
     <h3>Cape Point & The Cape of Good Hope Nature Reserve</h3>
-    <img src="/img/IMG_2304.JPG" alt="Cape of Good Hope sign at the southern tip of the Cape Peninsula" style="width:100%;margin:14px 0;border-radius:12px;box-shadow:var(--shadow-md);" loading="lazy">
+    <img src="/img/IMG_2304.JPG" alt="Cape of Good Hope sign at the southern tip of the Cape Peninsula" loading="lazy" class="storyPhoto">
     <p>The drive continues up to Cape Point, where the mountains rise to their most dramatic at the southern tip of the peninsula. The Cape of Good Hope Nature Reserve protects a wild and beautiful stretch of coast — fynbos vegetation (the endangered plant community endemic to the Cape), incredible coastal views, and wildlife including baboons, zebras and bonteboks. The fynbos ecosystem is one of the world's floral treasures — ancient plants adapted to fire, thin soil and intense sun. Walking through it, you understand why this landscape is so botanically precious.</p>
     <p>The views from Cape Point are extraordinary — looking back towards the Peninsula, looking out towards the horizon, understanding viscerally why this was once such a legendary point in maritime navigation and history.</p>
 
     <h3>Boulders Beach & The Penguin Colony</h3>
-    <img src="/img/IMG_2379.JPG" alt="African penguin at Boulders Beach Cape Town" style="width:100%;margin:14px 0;border-radius:12px;box-shadow:var(--shadow-md);" loading="lazy">
+    <img src="/img/IMG_2379.JPG" alt="African penguin at Boulders Beach Cape Town" loading="lazy" class="storyPhoto">
     <div class="photoGrid">
       <img src="/img/IMG_2381.JPG" alt="Boulders and blue water at the African penguin colony near Cape Town" class="photoGridImg" loading="lazy">
       <img src="/img/IMG_2414.JPG" alt="Nelson Mandela at Kirstenbosch interpretive sign" class="photoGridImg" loading="lazy">
