@@ -20,6 +20,9 @@
   <meta property="og:url" content="https://twofortherowd.com/australia.html" />
   <meta property="og:image" content="https://twofortherowd.com/img/Oz.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Article","headline":"Australia Travel Hub — Our Around the World Trip Across Every Corner of Australia","description":"Our full Australia travel hub — Perth, the Great Barrier Reef, K'gari, the Whitsundays, Gold Coast, Byron Bay, Brisbane, Sydney, Canberra, Melbourne, Alice Springs and three nights at Uluru.","author":{"@type":"Organization","name":"Two for the Row\u0027d","url":"https://twofortherowd.com"},"publisher":{"@type":"Organization","name":"Two for the Row'd","url":"https://twofortherowd.com"},"url":"https://twofortherowd.com/australia.html","image":"https://twofortherowd.com/img/Oz.jpg"}
@@ -291,6 +294,25 @@
       .wildlife-memory img{width:100%;height:240px;}
       .chapterHeaderInner{gap:10px;}
     }
+
+    /* AUSTRALIA INTERACTIVE JOURNEY MAP */
+    .ausMapCard{padding:18px;overflow:hidden;}
+    .ausMapIntro{padding:4px 6px 14px;}
+    #australiaJourneyMap{height:620px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1;}
+    .ausMapLegend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--ink-soft);}
+    .ausMapLegendItem{display:flex;align-items:center;gap:6px;}
+    .ausMapDot{width:11px;height:11px;border-radius:50%;display:inline-block;}
+    .ausMapPopup{font-family:var(--font-body);min-width:190px;}
+    .ausMapRegion{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;}
+    .ausMapTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px;}
+    .ausMapText{font-size:12px;color:var(--ink-soft);line-height:1.5;}
+    .ausMapLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--aus-red);text-decoration:none;}
+    @media(max-width:640px){
+      .ausMapCard{padding:12px;}
+      #australiaJourneyMap{height:500px;border-radius:12px;}
+      .ausMapLegend{gap:9px;font-size:11px;}
+    }
+
   </style>
 </head>
 <body>
@@ -303,7 +325,8 @@
 <!-- STICKY CHAPTER NAV -->
 <nav class="chapterNav" aria-label="Australia hub sections">
   <div class="chapterNavInner">
-    <a href="#destinations">Destinations</a>
+    <a href="https://twofortherowd.com/#map">Destinations</a>
+    <a href="#destinations">Australia Map</a>
     <a href="#story">The Story</a>
     <a href="#highlights">Highlights</a>
     <a href="#perth">Perth</a>
@@ -396,7 +419,7 @@
 
     <div class="links">
       <a class="btn-primary" href="https://www.tourradar.com/t/272542?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book an Australia tour on TourRadar →</a>
-      <a class="btn-outline" href="#destinations">Jump to our destination guides ↓</a>
+      <a class="btn-outline" href="#destinations">Jump to destinations & map ↓</a>
     </div>
 
     <div class="tagRow">
@@ -421,6 +444,21 @@
         <div class="chapterLabel">Where we went</div>
         <div class="chapterName">Eleven guides. One huge continent.</div>
       </div>
+    </div>
+  </div>
+
+
+  <div class="card ausMapCard">
+    <div class="ausMapIntro">
+      <h2>Our Australia journey — mapped</h2>
+      <p>From Perth on the west coast to the Great Barrier Reef, down the East Coast and into the Red Centre, this is the route behind the guides below. <strong>Tap any marker</strong> for our memory from that stop and a direct link to the matching destination guide.</p>
+    </div>
+    <div id="australiaJourneyMap" aria-label="Interactive map of our Australia journey"></div>
+    <div class="ausMapLegend" aria-label="Australia journey map legend">
+      <span class="ausMapLegendItem"><span class="ausMapDot" style="background:#e8a020"></span>West Coast</span>
+      <span class="ausMapLegendItem"><span class="ausMapDot" style="background:#2f80ed"></span>East Coast</span>
+      <span class="ausMapLegendItem"><span class="ausMapDot" style="background:#c9891e"></span>Southern Journey</span>
+      <span class="ausMapLegendItem"><span class="ausMapDot" style="background:#c0392b"></span>Red Centre</span>
     </div>
   </div>
 
@@ -1051,6 +1089,207 @@
       });
     });
   });
+</script>
+
+
+<script>
+(function(){
+  if(typeof L==='undefined') return;
+  const el=document.getElementById('australiaJourneyMap');
+  if(!el) return;
+
+  const map=L.map(el,{scrollWheelZoom:false}).setView([-25,134],4);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    attribution:'&copy; OpenStreetMap contributors',maxZoom:19
+  }).addTo(map);
+
+  const stops=[
+    // WEST COAST
+    {
+      region: 'West Coast',
+      stop: 'Perth',
+      lat: -31.9505,
+      lng: 115.8605,
+      notes: 'Entry point from Singapore. Private city tour and orientation to Australia.',
+      color: '#e8a020',
+      icon: '🌇',
+      url: '/australia/perth.html'
+    },
+    
+    // EAST COAST - REEF & TROPICAL
+    {
+      region: 'Great Barrier Reef',
+      stop: 'Cairns',
+      lat: -16.8661,
+      lng: 145.7781,
+      notes: 'Base for two dives on the Great Barrier Reef — one of our favourite experiences of the entire trip.',
+      color: '#2f80ed',
+      icon: '🐠',
+      url: '/australia/cairns.html'
+    },
+    {
+      region: 'East Coast',
+      stop: 'K\'gari (Fraser Island)',
+      lat: -24.8359,
+      lng: 153.2044,
+      notes: 'World\'s largest sand island. Freshwater lakes, sand dunes, wild dingoes.',
+      color: '#2f80ed',
+      icon: '🏝️'
+    },
+    {
+      region: 'East Coast',
+      stop: 'Whitsundays',
+      lat: -20.3509,
+      lng: 148.7897,
+      notes: 'Catamaran day surrounded by Coral Sea. Whitehaven Beach and island hopping.',
+      color: '#2f80ed',
+      icon: '⛵',
+      url: '/australia/whitsundays.html'
+    },
+    {
+      region: 'East Coast',
+      stop: 'Gold Coast',
+      lat: -28.0028,
+      lng: 153.4314,
+      notes: 'Skyscrapers meeting huge beaches. Surfers Paradise and surf culture.',
+      color: '#2f80ed',
+      icon: '🏄',
+      url: '/australia/gold-coast.html'
+    },
+    {
+      region: 'East Coast',
+      stop: 'Byron Bay',
+      lat: -28.6436,
+      lng: 153.6117,
+      notes: 'Australia\'s easternmost point. Easy-going East Coast stop and memorable ranch overnight.',
+      color: '#2f80ed',
+      icon: '🌴',
+      url: '/australia/byron-bay.html'
+    },
+    {
+      region: 'East Coast',
+      stop: 'Brisbane',
+      lat: -27.4698,
+      lng: 153.0251,
+      notes: 'Queensland\'s river city. Gateway to south-east Queensland region.',
+      color: '#2f80ed',
+      icon: '🏙️',
+      url: '/australia/brisbane.html'
+    },
+    {
+      region: 'East Coast',
+      stop: 'Sydney',
+      lat: -33.8688,
+      lng: 151.2093,
+      notes: 'Opera House, Bondi, Blue Mountains. Palm Beach visited twice for Home and Away — Brax was there day two! 📺',
+      color: '#2f80ed',
+      icon: '🎭',
+      url: '/australia/sydney.html'
+    },
+    
+    // SOUTH
+    {
+      region: 'Southern Journey',
+      stop: 'Canberra',
+      lat: -35.2809,
+      lng: 149.1300,
+      notes: 'Purpose-built capital. Parliament, National War Memorial, beautiful lake at the heart of the planned city.',
+      color: '#c9891e',
+      icon: '🏛️',
+      url: '/australia/canberra.html'
+    },
+    {
+      region: 'Great Ocean Road',
+      stop: 'Twelve Apostles',
+      lat: -38.6297,
+      lng: 142.1673,
+      notes: 'Helicopter flight over limestone stacks on the Great Ocean Road — one of our standout Australia memories.',
+      color: '#c9891e',
+      icon: '🚁',
+      url: '/australia/melbourne.html'
+    },
+    {
+      region: 'Southern Journey',
+      stop: 'Melbourne',
+      lat: -37.8136,
+      lng: 144.9631,
+      notes: 'Brilliant food and café scene. Phillip Island little penguins waddling up the beach at dusk — genuinely magical.',
+      color: '#c9891e',
+      icon: '🐧',
+      url: '/australia/melbourne.html'
+    },
+    
+    // RED CENTRE
+    {
+      region: 'Northern Territory',
+      stop: 'Alice Springs',
+      lat: -23.7011,
+      lng: 133.8807,
+      notes: 'Royal Flying Doctor Service museum. Outback pub atmosphere and Red Centre landscapes.',
+      color: '#c0392b',
+      icon: '🤠',
+      url: '/australia/alice-springs.html'
+    },
+    {
+      region: 'Red Centre',
+      stop: 'Uluru',
+      lat: -25.3444,
+      lng: 131.0369,
+      notes: 'Three unforgettable nights at the heart of the Red Centre. Watching the light change. Understanding the significance.',
+      color: '#c0392b',
+      icon: '🪨',
+      url: '/australia/uluru.html'
+    }
+  ];
+  const eastCoastRoute=[
+    [-16.8661, 145.7781],  // Cairns
+    [-24.8359, 153.2044],  // K'gari
+    [-20.3509, 148.7897],  // Whitsundays
+    [-28.0028, 153.4314],  // Gold Coast
+    [-28.6436, 153.6117],  // Byron Bay
+    [-27.4698, 153.0251],  // Brisbane
+    [-33.8688, 151.2093]   // Sydney
+  ];
+  const southRoute=[
+    [-33.8688, 151.2093],  // Sydney
+    [-35.2809, 149.1300],  // Canberra
+    [-38.6297, 142.1673],  // Twelve Apostles
+    [-37.8136, 144.9631]   // Melbourne
+  ];
+  const redCentreRoute=[
+    [-23.7011, 133.8807],  // Alice Springs
+    [-25.3444, 131.0369]   // Uluru
+  ];
+
+  function createIcon(color){
+    return L.divIcon({
+      className:'',
+      html:'<div style="background:'+color+';width:28px;height:28px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(26,18,8,.25)"></div>',
+      iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]
+    });
+  }
+
+  stops.forEach(s=>{
+    const marker=L.marker([s.lat,s.lng],{icon:createIcon(s.color)}).addTo(map);
+    const link=s.url?'<a class="ausMapLink" href="'+s.url+'">Explore our guide →</a>':'';
+    marker.bindPopup(
+      '<div class="ausMapPopup">'+
+      '<div class="ausMapRegion" style="color:'+s.color+'">'+s.region+'</div>'+
+      '<div class="ausMapTitle">'+s.icon+' '+s.stop+'</div>'+
+      '<div class="ausMapText">'+s.notes+'</div>'+link+
+      '</div>',{maxWidth:280}
+    );
+  });
+
+  [
+    [eastCoastRoute,'#2f80ed'],
+    [southRoute,'#c9891e'],
+    [redCentreRoute,'#c0392b']
+  ].forEach(r=>L.polyline(r[0],{color:r[1],weight:3,opacity:.6,dashArray:'8,5',lineCap:'round',lineJoin:'round'}).addTo(map));
+
+  map.setView([-25,134],4);
+  setTimeout(()=>map.invalidateSize(),250);
+})();
 </script>
 
 </body>
