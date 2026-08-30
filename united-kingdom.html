@@ -37,7 +37,9 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -130,6 +132,21 @@
       .links { flex-direction: column; }
       .links a { text-align: center; justify-content: center; }
     }
+  
+    /* UK INTERACTIVE DESTINATION MAP */
+    .ukTabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+    .ukTab{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:999px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow-sm);font-size:12px;font-weight:800;text-decoration:none;color:var(--ink)}
+    .ukTab:hover{transform:translateY(-1px);box-shadow:var(--shadow-md)}
+    .ukMapCard{padding:18px;overflow:hidden}
+    .ukMapIntro{padding:4px 6px 14px}
+    #ukJourneyMap{height:610px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1}
+    .ukMapLegend{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--muted)}
+    .ukMapLegendItem{display:flex;align-items:center;gap:6px}.ukMapDot{width:11px;height:11px;border-radius:50%;display:inline-block}
+    .ukPopup{font-family:var(--font-body);min-width:190px}.ukPopupRegion{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+    .ukPopupTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px}
+    .ukPopupText{font-size:12px;color:var(--ink-soft);line-height:1.5}.ukPopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--uk-blue);text-decoration:none}
+    @media(max-width:640px){.ukMapCard{padding:12px}#ukJourneyMap{height:500px;border-radius:12px}.ukMapLegend{gap:9px;font-size:11px}}
+
   </style>
 </head>
 <body>
@@ -149,6 +166,15 @@
     <span>United Kingdom</span>
   </nav>
 
+  <nav class="ukTabs" aria-label="United Kingdom navigation">
+    <a class="ukTab" href="https://twofortherowd.com/#map">🌍 Destinations</a>
+    <a class="ukTab" href="#uk-map">🗺️ UK Map</a>
+    <a class="ukTab" href="/uk/scotland.html">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</a>
+    <a class="ukTab" href="/uk/england.html">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</a>
+    <a class="ukTab" href="/uk/wales.html">🏴󠁧󠁢󠁷󠁿 Wales</a>
+    <a class="ukTab" href="/uk/northern-ireland.html">🇬🇧 Northern Ireland</a>
+  </nav>
+
   <!-- HERO -->
   <div class="card heroCard">
     <div class="eyebrow">
@@ -164,6 +190,26 @@
       <span class="tag">Belfast travel guide</span>
       <span class="tag">Welsh coastlines</span>
       <span class="tag">Game of Thrones locations</span>
+    </div>
+  </div>
+
+
+  <!-- INTERACTIVE UK MAP -->
+  <div id="uk-map" class="card ukMapCard">
+    <div class="ukMapIntro">
+      <div class="eyebrow">
+        <span class="badge">🗺️ Interactive map</span>
+        <span class="badge outline">Scotland · England · Wales · Northern Ireland</span>
+      </div>
+      <h2>Explore our UK travels on the map</h2>
+      <p style="color:var(--ink-soft);max-width:720px;">From Edinburgh and the Scottish Highlands to London, Wales and Belfast's Causeway Coast, this map brings our UK travels together in one place. Tap any marker for the story behind the stop and a link into the relevant guide.</p>
+    </div>
+    <div id="ukJourneyMap" aria-label="Interactive map of Two for the Row'd United Kingdom destinations"></div>
+    <div class="ukMapLegend">
+      <span class="ukMapLegendItem"><span class="ukMapDot" style="background:#0a3161"></span>Scotland</span>
+      <span class="ukMapLegendItem"><span class="ukMapDot" style="background:#c8102e"></span>England</span>
+      <span class="ukMapLegendItem"><span class="ukMapDot" style="background:#239639"></span>Wales</span>
+      <span class="ukMapLegendItem"><span class="ukMapDot" style="background:#002868"></span>Northern Ireland</span>
     </div>
   </div>
 
@@ -333,6 +379,24 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
+<script>
+(function(){
+  if(typeof L==='undefined') return;
+  const el=document.getElementById('ukJourneyMap'); if(!el) return;
+  const map=L.map(el,{scrollWheelZoom:false});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+  const stops=[{"region": "Scotland", "stop": "Edinburgh", "lat": 55.9533, "lng": -3.1883, "notes": "Capital of Scotland. Cobbled streets, Edinburgh Castle, the Royal Mile and one of Europe's most atmospheric cities. The gateway to the Highlands.", "color": "#0a3161", "icon": "🏰", "url": "/uk/scotland.html"}, {"region": "Scotland", "stop": "Scottish Highlands", "lat": 57.2863, "lng": -4.4185, "notes": "Dramatic landscapes, Loch Ness, Glencoe and Stirling Castle. One of the greatest road trips in Europe with scenery that genuinely takes your breath away.", "color": "#0a3161", "icon": "⛰️", "url": "/uk/scotland.html"}, {"region": "England", "stop": "London", "lat": 51.5074, "lng": -0.1278, "notes": "The capital. West End theatre, museums, history and endless culture. A world-class destination that rewards deep exploration and repeated visits.", "color": "#c8102e", "icon": "🎭", "url": "/uk/england.html"}, {"region": "England", "stop": "Stratford-upon-Avon", "lat": 52.1917, "lng": -1.7077, "notes": "Shakespeare's hometown. Historic market town with theatres, heritage and literary history on the River Avon.", "color": "#c8102e", "icon": "🎭", "url": "/uk/england.html"}, {"region": "England", "stop": "Isle of Wight", "lat": 50.6952, "lng": -1.3034, "notes": "The Needles, chalk cliffs and seaside charm. An island destination known for dramatic geology and holiday atmosphere.", "color": "#c8102e", "icon": "🌊", "url": "/uk/england.html"}, {"region": "England", "stop": "Bristol", "lat": 51.4545, "lng": -2.5879, "notes": "Creative energy, street art, the Avon Gorge and a city that refuses to be defined by convention. Vibrant culture and independent spirit.", "color": "#c8102e", "icon": "🎨", "url": "/uk/england.html"}, {"region": "Wales", "stop": "Cardiff", "lat": 51.4816, "lng": -3.1791, "notes": "Capital of Wales. Compact city with castle, bay area and a manageable destination for exploring Welsh culture and language.", "color": "#239639", "icon": "🏰", "url": "/uk/wales.html"}, {"region": "Wales", "stop": "Welsh Coastline", "lat": 52.0181, "lng": -3.5244, "notes": "Dramatic Welsh coast. Castles, beaches and the beauty of Snowdonia and Pembrokeshire. Rugged landscapes and coastal towns.", "color": "#239639", "icon": "🌊", "url": "/uk/wales.html"}, {"region": "Wales", "stop": "Holyhead", "lat": 53.3082, "lng": -4.6306, "notes": "Gateway to Wales by ferry from Dublin. Historic port town and access point to Anglesey and North Wales.", "color": "#239639", "icon": "⛴️", "url": "/uk/wales.html"}, {"region": "Northern Ireland", "stop": "Belfast", "lat": 54.5973, "lng": -5.9301, "notes": "Capital of Northern Ireland. Black cab political tours, food culture, Titanic heritage and a city undergoing remarkable transformation.", "color": "#002868", "icon": "🚕", "url": "/uk/northern-ireland.html"}, {"region": "Northern Ireland", "stop": "Causeway Coast", "lat": 55.2408, "lng": -6.3314, "notes": "Giant's Causeway and dramatic coastal scenery. Some of the most stunning landscapes in the UK. Short journey from Belfast.", "color": "#002868", "icon": "⛰️", "url": "/uk/northern-ireland.html"}];
+  function markerIcon(c){return L.divIcon({className:'',html:'<div style="background:'+c+';width:28px;height:28px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(26,18,8,.25)"></div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]});}
+  stops.forEach(s=>{
+    const marker=L.marker([s.lat,s.lng],{icon:markerIcon(s.color)}).addTo(map);
+    marker.bindPopup('<div class="ukPopup"><div class="ukPopupRegion" style="color:'+s.color+'">'+s.region+'</div><div class="ukPopupTitle">'+s.icon+' '+s.stop+'</div><div class="ukPopupText">'+s.notes+'</div><a class="ukPopupLink" href="'+s.url+'">Explore '+s.region+' →</a></div>',{maxWidth:290});
+  });
+  map.fitBounds(L.latLngBounds(stops.map(s=>[s.lat,s.lng])).pad(.08));
+  setTimeout(()=>map.invalidateSize(),250);
+})();
 </script>
 
 </body>
