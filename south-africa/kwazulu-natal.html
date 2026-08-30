@@ -93,6 +93,31 @@
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:680px){.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.destLinks{grid-template-columns:1fr;}}
       @media(max-width:680px){div[style*="grid-template-columns:repeat(2,1fr)"],div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}}
+  
+    /* Responsive editorial photos: prevents portrait shots becoming enormous */
+    .storyPhoto{
+      display:block;
+      width:auto;
+      max-width:100%;
+      max-height:520px;
+      object-fit:contain;
+      margin:14px auto;
+      border-radius:12px;
+      box-shadow:var(--shadow-md);
+    }
+    @media(max-width:680px){
+      .storyPhoto{max-height:360px;max-width:100%;margin:12px auto;}
+      .photoFull{
+        display:block;
+        width:auto;
+        max-width:100%;
+        max-height:420px;
+        object-fit:contain;
+        margin:14px auto;
+      }
+      .photoGridImg,.destCardImg,.photoStripImg{max-height:280px;}
+    }
+
   </style>
 </head>
 <body>
@@ -140,10 +165,10 @@
   <div class="section-divider">🌊 St Lucia Estuary — Hippos & Crocodiles</div>
   <div class="card greenCard">
     <h2>Day 6: A game viewing cruise through an extraordinary ecosystem</h2>
-    <img src="/img/IMG_2623.JPG" alt="Hippo in the water on St Lucia Estuary" style="width:100%;margin:14px 0;border-radius:12px;box-shadow:var(--shadow-md);" loading="lazy">
+    <img src="/img/IMG_2623.JPG" alt="Hippo in the water on St Lucia Estuary" loading="lazy" class="storyPhoto">
     <p>After leaving Cape Town, the tour flies north to Durban and then transfers to St Lucia on the north coast of KwaZulu-Natal. St Lucia is home to an estuary of extraordinary biodiversity — one of the largest and most biodiverse estuaries in Africa.</p>
     <p>The St Lucia Estuary is a UNESCO World Heritage Site. The estuary is a unique ecosystem where freshwater from the Mkhuze River meets the Indian Ocean, creating a brackish water environment that supports one of the highest concentrations of wildlife in South Africa. It's vast, it's wild and it feels genuinely remote even as you're cruising through it in a guided boat.</p>
-    <img src="/img/IMG_2656.JPG" alt="St Lucia Estuary boat with guide on wildlife cruise" style="width:100%;margin:14px 0;border-radius:12px;box-shadow:var(--shadow-md);" loading="lazy">
+    <img src="/img/IMG_2656.JPG" alt="St Lucia Estuary boat with guide on wildlife cruise" loading="lazy" class="storyPhoto">
     <p>The game viewing cruise takes you into the heart of this estuary — and what you encounter is something most people will never experience in their lives. Hippopotami emerge from the water, their enormous heads rising suddenly and unexpectedly. There are hippos everywhere — singly, in pairs, in small pods. When a hippo surfaces near the boat, the sheer mass and power of the animal hits you immediately. These are dangerous animals — hippos kill more people in Africa than lions do — but seeing them in their natural habitat, going about their daily existence, is extraordinary and humbling.</p>
     <p>Nile crocodiles basking on the banks, their ancient eyes watching the boat pass. Crocodiles can live for 60+ years and grow to massive size. The largest ones in St Lucia can reach 5-6 metres. The crocodiles here are part of the furniture of the estuary — and part of the reason hippos don't dominate completely.</p>
     <p>The estuary also hosts sea turtles and sharks — a truly wild and diverse ecosystem. The landscape of the estuary is stunning — the water changing colour as freshwater meets salt water, the mangrove trees along the banks, the birdlife (over 400 bird species have been recorded in St Lucia), the mountains of Hluhluwe rising in the distance.</p>
@@ -211,7 +236,7 @@
   <div class="card warmCard">
     <h2>Connecting with communities beyond the game drive</h2>
     <p>One of the most meaningful moments of the KwaZulu-Natal portion of our journey was a visit to a local school in the Hluhluwe region. Our group spent time meeting and playing with the children — a genuine human connection that sits alongside the wildlife experiences as one of those unforgettable trip memories.</p>
-    <img src="/img/IMG_2949.JPG" alt="Children at local school in Hluhluwe area playing with tour group visitors" style="width:100%;margin:14px 0;border-radius:12px;box-shadow:var(--shadow-md);" loading="lazy">
+    <img src="/img/IMG_2949.JPG" alt="Children at local school in Hluhluwe area playing with tour group visitors" loading="lazy" class="storyPhoto">
     <p>The children were curious, joyful, and full of questions. We played games, shared stories, and experienced a part of South African life that goes far beyond what tourism usually offers. It was a reminder that travel isn't just about landscapes and wildlife — it's about people, about connection, about understanding a country through genuine human encounters. Leaving the school, you carry that experience with you in a completely different way than you carry a photograph or a wildlife sighting.</p>
   </div>
 
