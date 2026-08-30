@@ -23,6 +23,8 @@
   {"@context":"https://schema.org","@type":"Article","headline":"Austria Travel Guide — Vienna, Salzburg, Innsbruck & Linz","description":"Nicola interrailed through Austria in 2007 and returned in 2010 — Vienna's classical music, Mozart's Salzburg, Alpine Innsbruck and cultural Linz.","author":{"@type":"Person","name":"Nicola and Padraig","url":"https://twofortherowd.com"},"publisher":{"@type":"Organization","name":"Two for the Row'd","url":"https://twofortherowd.com"},"url":"https://twofortherowd.com/austria.html"}
   </script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -92,6 +94,20 @@
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.city-grid{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}}
+
+    .tab-nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px;padding:12px 0;border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;}
+    .tab-pill{display:inline-flex;align-items:center;gap:5px;padding:8px 14px;border-radius:999px;background:rgba(237,41,57,.06);border:1px solid rgba(237,41,57,.18);color:var(--ink-soft);font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;transition:all .2s ease;}
+    .tab-pill:hover{background:var(--aut-red);color:#fff;border-color:var(--aut-red);}
+    .austriaMapCard{padding:18px;overflow:hidden}
+    .austriaMapIntro{padding:4px 6px 14px}
+    #austriaJourneyMap{height:600px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1}
+    .austriaMapLegend{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--muted)}
+    .austriaLegendItem{display:flex;align-items:center;gap:6px}.austriaDot{width:11px;height:11px;border-radius:50%;display:inline-block}
+    .austriaPopup{font-family:var(--font-body);min-width:190px}.austriaPopupRegion{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+    .austriaPopupTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px}
+    .austriaPopupText{font-size:12px;color:var(--ink-soft);line-height:1.5}.austriaPopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--aut-red);text-decoration:none}
+    @media(max-width:640px){.tab-nav{flex-wrap:nowrap;margin:16px -16px 20px;padding:10px 16px}.austriaMapCard{padding:12px}#austriaJourneyMap{height:490px;border-radius:12px}.austriaMapLegend{gap:9px;font-size:11px}}
+
   </style>
 </head>
 <body>
@@ -128,6 +144,16 @@
     </div>
 </div>
 
+  <!-- TAB NAVIGATION -->
+  <nav class="tab-nav" aria-label="Austria page navigation">
+    <a href="https://twofortherowd.com/#map" class="tab-pill">🌍 Destinations</a>
+    <a href="#austria-map" class="tab-pill">🗺️ Austria Map</a>
+    <a href="#explore-austria" class="tab-pill">🇦🇹 City Guides</a>
+    <a href="#food" class="tab-pill">🍰 Food</a>
+    <a href="#stay" class="tab-pill">🛏️ Stay</a>
+    <a href="#tours" class="tab-pill">✈️ Tours</a>
+    <a href="#faq" class="tab-pill">❓ FAQ</a>
+  </nav>
 
   <!-- AUSTRIA QUICK FACTS -->
   <div class="section-divider">🇦🇹 Austria at a glance</div>
@@ -144,6 +170,24 @@
     </div>
   </div>
 
+  <!-- INTERACTIVE AUSTRIA MAP -->
+  <div id="austria-map" class="section-divider">🗺️ Our Austria Journey Map</div>
+  <div class="card austriaMapCard">
+    <div class="austriaMapIntro">
+      <div class="eyebrow"><span class="badge">Interrail 2007</span><span class="badge">Returned 2010</span></div>
+      <h2>Follow our travels through Austria</h2>
+      <p style="color:var(--ink-soft);max-width:720px;">Vienna, Salzburg, Innsbruck and Linz form the backbone of our Austria story, with Hallstatt adding one of the country's most famous lake-and-mountain landscapes. Tap a marker to explore the places on the map.</p>
+    </div>
+    <div id="austriaJourneyMap" aria-label="Interactive map of Two for the Row'd travels in Austria"></div>
+    <div class="austriaMapLegend">
+      <span class="austriaLegendItem"><span class="austriaDot" style="background:#c41e3a"></span>Vienna</span>
+      <span class="austriaLegendItem"><span class="austriaDot" style="background:#ed2939"></span>Salzburg</span>
+      <span class="austriaLegendItem"><span class="austriaDot" style="background:#f4c430"></span>Lake Region</span>
+      <span class="austriaLegendItem"><span class="austriaDot" style="background:#ff6b35"></span>Innsbruck</span>
+      <span class="austriaLegendItem"><span class="austriaDot" style="background:#4b5ba6"></span>Linz</span>
+    </div>
+  </div>
+
   <!-- WHY AUSTRIA -->
   <div class="section-divider">❤️ Why Austria?</div>
   <div class="card">
@@ -154,7 +198,7 @@
   </div>
 
   <!-- CITY CARDS -->
-  <div class="section-divider">🇦🇹 Explore Austria</div>
+  <div id="explore-austria" class="section-divider">🇦🇹 Explore Austria</div>
 
   <div class="city-grid">
     <div class="city-card">
@@ -196,7 +240,7 @@
 
   <!-- VIRTUAL TOURS -->
   <!-- AUSTRIAN FOOD -->
-  <div class="section-divider">🍰 What to eat in Austria</div>
+  <div id="food" class="section-divider">🍰 What to eat in Austria</div>
   <div class="card">
     <h2>Come hungry</h2>
     <p style="color:var(--ink-soft);margin-bottom:16px;">Austria does comfort food and cake extremely well. These are a few names worth watching for as you travel around the country.</p>
@@ -211,7 +255,7 @@
   </div>
 
   <!-- WHERE TO STAY -->
-  <div class="section-divider">🛏️ Where to stay</div>
+  <div id="stay" class="section-divider">🛏️ Where to stay</div>
   <div class="card">
     <h2>Find a base in each city</h2>
     <p>We haven't stayed in every hotel you'll find through these searches, so rather than pretending otherwise, we'd start by choosing the <strong>right area</strong>. Somewhere central or close to a main transport link makes life much easier — especially if you're travelling Austria by train.</p>
@@ -266,7 +310,7 @@
   </div>
 
   <!-- TOURS -->
-  <div class="section-divider">✈️ Book an Austria tour</div>
+  <div id="tours" class="section-divider">✈️ Book an Austria tour</div>
 
   <div class="card heroCard">
     <h2>Book a guided Austria tour through TourRadar</h2>
@@ -292,7 +336,7 @@
   </div>
 
   <!-- FAQ -->
-  <div class="section-divider">❓ FAQ</div>
+  <div id="faq" class="section-divider">❓ FAQ</div>
 
   <div class="card">
     <div class="faqItem open">
@@ -349,6 +393,28 @@
 </footer>
 
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+
+<script>
+(function(){
+  if(typeof L==='undefined') return;
+  const el=document.getElementById('austriaJourneyMap'); if(!el) return;
+  const map=L.map(el,{scrollWheelZoom:false});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+  const stops=[{"region": "Vienna", "stop": "Vienna", "lat": 48.2082, "lng": 16.3738, "notes": "Imperial architecture, museums, classical music and historic coffee-house culture.", "color": "#c41e3a", "icon": "🎻", "url": "/austria/vienna.html"}, {"region": "Vienna", "stop": "St Stephen's Cathedral", "lat": 48.2088, "lng": 16.3738, "notes": "Vienna's Gothic landmark in the heart of the historic centre.", "color": "#c41e3a", "icon": "⛪", "url": "/austria/vienna.html"}, {"region": "Vienna", "stop": "Schönbrunn Palace", "lat": 48.1847, "lng": 16.3126, "notes": "The former Habsburg summer residence, with palace interiors and formal gardens.", "color": "#c41e3a", "icon": "🏰", "url": "/austria/vienna.html"}, {"region": "Salzburg", "stop": "Salzburg", "lat": 47.8095, "lng": 13.055, "notes": "Mozart's birthplace, baroque old town and a dramatic Alpine backdrop.", "color": "#ed2939", "icon": "🎼", "url": "/austria/salzburg.html"}, {"region": "Salzburg", "stop": "Hohensalzburg Fortress", "lat": 47.7952, "lng": 13.0477, "notes": "The great hilltop fortress overlooking Salzburg and the surrounding mountains.", "color": "#ed2939", "icon": "🏰", "url": "/austria/salzburg.html"}, {"region": "Salzburg", "stop": "Mirabell Palace", "lat": 47.805, "lng": 13.0418, "notes": "Baroque palace and gardens on the edge of Salzburg's historic centre.", "color": "#ed2939", "icon": "🌹", "url": "/austria/salzburg.html"}, {"region": "Lake Region", "stop": "Hallstatt", "lat": 47.5622, "lng": 13.6493, "notes": "Austria's celebrated lakeside village, framed by the Dachstein mountains.", "color": "#f4c430", "icon": "🏘️", "url": null}, {"region": "Innsbruck", "stop": "Innsbruck", "lat": 47.2692, "lng": 11.4041, "notes": "Medieval streets and the Nordkette Alps rising directly behind the city.", "color": "#ff6b35", "icon": "⛰️", "url": "/austria/innsbruck.html"}, {"region": "Innsbruck", "stop": "The Golden Roof", "lat": 47.268, "lng": 11.3933, "notes": "Innsbruck's landmark late-Gothic oriel with its famous gilded roof tiles.", "color": "#ff6b35", "icon": "✨", "url": "/austria/innsbruck.html"}, {"region": "Innsbruck", "stop": "Nordkette", "lat": 47.3067, "lng": 11.3797, "notes": "The mountain range immediately north of Innsbruck, reached from the city by cableways.", "color": "#ff6b35", "icon": "🏔️", "url": "/austria/innsbruck.html"}, {"region": "Linz", "stop": "Linz", "lat": 48.3064, "lng": 14.2858, "notes": "A Danube city mixing historic streets with art, technology and modern culture.", "color": "#4b5ba6", "icon": "🎭", "url": "/austria/linz.html"}, {"region": "Linz", "stop": "Ars Electronica Center", "lat": 48.3097, "lng": 14.284, "notes": "Linz's landmark museum exploring art, technology and digital culture.", "color": "#4b5ba6", "icon": "🤖", "url": "/austria/linz.html"}];
+  function icon(c){return L.divIcon({className:'',html:'<div style="background:'+c+';width:28px;height:28px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(26,18,8,.25)"></div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]});}
+  // Main interrail backbone from the supplied map. Linz is shown as an additional visited city.
+  const route=[[48.2082,16.3738],[47.8095,13.0550],[47.2692,11.4041]];
+  L.polyline(route,{color:'#c41e3a',weight:3,opacity:.62,dashArray:'8,5',lineCap:'round'}).addTo(map);
+  stops.forEach(s=>{
+    const marker=L.marker([s.lat,s.lng],{icon:icon(s.color)}).addTo(map);
+    const link=s.url?'<a class="austriaPopupLink" href="'+s.url+'">Explore our guide →</a>':'';
+    marker.bindPopup('<div class="austriaPopup"><div class="austriaPopupRegion" style="color:'+s.color+'">'+s.region+'</div><div class="austriaPopupTitle">'+s.icon+' '+s.stop+'</div><div class="austriaPopupText">'+s.notes+'</div>'+link+'</div>',{maxWidth:290});
+  });
+  map.fitBounds(L.latLngBounds(stops.map(s=>[s.lat,s.lng])).pad(.10));
+  setTimeout(()=>map.invalidateSize(),250);
+})();
+</script>
 
 </body>
 </html>
