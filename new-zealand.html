@@ -15,13 +15,11 @@
   <meta property="og:description" content="Queenstown, Milford Sound, Rotorua Māori experience, Hobbiton, Lake Tekapo stargazing and so much more. New Zealand travel guide from Two for the Row'd." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://twofortherowd.com/new-zealand.html" />
-  <meta property="og:image" content="https://twofortherowd.com//img/nz.jpg" />
+  <meta property="og:image" content="https://twofortherowd.com/img/nz.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root{--gold:#ffd84a;--gold-dark:#e8c235;--ink:#1a1208;--ink-soft:#4a3f28;--muted:#7a6e58;--cream:#fdf8ef;--white:#ffffff;--border:rgba(26,18,8,.10);--border-mid:rgba(26,18,8,.16);--card-bg:rgba(255,255,255,.88);--shadow-sm:0 2px 8px rgba(26,18,8,.07);--shadow-md:0 8px 24px rgba(26,18,8,.10);--shadow-lg:0 16px 48px rgba(26,18,8,.13);--radius-sm:10px;--radius-md:16px;--radius-lg:22px;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans','Segoe UI',Arial,sans-serif;--nz-green:#2d6a4f;--nz-light:#40916c;}
     *,*::before,*::after{box-sizing:border-box;}
@@ -40,69 +38,57 @@
     .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:static;}
     .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
     .backBar a:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
-    
     /* STICKY CHAPTER NAV */
     .chapterNav{position:sticky;top:0;z-index:40;background:rgba(253,248,239,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:8px 0;}
     .chapterNavInner{max-width:900px;margin:0 auto;padding:0 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;}
     .chapterNavInner::-webkit-scrollbar{display:none;}
     .chapterNavInner a{flex-shrink:0;padding:6px 12px;font-size:12px;font-weight:700;text-decoration:none;color:var(--ink-soft);border-radius:999px;border:1px solid transparent;transition:all .15s ease;letter-spacing:.02em;}
     .chapterNavInner a:hover{background:var(--white);border-color:var(--border);color:var(--ink);}
-    
     .card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-md);padding:24px 26px;margin-bottom:16px;backdrop-filter:blur(4px);transition:transform .18s ease,box-shadow .18s ease;}
     .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
     .heroCard{background:linear-gradient(160deg,#ffffff 0%,#fffbe8 55%,#fff3c4 100%);border-color:rgba(232,194,53,.3);}
     .greenCard{background:linear-gradient(160deg,#ffffff 0%,#f0faf4 55%,#d8f3e8 100%);border-color:rgba(45,106,79,.2);}
     .blueCard{background:linear-gradient(160deg,#ffffff 0%,#f0f6ff 55%,#daeaff 100%);border-color:rgba(46,109,164,.2);}
-    
     .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--ink);color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 20px rgba(26,18,8,.2);transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
     .btn-primary:hover{background:#2e2410;transform:translateY(-2px);color:var(--white);}
     .btn-gold{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px rgba(232,194,53,.35);transition:transform .15s ease,box-shadow .15s ease;}
     .btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px);color:var(--ink);}
     .btn-outline{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:var(--white);color:var(--ink);border:1.5px solid var(--border-mid);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
     .btn-outline:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);color:var(--ink);}
-    
     .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
     .badge{display:inline-block;padding:4px 11px;border-radius:999px;font-size:12px;font-weight:700;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);}
     .badge.outline{background:rgba(255,255,255,.8);border-color:var(--border-mid);color:var(--ink-soft);}
     .badge.green{background:rgba(45,106,79,.12);border-color:rgba(45,106,79,.3);color:var(--nz-green);}
-    
     .eyebrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;}
     .hero-headline{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.12;margin-bottom:14px;}
     .hero-headline em{font-style:italic;color:var(--nz-light);}
     .hero-lead{font-size:1.05rem;line-height:1.7;color:var(--ink-soft);margin-bottom:20px;}
-    
     .iframeWrapLandscape{border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md);background:#000;position:relative;aspect-ratio:16/9;width:100%;margin:16px 0;}
     iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
-    
     .route-strip{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0;padding:14px 16px;background:rgba(255,255,255,.55);border-radius:var(--radius-md);border:1px solid var(--border);}
     .route-stop{background:var(--white);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;box-shadow:var(--shadow-sm);}
     .route-arrow{color:var(--muted);font-size:14px;}
-    
     .destGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px;}
     .nav-tile{display:block;background:rgba(255,255,255,.9);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;text-decoration:none;color:var(--ink);transition:transform .15s ease,box-shadow .15s ease;box-shadow:var(--shadow-sm);}
     .nav-tile:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);color:var(--ink);}
     .nav-tile-icon{font-size:24px;margin-bottom:8px;}
     .nav-tile strong{display:block;margin-bottom:2px;font-family:var(--font-display);}
     .nav-tile-sub{font-size:12px;color:var(--muted);}
-    
     .chapterHeader{margin:36px 0 18px;padding:0 4px;}
     .chapterHeaderInner{display:flex;align-items:flex-end;gap:14px;padding-bottom:14px;border-bottom:2px solid var(--ink);}
     .chapterNumber{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3rem);font-weight:900;line-height:.9;color:var(--nz-light);letter-spacing:-.02em;font-style:italic;}
     .chapterTitle{flex:1;}
     .chapterLabel{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
     .chapterName{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:var(--ink);line-height:1.1;letter-spacing:-.01em;}
-    
     .photo-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0;}
     .photo-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
     .photo-grid-2 img,.photo-grid-3 img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-md);display:block;transition:transform .2s ease,box-shadow .2s ease;}
     .photo-grid-2 img:hover,.photo-grid-3 img:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
-    
     .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:10px;}
     .highlight-item{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px;}
     .highlight-icon{font-size:22px;margin-bottom:6px;}
     .highlight-title{font-weight:700;font-size:14px;margin-bottom:4px;}
     .highlight-text{font-size:13px;color:var(--ink-soft);line-height:1.5;}
-    
     .faqItem{border-bottom:1px dashed var(--border-mid);padding:14px 0;}
     .faqItem:last-child{border-bottom:none;padding-bottom:0;}
     .faqQ{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;user-select:none;}
@@ -110,39 +96,58 @@
     .faqItem.open .faqQ::after{transform:rotate(45deg);}
     .faqA{font-size:14px;line-height:1.7;color:var(--ink-soft);display:none;padding-top:10px;}
     .faqItem.open .faqA{display:block;}
-    
     .tag{display:inline-block;padding:6px 11px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.8);font-size:12px;font-weight:600;color:var(--ink-soft);}
     .tagRow{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
-    
     .section-label{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);margin:6px 0 10px;}
     .disclosure{font-size:12px;line-height:1.55;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px dashed var(--border-mid);}
-    
     .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:16px;display:flex;flex-wrap:wrap;gap:4px;align-items:center;}
     .breadcrumb a{color:var(--muted);text-decoration:none;font-weight:600;}
     .breadcrumb a:hover{color:var(--ink);}
     .breadcrumb span{opacity:.5;}
-    
     .section-divider{display:flex;align-items:center;gap:12px;margin:8px 0 16px;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--ink);}
     .section-divider::before,.section-divider::after{content:"";flex:1;height:1px;background:var(--border-mid);}
-    
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
-    
+    /* QUICK FACTS GRID */
+    .quickFactsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:14px;}
+    .quickFactItem{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px;text-align:center;}
+    .quickFactLabel{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+    .quickFactValue{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--ink);}
+    /* PRACTICAL INFO GRID */
+    .practicalGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px;}
+    .practicalItem{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:12px;padding:16px;}
+    .practicalItem strong{display:flex;align-items:center;gap:8px;font-size:14px;margin-bottom:6px;}
+    .practicalItem strong::before{font-size:20px;}
+    .practicalItem p{font-size:13px;color:var(--ink-soft);margin:0;}
     @media(max-width:640px){
       .photo-grid-3{grid-template-columns:repeat(2,1fr);}
       .links{flex-direction:column;}
       .links a{text-align:center;justify-content:center;}
       .route-strip{justify-content:center;padding:12px;}
+      .quickFactsGrid{grid-template-columns:repeat(2,1fr);}
     }
     @media(max-width:420px){
       .photo-grid-2,.photo-grid-3{grid-template-columns:1fr;}
+      .quickFactsGrid{grid-template-columns:1fr;}
     }
-  
-    .nz-photo{margin:18px 0 4px}.nz-photo img{display:block;width:100%;max-height:520px;object-fit:cover;border-radius:14px;box-shadow:0 8px 24px rgba(26,18,8,.12)}.nz-photo figcaption{font-size:12px;color:var(--muted);margin-top:7px;text-align:center}.partnerGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}.partnerCard{display:block;text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:0 4px 14px rgba(26,18,8,.07)}.partnerCard strong{display:block;margin-bottom:3px}.partnerCard span{font-size:13px;color:var(--muted)}@media(max-width:640px){.partnerGrid{grid-template-columns:1fr}}
-
-    .nzMapShell{display:grid;grid-template-columns:260px 1fr;min-height:520px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fff;box-shadow:var(--shadow-md)}.nzMapStops{max-height:520px;overflow:auto;padding:10px;background:#fff}.nzMapStop{padding:9px 10px;margin:4px 0;border-left:3px solid var(--gold);border-radius:8px;background:#faf8f3;cursor:pointer;font-size:12px}.nzMapStop strong{font-size:13px}.nzMapStop.active{background:#2d6a4f;color:#fff;border-left-color:#ffd84a}.nzMap{min-height:520px;z-index:1}.nzMapNote{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}@media(max-width:760px){.nzMapShell{grid-template-columns:1fr}.nzMapStops{display:flex;overflow-x:auto;max-height:none;gap:6px;padding:8px}.nzMapStop{min-width:150px;flex:0 0 auto}.nzMap{min-height:420px}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+    .nz-photo{margin:18px 0 4px}
+    .nz-photo img{display:block;width:100%;max-height:520px;object-fit:cover;border-radius:14px;box-shadow:0 8px 24px rgba(26,18,8,.12)}
+    .nz-photo figcaption{font-size:12px;color:var(--muted);margin-top:7px;text-align:center}
+    .partnerGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+    .partnerCard{display:block;text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:0 4px 14px rgba(26,18,8,.07)}
+    .partnerCard strong{display:block;margin-bottom:3px}
+    .partnerCard span{font-size:13px;color:var(--muted)}
+    @media(max-width:640px){.partnerGrid{grid-template-columns:1fr}}
+    .nzMapShell{display:grid;grid-template-columns:260px 1fr;min-height:520px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fff;box-shadow:var(--shadow-md)}
+    .nzMapStops{max-height:520px;overflow:auto;padding:10px;background:#fff}
+    .nzMapStop{padding:9px 10px;margin:4px 0;border-left:3px solid var(--gold);border-radius:8px;background:#faf8f3;cursor:pointer;font-size:12px}
+    .nzMapStop strong{font-size:13px}
+    .nzMapStop.active{background:#2d6a4f;color:#fff;border-left-color:#ffd84a}
+    .nzMap{min-height:520px;z-index:1}
+    .nzMapNote{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+    @media(max-width:760px){.nzMapShell{grid-template-columns:1fr}.nzMapStops{display:flex;overflow-x:auto;max-height:none;gap:6px;padding:8px}.nzMapStop{min-width:150px;flex:0 0 auto}.nzMap{min-height:420px}}
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 <body>
 
@@ -155,6 +160,7 @@
 <nav class="chapterNav" aria-label="New Zealand sections">
   <div class="chapterNavInner">
     <a href="#glance">🇳🇿 At a Glance</a>
+    <a href="#quick-facts">ℹ️ Quick Facts</a>
     <a href="#route">🗺️ Our Route</a>
     <a href="#north-island">🌿 North Island</a>
     <a href="#south-island">🏔️ South Island</a>
@@ -168,7 +174,6 @@
 </nav>
 
 <div class="wrap">
-
   <nav class="breadcrumb">
     <a href="https://twofortherowd.com/">Home</a>
     <span>›</span>
@@ -186,17 +191,14 @@
     </div>
     <h1 class="hero-headline">New Zealand —<br><em>one of the most beautiful places on earth</em></h1>
     <p class="hero-lead">After Tasmania we flew into Auckland and picked up the Haka Tours Amplified 19-day tour — and this is where things got properly special. New Zealand is one of those places where the scenery genuinely does not look real. Every single day felt completely different — one minute you're beside the ocean, the next you're deep in mountains, then suddenly you're in geothermal Rotorua, watching the southern lights from Mount John at Lake Tekapo, or floating through a cave lit by thousands of glowworms. In 57 countries between us, New Zealand is firmly in the top five. We'd go back tomorrow.</p>
-
     <h3 style="margin-bottom:10px;">Watch our New Zealand highlights first 🎬</h3>
     <div class="iframeWrapLandscape">
       <iframe loading="lazy" src="https://www.youtube.com/embed/dyYVV5hsGdM" title="New Zealand highlights — Two for the Row'd" allowfullscreen></iframe>
     </div>
-
     <div class="links">
       <a class="btn-primary" href="https://www.tourradar.com/t/204593?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book a similar NZ tour on TourRadar →</a>
       <a class="btn-outline" href="https://twofortherowd.com/#destinations">See all our destinations →</a>
     </div>
-
     <div class="tagRow">
       <span class="tag">New Zealand travel guide</span>
       <span class="tag">Haka Tours review</span>
@@ -204,6 +206,46 @@
       <span class="tag">Hobbiton</span>
       <span class="tag">Lake Tekapo stargazing</span>
       <span class="tag">Māori cultural experience</span>
+    </div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div id="quick-facts" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">📋</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">Essential info</div>
+        <div class="chapterName">New Zealand at a glance</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card greenCard">
+    <div class="quickFactsGrid">
+      <div class="quickFactItem">
+        <div class="quickFactLabel">Capital</div>
+        <div class="quickFactValue">Wellington</div>
+      </div>
+      <div class="quickFactItem">
+        <div class="quickFactLabel">Currency</div>
+        <div class="quickFactValue">NZD $</div>
+      </div>
+      <div class="quickFactItem">
+        <div class="quickFactLabel">Population</div>
+        <div class="quickFactValue">~5.1M</div>
+      </div>
+      <div class="quickFactItem">
+        <div class="quickFactLabel">Languages</div>
+        <div class="quickFactValue">English, Māori</div>
+      </div>
+      <div class="quickFactItem">
+        <div class="quickFactLabel">Timezone</div>
+        <div class="quickFactValue">NZST UTC+12</div>
+      </div>
+      <div class="quickFactItem">
+        <div class="quickFactLabel">Power Plugs</div>
+        <div class="quickFactValue">Type I</div>
+      </div>
     </div>
   </div>
 
@@ -218,7 +260,15 @@
     </div>
   </div>
 
-  <div class="card"><h2>Follow our 19-day route</h2><p>Click any stop to jump around the journey. The dashed line shows the order of our stops rather than a turn-by-turn driving route.</p><div class="nzMapShell"><div class="nzMapStops" id="nzMapStops"></div><div id="nzRouteMap" class="nzMap" aria-label="Interactive map of our New Zealand route"></div></div><p class="nzMapNote">14 featured stops across the North and South Islands.</p></div>
+  <div class="card">
+    <h2>Follow our 19-day route</h2>
+    <p>Click any stop to jump around the journey. The dashed line shows the order of our stops rather than a turn-by-turn driving route.</p>
+    <div class="nzMapShell">
+      <div class="nzMapStops" id="nzMapStops"></div>
+      <div id="nzRouteMap" class="nzMap" aria-label="Interactive map of our New Zealand route"></div>
+    </div>
+    <p class="nzMapNote">14 featured stops across the North and South Islands.</p>
+  </div>
 
   <!-- NORTH & SOUTH ISLAND OVERVIEW -->
   <div id="north-island" class="chapterHeader">
@@ -296,21 +346,155 @@
 
   <div class="card">
     <div class="photo-grid-3">
-      <img src="//img/nz.jpg" alt="New Zealand coast — Two for the Row'd" loading="lazy">
-      <img src="//img/nz1.jpg" alt="New Zealand scenery — Two for the Row'd" loading="lazy">
-      <img src="//img/nz3.jpg" alt="New Zealand mountains — Two for the Row'd" loading="lazy">
+      <img src="/img/nz.jpg" alt="New Zealand coast — Two for the Row'd" loading="lazy">
+      <img src="/img/nz1.jpg" alt="New Zealand scenery — Two for the Row'd" loading="lazy">
+      <img src="/img/nz3.jpg" alt="New Zealand mountains — Two for the Row'd" loading="lazy">
     </div>
     <div class="photo-grid-2" style="margin-top:10px;">
-      <img src="//img/nz4.jpg" alt="New Zealand South Island — Two for the Row'd" loading="lazy">
-      <img src="//img/nz5.jpg" alt="New Zealand green hills — Two for the Row'd" loading="lazy">
+      <img src="/img/nz4.jpg" alt="New Zealand South Island — Two for the Row'd" loading="lazy">
+      <img src="/img/nz5.jpg" alt="New Zealand green hills — Two for the Row'd" loading="lazy">
+    </div>
+  </div>
+
+  <!-- GETTING AROUND -->
+  <div class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">✈️</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">Logistics</div>
+        <div class="chapterName">Getting around New Zealand</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card blueCard">
+    <h2>How to explore New Zealand</h2>
+    <p>New Zealand is large and getting around independently requires careful planning. These are your best options:</p>
+    <div class="practicalGrid">
+      <div class="practicalItem">
+        <strong>🚌 Guided tours</strong>
+        <p>The best option for first-timers. Companies like Haka Tours operate 10–21 day circuits covering both islands with accommodation and transport included.</p>
+      </div>
+      <div class="practicalItem">
+        <strong>🚗 Car rental</strong>
+        <p>Driving yourself gives maximum flexibility. Left-hand traffic. Good roads, but plan drives carefully — distances are vast. An InterIslander ferry connects North and South islands.</p>
+      </div>
+      <div class="practicalItem">
+        <strong>✈️ Domestic flights</strong>
+        <p>Useful for covering long distances quickly (e.g. Auckland to Queenstown). Air New Zealand and Jetstar are the main carriers.</p>
+      </div>
+      <div class="practicalItem">
+        <strong>🚆 Coach/bus</strong>
+        <p>Budget-friendly but slower. Intercity and NakedBus connect major cities and towns.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEST TIME TO VISIT -->
+  <div class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">🌍</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">Planning</div>
+        <div class="chapterName">Best time to visit New Zealand</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="practicalGrid">
+      <div class="practicalItem">
+        <strong>🌞 December–February (summer)</strong>
+        <p><strong>Best for:</strong> Long daylight, warm weather, beach time, hiking. Busiest season — book accommodation well ahead.</p>
+      </div>
+      <div class="practicalItem">
+        <strong>🍂 March–May (autumn)</strong>
+        <p><strong>Best for:</strong> Mild weather, fewer crowds, stunning foliage. Ideal sweet spot for visiting.</p>
+      </div>
+      <div class="practicalItem">
+        <strong>❄️ June–August (winter)</strong>
+        <p><strong>Best for:</strong> Skiing, Southern Lights viewing (from June), fewer tourists. Can be cold and rainy.</p>
+      </div>
+      <div class="practicalItem">
+        <strong>🌸 September–November (spring)</strong>
+        <p><strong>Best for:</strong> Warming weather, spring wildflowers, active for adventure sports. Building crowds.</p>
+      </div>
+    </div>
+    <p style="color:var(--ink-soft);font-size:14px;margin-top:16px;"><strong>Our tip:</strong> We visited in shoulder season (May) and had excellent weather and manageable crowds. New Zealand is good to visit year-round — it just depends what you want to do and whether you're comfortable with weather variability.</p>
+  </div>
+
+  <!-- VISAS & TRAVEL INFO -->
+  <div class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">📝</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">Travel essentials</div>
+        <div class="chapterName">Visas & entry requirements</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="practicalGrid">
+      <div class="practicalItem">
+        <strong>🇮🇪 Irish citizens</strong>
+        <p><strong>Visa-free entry:</strong> Up to 6 months. You'll get a NZeTA (electronic travel authority) automatically on arrival or apply online beforehand.</p>
+      </div>
+      <div class="practicalItem">
+        <strong>🌐 Other EU/UK citizens</strong>
+        <p><strong>Visa-free entry:</strong> 3–6 months depending on citizenship. Many nationalities need an NZeTA. Check immigration.govt.nz for your specific country.</p>
+      </div>
+      <div class="practicalItem">
+        <strong>💳 What you'll need</strong>
+        <p>Passport (valid 3+ months past travel), proof of onward travel, proof of funds, travel insurance (highly recommended). Some nationalities may need additional documents.</p>
+      </div>
+      <div class="practicalItem">
+        <strong>💰 Currency & costs</strong>
+        <p>New Zealand Dollar (NZD $). Widely accepted cards everywhere. Budget NZD $80–150/day for budget travel, NZD $150–250/day for mid-range comfort.</p>
+      </div>
+    </div>
+    <p class="disclosure" style="margin-top:18px;"><strong>Travel info:</strong> Visit immigration.govt.nz for the most up-to-date visa requirements. Requirements can change.</p>
+  </div>
+
+  <!-- DRIVE FROM HOME -->
+  <div id="drive" class="chapterHeader">
+    <div class="chapterHeaderInner">
+      <div class="chapterNumber">06</div>
+      <div class="chapterTitle">
+        <div class="chapterLabel">Virtual road trip</div>
+        <div class="chapterName">Drive New Zealand from home</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Explore five New Zealand stops from your sofa</h2>
+    <p>Our friends at Drive From Home let you virtually cruise through some of the places on our route. Pick a destination, open the city guide or jump straight into the drive.</p>
+    <div class="partnerGrid">
+      <div class="partnerCard">
+        <strong>Auckland</strong>
+        <span><a href="https://drivefromhome.com/cities/auckland/" target="_blank" rel="noopener">City guide</a> · <a href="https://drivefromhome.com/city/?city=AKL" target="_blank" rel="noopener">Start the drive →</a></span>
+      </div>
+      <div class="partnerCard">
+        <strong>Rotorua</strong>
+        <span><a href="https://drivefromhome.com/cities/rotorua/" target="_blank" rel="noopener">City guide</a> · <a href="https://drivefromhome.com/city/?city=ROT" target="_blank" rel="noopener">Start the drive →</a></span>
+      </div>
+      <div class="partnerCard">
+        <strong>Wellington</strong>
+        <span><a href="https://drivefromhome.com/cities/wellington/" target="_blank" rel="noopener">City guide</a> · <a href="https://drivefromhome.com/city/?city=WLG" target="_blank" rel="noopener">Start the drive →</a></span>
+      </div>
+      <div class="partnerCard">
+        <strong>Queenstown</strong>
+        <span><a href="https://drivefromhome.com/cities/queenstown/" target="_blank" rel="noopener">City guide</a> · <a href="https://drivefromhome.com/city/?city=ZQN" target="_blank" rel="noopener">Start the drive →</a></span>
+      </div>
+      <div class="partnerCard">
+        <strong>Aoraki / Mount Cook</strong>
+        <span><a href="https://drivefromhome.com/cities/aoraki-mount-cook/" target="_blank" rel="noopener">City guide</a> · <a href="https://drivefromhome.com/city/?city=GTN" target="_blank" rel="noopener">Start the drive →</a></span>
+      </div>
     </div>
   </div>
 
   <!-- TOURS & BOOKING -->
-
-  <div id="drive" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">06</div><div class="chapterTitle"><div class="chapterLabel">Virtual road trip</div><div class="chapterName">Drive New Zealand From Home</div></div></div></div>
-  <div class="card"><h2>Explore five New Zealand stops from your sofa</h2><p>Our friends at Drive From Home let you virtually cruise through some of the places on our route. Pick a destination, open the city guide or jump straight into the drive.</p><div class="partnerGrid">
-<div class="partnerCard"><strong>Auckland</strong><span><a href="https://drivefromhome.com/cities/auckland/" target="_blank" rel="noopener">City guide</a> · <a href="https://drivefromhome.com/city/?city=AKL" target="_blank" rel="noopener">Start the drive →</a></span></div><div class="partnerCard"><strong>Rotorua</strong><span><a href="https://drivefromhome.com/cities/rotorua/" target="_blank" rel="noopener">City guide</a> · <a href="https://drivefromhome.com/city/?city=ROT" target="_blank" rel="noopener">Start the drive →</a></span></div><div class="partnerCard"><strong>Wellington</strong><span><a href="https://drivefromhome.com/cities/wellington/" target="_blank" rel="noopener">City guide</a> · <a href="https://drivefromhome.com/city/?city=WLG" target="_blank" rel="noopener">Start the drive →</a></span></div><div class="partnerCard"><strong>Queenstown</strong><span><a href="https://drivefromhome.com/cities/queenstown/" target="_blank" rel="noopener">City guide</a> · <a href="https://drivefromhome.com/city/?city=ZQN" target="_blank" rel="noopener">Start the drive →</a></span></div><div class="partnerCard"><strong>Aoraki / Mount Cook</strong><span><a href="https://drivefromhome.com/cities/aoraki-mount-cook/" target="_blank" rel="noopener">City guide</a> · <a href="https://drivefromhome.com/city/?city=GTN" target="_blank" rel="noopener">Start the drive →</a></span></div></div></div>
   <div id="tours" class="chapterHeader">
     <div class="chapterHeaderInner">
       <div class="chapterNumber">05</div>
@@ -330,11 +514,26 @@
     <p class="disclosure"><strong>Disclosure:</strong> Affiliate link — if you book through it we may earn a small commission at no extra cost to you.</p>
   </div>
 
+  <div class="card">
+    <h2>More ways to book New Zealand</h2>
+    <div class="partnerGrid">
+      <a class="partnerCard" href="https://www.tourradar.com/t/204572?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">
+        <strong>TourRadar — New Zealand tour</strong>
+        <span>See tour 204572 →</span>
+      </a>
+      <a class="partnerCard" href="https://www.tourradar.com/t/204593?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">
+        <strong>TourRadar — New Zealand tour</strong>
+        <span>See tour 204593 →</span>
+      </a>
+    </div>
+    <div style="margin-top:18px" data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="168989" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VYORXUN"></div>
+    <p class="disclosure"><strong>Disclosure:</strong> Some links are affiliate links. If you book through them, we may earn a small commission at no extra cost to you.</p>
+  </div>
+
   <!-- PACKING -->
-<div class="card"><h2>More ways to book New Zealand</h2><div class="partnerGrid"><a class="partnerCard" href="https://www.tourradar.com/t/204572?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored"><strong>TourRadar — New Zealand tour</strong><span>See tour 204572 →</span></a><a class="partnerCard" href="https://www.tourradar.com/t/204593?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored"><strong>TourRadar — New Zealand tour</strong><span>See tour 204593 →</span></a></div><div style="margin-top:18px" data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="168989" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VYORXUN"></div><p class="disclosure"><strong>Disclosure:</strong> Some links are affiliate links. If you book through them, we may earn a small commission at no extra cost to you.</p></div>
   <div id="packing" class="chapterHeader">
     <div class="chapterHeaderInner">
-      <div class="chapterNumber">06</div>
+      <div class="chapterNumber">07</div>
       <div class="chapterTitle">
         <div class="chapterLabel">Prepare for the trip</div>
         <div class="chapterName">New Zealand packing essentials</div>
@@ -345,19 +544,43 @@
   <div class="card">
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">New Zealand can mean beaches, boats, glacier walks and freezing cold mountain summits all in one trip. These are the things we'd pack without hesitation.</p>
     <div class="highlights-grid">
-      <div class="highlight-item"><div class="highlight-icon">🧥</div><div class="highlight-title">Waterproof jacket</div><p class="highlight-text">NZ weather changes fast — especially on the South Island. A good waterproof layer is essential.</p></div>
-      <div class="highlight-item"><div class="highlight-icon">🥾</div><div class="highlight-title">Hiking boots</div><p class="highlight-text">Essential for walking trails, Cathedral Cove, glacier visits and adventure days.</p></div>
-      <div class="highlight-item"><div class="highlight-icon">🔥</div><div class="highlight-title">Warm layers</div><p class="highlight-text">For Lake Tekapo stargazing especially — it's genuinely very cold on that summit.</p></div>
-      <div class="highlight-item"><div class="highlight-icon">🦟</div><div class="highlight-title">Insect repellent</div><p class="highlight-text">NZ sandflies are famously persistent — especially near water and in forested areas.</p></div>
-      <div class="highlight-item"><div class="highlight-icon">☀️</div><div class="highlight-title">High SPF sunscreen</div><p class="highlight-text">NZ has some of the strongest UV radiation in the world — you can burn badly even when it feels cool.</p></div>
-      <div class="highlight-item"><div class="highlight-icon">🔌</div><div class="highlight-title">Travel adaptor</div><p class="highlight-text">NZ uses Type I plugs — same as Australia but different to Ireland.</p></div>
+      <div class="highlight-item">
+        <div class="highlight-icon">🧥</div>
+        <div class="highlight-title">Waterproof jacket</div>
+        <p class="highlight-text">NZ weather changes fast — especially on the South Island. A good waterproof layer is essential.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">🥾</div>
+        <div class="highlight-title">Hiking boots</div>
+        <p class="highlight-text">Essential for walking trails, Cathedral Cove, glacier visits and adventure days.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">🔥</div>
+        <div class="highlight-title">Warm layers</div>
+        <p class="highlight-text">For Lake Tekapo stargazing especially — it's genuinely very cold on that summit.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">🦟</div>
+        <div class="highlight-title">Insect repellent</div>
+        <p class="highlight-text">NZ sandflies are famously persistent — especially near water and in forested areas.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">☀️</div>
+        <div class="highlight-title">High SPF sunscreen</div>
+        <p class="highlight-text">NZ has some of the strongest UV radiation in the world — you can burn badly even when it feels cool.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">🔌</div>
+        <div class="highlight-title">Travel adaptor</div>
+        <p class="highlight-text">NZ uses Type I plugs — same as Australia but different to Ireland.</p>
+      </div>
     </div>
   </div>
 
   <!-- FAQ -->
   <div id="faq" class="chapterHeader">
     <div class="chapterHeaderInner">
-      <div class="chapterNumber">07</div>
+      <div class="chapterNumber">08</div>
       <div class="chapterTitle">
         <div class="chapterLabel">Common questions</div>
         <div class="chapterName">New Zealand FAQ</div>
@@ -382,6 +605,14 @@
       <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What is a Māori hāngī?</div>
       <div class="faqA">A hāngī is a traditional Māori method of cooking — food is slow-cooked in an underground pit using heated rocks. The result is smoky, tender and completely unlike anything you've had before. Experiencing a hāngī meal as part of a Māori cultural evening is one of the most memorable experiences available in New Zealand.</div>
     </div>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Do I need a visa to visit New Zealand?</div>
+      <div class="faqA">Irish and most EU/UK citizens get visa-free entry for 3–6 months depending on nationality. You'll typically receive a visitor visa on arrival or need to apply for an NZeTA online beforehand. Check immigration.govt.nz for your specific country's requirements.</div>
+    </div>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What's the currency and how much will it cost?</div>
+      <div class="faqA">New Zealand uses the New Zealand Dollar (NZD $). Budget around NZD $80–150 per day for budget travel, or NZD $150–250 per day for mid-range comfort. Most places accept cards, though it's useful to carry some cash for smaller establishments and tips (tipping is appreciated but not obligatory).</div>
+    </div>
   </div>
 
   <!-- FINAL CTA -->
@@ -400,7 +631,10 @@
   <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a></p>
 </footer>
 
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+
 <script>
 // FAQ toggle functionality
 document.querySelectorAll('.faqQ').forEach(q => {
@@ -409,6 +643,56 @@ document.querySelectorAll('.faqQ').forEach(q => {
   });
 });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><script>(function(){const el=document.getElementById('nzRouteMap');if(!el)return;const stops=[{id:1,name:'Auckland',emoji:'✈️',lat:-36.85088,lng:174.7645,description:'Gateway to the tour.',island:'north'},{id:2,name:'Coromandel',emoji:'🏖️',lat:-36.8333,lng:175.5833,description:'Cathedral Cove and coastal scenery.',island:'north'},{id:3,name:'Waitomo',emoji:'✨',lat:-38.2607,lng:175.1036,description:'Glowworm caves.',island:'north'},{id:4,name:'Hobbiton',emoji:'🧙',lat:-37.8721,lng:175.6829,description:'The Shire and Green Dragon.',island:'north'},{id:5,name:'Rotorua',emoji:'🌋',lat:-38.1446,lng:176.2378,description:'Māori culture and geothermal landscapes.',island:'north'},{id:6,name:'Taupō',emoji:'🚤',lat:-38.6843,lng:176.0704,description:'Rapids Jet and lake adventures.',island:'north'},{id:7,name:'Wellington',emoji:'🌊',lat:-41.2924,lng:174.7787,description:'Capital city and ferry gateway.',island:'north'},{id:8,name:'Kaikōura',emoji:'🐳',lat:-42.3994,lng:173.6799,description:'Mountains meet the ocean.',island:'south'},{id:9,name:'Lake Tekapo',emoji:'🌌',lat:-43.9833,lng:170.4667,description:'Mount John and stargazing.',island:'south'},{id:10,name:'Wanaka',emoji:'🏔️',lat:-44.6943,lng:169.1417,description:'Lake and mountain scenery.',island:'south'},{id:11,name:'Queenstown',emoji:'🪂',lat:-45.0302,lng:168.6615,description:'Adventure capital.',island:'south'},{id:12,name:'Milford Sound',emoji:'🌊',lat:-44.6414,lng:167.8974,description:'Fjord cruise and waterfalls.',island:'south'},{id:13,name:'Franz Josef',emoji:'🧊',lat:-43.4607,lng:170.1861,description:'Glacier and rainforest.',island:'south'},{id:14,name:'Christchurch',emoji:'🎂',lat:-43.532,lng:172.6366,description:'Journey end.',island:'south'}];const map=L.map(el,{scrollWheelZoom:false}).setView([-40.5,172.8],5);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:19}).addTo(map);const list=document.getElementById('nzMapStops'),markers={};stops.forEach((s,i)=>{const c=s.island==='north'?'#f59e0b':'#ef4444';const icon=L.divIcon({html:`<div style="background:${c};color:#fff;width:34px;height:34px;border:3px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:0 2px 8px rgba(0,0,0,.25)">${s.id}</div>`,className:'',iconSize:[34,34],iconAnchor:[17,17]});markers[s.id]=L.marker([s.lat,s.lng],{icon}).bindPopup(`<strong>${s.id}. ${s.name} ${s.emoji}</strong><br>${s.description}`).addTo(map);const d=document.createElement('div');d.className='nzMapStop';d.dataset.id=s.id;d.innerHTML=`<strong>${s.id}. ${s.name} ${s.emoji}</strong><br>${s.description}`;d.onclick=()=>{document.querySelectorAll('.nzMapStop').forEach(x=>x.classList.remove('active'));d.classList.add('active');map.setView([s.lat,s.lng],7,{animate:true});markers[s.id].openPopup();};list.appendChild(d);if(i<stops.length-1){const n=stops[i+1];L.polyline([[s.lat,s.lng],[n.lat,n.lng]],{color:c,weight:2.5,opacity:.55,dashArray:'6,6'}).addTo(map);}});map.fitBounds(L.latLngBounds(stops.map(s=>[s.lat,s.lng])),{padding:[18,18]});})();</script><script async src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function(){
+  const el=document.getElementById('nzRouteMap');
+  if(!el)return;
+  const stops=[
+    {id:1,name:'Auckland',emoji:'✈️',lat:-36.85088,lng:174.7645,description:'Gateway to the tour.',island:'north'},
+    {id:2,name:'Coromandel',emoji:'🏖️',lat:-36.8333,lng:175.5833,description:'Cathedral Cove and coastal scenery.',island:'north'},
+    {id:3,name:'Waitomo',emoji:'✨',lat:-38.2607,lng:175.1036,description:'Glowworm caves.',island:'north'},
+    {id:4,name:'Hobbiton',emoji:'🧙',lat:-37.8721,lng:175.6829,description:'The Shire and Green Dragon.',island:'north'},
+    {id:5,name:'Rotorua',emoji:'🌋',lat:-38.1446,lng:176.2378,description:'Māori culture and geothermal landscapes.',island:'north'},
+    {id:6,name:'Taupō',emoji:'🚤',lat:-38.6843,lng:176.0704,description:'Rapids Jet and lake adventures.',island:'north'},
+    {id:7,name:'Wellington',emoji:'🌊',lat:-41.2924,lng:174.7787,description:'Capital city and ferry gateway.',island:'north'},
+    {id:8,name:'Kaikōura',emoji:'🐳',lat:-42.3994,lng:173.6799,description:'Mountains meet the ocean.',island:'south'},
+    {id:9,name:'Lake Tekapo',emoji:'🌌',lat:-43.9833,lng:170.4667,description:'Mount John and stargazing.',island:'south'},
+    {id:10,name:'Wanaka',emoji:'🏔️',lat:-44.6943,lng:169.1417,description:'Lake and mountain scenery.',island:'south'},
+    {id:11,name:'Queenstown',emoji:'🪂',lat:-45.0302,lng:168.6615,description:'Adventure capital.',island:'south'},
+    {id:12,name:'Milford Sound',emoji:'🌊',lat:-44.6414,lng:167.8974,description:'Fjord cruise and waterfalls.',island:'south'},
+    {id:13,name:'Franz Josef',emoji:'🧊',lat:-43.4607,lng:170.1861,description:'Glacier and rainforest.',island:'south'},
+    {id:14,name:'Christchurch',emoji:'🎂',lat:-43.532,lng:172.6366,description:'Journey end.',island:'south'}
+  ];
+  const map=L.map(el,{scrollWheelZoom:false}).setView([-40.5,172.8],5);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:19}).addTo(map);
+  const list=document.getElementById('nzMapStops'),markers={};
+  stops.forEach((s,i)=>{
+    const c=s.island==='north'?'#f59e0b':'#ef4444';
+    const icon=L.divIcon({html:`<div style="background:${c};color:#fff;width:34px;height:34px;border:3px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:0 2px 8px rgba(0,0,0,.25)">${s.id}</div>`,className:'',iconSize:[34,34],iconAnchor:[17,17]});
+    markers[s.id]=L.marker([s.lat,s.lng],{icon}).bindPopup(`<strong>${s.id}. ${s.name} ${s.emoji}</strong><br>${s.description}`).addTo(map);
+    const d=document.createElement('div');
+    d.className='nzMapStop';
+    d.dataset.id=s.id;
+    d.innerHTML=`<strong>${s.id}. ${s.name} ${s.emoji}</strong><br>${s.description}`;
+    d.onclick=()=>{
+      document.querySelectorAll('.nzMapStop').forEach(x=>x.classList.remove('active'));
+      d.classList.add('active');
+      map.setView([s.lat,s.lng],7,{animate:true});
+      markers[s.id].openPopup();
+    };
+    list.appendChild(d);
+    if(i<stops.length-1){
+      const n=stops[i+1];
+      L.polyline([[s.lat,s.lng],[n.lat,n.lng]],{color:c,weight:2.5,opacity:.55,dashArray:'6,6'}).addTo(map);
+    }
+  });
+  map.fitBounds(L.latLngBounds(stops.map(s=>[s.lat,s.lng])),{padding:[18,18]});
+})();
+</script>
+
+<script async src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"></script>
+
 </body>
 </html>
