@@ -132,6 +132,29 @@
       .photoGridImg,.destCardImg,.photoStripImg{max-height:280px;}
     }
 
+  
+    /* Cape Town tighter photo sizing */
+    .storyPhoto{
+      max-height:400px !important;
+      max-width:min(100%,680px) !important;
+    }
+    .photoGridImg{
+      max-height:300px;
+      object-fit:cover;
+    }
+    @media(max-width:680px){
+      .storyPhoto{
+        max-height:280px !important;
+        max-width:92% !important;
+      }
+      .photoGridImg{
+        max-height:220px !important;
+      }
+      .destCardImg,.photoStripImg{
+        max-height:220px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
