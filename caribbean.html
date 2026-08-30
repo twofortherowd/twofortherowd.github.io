@@ -44,7 +44,9 @@
   ]}
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -199,7 +201,22 @@
       .quiz-shell{padding:20px 16px;}
       .quiz-top{flex-direction:column;gap:2px;}
     }
-  </style>
+  
+    /* CARIBBEAN INTERACTIVE MAP */
+    .tab-nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px;padding:12px 0;border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;}
+    .tab-pill{display:inline-flex;align-items:center;gap:5px;padding:8px 14px;border-radius:999px;background:rgba(0,150,199,.08);border:1px solid rgba(0,150,199,.20);color:var(--ink-soft);font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;transition:all .2s ease;}
+    .tab-pill:hover{background:var(--aqua);color:#fff;border-color:var(--aqua);}
+    .caribbeanMapCard{padding:18px;overflow:hidden}
+    .caribbeanMapIntro{padding:4px 6px 14px}
+    #caribbeanJourneyMap{height:620px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1}
+    .caribbeanLegend{display:flex;gap:10px 14px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--muted)}
+    .caribLegendItem{display:flex;align-items:center;gap:6px}.caribDot{width:11px;height:11px;border-radius:50%;display:inline-block}
+    .caribPopup{font-family:var(--font-body);min-width:190px}.caribPopupRegion{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+    .caribPopupTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px}
+    .caribPopupText{font-size:12px;color:var(--ink-soft);line-height:1.5}.caribPopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--aqua);text-decoration:none}
+    @media(max-width:640px){.tab-nav{flex-wrap:nowrap;margin:16px -16px 20px;padding:10px 16px}.caribbeanMapCard{padding:12px}#caribbeanJourneyMap{height:500px;border-radius:12px}.caribbeanLegend{gap:8px 11px;font-size:11px}}
+
+</style>
 </head>
 <body>
 
@@ -242,6 +259,16 @@
     </div>
   </div>
 
+  <nav class="tab-nav" aria-label="Caribbean page navigation">
+    <a href="https://twofortherowd.com/#map" class="tab-pill">🌍 Destinations</a>
+    <a href="#caribbean-map" class="tab-pill">🗺️ Caribbean Map</a>
+    <a href="#destinations" class="tab-pill">🏝️ Island Guides</a>
+    <a href="#quiz" class="tab-pill">🌴 Island Quiz</a>
+    <a href="#tours" class="tab-pill">🧭 Tours</a>
+    <a href="#before-you-go" class="tab-pill">🧳 Before You Go</a>
+    <a href="#faq" class="tab-pill">❓ FAQ</a>
+  </nav>
+
   <!-- OUR CARIBBEAN STORY -->
   <div class="section-divider">🌴 Our Caribbean Story</div>
   <div class="card">
@@ -249,6 +276,27 @@
     <p>Living in Martinique gave us the chance to experience Caribbean life beyond a normal holiday. Instead of a week in a resort, we had a base — the Island of Flowers — from which to properly get to know the wider region, one island at a time.</p>
     <p>What struck us most was how different neighbouring islands can be, sometimes after only a short ferry ride or a quick flight. French, British, Dutch and independent Caribbean influences all sit within easy reach of one another, and each brings its own language, food, music and pace of life. Martinique and Guadeloupe feel distinctly French. Anguilla and Dominica feel distinctly their own. Sint Maarten and Saint Martin manage to be two countries on one small island. Jamaica is its own world entirely.</p>
     <p>Where transport allowed, we travelled by ferry or short flight rather than sticking to package tours, and we tried to discover places independently — hiring cars, stopping wherever looked interesting, finding beaches and villages and bars that most visitors staying in a single resort would never see. That approach is what made our Caribbean travels so memorable, and it's the thread running through every one of the guides below.</p>
+  </div>
+
+
+  <!-- INTERACTIVE CARIBBEAN MAP -->
+  <div id="caribbean-map" class="section-divider">🗺️ Our Caribbean Islands Map</div>
+  <div class="card caribbeanMapCard">
+    <div class="caribbeanMapIntro">
+      <div class="eyebrow">
+        <span class="badge">🌴 8 islands explored</span>
+        <span class="badge aqua">🇲🇶 Martinique was home</span>
+      </div>
+      <h2>Eight islands — and eight completely different personalities</h2>
+      <p style="color:var(--ink-soft);max-width:720px;">Martinique was our Caribbean base, and from there we explored a string of very different islands across the region. This map is about the places themselves rather than forcing them into one continuous route. Tap an island to jump straight into its guide.</p>
+    </div>
+    <div id="caribbeanJourneyMap" aria-label="Interactive map of Caribbean islands explored by Two for the Row'd"></div>
+    <div class="caribbeanLegend">
+      <span class="caribLegendItem"><span class="caribDot" style="background:#d62d28"></span>Home base — Martinique</span>
+      <span class="caribLegendItem"><span class="caribDot" style="background:#4169e1"></span>French-Caribbean</span>
+      <span class="caribLegendItem"><span class="caribDot" style="background:#22c55e"></span>Independent nations</span>
+      <span class="caribLegendItem"><span class="caribDot" style="background:#f97316"></span>Dutch/shared & Anguilla</span>
+    </div>
   </div>
 
   <!-- DESTINATION GRID -->
@@ -411,7 +459,7 @@
   </div>
 
   <!-- TOURRADAR -->
-  <div class="section-divider">🧭 Explore the Caribbean with TourRadar</div>
+  <div id="tours" class="section-divider">🧭 Explore the Caribbean with TourRadar</div>
   <div class="card goldCard">
     <h2>See more than one island in a single trip</h2>
     <p style="color:var(--ink-soft);font-size:14px;">If you'd rather combine several Caribbean stops in one itinerary, these multi-island TourRadar trips are worth a look. We haven't taken these exact tours ourselves, but they offer an easy way to compare longer and shorter Caribbean journeys.</p>
@@ -439,7 +487,7 @@
   </div>
 
   <!-- PRACTICAL -->
-  <div class="section-divider">🧳 Before You Go</div>
+  <div id="before-you-go" class="section-divider">🧳 Before You Go</div>
   <div class="card">
     <h2>Before you go — the Caribbean isn't one country</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:12px;">A handful of practical things worth knowing before island-hopping around the region. Requirements and conditions change, so always check the latest information for your specific destination before you travel.</p>
@@ -496,7 +544,7 @@
   </div>
 
   <!-- FAQ -->
-  <p class="section-label">Common questions</p>
+  <p id="faq" class="section-label">Common questions</p>
   <div class="card">
     <h2>Caribbean FAQ</h2>
     <div class="faqItem open">
@@ -693,5 +741,23 @@ document.getElementById('year').textContent=new Date().getFullYear();
   render();
 })();
 </script>
+
+<script>
+(function(){
+  if(typeof L==='undefined') return;
+  const el=document.getElementById('caribbeanJourneyMap'); if(!el) return;
+  const map=L.map(el,{scrollWheelZoom:false});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+  const islands=[{"region": "Home Base", "name": "Martinique", "lat": 14.6349, "lng": -61.0242, "description": "The island Nicola lived on for a year — the Caribbean base for everything that followed.", "color": "#d62d28", "icon": "🏠", "url": "/martinique.html"}, {"region": "French-Caribbean", "name": "St Barths", "lat": 17.8959, "lng": -62.8483, "description": "Gustavia, superyachts and a distinctly French-Caribbean atmosphere.", "color": "#4169e1", "icon": "⛵", "url": "/st-barths.html"}, {"region": "French-Caribbean", "name": "Guadeloupe", "lat": 16.265, "lng": -61.551, "description": "Beaches, rainforest and volcanic scenery across a varied French-Caribbean island group.", "color": "#4169e1", "icon": "🏝️", "url": "/guadeloupe.html"}, {"region": "Independent Nation", "name": "St Lucia", "lat": 13.9094, "lng": -60.9789, "description": "Pitons, rainforest scenery, the Jazz Festival and Gros Islet energy.", "color": "#22c55e", "icon": "⛰️", "url": "/st-lucia.html"}, {"region": "Independent Nation", "name": "Dominica", "lat": 15.415, "lng": -61.371, "description": "Rainforest roads, waterfalls and one of the Caribbean's wildest landscapes.", "color": "#22c55e", "icon": "🌿", "url": "/dominica.html"}, {"region": "Independent Nation", "name": "Jamaica", "lat": 18.1096, "lng": -77.2975, "description": "Montego Bay, Negril, music and a personality all of its own.", "color": "#22c55e", "icon": "🎶", "url": "/jamaica.html"}, {"region": "Shared Island", "name": "Sint Maarten & Saint Martin", "lat": 18.0735, "lng": -63.0895, "description": "One small island split between Dutch and French sides, each with a completely different feel.", "color": "#f97316", "icon": "🇸🇽", "url": "/sint-maarten-saint-martin.html"}, {"region": "British Overseas Territory", "name": "Anguilla", "lat": 18.2206, "lng": -63.0686, "description": "Hidden beaches, self-drive exploring, tiny villages and relaxed island life.", "color": "#f97316", "icon": "🏖️", "url": "/anguilla.html"}];
+  function markerIcon(c){return L.divIcon({className:'',html:'<div style="background:'+c+';width:28px;height:28px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(26,18,8,.25)"></div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]});}
+  islands.forEach(i=>{
+    const marker=L.marker([i.lat,i.lng],{icon:markerIcon(i.color)}).addTo(map);
+    marker.bindPopup('<div class="caribPopup"><div class="caribPopupRegion" style="color:'+i.color+'">'+i.region+'</div><div class="caribPopupTitle">'+i.icon+' '+i.name+'</div><div class="caribPopupText">'+i.description+'</div><a class="caribPopupLink" href="'+i.url+'">Read our guide →</a></div>',{maxWidth:290});
+  });
+  map.fitBounds(L.latLngBounds(islands.map(i=>[i.lat,i.lng])).pad(.12));
+  setTimeout(()=>map.invalidateSize(),250);
+})();
+</script>
+
 </body>
 </html>
