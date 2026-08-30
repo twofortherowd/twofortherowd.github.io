@@ -96,6 +96,16 @@
     .section-divider::before,.section-divider::after{content:"";flex:1;height:1px;background:var(--border-mid);}
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
+
+    /* South Africa journey tabs */
+    .destTabs{display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:20px;-webkit-overflow-scrolling:touch;}
+    .destTabs::-webkit-scrollbar{height:4px;}
+    .destTabs::-webkit-scrollbar-track{background:rgba(0,0,0,.05);border-radius:10px;}
+    .destTabs::-webkit-scrollbar-thumb{background:var(--muted);border-radius:10px;}
+    .destTab{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:var(--white);border:1px solid var(--border);border-radius:999px;text-decoration:none;font-size:13px;font-weight:700;color:var(--ink-soft);transition:all .15s ease;white-space:nowrap;flex-shrink:0;}
+    .destTab:hover{background:#f9f7f2;border-color:var(--border-mid);}
+    .destTab.active{background:var(--esw-blue);color:var(--white);border-color:var(--esw-blue);}
+
     @media(max-width:640px){.photo-grid-4{grid-template-columns:repeat(2,1fr);}.shortGrid{max-width:100%;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}}
   </style>
 </head>
@@ -113,6 +123,18 @@
     <a href="https://twofortherowd.com/#map">Our Destinations</a><span>›</span>
     <span>Eswatini</span>
   </nav>
+
+
+  <!-- SOUTH AFRICA JOURNEY TABS -->
+  <div class="destTabs" aria-label="South Africa journey destinations">
+    <a class="destTab" href="/south-africa.html">🇿🇦 South Africa</a>
+    <a class="destTab" href="/south-africa/cape-town.html">🏔️ Cape Town</a>
+    <a class="destTab" href="/south-africa/kwazulu-natal.html">🌊 KwaZulu-Natal</a>
+    <a class="destTab active" href="/eswatini.html" aria-current="page">🇸🇿 Eswatini</a>
+    <a class="destTab" href="/south-africa/kruger-national-park.html">🦁 Kruger</a>
+    <a class="destTab" href="/south-africa/panorama-route.html">🌅 Panorama Route</a>
+    <a class="destTab" href="/south-africa/johannesburg.html">🏙️ Johannesburg & Soweto</a>
+  </div>
 
   <!-- HERO -->
   <div class="card heroCard">
