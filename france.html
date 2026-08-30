@@ -41,7 +41,9 @@
 }
 </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 
@@ -264,7 +266,18 @@
       .destination-grid,.destGrid{grid-template-columns:1fr;}
       .regionGroup{padding:12px 16px;}
     }
-  </style>
+  
+/* FRANCE INTERACTIVE DESTINATION MAP */
+.franceMapCard{padding:18px;overflow:hidden}.franceMapIntro{padding:4px 6px 14px}
+#franceJourneyMap{height:620px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1}
+.franceMapLegend{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--muted)}
+.franceMapLegendItem{display:flex;align-items:center;gap:6px}.franceMapDot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.francePopup{font-family:var(--font-body);min-width:190px}.francePopupRegion{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+.francePopupTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px}.francePopupText{font-size:12px;color:var(--ink-soft);line-height:1.5}
+.francePopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--france-blue);text-decoration:none}
+@media(max-width:640px){.franceMapCard{padding:12px}#franceJourneyMap{height:500px;border-radius:12px}.franceMapLegend{gap:9px;font-size:11px}}
+
+</style>
 </head>
 <body>
 
@@ -275,7 +288,7 @@
 
 <!-- STICKY CHAPTER NAV -->
 <nav class="chapterNav" aria-label="France hub sections">
-  <div class="chapterNavInner">
+  <div class="chapterNavInner"><a href="https://twofortherowd.com/#map">🌍 Destinations</a><a href="#france-map">🗺️ France Map</a>
     <a href="#destinations">Destinations</a>
     <a href="#north-west">North & West</a>
     <a href="#paris">Paris</a>
@@ -357,7 +370,7 @@
     </div>
 
     <div class="links">
-      <a class="btn-primary" href="#destinations">Browse destination guides ↓</a>
+      <a class="btn-primary" href="#france-map">Explore our France map ↓</a>
       <a class="btn-outline" href="#alsace-video">Watch our Alsace video ↓</a>
     </div>
 
@@ -374,6 +387,23 @@
       <span class="tag">France from Ireland</span>
     </div>
   </div>
+
+
+  <!-- INTERACTIVE FRANCE MAP -->
+  <section id="france-map" class="card franceMapCard">
+    <div class="franceMapIntro">
+      <div class="eyebrow"><span class="badge blue">🗺️ Interactive map</span><span class="badge outline">France since 2006</span></div>
+      <h2>Explore the France we've travelled</h2>
+      <p style="color:var(--ink-soft);max-width:680px;">From Brittany and the Normandy coast to Paris, the Loire, Bordeaux, Provence, the Côte d'Azur and Alsace, this is our France story on one map. <strong>Tap any marker</strong> to see the destination and jump straight into its full guide.</p>
+    </div>
+    <div id="franceJourneyMap" aria-label="Interactive map of Two for the Row'd France destinations"></div>
+    <div class="franceMapLegend">
+      <span class="franceMapLegendItem"><span class="franceMapDot" style="background:#4a90e2"></span>Northwest</span>
+      <span class="franceMapLegendItem"><span class="franceMapDot" style="background:#f5a623"></span>Paris & Central</span>
+      <span class="franceMapLegendItem"><span class="franceMapDot" style="background:#7ed321"></span>South</span>
+      <span class="franceMapLegendItem"><span class="franceMapDot" style="background:#bd10e0"></span>Alsace</span>
+    </div>
+  </section>
 
   <!-- CHAPTER 01 — DESTINATIONS -->
   <div id="destinations" class="chapterHeader">
@@ -685,6 +715,184 @@
 </footer>
 
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+
+<script>
+(function(){
+  if(typeof L==='undefined') return;
+  const el=document.getElementById('franceJourneyMap'); if(!el) return;
+  const map=L.map(el,{scrollWheelZoom:false}).setView([46.5,2.5],6);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+  const stops=[
+    // NORTHWEST - Brittany & Normandy (Blue)
+    {
+      region: 'Brittany',
+      stop: 'Brittany',
+      lat: 48.2020,
+      lng: -3.0166,
+      notes: 'Celtic Brittany. Coastal charm, ancient culture and the starting point for many of our France adventures.',
+      color: '#4a90e2',
+      icon: '🌊',
+      url: '/france/brittany.html'
+    },
+    {
+      region: 'Normandy',
+      stop: 'Normandy & D-Day Beaches',
+      lat: 49.3520,
+      lng: -0.3587,
+      notes: 'The D-Day beaches and landing sites. History, memorials and standing quietly on those profound landscapes.',
+      color: '#4a90e2',
+      icon: '🪖',
+      url: '/france/normandy.html'
+    },
+    {
+      region: 'North',
+      stop: 'Lille',
+      lat: 50.6292,
+      lng: 3.0573,
+      notes: 'Flemish architecture, the Grand Place and a northern French city with character completely different from Paris.',
+      color: '#4a90e2',
+      icon: '🏛️',
+      url: '/france/lille.html'
+    },
+
+    // CENTRAL & PARIS (Gold/Orange)
+    {
+      region: 'Paris & Île-de-France',
+      stop: 'Paris',
+      lat: 48.8566,
+      lng: 2.3522,
+      notes: 'The landmarks, neighbourhoods, museums and the version of the city that keeps bringing us back.',
+      color: '#f5a623',
+      icon: '🗼',
+      url: '/france/paris.html'
+    },
+    {
+      region: 'Paris & Île-de-France',
+      stop: 'Disneyland Paris',
+      lat: 48.8751,
+      lng: 2.7760,
+      notes: 'Disney magic in the Île-de-France region. Magic Kingdom meets French countryside.',
+      color: '#f5a623',
+      icon: '✨',
+      url: '/france/disneyland-paris.html'
+    },
+    {
+      region: 'Loire Valley',
+      stop: 'Loire Valley',
+      lat: 47.4082,
+      lng: 0.6803,
+      notes: 'Château country. Renaissance architecture, wine, gardens and some of France\'s most romantic landscapes.',
+      color: '#f5a623',
+      icon: '🏰',
+      url: '/france/loire-valley.html'
+    },
+    {
+      region: 'Central France',
+      stop: 'Dordogne & Lascaux',
+      lat: 45.0294,
+      lng: 1.0088,
+      notes: 'Prehistoric caves, limestone cliffs and villages that seem untouched by time.',
+      color: '#f5a623',
+      icon: '🎨',
+      url: '/france/dordogne.html'
+    },
+    {
+      region: 'Central France',
+      stop: 'Vichy',
+      lat: 46.1309,
+      lng: 3.4303,
+      notes: 'Historic spa town in Auvergne. Belle époque architecture and a quieter side of central France.',
+      color: '#f5a623',
+      icon: '🏊',
+      url: '/france/vichy.html'
+    },
+    {
+      region: 'Central France',
+      stop: 'Clermont-Ferrand',
+      lat: 45.7771,
+      lng: 3.0874,
+      notes: 'The heart of Auvergne. Cathedral, volcanic landscapes and local character.',
+      color: '#f5a623',
+      icon: '⛪',
+      url: '/france/clermont-ferrand.html'
+    },
+    {
+      region: 'Central-South',
+      stop: 'Lyon',
+      lat: 45.7640,
+      lng: 4.8357,
+      notes: 'The gastronomic heart of France. Food, history and a city that rewards wandering.',
+      color: '#f5a623',
+      icon: '🍴',
+      url: '/france/lyon.html'
+    },
+
+    // SOUTH - Wine Country, Provence & Riviera (Green)
+    {
+      region: 'Southwest',
+      stop: 'Bordeaux',
+      lat: 44.8378,
+      lng: -0.5792,
+      notes: 'Wine capital of France. Grand architecture along the Garonne, world-class wines and riverside charm.',
+      color: '#7ed321',
+      icon: '🍷',
+      url: '/france/bordeaux.html'
+    },
+    {
+      region: 'Provence',
+      stop: 'Provence',
+      lat: 43.9352,
+      lng: 5.7633,
+      notes: 'Lavender in bloom, ancient villages, southern light and the way of life that inspired countless artists.',
+      color: '#7ed321',
+      icon: '💐',
+      url: '/france/provence.html'
+    },
+    {
+      region: 'Riviera',
+      stop: 'Côte d\'Azur',
+      lat: 43.7102,
+      lng: 7.2620,
+      notes: 'The French Riviera. Mediterranean beaches, glamorous towns and stunning coastline.',
+      color: '#7ed321',
+      icon: '☀️',
+      url: '/france/cote-dazur.html'
+    },
+    {
+      region: 'Southwest',
+      stop: 'Lourdes',
+      lat: 43.0895,
+      lng: -0.0467,
+      notes: 'The famous pilgrimage site. Mountains, faith and one of France\'s most visited destinations.',
+      color: '#7ed321',
+      icon: '⛪',
+      url: '/france/lourdes.html'
+    },
+
+    // EAST - Alsace (Purple)
+    {
+      region: 'Alsace',
+      stop: 'Alsace & Colmar',
+      lat: 48.0735,
+      lng: 7.4529,
+      notes: 'Fairytale villages, the Alsace Wine Route, half-timbered houses and one of France\'s most distinctive regions.',
+      color: '#bd10e0',
+      icon: '🎄',
+      url: '/france/alsace.html'
+    }
+  ];
+  function markerIcon(color){
+    return L.divIcon({className:'',html:'<div style="background:'+color+';width:28px;height:28px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(26,18,8,.25)"></div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]});
+  }
+  stops.forEach(s=>{
+    const marker=L.marker([s.lat,s.lng],{icon:markerIcon(s.color)}).addTo(map);
+    const link=s.url?'<a class="francePopupLink" href="'+s.url+'">Open our guide →</a>':'';
+    marker.bindPopup('<div class="francePopup"><div class="francePopupRegion" style="color:'+s.color+'">'+s.region+'</div><div class="francePopupTitle">'+s.icon+' '+s.stop+'</div><div class="francePopupText">'+s.notes+'</div>'+link+'</div>',{maxWidth:280});
+  });
+  setTimeout(()=>map.invalidateSize(),250);
+})();
+</script>
 
 </body>
 </html>
