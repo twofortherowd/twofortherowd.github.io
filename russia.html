@@ -27,6 +27,8 @@
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is St Petersburg worth visiting?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — St Petersburg is one of the most jaw-droppingly beautiful cities in the world. The architecture, the canals, the imperial palaces and the sheer density of world-class art and history make it genuinely extraordinary. The Hermitage alone could occupy several days. It fully deserves its nickname as the Venice of the North."}},{"@type":"Question","name":"What is the Hermitage Museum like?","acceptedAnswer":{"@type":"Answer","text":"The Hermitage is one of the greatest art museums on earth — housed in the stunning Winter Palace on the banks of the Neva River. The collection is almost incomprehensibly vast and the building itself is as impressive as anything inside it. Three hours barely scratches the surface but gives you the highlights."}},{"@type":"Question","name":"What is Peterhof like?","acceptedAnswer":{"@type":"Answer","text":"Peterhof is extraordinary — Peter the Great's answer to Versailles, set on the Gulf of Finland with a spectacular Grand Palace, the famous Grand Cascade of fountains and vast landscaped parks. It is one of the most impressive royal residences in Europe and absolutely worth the excursion from St Petersburg."}},{"@type":"Question","name":"What is Moscow like?","acceptedAnswer":{"@type":"Answer","text":"Moscow is vast, dramatic and endlessly surprising. Red Square with St Basil's Cathedral is one of the most iconic sights in the world — and even more spectacular in person. The Kremlin grounds, the Bolshoi Theatre, the extraordinary Metro stations and the energy of one of the world's great megacities make it a genuinely thrilling place to visit."}},{"@type":"Question","name":"What is the Sapsan high-speed train like?","acceptedAnswer":{"@type":"Answer","text":"The Sapsan is a brilliant way to travel between the two cities — smooth, comfortable and fast, covering the 700km journey in around 4 hours. The Russian landscapes rolling past the window are fascinating and the service on board is excellent. A much more enjoyable journey than flying between the cities."}},{"@type":"Question","name":"Is a group tour the best way to visit Russia?","acceptedAnswer":{"@type":"Answer","text":"For first-time visitors, a group tour is absolutely the best way to experience Russia. The visa requirements, language barrier and logistics of moving between cities make it significantly easier with an experienced tour operator. Having a guide who can bring the history and culture to life transforms the experience completely."}}]}
   </script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -109,6 +111,20 @@
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.dest-grid{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}}
+
+    .tab-nav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px;padding:14px 0;border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;}
+    .tab-pill{display:inline-flex;align-items:center;gap:5px;padding:8px 15px;border-radius:999px;background:rgba(0,53,128,.07);border:1px solid rgba(0,53,128,.18);color:var(--ink-soft);font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;transition:all .2s ease;}
+    .tab-pill:hover{background:var(--russia-blue);color:#fff;border-color:var(--russia-blue);}
+    .russiaMapCard{padding:18px;overflow:hidden}
+    .russiaMapIntro{padding:4px 6px 14px}
+    #russiaJourneyMap{height:600px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1}
+    .russiaMapLegend{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--muted)}
+    .russiaLegendItem{display:flex;align-items:center;gap:6px}.russiaDot{width:11px;height:11px;border-radius:50%;display:inline-block}
+    .russiaPopup{font-family:var(--font-body);min-width:190px}.russiaPopupRegion{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+    .russiaPopupTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px}
+    .russiaPopupText{font-size:12px;color:var(--ink-soft);line-height:1.5}.russiaPopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--russia-blue);text-decoration:none}
+    @media(max-width:640px){.tab-nav{padding:10px 0;margin:16px -16px 20px}.russiaMapCard{padding:12px}#russiaJourneyMap{height:490px;border-radius:12px}.russiaMapLegend{gap:9px;font-size:11px}}
+
   </style>
 </head>
 <body>
@@ -156,8 +172,37 @@
     </div>
   </div>
 
+  <!-- TAB NAVIGATION -->
+  <div class="tab-nav">
+    <a href="https://twofortherowd.com/#map" class="tab-pill">🌍 Destinations</a>
+    <a href="#russia-map" class="tab-pill">🗺️ Russia Map</a>
+    <a href="#journey" class="tab-pill">🇷🇺 Our Journey</a>
+    <a href="#city-guides" class="tab-pill">🏛️ City Guides</a>
+    <a href="#video" class="tab-pill">🎬 Video</a>
+    <a href="#before-you-go" class="tab-pill">🎒 Before You Go</a>
+    <a href="#faq" class="tab-pill">❓ FAQ</a>
+  </div>
+
+  <!-- INTERACTIVE RUSSIA MAP -->
+  <div id="russia-map" class="section-divider">🗺️ Our 2018 Russia Journey Map</div>
+  <div class="card russiaMapCard">
+    <div class="russiaMapIntro">
+      <div class="eyebrow"><span class="badge blue">2018 Group Tour</span><span class="badge outline">Helsinki → Vyborg → St Petersburg → Moscow</span></div>
+      <h2>Follow our journey from Finland into Russia</h2>
+      <p style="color:var(--ink-soft);max-width:720px;">From Helsinki we travelled through Vyborg to St Petersburg, explored Peterhof and the Hermitage, then crossed the country by Sapsan high-speed train to Moscow. Tap the markers for the places that formed part of our trip.</p>
+    </div>
+    <div id="russiaJourneyMap" aria-label="Interactive map of Two for the Row'd 2018 Russia journey"></div>
+    <div class="russiaMapLegend">
+      <span class="russiaLegendItem"><span class="russiaDot" style="background:#1f4788"></span>Gateway</span>
+      <span class="russiaLegendItem"><span class="russiaDot" style="background:#c0392b"></span>St Petersburg</span>
+      <span class="russiaLegendItem"><span class="russiaDot" style="background:#f39c12"></span>Excursions</span>
+      <span class="russiaLegendItem"><span class="russiaDot" style="background:#9b59b6"></span>Sapsan</span>
+      <span class="russiaLegendItem"><span class="russiaDot" style="background:#8b0000"></span>Moscow</span>
+    </div>
+  </div>
+
   <!-- THE STORY -->
-  <div class="section-divider">🇷🇺 Our Russia Journey</div>
+  <div id="journey" class="section-divider">🇷🇺 Our Russia Journey</div>
   <p class="section-label">Nine days across two of the world's most extraordinary cities</p>
   <div class="card">
     <h2>The trip we never stopped talking about</h2>
@@ -170,7 +215,7 @@
   </div>
 
   <!-- DESTINATIONS -->
-  <div class="section-divider">🗺️ Choose Your Destination</div>
+  <div id="city-guides" class="section-divider">🗺️ Choose Your Destination</div>
   <p class="section-label">Three remarkable cities await</p>
   <div class="card blueCard">
     <h2>Explore St Petersburg, Moscow or Vyborg in detail</h2>
@@ -207,7 +252,7 @@
   </div>
 
   <!-- VIDEOS -->
-  <div class="section-divider">🎬 Our Russia Video</div>
+  <div id="video" class="section-divider">🎬 Our Russia Video</div>
   <div class="card darkCard">
     <h2>Watch our Russia video</h2>
     <p>Helsinki, St Petersburg, Moscow and the journey between them — our 2018 Russia group tour on video.</p>
@@ -222,7 +267,7 @@
   </div>
 
   <!-- PACKING -->
-  <p class="section-label">What to pack for Russia</p>
+  <p id="before-you-go" class="section-label">What to pack for Russia</p>
   <div class="card">
     <h2>Russia packing essentials — what we'd bring</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">Russia involves an enormous amount of walking on cobblestones — Red Square, the Kremlin grounds, Peterhof's extensive parks — so good footwear is absolutely essential. Evenings in St Petersburg and Moscow can be cool even in summer, so layers are important. A warm windproof jacket is a must.</p>
@@ -238,7 +283,7 @@
   </div>
 
   <!-- FAQ -->
-  <p class="section-label">Common questions</p>
+  <p id="faq" class="section-label">Common questions</p>
   <div class="card">
     <h2>Russia Travel FAQ</h2>
     <div class="faqItem open"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is St Petersburg worth visiting?</div><div class="faqA">Absolutely — St Petersburg is one of the most jaw-droppingly beautiful cities in the world. The architecture, the canals, the imperial palaces and the sheer density of world-class art and history make it genuinely extraordinary. The Hermitage alone could occupy several days. It fully deserves its nickname as the Venice of the North.</div></div>
@@ -266,5 +311,26 @@
   <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#map">Our destinations</a></p>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<script>
+(function(){
+  if(typeof L==='undefined') return;
+  const el=document.getElementById('russiaJourneyMap'); if(!el) return;
+  const map=L.map(el,{scrollWheelZoom:false});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+  const stops=[{"region": "Gateway", "stop": "Helsinki", "lat": 60.1695, "lng": 24.9354, "notes": "Starting point for our 2018 group tour before travelling east toward the Russian border.", "color": "#1f4788", "icon": "🇫🇮", "url": null}, {"region": "Gateway", "stop": "Vyborg", "lat": 60.7069, "lng": 28.75, "notes": "Our historic border stop between Finland and St Petersburg, including Vyborg Castle.", "color": "#1f4788", "icon": "🏰", "url": "/russia/vyborg.html"}, {"region": "St Petersburg", "stop": "St Petersburg", "lat": 59.9311, "lng": 30.3609, "notes": "The crown jewel of our trip: imperial architecture, canals, the Neva and three unforgettable days.", "color": "#c0392b", "icon": "🏛️", "url": "/russia/st-petersburg.html"}, {"region": "St Petersburg", "stop": "The Hermitage", "lat": 59.9406, "lng": 30.3154, "notes": "Our visit to the extraordinary Hermitage Museum in the Winter Palace.", "color": "#c0392b", "icon": "🖼️", "url": "/russia/st-petersburg.html"}, {"region": "Excursion", "stop": "Peterhof Palace", "lat": 59.8881, "lng": 29.8853, "notes": "Grand Palace, fountains and vast parkland on our St Petersburg excursion.", "color": "#f39c12", "icon": "🏰", "url": "/russia/st-petersburg.html"}, {"region": "Transit", "stop": "Sapsan Train", "lat": 56.8, "lng": 35.5, "notes": "Our high-speed rail journey from St Petersburg to Moscow.", "color": "#9b59b6", "icon": "🚄", "url": null}, {"region": "Moscow", "stop": "Moscow", "lat": 55.7558, "lng": 37.6173, "notes": "The dramatic final city of our 2018 journey.", "color": "#8b0000", "icon": "⭐", "url": "/russia/moscow.html"}, {"region": "Moscow", "stop": "Red Square", "lat": 55.7539, "lng": 37.6208, "notes": "One of the defining travel moments of the trip: Red Square, St Basil's and the Kremlin walls.", "color": "#8b0000", "icon": "🏛️", "url": "/russia/moscow.html"}, {"region": "Moscow", "stop": "The Kremlin", "lat": 55.7505, "lng": 37.6155, "notes": "The historic fortified heart of Moscow and one of the major sights on our visit.", "color": "#8b0000", "icon": "🏰", "url": "/russia/moscow.html"}, {"region": "Moscow", "stop": "Novodevichy Convent", "lat": 55.7261, "lng": 37.5564, "notes": "The beautiful historic convent complex we visited in Moscow.", "color": "#f39c12", "icon": "⛪", "url": "/russia/moscow.html"}];
+  function icon(c){return L.divIcon({className:'',html:'<div style="background:'+c+';width:28px;height:28px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(26,18,8,.25)"></div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]});}
+  const route=[[60.1695,24.9354],[60.7069,28.7500],[59.9311,30.3609],[55.7558,37.6173]];
+  L.polyline(route,{color:'#c0392b',weight:3,opacity:.65,dashArray:'8,5',lineCap:'round'}).addTo(map);
+  stops.forEach(s=>{
+    const m=L.marker([s.lat,s.lng],{icon:icon(s.color)}).addTo(map);
+    const link=s.url?'<a class="russiaPopupLink" href="'+s.url+'">Explore our guide →</a>':'';
+    m.bindPopup('<div class="russiaPopup"><div class="russiaPopupRegion" style="color:'+s.color+'">'+s.region+'</div><div class="russiaPopupTitle">'+s.icon+' '+s.stop+'</div><div class="russiaPopupText">'+s.notes+'</div>'+link+'</div>',{maxWidth:290});
+  });
+  map.fitBounds(L.latLngBounds([[60.1695,24.9354],[55.7558,37.6173]]).pad(.12));
+  setTimeout(()=>map.invalidateSize(),250);
+})();
+</script>
+
 </body>
 </html>
