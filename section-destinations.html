@@ -1,5 +1,43 @@
 <h1 class="pageTitle">Destination Guides</h1>
 
+<div class="card destinationIntro">
+  <div>
+    <span class="destEyebrow">🌍 Two for the Row'd Travel Guides</span>
+    <h2>Where we've been — and what we'd actually recommend</h2>
+    <p>Browse our first-hand destination guides by region. From quick city breaks to huge road trips, every main guide starts with somewhere we've genuinely travelled.</p>
+  </div>
+  <div class="destStats">
+    <div><strong>60+</strong><span>countries & territories</span></div>
+    <div><strong>9</strong><span>regions</span></div>
+    <div><strong>1</strong><span>very long travel list</span></div>
+  </div>
+</div>
+
+
+<style>
+.destinationIntro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.7fr);gap:28px;align-items:center;padding:26px 28px!important;background:linear-gradient(135deg,#fff 0%,#f5faf7 58%,#fff9e8 100%);border:1px solid rgba(45,106,79,.15);}
+.destEyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#2d6a4f;margin-bottom:8px;}
+.destinationIntro h2{margin:0 0 8px;font-family:var(--font-display);font-size:clamp(1.35rem,2.4vw,1.9rem);}
+.destinationIntro p{margin:0;color:var(--ink-soft);max-width:680px;line-height:1.65;}
+.destStats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.destStats div{text-align:center;background:rgba(255,255,255,.8);border:1px solid rgba(45,106,79,.13);border-radius:13px;padding:14px 8px;}
+.destStats strong{display:block;font-family:var(--font-display);font-size:1.35rem;color:#2d6a4f;}
+.destStats span{display:block;font-size:10px;color:var(--muted);margin-top:2px;line-height:1.25;}
+.regionHead{scroll-margin-top:90px;}
+.regionCount{font-family:var(--font-body);font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:var(--paper,#fff);border:1px solid rgba(26,18,8,.10);border-radius:999px;padding:4px 8px;white-space:nowrap;}
+.featured-grid .feat-card{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+.featured-grid .feat-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(26,18,8,.10);border-color:rgba(45,106,79,.25);}
+.feat-sub{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.destinationOutro{text-align:center;margin-top:14px!important;padding:28px!important;background:linear-gradient(135deg,#f4fbf6,#fff8dc);}
+.destinationOutro h2{font-size:clamp(1.35rem,2.5vw,1.8rem);margin-bottom:8px;}
+.destinationOutro .bigLine{font-family:var(--font-display);font-weight:700;color:#2d6a4f;margin-bottom:8px;}
+@media(max-width:760px){
+ .destinationIntro{grid-template-columns:1fr;padding:20px!important;}
+ .destStats{grid-template-columns:repeat(3,1fr);}
+ .destStats span{font-size:9px;}
+}
+</style>
+
 <!-- QUICK JUMP NAV -->
 <div class="card" style="padding:16px 20px;margin-bottom:16px;">
   <p style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Jump to a region</p>
@@ -17,9 +55,10 @@
 </div>
 
 <!-- IRELAND -->
-<div id="ireland" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
+<div id="ireland" class="regionHead" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
   <span style="flex:1;height:2px;background:linear-gradient(90deg,rgba(45,106,79,.4),rgba(45,106,79,.1));border-radius:2px;"></span>
   🇮🇪 Ireland & Home
+  <span class="regionCount">2 guides</span>
   <span style="flex:1;height:2px;background:linear-gradient(270deg,rgba(45,106,79,.4),rgba(45,106,79,.1));border-radius:2px;"></span>
 </div>
 <div class="featured-grid">
@@ -28,9 +67,10 @@
 </div>
 
 <!-- AFRICA -->
-<div id="africa" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
+<div id="africa" class="regionHead" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
   <span style="flex:1;height:2px;background:linear-gradient(90deg,rgba(200,134,10,.4),rgba(200,134,10,.1));border-radius:2px;"></span>
   🌍 Africa
+  <span class="regionCount">7 guides</span>
   <span style="flex:1;height:2px;background:linear-gradient(270deg,rgba(200,134,10,.4),rgba(200,134,10,.1));border-radius:2px;"></span>
 </div>
 <div class="featured-grid">
@@ -44,9 +84,10 @@
 </div>
 
 <!-- ASIA & MIDDLE EAST -->
-<div id="asia" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
+<div id="asia" class="regionHead" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
   <span style="flex:1;height:2px;background:linear-gradient(90deg,rgba(192,57,43,.4),rgba(192,57,43,.1));border-radius:2px;"></span>
   🌏 Asia & Middle East
+  <span class="regionCount">5 guides</span>
   <span style="flex:1;height:2px;background:linear-gradient(270deg,rgba(192,57,43,.4),rgba(192,57,43,.1));border-radius:2px;"></span>
 </div>
 <div class="featured-grid">
@@ -58,13 +99,14 @@
 </div>
 
 <!-- THE AMERICAS -->
-<div id="americas" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
+<div id="americas" class="regionHead" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
   <span style="flex:1;height:2px;background:linear-gradient(90deg,rgba(26,58,92,.4),rgba(26,58,92,.1));border-radius:2px;"></span>
   🌎 The Americas
+  <span class="regionCount">7 guides</span>
   <span style="flex:1;height:2px;background:linear-gradient(270deg,rgba(26,58,92,.4),rgba(26,58,92,.1));border-radius:2px;"></span>
 </div>
 <div class="featured-grid">
-  <div class="feat-card" onclick="window.location.href='/vancouver-canada-experiences.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(255,0,0,.08);border-color:rgba(255,0,0,.2);color:#c0392b;">🇨🇦 Canada</span><div class="feat-title">Canada — Calgary Stampede, the Rockies &amp; Vancouver</div><p class="feat-sub">The ultimate Canada road trip — Calgary Stampede, driving the Icefields Parkway, a seaplane over Vancouver, and an Alaskan cruise to finish.</p><div class="feat-arrow">Read the full guide →</div></div>
+  <div class="feat-card" onclick="window.location.href='/canada.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(255,0,0,.08);border-color:rgba(255,0,0,.2);color:#c0392b;">🇨🇦 Canada</span><div class="feat-title">Canada — coast-to-coast adventures, Rockies & Atlantic shores</div><p class="feat-sub">Our Canada hub brings together the Rockies, Vancouver, Calgary Stampede, Niagara Falls, Québec, the Maritimes and Newfoundland.</p><div class="feat-arrow">Explore Canada →</div></div>
   <div class="feat-card" onclick="window.location.href='/eastern-canada.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(216,6,33,.08);border-color:rgba(216,6,33,.2);color:#D80621;">🇨🇦 Eastern Canada</span><div class="feat-title">Eastern Canada — Niagara Falls, the Irish Loop and a road trip we'll never forget</div><p class="feat-sub">Montréal to Newfoundland — Pow Wow dancing in Ottawa, Niagara Falls, Prince Edward Island, Nova Scotia and the Irish accents of Newfoundland.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/alaska-cruise.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(26,74,110,.1);border-color:rgba(26,74,110,.25);color:#1a4a6e;">🐻❄️ Alaska</span><div class="feat-title">Alaska — bears, dog sleds and duck fart shots</div><p class="feat-sub">Dog sledding in Juneau, bear watching at Icy Strait Point, the Ketchikan Lumberjack Show and the Hubbard Glacier.</p><div class="feat-arrow">Read the full diary →</div></div>
   <div class="feat-card" onclick="window.location.href='/deep-south-usa-miami.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(26,58,92,.08);border-color:rgba(26,58,92,.2);color:#1a3a5c;">🇺🇸 USA</span><div class="feat-title">Deep South USA — New York to Miami through 14 states</div><p class="feat-sub">4,000km from New York to Miami — Nashville, Graceland, New Orleans, the Smoky Mountains, NASA and the Everglades.</p><div class="feat-arrow">Read the full guide →</div></div>
@@ -74,9 +116,10 @@
 </div>
 
 <!-- CARIBBEAN -->
-<div id="caribbean" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
+<div id="caribbean" class="regionHead" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
   <span style="flex:1;height:2px;background:linear-gradient(90deg,rgba(0,137,123,.4),rgba(0,137,123,.1));border-radius:2px;"></span>
   🏝️ Caribbean
+  <span class="regionCount">8 guides</span>
   <span style="flex:1;height:2px;background:linear-gradient(270deg,rgba(0,137,123,.4),rgba(0,137,123,.1));border-radius:2px;"></span>
 </div>
 <div class="featured-grid">
@@ -91,9 +134,10 @@
 </div>
 
 <!-- EUROPE WEST & SOUTH -->
-<div id="europe-west" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
+<div id="europe-west" class="regionHead" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
   <span style="flex:1;height:2px;background:linear-gradient(90deg,rgba(0,35,149,.4),rgba(0,35,149,.1));border-radius:2px;"></span>
   🇪🇺 Europe — West & South
+  <span class="regionCount">19 guides</span>
   <span style="flex:1;height:2px;background:linear-gradient(270deg,rgba(0,35,149,.4),rgba(0,35,149,.1));border-radius:2px;"></span>
 </div>
 <div class="featured-grid">
@@ -109,19 +153,20 @@
   <div class="feat-card" onclick="window.location.href='/greece.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(21,101,192,.08);border-color:rgba(21,101,192,.2);color:#1565C0;">🇬🇷 Greece</span><div class="feat-title">Corfu — elegant streets, stunning beaches and cats absolutely everywhere</div><p class="feat-sub">Four nights in Corfu Town — the beautiful Venetian old town, Paleokastritsa Beach, the Achilleion Palace and a day trip to Albania.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/albania.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(228,30,32,.08);border-color:rgba(228,30,32,.2);color:#E41E20;">🇦🇱 Albania</span><div class="feat-title">Albania — the Blue Eye, ancient ruins and a hidden gem</div><p class="feat-sub">A ferry from Corfu, a guided tour of Saranda, extraordinary ancient ruins and one of the most beautiful natural sights we've ever seen.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/vatican-city.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(123,45,139,.08);border-color:rgba(123,45,139,.2);color:#7B2D8B;">🇻🇦 Vatican City</span><div class="feat-title">Vatican City — art, history and the smallest state on earth</div><p class="feat-sub">The Sistine Chapel, St Peter's Basilica, the Vatican Museums — and we were there for Pope John Paul II's final Easter Mass.</p><div class="feat-arrow">Read the full guide →</div></div>
-  <div class="feat-card" onclick="window.location.href='/germany.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(221,0,0,.08);border-color:rgba(221,0,0,.2);color:#DD0000;">🇩🇪 Germany</span><div class="feat-title">Germany — biergartens, history and a city Nicola called home</div><p class="feat-sub">Interrailing through Berlin, Leipzig, Munich and Cologne in 2005, Nicola's year living in Cologne, Heidelberg's fairytale castle and a moving visit to Dachau.</p><div class="feat-arrow">Read the full guide →</div></div>
-  <div class="feat-card" onclick="window.location.href='/austria.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(237,41,57,.08);border-color:rgba(237,41,57,.2);color:#ED2939;">🇦🇹 Austria</span><div class="feat-title">Austria — Mozart, mountains and music that moves you</div><p class="feat-sub">Nicola interrailed through Vienna, Salzburg, Innsbruck and Linz — classical concerts, Mozart museums and picture-perfect Alpine cities.</p><div class="feat-arrow">Read the full guide →</div></div>
+  <div class="feat-card" onclick="window.location.href='/germany.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(221,0,0,.08);border-color:rgba(221,0,0,.2);color:#DD0000;">🇩🇪 Germany</span><div class="feat-title">Germany — biergartens, history and a city Nicola called home</div><p class="feat-sub">Berlin, Leipzig, Munich, Cologne and Heidelberg — from a year living in Cologne to castles, biergartens and a moving visit to Dachau.</p><div class="feat-arrow">Read the full guide →</div></div>
+  <div class="feat-card" onclick="window.location.href='/austria.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(237,41,57,.08);border-color:rgba(237,41,57,.2);color:#ED2939;">🇦🇹 Austria</span><div class="feat-title">Austria — Mozart, mountains and music that moves you</div><p class="feat-sub">Vienna, Salzburg, Innsbruck and Linz — classical concerts, Mozart museums and picture-perfect Alpine cities.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/switzerland.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(213,43,30,.08);border-color:rgba(213,43,30,.25);color:#d52b1e;">🇨🇭 Switzerland</span><div class="feat-title">Switzerland — fairytale Bern, polished Zurich and Interrail budget panic in 2005</div><p class="feat-sub">Medieval Bern, the Zytglogge clock tower, Bear Park, Lake Zurich and Bahnhofstrasse — all accompanied by the constant shock of Swiss prices on a backpacker budget.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/liechtenstein.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(0,43,127,.08);border-color:rgba(0,43,127,.2);color:#002B7F;">🇱🇮 Liechtenstein</span><div class="feat-title">Liechtenstein — the tiny Alpine principality that blew us away</div><p class="feat-sub">Vaduz Castle, the Postal Museum, stunning Alpine scenery and a magical little country that most travellers drive straight past.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/luxembourg.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(239,51,64,.08);border-color:rgba(239,51,64,.2);color:#EF3340;">🇱🇺 Luxembourg</span><div class="feat-title">Luxembourg — the tiny Grand Duchy that genuinely surprised us</div><p class="feat-sub">Dramatic UNESCO fortifications, the stunning Grund quarter and a bar scene we gave a very thorough examination. Criminally underrated city break.</p><div class="feat-arrow">Read the full guide →</div></div>
-  <div class="feat-card" onclick="window.location.href='/brussels.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(239,51,64,.08);border-color:rgba(239,51,64,.2);color:#EF3340;">🇧🇪 Brussels</span><div class="feat-title">Brussels — beer, waffles, Grand Place and a city that gets under your skin</div><p class="feat-sub">Nicola lived here for a year — 365 beers, Grand Place, day trips to Bruges, Ghent and Spa, and people who make you feel genuinely welcome.</p><div class="feat-arrow">Read the full guide →</div></div>
+  <div class="feat-card" onclick="window.location.href='/belgium.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(239,51,64,.08);border-color:rgba(239,51,64,.2);color:#EF3340;">🇧🇪 Belgium</span><div class="feat-title">Belgium — Brussels, Bruges, Ghent, Antwerp, Liège & Spa</div><p class="feat-sub">Our Belgium hub brings together Brussels, Bruges, Ghent, Antwerp, Liège and Spa — from grand squares and canals to beer, waffles and Formula 1 memories.</p><div class="feat-arrow">Explore Belgium →</div></div>
   <div class="feat-card" onclick="window.location.href='/netherlands.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(33,70,139,.08);border-color:rgba(33,70,139,.2);color:#21468B;">🇳🇱 Netherlands</span><div class="feat-title">Netherlands — canals, masterpieces and the Sex Museum</div><p class="feat-sub">The Mauritshuis, Anne Frank's House, canal cruises, the Rijksmuseum, the Heineken Experience and yes — the Sex Museum.</p><div class="feat-arrow">Read the full guide →</div></div>
 </div>
 
 <!-- EUROPE NORTH & SCANDINAVIA -->
-<div id="europe-north" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
+<div id="europe-north" class="regionHead" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
   <span style="flex:1;height:2px;background:linear-gradient(90deg,rgba(26,107,138,.4),rgba(26,107,138,.1));border-radius:2px;"></span>
   🧊 Europe — North & Scandinavia
+  <span class="regionCount">8 guides</span>
   <span style="flex:1;height:2px;background:linear-gradient(270deg,rgba(26,107,138,.4),rgba(26,107,138,.1));border-radius:2px;"></span>
 </div>
 <div class="featured-grid">
@@ -130,15 +175,16 @@
   <div class="feat-card" onclick="window.location.href='/channel-islands.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(192,57,43,.08);border-color:rgba(192,57,43,.2);color:#c0392b;">🇯🇪🇬🇬 Channel Islands</span><div class="feat-title">Jersey & Guernsey — charming, picturesque and unlike anywhere else in Europe</div><p class="feat-sub">Mont Orgueil Castle, the harbour of St Helier, the unique French-English culture and the best seafood in the Channel.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/iceland.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(91,155,213,.08);border-color:rgba(91,155,213,.25);color:#2c6fad;">🇮🇸 Iceland</span><div class="feat-title">Iceland — Golden Circle, waterfalls, black sand beaches & Reykjavík</div><p class="feat-sub">Þingvellir, Geysir, Gullfoss, Seljalandsfoss, Reynisfjara's black sand beach, the Blue Lagoon and a Reykjavík city tour full of Viking history and elf folklore.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/norway.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(26,107,138,.08);border-color:rgba(26,107,138,.25);color:#0d4a63;">🇳🇴 Norway</span><div class="feat-title">Oslo — Vikings, naked statues, the new Opera House roof and the most expensive round of drinks we ever paid for</div><p class="feat-sub">Vigeland Sculpture Park, the Viking Ship Museum, the Opera House roof, the Oslofjord, reindeer hot dogs and brown cheese at breakfast.</p><div class="feat-arrow">Read the full guide →</div></div>
-  <div class="feat-card" onclick="window.location.href='/sweden.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(0,106,167,.08);border-color:rgba(0,106,167,.25);color:#004d7a;">🇸🇪 Sweden</span><div class="feat-title">Stockholm — we slept in a Boeing 747, then a barge, then spent two days wandering one of Europe's most beautiful cities</div><p class="feat-sub">Night one in the Jumbo Stay, night two on a hotel barge, two days in Gamla Stan crossing bridge after bridge and having fika by the water.</p><div class="feat-arrow">Read the full guide →</div></div>
+  <div class="feat-card" onclick="window.location.href='/sweden.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(0,106,167,.08);border-color:rgba(0,106,167,.25);color:#004d7a;">🇸🇪 Sweden</span><div class="feat-title">Stockholm — we slept in a Boeing 747, then a barge, then spent two days wandering one of Europe's most beautiful cities</div><p class="feat-sub">A Boeing 747 hotel, a barge stay, Gamla Stan, endless bridges and fika by the water.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/finland.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(0,53,128,.08);border-color:rgba(0,53,128,.2);color:#003580;">🇫🇮 Finland</span><div class="feat-title">Helsinki — Nordic calm, beautiful harbours and a reindeer burger left untouched</div><p class="feat-sub">Two days in Helsinki en route to Russia — the Church in the Rock, the stunning harbour, the Sibelius Monument and a birthday with no luggage.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/copenhagen.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(198,12,48,.08);border-color:rgba(198,12,48,.2);color:#C60C30;">🇩🇰 Copenhagen</span><div class="feat-title">Copenhagen — hygge, harbour lights and winter magic</div><p class="feat-sub">Iconic Nyhavn, Christiania Freetown, the Little Mermaid and long happy hours soaking up the winter atmosphere.</p><div class="feat-arrow">Read the full guide →</div></div>
 </div>
 
 <!-- EUROPE CENTRAL & EAST -->
-<div id="europe-east" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
+<div id="europe-east" class="regionHead" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
   <span style="flex:1;height:2px;background:linear-gradient(90deg,rgba(107,58,42,.4),rgba(107,58,42,.1));border-radius:2px;"></span>
   🏰 Europe — Central & East
+  <span class="regionCount">11 guides</span>
   <span style="flex:1;height:2px;background:linear-gradient(270deg,rgba(107,58,42,.4),rgba(107,58,42,.1));border-radius:2px;"></span>
 </div>
 <div class="featured-grid">
@@ -151,14 +197,15 @@
   <div class="feat-card" onclick="window.location.href='/wroclaw.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(220,20,60,.08);border-color:rgba(220,20,60,.2);color:#dc143c;">🇵🇱 Wrocław</span><div class="feat-title">Wrocław — magical Christmas markets and one unforgettable weekend</div><p class="feat-sub">Stunning Old Town, the famous dwarfs, brilliant food and the friendliest people.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/bydgoszcz.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(26,107,58,.08);border-color:rgba(26,107,58,.2);color:#1a6b3a;">🇵🇱 Bydgoszcz</span><div class="feat-title">Bydgoszcz — Poland's most magical hidden gem</div><p class="feat-sub">Glühwein, stunning Christmas lights, beautiful Mill Island and locals who showed us the best of the city.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/bucharest.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(206,17,38,.08);border-color:rgba(206,17,38,.2);color:#CE1126;">🇷🇴 Bucharest</span><div class="feat-title">Bucharest — castles, thermal spas and brilliant value</div><p class="feat-sub">Four days in Romania — Bran Castle, Peleș Castle and a blissful day at a thermal spa.</p><div class="feat-arrow">Read the full guide →</div></div>
-  <div class="feat-card" onclick="window.location.href='/bulgaria.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(18,111,138,.08);border-color:rgba(18,111,138,.25);color:#126f8a;">🇧🇬 Bulgaria</span><div class="feat-title">Sunny Beach 2000 — Black Sea beaches, mountain villages and the hotel flood disaster we'll never forget</div><p class="feat-sub">Black Sea beaches, fake designer gear, mountain villages — and then biblical rain flooded the hotel on the final night with Nicola stuck in the lift.</p><div class="feat-arrow">Read the full guide →</div></div>
+  <div class="feat-card" onclick="window.location.href='/bulgaria.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(18,111,138,.08);border-color:rgba(18,111,138,.25);color:#126f8a;">🇧🇬 Bulgaria</span><div class="feat-title">Sunny Beach 2000 — Black Sea beaches, mountain villages and the hotel flood disaster we'll never forget</div><p class="feat-sub">Black Sea beaches, mountain villages and a final-night hotel flood that turned the trip into one we'll never forget.</p><div class="feat-arrow">Read the full guide →</div></div>
   <div class="feat-card" onclick="window.location.href='/russia.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(204,0,0,.08);border-color:rgba(204,0,0,.2);color:#CC0000;">🇷🇺 Russia</span><div class="feat-title">Russia — imperial palaces, Red Square and the trip that blew our minds</div><p class="feat-sub">Helsinki to Moscow — St Petersburg's breathtaking architecture, the Hermitage, Peterhof, the Kremlin and a high-speed train through the Russian heartland.</p><div class="feat-arrow">Read the full guide →</div></div>
 </div>
 
 <!-- OCEANIA -->
-<div id="oceania" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
+<div id="oceania" class="regionHead" style="display:flex;align-items:center;gap:12px;margin:24px 0 14px;font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--ink);">
   <span style="flex:1;height:2px;background:linear-gradient(90deg,rgba(47,128,237,.4),rgba(47,128,237,.1));border-radius:2px;"></span>
   🌏 Oceania
+  <span class="regionCount">3 guides</span>
   <span style="flex:1;height:2px;background:linear-gradient(270deg,rgba(47,128,237,.4),rgba(47,128,237,.1));border-radius:2px;"></span>
 </div>
 <div class="featured-grid">
@@ -167,9 +214,10 @@
   <div class="feat-card" onclick="window.location.href='/tasmania.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(32,94,76,.10);border-color:rgba(32,94,76,.25);color:#205e4c;">🏔️ Tasmania</span><div class="feat-title">Tasmania — wild coastlines, Wineglass Bay and the Bay of Fires</div><p class="feat-sub">From Hobart to Cradle Mountain, Russell Falls, Freycinet and the Bay of Fires.</p><div class="feat-arrow">Read the full diary →</div></div>
 </div>
 
-<div class="card" style="text-align:center;margin-top:8px;">
-  <h2>More destinations coming</h2>
-  <p style="color:var(--ink-soft);max-width:520px;margin:0 auto 16px;">We've visited 60+ countries and territories between us and we're adding destination guides regularly. Follow us on social to be the first to know.</p>
+<div class="card destinationOutro">
+  <div class="bigLine">60+ countries. Hundreds of places. All actually visited by us.</div>
+  <h2>And we're nowhere near finished.</h2>
+  <p style="color:var(--ink-soft);max-width:620px;margin:0 auto 18px;">Every main destination guide on Two for the Row'd starts with somewhere we've genuinely travelled — from quick city breaks to huge road trips. We're adding more of the archive all the time.</p>
   <div class="links" style="justify-content:center;">
     <a class="btn-primary" href="https://www.instagram.com/twofortherowd25" target="_blank" rel="noopener">Follow on Instagram →</a>
     <a class="btn-outline" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener">Subscribe on YouTube →</a>
