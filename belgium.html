@@ -150,7 +150,9 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -415,7 +417,18 @@
       .links a { text-align: center; justify-content: center; }
       .drive-grid { grid-template-columns: repeat(2, 1fr); }
     }
-  </style>
+  
+/* BELGIUM INTERACTIVE JOURNEY MAP */
+.belgiumMapCard{padding:18px;overflow:hidden}.belgiumMapIntro{padding:4px 6px 14px}
+#belgiumJourneyMap{height:590px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1}
+.belgiumMapLegend{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--muted)}
+.belgiumMapLegendItem{display:flex;align-items:center;gap:6px}.belgiumMapDot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.belgiumPopup{font-family:var(--font-body);min-width:190px}.belgiumPopupRegion{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+.belgiumPopupTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px}
+.belgiumPopupText{font-size:12px;color:var(--ink-soft);line-height:1.5}.belgiumPopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--belgium);text-decoration:none}
+@media(max-width:640px){.belgiumMapCard{padding:12px}#belgiumJourneyMap{height:480px;border-radius:12px}.belgiumMapLegend{gap:9px;font-size:11px}}
+
+</style>
 
   
 
@@ -485,12 +498,29 @@ function nextBelgiumPhoto(img){
     </p>
 
     <div class="dest-tabs">
+      <a href="https://twofortherowd.com/#map" class="dest-tab">🌍 Destinations</a>
+      <a href="#belgium-map" class="dest-tab">🗺️ Belgium Map</a>
       <a href="belgium/brussels.html" class="dest-tab">🏛️ Brussels</a>
       <a href="belgium/bruges.html" class="dest-tab">🏰 Bruges</a>
       <a href="belgium/ghent.html" class="dest-tab">🏙️ Ghent</a>
       <a href="belgium/antwerp.html" class="dest-tab">🌊 Antwerp</a>
       <a href="belgium/liege.html" class="dest-tab">🏰 Liège</a>
       <a href="belgium/spa.html" class="dest-tab">🏁 Spa</a>
+    </div>
+
+
+    <div id="belgium-map" class="card belgiumMapCard">
+      <div class="belgiumMapIntro">
+        <div class="eyebrow"><span class="badge">🗺️ Interactive map</span><span class="badge red">Lived here · 2005–2006</span></div>
+        <h2>Explore our Belgium story on the map</h2>
+        <p style="color:var(--ink-soft);max-width:700px;">Brussels was home for a year, with trips across Flanders and Wallonia to Bruges, Ghent, Antwerp, Liège and Spa. Tap any marker to see the memory behind the stop and jump straight into its full city guide.</p>
+      </div>
+      <div id="belgiumJourneyMap" aria-label="Interactive map of Two for the Row'd Belgium destinations"></div>
+      <div class="belgiumMapLegend">
+        <span class="belgiumMapLegendItem"><span class="belgiumMapDot" style="background:#c0392b"></span>Brussels — home</span>
+        <span class="belgiumMapLegendItem"><span class="belgiumMapDot" style="background:#2980b9"></span>Flanders</span>
+        <span class="belgiumMapLegendItem"><span class="belgiumMapDot" style="background:#27ae60"></span>Wallonia</span>
+      </div>
     </div>
 
     <!-- ── THE STORY ─────────────────────────────────────── -->
@@ -1102,5 +1132,23 @@ function nextBelgiumPhoto(img){
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+<script>
+(function(){
+ if(typeof L==='undefined') return;
+ const el=document.getElementById('belgiumJourneyMap'); if(!el) return;
+ const map=L.map(el,{scrollWheelZoom:false});
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+ const stops=[{"region": "Capital", "stop": "Brussels", "lat": 50.8503, "lng": 4.3517, "notes": "The bilingual capital. Nicola lived here 2005–2006 and fell in love with Belgium. Grand Place, the Atomium, beer culture, chocolate. The city that got under her skin.", "color": "#c0392b", "icon": "🏛️", "url": "belgium/brussels.html"}, {"region": "Flanders", "stop": "Bruges", "lat": 51.2093, "lng": 3.2244, "notes": "Medieval perfection. Canals, chocolate, lace and bridges. One of Europe's most beautiful small cities. Easy day trip or overnight from Brussels.", "color": "#2980b9", "icon": "🏰", "url": "belgium/bruges.html"}, {"region": "Flanders", "stop": "Ghent", "lat": 51.0543, "lng": 3.7196, "notes": "Vibrant and artistic. Medieval centre with its own distinct character. Gritty charm, creative energy and St. Bavo's Cathedral. Often overlooked but utterly rewarding.", "color": "#2980b9", "icon": "🏙️", "url": "belgium/ghent.html"}, {"region": "Flanders", "stop": "Antwerp", "lat": 51.2211, "lng": 4.4015, "notes": "Flemish identity and pride. Art, diamonds, fashion and industrial character. The Scheldt River and a city that refuses to be defined by its neighbours.", "color": "#2980b9", "icon": "🌊", "url": "belgium/antwerp.html"}, {"region": "Wallonia", "stop": "Liège", "lat": 50.6324, "lng": 5.5694, "notes": "French-speaking Walloon character. Historic heart on the Meuse River. Museums, culture and a distinctly different feel from the Flemish north.", "color": "#27ae60", "icon": "🏛️", "url": "belgium/liege.html"}, {"region": "Wallonia", "stop": "Spa", "lat": 50.4833, "lng": 5.8667, "notes": "Famous for its mineral springs and the legendary Spa-Francorchamps Formula 1 circuit. A journey through Belgium's racing heritage and natural beauty.", "color": "#27ae60", "icon": "🏁", "url": "belgium/spa.html"}];
+ function icon(c){return L.divIcon({className:'',html:'<div style="background:'+c+';width:28px;height:28px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(26,18,8,.25)"></div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]});}
+ stops.forEach(s=>{
+  const m=L.marker([s.lat,s.lng],{icon:icon(s.color)}).addTo(map);
+  m.bindPopup('<div class="belgiumPopup"><div class="belgiumPopupRegion" style="color:'+s.color+'">'+s.region+'</div><div class="belgiumPopupTitle">'+s.icon+' '+s.stop+'</div><div class="belgiumPopupText">'+s.notes+'</div><a class="belgiumPopupLink" href="'+s.url+'">Open our guide →</a></div>',{maxWidth:285});
+ });
+ map.fitBounds(L.latLngBounds(stops.map(s=>[s.lat,s.lng])).pad(.12));
+ setTimeout(()=>map.invalidateSize(),250);
+})();
+</script>
+
 </body>
 </html>
