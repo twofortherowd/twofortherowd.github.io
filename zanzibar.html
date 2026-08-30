@@ -303,6 +303,11 @@
     }
     .photo-grid-2 img:hover, .photo-grid-3 img:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 
+    /* Keep the people in zanz6 framed properly inside the 4:3 gallery crop */
+    .photo-grid-3 img.zanz-local-photo {
+      object-position: center 20%;
+    }
+
     .gygWidgetWrap { margin-top: 14px; padding: 10px; border-radius: 14px; background: rgba(255,255,255,.55); border: 1px solid var(--border); overflow: hidden; }
 
     .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 10px; }
@@ -487,7 +492,7 @@
         <img src="/img/zanz4.jpg" alt="Carved wooden door Stone Town Zanzibar — Two for the Row'd" loading="lazy">
       </div>
       <div class="photo-grid-3">
-        <img src="/img/zanz6.jpg" alt="Group photo with local musicians Zanzibar — Two for the Row'd" loading="lazy" style="object-position: center top;">
+        <img class="zanz-local-photo" src="/img/zanz6.jpg" alt="Photo with local musician in Stone Town, Zanzibar — Two for the Row'd" loading="lazy">
         <img src="/img/zanz7.jpg" alt="Group selfie on boat pier Zanzibar — Two for the Row'd" loading="lazy" style="object-position: center top;">
         <img src="/img/zanz8.jpg" alt="Boat on water at sunset Zanzibar — Two for the Row'd" loading="lazy">
       </div>
