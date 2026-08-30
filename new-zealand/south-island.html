@@ -40,8 +40,8 @@
     .hero-headline{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.12;margin-bottom:14px;}
     .hero-headline em{font-style:italic;color:var(--nz-light);}
     .hero-lead{font-size:1.05rem;line-height:1.7;color:var(--ink-soft);margin-bottom:20px;}
-    .photo-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0;margin-bottom:16px;}
-    .photo-grid-2 img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 2px 10px rgba(26,18,8,.08);}
+    .photo-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0;margin-bottom:12px;}
+    .photo-grid-2 img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;box-shadow:0 2px 10px rgba(26,18,8,.08);}
     .photo-grid-2 img:last-child{margin-bottom:0;}
     .chapterHeader{margin:36px 0 18px;}
     .chapterHeaderInner{display:flex;align-items:flex-end;gap:14px;padding-bottom:14px;border-bottom:2px solid var(--ink);}
@@ -65,10 +65,23 @@
     .nz-photo{margin:16px 0 8px}
     .nz-photo img{display:block;width:100%;max-height:380px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(26,18,8,.10)}
     .nz-photo figcaption{font-size:11px;color:var(--muted);margin-top:6px;text-align:center;line-height:1.4}
-    .partnerGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:14px}
-    .partnerCard{display:block;text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(26,18,8,.05)}
-    .partnerCard strong{display:block;margin-bottom:4px;font-size:13px}
-    .partnerCard span{font-size:12px;color:var(--muted)}
+    .planCard{background:linear-gradient(135deg,#ffffff 0%,#f9fafb 100%);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-md);padding:28px 26px;margin-bottom:16px;backdrop-filter:blur(4px);}
+    .planCard h2{margin-top:0;}
+    .planIntro{font-size:1.05rem;color:var(--ink-soft);margin-bottom:22px;line-height:1.7;}
+    .partnerGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:22px;}
+    .partnerCard{display:block;text-decoration:none;background:linear-gradient(135deg,#ffffff 0%,#fafbff 100%);border:1.5px solid var(--border);border-radius:14px;padding:18px;box-shadow:0 2px 8px rgba(26,18,8,.05);transition:all .2s ease;position:relative;overflow:hidden;}
+    .partnerCard::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(64,145,108,.08) 0%,rgba(255,216,74,.08) 100%);opacity:0;transition:opacity .2s;}
+    .partnerCard:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(26,18,8,.12);border-color:rgba(45,106,79,.2);}
+    .partnerCard:hover::before{opacity:1;}
+    .partnerCard-icon{font-size:28px;margin-bottom:10px;display:inline-block;}
+    .partnerCard strong{display:block;margin-bottom:6px;font-size:14px;color:var(--ink);font-family:var(--font-display);}
+    .partnerCard span{font-size:12px;color:var(--muted);line-height:1.5;}
+    .planDivider{height:1px;background:var(--border);margin:20px 0;}
+    .planCTA{background:linear-gradient(135deg,var(--nz-green) 0%,var(--nz-light) 100%);border-radius:14px;padding:20px;text-align:center;margin-top:22px;box-shadow:0 4px 16px rgba(45,106,79,.2);}
+    .planCTA strong{display:block;font-size:1.1rem;margin-bottom:8px;color:#fff;}
+    .planCTA p{color:rgba(255,255,255,.95);font-size:14px;margin:0 0 14px;}
+    .planCTA a{color:#fff;background:rgba(255,255,255,.2);padding:10px 18px;border-radius:8px;display:inline-block;text-decoration:none;font-weight:700;font-size:13px;transition:all .15s;}
+    .planCTA a:hover{background:rgba(255,255,255,.3);transform:translateY(-1px);}
     .stopCard{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:12px;}
     .stopCard h3{margin:0 0 6px;font-size:1.05rem;}
     .stopCard .duration{font-size:11px;font-weight:700;color:var(--nz-green);margin-bottom:8px;letter-spacing:.02em;text-transform:uppercase;}
@@ -255,24 +268,38 @@
     </a>
   </div>
 
-  <div class="card blueCard">
+  <div class="planCard blueCard">
     <h2>Plan your South Island adventure</h2>
+    <p class="planIntro">Ready to book? We've partnered with the best platforms to get you sorted. Book guided tours on TourRadar, or explore with <strong>Drive From Home</strong> — an incredible interactive tool that lets you virtually explore New Zealand's roads from your armchair with real street-view footage, detailed guides, and curated stops. Perfect for planning your own route.</p>
     <div class="partnerGrid">
       <a class="partnerCard" href="https://www.tourradar.com/t/204593?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">
-        <strong>TourRadar South Island Tours</strong>
-        <span>Browse guided tours →</span>
+        <div class="partnerCard-icon">🚌</div>
+        <strong>Guided Tours</strong>
+        <span>Book the full South Island experience on TourRadar →</span>
       </a>
       <a class="partnerCard" href="https://drivefromhome.com/cities/queenstown/" target="_blank" rel="noopener">
-        <strong>Drive Queenstown From Home</strong>
-        <span><a href="https://drivefromhome.com/cities/queenstown/" target="_blank" rel="noopener">Guide</a> · <a href="https://drivefromhome.com/city/?city=ZQN" target="_blank" rel="noopener">Drive →</a></span>
+        <div class="partnerCard-icon">🗺️</div>
+        <strong>Queenstown & Wanaka</strong>
+        <span>Self-drive guides for the adventure capital →</span>
       </a>
       <a class="partnerCard" href="https://drivefromhome.com/cities/aoraki-mount-cook/" target="_blank" rel="noopener">
-        <strong>Drive Aoraki / Mount Cook From Home</strong>
-        <span><a href="https://drivefromhome.com/cities/aoraki-mount-cook/" target="_blank" rel="noopener">Guide</a> · <a href="https://drivefromhome.com/city/?city=GTN" target="_blank" rel="noopener">Drive →</a></span>
+        <div class="partnerCard-icon">🏔️</div>
+        <strong>Aoraki / Mount Cook</strong>
+        <span>High country exploration guide →</span>
+      </a>
+      <a class="partnerCard" href="https://www.getyourguide.com/new-zealand-l129/" target="_blank" rel="noopener">
+        <div class="partnerCard-icon">🎫</div>
+        <strong>Activities & Bookings</strong>
+        <span>Reserve tours, hikes & experiences instantly →</span>
       </a>
     </div>
-    <div style="margin-top:18px" data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="168989" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VYORXUN"></div>
-    <p class="disclosure"><strong>Disclosure:</strong> TourRadar and GetYourGuide links are affiliate links.</p>
+    <div class="planDivider"></div>
+    <div class="planCTA">
+      <strong>Can't decide? Start with a guided tour.</strong>
+      <p>Let the experts handle the route, accommodation, and logistics. You just show up and experience the magic.</p>
+      <a href="https://www.tourradar.com/t/204593?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse tours on TourRadar →</a>
+    </div>
+    <p class="disclosure"><strong>Disclosure:</strong> TourRadar and other partner links are affiliate links.</p>
   </div>
 
   <div class="card heroCard" style="text-align:center;margin-top:36px;">
