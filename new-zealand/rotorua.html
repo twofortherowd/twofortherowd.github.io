@@ -55,10 +55,22 @@
     .nz-photo figcaption{font-size:11px;color:var(--muted);margin-top:6px;text-align:center;line-height:1.4}
     .photo-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0;margin-bottom:16px;}
     .photo-grid-2 img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 2px 10px rgba(26,18,8,.08);}
+    .photo-grid-2 img.maori-photo{object-position:center 30%;}
     .partnerGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:14px}
     .partnerCard{display:block;text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(26,18,8,.05)}
     .partnerCard strong{display:block;margin-bottom:4px;font-size:13px}
     .partnerCard span{font-size:12px;color:var(--muted)}
+    .rotoruaPlan{background:linear-gradient(160deg,#ffffff 0%,#f5fbf7 58%,#fff8d9 100%);border-color:rgba(45,106,79,.16);}
+    .rotoruaPlanIntro{color:var(--ink-soft);max-width:680px;margin-bottom:18px;}
+    .dfhFeature{grid-column:span 2;background:linear-gradient(135deg,#173f31 0%,#2d6a4f 100%);color:#fff;border:0;border-radius:16px;padding:22px;box-shadow:0 8px 24px rgba(45,106,79,.20);}
+    .dfhFeature strong{color:#fff;font-family:var(--font-display);font-size:1.12rem;margin-bottom:6px;}
+    .dfhFeature span{display:block;color:rgba(255,255,255,.86);font-size:13px;line-height:1.55;}
+    .dfhButtons{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px;}
+    .dfhButtons a{display:inline-flex;align-items:center;padding:10px 15px;border-radius:9px;text-decoration:none;font-size:12px;font-weight:700;}
+    .dfhDrive{background:#fff;color:var(--ink);}
+    .dfhGuide{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.28);}
+    .klookCard{background:#fffdf7;}
+
     .faqItem{border-bottom:1px dashed rgba(26,18,8,.16);padding:14px 0;}
     .faqItem:last-child{border-bottom:none;padding-bottom:0;}
     .faqQ{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;user-select:none;}
@@ -71,6 +83,9 @@
       .links{flex-direction:column;}
       .links a{text-align:center;}
       .partnerGrid{grid-template-columns:1fr;}
+      .dfhFeature{grid-column:span 1;}
+      .dfhButtons{flex-direction:column;}
+      .dfhButtons a{justify-content:center;}
       .stickyNav{display:none;}
     }
   </style>
@@ -112,7 +127,7 @@
   </figure>
 
   <div class="photo-grid-2">
-    <img src="/img/nz2.jpg" alt="Māori cultural performance during our Rotorua visit — Two for the Row'd" loading="lazy">
+    <img class="maori-photo" src="/img/nz2.jpg" alt="Māori cultural performance during our Rotorua visit — Two for the Row'd" loading="lazy">
     <img src="/img/nz7.jpg" alt="Hot springs and geothermal scenery in Rotorua — Two for the Row'd" loading="lazy">
   </div>
   <p style="font-size:11px;color:var(--muted);text-align:center;margin:12px 0 0;line-height:1.4;">Māori culture and geothermal landscapes from our Rotorua visit.</p>
@@ -171,19 +186,33 @@
     </div>
   </div>
 
-  <div class="card">
-    <h2>Plan a Rotorua stay</h2>
-    <div class="partnerGrid">
-      <a class="partnerCard" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1406972&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fhotels%2Fsearchresult%2F%3Froom_num%3D1%26adult_num%3D2%26child_num%3D0%26stype%3Dgoogle_poi%26svalue%3DChIJK7L2gj2Ybm0RMZmjQ2HvAAU%26override%3DRotorua%26title%3DRotorua%26latlng%3D-38.1445987%252C176.2377669%26currency%3DUSD" target="_blank" rel="noopener sponsored">
-        <strong>Hotels in Rotorua — Klook</strong>
-        <span>Browse stays →</span>
-      </a>
-      <a class="partnerCard" href="https://drivefromhome.com/cities/rotorua/" target="_blank" rel="noopener">
-        <strong>Drive Rotorua From Home</strong>
-        <span><a href="https://drivefromhome.com/cities/rotorua/" target="_blank" rel="noopener">Guide</a> · <a href="https://drivefromhome.com/city/?city=ROT" target="_blank" rel="noopener">Drive →</a></span>
-      </a>
+  <div class="card rotoruaPlan">
+    <div class="eyebrow">
+      <span class="badge">🧳 Plan your stay</span>
+      <span class="badge" style="background:rgba(255,255,255,.82);color:var(--ink-soft);">Rotorua</span>
     </div>
-    <p class="disclosure"><strong>Disclosure:</strong> Klook is an affiliate link.</p>
+    <h2>Plan a Rotorua stay</h2>
+    <p class="rotoruaPlanIntro">Find somewhere to stay, then take a virtual drive around Rotorua before you go.</p>
+
+    <div class="partnerGrid">
+      <a class="partnerCard klookCard" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1406972&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fhotels%2Fsearchresult%2F%3Froom_num%3D1%26adult_num%3D2%26child_num%3D0%26stype%3Dgoogle_poi%26svalue%3DChIJK7L2gj2Ybm0RMZmjQ2HvAAU%26override%3DRotorua%26title%3DRotorua%26latlng%3D-38.1445987%252C176.2377669%26currency%3DUSD" target="_blank" rel="noopener sponsored">
+        <div style="font-size:25px;margin-bottom:8px;">🏨</div>
+        <strong>Hotels in Rotorua — Klook</strong>
+        <span>Browse Rotorua accommodation and compare stays →</span>
+      </a>
+
+      <div class="dfhFeature">
+        <div style="font-size:27px;margin-bottom:8px;">🚗</div>
+        <strong>Drive From Home × Two for the Row'd</strong>
+        <span>Explore Rotorua virtually with Drive From Home — take the interactive drive through the city, then open the Rotorua guide for more ideas before planning the real thing.</span>
+        <div class="dfhButtons">
+          <a class="dfhDrive" href="https://drivefromhome.com/city/?city=ROT" target="_blank" rel="noopener">🚗 Start the Rotorua drive →</a>
+          <a class="dfhGuide" href="https://drivefromhome.com/cities/rotorua/" target="_blank" rel="noopener">Read the Rotorua guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="disclosure"><strong>Disclosure:</strong> Klook is an affiliate link. Drive From Home is a Two for the Row'd collaboration.</p>
   </div>
 
   <div class="card heroCard" style="text-align:center;margin-top:36px;">
