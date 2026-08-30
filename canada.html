@@ -10,38 +10,66 @@
 <meta name="description" content="Our Canada story across two unforgettable trips: Eastern Canada in 2009 from Toronto to Newfoundland, and Calgary, the Canadian Rockies and Vancouver in 2024. Honest first-hand highlights, videos and travel tips.">
 <link rel="canonical" href="https://twofortherowd.com/canada.html">
 <meta property="og:title" content="Canada — Two Epic Trips, 15 Years Apart | Two for the Row'd"><meta property="og:description" content="Toronto to Newfoundland in 2009. Calgary, the Rockies and Vancouver in 2024. Our first-hand Canada guide across two very different adventures."><meta property="og:type" content="article"><meta property="og:url" content="https://twofortherowd.com/canada.html"><meta property="og:image" content="https://twofortherowd.com/img/vancouver.jpg"><meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--red:#d52b1e;--red2:#b52218;--ink:#17120d;--soft:#4d443a;--muted:#776d62;--cream:#fbf7f0;--white:#fff;--blue:#1d4f73;--green:#315b43;--gold:#d7a82f;--border:rgba(23,18,13,.11);--shadow:0 10px 30px rgba(23,18,13,.09);--radius:20px;--display:'Playfair Display',Georgia,serif;--body:'DM Sans',Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:linear-gradient(180deg,#fff 0,#fbf7f0 18%,#fbf7f0 100%);font:15px/1.72 var(--body);color:var(--ink)}a{color:inherit}h1,h2,h3{font-family:var(--display);line-height:1.14;margin-top:0}h1{font-size:clamp(2.2rem,5vw,3.65rem);margin-bottom:14px}h2{font-size:clamp(1.55rem,3vw,2.15rem);margin-bottom:10px}h3{font-size:1.2rem;margin-bottom:7px}p{margin:0 0 .9rem}.backBar{padding:10px 16px;border-bottom:1px solid var(--border);background:#fff;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.backBar a{text-decoration:none;font-size:13px;font-weight:700}.chapterNav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);box-shadow:0 5px 18px rgba(0,0,0,.05)}.chapterInner{max-width:1120px;margin:auto;display:flex;gap:4px;overflow-x:auto;padding:9px 14px;scrollbar-width:none}.chapterInner::-webkit-scrollbar{display:none}.chapterInner a{white-space:nowrap;text-decoration:none;font-size:12px;font-weight:700;padding:9px 12px;border-radius:999px;transition:.2s}.chapterInner a:hover{background:#f6eee5;color:var(--red)}.wrap{max-width:980px;margin:auto;padding:24px 16px 70px}.breadcrumb{font-size:12px;color:var(--muted);margin:0 0 16px}.breadcrumb a{text-decoration:none;font-weight:700}.hero,.card{background:rgba(255,255,255,.92);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(22px,4vw,38px);margin-bottom:18px}.hero{background:radial-gradient(circle at 100% 0,rgba(213,43,30,.13),transparent 35%),linear-gradient(145deg,#fff,#fff8f4)}.eyebrow,.tags,.links{display:flex;flex-wrap:wrap;gap:8px}.badge,.tag{border-radius:999px;padding:5px 11px;font-size:12px;font-weight:700;border:1px solid var(--border);background:#fff}.badge.red{background:var(--red);color:#fff;border-color:var(--red)}.heroLead{font-size:1.08rem;color:var(--soft);max-width:820px}.route{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:18px 0}.stop{padding:6px 10px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:12px;font-weight:700}.arrow{color:var(--muted)}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700;border-radius:11px;padding:12px 17px;border:1px solid var(--border);background:#fff}.btn.primary{background:var(--ink);color:#fff}.btn.red{background:var(--red);color:#fff;border-color:var(--red)}.chapter{padding-top:16px}.chapterHead{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;margin:26px 0 14px}.chapterNo{font-family:var(--display);font-size:2.6rem;font-weight:800;color:var(--red);line-height:1}.chapterKicker{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--muted);margin-bottom:3px}.chapterHead h2{margin:0}.twoTrips,.destGrid,.highlightGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.tripCard,.dest{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px}.tripCard.east{border-top:4px solid var(--red)}.tripCard.west{border-top:4px solid var(--blue)}.tripYear{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.quote{border-left:4px solid var(--red);padding:14px 18px;background:#fff8f6;border-radius:0 14px 14px 0;font-family:var(--display);font-size:1.08rem;margin:16px 0}.photoGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.photoGrid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:13px;display:block}.videoGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.videoCard{background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px}.videoFrame{aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:#111}.videoFrame.landscape{aspect-ratio:16/9}.videoFrame iframe{width:100%;height:100%;border:0}.itinerary details,.faq details{background:#fff;border:1px solid var(--border);border-radius:14px;padding:15px 17px;margin:9px 0}.itinerary summary,.faq summary{font-weight:800;cursor:pointer}.itinerary ul{margin-bottom:0}.accentEast{background:linear-gradient(145deg,#fff,#fff4f1)}.accentWest{background:linear-gradient(145deg,#fff,#f2f8fc)}.accentGreen{background:linear-gradient(145deg,#fff,#f2f8f4)}.disclosure{font-size:12px;color:var(--muted);border-top:1px dashed var(--border);padding-top:11px;margin-top:14px}.miniLabel{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}footer{text-align:center;color:var(--muted);font-size:13px;padding:0 16px 35px}@media(max-width:720px){.twoTrips,.destGrid,.highlightGrid,.videoGrid{grid-template-columns:1fr}.photoGrid{grid-template-columns:repeat(2,1fr)}.chapterHead{grid-template-columns:50px 1fr}.chapterNo{font-size:2.1rem}.hero,.card{padding:22px 18px}}@media(max-width:430px){.photoGrid{grid-template-columns:1fr}}
+
+/* CANADA INTERACTIVE JOURNEY MAP */
+.canadaMapCard{padding:18px;overflow:hidden}.canadaMapIntro{padding:4px 6px 14px}
+#canadaJourneyMap{height:620px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);z-index:1}
+.canadaMapLegend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--soft)}
+.canadaMapLegendItem{display:flex;align-items:center;gap:6px}.canadaMapDot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.canadaPopup{font-family:var(--body);min-width:190px}.canadaPopupTrip{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+.canadaPopupTitle{font-family:var(--display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px}.canadaPopupText{font-size:12px;color:var(--soft);line-height:1.5}
+.canadaPopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--red);text-decoration:none}
+@media(max-width:640px){.canadaMapCard{padding:12px}#canadaJourneyMap{height:500px;border-radius:12px}.canadaMapLegend{gap:9px;font-size:11px}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Canada — Two Epic Trips, 15 Years Apart","description":"Two for the Row'd's first-hand Canada guide covering Eastern Canada in 2009 and Calgary, the Canadian Rockies and Vancouver in 2024.","author":{"@type":"Person","name":"Nicola and Pádraig"},"publisher":{"@type":"Organization","name":"Two for the Row'd","url":"https://twofortherowd.com"},"url":"https://twofortherowd.com/canada.html","image":"https://twofortherowd.com/img/vancouver.jpg"}</script>
 </head><body>
 <div class="backBar"><a href="https://twofortherowd.com/">← Back to Two for the Row'd</a><a href="https://twofortherowd.com/">Two for the Row'd 🇮🇪</a></div>
-<nav class="chapterNav" aria-label="Canada chapter navigation"><div class="chapterInner"><a href="#glance">🇨🇦 At a Glance</a><a href="#trips">🗺️ Our Trips</a><a href="#east">🍁 Eastern Canada</a><a href="#west">⛰️ Western Canada</a><a href="#photos">📸 Photos</a><a href="#videos">🎬 Videos</a><a href="#tours">🎫 Tours & Stays</a><a href="#before">🎒 Before You Go</a><a href="#faq">❓ FAQ</a></div></nav>
+<nav class="chapterNav" aria-label="Canada chapter navigation"><div class="chapterInner"><a href="https://twofortherowd.com/#map">🌍 Destinations</a><a href="#journey-map">🗺️ Canada Map</a><a href="#glance">🇨🇦 At a Glance</a><a href="#trips">🗺️ Our Trips</a><a href="#east">🍁 Eastern Canada</a><a href="#west">⛰️ Western Canada</a><a href="#photos">📸 Photos</a><a href="#videos">🎬 Videos</a><a href="#tours">🎫 Tours & Stays</a><a href="#before">🎒 Before You Go</a><a href="#faq">❓ FAQ</a></div></nav>
 <main class="wrap">
 <div class="breadcrumb"><a href="https://twofortherowd.com/">Home</a> › <a href="https://twofortherowd.com/#map">Our Destinations</a> › Canada</div>
-<section class="hero"><div class="eyebrow"><span class="badge red">🇨🇦 Canada</span><span class="badge">2009 + 2024</span><span class="badge">Two epic trips · 15 years apart</span></div><h1>Canada — two adventures,<br>fifteen years apart.</h1><p class="heroLead">Canada has given us two completely different trips and some of our greatest travel memories. In 2009 we crossed Eastern Canada from Toronto to Newfoundland. Fifteen years later we came back for Calgary, the Stampede, the Canadian Rockies and Vancouver — before sailing north to Alaska.</p><div class="route"><span class="stop">2009: Toronto → Newfoundland</span><span class="arrow">•</span><span class="stop">2024: Calgary → Rockies → Vancouver</span></div><div class="links"><a class="btn red" href="#trips">Explore our Canada trips ↓</a><a class="btn" href="#videos">Watch our Canada videos</a></div></section>
+<section class="hero"><div class="eyebrow"><span class="badge red">🇨🇦 Canada</span><span class="badge">2009 + 2024</span><span class="badge">Two epic trips · 15 years apart</span></div><h1>Canada — two adventures,<br>fifteen years apart.</h1><p class="heroLead">Canada has given us two completely different trips and some of our greatest travel memories. In 2009 we crossed Eastern Canada from Toronto to Newfoundland. Fifteen years later we came back for Calgary, the Stampede, the Canadian Rockies and Vancouver — before sailing north to Alaska.</p><div class="route"><span class="stop">2009: Toronto → Newfoundland</span><span class="arrow">•</span><span class="stop">2024: Calgary → Rockies → Vancouver</span></div><div class="links"><a class="btn red" href="#journey-map">Explore our Canada map ↓</a><a class="btn" href="#videos">Watch our Canada videos</a></div></section>
 
 <section id="glance" class="chapter"><div class="chapterHead"><div class="chapterNo">01</div><div><div class="chapterKicker">Canada at a glance</div><h2>One country. Two very different journeys.</h2></div></div><div class="card"><div class="highlightGrid"><div class="dest"><h3>🍁 Eastern Canada</h3><p>Our 2009 road trip took us from Toronto through Montréal, Québec City, Ottawa and Niagara Falls, then east to Prince Edward Island, Nova Scotia and Newfoundland.</p></div><div class="dest"><h3>⛰️ Western Canada</h3><p>In 2024 we returned for Calgary and the Stampede, a three-day Rockies adventure through Yoho, Banff and Jasper, then finished in Vancouver.</p></div><div class="dest"><h3>🇮🇪 Biggest surprise</h3><p>Newfoundland. The Irish accents, music, place names and the Irish Loop on the Avalon Peninsula stopped us in our tracks.</p></div><div class="dest"><h3>🧊 Biggest wow moment</h3><p>Walking on the Athabasca Glacier, surrounded by the Canadian Rockies, was one of those travel moments we'll never forget.</p></div></div></div><div class="card accentEast"><div class="miniLabel">A country shaped by two languages</div><h3>🇫🇷 Why is part of Canada French-speaking?</h3><p>French roots in Canada stretch back more than four centuries, to the settlements of New France in the early 1600s. After Britain took control of New France in the 18th century, French-speaking communities remained — especially along the St Lawrence River — and their language, culture and identity endured.</p><p>Today, English and French are Canada's two official languages at federal level. Québec is the heartland of French-speaking Canada, while Francophone and Acadian communities are found well beyond the province too. Travelling through Montréal and Québec City made that side of Canada especially vivid for us: the language, architecture and atmosphere can feel dramatically different from Toronto just a few hours away.</p></div></section>
 
-<section id="trips" class="chapter"><div class="chapterHead"><div class="chapterNo">02</div><div><div class="chapterKicker">Our Canada story</div><h2>Two trips that couldn't have been more different</h2></div></div><div class="twoTrips"><article class="tripCard east"><div class="tripYear">Road trip · 2009</div><h3>🍁 Eastern Canada</h3><p><strong>Toronto → Montréal → Québec City → Ottawa → Niagara Falls → Prince Edward Island → Nova Scotia → Newfoundland</strong></p><p>Big cities, French-Canadian culture, Atlantic coastlines and an unexpectedly emotional Irish connection at the very end.</p><a class="btn red" href="/eastern-canada.html">🍁 Full Eastern Canada guide →</a></article><article class="tripCard west"><div class="tripYear">Rockies trip · 2024</div><h3>⛰️ Western Canada</h3><p><strong>Calgary → Yoho & Banff → Columbia Icefield → Jasper → Vancouver → Alaska</strong></p><p>The Stampede, turquoise lakes, glaciers, mountain roads and one of the most spectacular cities we've visited.</p><a class="btn primary" href="/vancouver-canada-experiences.html">⛰️ Full Rockies & Vancouver guide →</a></article></div></section>
 
-<section id="east" class="chapter"><div class="chapterHead"><div class="chapterNo">03</div><div><div class="chapterKicker">Road trip · 2009</div><h2>Eastern Canada — Toronto to Newfoundland</h2></div></div><div class="card accentEast"><p>In 2009 we embarked on one of our greatest road trips — starting in <strong>Toronto</strong> and travelling all the way to Newfoundland. It gave us cosmopolitan cities, French and British heritage, Niagara Falls, the Atlantic provinces and one of the strongest Irish connections we've ever encountered abroad.</p><div class="quote">“We knew about Newfoundland's Irish heritage. We weren't prepared for how familiar it would actually feel.”</div><div class="route"><span class="stop">🏙️ Toronto</span><span class="arrow">→</span><span class="stop">🇫🇷 Montréal</span><span class="arrow">→</span><span class="stop">⚜️ Québec City</span><span class="arrow">→</span><span class="stop">🥁 Ottawa</span><span class="arrow">→</span><span class="stop">💦 Niagara</span><span class="arrow">→</span><span class="stop">🏝️ PEI</span><span class="arrow">→</span><span class="stop">⚓ Nova Scotia</span><span class="arrow">→</span><span class="stop">🇮🇪 Newfoundland</span></div></div>
+<section id="journey-map" class="chapter">
+  <div class="chapterHead"><div class="chapterNo">02</div><div><div class="chapterKicker">Two trips · fifteen years apart</div><h2>Our Canada journeys — mapped</h2></div></div>
+  <div class="card canadaMapCard">
+    <div class="canadaMapIntro">
+      <p>Two completely different Canadian adventures on one map: our 2009 journey from Toronto through Eastern Canada to Newfoundland, and our 2024 trip from Calgary through the Canadian Rockies to Vancouver. <strong>Tap any marker</strong> for the story behind the stop.</p>
+    </div>
+    <div id="canadaJourneyMap" aria-label="Interactive map of our Canada journeys"></div>
+    <div class="canadaMapLegend">
+      <span class="canadaMapLegendItem"><span class="canadaMapDot" style="background:#d52b1e"></span>Eastern Canada · 2009</span>
+      <span class="canadaMapLegendItem"><span class="canadaMapDot" style="background:#1d4f73"></span>Western Canada · 2024</span>
+    </div>
+  </div>
+</section>
+
+<section id="trips" class="chapter"><div class="chapterHead"><div class="chapterNo">03</div><div><div class="chapterKicker">Our Canada story</div><h2>Two trips that couldn't have been more different</h2></div></div><div class="twoTrips"><article class="tripCard east"><div class="tripYear">Road trip · 2009</div><h3>🍁 Eastern Canada</h3><p><strong>Toronto → Montréal → Québec City → Ottawa → Niagara Falls → Prince Edward Island → Nova Scotia → Newfoundland</strong></p><p>Big cities, French-Canadian culture, Atlantic coastlines and an unexpectedly emotional Irish connection at the very end.</p><a class="btn red" href="/eastern-canada.html">🍁 Full Eastern Canada guide →</a></article><article class="tripCard west"><div class="tripYear">Rockies trip · 2024</div><h3>⛰️ Western Canada</h3><p><strong>Calgary → Yoho & Banff → Columbia Icefield → Jasper → Vancouver → Alaska</strong></p><p>The Stampede, turquoise lakes, glaciers, mountain roads and one of the most spectacular cities we've visited.</p><a class="btn primary" href="/vancouver-canada-experiences.html">⛰️ Full Rockies & Vancouver guide →</a></article></div></section>
+
+<section id="east" class="chapter"><div class="chapterHead"><div class="chapterNo">04</div><div><div class="chapterKicker">Road trip · 2009</div><h2>Eastern Canada — Toronto to Newfoundland</h2></div></div><div class="card accentEast"><p>In 2009 we embarked on one of our greatest road trips — starting in <strong>Toronto</strong> and travelling all the way to Newfoundland. It gave us cosmopolitan cities, French and British heritage, Niagara Falls, the Atlantic provinces and one of the strongest Irish connections we've ever encountered abroad.</p><div class="quote">“We knew about Newfoundland's Irish heritage. We weren't prepared for how familiar it would actually feel.”</div><div class="route"><span class="stop">🏙️ Toronto</span><span class="arrow">→</span><span class="stop">🇫🇷 Montréal</span><span class="arrow">→</span><span class="stop">⚜️ Québec City</span><span class="arrow">→</span><span class="stop">🥁 Ottawa</span><span class="arrow">→</span><span class="stop">💦 Niagara</span><span class="arrow">→</span><span class="stop">🏝️ PEI</span><span class="arrow">→</span><span class="stop">⚓ Nova Scotia</span><span class="arrow">→</span><span class="stop">🇮🇪 Newfoundland</span></div></div>
 <div class="destGrid"><div class="dest"><h3>🏙️ Toronto</h3><p>Our starting point for the 2009 trip: a huge, energetic, multicultural city and the launch pad for the journey east.</p></div><div class="dest"><h3>🇫🇷 Montréal</h3><p>French-Canadian culture, Old Montréal, food, music and a city with a character completely its own.</p></div><div class="dest"><h3>⚜️ Québec City</h3><p>One of our favourite parts of the entire 2009 trip. The old streets, French language, historic architecture and views around Château Frontenac gave Québec City a character unlike anywhere else we visited in Canada.</p></div><div class="dest"><h3>🥁 Ottawa</h3><p>Canada's capital surprised us. Parliament, museums and seeing traditional Pow Wow dancing became one of the trip's most memorable cultural experiences.</p></div><div class="dest"><h3>💦 Niagara Falls</h3><p>No photograph prepares you for the noise, spray and sheer volume of water. It exceeded the hype for us.</p></div><div class="dest"><h3>🏝️ Prince Edward Island</h3><p>Red-soiled farmland, beaches, fishing villages and a gentler pace — a completely different side of Canada.</p></div><div class="dest"><h3>⚓ Nova Scotia</h3><p>Atlantic coastline, seafood culture, colourful communities and strong Celtic connections.</p></div><div class="dest" style="grid-column:1/-1"><h3>🇮🇪 Newfoundland & the Irish Loop</h3><p>This was the extraordinary surprise. The accents, place names, music and warmth felt uncannily familiar. Driving the Irish Loop on the Avalon Peninsula became one of the most unexpectedly emotional travel experiences we've ever had.</p></div></div></section>
 
-<section id="west" class="chapter"><div class="chapterHead"><div class="chapterNo">04</div><div><div class="chapterKicker">Rockies adventure · 2024</div><h2>Western Canada — Calgary, the Rockies & Vancouver</h2></div></div><div class="card accentWest"><p>Fifteen years after Eastern Canada, we came back for a completely different adventure: Calgary for the world-famous Stampede, three packed days through the Canadian Rockies, the Columbia Icefield and Jasper, then Vancouver before boarding our Alaskan cruise.</p><div class="route"><span class="stop">🤠 Calgary</span><span class="arrow">→</span><span class="stop">🏔️ Yoho & Banff</span><span class="arrow">→</span><span class="stop">🧊 Columbia Icefield</span><span class="arrow">→</span><span class="stop">🦌 Jasper</span><span class="arrow">→</span><span class="stop">🌊 Vancouver</span></div></div>
+<section id="west" class="chapter"><div class="chapterHead"><div class="chapterNo">05</div><div><div class="chapterKicker">Rockies adventure · 2024</div><h2>Western Canada — Calgary, the Rockies & Vancouver</h2></div></div><div class="card accentWest"><p>Fifteen years after Eastern Canada, we came back for a completely different adventure: Calgary for the world-famous Stampede, three packed days through the Canadian Rockies, the Columbia Icefield and Jasper, then Vancouver before boarding our Alaskan cruise.</p><div class="route"><span class="stop">🤠 Calgary</span><span class="arrow">→</span><span class="stop">🏔️ Yoho & Banff</span><span class="arrow">→</span><span class="stop">🧊 Columbia Icefield</span><span class="arrow">→</span><span class="stop">🦌 Jasper</span><span class="arrow">→</span><span class="stop">🌊 Vancouver</span></div></div>
 <div class="card"><h3>🤠 Calgary & the Stampede</h3><p>The Stampede was one of the greatest events we've attended anywhere: rodeo, chuckwagon racing, live music, fairground energy and an entire city getting involved. Calgary was also our gateway to the mountains.</p><div class="photoGrid"><img src="/img/calgary.jpg" alt="Calgary skyline — Two for the Row'd" loading="lazy"><img src="/img/calgary2.jpg" alt="Calgary city skyline — Two for the Row'd" loading="lazy"></div></div>
 <div class="card itinerary accentGreen"><h3>⛰️ Our 3-day Canadian Rockies itinerary</h3><p>We did a guided three-day tour, which let us cover an enormous amount without having to organise every stop ourselves.</p><details open><summary>Day 1 — Calgary → Yoho → Lake Louise → Moraine Lake → Banff</summary><ul><li>Lake Louise</li><li>Moraine Lake</li><li>Natural Bridge</li><li>Emerald Lake</li><li>Lower Spiral Tunnels</li></ul></details><details><summary>Day 2 — Banff → Bow Lake → Columbia Icefield → Athabasca Falls → Jasper</summary><ul><li>Bow Lake</li><li>Icefields Parkway</li><li>Columbia Icefield & Athabasca Glacier</li><li>Athabasca Falls</li><li>Jasper</li></ul></details><details><summary>Day 3 — Jasper → Maligne Lake → Peyto Lake → Calgary</summary><ul><li>Maligne Lake</li><li>Maligne Canyon</li><li>Medicine Lake</li><li>Peyto Lake</li><li>Crowfoot Glacier</li></ul></details></div>
 <div class="card"><h3>🧊 The Icefield Explorer</h3><p>One of the most unusual experiences of the trip. The Icefield Explorer took us onto the Athabasca Glacier, where we stepped out and actually walked on the ice surrounded by mountains.</p></div><div class="card"><h3>💎 The lakes</h3><p>Lake Louise, Moraine Lake, Peyto Lake, Bow Lake, Emerald Lake and Maligne Lake — the turquoise and jade colours were every bit as spectacular as we'd hoped.</p></div><div class="card"><h3>🌊 Vancouver</h3><p>After the mountains, Vancouver felt like another world: glass towers, ocean, mountains on the horizon. The Panorama Seaplane tour was a standout, and the hop-on hop-off bus gave us an easy way to cover the city before our cruise.</p><div class="photoGrid"><img src="/img/vancouver.jpg" alt="Vancouver — Two for the Row'd" loading="lazy"><img src="/img/vancouver2.jpg" alt="Vancouver Canada — Two for the Row'd" loading="lazy"></div><div class="links" style="margin-top:16px"><a class="btn" href="/alaska-cruise.html">Continue to our Alaska cruise diary →</a></div></div></section>
 
-<section id="photos" class="chapter"><div class="chapterHead"><div class="chapterNo">05</div><div><div class="chapterKicker">Canada in pictures</div><h2>Two trips, coast to coast</h2></div></div><div class="card"><div class="photoGrid">
+<section id="photos" class="chapter"><div class="chapterHead"><div class="chapterNo">06</div><div><div class="chapterKicker">Canada in pictures</div><h2>Two trips, coast to coast</h2></div></div><div class="card"><div class="photoGrid">
 <img src="/img/toronto.jpg" alt="CN Tower in Toronto" loading="lazy"><img src="/img/toronto2.jpg" alt="Toronto street scene" loading="lazy"><img src="/img/montreal.jpg" alt="Montreal waterfront skyline" loading="lazy"><img src="/img/montreal2.jpg" alt="Street in Old Montreal" loading="lazy"><img src="/img/quebec.jpg" alt="Quebec City streets" loading="lazy"><img src="/img/quebec1.jpg" alt="Historic street in Quebec City" loading="lazy"><img src="/img/quebec2.jpg" alt="Quebec City sign" loading="lazy"><img src="/img/quebec3.jpg" alt="Chateau Frontenac and Quebec City" loading="lazy"><img src="/img/ottawa.jpg" alt="Parliament Hill in Ottawa" loading="lazy"><img src="/img/ottawa2.jpg" alt="Peace Tower in Ottawa" loading="lazy"><img src="/img/niagara.jpg" alt="Niagara Falls" loading="lazy"><img src="/img/niagara2.jpg" alt="Niagara Falls close view" loading="lazy"><img src="/img/prince ed.jpg" alt="Lighthouse on Prince Edward Island" loading="lazy"><img src="/img/prince ed2.jpg" alt="Prince Edward Island lighthouse" loading="lazy"><img src="/img/nova scotia.jpg" alt="Nova Scotia harbour" loading="lazy"><img src="/img/nova scotia2.jpg" alt="Nova Scotia lighthouse" loading="lazy"><img src="/img/newfoundland.jpg" alt="Newfoundland coastal village" loading="lazy"><img src="/img/newfoundland2.jpg" alt="Newfoundland coastline" loading="lazy"><img src="/img/calgary.jpg" alt="Calgary skyline" loading="lazy"><img src="/img/calgary2.jpg" alt="Calgary city" loading="lazy"><img src="/img/rockies.jpg" alt="Canadian Rockies river and mountains" loading="lazy"><img src="/img/rockies2.jpg" alt="Canadian Rockies mountain landscape" loading="lazy"><img src="/img/vancouver.jpg" alt="Vancouver waterfront skyline" loading="lazy"><img src="/img/vancouver2.jpg" alt="Vancouver harbour from the air" loading="lazy">
 </div></div></section>
 
-<section id="videos" class="chapter"><div class="chapterHead"><div class="chapterNo">06</div><div><div class="chapterKicker">Watch the trips</div><h2>Our Canada videos</h2></div></div><div class="videoGrid"><div class="videoCard"><div class="videoFrame landscape"><iframe loading="lazy" src="https://www.youtube.com/embed/gXnJwAspD8A" title="Eastern Canada — Two for the Row'd" allowfullscreen></iframe></div><h3 style="margin-top:12px">🍁 Eastern Canada</h3><p>Montréal, Ottawa, Niagara, the Atlantic provinces and Newfoundland.</p></div><div class="videoCard"><div class="videoFrame"><iframe loading="lazy" src="https://www.youtube.com/embed/rrQ_a9fLIpc" title="Icefield Explorer — Two for the Row'd" allowfullscreen></iframe></div><h3 style="margin-top:12px">🧊 Icefield Explorer</h3><p>Our Athabasca Glacier experience.</p></div><div class="videoCard"><div class="videoFrame"><iframe loading="lazy" src="https://www.youtube.com/embed/zL3DFIEq6lA" title="Canadian Rockies lakes — Two for the Row'd" allowfullscreen></iframe></div><h3 style="margin-top:12px">💎 Rockies Lakes</h3><p>The extraordinary lakes of the Canadian Rockies.</p></div><div class="videoCard"><div class="videoFrame"><iframe loading="lazy" src="https://www.youtube.com/embed/ueyBfcQxNTg" title="Vancouver Panorama Seaplane — Two for the Row'd" allowfullscreen></iframe></div><h3 style="margin-top:12px">✈️ Vancouver Seaplane</h3><p>Our Panorama Seaplane flight over Vancouver.</p></div><div class="videoCard"><div class="videoFrame"><iframe loading="lazy" src="https://www.youtube.com/embed/DCCKVM5d3oc" title="Calgary Stampede — Two for the Row'd" allowfullscreen></iframe></div><h3 style="margin-top:12px">🤠 Calgary Stampede</h3><p>A taste of the atmosphere at the Calgary Stampede.</p></div></div></section>
+<section id="videos" class="chapter"><div class="chapterHead"><div class="chapterNo">07</div><div><div class="chapterKicker">Watch the trips</div><h2>Our Canada videos</h2></div></div><div class="videoGrid"><div class="videoCard"><div class="videoFrame landscape"><iframe loading="lazy" src="https://www.youtube.com/embed/gXnJwAspD8A" title="Eastern Canada — Two for the Row'd" allowfullscreen></iframe></div><h3 style="margin-top:12px">🍁 Eastern Canada</h3><p>Montréal, Ottawa, Niagara, the Atlantic provinces and Newfoundland.</p></div><div class="videoCard"><div class="videoFrame"><iframe loading="lazy" src="https://www.youtube.com/embed/rrQ_a9fLIpc" title="Icefield Explorer — Two for the Row'd" allowfullscreen></iframe></div><h3 style="margin-top:12px">🧊 Icefield Explorer</h3><p>Our Athabasca Glacier experience.</p></div><div class="videoCard"><div class="videoFrame"><iframe loading="lazy" src="https://www.youtube.com/embed/zL3DFIEq6lA" title="Canadian Rockies lakes — Two for the Row'd" allowfullscreen></iframe></div><h3 style="margin-top:12px">💎 Rockies Lakes</h3><p>The extraordinary lakes of the Canadian Rockies.</p></div><div class="videoCard"><div class="videoFrame"><iframe loading="lazy" src="https://www.youtube.com/embed/ueyBfcQxNTg" title="Vancouver Panorama Seaplane — Two for the Row'd" allowfullscreen></iframe></div><h3 style="margin-top:12px">✈️ Vancouver Seaplane</h3><p>Our Panorama Seaplane flight over Vancouver.</p></div><div class="videoCard"><div class="videoFrame"><iframe loading="lazy" src="https://www.youtube.com/embed/DCCKVM5d3oc" title="Calgary Stampede — Two for the Row'd" allowfullscreen></iframe></div><h3 style="margin-top:12px">🤠 Calgary Stampede</h3><p>A taste of the atmosphere at the Calgary Stampede.</p></div></div></section>
 
-<section id="tours" class="chapter"><div class="chapterHead"><div class="chapterNo">07</div><div><div class="chapterKicker">Tours, stays & virtual drives</div><h2>Plan your own Canada adventure</h2></div></div>
+<section id="tours" class="chapter"><div class="chapterHead"><div class="chapterNo">08</div><div><div class="chapterKicker">Tours, stays & virtual drives</div><h2>Plan your own Canada adventure</h2></div></div>
 <div class="card"><h3>🎫 GetYourGuide Canada</h3><div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="168991" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VYORXUN"></div></div>
 <div class="card"><h3>🧭 Multi-day tours</h3><div class="links"><a class="btn primary" href="https://www.tourradar.com/t/299002?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">Canadian Rockies tour →</a><a class="btn primary" href="https://www.tourradar.com/t/321989?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">Québec tour →</a><a class="btn primary" href="https://www.tourradar.com/t/235055?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">Newfoundland tour →</a></div></div>
 <div class="card"><h3>🏨 Find a stay</h3><div class="links"><a class="btn" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1406953&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fhotels%2Fsearchresult%2F%3Froom_num%3D1%26adult_num%3D2%26child_num%3D0%26stype%3Dcity%26svalue%3D365404%26override%3DMontreal%252C%2520Quebec%2520Province%252C%2520Canada%26title%3DMontreal%26city_id%3D365404%26currency%3DUSD" target="_blank" rel="noopener sponsored">Montréal hotels →</a><a class="btn" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1406952&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fhotels%2Fsearchresult%2F%3Froom_num%3D1%26adult_num%3D2%26child_num%3D0%26stype%3Ddistrict%26svalue%3D40157407%26override%3DNewfoundland%26title%3DNewfoundland%26currency%3DUSD" target="_blank" rel="noopener sponsored">Newfoundland hotels →</a><a class="btn" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1406954&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fhotels%2Fsearchresult%2F%3Froom_num%3D1%26adult_num%3D2%26child_num%3D0%26stype%3Dcity%26svalue%3D702056%26override%3DCalgary%252C%2520Alberta%252C%2520Canada%26title%3DCalgary%26city_id%3D702056%26currency%3DUSD" target="_blank" rel="noopener sponsored">Calgary hotels →</a><a class="btn" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1406951&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fhotels%2Fsearchresult%2F%3Froom_num%3D1%26adult_num%3D2%26child_num%3D0%26stype%3Dcity%26svalue%3D534%26override%3DVancouver%252C%2520British%2520Columbia%252C%2520Canada%26title%3DVancouver%26city_id%3D534%26currency%3DUSD" target="_blank" rel="noopener sponsored">Vancouver hotels →</a></div><p class="disclosure"><strong>Affiliate disclosure:</strong> If you book through our links we may earn a small commission at no extra cost to you.</p></div>
@@ -57,10 +85,234 @@
 <div class="dest"><h3>Vancouver</h3><div class="links"><a class="btn" href="https://drivefromhome.com/cities/vancouver/" target="_blank" rel="noopener">City guide</a><a class="btn" href="https://drivefromhome.com/city/?city=YVR" target="_blank" rel="noopener">Start driving</a></div></div>
 </div></div></section>
 
-<section id="before" class="chapter"><div class="chapterHead"><div class="chapterNo">08</div><div><div class="chapterKicker">Before you go</div><h2>What we'd keep in mind for Canada</h2></div></div><div class="card"><div class="highlightGrid"><div class="dest"><h3>🗺️ Don't underestimate the scale</h3><p>Canada is enormous. Our two trips worked because each focused on a region rather than trying to cross the whole country at once.</p></div><div class="dest"><h3>🤠 Time Calgary carefully</h3><p>If the Stampede is part of your plan, build the western itinerary around those dates rather than trying to squeeze it in.</p></div><div class="dest"><h3>⛰️ A guided Rockies tour worked for us</h3><p>We covered a huge number of major stops in three days without having to manage the driving and logistics ourselves.</p></div><div class="dest"><h3>🚢 Vancouver pairs brilliantly with Alaska</h3><p>We used Vancouver as the final Canadian stop before sailing north. Read the separate Alaska diary for that part of the journey.</p></div></div></div></section>
+<section id="before" class="chapter"><div class="chapterHead"><div class="chapterNo">09</div><div><div class="chapterKicker">Before you go</div><h2>What we'd keep in mind for Canada</h2></div></div><div class="card"><div class="highlightGrid"><div class="dest"><h3>🗺️ Don't underestimate the scale</h3><p>Canada is enormous. Our two trips worked because each focused on a region rather than trying to cross the whole country at once.</p></div><div class="dest"><h3>🤠 Time Calgary carefully</h3><p>If the Stampede is part of your plan, build the western itinerary around those dates rather than trying to squeeze it in.</p></div><div class="dest"><h3>⛰️ A guided Rockies tour worked for us</h3><p>We covered a huge number of major stops in three days without having to manage the driving and logistics ourselves.</p></div><div class="dest"><h3>🚢 Vancouver pairs brilliantly with Alaska</h3><p>We used Vancouver as the final Canadian stop before sailing north. Read the separate Alaska diary for that part of the journey.</p></div></div></div></section>
 
-<section id="faq" class="chapter faq"><div class="chapterHead"><div class="chapterNo">09</div><div><div class="chapterKicker">Common questions</div><h2>Canada FAQ</h2></div></div><div class="card"><details open><summary>Where did your 2009 Eastern Canada trip start?</summary><p>Toronto. From there we travelled through Montréal, Québec City, Ottawa and Niagara Falls before continuing to Prince Edward Island, Nova Scotia and Newfoundland.</p></details><details><summary>What were your favourite parts of Eastern Canada?</summary><p>Québec City was one of our favourite stops of the whole trip, while Newfoundland surprised us with its strong Irish connection and the unforgettable drive around the Irish Loop.</p></details><details><summary>Was the Calgary Stampede worth it?</summary><p>For us, absolutely. It was one of the greatest events we've attended anywhere, and the whole city atmosphere was part of the experience.</p></details><details><summary>Was the three-day Canadian Rockies tour worth it?</summary><p>Yes. It let us see Lake Louise, Moraine Lake, Yoho, the Columbia Icefield, Jasper, Maligne Lake, Peyto Lake and much more without having to organise every leg ourselves.</p></details><details><summary>What was a standout experience in Vancouver?</summary><p>The Panorama Seaplane tour. Taking off from the downtown waterfront and seeing Vancouver, Burrard Inlet and the surrounding mountains from the air was spectacular.</p></details></div></section>
+<section id="faq" class="chapter faq"><div class="chapterHead"><div class="chapterNo">10</div><div><div class="chapterKicker">Common questions</div><h2>Canada FAQ</h2></div></div><div class="card"><details open><summary>Where did your 2009 Eastern Canada trip start?</summary><p>Toronto. From there we travelled through Montréal, Québec City, Ottawa and Niagara Falls before continuing to Prince Edward Island, Nova Scotia and Newfoundland.</p></details><details><summary>What were your favourite parts of Eastern Canada?</summary><p>Québec City was one of our favourite stops of the whole trip, while Newfoundland surprised us with its strong Irish connection and the unforgettable drive around the Irish Loop.</p></details><details><summary>Was the Calgary Stampede worth it?</summary><p>For us, absolutely. It was one of the greatest events we've attended anywhere, and the whole city atmosphere was part of the experience.</p></details><details><summary>Was the three-day Canadian Rockies tour worth it?</summary><p>Yes. It let us see Lake Louise, Moraine Lake, Yoho, the Columbia Icefield, Jasper, Maligne Lake, Peyto Lake and much more without having to organise every leg ourselves.</p></details><details><summary>What was a standout experience in Vancouver?</summary><p>The Panorama Seaplane tour. Taking off from the downtown waterfront and seeing Vancouver, Burrard Inlet and the surrounding mountains from the air was spectacular.</p></details></div></section>
 
 <div class="card" style="text-align:center"><div class="miniLabel">Two for the Row'd</div><h2>Canada gave us two completely different adventures.</h2><p>From Toronto to Newfoundland in 2009, then Calgary to Vancouver fifteen years later — and we'd go back again.</p><div class="links" style="justify-content:center"><a class="btn red" href="#glance">Back to the top ↑</a><a class="btn" href="https://twofortherowd.com/#map">Explore more destinations →</a></div></div>
 </main><footer>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> · <a href="/alaska-cruise.html">Alaska cruise diary</a> · <a href="https://twofortherowd.com/#map">Our destinations</a></footer><script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+
+<script>
+(function(){
+  if(typeof L==='undefined') return;
+  const el=document.getElementById('canadaJourneyMap'); if(!el) return;
+  const map=L.map(el,{scrollWheelZoom:false}).setView([56,-95],4);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+  const stops=[
+    // EASTERN CANADA 2009 (Red/Sunset)
+    {
+      trip: 'eastern',
+      year: '2009',
+      stop: 'Toronto',
+      lat: 43.6629,
+      lng: -79.3957,
+      notes: 'Starting point for our 2009 Eastern Canada road trip. Cosmopolitan city and gateway to the east.',
+      color: '#d52b1e',
+      icon: '🏙️',
+      url: '/eastern-canada.html'
+    },
+    {
+      trip: 'eastern',
+      year: '2009',
+      stop: 'Montréal',
+      lat: 45.5017,
+      lng: -73.5673,
+      notes: 'French-Canadian culture, Old Montréal, food, music and unique character.',
+      color: '#d52b1e',
+      icon: '🇫🇷',
+      url: '/eastern-canada.html'
+    },
+    {
+      trip: 'eastern',
+      year: '2009',
+      stop: 'Québec City',
+      lat: 46.8139,
+      lng: -71.2080,
+      notes: 'One of our favourite stops of the entire 2009 trip. Historic architecture, French language and Château Frontenac.',
+      color: '#d52b1e',
+      icon: '⚜️',
+      url: '/eastern-canada.html'
+    },
+    {
+      trip: 'eastern',
+      year: '2009',
+      stop: 'Ottawa',
+      lat: 45.4215,
+      lng: -75.6972,
+      notes: 'Canada\'s capital. Parliament, museums and memorable Pow Wow dancing experience.',
+      color: '#d52b1e',
+      icon: '🥁',
+      url: '/eastern-canada.html'
+    },
+    {
+      trip: 'eastern',
+      year: '2009',
+      stop: 'Niagara Falls',
+      lat: 43.0896,
+      lng: -79.0849,
+      notes: 'The noise, spray and sheer volume of water exceeded the hype for us.',
+      color: '#d52b1e',
+      icon: '💦',
+      url: '/eastern-canada.html'
+    },
+    {
+      trip: 'eastern',
+      year: '2009',
+      stop: 'Prince Edward Island',
+      lat: 46.2340,
+      lng: -62.9673,
+      notes: 'Red-soiled farmland, beaches and fishing villages. A gentler pace of Canada.',
+      color: '#d52b1e',
+      icon: '🏝️',
+      url: '/eastern-canada.html'
+    },
+    {
+      trip: 'eastern',
+      year: '2009',
+      stop: 'Nova Scotia',
+      lat: 45.3658,
+      lng: -62.6212,
+      notes: 'Atlantic coastline, seafood culture, colourful communities and Celtic connections.',
+      color: '#d52b1e',
+      icon: '⚓',
+      url: '/eastern-canada.html'
+    },
+    {
+      trip: 'eastern',
+      year: '2009',
+      stop: 'Newfoundland',
+      lat: 47.5615,
+      lng: -52.7126,
+      notes: 'The extraordinary surprise. Irish accents, place names, music and warmth felt uncannily familiar. The Irish Loop was unexpectedly emotional.',
+      color: '#d52b1e',
+      icon: '🇮🇪',
+      url: '/eastern-canada.html'
+    },
+
+    // WESTERN CANADA 2024 (Blue)
+    {
+      trip: 'western',
+      year: '2024',
+      stop: 'Calgary',
+      lat: 51.0447,
+      lng: -114.0719,
+      notes: 'The Stampede was one of the greatest events we\'ve attended anywhere. Gateway to the mountains.',
+      color: '#1d4f73',
+      icon: '🤠',
+      url: '/vancouver-canada-experiences.html'
+    },
+    {
+      trip: 'western',
+      year: '2024',
+      stop: 'Yoho & Lake Louise',
+      lat: 53.5592,
+      lng: -116.4556,
+      notes: 'Breathtaking turquoise lakes and the beginning of our three-day Rockies adventure.',
+      color: '#1d4f73',
+      icon: '💎',
+      url: '/vancouver-canada-experiences.html'
+    },
+    {
+      trip: 'western',
+      year: '2024',
+      stop: 'Moraine Lake',
+      lat: 53.6314,
+      lng: -115.8234,
+      notes: 'Jade-coloured perfection. One of the most spectacular lakes we\'ve ever seen.',
+      color: '#1d4f73',
+      icon: '🏔️',
+      url: '/vancouver-canada-experiences.html'
+    },
+    {
+      trip: 'western',
+      year: '2024',
+      stop: 'Banff',
+      lat: 51.1788,
+      lng: -115.5708,
+      notes: 'Mountain town surrounded by peaks. Gateway to the Canadian Rockies adventure.',
+      color: '#1d4f73',
+      icon: '🏔️',
+      url: '/vancouver-canada-experiences.html'
+    },
+    {
+      trip: 'western',
+      year: '2024',
+      stop: 'Columbia Icefield',
+      lat: 52.2019,
+      lng: -117.2163,
+      notes: 'Icefield Explorer took us onto the Athabasca Glacier. Walking on the ice surrounded by mountains — unforgettable.',
+      color: '#1d4f73',
+      icon: '🧊',
+      url: '/vancouver-canada-experiences.html'
+    },
+    {
+      trip: 'western',
+      year: '2024',
+      stop: 'Jasper',
+      lat: 52.8728,
+      lng: -118.0957,
+      notes: 'Mountain town in the heart of the Rockies. Base for spectacular glacier and lake scenery.',
+      color: '#1d4f73',
+      icon: '🦌',
+      url: '/vancouver-canada-experiences.html'
+    },
+    {
+      trip: 'western',
+      year: '2024',
+      stop: 'Maligne Lake',
+      lat: 53.0928,
+      lng: -117.4873,
+      notes: 'Turquoise perfection surrounded by mountains. One of the most beautiful lakes in the Rockies.',
+      color: '#1d4f73',
+      icon: '💎',
+      url: '/vancouver-canada-experiences.html'
+    },
+    {
+      trip: 'western',
+      year: '2024',
+      stop: 'Vancouver',
+      lat: 49.2827,
+      lng: -123.1207,
+      notes: 'After the mountains, a completely different world. Glass towers, ocean, mountains on the horizon. Panorama Seaplane tour was spectacular.',
+      color: '#1d4f73',
+      icon: '🌊',
+      url: '/vancouver-canada-experiences.html'
+    }
+  ];
+  const easternRoute=[
+    [43.6629, -79.3957],  // Toronto
+    [45.5017, -73.5673],  // Montréal
+    [46.8139, -71.2080],  // Québec City
+    [45.4215, -75.6972],  // Ottawa
+    [43.0896, -79.0849],  // Niagara Falls
+    [46.2340, -62.9673],  // Prince Edward Island
+    [45.3658, -62.6212],  // Nova Scotia
+    [47.5615, -52.7126]   // Newfoundland
+  ];
+  const westernRoute=[
+    [51.0447, -114.0719], // Calgary
+    [53.5592, -116.4556], // Yoho/Lake Louise
+    [53.6314, -115.8234], // Moraine Lake
+    [51.1788, -115.5708], // Banff
+    [52.2019, -117.2163], // Columbia Icefield
+    [52.8728, -118.0957], // Jasper
+    [53.0928, -117.4873], // Maligne Lake
+    [49.2827, -123.1207]  // Vancouver
+  ];
+  function icon(color){
+    return L.divIcon({className:'',html:'<div style="background:'+color+';width:28px;height:28px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(23,18,13,.25)"></div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]});
+  }
+  stops.forEach(s=>{
+    const marker=L.marker([s.lat,s.lng],{icon:icon(s.color)}).addTo(map);
+    const trip=s.trip==='eastern'?'🍁 Eastern Canada · '+s.year:'⛰️ Western Canada · '+s.year;
+    const link=s.url?'<a class="canadaPopupLink" href="'+s.url+'">Explore our guide →</a>':'';
+    marker.bindPopup('<div class="canadaPopup"><div class="canadaPopupTrip" style="color:'+s.color+'">'+trip+'</div><div class="canadaPopupTitle">'+s.icon+' '+s.stop+'</div><div class="canadaPopupText">'+s.notes+'</div>'+link+'</div>',{maxWidth:280});
+  });
+  L.polyline(easternRoute,{color:'#d52b1e',weight:3,opacity:.6,dashArray:'8,5',lineCap:'round',lineJoin:'round'}).addTo(map);
+  L.polyline(westernRoute,{color:'#1d4f73',weight:3,opacity:.6,dashArray:'8,5',lineCap:'round',lineJoin:'round'}).addTo(map);
+  map.setView([56,-95],4);
+  setTimeout(()=>map.invalidateSize(),250);
+})();
+</script>
+
 </body></html>
