@@ -76,7 +76,9 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -220,6 +222,18 @@
       .city-preview-grid{grid-template-columns:1fr;}
       .tab-nav{padding:10px 0;margin:16px -16px 20px;}
     }
+  
+    /* SWITZERLAND INTERACTIVE JOURNEY MAP */
+    .swissMapCard{padding:18px;overflow:hidden}
+    .swissMapIntro{padding:4px 6px 14px}
+    #swissJourneyMap{height:590px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1}
+    .swissMapLegend{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--muted)}
+    .swissMapLegendItem{display:flex;align-items:center;gap:6px}.swissMapDot{width:11px;height:11px;border-radius:50%;display:inline-block}
+    .swissPopup{font-family:var(--font-body);min-width:190px}.swissPopupTrip{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+    .swissPopupTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px}
+    .swissPopupText{font-size:12px;color:var(--ink-soft);line-height:1.5}.swissPopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--lake);text-decoration:none}
+    @media(max-width:640px){.swissMapCard{padding:12px}#swissJourneyMap{height:480px;border-radius:12px}.swissMapLegend{gap:9px;font-size:11px}}
+
   </style>
 </head>
 
@@ -303,6 +317,8 @@
 
   <!-- TAB NAVIGATION -->
   <div class="tab-nav">
+    <a href="https://twofortherowd.com/#map" class="tab-pill">🌍 Destinations</a>
+    <a href="#switzerland-map" class="tab-pill">🗺️ Switzerland Map</a>
     <a href="#at-a-glance" class="tab-pill active">🇨🇭 At a Glance</a>
     <a href="#photos" class="tab-pill">📸 Photos</a>
     <a href="#story" class="tab-pill">🚆 Our Swiss Story</a>
@@ -325,6 +341,25 @@
       <div class="highlight-item"><div class="highlight-icon">🌉</div><div class="highlight-title">Basel Later</div><p class="highlight-text">Compact Old Town on the Rhine. Our gateway to Alsace. Trams, a two-hour walking tour and Gifthüttli dinner.</p></div>
       <div class="highlight-item"><div class="highlight-icon">🚆</div><div class="highlight-title">Swiss Trains</div><p class="highlight-text">Clean, efficient, scenic and ridiculously punctual. Journeys that felt like sightseeing without needing a separate tour.</p></div>
       <div class="highlight-item"><div class="highlight-icon">💸</div><div class="highlight-title">Budget Reality</div><p class="highlight-text">Supermarket picnics became our survival strategy. Beautiful scenery, challenging prices.</p></div>
+    </div>
+  </div>
+
+
+  <!-- INTERACTIVE SWITZERLAND MAP -->
+  <div id="switzerland-map" class="section-divider">🗺️ Our Switzerland Journey Map</div>
+  <div class="card swissMapCard">
+    <div class="swissMapIntro">
+      <div class="eyebrow">
+        <span class="badge red">🚆 2005 Interrail</span>
+        <span class="badge lake">🌉 Basel return</span>
+      </div>
+      <h2>Bern, Zurich and our later return to Basel</h2>
+      <p style="color:var(--ink-soft);max-width:720px;">Our own Swiss travels centre on Bern and Zurich during our 2005 Interrail adventure, followed years later by a return to Basel on the Rhine. Tap the markers to explore the places we've actually visited.</p>
+    </div>
+    <div id="swissJourneyMap" aria-label="Interactive map of Two for the Row'd Switzerland travels"></div>
+    <div class="swissMapLegend">
+      <span class="swissMapLegendItem"><span class="swissMapDot" style="background:#c7254e"></span>2005 Interrail — Bern & Zurich</span>
+      <span class="swissMapLegendItem"><span class="swissMapDot" style="background:#d67832"></span>Later trip — Basel</span>
     </div>
   </div>
 
@@ -536,5 +571,23 @@
   <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#map">Our destinations</a></p>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<script>
+(function(){
+  if(typeof L==='undefined') return;
+  const el=document.getElementById('swissJourneyMap'); if(!el) return;
+  const map=L.map(el,{scrollWheelZoom:false});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+  const stops=[{"trip": "🚆 2005 Interrail", "stop": "Bern", "lat": 46.9479, "lng": 7.4474, "notes": "Our 2005 Interrail stop: medieval Old City, the Zytglogge, Bear Park and the Aare River.", "color": "#c7254e", "icon": "🏰", "url": "/switzerland/bern.html"}, {"trip": "🚆 2005 Interrail", "stop": "Zurich", "lat": 47.3769, "lng": 8.5472, "notes": "Our 2005 Interrail stop: Lake Zurich, Bahnhofstrasse, trams and a polished, international city atmosphere.", "color": "#c7254e", "icon": "🏙️", "url": "/switzerland/zurich.html"}, {"trip": "🌉 Later return", "stop": "Basel", "lat": 47.5596, "lng": 7.5886, "notes": "Our later return to Switzerland: Basel Old Town, the Rhine, trams, a walking tour and Gifthüttli before travelling onward to Alsace.", "color": "#d67832", "icon": "🌉", "url": "/switzerland/basel.html"}];
+  function markerIcon(c){return L.divIcon({className:'',html:'<div style="background:'+c+';width:28px;height:28px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(26,18,8,.25)"></div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]});}
+  stops.forEach(s=>{
+    const marker=L.marker([s.lat,s.lng],{icon:markerIcon(s.color)}).addTo(map);
+    marker.bindPopup('<div class="swissPopup"><div class="swissPopupTrip" style="color:'+s.color+'">'+s.trip+'</div><div class="swissPopupTitle">'+s.icon+' '+s.stop+'</div><div class="swissPopupText">'+s.notes+'</div><a class="swissPopupLink" href="'+s.url+'">Explore '+s.stop+' →</a></div>',{maxWidth:290});
+  });
+  map.fitBounds(L.latLngBounds(stops.map(s=>[s.lat,s.lng])).pad(.25));
+  setTimeout(()=>map.invalidateSize(),250);
+})();
+</script>
+
 </body>
 </html>
