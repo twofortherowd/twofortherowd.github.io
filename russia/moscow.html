@@ -108,6 +108,33 @@
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.photo-grid{grid-template-columns:1fr;}.photo-grid img{height:auto;}}
+
+    /* Tighter Moscow photo sizing */
+    .photo-card img{
+      width:auto;
+      max-width:100%;
+      max-height:480px;
+      object-fit:contain;
+      margin:0 auto;
+    }
+    @media(max-width:640px){
+      .photo-card img{
+        width:auto;
+        max-width:92%;
+        max-height:280px;
+        object-fit:contain;
+        margin:0 auto;
+      }
+      .photo-grid img{
+        width:auto;
+        max-width:92%;
+        height:auto;
+        max-height:260px;
+        object-fit:contain;
+        margin:0 auto;
+      }
+    }
+
   </style>
 </head>
 <body>
