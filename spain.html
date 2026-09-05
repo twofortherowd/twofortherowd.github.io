@@ -23,7 +23,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 
@@ -31,8 +30,8 @@
     :root{--gold:#ffd84a;--gold-dark:#e8c235;--ink:#1a1208;--ink-soft:#4a3f28;--muted:#7a6e58;--cream:#fdf8ef;--white:#ffffff;--border:rgba(26,18,8,.10);--border-mid:rgba(26,18,8,.16);--card-bg:rgba(255,255,255,.88);--shadow-sm:0 2px 8px rgba(26,18,8,.07);--shadow-md:0 8px 24px rgba(26,18,8,.10);--shadow-lg:0 16px 48px rgba(26,18,8,.13);--radius-sm:10px;--radius-md:16px;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans','Segoe UI',Arial,sans-serif;--spain-red:#C60B1E;}
     *,*::before,*::after{box-sizing:border-box;}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-    body{margin:0;font-family:var(--font-body);font-size:15px;font-weight:400;line-height:1.7;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 80% 60% at 10% 0%,rgba(198,11,30,.12) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 90% 100%,rgba(255,216,74,.15) 0%,transparent 55%);}
+    body{margin:0;font-family:var(--font-body);font-size:15px;font-weight:400;line-height:1.7;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 80% 60% at 10% 0%,rgba(198,11,30,.10) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 90% 100%,rgba(255,216,74,.15) 0%,transparent 55%);}
     *{position:relative;z-index:1;}
     h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.18;margin-top:0;}
     h1{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;margin-bottom:14px;}
@@ -41,314 +40,418 @@
     p{margin:0 0 .9rem;}p:last-child{margin-bottom:0;}
     ul,ol{margin:0 0 .9rem;padding-left:1.3rem;}li{margin-bottom:.35rem;}
     a{color:inherit;}strong{font-weight:700;}
-    .wrap{max-width:860px;margin:0 auto;padding:0 16px 60px;}
-    .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+    
+    .wrap{max-width:900px;margin:0 auto;padding:0 16px 60px;}
+
+    /* TOP BAR */
+    .backBar{background:rgba(253,248,239,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:50;}
     .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
     .backBar a:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
+    .brandMark{font-family:var(--font-display);font-size:15px;font-weight:700;background:none !important;border:none !important;box-shadow:none !important;padding:7px 8px !important;}
+
+    /* STICKY CHAPTER NAV */
+    .chapterNav{position:sticky;top:52px;z-index:40;background:rgba(253,248,239,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:8px 0;}
+    .chapterNavInner{max-width:900px;margin:0 auto;padding:0 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;}
+    .chapterNavInner::-webkit-scrollbar{display:none;}
+    .chapterNavInner a{flex-shrink:0;padding:6px 12px;font-size:12px;font-weight:700;text-decoration:none;color:var(--ink-soft);border-radius:999px;border:1px solid transparent;transition:all .15s ease;letter-spacing:.02em;}
+    .chapterNavInner a:hover{background:var(--white);border-color:var(--border);color:var(--ink);}
+
+    .breadcrumb{font-size:12px;color:var(--muted);margin:16px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center;}
+    .breadcrumb a{color:var(--muted);text-decoration:none;font-weight:600;}
+    .breadcrumb a:hover{color:var(--ink);}
+    .breadcrumb span{opacity:.5;}
+
     .card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-md);padding:24px 26px;margin-bottom:16px;backdrop-filter:blur(4px);transition:transform .18s ease,box-shadow .18s ease;}
     .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+    
     .heroCard{background:linear-gradient(160deg,#ffffff 0%,#fff5f5 45%,#ffe0e0 100%);border-color:rgba(198,11,30,.2);}
     .redCard{background:linear-gradient(160deg,#ffffff 0%,#fff5f5 55%,#ffd0d0 100%);border-color:rgba(198,11,30,.2);}
-    .goldCard{background:linear-gradient(160deg,#ffffff 0%,#fffbe8 55%,#fff0b0 100%);border-color:rgba(255,196,0,.3);}
+
     .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--ink);color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 20px rgba(26,18,8,.2);transition:transform .15s ease,box-shadow .15s ease;}
     .btn-primary:hover{background:#2e2410;transform:translateY(-2px);color:var(--white);}
-    .btn-gold{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px rgba(232,194,53,.35);transition:transform .15s ease,box-shadow .15s ease;}
-    .btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px);color:var(--ink);}
+    
     .btn-outline{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:var(--white);color:var(--ink);border:1.5px solid var(--border-mid);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
     .btn-outline:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);color:var(--ink);}
+
     .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+
     .badge{display:inline-block;padding:4px 11px;border-radius:999px;font-size:12px;font-weight:700;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);}
     .badge.outline{background:rgba(255,255,255,.8);border-color:var(--border-mid);color:var(--ink-soft);}
     .badge.red{background:rgba(198,11,30,.10);border-color:rgba(198,11,30,.25);color:var(--spain-red);}
+
     .eyebrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;}
+
     .hero-headline{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.12;margin-bottom:14px;}
     .hero-headline em{font-style:italic;color:var(--spain-red);}
+
     .hero-lead{font-size:1.05rem;line-height:1.7;color:var(--ink-soft);margin-bottom:20px;}
+
     .route-strip{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0;}
     .route-stop{background:rgba(255,255,255,.8);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;}
     .route-arrow{color:var(--muted);font-size:14px;}
-    .vibe-strip{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0;}
-    .vibe-pill{background:rgba(198,11,30,.08);border:1px solid rgba(198,11,30,.2);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:600;color:var(--spain-red);}
-    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:10px;}
-    .highlight-item{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px;}
-    .highlight-icon{font-size:22px;margin-bottom:6px;}
-    .highlight-title{font-weight:700;font-size:14px;margin-bottom:4px;}
-    .highlight-text{font-size:13px;color:var(--ink-soft);line-height:1.5;}
-    .journey-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:10px;}
-    .journey-card{text-decoration:none;color:var(--ink);display:block;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-md);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;}
-    .journey-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--spain-red);}
-    .journey-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
-    .journey-body{padding:18px 20px;}
-    .journey-kicker{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--spain-red);margin-bottom:6px;}
-    .journey-title{font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:8px;}
-    .journey-text{font-size:14px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;}
-    .journey-cta{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:var(--spain-red);}
-    #spainMap{width:100%;height:400px;border-radius:12px;margin:16px 0;}
-    .gygWidgetWrap{margin-top:14px;padding:10px;border-radius:14px;background:rgba(255,255,255,.55);border:1px solid var(--border);overflow:hidden;}
+
+    .photo-mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:190px 190px;gap:10px;margin:16px 0;}
+    .photo-mosaic img{width:100%;height:100%;object-fit:cover;border-radius:14px;box-shadow:var(--shadow-md);display:block;}
+    .photo-mosaic img:first-child{grid-row:1/3;}
+
+    .journey-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px;}
+    .journey-card{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--border);border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm);transition:.18s;}
+    .journey-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+    .journey-card img{display:block;width:100%;height:210px;object-fit:cover;}
+    .journey-body{padding:18px;}
+    .journey-kicker{font-size:10px;letter-spacing:.09em;text-transform:uppercase;font-weight:800;color:var(--muted);margin-bottom:4px;}
+    .journey-title{font-family:var(--font-display);font-size:1.25rem;font-weight:800;line-height:1.2;margin-bottom:7px;}
+    .journey-text{font-size:13px;line-height:1.55;color:var(--ink-soft);margin:0 0 10px;}
+    .journey-cta{font-size:13px;font-weight:800;color:var(--spain-red);}
+
+    .dest-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px;}
+    .dest-link{display:block;text-decoration:none;color:var(--ink);background:rgba(255,255,255,.82);border:1px solid var(--border);border-radius:14px;padding:14px;transition:.15s;}
+    .dest-link:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
+    .dest-link strong{display:block;font-size:14px;margin-bottom:3px;}
+    .dest-link span{font-size:12px;line-height:1.4;color:var(--ink-soft);}
+
+    .glance-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:12px;}
+    .glance-item{display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.7);border:1px solid var(--border);border-radius:12px;padding:12px 14px;}
+    .glance-icon{font-size:20px;flex-shrink:0;line-height:1.2;}
+    .glance-body{font-size:13.5px;line-height:1.4;}
+    .glance-label{font-weight:700;color:var(--ink);display:block;margin-bottom:2px;font-size:12px;text-transform:uppercase;letter-spacing:.02em;color:var(--muted);}
+    .glance-value{color:var(--ink);font-weight:500;}
+
+    .note{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;}
+
     .faqItem{border-bottom:1px dashed var(--border-mid);padding:14px 0;}
-    .faqItem:last-child{border-bottom:none;}
-    .faqQ{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;user-select:none;}
-    .faqQ::after{content:"+";font-size:1.4rem;line-height:1;font-weight:400;flex-shrink:0;color:var(--muted);transition:transform .2s ease;}
+    .faqItem:last-child{border-bottom:none;padding-bottom:0;}
+    .faqQ{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;user-select:none;}
+    .faqQ::after{content:"+";font-size:1.4rem;line-height:1;font-weight:400;flex-shrink:0;color:var(--spain-red);transition:transform .2s ease;}
     .faqItem.open .faqQ::after{transform:rotate(45deg);}
     .faqA{font-size:14px;line-height:1.7;color:var(--ink-soft);display:none;padding-top:10px;}
     .faqItem.open .faqA{display:block;}
-    .section-divider{display:flex;align-items:center;gap:12px;margin:8px 0 16px;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--ink);}
-    .section-divider::before,.section-divider::after{content:"";flex:1;height:1px;background:var(--border-mid);}
+
     .disclosure{font-size:12px;line-height:1.55;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px dashed var(--border-mid);}
+
+    /* CHAPTER HEADER */
+    .chapterHeader{margin:36px 0 18px;padding:0 4px;}
+    .chapterHeaderInner{display:flex;align-items:flex-end;gap:14px;padding-bottom:14px;border-bottom:2px solid var(--ink);}
+    .chapterNumber{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3rem);font-weight:900;line-height:.9;color:var(--spain-red);letter-spacing:-.02em;font-style:italic;}
+    .chapterTitle{flex:1;}
+    .chapterLabel{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+    .chapterName{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:var(--ink);line-height:1.1;letter-spacing:-.01em;}
+
+    #spainMap{width:100%;height:400px;border-radius:12px;margin:16px 0;}
+
+    .gygWidgetWrap{margin-top:14px;padding:10px;border-radius:14px;background:rgba(255,255,255,.55);border:1px solid var(--border);overflow:hidden;}
+
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
-    @media(max-width:640px){#spainMap{height:300px;}}
+
+    @media(max-width:640px){#spainMap{height:300px;} .dest-grid{grid-template-columns:1fr;} .journey-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
 
 <div class="backBar">
   <a href="https://twofortherowd.com/">← Back to Two for the Row'd</a>
-  <a href="https://twofortherowd.com/" style="font-family:var(--font-display);font-size:15px;font-weight:700;">Two for the Row'd 🇮🇪</a>
+  <a class="brandMark" href="https://twofortherowd.com/">Two for the Row'd 🇮🇪</a>
 </div>
 
+<!-- STICKY CHAPTER NAV -->
+<nav class="chapterNav" aria-label="Spain hub sections">
+  <div class="chapterNavInner">
+    <a href="#glance">At a Glance</a>
+    <a href="#photos">Photos</a>
+    <a href="#stories">Our Stories</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#before">Before You Go</a>
+    <a href="#faq">FAQ</a>
+  </div>
+</nav>
+
 <div class="wrap">
+<nav class="breadcrumb"><a href="https://twofortherowd.com/">Home</a><span>›</span><a href="https://twofortherowd.com/#destinations">Our Destinations</a><span>›</span><span>Spain</span></nav>
 
-  <!-- HERO -->
-  <div class="card heroCard">
-    <div class="eyebrow">
-      <span class="badge">🇪🇸 Spain</span>
-      <span class="badge outline">Barcelona · Madrid · Fuengirola · Costa del Sol · Alicante · Balearic Islands</span>
-      <span class="badge red">Sagrada Família · Bernabéu · Beach bars · Karaoke nights</span>
-    </div>
-    <h1 class="hero-headline">Spain —<br><em>from Barcelona's architecture to Madrid's passion and Fuengirola's perfect beaches</em></h1>
-    <p class="hero-lead">Spain is where we've returned again and again. Barcelona for the architecture and energy. Madrid for the surprising charm of the Bernabéu. Fuengirola for the beach and the people we keep going back to see. Each city has completely different character, but all of them deserve proper time and attention. This is our guide to the Spain we know.</p>
-    
-    <div class="route-strip">
-      <span class="route-stop">🏖️ Fuengirola</span>
-      <span class="route-arrow">→</span>
-      <span class="route-stop">🏛️ Barcelona</span>
-      <span class="route-arrow">→</span>
-      <span class="route-stop">⚪ Madrid</span>
-      <span class="route-arrow">→</span>
-      <span class="route-stop">🌊 Costa del Sol</span>
-      <span class="route-arrow">→</span>
-      <span class="route-stop">🌴 Alicante</span>
-      <span class="route-arrow">→</span>
-      <span class="route-stop">🏝️ Balearic Islands</span>
-    </div>
+<div class="card heroCard">
+  <div class="eyebrow">
+    <span class="badge">🇪🇸 Spain</span>
+    <span class="badge outline">Barcelona · Madrid · Fuengirola · Costa del Sol · Alicante · Balearic Islands</span>
+    <span class="badge red">Sagrada Família · Bernabéu · Beach bars · Karaoke nights</span>
+  </div>
+  <h1 class="hero-headline">Spain — <br><em>from Barcelona's architecture to Madrid's passion and the perfect Mediterranean coast</em></h1>
+  <p class="hero-lead">Spain is where we've returned again and again. Barcelona for the architecture and energy. Madrid for the surprising charm and the Bernabéu. Fuengirola for the beach and the people we keep going back to see. Each city has completely different character, but all of them deserve proper time and attention. This is our guide to the Spain we know.</p>
+  <div class="route-strip">
+    <span class="route-stop">🏖️ Fuengirola</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">🏛️ Barcelona</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">⚪ Madrid</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">🌊 Costa del Sol</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">🌴 Alicante</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop">🏝️ Balearic Islands</span>
+  </div>
+  <div class="links">
+    <a class="btn-primary" href="https://www.tourradar.com/t/291204?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book a Spain tour →</a>
+    <a class="btn-outline" href="#stories">Read our stories ↓</a>
+  </div>
+</div>
 
-    <div class="vibe-strip">
-      <span class="vibe-pill">🏛️ Sagrada Família</span>
-      <span class="vibe-pill">🏟️ Bernabéu stadium</span>
-      <span class="vibe-pill">🏖️ Mediterranean beaches</span>
-      <span class="vibe-pill">🌃 Spanish nights</span>
-      <span class="vibe-pill">🍷 Wine & tapas</span>
-      <span class="vibe-pill">🎭 Real Spanish passion</span>
-    </div>
-
-    <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/291204?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book a Spain tour →</a>
-      <a class="btn-outline" href="#destinations">Read our stories ↓</a>
+<!-- CHAPTER 01 — AT A GLANCE -->
+<div id="glance" class="chapterHeader">
+  <div class="chapterHeaderInner">
+    <div class="chapterNumber">01</div>
+    <div class="chapterTitle">
+      <div class="chapterLabel">Before you plan anything</div>
+      <div class="chapterName">Spain at a glance</div>
     </div>
   </div>
+</div>
 
-  <!-- MAP -->
-  <div class="section-divider">🗺️ Spain at a glance</div>
-  <div class="card">
-    <h2>Where we've been in Spain</h2>
-    <p>Barcelona, Madrid, Fuengirola, the Costa del Sol, Alicante and the Balearic Islands — different sides of Spain from city breaks to Mediterranean coasts and islands.</p>
-    <div id="spainMap" aria-label="Map of Spain destinations"></div>
-  </div>
-
-  <!-- QUICK GUIDE -->
-  <div class="section-divider">📋 Quick Guide to Spain</div>
-  <div class="card redCard">
-    <div class="highlights-grid">
-      <div class="highlight-item">
-        <div class="highlight-icon">🏛️</div>
-        <div class="highlight-title">Capital</div>
-        <p class="highlight-text">Madrid — Spain's largest city and cultural heart in the centre of the country.</p>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-icon">👥</div>
-        <div class="highlight-title">Population</div>
-        <p class="highlight-text">Approximately 47 million people. One of the most visited countries in Europe.</p>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-icon">💬</div>
-        <div class="highlight-title">Languages</div>
-        <p class="highlight-text">Spanish (Castilian) is official throughout. Catalan widely spoken in Barcelona and the northeast.</p>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-icon">💰</div>
-        <div class="highlight-title">Currency</div>
-        <p class="highlight-text">Euro (EUR). ATMs widely available. Credit cards accepted everywhere.</p>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-icon">🕐</div>
-        <div class="highlight-title">Time Zone</div>
-        <p class="highlight-text">Central European Time (CET, UTC+1) / Summer Time (CEST, UTC+2).</p>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-icon">⚡</div>
-        <div class="highlight-title">Electricity</div>
-        <p class="highlight-text">220V, 50Hz. European two-pin plugs standard throughout.</p>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-icon">🌡️</div>
-        <div class="highlight-title">Climate</div>
-        <p class="highlight-text">Mediterranean coast: warm summers, mild winters. Interior cooler. Best: May-June and September-October.</p>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-icon">🏨</div>
-        <div class="highlight-title">Accommodation</div>
-        <p class="highlight-text">Range from budget hostels to luxury hotels. Good value outside major cities.</p>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-icon">🍽️</div>
-        <div class="highlight-title">Food & Drink</div>
-        <p class="highlight-text">Tapas culture. Fresh seafood on the coast. Wine regions. Dinner typically 9pm onwards.</p>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-icon">🚌</div>
-        <div class="highlight-title">Getting Around</div>
-        <p class="highlight-text">Excellent train network, buses, and local metro systems in major cities. Car rental for exploring.</p>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-icon">🎒</div>
-        <div class="highlight-title">Budget</div>
-        <p class="highlight-text">Good value. Budget: €40-60/day. Mid-range: €60-120/day. Luxury: €120+/day outside major cities.</p>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-icon">🌞</div>
-        <div class="highlight-title">Sunshine</div>
-        <p class="highlight-text">Spain averages 300 days of sunshine per year. Mediterranean coast particularly sunny.</p>
-      </div>
+<div class="card redCard">
+  <div class="glance-grid">
+    <div class="glance-item">
+      <div class="glance-icon">🌍</div>
+      <div class="glance-body"><span class="glance-label">Country</span><span class="glance-value">Kingdom of Spain</span></div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon">👥</div>
+      <div class="glance-body"><span class="glance-label">Population</span><span class="glance-value">~47 million (9th largest in Europe)</span></div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon">🏛️</div>
+      <div class="glance-body"><span class="glance-label">Capital</span><span class="glance-value">Madrid</span></div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon">💬</div>
+      <div class="glance-body"><span class="glance-label">Language</span><span class="glance-value">Spanish (Castilian) · Catalan in northeast</span></div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon">💶</div>
+      <div class="glance-body"><span class="glance-label">Currency</span><span class="glance-value">Euro (EUR) · €1 ≈ €1.10 USD</span></div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon">🕐</div>
+      <div class="glance-body"><span class="glance-label">Time Zone</span><span class="glance-value">CET (UTC+1) · CEST (UTC+2) in summer</span></div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon">🇪🇺</div>
+      <div class="glance-body"><span class="glance-label">EU & Schengen</span><span class="glance-value">Irish passport only · no visa needed</span></div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon">🚗</div>
+      <div class="glance-body"><span class="glance-label">Driving</span><span class="glance-value">Right side · like mainland Europe</span></div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon">⚡</div>
+      <div class="glance-body"><span class="glance-label">Voltage</span><span class="glance-value">220V, 50Hz · European two-pin plugs</span></div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon">☀️</div>
+      <div class="glance-body"><span class="glance-label">Sunshine</span><span class="glance-value">~300 days/year · especially coast</span></div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon">📅</div>
+      <div class="glance-body"><span class="glance-label">Best Time</span><span class="glance-value">May–June & Sept–Oct · avoid August crowds</span></div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-icon">💰</div>
+      <div class="glance-body"><span class="glance-label">Budget</span><span class="glance-value">€40-60/day budget · €80-150/day mid-range</span></div>
     </div>
   </div>
+</div>
 
-  <!-- DESTINATIONS -->
-  <div id="destinations" class="section-divider">🧭 Our Spain Stories</div>
-  <div class="card">
-    <p style="color:var(--ink-soft);font-size:14px;">Each of these destinations has its own character and its own story. Choose where to start.</p>
-    <div class="journey-grid">
-      <a class="journey-card" href="/spain/barcelona.html">
-        <img src="img/spain9.jpg" alt="Barcelona — Sagrada Família and Gaudí" loading="lazy">
-        <div class="journey-body">
-          <div class="journey-kicker">🏛️ Architecture & energy</div>
-          <div class="journey-title">Barcelona</div>
-          <p class="journey-text">The Sagrada Família, Park Güell, La Rambla and the Gothic Quarter. Barcelona is pure sensory overload in the best possible way.</p>
-          <span class="journey-cta">Read our Barcelona story →</span>
-        </div>
-      </a>
-      <a class="journey-card" href="/spain/madrid.html">
-        <img src="img/spain16.jpg" alt="Madrid — The Bernabéu stadium" loading="lazy">
-        <div class="journey-body">
-          <div class="journey-kicker">⚪ Passion & culture</div>
-          <div class="journey-title">Madrid</div>
-          <p class="journey-text">The Royal Palace, the Prado, and the surprisingly fascinating Bernabéu stadium tour. Madrid gets better the more time you spend there.</p>
-          <span class="journey-cta">Read our Madrid story →</span>
-        </div>
-      </a>
-      <a class="journey-card" href="/spain/fuengirola.html">
-        <img src="img/spain.jpg" alt="Fuengirola — Mediterranean beach town" loading="lazy">
-        <div class="journey-body">
-          <div class="journey-kicker">🏖️ Beach & returns</div>
-          <div class="journey-title">Fuengirola</div>
-          <p class="journey-text">We keep coming back. Beautiful beach, perfect weather, and the kind of place where you make friends and remember why you loved it before.</p>
-          <span class="journey-cta">Read our Fuengirola story →</span>
-        </div>
-      </a>
-      <a class="journey-card" href="/spain/costa-del-sol.html">
-        <img src="img/spain11.JPG" alt="Costa del Sol — Mediterranean coastline" loading="lazy">
-        <div class="journey-body">
-          <div class="journey-kicker">🌊 Coast & sun</div>
-          <div class="journey-title">Costa del Sol</div>
-          <p class="journey-text">Spain's famous sunny coast. Beaches, seafood, Spanish village life and that perfect Mediterranean light that makes everything beautiful.</p>
-          <span class="journey-cta">Read our Costa del Sol story →</span>
-        </div>
-      </a>
-      <a class="journey-card" href="https://drivefromhome.com/cities/alicante/" target="_blank" rel="noopener">
-        <img src="img/spain12.JPG" alt="Alicante and Spain's Mediterranean coast" loading="lazy">
-        <div class="journey-body">
-          <div class="journey-kicker">🌴 Costa Blanca</div>
-          <div class="journey-title">Alicante</div>
-          <p class="journey-text">Alicante adds the Costa Blanca to our Spain travels — Mediterranean sunshine, coast and another very different side of the country.</p>
-          <span class="journey-cta">Explore Alicante virtually →</span>
-        </div>
-      </a>
-      <a class="journey-card" href="/balearic-islands.html">
-        <div class="journey-body">
-          <div class="journey-kicker">🏝️ Island escapes</div>
-          <div class="journey-title">Balearic Islands</div>
-          <p class="journey-text">Island escapes in the Mediterranean — explore our travels across Spain's Balearic Islands.</p>
-          <span class="journey-cta">Read our Balearic Islands story →</span>
-        </div>
-      </a>
+<!-- CHAPTER 02 — PHOTOS -->
+<div id="photos" class="chapterHeader">
+  <div class="chapterHeaderInner">
+    <div class="chapterNumber">02</div>
+    <div class="chapterTitle">
+      <div class="chapterLabel">No stock photos here</div>
+      <div class="chapterName">Spain through our lens</div>
     </div>
   </div>
+</div>
 
-  <!-- GLUTEN-FREE SECTION (from original) -->
-  <div class="section-divider">🌾 Gluten-free in Spain</div>
-  <div class="card goldCard">
-    <h2>Navigating gluten-free eating in Spain</h2>
-    <p>Spain has a growing awareness of celiac disease (enfermedad celíaca) and gluten-free options are increasingly available, particularly in larger cities and tourist areas. Most restaurants are responsive if you mention "sin gluten" or "celíaco". Supermarkets in tourist areas have gluten-free sections.</p>
+<div class="card" style="padding:18px;">
+  <div class="photo-mosaic">
+    <img src="img/spain.jpg" alt="Fuengirola — Mediterranean beach town" loading="lazy">
+    <img src="img/spain9.jpg" alt="Barcelona — Sagrada Família" loading="lazy">
+    <img src="img/spain16.jpg" alt="Madrid — culture and passion" loading="lazy">
+    <img src="img/spain11.JPG" alt="Costa del Sol — Mediterranean sunshine" loading="lazy">
+    <img src="img/spain15.jpg" alt="Balearic Islands — island escapes" loading="lazy">
   </div>
+  <p class="note">Every photo on this page is from our own Spain trips — no stock images and no placeholders.</p>
+</div>
 
-  <!-- GYG -->
-  <div class="section-divider">🎫 Book Spain Activities</div>
-  <div class="card">
-    <h2>Experiences across Spain</h2>
-    <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">From Barcelona's architecture tours and Sagrada Família skip-the-line to Madrid's museums and Costa del Sol beach experiences.</p>
-    <div class="gygWidgetWrap">
-      <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-location-id="169003" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="5" data-gyg-partner-id="VYORXUN"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/spain-l169003/">GetYourGuide</a></span></div>
-    </div>
-    <p class="disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
-  </div>
-
-  <!-- TOURRADAR -->
-  <div class="section-divider">🧭 Book a Spain Tour</div>
-  <div class="card redCard">
-    <h2>Guided Spain tours through TourRadar</h2>
-    <p>Multi-city Spain itineraries that combine Barcelona, Madrid and the coast. Perfect if you want the logistics handled and the insider knowledge included.</p>
-    <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/291204?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Spain tours →</a>
-    </div>
-    <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
-  </div>
-
-  <!-- FAQ -->
-  <p style="font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);margin:6px 0 10px;">Common questions</p>
-  <div class="card">
-    <h2>Spain FAQ</h2>
-    <div class="faqItem open">
-      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is Spain worth visiting?</div>
-      <div class="faqA">Absolutely. Spain combines world-class architecture, beaches, food, culture and history with generally good value. The variety is extraordinary — Barcelona is nothing like Madrid, which is nothing like the coast.</div>
-    </div>
-    <div class="faqItem">
-      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">How many days should I spend in Spain?</div>
-      <div class="faqA">4-5 days minimum per city if you want to actually experience it. A week allows you to see Barcelona and Madrid properly. Two weeks allows Barcelona, Madrid and the coast.</div>
-    </div>
-    <div class="faqItem">
-      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is the Sagrada Família worth it?</div>
-      <div class="faqA">Yes. Book tickets online in advance to skip the queues. It is genuinely extraordinary — neither photos nor stories do it justice. Plan 1-2 hours.</div>
-    </div>
-    <div class="faqItem">
-      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What's the best time to visit Spain?</div>
-      <div class="faqA">May-June or September-October. Summer is hot and crowded. Winter is mild on the coast but cooler in Madrid. Avoid August in cities — locals leave and prices spike.</div>
-    </div>
-    <div class="faqItem">
-      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is it expensive?</div>
-      <div class="faqA">Generally good value, especially outside major cities and tourist areas. Barcelona and Madrid are pricier. The coast offers better value. Spanish wine and food are excellent and affordable.</div>
+<!-- CHAPTER 03 — OUR STORIES -->
+<div id="stories" class="chapterHeader">
+  <div class="chapterHeaderInner">
+    <div class="chapterNumber">03</div>
+    <div class="chapterTitle">
+      <div class="chapterLabel">Pick your starting point</div>
+      <div class="chapterName">Our Spain stories — five very different sides</div>
     </div>
   </div>
+</div>
 
-  <!-- FINAL CTA -->
-  <div class="card heroCard" style="text-align:center;">
-    <h2 style="text-align:center;">Plan your Spain trip</h2>
-    <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">Spain wants you to slow down. Skip the rushing between cities and spend real time in each one. Two weeks, if you can. This is not a place for ticking boxes.</p>
-    <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://www.tourradar.com/t/291204?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Spain tours →</a>
-      <a class="btn-gold" href="https://www.getyourguide.com/spain-l169003/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book activities →</a>
-      <a class="btn-outline" href="https://twofortherowd.com/">Back to main site →</a>
+<div class="card">
+  <p style="color:var(--ink-soft);font-size:14px;">Start with the story that takes your fancy. Each destination has its own character — pick one and dive in.</p>
+  <div class="journey-grid">
+    <a class="journey-card" href="/spain/barcelona.html">
+      <img src="img/spain9.jpg" alt="Barcelona — Sagrada Família and Gaudí" loading="lazy">
+      <div class="journey-body">
+        <div class="journey-kicker">🏛️ Architecture & energy</div>
+        <div class="journey-title">Barcelona</div>
+        <p class="journey-text">The Sagrada Família, Park Güell, La Rambla and the Gothic Quarter. Pure sensory overload in the best possible way.</p>
+        <span class="journey-cta">Read our Barcelona story →</span>
+      </div>
+    </a>
+    <a class="journey-card" href="/spain/madrid.html">
+      <img src="img/spain16.jpg" alt="Madrid — Royal Palace and culture" loading="lazy">
+      <div class="journey-body">
+        <div class="journey-kicker">⚪ Passion & culture</div>
+        <div class="journey-title">Madrid</div>
+        <p class="journey-text">The Royal Palace, the Prado, and the surprisingly fascinating Bernabéu stadium. Gets better with time.</p>
+        <span class="journey-cta">Read our Madrid story →</span>
+      </div>
+    </a>
+    <a class="journey-card" href="/spain/fuengirola.html">
+      <img src="img/spain.jpg" alt="Fuengirola — Mediterranean beach town" loading="lazy">
+      <div class="journey-body">
+        <div class="journey-kicker">🏖️ Beach & returns</div>
+        <div class="journey-title">Fuengirola</div>
+        <p class="journey-text">We keep coming back. Perfect weather, beautiful beach, and the kind of place where you make lifelong friends.</p>
+        <span class="journey-cta">Read our Fuengirola story →</span>
+      </div>
+    </a>
+    <a class="journey-card" href="/spain/costa-del-sol.html">
+      <img src="img/spain11.JPG" alt="Costa del Sol — Mediterranean coastline" loading="lazy">
+      <div class="journey-body">
+        <div class="journey-kicker">🌊 Coast & sun</div>
+        <div class="journey-title">Costa del Sol</div>
+        <p class="journey-text">Spain's sunny coast. Beaches, seafood, Spanish village life and that perfect Mediterranean light.</p>
+        <span class="journey-cta">Read our Costa del Sol story →</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- CHAPTER 04 — DESTINATIONS -->
+<div id="destinations" class="chapterHeader">
+  <div class="chapterHeaderInner">
+    <div class="chapterNumber">04</div>
+    <div class="chapterTitle">
+      <div class="chapterLabel">All six destinations, one place</div>
+      <div class="chapterName">Explore by destination</div>
     </div>
   </div>
+</div>
+
+<div class="card redCard">
+  <p style="font-size:14px;color:var(--ink-soft);">We've broken our bigger Spain travels into individual first-hand guides, so you can jump straight to the city or experience you're interested in.</p>
+  <div class="dest-grid">
+    <a class="dest-link" href="/spain/barcelona.html"><strong>🏛️ Barcelona</strong><span>Sagrada Família, Park Güell, La Rambla</span></a>
+    <a class="dest-link" href="/spain/madrid.html"><strong>⚪ Madrid</strong><span>Prado, Royal Palace, Bernabéu</span></a>
+    <a class="dest-link" href="/spain/fuengirola.html"><strong>🏖️ Fuengirola</strong><span>Beach town, returns, karaoke nights</span></a>
+    <a class="dest-link" href="/spain/costa-del-sol.html"><strong>🌊 Costa del Sol</strong><span>Málaga province, sunshine, sea</span></a>
+    <a class="dest-link" href="https://drivefromhome.com/cities/alicante/" target="_blank" rel="noopener"><strong>🌴 Alicante</strong><span>Costa Blanca, Mediterranean</span></a>
+    <a class="dest-link" href="/balearic-islands.html"><strong>🏝️ Balearic Islands</strong><span>Island escapes in the Mediterranean</span></a>
+  </div>
+</div>
+
+<!-- INTERACTIVE MAP -->
+<div class="card">
+  <h2>Where we've been in Spain</h2>
+  <p>Barcelona, Madrid, Fuengirola, the Costa del Sol, Alicante and the Balearic Islands — different sides of Spain.</p>
+  <div id="spainMap" aria-label="Map of Spain destinations"></div>
+</div>
+
+<!-- CHAPTER 05 — BEFORE YOU GO -->
+<div id="before" class="chapterHeader">
+  <div class="chapterHeaderInner">
+    <div class="chapterNumber">05</div>
+    <div class="chapterTitle">
+      <div class="chapterLabel">Practical things to know</div>
+      <div class="chapterName">Before You Go to Spain</div>
+    </div>
+  </div>
+</div>
+
+<!-- GYG ACTIVITIES -->
+<div class="card">
+  <h2>Book Spain Activities</h2>
+  <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">From Barcelona's architecture tours and Sagrada Família skip-the-line to Madrid's museums and Costa del Sol beach experiences.</p>
+  <div class="gygWidgetWrap">
+    <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-location-id="169003" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="5" data-gyg-partner-id="VYORXUN"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/spain-l169003/">GetYourGuide</a></span></div>
+  </div>
+  <p class="disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
+</div>
+
+<!-- TOURS -->
+<div class="card redCard">
+  <h2>Guided Spain tours through TourRadar</h2>
+  <p>Multi-city Spain itineraries that combine Barcelona, Madrid and the coast. Perfect if you want the logistics handled and the insider knowledge included.</p>
+  <div class="links">
+    <a class="btn-primary" href="https://www.tourradar.com/t/291204?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Spain tours →</a>
+  </div>
+  <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
+</div>
+
+<!-- CHAPTER 06 — FAQ -->
+<div id="faq" class="chapterHeader">
+  <div class="chapterHeaderInner">
+    <div class="chapterNumber">06</div>
+    <div class="chapterTitle">
+      <div class="chapterLabel">Your questions answered</div>
+      <div class="chapterName">Spain FAQ</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="faqItem open">
+    <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is Spain worth visiting?</div>
+    <div class="faqA">Absolutely. Spain combines world-class architecture, beaches, food, culture and history with generally good value. The variety is extraordinary — Barcelona is nothing like Madrid, which is nothing like the coast.</div>
+  </div>
+  <div class="faqItem">
+    <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Do Irish citizens need a visa for Spain?</div>
+    <div class="faqA">No. Spain is part of the Schengen Area. Irish citizens can enter with just a passport and stay up to 90 days in any 180-day period. No visa or ESTA required.</div>
+  </div>
+  <div class="faqItem">
+    <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">How many days should I spend in Spain?</div>
+    <div class="faqA">4–5 days minimum per city if you want to actually experience it. A week allows you to see Barcelona and Madrid properly. Two weeks allows Barcelona, Madrid and the coast.</div>
+  </div>
+  <div class="faqItem">
+    <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is the Sagrada Família worth it?</div>
+    <div class="faqA">Yes. Book tickets online in advance to skip the queues. It is genuinely extraordinary — neither photos nor stories do it justice. Plan 1–2 hours inside.</div>
+  </div>
+  <div class="faqItem">
+    <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What's the best time to visit Spain?</div>
+    <div class="faqA">May–June or September–October. Summer is hot and crowded. Winter is mild on the coast but cooler in Madrid. Avoid August in cities — locals leave and prices spike.</div>
+  </div>
+  <div class="faqItem">
+    <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is it expensive?</div>
+    <div class="faqA">Generally good value, especially outside major cities and tourist areas. Barcelona and Madrid are pricier. The coast offers better value. Spanish wine and food are excellent and affordable.</div>
+  </div>
+  <div class="faqItem">
+    <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Do I need to tip in Spain?</div>
+    <div class="faqA">Tipping is optional in Spain, unlike the USA. Rounding up or leaving 5–10% for good service is appreciated but not expected. At bars, leaving loose change is normal.</div>
+  </div>
+  <div class="faqItem">
+    <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What's the food like?</div>
+    <div class="faqA">Exceptional. Tapas culture, fresh seafood on the coast, Spanish wine, and incredible jamón ibérico. Dinner is typically 9pm onwards, and the meal is the social event — not just fuel.</div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="card heroCard" style="text-align:center;">
+  <h2 style="text-align:center;">Plan your Spain trip</h2>
+  <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">Spain wants you to slow down. Skip the rushing between cities and spend real time in each one. Two weeks, if you can. This is not a place for ticking boxes.</p>
+  <div class="links" style="justify-content:center;">
+    <a class="btn-primary" href="https://www.tourradar.com/t/291204?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Spain tours →</a>
+    <a class="btn-primary" href="https://www.getyourguide.com/spain-l169003/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book activities →</a>
+    <a class="btn-outline" href="https://twofortherowd.com/">Back to main site →</a>
+  </div>
+</div>
 
 </div>
 
