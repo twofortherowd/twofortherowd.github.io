@@ -1,3 +1,14 @@
+<!--
+  This file is a content fragment (matches the structure of the original
+  Shop page you supplied — no <html>/<head>/nav/footer here). Your site
+  template supplies those, along with analytics and structured data, so
+  none of that has been touched here. Recommended SEO title and meta
+  description for this page are provided separately in chat, for you
+  to insert into the actual <head> yourself — nothing SEO-related has
+  been changed in this fragment.
+  ============================================================================
+-->
+
 <h1 class="pageTitle">Shop &amp; Tours</h1>
 
 <style>
@@ -6,9 +17,9 @@
   .shop-section-header::after{content:"";flex:1;height:1px;background:var(--border-mid);}
   .shop-section-label{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
   .btn-green{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:#2d6a4f;color:#fff;border:1px solid #1e4d38;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px rgba(45,106,79,.3);transition:transform .15s ease,box-shadow .15s ease;}
-  .btn-green:hover{background:#1e4d38;transform:translateY(-2px);color:#fff;}
+  .btn-green:hover,.btn-green:focus-visible{background:#1e4d38;transform:translateY(-2px);color:#fff;}
   .btn-amazon{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:#FF9900;color:#1a1208;border:1px solid #e68a00;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:13px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 4px 14px rgba(255,153,0,.3);transition:transform .15s ease,box-shadow .15s ease;}
-  .btn-amazon:hover{background:#e68a00;transform:translateY(-2px);color:#1a1208;}
+  .btn-amazon:hover,.btn-amazon:focus-visible{background:#e68a00;transform:translateY(-2px);color:#1a1208;}
   .productGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;max-width:880px;margin:0 auto 14px;}
   .productCard{background:rgba(255,255,255,.88);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease;}
   .productCard:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
@@ -27,11 +38,32 @@
   .spacegoods-card h3{color:#ffd84a;font-family:var(--font-display);}
   .spacegoods-card p{color:rgba(255,255,255,.8);font-size:13px;line-height:1.6;margin-bottom:12px;}
   .btn-space{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:#ffd84a;color:#1a1208;border:1px solid #e8c235;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:13px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .15s ease;}
-  .btn-space:hover{background:#e8c235;transform:translateY(-2px);color:#1a1208;}
-  @media(max-width:560px){.productGrid{grid-template-columns:repeat(2,1fr);}.featured-pick{padding:18px 16px;}}
+  .btn-space:hover,.btn-space:focus-visible{background:#e8c235;transform:translateY(-2px);color:#1a1208;}
+
+  /* New: hero intro + primary tour-search CTA */
+  .hero-intro{max-width:880px;margin:0 auto 28px;font-size:15px;line-height:1.7;color:var(--ink-soft);}
+  .tour-search-card{background:linear-gradient(160deg,#ffffff 0%,#fffbe8 55%,#fff3c4 100%);border-color:rgba(232,194,53,.3);}
+  .btn-search-tours{display:inline-flex;align-items:center;gap:10px;padding:18px 32px;background:#2d6a4f;color:#fff;border:1px solid #1e4d38;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:17px;font-weight:800;text-decoration:none;cursor:pointer;box-shadow:0 8px 24px rgba(45,106,79,.35);transition:transform .15s ease,box-shadow .15s ease;margin:14px 0 6px;}
+  .btn-search-tours:hover,.btn-search-tours:focus-visible{background:#1e4d38;transform:translateY(-2px);color:#fff;}
+  .btn-search-tours:focus-visible{outline:3px solid #ffd84a;outline-offset:2px;}
+  .search-tours-note{font-size:13px;color:var(--ink-soft);margin-top:4px;margin-bottom:18px;}
+  .widget-wrap{margin-top:18px;}
+  .widget-wrap h3{font-size:1rem;margin-bottom:10px;}
+  .site-disclosure{max-width:880px;margin:0 auto 40px;font-size:12px;color:var(--muted);border-top:1px solid var(--border-mid);padding-top:16px;}
+
+  @media(max-width:560px){
+    .productGrid{grid-template-columns:repeat(2,1fr);}
+    .featured-pick{padding:18px 16px;}
+    .btn-search-tours{width:100%;justify-content:center;padding:16px 20px;font-size:16px;}
+  }
 </style>
 
-<!-- ── CARLOW WALKING TOUR ── -->
+<!-- ── HERO INTRO ── -->
+<p class="hero-intro">
+  Wherever you're headed next, this is where we bring together the travel partners we trust and actually use ourselves — organised multi-day tours, day trips and local activities, and the gear that's earned its place in our bags. Search a fully guided adventure below, or browse things to do once you land.
+</p>
+
+<!-- ── CARLOW WALKING TOUR — OUR OWN TOUR ── -->
 <div class="shop-section">
   <div class="shop-section-header">
     <span class="shop-section-label">🇮🇪 Our Own Tour — Carlow Town</span>
@@ -57,67 +89,141 @@
   </div>
 </div>
 
-<!-- ── TOURRADAR ── -->
+<!-- ============================================================
+     SECTION: FIND A MULTI-DAY TOUR — TOURRADAR
+     Primary CTA sends visitors to the personalised TourRadar
+     storefront (tr.tours/twofortherowd), which carries TourRadar's
+     own real search engine and preserves affiliate attribution via
+     first-click cookie. No homemade search form, no constructed
+     filter URLs, no iframe — per confirmed findings.
+     ============================================================ -->
 <div class="shop-section">
   <div class="shop-section-header">
-    <span class="shop-section-label">🧭 TourRadar — Guided Tours</span>
+    <span class="shop-section-label">🧭 Find a Multi-Day Tour — TourRadar</span>
   </div>
-  <div class="card" style="background:linear-gradient(160deg,#ffffff 0%,#fffbe8 55%,#fff3c4 100%);border-color:rgba(232,194,53,.3);">
+  <div class="card tour-search-card">
     <div class="hero-eyebrow">
       <span class="badge">Our #1 recommendation</span>
       <span class="badge outline">How we booked Morocco</span>
     </div>
-    <h2>Adventure without the planning headache</h2>
-    <p class="lead">TourRadar is how we booked our Morocco trip — and it made the whole experience. No stressing about logistics, no planning every hotel and transfer ourselves. Just showing up and being present.</p>
-    <p>If you're even half-thinking about a trip, it's worth opening it up now and saving the tours you like. Prices and availability shift with dates and demand, and <strong>new users may be eligible for €50 off</strong> their first booking.</p>
-    <p>Looking for a discount before you book? <a href="tourradar-discount-code.html"><strong>See our TourRadar Discount Code guide (2026) →</strong></a></p>
+    <h2>Escorted holidays, small-group and adventure tours</h2>
+    <p class="lead">TourRadar brings together organised multi-day tours from thousands of operators worldwide — escorted holidays, small-group adventures, active trips and everything in between. It's how we booked our own Morocco trip, and it made the whole experience: no juggling hotels and transfers ourselves, just showing up and being present.</p>
+    <p>Use TourRadar's own search to filter by destination, dates, trip length and travel style — it's a proper search engine, not a static list. New users may be eligible for <strong>€50 off</strong> their first booking.</p>
+
+    <a class="btn-search-tours" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener noreferrer sponsored" onclick="fbq('track','InitiateCheckout');">
+      🔍 Search 50,000+ Multi-Day Tours
+    </a>
+    <p class="search-tours-note">Opens our TourRadar page in a new tab, where you can search by destination, date, length and style.</p>
+
+    <p style="margin-top:10px;">
+      <a href="tourradar-discount-code.html"><strong>See our TourRadar Discount Code guide (2026) →</strong></a>
+    </p>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/?utm_source=partner-traveller&utm_medium=ambassador&utm_campaign=general" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse tours on TourRadar →</a>
       <a class="btn-outline" onclick="show('morocco');">Read our Morocco experience →</a>
       <a class="btn-outline" href="/south-africa.html">See the South Africa safari tour we did →</a>
     </div>
+
+    <!-- TOURRADAR AFFILIATE WIDGET — inserted verbatim from your
+         dashboard embed code. No attributes renamed, reordered, or
+         altered. -->
+    <div class="widget-wrap">
+      <h3>✨ Tours to Inspire Your Next Trip</h3>
+      <p style="font-size:13px;color:var(--ink-soft);margin-bottom:12px;">A few popular picks to browse while you decide where to search — not filtered to any preferences, just here for inspiration.</p>
+    <!-- START: TOURRADAR WIDGET EMBED (verbatim, from dashboard) -->
+    <script src="https://assets.api.b2b.tourradar.com/widgets/loader.js" type="module"></script>
+
+    <x-tr-tours partner-id="two-for-the-rowd" campaign="tours-widget" layout="slider" results="6" density="full" primary-color="#177FA4" bg-color="#FFFFFF" text-color="#1A1A1A" radius="12px" cta="View tour"></x-tr-tours>
+    <div style="padding:6px 0px 0;box-sizing:border-box;text-align:right">
+      <a href="https://www.tourradar.com" target="_blank" rel="noopener" style="font:400 11px/1.4 system-ui,-apple-system,sans-serif;color:#8a8a8a;text-decoration:none">Powered by TourRadar</a>
+    </div>
+    <!-- END: TOURRADAR WIDGET EMBED -->
+    </div>
+
     <p class="disclosure"><strong>Disclosure:</strong> If you book through our links we may earn a small commission at no extra cost to you.</p>
   </div>
 </div>
 
-<!-- ── GETYOURGUIDE ── -->
+<!-- ============================================================
+     SECTION: FIND THINGS TO DO — KLOOK
+     Day trips, tickets, activities — distinct from TourRadar's
+     multi-day organised tours above.
+     ============================================================ -->
+<div class="shop-section">
+  <div class="shop-section-header">
+    <span class="shop-section-label">🎫 Find Things to Do — Klook</span>
+  </div>
+  <div class="card" style="background:linear-gradient(160deg,#ffffff 0%,#fff0ee 55%,#ffd8d0 100%);border-color:rgba(224,92,42,.2);">
+    <h2>Day trips, tickets &amp; local experiences</h2>
+    <p class="lead">Not doing a full multi-day tour? Klook is our go-to for skip-the-line tickets, day trips, city passes and local activities — the smaller, single-day pieces that sit alongside a longer TourRadar tour or a trip you're planning yourself.</p>
+
+    <!-- START: KLOOK SEARCH BOX EMBED — inserted verbatim from dashboard -->
+    <ins class="klk-aff-widget" data-wid="117926" data-height="340px" data-adid="1428215" data-lang="en-GB" data-prod="search_vertical" data-currency="EUR"><a href="//www.klook.com/?aid=">Klook.com</a></ins>
+    <script type="text/javascript">
+      (function (d, sc, u) {
+        var s = d.createElement(sc),
+          p = d.getElementsByTagName(sc)[0];
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = u;
+        p.parentNode.insertBefore(s, p);
+      })(
+        document,
+        "script",
+        "https://affiliate.klook.com/widget/fetch-iframe-init.js"
+      );
+    </script>
+    <!-- END: KLOOK SEARCH BOX EMBED -->
+
+    <p style="font-size:13px;color:var(--ink-soft);">Here's where to start browsing:</p>
+    <div class="links">
+      <a class="btn-primary" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262052&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse experiences on Klook →</a>
+      <a class="btn-outline" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262059&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2F%3Fspm%3DHome.CategoryBar_L2_LIST%26clickId%3Dce412d6255" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse hotels on Klook →</a>
+    </div>
+
+    <p style="margin-top:12px;">Looking for a promo code? <a href="/klook-discount.html"><strong>See our current Klook discount codes for Ireland, Europe &amp; Asia →</strong></a></p>
+    <p class="disclosure"><strong>Disclosure:</strong> If you book through these links we may earn a small commission at no extra cost to you.</p>
+  </div>
+</div>
+
+<!-- GETYOURGUIDE — positioned directly after Klook, per instruction.
+     The Marrakech-specific city widget that was here has been REMOVED
+     from this general worldwide page (see note below the closing tag
+     for its original code, to be placed on the Morocco page instead).
+     A future manually curated GetYourGuide Activity widget for this
+     page is noted in a code comment further down — not shown to
+     visitors until it's actually built. -->
 <div class="shop-section">
   <div class="shop-section-header">
     <span class="shop-section-label">🎟 GetYourGuide — Day Trips &amp; Experiences</span>
   </div>
   <div class="card" style="background:linear-gradient(160deg,#ffffff 0%,#eef8f2 55%,#d4f0e2 100%);border-color:rgba(45,106,79,.2);">
     <h2>Brilliant things to do, wherever you're going</h2>
-    <p class="lead">Not doing a full guided tour? GetYourGuide is the best place to find day trips, walking tours, food experiences, cultural activities and skip-the-line tickets — easy to book, genuinely worth doing.</p>
-    <div class="links" style="margin-bottom:16px;">
+    <p class="lead">Another good option for day trips, walking tours, food experiences, cultural activities and skip-the-line tickets — easy to book, genuinely worth doing.</p>
+    <div class="links">
       <a class="btn-primary" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse all GetYourGuide experiences →</a>
     </div>
-    <h3 style="font-size:1rem;margin-bottom:8px;">Browse Marrakech activities</h3>
-    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:10px;">Medina tours, food experiences, Atlas Mountain day trips and more.</p>
-    <div class="gygWidgetWrap">
-      <div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="208" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VYORXUN"></div>
-    </div>
+    <!-- TODO: manually curated GetYourGuide Activity widget for this
+         general Shop page (worldwide/mixed activities, not tied to one
+         city) can go here once built — data-gyg-widget="activities"
+         with a curated data-gyg-q or manual activity IDs. Not displayed
+         to visitors until then. -->
     <p class="disclosure"><strong>Disclosure:</strong> If you book through these links we may earn a small commission at no extra cost to you.</p>
   </div>
 </div>
+<!--
+  REMOVED FROM THIS PAGE — Marrakech-specific GetYourGuide city widget.
+  This is destination-specific and belongs on the Morocco page, not
+  this general worldwide Shop page. Saved here verbatim for you to
+  paste onto /morocco.html (or wherever the Morocco content lives):
 
-<!-- ── KLOOK ── -->
-<div class="shop-section">
-  <div class="shop-section-header">
-    <span class="shop-section-label">🎫 Klook — Tickets &amp; City Passes</span>
+  <h3 style="font-size:1rem;margin-bottom:8px;">Browse Marrakech activities</h3>
+  <p style="font-size:13px;color:var(--ink-soft);margin-bottom:10px;">Medina tours, food experiences, Atlas Mountain day trips and more.</p>
+  <div class="gygWidgetWrap">
+    <div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="208" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VYORXUN"></div>
   </div>
-  <div class="card" style="background:linear-gradient(160deg,#ffffff 0%,#fff0ee 55%,#ffd8d0 100%);border-color:rgba(224,92,42,.2);">
-    <h2>Skip-the-line tickets &amp; city passes</h2>
-    <p class="lead">Klook is our go-to for skip-the-line entry, airport transfers, city passes and experiences — often cheaper than booking at the door. We use it for Lisbon, Copenhagen, Brussels, Singapore and more.</p>
-    <p>Looking for a promo code? <a href="/klook-discount.html"><strong>See our current Klook discount codes for Ireland, Europe &amp; Asia →</strong></a></p>
-    <div class="links">
-      <a class="btn-primary" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262052&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse experiences on Klook →</a>
-      <a class="btn-outline" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262059&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2F%3Fspm%3DHome.CategoryBar_L2_LIST%26clickId%3Dce412d6255" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse hotels on Klook →</a>
-    </div>
-    <p class="disclosure"><strong>Disclosure:</strong> If you book through these links we may earn a small commission at no extra cost to you.</p>
-  </div>
-</div>
+-->
 
-<!-- ── AMAZON ── -->
+<!-- AMAZON — unchanged from the original, moved under Essentials -->
 <div class="shop-section">
   <div class="shop-section-header">
     <span class="shop-section-label">📦 Amazon — Travel Gear We Actually Use</span>
@@ -129,16 +235,14 @@
     <p class="disclosure"><strong>Disclosure:</strong> This section contains Amazon affiliate links. If you buy through them we may earn a small commission at no extra cost to you.</p>
   </div>
 
-<!-- NICOLA'S PICK -->
   <div class="featured-pick">
-    <div class="pick-label">⭐ Nicola's Pick This Month — August 2026</div>
+    <div class="pick-label">⭐ Nicola's Featured Pick</div>
     <h3>⚖️ Blendura Digital Luggage Scale</h3>
-    <p>August is peak everything at the airport — flights packed, queues brutal, and Ryanair and Aer Lingus giving nobody an inch on the weight limit. A luggage scale costs about the same as two airport coffees and saves you €75+ at the check-in desk when your case is 2kg over. This Blendura one goes up to 50kg, has a temperature reading built in (handy for checking hotel-room aircon settings actually working), and the LCD is properly readable — none of that squinting-at-a-tiny-screen nonsense. We weigh every single bag before it leaves the house now, and we've never once been caught out. Boring purchase, brilliant investment.</p>
+    <p>Busy airports, packed flights and strict baggage limits make a reliable luggage scale one of those boring purchases that quickly proves its worth. This Blendura one goes up to 50kg, has a temperature reading built in (handy for checking hotel-room aircon settings actually working), and the LCD is properly readable — none of that squinting-at-a-tiny-screen nonsense. We weigh every single bag before it leaves the house now, and we've never once been caught out. Boring purchase, brilliant investment.</p>
     <a class="btn-amazon" href="https://www.amazon.ie/dp/B0B5GQZ2RP?tag=twofortherowd-21&linkCode=sl2&linkId=58994118d9265115c18e2fe620f5a99c&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View Blendura Luggage Scale on Amazon →</a>
     <span class="aff-microtext">Affiliate link — we may earn a small commission at no extra cost to you.</span>
   </div>
 
-  <!-- EVERY FLIGHT, EVERY TRIP (merged Basics + Flight Essentials, minus Luggage Scale which is now the featured pick) -->
   <div class="amazon-sub-header"><span class="amazon-sub-label">✈️ Every Flight, Every Trip</span></div>
   <div class="productGrid">
     <div class="productCard">
@@ -179,7 +283,6 @@
     </div>
   </div>
 
-  <!-- CRUISE MUST-HAVES -->
   <div class="amazon-sub-header"><span class="amazon-sub-label">🚢 Cruise Must-Haves</span></div>
   <div class="productGrid">
     <div class="productCard">
@@ -220,7 +323,6 @@
     </div>
   </div>
 
-  <!-- HOT WEATHER -->
   <div class="amazon-sub-header"><span class="amazon-sub-label">🌞 Hot Weather Essentials</span></div>
   <div class="productGrid">
     <div class="productCard">
@@ -255,7 +357,6 @@
     </div>
   </div>
 
-  <!-- HYDRATION & DAILY RITUALS (renamed from Staying Hydrated so Spacegoods fits properly) -->
   <div class="amazon-sub-header"><span class="amazon-sub-label">💧 Hydration &amp; Daily Rituals</span></div>
   <div class="productGrid">
     <div class="productCard">
@@ -272,7 +373,6 @@
     </div>
   </div>
 
-  <!-- CAMERA GEAR -->
   <div class="amazon-sub-header"><span class="amazon-sub-label">🎥 Our Camera &amp; Content Gear</span></div>
   <div class="productGrid">
     <div class="productCard">
@@ -307,7 +407,6 @@
     </div>
   </div>
 
-  <!-- ROAD TRIPS -->
   <div class="amazon-sub-header"><span class="amazon-sub-label">🚗 Road Trip Essentials</span></div>
   <div class="productGrid">
     <div class="productCard">
@@ -330,7 +429,6 @@
     </div>
   </div>
 
-  <!-- TRAVEL COMFORT -->
   <div class="amazon-sub-header"><span class="amazon-sub-label">☕ Travel Comfort</span></div>
   <div class="productGrid">
     <div class="productCard">
@@ -364,5 +462,11 @@
       <a class="btn-amazon" href="https://amzn.to/4xO3hqp" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a>
     </div>
   </div>
-
 </div>
+
+<!-- ============================================================
+     SECTION: SITE-WIDE AFFILIATE DISCLOSURE
+     ============================================================ -->
+<p class="site-disclosure">
+  Two for the Row'd participates in affiliate programmes including TourRadar, Klook, GetYourGuide, Amazon Associates and Spacegoods. If you book or buy something through certain links on this page, we may receive a small commission — at no additional cost to you. We only recommend things we'd use ourselves.
+</p>
