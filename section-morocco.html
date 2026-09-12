@@ -163,7 +163,7 @@
 
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 </head>
 <body>
 
@@ -319,9 +319,15 @@
     {id:8,name:"Sahara Desert Camp",emoji:"🐪",lat:31.0895958,lng:-3.9647526,desc:"The finish — camel ride, desert camp and a night under the Sahara stars."}
   ];
 
-  if(typeof L==="undefined") return;
   const mapEl=document.getElementById("moroccoRouteMap");
   if(!mapEl||mapEl.dataset.ready) return;
+
+  function showMapError(){
+    mapEl.innerHTML='<div style="display:grid;place-items:center;height:100%;padding:30px;text-align:center;color:#5a4a3a;background:#fffaf2"><div><strong>The interactive map could not load.</strong><br><span style="font-size:13px">Please refresh the page or check that content blockers allow Leaflet and OpenStreetMap.</span></div></div>';
+  }
+
+  function initialiseMap(){
+  if(mapEl.dataset.ready||typeof window.L==="undefined") return;
   mapEl.dataset.ready="1";
 
   const map=L.map("moroccoRouteMap",{scrollWheelZoom:false});
@@ -382,6 +388,19 @@
 
   activate(1,false);
   setTimeout(()=>map.invalidateSize(),150);
+  }
+
+  function loadLeafletBackup(){
+    if(window.L){ initialiseMap(); return; }
+    const backup=document.createElement("script");
+    backup.src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+    backup.onload=initialiseMap;
+    backup.onerror=showMapError;
+    document.head.appendChild(backup);
+  }
+
+  if(document.readyState==="complete") loadLeafletBackup();
+  else window.addEventListener("load",loadLeafletBackup,{once:true});
 })();
 </script>
 
