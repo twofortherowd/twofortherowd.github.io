@@ -221,6 +221,9 @@
     .irelandMapLegendItem{display:flex;align-items:center;gap:6px;}
     .irelandMapDot{width:11px;height:11px;border-radius:50%;display:inline-block;}
     .feature-wide{margin-top:14px;padding:22px;border-radius:18px;background:linear-gradient(135deg,#fff9df,#eef8f2);border:1px solid var(--border);}
+    .county-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+    .county-tab{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex:1 1 125px;padding:12px 16px;border-radius:999px;background:#fff;border:1px solid rgba(23,107,69,.22);box-shadow:var(--shadow-sm);color:var(--ireland-green-dark);font-size:13px;font-weight:800;text-decoration:none;transition:transform .16s ease,box-shadow .16s ease,background .16s ease;}
+    .county-tab:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);background:var(--ireland-mint);}
     @media(max-width:640px){#irelandJourneyMap{height:500px;border-radius:12px;}.irelandMapCard{padding:12px;}}
 
 </style><script>(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account','2378028');</script>
@@ -233,6 +236,7 @@
 
 <nav class="chapterNav" aria-label="Ireland hub sections">
   <div class="chapterNavInner">
+    <a href="#county-guides">County Guides</a>
     <a href="#glance">At a Glance</a>
     <a href="#journey-map">Map</a>
     <a href="#photos">Photos</a>
@@ -263,9 +267,23 @@
     <div class="stat"><strong>4</strong><span>provinces to explore</span></div>
     <div class="stat"><strong>32</strong><span>counties on the island</span></div>
     <div class="stat"><strong>22+</strong><span>Hidden Ireland films</span></div>
-    <div class="stat"><strong>1</strong><span>home county — Carlow</span></div>
+    <div class="stat"><strong>6</strong><span>county guides live</span></div>
   </div>
-  <div class="links"><a class="btn-primary" href="/carlow.html">Start with Carlow →</a><a class="btn-outline" href="#regions">Explore Ireland ↓</a></div>
+  <div class="links"><a class="btn-primary" href="/carlow.html">Start with Carlow →</a><a class="btn-outline" href="#county-guides">Choose a county ↓</a></div>
+</div>
+
+<div id="county-guides" class="card greenCard">
+  <div class="eyebrow"><span class="badge ireland">☘️ County guides completed</span><span class="badge outline">First-hand</span></div>
+  <h2>Choose a county</h2>
+  <p style="color:var(--ink-soft);font-size:14px;">Start with one of the county guides we've completed so far. Each one combines our own visits, local connections, videos and practical ideas.</p>
+  <div class="county-tabs" aria-label="Completed Ireland county guides">
+    <a class="county-tab" href="/carlow.html">🏰 Carlow</a>
+    <a class="county-tab" href="/kildare.html">🐎 Kildare</a>
+    <a class="county-tab" href="/kilkenny.html">🏯 Kilkenny</a>
+    <a class="county-tab" href="/laois.html">⛰️ Laois</a>
+    <a class="county-tab" href="/wexford.html">🌊 Wexford</a>
+    <a class="county-tab" href="/wicklow.html">🌿 Wicklow</a>
+  </div>
 </div>
 
 <div id="glance" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">01</div><div class="chapterTitle"><div class="chapterLabel">Before you hit the road</div><div class="chapterName">Ireland at a glance</div></div></div></div>
@@ -332,7 +350,11 @@
   <p style="font-size:14px;color:var(--ink-soft);">We'll add county and town guides here as they become substantial enough to deserve their own page.</p>
   <div class="dest-grid">
     <a class="dest-link" href="/carlow.html"><strong>🏰 County Carlow</strong><span>Our home county — ancient Ireland, castles, saints and strange stories</span></a>
+    <a class="dest-link" href="/kildare.html"><strong>🐎 County Kildare</strong><span>Kilcullen, south-Kildare heritage, castles and our own filmed visits</span></a>
+    <a class="dest-link" href="/kilkenny.html"><strong>🏯 County Kilkenny</strong><span>The medieval city, historic houses, gardens and county discoveries</span></a>
+    <a class="dest-link" href="/laois.html"><strong>⛰️ County Laois</strong><span>Nicola's home county, childhood favourites, woods and hidden heritage</span></a>
     <a class="dest-link" href="/wexford.html"><strong>🌊 County Wexford</strong><span>Childhood beaches, quiet coastal favourites, heritage discoveries and hidden corners</span></a>
+    <a class="dest-link" href="/wicklow.html"><strong>🌿 County Wicklow</strong><span>Fifteen years in Baltinglass, monastic history, mountains, gardens and coast</span></a>
     <a class="dest-link" href="/hidden-ireland-gems.html"><strong>💎 Hidden Ireland</strong><span>Our growing collection of places most visitors miss</span></a>
   </div>
 </div>
@@ -432,7 +454,11 @@
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
   const stops=[
     {name:'Carlow',lat:52.8365,lng:-6.9341,region:'Leinster',color:'#176b45',text:'Our home county and the starting point for our growing Ireland archive.',url:'/carlow.html'},
+    {name:'Kildare',lat:53.158,lng:-6.909,region:'Leinster',color:'#176b45',text:'Kilcullen, horse country, castles and south-Kildare heritage explored first-hand.',url:'/kildare.html'},
+    {name:'Kilkenny',lat:52.654,lng:-7.245,region:'Leinster',color:'#176b45',text:'Ireland’s medieval city, historic houses, gardens and county discoveries.',url:'/kilkenny.html'},
+    {name:'Laois',lat:53.032,lng:-7.299,region:'Leinster',color:'#176b45',text:'Nicola’s home county — childhood favourites, woodland walks and hidden heritage.',url:'/laois.html'},
     {name:'Wexford',lat:52.3369,lng:-6.4633,region:'Leinster',color:'#176b45',text:'Childhood beaches, coastal favourites, heritage discoveries and hidden corners across County Wexford.',url:'/wexford.html'},
+    {name:'Wicklow',lat:52.981,lng:-6.044,region:'Leinster',color:'#176b45',text:'Baltinglass, monastic history, mountain roads, great gardens and the east coast.',url:'/wicklow.html'},
     {name:'Hidden Ireland',lat:53.20,lng:-7.55,region:'Across Ireland',color:'#d4a900',text:'Our collection of overlooked places, unusual attractions and road-trip discoveries.',url:'/hidden-ireland-gems.html'}
   ];
   stops.forEach(s=>{
