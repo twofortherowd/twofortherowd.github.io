@@ -15,7 +15,7 @@
 <meta property="og:description" content="The Laois Nicola grew up with — Sunday walks in the Slieve Blooms, hazelnut picking in the Heath, family trips to Rock of Dunamase — and the Laois we're still discovering together.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://twofortherowd.com/laois.html">
-<meta property="og:image" content="https://twofortherowd.com/img/laois-hero.jpg">
+<meta property="og:image" content="https://twofortherowd.com/img/laois-real.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -164,7 +164,7 @@
 <div class="card sandCard">
   <p>We put together our own local guide to Laois, covering must-see attractions, our favourite places to eat, coffee stops, pubs worth visiting, shopping, hidden gems and easy day trips from the county — plus our own top picks for coffee, lunch, dinner, a pint, the best walk and the best photo.</p>
   <div class="guide-wrap">
-    <img src="/img/laois-real.jpg" alt="Two for the Row'd printable local guide to Laois, covering attractions, food, coffee, pubs, shopping, hidden gems and day trips" loading="lazy" decoding="async">
+    <img src="/img/laois-real.png" alt="Two for the Row'd printable local guide to Laois, covering attractions, food, coffee, pubs, shopping, hidden gems and day trips" loading="lazy" decoding="async">
   </div>
   <div class="feature-wide">
     <h3>💡 Our local tip</h3>
@@ -219,7 +219,7 @@
  if(typeof L==='undefined') return;
  const el=document.getElementById('visitorMap'); if(!el) return;
  const map=L.map(el,{scrollWheelZoom:false}).setView([52.99,-7.28],10);
- L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.jpg',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
  const stops=[
   {name:'Rock of Dunamase',lat:53.0315,lng:-7.2101,color:'#5b6b4f',type:'Childhood favourite',text:'Family day trips growing up — hilltop castle ruins with views across to the Slieve Blooms.'},
   {name:'Slieve Bloom Mountains',lat:53.073,lng:-7.482,color:'#5b6b4f',type:'Childhood favourite',text:'Sunday afternoon walks, growing up. Approximate marker — the range spans a wide area on the Laois-Offaly border.'},
