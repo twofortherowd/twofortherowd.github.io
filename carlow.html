@@ -29,7 +29,7 @@
   <style>
     :root{--gold:#ffd84a;--gold-dark:#e8c235;--ink:#1a1208;--ink-soft:#4a3f28;--muted:#7a6e58;--cream:#fdf8ef;--white:#ffffff;--border:rgba(26,18,8,.10);--border-mid:rgba(26,18,8,.16);--card-bg:rgba(255,255,255,.88);--shadow-sm:0 2px 8px rgba(26,18,8,.07);--shadow-md:0 8px 24px rgba(26,18,8,.10);--shadow-lg:0 16px 48px rgba(26,18,8,.13);--radius-sm:10px;--radius-md:16px;--radius-lg:22px;--font-display:"Playfair Display",Georgia,serif;--font-body:"DM Sans","Segoe UI",Arial,sans-serif;--green:#2d6a4f;--green-dark:#1e4d38;}
     *,*::before,*::after{box-sizing:border-box;}
-    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;} [id]{scroll-margin-top:112px;}
     body{margin:0;font-family:var(--font-body);font-size:15px;font-weight:400;line-height:1.7;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;}
     body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 80% 60% at 10% 0%,rgba(82,183,136,.12) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 90% 100%,rgba(255,216,74,.15) 0%,transparent 55%);}
     *{position:relative;z-index:1;}
@@ -39,13 +39,18 @@
     p{margin:0 0 .9rem;}p:last-child{margin-bottom:0;}
     a{color:inherit;}strong{font-weight:700;}em{font-style:italic;}
     .wrap{max-width:900px;margin:0 auto;padding:0 16px 60px;}
-    .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+    .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:50;}
     .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
     .backBar a:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
     .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:16px;display:flex;flex-wrap:wrap;gap:4px;align-items:center;}
     .breadcrumb a{color:var(--muted);text-decoration:none;font-weight:600;}
     .breadcrumb a:hover{color:var(--ink);}
     .breadcrumb span{opacity:.5;}
+    .chapterNav{position:sticky;top:52px;z-index:40;background:rgba(253,248,239,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:8px 0;}
+    .chapterNavInner{max-width:900px;margin:0 auto;padding:0 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;}
+    .chapterNavInner::-webkit-scrollbar{display:none;}
+    .chapterNavInner a{flex-shrink:0;padding:6px 12px;font-size:12px;font-weight:700;text-decoration:none;color:var(--ink-soft);border-radius:999px;border:1px solid transparent;}
+    .chapterNavInner a:hover{background:#fff;border-color:var(--border);}
     .card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-md);padding:24px 26px;margin-bottom:16px;backdrop-filter:blur(4px);transition:transform .18s ease,box-shadow .18s ease;}
     .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
     .heroCard{background:linear-gradient(160deg,#ffffff 0%,#eef8f2 55%,#d4f0e2 100%);border-color:rgba(45,106,79,.22);}
@@ -80,6 +85,11 @@
     .disclosure{font-size:12px;line-height:1.55;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px dashed var(--border-mid);}
     .tagRow{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
     .tag{display:inline-block;padding:6px 11px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.8);font-size:12px;font-weight:600;color:var(--ink-soft);}
+    .tour-details{background:rgba(255,255,255,.75);border:1px solid rgba(45,106,79,.2);border-radius:14px;padding:0;margin-bottom:16px;overflow:hidden;}
+    .tour-details summary{cursor:pointer;padding:16px 18px;font-family:var(--font-display);font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:12px;}
+    .tour-details summary::-webkit-details-marker{display:none;}.tour-details summary::after{content:"+";font-size:22px;color:var(--green);line-height:1;}.tour-details[open] summary::after{content:"−";}.tour-route-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;padding:0 18px 18px;}
+    .affiliate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px;}.affiliate-block{background:rgba(255,255,255,.68);border:1px solid var(--border);border-radius:14px;padding:18px;}.affiliate-block.gyg{grid-column:1/-1;}
+    .guide-wrap{margin-top:16px;text-align:center;}.guide-wrap img{display:block;width:100%;max-width:560px;height:auto;margin:0 auto;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-lg);}
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){
@@ -88,6 +98,7 @@
       div[style*="minmax(200px,1fr)"]{grid-template-columns:1fr!important;}
       div[style*="minmax(240px,1fr)"]{grid-template-columns:1fr!important;}
       .card{padding:16px 18px;}
+      .affiliate-grid{grid-template-columns:1fr;}.affiliate-block.gyg{grid-column:auto;}
       .shortGrid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important;}
       .iframeWrap.short{aspect-ratio:unset!important;height:180px;}
       .shortGrid [style*="font-family:var(--font-display)"]{font-size:11px!important;}
@@ -100,6 +111,10 @@
   <a href="https://twofortherowd.com/">← Back to Two for the Row'd</a>
   <a href="https://twofortherowd.com/" style="font-family:var(--font-display);font-size:15px;font-weight:700;">Two for the Row'd 🇮🇪</a>
 </div>
+
+<nav class="chapterNav" aria-label="Carlow guide sections"><div class="chapterNavInner">
+  <a href="#people">People</a><a href="#dark-history">Dark History</a><a href="#places">Places</a><a href="#heritage">Heritage</a><a href="#facts">Mad Facts</a><a href="#local-guide">Local Guide</a><a href="#tour">Walking Tour</a><a href="#book">Plan a Trip</a><a href="#faq">FAQ</a>
+</div></nav>
 
 <div class="wrap">
 
@@ -121,31 +136,20 @@
     <p style="font-size:1.05rem;line-height:1.7;color:var(--ink-soft);margin-bottom:20px;">The <strong>history of Carlow</strong> is more extraordinary than most people realise — and we're here to prove it. We're Nicola and Pádraig and we're from Carlow, which means we've spent years watching people drive straight through our county on the way to somewhere else. Carlow is one of the smallest counties in Ireland and one of the most historically extraordinary. A doctor blew up the castle. A mansion burned under suspicious circumstances with a banshee curse attached. The largest megalithic capstone in Europe is sitting in a field three kilometres from the town centre. We've made 18 short films to prove it — 12 of our favourites are below, and the full collection lives on YouTube.</p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;">
       <a class="btn-green" href="https://www.youtube.com/playlist?list=PLYNbdtE1Ksfo" target="_blank" rel="noopener" onclick="fbq('track','ViewContent');">▶️ Watch all 18 &amp; subscribe on YouTube →</a>
-      <a class="btn-outline" href="https://www.tourradar.com/t/129407?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book an Ireland tour on TourRadar →</a>
+      <a class="btn-outline" href="https://www.tourradar.com/t/129407?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book an Ireland tour on TourRadar →</a>
       <a class="btn-outline" href="https://twofortherowd.com/hidden-ireland-gems.html">See all our Hidden Ireland videos →</a>
     </div>
     <div class="tagRow">
       <span class="tag">history of Carlow</span>
-      <span class="tag">Carlow town history</span>
       <span class="tag">things to do in Carlow</span>
-      <span class="tag">Carlow history</span>
       <span class="tag">famous people from Carlow</span>
       <span class="tag">Browne's Hill Dolmen</span>
-      <span class="tag">Haroldstown Dolmen</span>
       <span class="tag">Duckett's Grove Carlow</span>
-      <span class="tag">Carlow Castle history</span>
       <span class="tag">Walt Disney Irish roots</span>
-      <span class="tag">Myles Keogh Carlow</span>
-      <span class="tag">Altamont Gardens</span>
-      <span class="tag">guided walking tour Carlow</span>
-      <span class="tag">private tour guide Carlow</span>
-      <span class="tag">things to do in Carlow Ireland</span>
-      <span class="tag">Carlow heritage tour</span>
-      <span class="tag">Carlow day trip</span>
     </div>
   </div>
 
-  <span class="section-label">Famous people from Carlow</span>
+  <span id="people" class="section-label">Famous people from Carlow</span>
   <div class="card">
     <h2 style="margin-bottom:6px;">You won't believe who came from here</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:16px;">A Hollywood legend's family roots, a soldier at Custer's Last Stand and scientists who changed the world. All from the smallest county in Leinster.</p>
@@ -168,7 +172,7 @@
     </div>
   </div>
 
-  <span class="section-label">History, dark tales &amp; forgotten stories</span>
+  <span id="dark-history" class="section-label">History, dark tales &amp; forgotten stories</span>
   <div class="card" style="background:linear-gradient(160deg,#0f1a0f 0%,#1a2e1a 55%,#243324 100%);border-color:rgba(82,183,136,.2);color:#fff;">
     <h2 style="color:#fff;margin-bottom:6px;">The history of Carlow they didn't teach you in school</h2>
     <p style="color:rgba(255,255,255,.8);font-size:14px;margin-bottom:16px;">A student executed for his role in the War of Independence, an 18th-century female serial killer and a saint who left his name on a European city. All from County Carlow.</p>
@@ -191,7 +195,7 @@
     </div>
   </div>
 
-  <span class="section-label">Places to see in Carlow</span>
+  <span id="places" class="section-label">Places to see in Carlow</span>
   <div class="card" style="background:linear-gradient(160deg,#ffffff 0%,#eef8f2 55%,#d4f0e2 100%);border-color:rgba(45,106,79,.2);">
     <h2 style="margin-bottom:6px;">The places that make Carlow worth stopping for</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:16px;">One of Ireland's great gardens, a world-class local museum, a cathedral pulpit with a story nobody knows — and a megalithic dolmen hiding in plain sight.</p>
@@ -219,7 +223,7 @@
     </div>
   </div>
 
-  <span class="section-label">Faith, saints &amp; heritage</span>
+  <span id="heritage" class="section-label">Faith, saints &amp; heritage</span>
   <div class="card">
     <h2 style="margin-bottom:6px;">22 saints, one county — and a sugar factory that shaped a town</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:16px;">The early Christian heritage of Carlow is extraordinary — and the industrial history of the county is just as fascinating.</p>
@@ -237,7 +241,7 @@
     </div>
   </div>
 
-  <div class="section-divider">🤯 Mad Facts About Carlow</div>
+  <div id="facts" class="section-divider">🤯 Mad Facts About Carlow</div>
   <div class="card">
     <h2 style="margin-bottom:6px;">The stories that make people say "wait, that happened in Carlow?"</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:18px;">A doctor who blew up a medieval castle trying to convert it into a lunatic asylum. A Gothic mansion burned to the ground under suspicious circumstances with a banshee curse attached. And a prehistoric tomb with a capstone heavier than anything else in Europe — sitting in a field three kilometres from the town centre. This is the history of Carlow, ladies and gentlemen.</p>
@@ -245,28 +249,37 @@
       <div style="background:rgba(255,255,255,.75);border:1px solid rgba(26,18,8,.10);border-radius:14px;padding:18px;">
         <div style="font-size:26px;margin-bottom:8px;">💣</div>
         <div style="font-family:var(--font-display);font-weight:700;font-size:15px;margin-bottom:6px;">The Doctor Who Blew Up Carlow Castle</div>
-        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;">In 1814, a local physician called Dr Philip Parry Middleton leased Carlow Castle — a magnificent 13th-century Norman fortress that had survived 600 years of war, sieges and Cromwell — with the intention of converting it into a lunatic asylum. To create more space, he decided to use gunpowder to thin the walls. He used rather too much. The two eastern towers and their adjoining walls collapsed completely. Today, only the western wall and two towers remain. One historian of the time described him as <em>"a ninny-pated physician"</em> who used <em>"blasts of gunpowder for enlarging the windows and diminishing the walls."</em> If it had survived intact, Carlow Castle would have been comparable in scale and grandeur to Kilkenny Castle.</p>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;">Carlow Castle survived six centuries of war, sieges and Cromwell — only to be largely destroyed in 1814 by Dr Philip Parry Middleton. While converting it into an asylum, he used gunpowder to thin the walls and brought down the two eastern towers. One contemporary called him a <em>“ninny-pated physician.”</em></p>
       </div>
       <div style="background:rgba(255,255,255,.75);border:1px solid rgba(26,18,8,.10);border-radius:14px;padding:18px;">
         <div style="font-size:26px;margin-bottom:8px;">🔥</div>
         <div style="font-family:var(--font-display);font-weight:700;font-size:15px;margin-bottom:6px;">Duckett's Grove — the Banshee, the Curse and the Mysterious Fire</div>
-        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;">About ten kilometres from Carlow town sit the extraordinary Gothic ruins of Duckett's Grove — once the centrepiece of a 12,000-acre estate. On the night of 20 April 1933, the house burned to the ground. The cause was never officially established. A legend holds that a young woman had an affair with one of the Ducketts, died after a fall from her horse, and her mother placed a Piseóg on the family. A banshee is said to haunt the ruined towers to this day. The ruins and walled gardens are free to visit.</p>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;">Once the centrepiece of a 12,000-acre estate, Duckett's Grove burned on 20 April 1933 for reasons never officially established. Local legend adds a family curse and a banshee said to haunt the Gothic towers. Today the ruins and restored walled gardens are free to visit.</p>
       </div>
       <div style="background:rgba(255,255,255,.75);border:1px solid rgba(26,18,8,.10);border-radius:14px;padding:18px;">
         <div style="font-size:26px;margin-bottom:8px;">🪨</div>
         <div style="font-family:var(--font-display);font-weight:700;font-size:15px;margin-bottom:6px;">Browne's Hill Dolmen — Older Than the Pyramids, Three Minutes from Town</div>
-        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;">Three kilometres east of Carlow town sits one of the most extraordinary prehistoric monuments in Europe. Browne's Hill Dolmen is a Neolithic portal tomb built between 4,000 and 3,300 BC — predating the Egyptian pyramids by over a thousand years. Its granite capstone weighs an estimated 100 to 150 tonnes, making it the heaviest megalithic capstone in Europe. The site has never been excavated. Free to visit, open always.</p>
+        <p style="font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;">Just three kilometres from Carlow town, this Neolithic portal tomb predates the Egyptian pyramids by more than a thousand years. Its unexcavated granite capstone is estimated at 100–150 tonnes, making it the heaviest megalithic capstone in Europe. It is free to visit.</p>
       </div>
     </div>
   </div>
 
-  <div class="section-divider">🚶 Guided Walking Tour of Carlow</div>
+  <div id="local-guide" class="section-divider">🗺️ Carlow City &amp; County Guide</div>
+  <div class="card greenCard">
+    <h2>Our local guide to Carlow</h2>
+    <p style="color:var(--ink-soft);font-size:14px;">Our at-a-glance guide brings together attractions, places to eat, coffee stops, pubs, shopping, easy day trips and Nicola's own suggestion for a perfect Carlow day.</p>
+    <div class="guide-wrap">
+      <img src="/img/carlow-real.png" alt="Two for the Row'd Carlow city and county guide with attractions, restaurants, coffee stops, pubs, shopping and local tips" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <div id="tour" class="section-divider">🚶 Guided Walking Tour of Carlow</div>
   <div class="card" style="background:linear-gradient(160deg,#ffffff 0%,#eef8f2 55%,#d4f0e2 100%);border-color:rgba(45,106,79,.22);">
     <h2 style="margin-bottom:6px;">Book a private guided walking tour of Carlow town</h2>
     <p style="font-size:15px;line-height:1.7;color:var(--ink-soft);margin-bottom:16px;">There are no official guided walking tours of Carlow town — which is exactly why we started offering them. Nicola is a <strong>fully accredited Irish tour guide</strong> who has called Carlow home for over 20 years. Whether you are looking for <strong>things to do in Carlow</strong>, a unique <strong>private tour of Carlow town</strong> or a <strong>Carlow heritage experience</strong> unlike anything else in Ireland — this is it.</p>
-    <div style="background:rgba(255,255,255,.75);border:1px solid rgba(45,106,79,.2);border-radius:14px;padding:18px;margin-bottom:16px;">
-      <div style="font-family:var(--font-display);font-weight:700;font-size:16px;margin-bottom:14px;color:var(--ink);">🗺️ The Route — 90 minutes on foot through Carlow's hidden history</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+    <details class="tour-details">
+      <summary>🗺️ See the complete nine-stop walking route</summary>
+      <div class="tour-route-grid">
         <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:18px;flex-shrink:0;">🏰</span><div><strong style="font-size:13px;display:block;">Carlow Castle</strong><span style="font-size:12px;color:var(--ink-soft);line-height:1.5;display:block;">The gunpowder disaster of 1814 — and 600 years of history before that</span></div></div>
         <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:18px;flex-shrink:0;">⛪</span><div><strong style="font-size:13px;display:block;">Cathedral of the Assumption</strong><span style="font-size:12px;color:var(--ink-soft);line-height:1.5;display:block;">The remarkable pulpit story and the architecture behind it</span></div></div>
         <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:18px;flex-shrink:0;">🙏</span><div><strong style="font-size:13px;display:block;">Poor Clares Convent</strong><span style="font-size:12px;color:var(--ink-soft);line-height:1.5;display:block;">The story of the Poor Clares and their place in Carlow's history</span></div></div>
@@ -277,7 +290,7 @@
         <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:18px;flex-shrink:0;">🔪</span><div><strong style="font-size:13px;display:block;">The Lucinda Sly Execution Site</strong><span style="font-size:12px;color:var(--ink-soft);line-height:1.5;display:block;">Where Carlow's most notorious 18th-century killer met her end</span></div></div>
         <div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-size:18px;flex-shrink:0;">🍺</span><div><strong style="font-size:13px;display:block;">A pint of O'Hara's in Corcoran's Bar</strong><span style="font-size:12px;color:var(--ink-soft);line-height:1.5;display:block;">Carlow's oldest bar — est. 1768. The perfect ending.</span></div></div>
       </div>
-    </div>
+    </details>
     <div style="background:rgba(45,106,79,.08);border:1px solid rgba(45,106,79,.2);border-radius:12px;padding:14px;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;">
       <span style="font-size:13px;font-weight:700;">⏱️ 90 minutes</span>
       <span style="font-size:13px;font-weight:700;">👥 Private groups only</span>
@@ -291,37 +304,34 @@
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:0;">Walt Disney's ancestors, the doctor who blew up the castle, the woman hanged in the Haymarket, the saint who became patron of the Netherlands — told by someone who lives and breathes the history of this county. No other <strong>guided tour in Carlow</strong> tells these stories.</p>
   </div>
 
-  <div class="section-divider">🧭 Book an Ireland Tour</div>
+  <div id="book" class="section-divider">🧭 Plan Your Carlow &amp; Ireland Trip</div>
   <div class="card goldCard">
-    <h2>Explore Ireland properly — book through TourRadar</h2>
-    <p style="color:var(--ink-soft);font-size:14px;">TourRadar has brilliant Ireland itineraries that go well beyond the standard tourist trail.</p>
-    <div style="background:rgba(255,255,255,.6);border:1px solid rgba(232,194,53,.5);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:14px;">🎉 <strong>New to TourRadar?</strong> New users may be eligible for <strong>€50 off</strong> their first booking — check our link for current offers.</div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
-      <a class="btn-primary" href="https://www.tourradar.com/profile/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Ireland tours on TourRadar →</a>
+    <h2>Tours, activities and experiences</h2>
+    <p style="color:var(--ink-soft);font-size:14px;">If you're building Carlow into a wider Ireland trip, these are the booking platforms we use on the site.</p>
+    <div class="affiliate-grid">
+      <div class="affiliate-block">
+        <div class="hero-eyebrow"><span class="badge">TourRadar</span><span class="badge outline">Multi-day tours</span></div>
+        <h3>Explore Ireland by organised tour</h3>
+        <p style="color:var(--ink-soft);font-size:13px;">Compare longer Ireland itineraries with the transport and route already arranged.</p>
+        <a class="btn-primary" href="https://www.tourradar.com/profile/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse TourRadar →</a>
+      </div>
+      <div class="affiliate-block">
+        <div class="hero-eyebrow"><span class="badge">Klook</span><span class="badge outline">Day trips</span></div>
+        <h3>Find Carlow and Ireland experiences</h3>
+        <p style="color:var(--ink-soft);font-size:13px;">Browse guided tours, day trips and bookable experiences available through Klook.</p>
+        <a class="btn-green" href="https://www.klook.com/search/result/?query=carlow" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Klook →</a>
+      </div>
+      <div class="affiliate-block gyg">
+        <div class="hero-eyebrow"><span class="badge">GetYourGuide</span><span class="badge outline">Activities</span></div>
+        <h3>Things to do around Ireland</h3>
+        <p style="color:var(--ink-soft);font-size:13px;">Browse activities, guided heritage tours and day trips from Dublin into Leinster.</p>
+        <div class="gygWidgetWrap"><div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="169016" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VYORXUN"></div></div>
+      </div>
     </div>
-    <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
+    <p class="disclosure"><strong>Disclosure:</strong> These are affiliate links. If you book through them we may earn a small commission at no extra cost to you.</p>
   </div>
 
-  <div class="section-divider">🎫 Book Ireland Experiences</div>
-  <div class="card greenCard">
-    <h2>Book Ireland activities — GetYourGuide</h2>
-    <p style="color:var(--ink-soft);font-size:14px;">Day trips from Dublin into Leinster, guided heritage tours, walking experiences and more.</p>
-    <div class="gygWidgetWrap">
-      <div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="169016" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VYORXUN"></div>
-    </div>
-    <p class="disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
-  </div>
-
-  <div class="card">
-    <h2>Find Carlow &amp; Ireland experiences on Klook</h2>
-    <p style="color:var(--ink-soft);font-size:14px;">Klook has Ireland day trips, guided tours and experiences worth checking out.</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
-      <a class="btn-green" href="https://www.klook.com/search/result/?query=carlow" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse on Klook →</a>
-    </div>
-    <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
-  </div>
-
-  <div class="section-divider">❓ Carlow History FAQ</div>
+  <div id="faq" class="section-divider">❓ Carlow History FAQ</div>
   <div class="card">
     <h2>Common questions about the history of Carlow</h2>
     <div class="faqItem open">
@@ -364,7 +374,7 @@
     <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
       <a class="btn-green" href="https://www.youtube.com/playlist?list=PLYNbdtE1Ksfo" target="_blank" rel="noopener" onclick="fbq('track','ViewContent');">▶️ Subscribe on YouTube →</a>
       <a class="btn-gold" href="https://twofortherowd.com/hidden-ireland-gems.html">See all our Hidden Ireland videos →</a>
-      <a class="btn-outline" href="https://www.tourradar.com/t/129407?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book an Ireland tour →</a>
+      <a class="btn-outline" href="https://www.tourradar.com/t/129407?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book an Ireland tour →</a>
       <a class="btn-outline" href="https://twofortherowd.com/">Back to main site →</a>
     </div>
   </div>
