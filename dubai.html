@@ -208,51 +208,37 @@
     }
     
 
-    /* HERO PILL / TAB READABILITY FIX — Two for the Row'd */
-    .route-stop,
-    .state-pill,
-    .tagRow .tag{
-      background:rgba(255,255,255,.94) !important;
-      color:#1b1813 !important;
-      border:1px solid rgba(255,255,255,.78) !important;
-      box-shadow:0 2px 9px rgba(0,0,0,.16) !important;
-      text-shadow:none !important;
-      backdrop-filter:blur(4px);
+    /* CRITICAL HERO LAYOUT FIX */
+    .dubaiHero{
+      display:block !important;
+      min-height:0 !important;
     }
-    .route-stop a,
-    .state-pill a,
-    .tagRow .tag a{
-      color:#1b1813 !important;
-      text-decoration:none;
+    .dubaiHero > *{
+      max-width:820px;
     }
-    .route-arrow{
-      color:rgba(255,255,255,.92) !important;
-      text-shadow:0 1px 4px rgba(0,0,0,.45);
-    }
-    .heroCard .states-strip,
-    .proHero .states-strip,
-    .cphHero .states-strip,
-    .eswHero .states-strip,
-    .southAfricaHero .states-strip,
-    .zanzibarHero .states-strip,
+    .dubaiHero .route-strip,
     .dubaiHero .states-strip,
-    .polandHero .states-strip,
-    .bucharestHero .states-strip,
-    .italyHero .states-strip{
-      gap:8px !important;
+    .dubaiHero .tagRow,
+    .dubaiHero .links{
+      max-width:100%;
     }
-    .heroCard > p[style*="text-transform:uppercase"],
-    .proHero > p[style*="text-transform:uppercase"],
-    .cphHero > p[style*="text-transform:uppercase"],
-    .eswHero > p[style*="text-transform:uppercase"],
-    .southAfricaHero > p[style*="text-transform:uppercase"],
-    .zanzibarHero > p[style*="text-transform:uppercase"],
-    .dubaiHero > p[style*="text-transform:uppercase"],
-    .polandHero > p[style*="text-transform:uppercase"],
-    .bucharestHero > p[style*="text-transform:uppercase"],
-    .italyHero > p[style*="text-transform:uppercase"]{
-      color:#fff !important;
-      text-shadow:0 2px 6px rgba(0,0,0,.55);
+    .dubaiHero .hero-lead{
+      max-width:780px !important;
+    }
+    .dubaiHero .route-strip,
+    .dubaiHero .states-strip,
+    .dubaiHero .tagRow{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .dubaiHero .links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    @media(max-width:700px){
+      .dubaiHero{padding:30px 22px !important;}
     }
 
 </style>
