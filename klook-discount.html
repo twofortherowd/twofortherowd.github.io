@@ -46,7 +46,7 @@
     h2{font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:700;margin-bottom:10px;}
     p{margin:0 0 .9rem;}p:last-child{margin-bottom:0;}
     a{color:inherit;}strong{font-weight:700;}
-    .wrap{max-width:860px;margin:0 auto;padding:0 16px 60px;}
+    .wrap{max-width:980px;margin:0 auto;padding:0 16px 60px;}
     .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
     .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
     .backBar a:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
@@ -101,6 +101,266 @@
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.codes-grid{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}}
+
+    /* ─────────────────────────────────────────────
+       KLOOK CODES — editorial refresh
+    ────────────────────────────────────────────── */
+    .klookHero{
+      min-height:470px;
+      border-radius:28px;
+      padding:48px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      background:
+        radial-gradient(circle at 84% 18%,rgba(255,216,74,.18),transparent 34%),
+        radial-gradient(circle at 12% 86%,rgba(255,255,255,.08),transparent 36%),
+        linear-gradient(135deg,#a72f13 0%,#e64a1b 50%,#ff7a3d 100%);
+      box-shadow:var(--shadow-lg);
+      margin-bottom:18px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    
+    .klookBrandLogo{
+      display:block;
+      width:min(190px,44vw);
+      max-height:54px;
+      object-fit:contain;
+      object-position:left center;
+      margin:0 0 16px;
+      filter:drop-shadow(0 3px 10px rgba(0,0,0,.18));
+    }
+
+    .klookHero h1{
+      color:#fff;
+      font-size:clamp(2.7rem,6vw,5rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
+      text-shadow:0 3px 16px rgba(0,0,0,.20);
+    }
+
+    .klookHero h1 em{
+      display:block;
+      color:#ffe79a;
+      font-size:.46em;
+      line-height:1.12;
+      margin-top:10px;
+    }
+
+    .klookHero .hero-lead{
+      color:rgba(255,255,255,.94);
+      max-width:780px;
+      text-shadow:0 2px 10px rgba(0,0,0,.18);
+    }
+
+    .klookHero .badge.outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+    }
+
+    .klookHero .updated-badge{
+      color:#fff;
+      background:rgba(255,255,255,.12);
+      border-color:rgba(255,255,255,.24);
+    }
+
+    .klookHero .highlight{
+      background:rgba(255,255,255,.10);
+      color:rgba(255,255,255,.92);
+      border-color:rgba(255,255,255,.22);
+      backdrop-filter:blur(7px);
+      max-width:760px;
+    }
+
+    .klookHero .tag{
+      color:#fff;
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.22);
+    }
+
+    .klookHero .btn-outline{
+      color:#fff;
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.28);
+    }
+
+    .klookHero .btn-gold{
+      background:#ffd84a;
+      color:#24170a;
+    }
+
+    .klookProof{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-bottom:30px;
+    }
+
+    .klookProofBox{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:17px;
+      padding:18px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .klookProofBox strong{
+      display:block;
+      font-family:var(--font-display);
+      color:var(--klook-red);
+      font-size:1.22rem;
+      margin-bottom:3px;
+    }
+
+    .klookProofBox span{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .klookSection{
+      margin:50px 0 16px;
+    }
+
+    .klookEyebrow{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--klook-red);
+      margin-bottom:6px;
+    }
+
+    .klookSection h2{
+      font-size:clamp(1.85rem,4vw,2.8rem);
+      margin-bottom:8px;
+    }
+
+    .klookSection p{
+      max-width:760px;
+      color:var(--ink-soft);
+    }
+
+    .codesPanel,
+    .howPanel,
+    .faqPanel{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow-md);
+      margin-bottom:18px;
+    }
+
+    .codes-grid{
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .code-card{
+      background:#fff;
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 7px 20px rgba(26,18,8,.05);
+      border:1px solid rgba(26,18,8,.08);
+      transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+    }
+
+    .code-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 13px 28px rgba(26,18,8,.09);
+      border-color:rgba(255,87,34,.24);
+    }
+
+    .code-card.featured{
+      background:linear-gradient(145deg,#fffdf8,#fff2ec);
+      border-color:rgba(255,87,34,.28);
+    }
+
+    .code-discount{
+      font-size:1.25rem;
+    }
+
+    .code-box{
+      margin-top:auto;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.03);
+    }
+
+    .copy-btn{
+      transition:transform .12s ease,background .15s ease;
+    }
+
+    .copy-btn:hover{transform:translateY(-1px);}
+
+    .stepsGrid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .stepCard{
+      background:#fffaf5;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .stepNum{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--klook-red);
+      color:#fff;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+
+    .klookFinal{
+      background:linear-gradient(135deg,#a72f13,#e64a1b);
+      color:#fff;
+      border-radius:26px;
+      padding:34px;
+      text-align:center;
+      box-shadow:var(--shadow-lg);
+      margin-top:26px;
+    }
+
+    .klookFinal h2{color:#fff;}
+    .klookFinal p{color:rgba(255,255,255,.86)!important;}
+    .klookFinal .btn-outline{
+      background:rgba(255,255,255,.10)!important;
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
+    }
+    .klookFinal .disclosure{
+      color:rgba(255,255,255,.72);
+      border-top-color:rgba(255,255,255,.18)!important;
+    }
+
+    @media(max-width:860px){
+      .codes-grid{grid-template-columns:repeat(2,1fr);}
+      .stepsGrid{grid-template-columns:repeat(2,1fr);}
+    }
+
+    @media(max-width:640px){
+      .klookHero{
+        min-height:440px;
+        padding:30px 22px;
+        border-radius:20px;
+      }
+      .klookHero h1{font-size:3rem;}
+      .klookProof{grid-template-columns:1fr;}
+      .codes-grid,.stepsGrid{grid-template-columns:1fr;}
+      .codesPanel,.howPanel,.faqPanel{padding:20px;}
+    }
+
   </style>
 </head>
 <body>
@@ -118,41 +378,51 @@
     <span>Klook Promo Code &amp; Discount Codes Ireland</span>
   </nav>
 
-  <div class="card heroCard">
-    <div class="updated-badge">✅ Updated August 2026</div>
-    <div class="eyebrow">
-      <span class="badge">🎫 Klook Promo Codes</span>
-      <span class="badge outline">Ireland · Europe · Asia</span>
-      <span class="badge outline">Verified &amp; working</span>
-    </div>
-    <h1 class="hero-headline">Klook Promo Code Ireland 2026 —<br><em>working discount &amp; coupon codes</em></h1>
-    <p class="hero-lead">We're Nicola and Padraig — Irish travel couple and Klook affiliates. Every month we pull the latest verified <strong>Klook promo codes</strong>, <strong>Klook discount codes</strong> and <strong>Klook coupon codes</strong> directly from Klook's official affiliate programme and list them here. No scraped coupon sites, no outdated codes — just what's actually working right now for Ireland, Europe and Asia.</p>
+  <div class="klookHero">
+    <div>
+      <img class="klookBrandLogo" src="/img/img-klook-logo.png" alt="" aria-hidden="true">
+      <div class="updated-badge">✅ Last checked August 2026</div>
+      <div class="eyebrow">
+        <span class="badge">🎫 Klook Promo Codes</span>
+        <span class="badge outline">Ireland · Europe · Asia</span>
+        <span class="badge outline">From Klook's affiliate programme</span>
+      </div>
 
-    <div class="highlight">
-      💡 <strong>How to use a Klook promo code or discount code:</strong> Go to Klook.com, add your experience or ticket to your cart, and enter the code at checkout. The discount applies automatically if the code is valid for your booking type. All codes below include their expiry date.
-    </div>
+      <h1>Klook Promo Code Ireland 2026
+        <em>working discount & coupon codes, all in one place</em>
+      </h1>
 
-    <div class="links">
-      <a class="btn-gold" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262052&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Klook experiences →</a>
-      <a class="btn-outline" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262059&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2F" target="_blank" rel="noopener sponsored">Browse Klook hotels →</a>
-    </div>
+      <p class="hero-lead">We're Nicola and Padraig — Irish travel couple and Klook affiliates. We pull the latest Klook promo, discount and coupon codes directly from Klook's official affiliate programme and keep them together here so you don't have to trawl random coupon sites.</p>
 
-    <div class="tagRow">
-      <span class="tag">Klook promo code Ireland 2026</span>
-      <span class="tag">Klook discount code 2026</span>
-      <span class="tag">Klook coupon code Ireland</span>
-      <span class="tag">Klook discount code Europe</span>
-      <span class="tag">Klook Japan discount code</span>
-      <span class="tag">Klook Malaysia coupon code</span>
-      <span class="tag">Klook Korea discount code</span>
-      <span class="tag">Klook China coupon code</span>
+      <div class="highlight">
+        💡 <strong>How to use a code:</strong> choose a code below, copy it, add your eligible Klook experience or ticket to your cart, then paste the code at checkout. Always check the expiry date and booking conditions first.
+      </div>
+
+      <div class="links">
+        <a class="btn-gold" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262052&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Klook experiences →</a>
+        <a class="btn-outline" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262059&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2F" target="_blank" rel="noopener sponsored">Browse Klook hotels →</a>
+      </div>
+
+      <div class="tagRow">
+        <span class="tag">Klook promo code Ireland 2026</span>
+        <span class="tag">Klook discount code Europe</span>
+        <span class="tag">Klook Japan discount code</span>
+        <span class="tag">Klook Asia coupon code</span>
+      </div>
     </div>
   </div>
 
-  <!-- NEW USER & GENERAL -->
-  <div class="section-divider">⭐ New User &amp; General Codes</div>
-  <div class="card">
+  <div class="klookProof">
+    <div class="klookProofBox"><strong>Official source</strong><span>codes supplied through Klook's affiliate programme</span></div>
+    <div class="klookProofBox"><strong>Copy & paste</strong><span>every code has a one-click copy button</span></div>
+    <div class="klookProofBox"><strong>Expiry shown</strong><span>so you can see when each offer was valid</span></div>
+  </div>
+<!-- NEW USER & GENERAL -->
+  <div class="klookSection">
+    <div class="klookEyebrow">⭐ New User &amp; General Codes</div>
     <h2>Best Klook promo codes for general savings</h2>
+  </div>
+  <div class="codesPanel">
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">Start here — this is the best general Klook discount code right now, no destination in mind required.</p>
     <div class="codes-grid">
 
@@ -172,9 +442,11 @@
   </div>
 
   <!-- EUROPE CODES -->
-  <div class="section-divider">🇪🇺 Ireland &amp; Europe Codes</div>
-  <div class="card">
+  <div class="klookSection">
+    <div class="klookEyebrow">🇪🇺 Ireland &amp; Europe Codes</div>
     <h2>Klook discount codes for Europe — working August 2026</h2>
+  </div>
+  <div class="codesPanel">
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">Klook promo codes for Irish travellers booking European rail tickets and transport passes.</p>
     <div class="codes-grid">
 
@@ -205,9 +477,11 @@
   </div>
 
   <!-- JAPAN CODES -->
-  <div class="section-divider">🇯🇵 Japan Codes</div>
-  <div class="card">
+  <div class="klookSection">
+    <div class="klookEyebrow">🇯🇵 Japan Codes</div>
     <h2>Klook promo codes for Japan — attractions &amp; rail passes</h2>
+  </div>
+  <div class="codesPanel">
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">The biggest batch of codes on the whole page this month — Tokyo, Osaka, Nagoya and beyond.</p>
     <div class="codes-grid">
 
@@ -381,9 +655,11 @@
   </div>
 
   <!-- MALAYSIA CODES -->
-  <div class="section-divider">🇲🇾 Malaysia Codes</div>
-  <div class="card">
+  <div class="klookSection">
+    <div class="klookEyebrow">🇲🇾 Malaysia Codes</div>
     <h2>Klook promo codes for Malaysia — theme parks &amp; attractions</h2>
+  </div>
+  <div class="codesPanel">
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">Some of the biggest percentage discounts on the whole page are here — Malaysia's theme parks and airport transfers.</p>
     <div class="codes-grid">
 
@@ -447,9 +723,11 @@
   </div>
 
   <!-- MORE OF ASIA -->
-  <div class="section-divider">✈️ More of Asia — Korea, China, Hong Kong &amp; Beyond</div>
-  <div class="card">
+  <div class="klookSection">
+    <div class="klookEyebrow">✈️ More of Asia — Korea, China, Hong Kong &amp; Beyond</div>
     <h2>More Klook promo codes across Asia</h2>
+  </div>
+  <div class="codesPanel">
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">Rounding out this month's codes — regional attraction discounts across Korea, China, Hong Kong, Macau, Singapore, Vietnam and Thailand.</p>
     <div class="codes-grid">
 
@@ -546,30 +824,16 @@
   </div>
 
   <!-- HOW TO USE -->
-  <div class="section-divider">💡 How Klook Promo Codes Work</div>
-  <div class="card">
+  <div class="klookSection">
+    <div class="klookEyebrow">💡 How Klook Promo Codes Work</div>
     <h2>How to use a Klook promo code or coupon code</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px;">
-      <div style="background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px;">
-        <div style="font-size:22px;margin-bottom:6px;">1️⃣</div>
-        <strong style="font-size:14px;">Copy your Klook code</strong>
-        <p style="font-size:13px;color:var(--ink-soft);margin-top:4px;">Click the Copy button next to the promo code or coupon code you want — it goes straight to your clipboard.</p>
-      </div>
-      <div style="background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px;">
-        <div style="font-size:22px;margin-bottom:6px;">2️⃣</div>
-        <strong style="font-size:14px;">Find your experience</strong>
-        <p style="font-size:13px;color:var(--ink-soft);margin-top:4px;">Browse Klook and add your chosen experience, ticket or rail pass to your cart.</p>
-      </div>
-      <div style="background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px;">
-        <div style="font-size:22px;margin-bottom:6px;">3️⃣</div>
-        <strong style="font-size:14px;">Enter at checkout</strong>
-        <p style="font-size:13px;color:var(--ink-soft);margin-top:4px;">Paste your Klook discount code in the promo code field at checkout — the discount applies automatically if eligible.</p>
-      </div>
-      <div style="background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px;">
-        <div style="font-size:22px;margin-bottom:6px;">4️⃣</div>
-        <strong style="font-size:14px;">Check expiry dates</strong>
-        <p style="font-size:13px;color:var(--ink-soft);margin-top:4px;">All Klook promo codes listed here show their expiry date. We update this page monthly with fresh verified codes.</p>
-      </div>
+  </div>
+  <div class="howPanel">
+    <div class="stepsGrid">
+      <div class="stepCard"><div class="stepNum">1</div><strong>Copy your code</strong><p>Use the Copy button beside the Klook code you want.</p></div>
+      <div class="stepCard"><div class="stepNum">2</div><strong>Find your experience</strong><p>Add your eligible experience, ticket, rail pass or hotel to your cart.</p></div>
+      <div class="stepCard"><div class="stepNum">3</div><strong>Enter it at checkout</strong><p>Paste the discount code into the promo-code field before you pay.</p></div>
+      <div class="stepCard"><div class="stepNum">4</div><strong>Check the conditions</strong><p>Make sure the code is still within its expiry date and valid for your booking.</p></div>
     </div>
     <div class="links">
       <a class="btn-primary" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262052&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse all Klook experiences →</a>
@@ -577,9 +841,11 @@
   </div>
 
   <!-- FAQ -->
-  <p class="section-label">Common questions</p>
-  <div class="card">
+  <div class="klookSection">
+    <div class="klookEyebrow">Common questions</div>
     <h2>Klook promo code &amp; discount code FAQ</h2>
+  </div>
+  <div class="faqPanel">
     <div class="faqItem open">
       <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What is the best Klook promo code for Ireland right now?</div>
       <div class="faqA">The best current Klook promo codes for Irish travellers in August 2026 are: <strong>SUN4SOLAN</strong> (28% off Solaniwa Onsen in Osaka, valid until 23 Aug 2026), <strong>SUN4LWTT</strong> (25% off Sunway Lost World of Tambun, valid until 23 Aug 2026), and <strong>SS4UMEDA</strong> (24% off Umeda Sky Building, valid until 23 Aug 2026). Check the full list above for all current working codes.</div>
@@ -606,8 +872,8 @@
     </div>
   </div>
 
-  <div class="card goldCard" style="text-align:center;">
-    <h2 style="text-align:center;color:var(--ink);">Ready to book on Klook?</h2>
+  <div class="klookFinal">
+    <h2>Ready to book on Klook?</h2>
     <p style="text-align:center;color:var(--ink-soft);max-width:540px;margin:0 auto 20px;">Copy your Klook promo code or discount code, head to Klook and start planning. From European rail passes and Japan attractions to Malaysia theme parks and Hong Kong Disneyland — Klook has it all.</p>
     <div class="links" style="justify-content:center;">
       <a class="btn-primary" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262052&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Klook experiences →</a>

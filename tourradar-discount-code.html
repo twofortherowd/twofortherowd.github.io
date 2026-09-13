@@ -51,7 +51,7 @@
     p{margin:0 0 .9rem;}p:last-child{margin-bottom:0;}
     ul,ol{margin:0 0 .9rem;padding-left:1.3rem;}li{margin-bottom:.35rem;}
     a{color:inherit;}strong{font-weight:700;}
-    .wrap{max-width:860px;margin:0 auto;padding:0 16px 60px;}
+    .wrap{max-width:980px;margin:0 auto;padding:0 16px 60px;}
     .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
     .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
     .backBar a:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
@@ -132,6 +132,230 @@
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.tour-grid{grid-template-columns:1fr;}.tiers{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.proof-item{flex:1 1 100px;}.trustLink{flex-direction:column;text-align:center;}.promo-banner{flex-direction:column;text-align:center;}}
+
+    /* ─────────────────────────────────────────────
+       TOURRADAR+ SAVINGS — editorial refresh
+    ────────────────────────────────────────────── */
+    .trPlusHero{
+      min-height:520px;
+      border-radius:28px;
+      padding:48px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      background:
+        linear-gradient(90deg,rgba(48,20,15,.84),rgba(48,20,15,.58) 58%,rgba(48,20,15,.22)),
+        radial-gradient(circle at 84% 18%,rgba(255,216,74,.10),transparent 34%),
+        url('/img/moroccotea.jpg') center/cover no-repeat,
+        linear-gradient(135deg,#5b1c18 0%,#9a3b29 50%,#c57a38 100%);
+      box-shadow:var(--shadow-lg);
+      margin-bottom:18px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    
+    .trBrandLogo{
+      display:block;
+      width:min(210px,46vw);
+      max-height:58px;
+      object-fit:contain;
+      object-position:left center;
+      margin:0 0 16px;
+      filter:drop-shadow(0 3px 10px rgba(0,0,0,.24));
+    }
+
+    .trPlusHero h1{
+      color:#fff;
+      font-size:clamp(2.7rem,6vw,5rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
+      text-shadow:0 3px 16px rgba(0,0,0,.30);
+    }
+
+    .trPlusHero h1 em{
+      display:block;
+      color:#ffd84a;
+      font-size:.46em;
+      line-height:1.12;
+      margin-top:10px;
+    }
+
+    .trPlusHero .hero-lead{
+      color:rgba(255,255,255,.94);
+      max-width:780px;
+      text-shadow:0 2px 10px rgba(0,0,0,.24);
+      margin-bottom:12px;
+    }
+
+    .trPlusHero .badge.outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+    }
+
+    .trPlusHero .offer-box{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.24);
+      backdrop-filter:blur(7px);
+      color:#fff;
+      max-width:720px;
+    }
+
+    .trPlusHero .offer-box .offer-amount{color:#ffd84a;}
+    .trPlusHero .offer-box .offer-label{color:rgba(255,255,255,.86);}
+    .trPlusHero .offer-box .btn-primary{background:#fff;color:#6b1d22;}
+
+    .trPlusHero .trustLink{
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.22);
+      color:#fff;
+      backdrop-filter:blur(7px);
+      max-width:820px;
+    }
+
+    .trPlusHero .trustLink .trustBody span{color:rgba(255,255,255,.82);}
+    .trPlusHero .trustLink .btn-outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
+    }
+
+    .trPlusHero .highlight{
+      background:rgba(255,255,255,.10);
+      color:rgba(255,255,255,.90);
+      border-color:rgba(255,255,255,.22);
+      backdrop-filter:blur(7px);
+      max-width:820px;
+    }
+
+    .trPlusHero .btn-outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
+    }
+
+    .trPlusHero .proof-strip{
+      border-top-color:rgba(255,255,255,.18);
+    }
+    .trPlusHero .proof-item{border-right-color:rgba(255,255,255,.18);}
+    .trPlusHero .proof-label{color:rgba(255,255,255,.72);}
+    .trPlusHero .proof-num{color:#fff;}
+
+    .trPlusHero .tag{
+      color:#fff;
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.22);
+    }
+
+    .trPlusProof{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-bottom:30px;
+    }
+    .trPlusProofBox{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:17px;
+      padding:18px;
+      box-shadow:var(--shadow-sm);
+    }
+    .trPlusProofBox strong{
+      display:block;
+      font-family:var(--font-display);
+      color:#8d3a22;
+      font-size:1.2rem;
+      margin-bottom:3px;
+    }
+    .trPlusProofBox span{font-size:12px;color:var(--muted);}
+
+    .trSection{
+      margin:50px 0 16px;
+    }
+    .trEyebrow{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#9a3b29;
+      margin-bottom:6px;
+    }
+    .trSection h2{
+      font-size:clamp(1.85rem,4vw,2.8rem);
+      margin-bottom:8px;
+    }
+
+    .trPanel,
+    .trFaqPanel{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow-md);
+      margin-bottom:18px;
+    }
+
+    .trPanel.warm{
+      background:linear-gradient(145deg,#fffdf8,#fff5e8);
+      border-color:rgba(184,120,10,.18);
+    }
+
+    .tiers{gap:14px;}
+    .tier{
+      border-radius:18px;
+      box-shadow:var(--shadow-sm);
+      background:#fff;
+    }
+
+    .tour-card{
+      border-radius:18px;
+      box-shadow:var(--shadow-sm);
+      background:#fff;
+    }
+
+    .step{
+      border-radius:14px;
+      background:#fff;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .trFinal{
+      background:linear-gradient(135deg,#6d241d,#a94e2d);
+      color:#fff;
+      border-radius:26px;
+      padding:34px;
+      text-align:center;
+      box-shadow:var(--shadow-lg);
+      margin-top:26px;
+    }
+
+    .trFinal h2{color:#fff;}
+    .trFinal p{color:rgba(255,255,255,.84)!important;}
+    .trFinal .btn-outline{
+      background:rgba(255,255,255,.10)!important;
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
+    }
+    .trFinal .disclosure{
+      color:rgba(255,255,255,.72);
+      border-top-color:rgba(255,255,255,.18)!important;
+    }
+
+    @media(max-width:760px){
+      .trPlusProof{grid-template-columns:1fr;}
+    }
+
+    @media(max-width:640px){
+      .trPlusHero{
+        min-height:480px;
+        padding:30px 22px;
+        border-radius:20px;
+      }
+      .trPlusHero h1{font-size:3rem;}
+    }
+
   </style>
 </head>
 <body>
@@ -151,61 +375,62 @@
     <span>TourRadar Promo Code &amp; Savings</span>
   </nav>
 
-  <div class="card heroCard">
-    <div class="eyebrow">
-      <span class="badge">Updated August 2026</span>
-      <span class="badge outline">🇮🇪 TourRadar RISE Ambassadors</span>
-      <span class="badge outline">Honest guide — no fluff</span>
-    </div>
-    <h1 class="hero-headline">TourRadar Discount Code &amp; Promo Code 2026 —<br><em>automatic savings up to 7%</em></h1>
-
-    <p class="hero-lead"><strong>Looking for a TourRadar discount code or new customer code?</strong> There isn't a public promo code to type in for 2026 — because TourRadar has just launched <strong>TourRadar+</strong>, a free loyalty program that automatically applies a saving at checkout. Up to <strong>3%, 5% or 7%</strong> depending on your level. That's the real answer to what most people searching this page actually want to know.</p>
-
-    <p class="hero-lead" style="margin-top:-8px;">We're Nicola and Padraig — Irish TourRadar RISE Ambassadors who booked our Morocco trip through TourRadar and would do it again tomorrow. Below we explain exactly how <strong>TourRadar+ savings</strong> work, why "RISE Ambassador" actually means something, and the best way to save before you book.</p>
-
-    <div class="offer-box">
-      <div class="offer-amount">Up to 7%</div>
-      <div class="offer-label">Automatic saving through TourRadar+ — no promo code needed</div>
-      <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Sign up for TourRadar+ and start saving →</a>
-    </div>
-
-    <div class="trustLink">
-      <div class="trustIcon">🤔</div>
-      <div class="trustBody">
-        <strong>Still wondering if TourRadar is worth it?</strong>
-        <span>We booked our Morocco tour through TourRadar — here's our honest review of the booking process, the tour itself, and whether we'd use them again.</span>
+  <div class="trPlusHero">
+    <div>
+      <img class="trBrandLogo" src="/img/img-tourradar-logo.png" alt="" aria-hidden="true">
+      <div class="eyebrow">
+        <span class="badge">Last updated August 2026</span>
+        <span class="badge outline">🇮🇪 TourRadar RISE Ambassadors</span>
+        <span class="badge outline">Booked it ourselves</span>
       </div>
-      <a class="btn-outline" href="/is-tourradar-worth-it.html">Read our honest review →</a>
-    </div>
 
-    <div class="highlight">
-      💡 <strong>The short answer:</strong> skip the coupon sites — sites like Honey, Coupert and CouponBirds still list TourRadar promo codes, but they don't work at checkout. TourRadar has moved fully to <strong>automatic savings through TourRadar+</strong>, applied when you're signed in. Click our link, create an account in one tap, and your saving is applied automatically from booking one.
-    </div>
+      <h1>TourRadar Discount Code & Promo Code 2026
+        <em>the real saving is TourRadar+ — up to 7% automatically</em>
+      </h1>
 
-    <div class="links">
-      <a class="btn-gold" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Join TourRadar+ →</a>
-      <a class="btn-outline" href="/morocco-tour-review.html">Read our Morocco tour review →</a>
-    </div>
+      <p class="hero-lead"><strong>Looking for a TourRadar discount code or new-customer code?</strong> There isn't a public promo code to type in for 2026. TourRadar now uses <strong>TourRadar+</strong>, its free loyalty programme, to apply savings automatically at checkout — up to <strong>3%, 5% or 7%</strong> depending on your level.</p>
 
-    <div class="proof-strip">
-      <div class="proof-item"><div class="proof-num">60+</div><div class="proof-label">countries visited between us</div></div>
-      <div class="proof-item"><div class="proof-num">✅</div><div class="proof-label">booked Morocco through TourRadar ourselves</div></div>
-      <div class="proof-item"><div class="proof-num">🇮🇪</div><div class="proof-label">official TourRadar RISE Ambassadors from Ireland</div></div>
-    </div>
+      <p class="hero-lead">We're Nicola and Padraig — Irish TourRadar RISE Ambassadors who booked our Morocco trip through TourRadar and would happily do it again. This page explains what actually saves money, what TourRadar+ means, and what to ignore.</p>
 
-    <div class="tagRow">
-      <span class="tag">TourRadar promo code 2026</span>
-      <span class="tag">TourRadar discount code</span>
-      <span class="tag">TourRadar+ savings</span>
-      <span class="tag">TourRadar loyalty program</span>
-      <span class="tag">TourRadar deals Ireland</span>
-      <span class="tag">TourRadar new user</span>
-      <span class="tag">TourRadar coupon code</span>
-      <span class="tag">TourRadar Black Friday</span>
+      <div class="offer-box">
+        <div class="offer-amount">Up to 7%</div>
+        <div class="offer-label">Automatic TourRadar+ saving — no promo code required</div>
+        <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar storefront',button_label:'Sign up for TourRadar+'});">Sign up for TourRadar+ and start saving →</a>
+      </div>
+
+      <div class="trustLink">
+        <div class="trustIcon">🤔</div>
+        <div class="trustBody">
+          <strong>Still wondering if TourRadar is worth it?</strong>
+          <span>We booked our Morocco tour through TourRadar — here's our honest review of the platform and trip.</span>
+        </div>
+        <a class="btn-outline" href="/is-tourradar-worth-it.html">Read our honest review →</a>
+      </div>
+
+      <div class="highlight">
+        💡 <strong>The short answer:</strong> skip the coupon-code rabbit hole. The real savings now come from TourRadar+, seasonal promotions, tour-specific deals and comparing departure dates.
+      </div>
+
+      <div class="links">
+        <a class="btn-gold" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar storefront',button_label:'Join TourRadar+'});">Join TourRadar+ →</a>
+        <a class="btn-outline" href="/morocco-tour-review.html">Read our Morocco tour review →</a>
+      </div>
+
+      <div class="tagRow">
+        <span class="tag">TourRadar promo code 2026</span>
+        <span class="tag">TourRadar discount code</span>
+        <span class="tag">TourRadar+ savings</span>
+        <span class="tag">TourRadar Ireland</span>
+      </div>
     </div>
   </div>
 
-  <p class="section-label">The TourRadar+ savings program</p>
+  <div class="trPlusProof">
+    <div class="trPlusProofBox"><strong>Up to 7%</strong><span>automatic saving at the top TourRadar+ level</span></div>
+    <div class="trPlusProofBox"><strong>No code needed</strong><span>savings appear automatically when signed in</span></div>
+    <div class="trPlusProofBox"><strong>Booked ourselves</strong><span>our Morocco trip was booked through TourRadar</span></div>
+  </div>
+<p class="section-label">The TourRadar+ savings program</p>
   <div class="card heroCard">
     <h2>How TourRadar+ works</h2>
     <p><strong>TourRadar+</strong> is TourRadar's free loyalty program. Every account is automatically enrolled — no forms, no codes, no minimum spend. Your saving is applied automatically at checkout when you're signed in. Which level you're on depends on how many bookings you've made:</p>
@@ -236,21 +461,25 @@
     <p>The old €50 first-time credit has been retired and replaced by TourRadar+. In practice, this is a better deal for most people: you get a saving on <strong>every</strong> booking, not just the first, and there's no minimum spend to unlock it. When you click through a partner link like ours, you'll also see a personalised sign-up offer to get you started.</p>
 
     <div class="links">
-      <a class="btn-gold" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Sign up for TourRadar+ →</a>
+      <a class="btn-gold" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Sign up for TourRadar+ →</a>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> This is our official TourRadar RISE Ambassador link. If you book through it we may earn a small commission at no extra cost to you.</p>
   </div>
 
-  <p class="section-label">Why trust us on this</p>
-  <div class="card">
+  <div class="trSection">
+    <div class="trEyebrow">Why trust us on this</div>
     <h2>We're official TourRadar RISE Ambassadors</h2>
+  </div>
+  <div class="trPanel">
     <p>You'll see us mention "TourRadar RISE Ambassador" around this page, and it's worth explaining what that actually means: <strong>TourRadar has approved us to recommend tours through our own partner profile</strong>, based on our track record as genuine travellers and content creators — not just anyone can put up a partner link.</p>
     <p>That doesn't mean we're paid to say TourRadar is perfect. It means we've been vetted by TourRadar itself, we've booked and travelled on one of their tours ourselves (Morocco — see our full <a href="/morocco-tour-review.html" style="font-weight:700;color:#b8780a;">day-by-day review here</a>), and we only link to tours we'd book again.</p>
   </div>
 
-  <p class="section-label">How it actually works</p>
-  <div class="card">
+  <div class="trSection">
+    <div class="trEyebrow">How it actually works</div>
     <h2>How TourRadar savings and promo codes actually work in 2026</h2>
+  </div>
+  <div class="trPanel">
     <p>TourRadar doesn't rely on public promo codes anymore. Instead, savings come from a few different sources — and knowing which ones are active at any given time is what makes the difference.</p>
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-body"><strong>TourRadar+ automatic savings</strong><p>Every TourRadar account is enrolled in TourRadar+ automatically. Level 1 saves up to 3%, Level 2 up to 5%, Level 3 up to 7% — applied at checkout when signed in. No code needed.</p></div></div>
@@ -260,34 +489,38 @@
       <div class="step"><div class="step-num">5</div><div class="step-body"><strong>Departure date comparisons</strong><p>The same tour can vary significantly in price depending on when you travel. Always compare a few departure dates before you commit.</p></div></div>
     </div>
     <div class="links">
-      <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See what's live right now →</a>
+      <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">See what's live right now →</a>
     </div>
   </div>
 
-  <p class="section-label">Tours we've personally booked</p>
-  <div class="card">
+  <div class="trSection">
+    <div class="trEyebrow">Tours we've personally booked</div>
     <h2>Our TourRadar experience — what we actually booked</h2>
+  </div>
+  <div class="trPanel warm">
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">We're not just recommending TourRadar from the outside — we've used it ourselves.</p>
     <div class="tour-grid">
       <div class="tour-card featured">
         <div class="tour-tag">⭐ Multi-day tour</div>
         <div class="tour-title">Morocco — Morhara Morocco Tours</div>
         <p class="tour-desc">Marrakech, Atlas Mountains, Aït Benhaddou, Ouarzazate, Sahara desert camp. Everything organised, local guides throughout. One of the best trips we've ever done.</p>
-        <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book this tour →</a>
+        <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Book this tour →</a>
       </div>
       <div class="tour-card">
         <div class="tour-tag">🕌 City experience</div>
         <div class="tour-title">Marrakech Walking Tour — Ali from Get Marrakech</div>
         <p class="tour-desc">Medina, souks, food, history, hidden corners — brilliant local guide. Perfect if you're spending a day or two in Marrakech on its own.</p>
-        <a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book this tour →</a>
+        <a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Book this tour →</a>
       </div>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> Both links are affiliate links. If you book through them we may earn a small commission at no extra cost to you. We only recommend tours we've done ourselves.</p>
   </div>
 
-  <p class="section-label">Common questions</p>
-  <div class="card">
+  <div class="trSection">
+    <div class="trEyebrow">Common questions</div>
     <h2>TourRadar promo code &amp; savings FAQ</h2>
+  </div>
+  <div class="trFaqPanel">
     <div class="faqItem open">
       <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is there a TourRadar promo code for new users?</div>
       <div class="faqA">No — TourRadar has replaced its old promo code system with <strong>TourRadar+</strong>, a free loyalty program that automatically applies a saving at checkout. New users start at Level 1 with an automatic saving of up to 3% on their first booking, with no code required. Click through our partner link to sign up in one tap.</div>
@@ -330,12 +563,12 @@
     </div>
   </div>
 
-  <div class="card goldCard" style="text-align:center;">
-    <h2 style="text-align:center;color:var(--ink);">Ready to start saving?</h2>
+  <div class="trFinal">
+    <h2>Ready to start saving?</h2>
     <p style="text-align:center;color:var(--ink-soft);max-width:540px;margin:0 auto 20px;">One tap to sign up with Google, Apple, Facebook or email — your TourRadar+ saving is then applied automatically at checkout on every booking. No promo code needed, ever.</p>
     <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Sign up for TourRadar+ →</a>
-      <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book our Morocco tour →</a>
+      <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Sign up for TourRadar+ →</a>
+      <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Book our Morocco tour →</a>
     </div>
     <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">Affiliate disclosure: we're TourRadar RISE Ambassadors. If you book through our links we may earn a small commission at no cost to you. We only recommend tours we've done ourselves.</p>
   </div>

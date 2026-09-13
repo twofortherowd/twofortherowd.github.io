@@ -47,7 +47,7 @@
     p{margin:0 0 .9rem;}p:last-child{margin-bottom:0;}
     ul,ol{margin:0 0 .9rem;padding-left:1.3rem;}li{margin-bottom:.35rem;}
     a{color:inherit;}strong{font-weight:700;}
-    .wrap{max-width:860px;margin:0 auto;padding:0 16px 60px;}
+    .wrap{max-width:980px;margin:0 auto;padding:0 16px 60px;}
     .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
     .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
     .backBar a:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
@@ -102,6 +102,190 @@
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.pros-cons{grid-template-columns:1fr;}.photo-grid{grid-template-columns:1fr 1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.stat-item{flex:1 1 100px;}}
+
+    /* ─────────────────────────────────────────────
+       TOURRADAR REVIEW — editorial refresh
+    ────────────────────────────────────────────── */
+    .trHero{
+      min-height:520px;
+      border-radius:28px;
+      padding:48px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      background:
+        linear-gradient(90deg,rgba(48,20,15,.84),rgba(48,20,15,.58) 58%,rgba(48,20,15,.22)),
+        radial-gradient(circle at 84% 17%,rgba(255,216,74,.10),transparent 34%),
+        url('/img/moroccotea.jpg') center/cover no-repeat,
+        linear-gradient(135deg,#5b1c18 0%,#9a3b29 50%,#c57a38 100%);
+      box-shadow:var(--shadow-lg);
+      margin-bottom:18px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    
+    .trBrandLogo{
+      display:block;
+      width:min(210px,46vw);
+      max-height:58px;
+      object-fit:contain;
+      object-position:left center;
+      margin:0 0 16px;
+      filter:drop-shadow(0 3px 10px rgba(0,0,0,.24));
+    }
+
+    .trHero h1{
+      color:#fff;
+      font-size:clamp(2.7rem,6vw,5rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
+      text-shadow:0 3px 16px rgba(0,0,0,.30);
+    }
+
+    .trHero h1 em{
+      display:block;
+      color:#ffd84a;
+      font-size:.46em;
+      line-height:1.12;
+      margin-top:10px;
+    }
+
+    .trHero .hero-lead{
+      color:rgba(255,255,255,.94);
+      max-width:760px;
+      text-shadow:0 2px 10px rgba(0,0,0,.24);
+      margin-bottom:12px;
+    }
+
+    .trHero .badge.outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+    }
+
+    .trHero .btn-outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.30);
+    }
+
+    .trHero .btn-gold{
+      background:#ffd84a;
+      color:#24170a;
+    }
+
+    .trHero .verdict-box{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.24);
+      backdrop-filter:blur(7px);
+      color:#fff;
+      text-align:left;
+      max-width:720px;
+    }
+
+    .trHero .verdict-box .verdict-label{color:#ffd84a;}
+    .trHero .verdict-box .verdict-sub{color:rgba(255,255,255,.86);}
+
+    .trHero .stat-strip{
+      border-top-color:rgba(255,255,255,.18);
+    }
+    .trHero .stat-item{
+      border-right-color:rgba(255,255,255,.18);
+    }
+    .trHero .stat-label{color:rgba(255,255,255,.72);}
+    .trHero .stat-num{color:#fff;}
+
+    .trProof{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin:0 0 30px;
+    }
+    .trProofBox{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:17px;
+      padding:18px;
+      box-shadow:var(--shadow-sm);
+    }
+    .trProofBox strong{
+      display:block;
+      font-family:var(--font-display);
+      color:#8d3a22;
+      font-size:1.2rem;
+      margin-bottom:3px;
+    }
+    .trProofBox span{font-size:12px;color:var(--muted);}
+
+    .editorialSectionTR{
+      margin:48px 0 16px;
+    }
+    .editorialEyebrowTR{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#9a3b29;
+      margin-bottom:6px;
+    }
+    .editorialSectionTR h2{
+      font-size:clamp(1.85rem,4vw,2.8rem);
+      margin-bottom:8px;
+    }
+
+    .featurePanelTR,
+    .faqPanelTR{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow-md);
+      margin-bottom:18px;
+    }
+
+    .featurePanelTR.warm{
+      background:linear-gradient(145deg,#fffdf8,#fff5e8);
+      border-color:rgba(184,120,10,.18);
+    }
+
+    .pros-cons{gap:14px;}
+    .pc-col{
+      border-radius:17px;
+      background:#fff;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .trFinal{
+      background:linear-gradient(135deg,#6d241d,#a94e2d);
+      color:#fff;
+      border-radius:26px;
+      padding:34px;
+      text-align:center;
+      box-shadow:var(--shadow-lg);
+      margin-top:24px;
+    }
+    .trFinal h2{color:#fff;}
+    .trFinal p{color:rgba(255,255,255,.84)!important;}
+    .trFinal .btn-outline{
+      background:rgba(255,255,255,.10)!important;
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
+    }
+
+    @media(max-width:760px){
+      .trProof{grid-template-columns:1fr;}
+    }
+    @media(max-width:640px){
+      .trHero{
+        min-height:480px;
+        padding:30px 22px;
+        border-radius:20px;
+      }
+      .trHero h1{font-size:3rem;}
+    }
+
   </style>
 </head>
 <body>
@@ -121,35 +305,41 @@
     <span>Is TourRadar Worth It?</span>
   </nav>
 
-  <div class="card heroCard">
-    <div class="eyebrow">
-      <span class="badge">Honest review</span>
-      <span class="badge outline">🇮🇪 TourRadar RISE Ambassadors</span>
-      <span class="badge outline">Booked it ourselves</span>
-    </div>
-    <h1 class="hero-headline">Is TourRadar Worth It?<br><em>Our Honest Review After Booking Our Morocco Tour</em></h1>
-    <p class="hero-lead">When you're spending anywhere from a few hundred to several thousand euro on a holiday, it's natural to wonder whether TourRadar is actually worth booking through. We asked ourselves exactly the same question before our first TourRadar trip.</p>
-    <p class="hero-lead" style="margin-top:-8px;">We're Nicola and Padraig from Two for the Row'd, an Irish travel couple who've visited more than 60 countries between us. Rather than organising every hotel, transfer and excursion ourselves, we decided to book a multi-day Morocco tour through TourRadar. Looking back — <strong>we'd happily do it again.</strong></p>
+  <div class="trHero">
+    <div>
+      <img class="trBrandLogo" src="/img/img-tourradar-logo.png" alt="" aria-hidden="true">
+      <div class="eyebrow">
+        <span class="badge">Honest review</span>
+        <span class="badge outline">🇮🇪 TourRadar RISE Ambassadors</span>
+        <span class="badge outline">Booked it ourselves</span>
+      </div>
 
-    <div class="verdict-box">
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <div class="verdict-label">Yes, TourRadar is worth it</div>
-      <div class="verdict-sub">Especially for destinations where organising transport and logistics yourself would take weeks</div>
-    </div>
+      <h1>Is TourRadar Worth It?
+        <em>Our honest review after booking our Morocco tour</em>
+      </h1>
 
-    <div class="links">
-      <a class="btn-gold" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Check today's TourRadar deals →</a>
-      <a class="btn-outline" href="/tourradar-discount-code.html">How TourRadar+ savings work →</a>
-    </div>
+      <p class="hero-lead">When you're spending anywhere from a few hundred to several thousand euro on a holiday, it's fair to ask whether TourRadar is actually worth booking through. We asked ourselves exactly the same thing before our first TourRadar trip.</p>
+      <p class="hero-lead">We're Nicola and Padraig from Two for the Row'd, an Irish travel couple who've visited more than 60 countries between us. We booked a multi-day Morocco tour through TourRadar — and looking back, <strong>we'd happily do it again.</strong></p>
 
-    <div class="stat-strip">
-      <div class="stat-item"><div class="stat-num">60+</div><div class="stat-label">countries visited between us</div></div>
-      <div class="stat-item"><div class="stat-num">✅</div><div class="stat-label">booked and travelled the Morocco tour ourselves</div></div>
-      <div class="stat-item"><div class="stat-num">🇮🇪</div><div class="stat-label">official TourRadar RISE Ambassadors from Ireland</div></div>
+      <div class="verdict-box">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="verdict-label">Yes, TourRadar is worth it</div>
+        <div class="verdict-sub">Especially for destinations where organising transport and logistics yourself would take weeks.</div>
+      </div>
+
+      <div class="links">
+        <a class="btn-gold" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar storefront',button_label:'Check today\'s TourRadar deals'});">Check today's TourRadar deals →</a>
+        <a class="btn-outline" href="/tourradar-discount-code.html">How TourRadar+ savings work →</a>
+      </div>
     </div>
   </div>
 
-  <p class="section-label">What is TourRadar?</p>
+  <div class="trProof">
+    <div class="trProofBox"><strong>60+ countries</strong><span>visited between us</span></div>
+    <div class="trProofBox"><strong>Booked ourselves</strong><span>we actually travelled the Morocco tour</span></div>
+    <div class="trProofBox"><strong>RISE Ambassadors</strong><span>official TourRadar partners from Ireland</span></div>
+  </div>
+<p class="section-label">What is TourRadar?</p>
   <div class="card">
     <h2>What is TourRadar?</h2>
     <p>TourRadar is an online marketplace that lets you compare thousands of organised tours from hundreds of operators all over the world. Instead of booking directly with dozens of individual companies, TourRadar lets you compare itineraries, prices, inclusions, reviews and availability — all in one place.</p>
@@ -157,16 +347,14 @@
     <p>They've also recently launched <strong>TourRadar+</strong>, a free loyalty program that applies an automatic saving of up to 3%, 5% or 7% at checkout depending on your level — no code required. It's a genuinely nice addition since we made our own Morocco booking, and one of the reasons we'd book through them again. <a href="/tourradar-discount-code.html" style="font-weight:700;color:#b8780a;">Here's how TourRadar+ works →</a></p>
   </div>
 
-  <p class="section-label">Why we chose it</p>
-  <div class="card">
-    <h2>Why we chose TourRadar for Morocco</h2>
+  <div class="editorialSectionTR"><div class="editorialEyebrowTR">Why we chose it</div><h2>Why we chose TourRadar for Morocco</h2></div>
+  <div class="featurePanelTR warm">
     <p>Normally we organise every trip ourselves. Morocco felt different. We wanted someone else to organise hotels, transport between cities, the desert camp, local guides, and all the logistics in between.</p>
     <p>Instead of spending weeks planning, everything was organised before we even landed.</p>
   </div>
 
-  <p class="section-label">The booking &amp; the trip</p>
-  <div class="card">
-    <h2>Our Morocco experience</h2>
+  <div class="editorialSectionTR"><div class="editorialEyebrowTR">The booking &amp; the trip</div><h2>Our Morocco experience</h2></div>
+  <div class="featurePanelTR">
        <p>Our tour included:</p>
     <ul>
       <li>Marrakech</li>
@@ -178,10 +366,10 @@
       <li>Fes</li>
     </ul>
     <p>Some of our favourite memories were watching sunset over the Sahara, meeting local Berber families, sleeping under the stars, and driving through incredible mountain scenery. It remains one of our favourite trips.</p>
+  </div>
 
-  <p class="section-label">Pros and cons</p>
-  <div class="card">
-    <h2>Pros and cons of booking through TourRadar</h2>
+  <div class="editorialSectionTR"><div class="editorialEyebrowTR">Pros and cons</div><h2>Pros and cons of booking through TourRadar</h2></div>
+  <div class="featurePanelTR">
     <div class="pros-cons">
       <div class="pc-col">
         <h3>✅ Pros</h3>
@@ -208,15 +396,13 @@
     </div>
   </div>
 
-  <p class="section-label">Would we do it again?</p>
-  <div class="card">
-    <h2>Would we use TourRadar again?</h2>
+  <div class="editorialSectionTR"><div class="editorialEyebrowTR">Would we do it again?</div><h2>Would we use TourRadar again?</h2></div>
+  <div class="featurePanelTR">
     <p>Absolutely. In fact, we're currently researching Madagascar tours through TourRadar for our next big adventure. For complicated destinations where there's a lot of travelling between places, we'd choose an organised tour again without hesitation — and with TourRadar+ now applying an automatic saving on top, it feels like even better value than when we first booked.</p>
   </div>
 
-  <p class="section-label">Trust &amp; legitimacy</p>
-  <div class="card heroCard">
-    <h2>Is TourRadar legit?</h2>
+  <div class="editorialSectionTR"><div class="editorialEyebrowTR">Trust &amp; legitimacy</div><h2>Is TourRadar legit?</h2></div>
+  <div class="featurePanelTR warm">
     <p>Yes. We've booked through them ourselves, we've travelled on one of their tours, and we're official <strong>TourRadar RISE Ambassadors</strong> — meaning TourRadar has approved us to recommend tours through our own partner profile, based on our track record as genuine travellers.</p>
     <p>That doesn't mean every single operator will suit every traveller — but TourRadar itself is a well-established platform with thousands of tours worldwide.</p>
   </div>
@@ -227,14 +413,13 @@
     <h2 style="text-align:center;">Would we recommend TourRadar?</h2>
     <p style="text-align:center;color:var(--ink-soft);max-width:520px;margin:0 auto 16px;">Yes — especially if you're travelling somewhere unfamiliar, you don't want to organise every hotel yourself, you enjoy small group travel, or you want to compare hundreds of tours in one place.</p>
     <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse TourRadar tours →</a>
+      <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar storefront',button_label:this.textContent.trim()});">Browse TourRadar tours →</a>
       <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="/tourradar-discount-code.html">Save up to 7% with TourRadar+ →</a>
     </div>
   </div>
 
-  <p class="section-label">Common questions</p>
-  <div class="card">
-    <h2>Is TourRadar worth it — FAQ</h2>
+  <div class="editorialSectionTR"><div class="editorialEyebrowTR">Common questions</div><h2>Is TourRadar worth it — FAQ</h2></div>
+  <div class="faqPanelTR">
     <div class="faqItem open">
       <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is TourRadar legit?</div>
       <div class="faqA">Yes. We've booked through TourRadar ourselves, travelled on one of their tours, and we're official TourRadar RISE Ambassadors. It's a well-established platform with thousands of tours worldwide from vetted operators.</div>
@@ -257,11 +442,11 @@
     </div>
   </div>
 
-  <div class="card goldCard" style="text-align:center;">
-    <h2 style="text-align:center;color:var(--ink);">Ready to have a look?</h2>
+  <div class="trFinal">
+    <h2>Ready to have a look?</h2>
     <p style="text-align:center;color:var(--ink-soft);max-width:540px;margin:0 auto 20px;">If you're thinking about booking through TourRadar, sign in first so your TourRadar+ automatic saving is applied at checkout — and see what seasonal deals are currently live.</p>
     <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse TourRadar here →</a>
+      <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar storefront',button_label:this.textContent.trim()});">Browse TourRadar here →</a>
       <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="/morocco-tour-review.html">See our full Morocco itinerary →</a>
     </div>
     <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">Affiliate disclosure: we're TourRadar RISE Ambassadors. If you book through our links we may earn a small commission at no extra cost to you. We only recommend tours we'd genuinely book ourselves.</p>

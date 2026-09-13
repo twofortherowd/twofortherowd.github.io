@@ -116,6 +116,82 @@
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.tour-grid{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}}
+
+    /* Morocco hero refresh */
+    .moroccoHeroFr{
+      min-height:500px;
+      border-radius:28px;
+      padding:48px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      background:
+        linear-gradient(90deg,rgba(63,24,18,.84),rgba(63,24,18,.56) 56%,rgba(63,24,18,.22)),
+        radial-gradient(circle at 83% 18%,rgba(255,216,74,.10),transparent 34%),
+        url('/img/moroccotea.jpg') center/cover no-repeat,
+        linear-gradient(135deg,#661a1e 0%,#9d2b31 48%,#c76532 100%);
+      box-shadow:var(--shadow-lg);
+      margin-bottom:18px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .moroccoHeroFr h1{
+      color:#fff;
+      font-size:clamp(2.6rem,6vw,4.9rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
+      text-shadow:0 3px 16px rgba(0,0,0,.30);
+    }
+
+    .moroccoHeroFr h1 em{
+      display:block;
+      color:#ffd84a;
+      font-size:.48em;
+      line-height:1.12;
+      margin-top:10px;
+    }
+
+    .moroccoHeroFr .hero-lead{
+      color:rgba(255,255,255,.94);
+      max-width:760px;
+      text-shadow:0 2px 10px rgba(0,0,0,.24);
+      margin-bottom:18px;
+    }
+
+    .moroccoHeroFr .badge.outline{
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.24);
+      color:#fff;
+    }
+
+    .moroccoHeroFr .tag{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.22);
+    }
+
+    .moroccoHeroFr .btn-outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.30);
+    }
+
+    .moroccoHeroFr .btn-primary{
+      background:#fff;
+      color:#6b1d22;
+    }
+
+    @media(max-width:640px){
+      .moroccoHeroFr{
+        min-height:460px;
+        padding:30px 22px;
+        border-radius:20px;
+      }
+      .moroccoHeroFr h1{font-size:3rem;}
+    }
+
   </style>
 </head>
 <body>
@@ -137,17 +213,18 @@
   </nav>
 
   <!-- HERO -->
-  <div class="card heroCard">
+  <div class="moroccoHeroFr">
+    <div>
     <div class="eyebrow">
       <span class="badge">🇲🇦 Maroc</span>
       <span class="badge outline">TourRadar × Morhara Tours</span>
       <span class="badge outline">Avis honnête — sans langue de bois</span>
     </div>
-    <h1 class="hero-headline">Avis circuit Maroc 2026 —<br><em>notre verdict complètement honnête</em></h1>
+    <h1>Avis circuit Maroc 2026<em>notre verdict complètement honnête</em></h1>
     <p class="hero-lead">Nous sommes <strong>Nicola et Padraig</strong>, un couple irlandais de Carlow qui a visité plus de 60 pays — et le Maroc reste l'un de nos voyages préférés. Nous avons réservé un circuit multi-jours via TourRadar avec Morhara Morocco Tours, et cette page couvre tout : l'itinéraire, le camp dans le désert, la visite guidée de Marrakech avec Ali, ce qu'on referait différemment, et si on recommanderait ce voyage. Réponse courte : oui, sans hésiter.</p>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Réserver ce circuit sur TourRadar →</a>
-      <a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Juste Marrakech ? Réserver la visite guidée →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'Morocco tour 247114',button_label:this.textContent.trim()});">Réserver ce circuit sur TourRadar →</a>
+      <a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'Marrakech walking tour 302623',button_label:this.textContent.trim()});">Juste Marrakech ? Réserver la visite guidée →</a>
       <a class="btn-outline" href="https://twofortherowd.com/morocco-tour-review.html">🇬🇧 Lire l'avis en anglais →</a>
     </div>
     <div class="tagRow">
@@ -160,6 +237,7 @@
       <span class="tag">voyage Maroc premier séjour</span>
       <span class="tag">TourRadar vaut-il le coup</span>
       <span class="tag">Maroc sans gluten</span>
+    </div>
     </div>
   </div>
 
