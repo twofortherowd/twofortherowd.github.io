@@ -1,121 +1,440 @@
-<h1 class="pageTitle">County Carlow 🇮🇪</h1>
 
 <style>
-  .btn-green{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:#2d6a4f;color:#fff;border:1px solid #1e4d38;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px rgba(45,106,79,.3);transition:transform .15s ease,box-shadow .15s ease;}
-  .btn-green:hover{background:#1e4d38;transform:translateY(-2px);color:#fff;}
-</style>
+  /* ─────────────────────────────────────────────
+     COUNTY CARLOW — editorial refresh
+     Scoped to #carlow-page
+  ────────────────────────────────────────────── */
+  #carlow-page{
+    --car-green:#183f34;
+    --car-green-2:#2d6a4f;
+    --car-green-3:#4f8b6d;
+    --car-gold:#d9ad45;
+    --car-gold-soft:#f4d984;
+    --car-cream:#f7f4ec;
+    --car-paper:#fffdf8;
+    --car-ink:#1e2722;
+    --car-soft:#667169;
+    --car-border:rgba(30,39,34,.11);
+    --car-shadow:0 14px 38px rgba(24,63,52,.09);
+  }
 
-<!-- HERO -->
-<div class="card" style="background:linear-gradient(160deg,#ffffff 0%,#eef8f2 55%,#d4f0e2 100%);border-color:rgba(45,106,79,.22);max-width:880px;margin:0 auto 16px;">
-  <div class="hero-eyebrow">
-    <span class="badge" style="background:#2d6a4f;color:#fff;border-color:#1e4d38;">🇮🇪 We're from here</span>
-    <span class="badge outline">18 short films on YouTube</span>
-    <span class="badge outline">History · People · Places</span>
-  </div>
-  <h2 style="margin-bottom:10px;">History of Carlow — Walt Disney's ancestors, Custer's Last Stand and 22 saints from one tiny county</h2>
-  <p style="color:var(--ink-soft);font-size:15px;line-height:1.7;margin-bottom:8px;">We're Nicola and Pádraig and we're from Carlow. The <strong>history of Carlow</strong> is more extraordinary than most people realise — one of the smallest counties in Ireland, and one of the most historically remarkable. A doctor blew up the castle. A mansion burned with a banshee curse attached. The largest megalithic capstone in Europe is sitting in a field three kilometres from the town centre. We've made 18 short films to prove it.</p>
-  <p style="color:var(--ink-soft);font-size:14px;margin-bottom:16px;">Below are six of our favourites to get you started — the full guide has 12 films, the Mad Facts, and the complete walking tour route with interactive map. Every one of the 18 (and every new one we make) lives on YouTube — subscribe so you don't miss the rest.</p>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;">
-    <a class="btn-green" href="https://www.youtube.com/playlist?list=PLYNbdtE1Ksfo" target="_blank" rel="noopener" onclick="fbq('track','ViewContent');">▶️ Watch all 18 &amp; subscribe →</a>
-    <a class="btn-outline" href="/carlow.html" target="_blank" rel="noopener">See the full Carlow history guide →</a>
-    <a class="btn-outline" href="https://twofortherowd.com/hidden-ireland-gems.html" target="_blank" rel="noopener">All our Hidden Ireland videos →</a>
-  </div>
-</div>
+  #carlow-page .carlow-wrap{max-width:960px;margin:0 auto;}
 
-<!-- WALKING TOUR -->
-<div class="card" style="background:linear-gradient(160deg,#ffffff 0%,#eef8f2 55%,#d4f0e2 100%);border-color:rgba(45,106,79,.22);max-width:880px;margin:0 auto 16px;">
-  <div class="hero-eyebrow">
-    <span class="badge" style="background:#2d6a4f;color:#fff;border-color:#1e4d38;">🚶 Walking Tour</span>
-    <span class="badge outline">Private groups only</span>
-    <span class="badge outline">🏅 Fully accredited guide</span>
-  </div>
-  <h2 style="margin-bottom:6px;">Private guided walking tour of Carlow town</h2>
-  <p style="color:var(--ink-soft);font-size:14px;line-height:1.7;margin-bottom:14px;">Nicola is a <strong>fully accredited Irish tour guide</strong> who has called Carlow home for over 20 years. The castle blown up by a doctor with gunpowder. The execution site of an 18th-century serial killer. The saint who named a Dutch city. 90 minutes on foot through stories nobody else is telling — finishing with a well-earned pint of Carlow's own O'Hara's craft beer.</p>
-  <div style="background:rgba(45,106,79,.08);border:1px solid rgba(45,106,79,.2);border-radius:12px;padding:12px;margin-bottom:14px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
-    <span style="font-size:13px;font-weight:700;">⏱️ 90 minutes</span>
-    <span style="font-size:13px;font-weight:700;">👥 Private groups only</span>
-    <span style="font-size:13px;font-weight:700;">🏅 Fully accredited guide</span>
-    <span style="font-size:13px;font-weight:700;">💬 Enquire for pricing</span>
-  </div>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;">
-    <a class="btn-green" href="mailto:twofortherowd@gmail.com?subject=Carlow%20Walking%20Tour%20Enquiry">📧 Enquire about booking →</a>
-    <a class="btn-outline" href="/carlow.html#tour" target="_blank" rel="noopener">See the full route &amp; map →</a>
-  </div>
-</div>
+  #carlow-page .carlow-hero{
+    min-height:470px;
+    border-radius:26px;
+    padding:44px;
+    display:flex;
+    align-items:flex-end;
+    color:#fff;
+    background:
+      radial-gradient(circle at 82% 18%,rgba(244,217,132,.17),transparent 34%),
+      linear-gradient(135deg,#183f34 0%,#2d6a4f 58%,#4f8b6d 100%);
+    box-shadow:var(--car-shadow);
+    overflow:hidden;
+    margin-bottom:18px;
+  }
 
-<!-- 6 TASTER VIDEOS -->
-<p class="section-label" style="max-width:880px;margin:6px auto 10px;">Six films to get you started</p>
-<div class="shortGrid" style="max-width:880px;margin:0 auto 16px;grid-template-columns:repeat(3,1fr);">
+  #carlow-page .carlow-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 12px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.23);
+    background:rgba(255,255,255,.10);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin-bottom:15px;
+  }
 
-  <div style="display:flex;flex-direction:column;gap:6px;">
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/y8RiabyYjUc" title="Walt Disney Irish roots Carlow" allowfullscreen></iframe></div>
-    <div style="font-size:12px;font-weight:700;color:var(--ink);line-height:1.3;text-align:center;">Walt Disney's Ancestors Are Buried in Carlow</div>
-  </div>
+  #carlow-page .carlow-hero h1{
+    color:#fff;
+    font-size:clamp(2.6rem,6vw,4.9rem);
+    line-height:1.02;
+    letter-spacing:-.035em;
+    margin:0 0 14px;
+  }
 
-  <div style="display:flex;flex-direction:column;gap:6px;">
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/UQWU0kUFgkg" title="Myles Keogh Carlow" allowfullscreen></iframe></div>
-    <div style="font-size:12px;font-weight:700;color:var(--ink);line-height:1.3;text-align:center;">The Carlow Man Who Died at Custer's Last Stand</div>
-  </div>
+  #carlow-page .carlow-hero h1 em{
+    display:block;
+    color:#f4d984;
+    font-size:.47em;
+    margin-top:10px;
+  }
 
-  <div style="display:flex;flex-direction:column;gap:6px;">
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/O_xKF3tKyq4" title="Lucinda Sly Carlow" allowfullscreen></iframe></div>
-    <div style="font-size:12px;font-weight:700;color:var(--ink);line-height:1.3;text-align:center;">Lucinda Sly — Carlow's Notorious 18th-Century Killer</div>
-  </div>
+  #carlow-page .carlow-hero p{
+    max-width:760px;
+    color:rgba(255,255,255,.91);
+    font-size:1rem;
+    margin-bottom:0;
+  }
 
-  <div style="display:flex;flex-direction:column;gap:6px;">
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/ZPnO0AMHIYU" title="Kevin Barry Carlow" allowfullscreen></iframe></div>
-    <div style="font-size:12px;font-weight:700;color:var(--ink);line-height:1.3;text-align:center;">Kevin Barry's Last Cigarette — A Carlow Connection</div>
-  </div>
+  #carlow-page .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:22px;
+  }
 
-  <div style="display:flex;flex-direction:column;gap:6px;">
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/7mn6PNwWCyw" title="22 Saints Carlow" allowfullscreen></iframe></div>
-    <div style="font-size:12px;font-weight:700;color:var(--ink);line-height:1.3;text-align:center;">22 Saints From One Small Corner of Carlow</div>
-  </div>
+  #carlow-page .car-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 18px;
+    border-radius:11px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:800;
+    transition:.16s ease;
+  }
 
-  <div style="display:flex;flex-direction:column;gap:6px;">
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/VCgKRWUdv-g" title="Carlow Sugar Factory" allowfullscreen></iframe></div>
-    <div style="font-size:12px;font-weight:700;color:var(--ink);line-height:1.3;text-align:center;">The Sugar Factory That Defined a Generation in Carlow</div>
-  </div>
+  #carlow-page .car-btn:hover{transform:translateY(-2px)}
+  #carlow-page .car-btn.gold{background:#f4d984;color:#173026}
+  #carlow-page .car-btn.white{background:#fff;color:#183f34}
+  #carlow-page .car-btn.green{background:#183f34;color:#fff}
+  #carlow-page .car-btn.outline{background:transparent;color:#183f34;border:1px solid var(--car-border)}
 
-</div>
+  #carlow-page .carlow-proof{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:28px;
+  }
 
-<!-- HOTELS -->
-<p class="section-label" style="max-width:880px;margin:6px auto 10px;">Where to stay in Carlow</p>
-<div style="max-width:880px;margin:0 auto 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
+  #carlow-page .proof{
+    background:#fff;
+    border:1px solid var(--car-border);
+    border-radius:17px;
+    padding:18px;
+    box-shadow:0 6px 20px rgba(24,63,52,.05);
+  }
 
-  <div class="card" style="margin-bottom:0;display:flex;flex-direction:column;gap:10px;">
-    <div style="font-size:22px;">🏨</div>
-    <div style="font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--ink);">Talbot Hotel Carlow</div>
-    <p style="font-size:13px;color:var(--ink-soft);line-height:1.55;margin:0;flex:1;">One of Carlow's best-known hotels — well located, comfortable and a popular choice for visitors to the town. Good facilities and easy access to the main attractions.</p>
-    <a href="https://affiliate.klook.com/sl/UpnhL9t" target="_blank" rel="noopener sponsored" style="display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#2d6a4f;color:#fff;border:1px solid #1e4d38;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;width:fit-content;" onclick="fbq('track','ViewContent');">Book via Klook →</a>
-    <p style="font-size:11px;color:var(--muted);margin:0;padding-top:8px;border-top:1px dashed rgba(26,18,8,.12);">Affiliate link — we may earn a small commission at no extra cost to you.</p>
-  </div>
+  #carlow-page .proof strong{
+    display:block;
+    font-family:var(--font-display);
+    color:var(--car-green);
+    font-size:1.25rem;
+    margin-bottom:3px;
+  }
 
-  <div class="card" style="margin-bottom:0;display:flex;flex-direction:column;gap:10px;">
-    <div style="font-size:22px;">🏨</div>
-    <div style="font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--ink);">Woodford Dolmen Hotel</div>
-    <p style="font-size:13px;color:var(--ink-soft);line-height:1.55;margin:0;flex:1;">Named after the remarkable Neolithic dolmens of County Carlow — a comfortable hotel with a sense of local identity. Great base for exploring the county's history and countryside.</p>
-    <a href="https://affiliate.klook.com/sl/1P5TvdS" target="_blank" rel="noopener sponsored" style="display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:#2d6a4f;color:#fff;border:1px solid #1e4d38;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;width:fit-content;" onclick="fbq('track','ViewContent');">Book via Klook →</a>
-    <p style="font-size:11px;color:var(--muted);margin:0;padding-top:8px;border-top:1px dashed rgba(26,18,8,.12);">Affiliate link — we may earn a small commission at no extra cost to you.</p>
-  </div>
+  #carlow-page .proof span{font-size:12px;color:var(--car-soft)}
 
-</div>
+  #carlow-page .carlow-section{
+    margin:46px 0 16px;
+  }
 
-<!-- CTA TO FULL PAGE -->
-<div class="card" style="max-width:880px;margin:0 auto 16px;background:linear-gradient(160deg,#0f1a0f 0%,#1a2e1a 55%,#243324 100%);border-color:rgba(82,183,136,.2);color:#fff;text-align:center;">
-  <h2 style="color:#fff;margin-bottom:10px;">There's a lot more where that came from</h2>
-  <p style="color:rgba(255,255,255,.8);max-width:540px;margin:0 auto 8px;">6 more films on our full guide. The doctor who blew up the castle. Duckett's Grove banshee curse. Browne's Hill Dolmen — the heaviest megalithic capstone in Europe, sitting in a field 3km from town. The complete walking tour route with interactive map.</p>
-  <p style="color:rgba(255,216,74,.9);font-size:14px;font-weight:700;margin-bottom:18px;">All 18 films are on YouTube — subscribe so you never miss one.</p>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
-    <a class="btn-green" href="https://www.youtube.com/playlist?list=PLYNbdtE1Ksfo" target="_blank" rel="noopener" onclick="fbq('track','ViewContent');">▶️ Subscribe on YouTube →</a>
-    <a class="btn-outline" style="color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.1);" href="/carlow.html" target="_blank" rel="noopener">See the full Carlow history guide →</a>
-    <a class="btn-outline" style="color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.1);" onclick="show('hidden');">All our Hidden Ireland videos →</a>
-  </div>
-</div>
+  #carlow-page .carlow-eyebrow{
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:var(--car-green-2);
+    margin-bottom:6px;
+  }
 
-<style>
+  #carlow-page .carlow-section h2{
+    font-size:clamp(1.85rem,4vw,2.8rem);
+    margin-bottom:8px;
+  }
+
+  #carlow-page .carlow-section p{
+    max-width:760px;
+    color:var(--car-soft);
+  }
+
+  #carlow-page .tour-card{
+    background:linear-gradient(145deg,#fffdf8,#eaf3ee);
+    border:1px solid var(--car-border);
+    border-radius:24px;
+    box-shadow:var(--car-shadow);
+    padding:30px;
+  }
+
+  #carlow-page .badge-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-bottom:14px;
+  }
+
+  #carlow-page .car-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    padding:6px 10px;
+    border-radius:999px;
+    background:#fff;
+    border:1px solid var(--car-border);
+    font-size:11px;
+    font-weight:800;
+  }
+
+  #carlow-page .car-badge.gold{
+    background:#f4d984;
+    border-color:#d9ad45;
+    color:#60470f;
+  }
+
+  #carlow-page .tour-card h3{
+    font-size:1.65rem;
+    margin-bottom:8px;
+  }
+
+  #carlow-page .tour-card p{color:var(--car-soft)}
+
+  #carlow-page .tour-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:18px 0;
+  }
+
+  #carlow-page .tour-detail{
+    padding:8px 11px;
+    border-radius:11px;
+    background:rgba(45,106,79,.08);
+    font-size:12px;
+    font-weight:800;
+  }
+
+  #carlow-page .film-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+  }
+
+  #carlow-page .film-card{
+    background:#fff;
+    border:1px solid var(--car-border);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(24,63,52,.05);
+  }
+
+  #carlow-page .film-video{
+    position:relative;
+    width:100%;
+    aspect-ratio:9/16;
+    max-height:390px;
+    background:#111;
+  }
+
+  #carlow-page .film-video iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+  }
+
+  #carlow-page .film-copy{
+    padding:15px 16px 17px;
+  }
+
+  #carlow-page .film-copy h3{
+    font-size:1rem;
+    line-height:1.3;
+    margin:0;
+  }
+
+  #carlow-page .hotel-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+
+  #carlow-page .hotel-card{
+    background:#fff;
+    border:1px solid var(--car-border);
+    border-radius:20px;
+    box-shadow:0 8px 24px rgba(24,63,52,.05);
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+  }
+
+  #carlow-page .hotel-card h3{
+    font-size:1.15rem;
+    margin-bottom:7px;
+  }
+
+  #carlow-page .hotel-card p{
+    color:var(--car-soft);
+    font-size:13.5px;
+    flex:1;
+  }
+
+  #carlow-page .carlow-cta{
+    margin-top:34px;
+    background:linear-gradient(135deg,#0f1a0f,#203923);
+    color:#fff;
+    border-radius:24px;
+    padding:32px;
+    box-shadow:var(--car-shadow);
+    text-align:center;
+  }
+
+  #carlow-page .carlow-cta h2{color:#fff;margin-bottom:8px}
+  #carlow-page .carlow-cta p{
+    color:rgba(255,255,255,.82);
+    max-width:650px;
+    margin:0 auto 11px;
+  }
+
+  #carlow-page .carlow-cta strong{color:#f4d984}
+
+  @media(max-width:820px){
+    #carlow-page .film-grid{grid-template-columns:repeat(2,1fr)}
+  }
+
   @media(max-width:680px){
-    .shortGrid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important;}
-    .shortGrid .iframeWrap.short{aspect-ratio:unset!important;height:180px;}
+    #carlow-page .carlow-proof,
+    #carlow-page .hotel-grid{grid-template-columns:1fr}
+    #carlow-page .carlow-hero{
+      min-height:420px;
+      padding:28px 22px;
+      border-radius:20px;
+    }
+    #carlow-page .carlow-hero h1{font-size:3rem}
+    #carlow-page .hero-actions{flex-direction:column}
+    #carlow-page .car-btn{width:100%}
   }
 </style>
+
+<div id="carlow-page">
+  <div class="carlow-wrap">
+
+    <div class="carlow-hero">
+      <div>
+        <div class="carlow-kicker">🇮🇪 County Carlow · we're from here</div>
+        <h1>County Carlow
+          <em>big stories from one of Ireland's smallest counties</em>
+        </h1>
+        <p>We're Nicola and Pádraig and this is home. Carlow has Walt Disney family roots, a man who died at Custer's Last Stand, 22 saints from one tiny corner of the county, a castle blown up by a doctor and the largest megalithic capstone in Europe sitting in a field just outside town. We've made 18 short films because most people have no idea how much history is packed in here.</p>
+
+        <div class="hero-actions">
+          <a class="car-btn gold" href="https://www.youtube.com/playlist?list=PLYNbdtE1Ksfo" target="_blank" rel="noopener" onclick="fbq('track','ViewContent');">▶️ Watch all 18 films →</a>
+          <a class="car-btn white" href="/carlow.html" target="_blank" rel="noopener">See the full Carlow history guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carlow-proof">
+      <div class="proof"><strong>18 short films</strong><span>history, people and places</span></div>
+      <div class="proof"><strong>Private walking tour</strong><span>guided by Nicola in Carlow town</span></div>
+      <div class="proof"><strong>Local knowledge</strong><span>this is home, not a fly-in guide</span></div>
+    </div>
+
+    <div class="carlow-section">
+      <div class="carlow-eyebrow">Walk it with us</div>
+      <h2>Private guided walking tour of Carlow town</h2>
+      <p>A proper local-history walk with the stories we think make Carlow worth stopping for.</p>
+    </div>
+
+    <div class="tour-card">
+      <div class="badge-row">
+        <span class="car-badge gold">🚶 Walking Tour</span>
+        <span class="car-badge">👥 Private groups only</span>
+        <span class="car-badge">🏅 Fully accredited guide</span>
+      </div>
+
+      <h3>90 minutes of Carlow stories nobody else is telling</h3>
+      <p>Nicola is a <strong>fully accredited Irish tour guide</strong> who has called Carlow home for over 20 years. Hear about the castle blown up by a doctor with gunpowder, the execution site of an 18th-century serial killer and the saint who gave his name to a Dutch city — finishing with a well-earned pint of Carlow's own O'Hara's craft beer.</p>
+
+      <div class="tour-strip">
+        <span class="tour-detail">⏱️ 90 minutes</span>
+        <span class="tour-detail">👥 Private groups only</span>
+        <span class="tour-detail">🏅 Fully accredited guide</span>
+        <span class="tour-detail">💬 Enquire for pricing</span>
+      </div>
+
+      <div class="hero-actions">
+        <a class="car-btn green" href="mailto:twofortherowd@gmail.com?subject=Carlow%20Walking%20Tour%20Enquiry">📧 Enquire about booking →</a>
+        <a class="car-btn outline" href="/carlow.html#tour" target="_blank" rel="noopener">See the full route & map →</a>
+      </div>
+    </div>
+
+    <div class="carlow-section">
+      <div class="carlow-eyebrow">Watch first</div>
+      <h2>Six Carlow stories to get you started</h2>
+      <p>A taster from the full 18-film series.</p>
+    </div>
+
+    <div class="film-grid">
+
+      <article class="film-card">
+        <div class="film-video"><iframe loading="lazy" src="https://www.youtube.com/embed/y8RiabyYjUc" title="Walt Disney Irish roots Carlow" allowfullscreen></iframe></div>
+        <div class="film-copy"><h3>Walt Disney's Ancestors Are Buried in Carlow</h3></div>
+      </article>
+
+      <article class="film-card">
+        <div class="film-video"><iframe loading="lazy" src="https://www.youtube.com/embed/UQWU0kUFgkg" title="Myles Keogh Carlow" allowfullscreen></iframe></div>
+        <div class="film-copy"><h3>The Carlow Man Who Died at Custer's Last Stand</h3></div>
+      </article>
+
+      <article class="film-card">
+        <div class="film-video"><iframe loading="lazy" src="https://www.youtube.com/embed/O_xKF3tKyq4" title="Lucinda Sly Carlow" allowfullscreen></iframe></div>
+        <div class="film-copy"><h3>Lucinda Sly — Carlow's Notorious 18th-Century Killer</h3></div>
+      </article>
+
+      <article class="film-card">
+        <div class="film-video"><iframe loading="lazy" src="https://www.youtube.com/embed/ZPnO0AMHIYU" title="Kevin Barry Carlow" allowfullscreen></iframe></div>
+        <div class="film-copy"><h3>Kevin Barry's Last Cigarette — A Carlow Connection</h3></div>
+      </article>
+
+      <article class="film-card">
+        <div class="film-video"><iframe loading="lazy" src="https://www.youtube.com/embed/7mn6PNwWCyw" title="22 Saints Carlow" allowfullscreen></iframe></div>
+        <div class="film-copy"><h3>22 Saints From One Small Corner of Carlow</h3></div>
+      </article>
+
+      <article class="film-card">
+        <div class="film-video"><iframe loading="lazy" src="https://www.youtube.com/embed/VCgKRWUdv-g" title="Carlow Sugar Factory" allowfullscreen></iframe></div>
+        <div class="film-copy"><h3>The Sugar Factory That Defined a Generation in Carlow</h3></div>
+      </article>
+
+    </div>
+
+    <div class="carlow-section">
+      <div class="carlow-eyebrow">Stay a little longer</div>
+      <h2>Where to stay in Carlow</h2>
+      <p>Two practical options if you're turning the town or county into an overnight stop.</p>
+    </div>
+
+    <div class="hotel-grid">
+
+      <div class="hotel-card">
+        <div style="font-size:28px;margin-bottom:8px;">🏨</div>
+        <h3>Talbot Hotel Carlow</h3>
+        <p>One of Carlow's best-known hotels — well located, comfortable and a popular choice for visitors to the town, with easy access to the main attractions.</p>
+        <a class="car-btn green" href="https://affiliate.klook.com/sl/UpnhL9t" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book via Klook →</a>
+        <div style="font-size:11px;color:var(--car-soft);margin-top:10px;">Affiliate link — we may earn a small commission at no extra cost to you.</div>
+      </div>
+
+      <div class="hotel-card">
+        <div style="font-size:28px;margin-bottom:8px;">🏨</div>
+        <h3>Woodford Dolmen Hotel</h3>
+        <p>A comfortable base for exploring County Carlow and the surrounding countryside, with a name that nods to the county's remarkable prehistoric landscape.</p>
+        <a class="car-btn green" href="https://affiliate.klook.com/sl/1P5TvdS" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book via Klook →</a>
+        <div style="font-size:11px;color:var(--car-soft);margin-top:10px;">Affiliate link — we may earn a small commission at no extra cost to you.</div>
+      </div>
+
+    </div>
+
+    <div class="carlow-cta">
+      <h2>There's a lot more where that came from</h2>
+      <p>Six more films on the full guide, including the doctor who blew up Carlow Castle, Duckett's Grove and Browne's Hill Dolmen — plus the full walking route and interactive map.</p>
+      <p><strong>All 18 films are on YouTube.</strong></p>
+
+      <div class="hero-actions" style="justify-content:center;">
+        <a class="car-btn gold" href="https://www.youtube.com/playlist?list=PLYNbdtE1Ksfo" target="_blank" rel="noopener" onclick="fbq('track','ViewContent');">▶️ Subscribe on YouTube →</a>
+        <a class="car-btn white" href="/carlow.html" target="_blank" rel="noopener">See the full Carlow guide →</a>
+        <a class="car-btn white" href="https://twofortherowd.com/hidden-ireland-gems.html" target="_blank" rel="noopener">All Hidden Ireland videos →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
