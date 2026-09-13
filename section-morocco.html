@@ -35,7 +35,7 @@
     h3{font-size:1.08rem;font-weight:700;}
     p{margin:0 0 .9rem;} p:last-child{margin-bottom:0;}
     a{color:inherit;} strong{font-weight:700;}
-    .wrap{max-width:920px;margin:0 auto;padding:0 16px 60px;}
+    .wrap{max-width:980px;margin:0 auto;padding:0 16px 60px;}
     .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
     .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);}
     .breadcrumb{font-size:12px;color:var(--muted);margin:16px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center;}
@@ -161,6 +161,179 @@
       #moroccoRouteMap{min-height:410px;}
     }
 
+
+    /* ─────────────────────────────────────────────
+       MOROCCO SERIES — editorial refresh
+    ────────────────────────────────────────────── */
+    .moroccoHero{
+      min-height:500px;
+      border-radius:28px;
+      padding:48px;
+      display:flex;
+      align-items:flex-end;
+      color:#fff;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 83% 18%,rgba(255,216,74,.18),transparent 34%),
+        linear-gradient(135deg,#661a1e 0%,#9d2b31 48%,#c76532 100%);
+      box-shadow:var(--shadow-lg);
+      border:1px solid rgba(255,255,255,.08);
+      margin-bottom:18px;
+    }
+    .moroccoHero .hero-eyebrow{margin-bottom:16px;}
+    .moroccoHero h1{
+      color:#fff;
+      font-size:clamp(2.7rem,6vw,5rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin:0 0 14px;
+    }
+    .moroccoHero h1 em{
+      display:block;
+      color:#ffd84a;
+      font-size:.48em;
+      margin-top:10px;
+    }
+    .moroccoHero .hero-lead{
+      color:rgba(255,255,255,.91);
+      max-width:760px;
+      font-size:1.02rem;
+    }
+    .moroccoHero .hero-sub{
+      font-size:14px;
+      color:rgba(255,255,255,.78);
+      max-width:760px;
+      margin-bottom:0;
+    }
+    .moroccoHero .btn-outline{
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.28);
+      color:#fff;
+    }
+    .moroccoHero .btn-primary{background:#fff;color:#6b1d22;border-color:#fff;}
+    .moroccoHero .btn-gold{background:#ffd84a;color:#291b0c;}
+
+    .moroccoProof{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-bottom:28px;
+    }
+    .moroccoProof .proof{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:17px;
+      padding:18px;
+      box-shadow:var(--shadow-sm);
+    }
+    .moroccoProof strong{
+      display:block;
+      font-family:var(--font-display);
+      color:var(--morocco-red);
+      font-size:1.22rem;
+      margin-bottom:3px;
+    }
+    .moroccoProof span{font-size:12px;color:var(--muted);}
+
+    .editorialSection{margin:48px 0 16px;}
+    .editorialEyebrow{
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--morocco-red);
+      margin-bottom:6px;
+    }
+    .editorialSection h2{
+      font-size:clamp(1.85rem,4vw,2.9rem);
+      margin-bottom:8px;
+    }
+    .editorialSection p{
+      max-width:760px;
+      color:var(--ink-soft);
+    }
+
+    .routePanel,
+    .walkingPanel,
+    .factsPanel,
+    .videoPanel,
+    .reviewCta{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow:var(--shadow-md);
+      padding:30px;
+      margin-bottom:18px;
+    }
+
+    .walkingPanel{
+      background:linear-gradient(145deg,#fffdf8,#fff1e6);
+      border-color:rgba(193,39,45,.16);
+    }
+    .walkingPanel h2{font-size:1.75rem;margin-bottom:8px;}
+    .walkingPanel p{color:var(--ink-soft);}
+
+    .factsGrid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+    .factCard{
+      padding:16px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:#fffaf5;
+    }
+    .factCard strong{
+      display:block;
+      margin-bottom:5px;
+      color:#7b2b25;
+    }
+    .factCard span{
+      font-size:13px;
+      color:var(--ink-soft);
+    }
+
+    .videoGrid{
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .videoTile{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:12px;
+      box-shadow:var(--shadow-sm);
+    }
+    .videoTile h3{font-size:13px;margin:0 0 9px;}
+
+    .reviewCta{
+      background:linear-gradient(135deg,#fff5d9,#fffdf8);
+      border-color:rgba(232,194,53,.32);
+      text-align:center;
+    }
+    .reviewCta p{
+      max-width:620px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    @media(max-width:820px){
+      .factsGrid{grid-template-columns:repeat(2,1fr);}
+      .videoGrid{grid-template-columns:repeat(2,1fr);}
+      .moroccoProof{grid-template-columns:1fr;}
+    }
+    @media(max-width:620px){
+      .moroccoHero{
+        min-height:460px;
+        padding:30px 22px;
+        border-radius:20px;
+      }
+      .moroccoHero h1{font-size:3rem;}
+      .factsGrid,.videoGrid{grid-template-columns:1fr;}
+      .routePanel,.walkingPanel,.factsPanel,.videoPanel,.reviewCta{padding:22px 18px;}
+    }
+
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
@@ -179,35 +352,42 @@
     <span>Morocco</span>
   </nav>
 
-<h1 class="pageTitle">Morocco Series 🇲🇦</h1>
-
 <!-- HERO -->
-<div class="card heroCard" style="max-width:880px;margin:0 auto 16px;">
-  <div class="hero-eyebrow">
-    <span class="badge">🇲🇦 Morocco</span>
-    <span class="badge outline">TourRadar × Morhara Tours</span>
-    <span class="badge outline">26 videos</span>
-  </div>
-  <h2 class="hero-headline" style="font-size:clamp(1.5rem,3vw,2.2rem);">We did the Morocco tour everyone talks about.<br><em>Here's our completely honest review.</em></h2>
-  <p class="hero-lead">Marrakech medinas, Atlas Mountain passes, an argan oil co-op that nearly made Nicola cry, and a night in the Sahara under more stars than we knew existed. All of it organised through TourRadar with Morhara Morocco Tours.</p>
-  <p style="font-size:14px;color:var(--ink-soft);margin-bottom:16px;">Below you'll find our interactive route map, the Marrakech walking tour we loved, a few useful facts before you go, six of our favourite videos and the booking links. The <strong>full honest review</strong> — Nicola's diary, packing list, what to know before you go, and all 26 videos — is on the dedicated review page.</p>
-  <div class="hero-ctas">
-    <a class="btn-primary" href="/morocco-tour-review.html" target="_blank" rel="noopener">Read the full Morocco review →</a>
-    <a class="btn-outline" href="/avis-circuit-maroc.html" target="_blank" rel="noopener">🇫🇷 Lire l'avis en français →</a>
-    <a class="btn-gold" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book the tour we did →</a>
+<div class="moroccoHero">
+  <div>
+    <div class="hero-eyebrow">
+      <span class="badge">🇲🇦 Morocco</span>
+      <span class="badge outline">TourRadar × Morhara Tours</span>
+      <span class="badge outline">26 videos</span>
+    </div>
+    <h1>Morocco Series
+      <em>the route, the desert, the chaos — and our completely honest review</em>
+    </h1>
+    <p class="hero-lead">Marrakech medinas, Atlas Mountain passes, an argan oil co-op that nearly made Nicola cry, kasbah country and a night in the Sahara under more stars than we knew existed. All of it organised through TourRadar with Morhara Morocco Tours.</p>
+    <p class="hero-sub">This page is the quick version: our interactive route, Ali's Marrakech walking tour, practical facts and six videos. The full diary, packing advice and all 26 videos live on the dedicated review page.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="/morocco-tour-review.html" target="_blank" rel="noopener">Read the full Morocco review →</a>
+      <a class="btn-outline" href="/avis-circuit-maroc.html" target="_blank" rel="noopener">🇫🇷 Lire l'avis en français →</a>
+      <a class="btn-gold" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'Morocco tour 247114',button_label:'Book the tour we did'});">Book the tour we did →</a>
+    </div>
   </div>
 </div>
 
+<div class="moroccoProof">
+  <div class="proof"><strong>26 videos</strong><span>from Marrakech to the Sahara</span></div>
+  <div class="proof"><strong>8 route stops</strong><span>mapped across mountains, kasbahs and desert</span></div>
+  <div class="proof"><strong>First-hand review</strong><span>we actually did this exact trip</span></div>
+</div>
+
 <!-- ROUTE MAP -->
-<p class="section-label" style="max-width:880px;margin:6px auto 10px;">The route</p>
-<div class="card" style="max-width:880px;margin:0 auto 16px;">
+<div class="editorialSection"><div class="editorialEyebrow">The route</div><h2>Follow our journey across Morocco</h2><p>Eight stops from Marrakech through the High Atlas and kasbah country to the Sahara.</p></div>
+<div class="routePanel">
   <div class="hero-eyebrow">
     <span class="badge">🗺️ Interactive route</span>
     <span class="badge outline">8 stops</span>
     <span class="badge outline">Marrakech → Sahara</span>
   </div>
-  <h2 style="margin-bottom:6px;">Follow our journey across Morocco</h2>
-  <p class="moroccoRouteIntro">This is much better than the old route video — you can now see the actual geography of the trip. We started in Marrakech, crossed the High Atlas, travelled through kasbah country and the Draa region, and finished out in the Sahara. Click any stop to zoom in.</p>
+    <p class="moroccoRouteIntro">This is much better than the old route video — you can now see the actual geography of the trip. We started in Marrakech, crossed the High Atlas, travelled through kasbah country and the Draa region, and finished out in the Sahara. Click any stop to zoom in.</p>
 
   <div class="interactiveMoroccoRoute">
     <aside class="moroccoRouteSidebar" aria-label="Morocco route stops">
@@ -224,49 +404,48 @@
 </div>
 
 <!-- MARRAKECH WALKING TOUR -->
-<div class="card heroCard" style="max-width:880px;margin:0 auto 16px;">
-  <h2 style="margin-bottom:6px;">The Marrakech walking tour with Ali</h2>
+<div class="editorialSection"><div class="editorialEyebrow">Before the main tour</div><h2>The Marrakech walking tour with Ali</h2><p>The first thing we would tell anyone to book in Marrakech.</p></div>
+<div class="walkingPanel">
+  <h2>The Marrakech walking tour with Ali</h2>
   <p style="font-size:14px;color:var(--ink-soft);margin-bottom:14px;">Before our main tour we did a walking tour of Marrakech with <strong>Ali from Get Marrakech</strong> — food, history, the medina, the souks and the hidden corners. It completely changed how we saw the city. We'd make it the first thing anyone does in Marrakech.</p>
   <div class="links">
-    <a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book the Marrakech Walking Tour with Ali →</a>
+    <a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'Marrakech walking tour 302623',button_label:'Book Marrakech walking tour with Ali'});">Book the Marrakech Walking Tour with Ali →</a>
     <a class="btn-outline" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Marrakech activities on GetYourGuide →</a>
   </div>
   <p class="disclosure"><strong>Disclosure:</strong> Affiliate links — we may earn a small commission if you book.</p>
 </div>
 
 <!-- QUICK FACTS -->
-<p class="section-label" style="max-width:880px;margin:6px auto 10px;">Morocco at a glance</p>
-<div class="card" style="max-width:880px;margin:0 auto 16px;">
-  <h2 style="margin-bottom:6px;">Quick facts before you go 🇲🇦</h2>
-  <p style="font-size:14px;color:var(--ink-soft);margin-bottom:16px;">Nothing encyclopaedic here — just a few useful things worth knowing before you book.</p>
+<div class="editorialSection"><div class="editorialEyebrow">Morocco at a glance</div><h2>Quick facts before you go 🇲🇦</h2><p>Nothing encyclopaedic — just the things worth knowing before you book.</p></div>
+<div class="factsPanel">
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
-    <div style="padding:14px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.55);">
+  <div class="factsGrid">
+    <div class="factCard">
       <strong>🏙️ Capital</strong><br>
       <span style="font-size:13px;color:var(--ink-soft);">Rabat — although Marrakech is one of Morocco's major tourism hubs and where our trip began.</span>
     </div>
 
-    <div style="padding:14px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.55);">
+    <div class="factCard">
       <strong>🗣️ Language</strong><br>
       <span style="font-size:13px;color:var(--ink-soft);">Arabic and Amazigh are the official languages. Moroccan Arabic (Darija) is widely spoken, and you'll hear plenty of French too.</span>
     </div>
 
-    <div style="padding:14px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.55);">
+    <div class="factCard">
       <strong>💵 Currency</strong><br>
       <span style="font-size:13px;color:var(--ink-soft);">Moroccan Dirham (MAD). Bring cash. Seriously. It's particularly handy in souks, smaller shops and cafés.</span>
     </div>
 
-    <div style="padding:14px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.55);">
+    <div class="factCard">
       <strong>🕐 Time</strong><br>
       <span style="font-size:13px;color:var(--ink-soft);">Morocco is usually close to Irish/UK time, but its clocks can change around Ramadan — check before you fly.</span>
     </div>
 
-    <div style="padding:14px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.55);">
+    <div class="factCard">
       <strong>🔌 Plugs</strong><br>
       <span style="font-size:13px;color:var(--ink-soft);">European-style two-pin plugs are commonly used, so coming from Ireland you'll want an adaptor.</span>
     </div>
 
-    <div style="padding:14px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.55);">
+    <div class="factCard">
       <strong>🌡️ When to go</strong><br>
       <span style="font-size:13px;color:var(--ink-soft);">Spring and autumn are good choices if you'd rather avoid the most intense summer heat.</span>
     </div>
@@ -276,24 +455,24 @@
 </div>
 
 <!-- TASTER VIDEOS -->
-<p class="section-label" style="max-width:880px;margin:6px auto 10px;">Six videos to give you a feel for the trip</p>
-<div class="videoGrid" style="max-width:880px;margin:0 auto 16px;">
-  <div class="card" style="margin:0;"><h3>Part 1 – Dublin to Marrakech</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/8sJj521AVo8" title="Dublin to Marrakech" allowfullscreen></iframe></div></div>
-  <div class="card" style="margin:0;"><h3>Part 4 – Through the Atlas Mountains</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/65d2mpohVo0" title="Atlas Mountains" allowfullscreen></iframe></div></div>
-  <div class="card" style="margin:0;"><h3>Part 5 – Argan Oil Co-op, Aguelmouss</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/dXUXZHXJPJM" title="Argan Oil Co-op" allowfullscreen></iframe></div></div>
-  <div class="card" style="margin:0;"><h3>Part 7 – The Sahara Desert</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/30JojXt6I54" title="Sahara Desert" allowfullscreen></iframe></div></div>
-  <div class="card" style="margin:0;"><h3>Sahara – Desert Camp</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/UgXF_vmRBtU" title="Desert Camp" allowfullscreen></iframe></div></div>
-  <div class="card" style="margin:0;"><h3>Morocco – Final Day</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/Yf0kLJYxkPs" title="Final Day" allowfullscreen></iframe></div></div>
-</div>
+<div class="editorialSection"><div class="editorialEyebrow">Watch the trip</div><h2>Six videos to give you a feel for Morocco</h2><p>A taster from the full 26-video series.</p></div>
+<div class="videoPanel"><div class="videoGrid">
+  <div class="videoTile"><h3>Part 1 – Dublin to Marrakech</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/8sJj521AVo8" title="Dublin to Marrakech" allowfullscreen></iframe></div></div>
+  <div class="videoTile"><h3>Part 4 – Through the Atlas Mountains</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/65d2mpohVo0" title="Atlas Mountains" allowfullscreen></iframe></div></div>
+  <div class="videoTile"><h3>Part 5 – Argan Oil Co-op, Aguelmouss</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/dXUXZHXJPJM" title="Argan Oil Co-op" allowfullscreen></iframe></div></div>
+  <div class="videoTile"><h3>Part 7 – The Sahara Desert</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/30JojXt6I54" title="Sahara Desert" allowfullscreen></iframe></div></div>
+  <div class="videoTile"><h3>Sahara – Desert Camp</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/UgXF_vmRBtU" title="Desert Camp" allowfullscreen></iframe></div></div>
+  <div class="videoTile"><h3>Morocco – Final Day</h3><div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/Yf0kLJYxkPs" title="Final Day" allowfullscreen></iframe></div></div>
+</div></div>
 
 <!-- CTA TO FULL REVIEW -->
-<div class="card" style="max-width:880px;margin:0 auto 16px;background:linear-gradient(160deg,#ffffff 0%,#fffbe8 55%,#fff3c4 100%);border-color:rgba(232,194,53,.3);text-align:center;">
+<div class="reviewCta">
   <h2 style="margin-bottom:10px;">There's a lot more on the full review page</h2>
   <p style="color:var(--ink-soft);max-width:540px;margin:0 auto 8px;">Nicola's diary entries from every stage of the trip. 8 things to know before you go. All 26 videos grouped by destination. And the honest verdict on whether it's worth booking.</p>
   <p style="color:#b8780a;font-size:14px;font-weight:700;margin-bottom:18px;">Free to read — no signup, no paywall.</p>
   <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
     <a class="btn-primary" href="/morocco-tour-review.html" target="_blank" rel="noopener">Read the full Morocco review →</a>
-    <a class="btn-gold" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book the tour we did →</a>
+    <a class="btn-gold" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'Morocco tour 247114',button_label:'Book the tour we did - review CTA'});">Book the tour we did →</a>
   </div>
   <p class="disclosure" style="text-align:center;max-width:500px;margin:14px auto 0;"><strong>Disclosure:</strong> Affiliate links — if you book through them we may earn a small commission at no extra cost to you. We only recommend tours we've done ourselves.</p>
 </div>
