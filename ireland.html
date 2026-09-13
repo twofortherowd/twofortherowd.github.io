@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://twofortherowd.com/ireland.html"/><meta name="theme-color" content="#ffd84a"/>
 <meta property="og:title" content="Ireland Travel Guides, Hidden Gems & Road Trips | Two for the Row&#39;d"/>
 <meta property="og:description" content="Ireland through our eyes — first-hand guides, hidden gems, heritage, road trips and local discoveries from Nicola and Padraig."/>
-<meta property="og:type" content="website"/><meta property="og:url" content="https://twofortherowd.com/ireland.html"/><meta property="og:image" content="https://twofortherowd.com/img/LAX.jpeg"/><meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:type" content="website"/><meta property="og:url" content="https://twofortherowd.com/ireland.html"/><meta property="og:image" content="https://twofortherowd.com/img/irelandpic.jpg"/><meta name="twitter:card" content="summary_large_image"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 
@@ -43,7 +43,7 @@
     p{margin:0 0 .9rem;}p:last-child{margin-bottom:0;}
     ul,ol{margin:0 0 .9rem;padding-left:1.3rem;}li{margin-bottom:.35rem;}
     a{color:inherit;}strong{font-weight:700;}
-    .wrap{max-width:900px;margin:0 auto;padding:0 16px 60px;}
+    .wrap{max-width:980px;margin:0 auto;padding:0 16px 60px;}
 
     /* TOP BAR */
     .backBar{background:rgba(253,248,239,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:50;}
@@ -53,7 +53,7 @@
 
     /* STICKY CHAPTER NAV */
     .chapterNav{position:sticky;top:52px;z-index:40;background:rgba(253,248,239,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:8px 0;}
-    .chapterNavInner{max-width:900px;margin:0 auto;padding:0 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;}
+    .chapterNavInner{max-width:980px;margin:0 auto;padding:0 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;}
     .chapterNavInner::-webkit-scrollbar{display:none;}
     .chapterNavInner a{flex-shrink:0;padding:6px 12px;font-size:12px;font-weight:700;text-decoration:none;color:var(--ink-soft);border-radius:999px;border:1px solid transparent;transition:all .15s ease;letter-spacing:.02em;}
     .chapterNavInner a:hover{background:var(--white);border-color:var(--border);color:var(--ink);}
@@ -207,24 +207,275 @@
 
 
     /* IRELAND HUB OVERRIDES */
-    :root{--ireland-green:#176b45;--ireland-green-dark:#0f5134;--ireland-mint:#eaf6ef;--ireland-sage:#cfe8d9;}
-    .heroCard.irelandHero{background:linear-gradient(145deg,#fff 0%,#f0f8f3 45%,#e1f0e7 72%,#fff4cf 100%);border-color:rgba(23,107,69,.20)}
-    .hero-headline em{color:var(--ireland-green);}
-    .badge.ireland{background:rgba(23,107,69,.10);border-color:rgba(23,107,69,.25);color:var(--ireland-green);}
-    .greenCard{background:linear-gradient(160deg,#ffffff 0%,#f0faf4 55%,#d8f3e8 100%);border-color:rgba(23,107,69,.2);}
-    .chapterNumber{color:var(--ireland-green);}
+    :root{
+      --ireland-green:#176b45;
+      --ireland-green-dark:#0d4b31;
+      --ireland-green-deep:#0a3826;
+      --ireland-mint:#eaf6ef;
+      --ireland-sage:#cfe8d9;
+      --ireland-gold:#d9ad45;
+      --ireland-cream:#fffaf0;
+    }
+
+    body::before{
+      background:
+        radial-gradient(ellipse 70% 55% at 8% 0%,rgba(23,107,69,.12),transparent 60%),
+        radial-gradient(ellipse 55% 45% at 90% 100%,rgba(217,173,69,.12),transparent 55%);
+    }
+
+    .heroCard.irelandHero{
+      min-height:540px;
+      padding:48px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      background:
+        linear-gradient(90deg,rgba(7,47,32,.86),rgba(7,47,32,.62) 58%,rgba(7,47,32,.26)),
+        radial-gradient(circle at 84% 16%,rgba(217,173,69,.12),transparent 35%),
+        url('/img/irelandpic.jpg') center/cover no-repeat,
+        linear-gradient(135deg,#0d4b31 0%,#176b45 55%,#4f8b6d 100%);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:28px;
+      box-shadow:var(--shadow-lg);
+    }
+
+    .heroCard.irelandHero h1,
+    .heroCard.irelandHero h2{
+      color:#fff;
+      text-shadow:0 3px 16px rgba(0,0,0,.28);
+    }
+
+    .heroCard.irelandHero .hero-headline{
+      font-size:clamp(2.8rem,6vw,5rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      max-width:820px;
+    }
+
+    .heroCard.irelandHero .hero-headline em{
+      display:block;
+      color:#f3d47a;
+      font-size:.50em;
+      line-height:1.12;
+      margin-top:10px;
+    }
+
+    .heroCard.irelandHero .hero-lead{
+      color:rgba(255,255,255,.92);
+      max-width:760px;
+      text-shadow:0 2px 10px rgba(0,0,0,.22);
+    }
+
+    .heroCard.irelandHero .badge{
+      background:rgba(255,255,255,.12);
+      border-color:rgba(255,255,255,.22);
+      color:#fff;
+    }
+
+    .heroCard.irelandHero .route-strip{
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.20);
+      backdrop-filter:blur(7px);
+    }
+
+    .heroCard.irelandHero .route-stop{
+      background:rgba(255,255,255,.12);
+      border-color:rgba(255,255,255,.18);
+      color:#fff;
+      box-shadow:none;
+    }
+
+    .heroCard.irelandHero .route-arrow{color:rgba(255,255,255,.55);}
+
+    .heroCard.irelandHero .stat{
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.18);
+      backdrop-filter:blur(6px);
+    }
+    .heroCard.irelandHero .stat strong{color:#fff;}
+    .heroCard.irelandHero .stat span{color:rgba(255,255,255,.72);}
+
+    .heroCard.irelandHero .btn-outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
+    }
+
+    .heroCard.irelandHero .btn-primary{
+      background:#f3d47a;
+      color:#173126;
+    }
+
+    .badge.ireland{
+      background:rgba(23,107,69,.10);
+      border-color:rgba(23,107,69,.25);
+      color:var(--ireland-green);
+    }
+
+    .greenCard{
+      background:linear-gradient(160deg,#ffffff 0%,#f4fbf7 55%,#e1f2e8 100%);
+      border-color:rgba(23,107,69,.18);
+    }
+
+    .chapterHeaderInner{
+      border-bottom:2px solid var(--ireland-green-dark);
+    }
+    .chapterNumber{
+      color:var(--ireland-green);
+    }
+    .chapterLabel{
+      color:#6e806f;
+    }
+
     .journey-cta,.tour-pick a{color:var(--ireland-green);}
     .faqQ::after{color:var(--ireland-green);}
-    .irelandMapCard{padding:18px;overflow:hidden;}
-    #irelandJourneyMap{height:620px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1;}
-    .irelandMapLegend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--ink-soft);}
+
+    .irelandMapCard{
+      padding:18px;
+      overflow:hidden;
+      background:linear-gradient(145deg,#fff,#f6fbf8);
+      border-color:rgba(23,107,69,.15);
+    }
+
+    #irelandJourneyMap{
+      height:620px;
+      width:100%;
+      border-radius:18px;
+      border:1px solid rgba(23,107,69,.18);
+      box-shadow:var(--shadow-md);
+      z-index:1;
+    }
+
+    .irelandMapLegend{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:12px;
+      padding:0 4px;
+      font-size:12px;
+      color:var(--ink-soft);
+    }
+
     .irelandMapLegendItem{display:flex;align-items:center;gap:6px;}
     .irelandMapDot{width:11px;height:11px;border-radius:50%;display:inline-block;}
-    .feature-wide{margin-top:14px;padding:22px;border-radius:18px;background:linear-gradient(135deg,#fff9df,#eef8f2);border:1px solid var(--border);}
-    .county-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
-    .county-tab{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex:1 1 125px;padding:12px 16px;border-radius:999px;background:#fff;border:1px solid rgba(23,107,69,.22);box-shadow:var(--shadow-sm);color:var(--ireland-green-dark);font-size:13px;font-weight:800;text-decoration:none;transition:transform .16s ease,box-shadow .16s ease,background .16s ease;}
-    .county-tab:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);background:var(--ireland-mint);}
-    @media(max-width:640px){#irelandJourneyMap{height:500px;border-radius:12px;}.irelandMapCard{padding:12px;}}
+
+    .feature-wide{
+      margin-top:14px;
+      padding:24px;
+      border-radius:18px;
+      background:
+        linear-gradient(135deg,rgba(255,249,223,.96),rgba(234,246,239,.96));
+      border:1px solid rgba(23,107,69,.15);
+      box-shadow:var(--shadow-sm);
+    }
+
+    .county-tabs{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .county-tab{
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:10px;
+      min-height:64px;
+      padding:16px 18px;
+      border-radius:16px;
+      background:#fff;
+      border:1px solid rgba(23,107,69,.18);
+      box-shadow:var(--shadow-sm);
+      color:var(--ireland-green-dark);
+      font-size:14px;
+      font-weight:800;
+      text-decoration:none;
+      transition:transform .16s ease,box-shadow .16s ease,background .16s ease;
+    }
+
+    .county-tab:hover{
+      transform:translateY(-3px);
+      box-shadow:var(--shadow-md);
+      background:var(--ireland-mint);
+    }
+
+    .glance-item{
+      background:linear-gradient(145deg,#fff,#fbfdfb);
+      border-color:rgba(23,107,69,.12);
+      border-radius:15px;
+      box-shadow:var(--shadow-sm);
+    }
+    .glance-value strong{color:var(--ireland-green);}
+
+    .journey-card{
+      border-color:rgba(23,107,69,.14);
+      background:linear-gradient(145deg,#fff,#fbfdfb);
+    }
+
+    .dest-link{
+      border-color:rgba(23,107,69,.14);
+      background:linear-gradient(145deg,#fff,#fbfdfb);
+    }
+    .dest-link:hover{
+      background:var(--ireland-mint);
+      border-color:rgba(23,107,69,.28);
+    }
+
+    #hidden + .card,
+    .hiddenIrishCard{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .irishQuote{
+      font-family:var(--font-hand);
+      font-size:1.7rem;
+      line-height:1.2;
+      color:var(--ireland-green-dark);
+      margin:10px 0 0;
+    }
+
+    .localRibbon{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:12px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(23,107,69,.10);
+      color:var(--ireland-green-dark);
+      border:1px solid rgba(23,107,69,.18);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .greenCard .tour-pick,
+    .greenCard .dest-link{
+      background:rgba(255,255,255,.9);
+    }
+
+    .goldCard{
+      background:linear-gradient(145deg,#fffdf7 0%,#fff7df 58%,#f8efcf 100%);
+      border-color:rgba(217,173,69,.24);
+    }
+
+    @media(max-width:760px){
+      .county-tabs{grid-template-columns:repeat(2,1fr);}
+    }
+
+    @media(max-width:640px){
+      .heroCard.irelandHero{
+        min-height:500px;
+        padding:30px 22px;
+        border-radius:20px;
+      }
+      .heroCard.irelandHero .hero-headline{font-size:3rem;}
+      #irelandJourneyMap{height:500px;border-radius:12px;}
+      .irelandMapCard{padding:12px;}
+      .county-tabs{grid-template-columns:1fr;}
+    }
 
 </style><script>(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account','2378028');</script>
 </head>
@@ -253,6 +504,8 @@
 <nav class="breadcrumb"><a href="/">Home</a><span>›</span><a href="/#destinations">Our Destinations</a><span>›</span><span>Ireland</span></nav>
 
 <div class="card heroCard irelandHero">
+  <div>
+  <div class="localRibbon">☘️ Ireland, from two people who actually live here</div>
   <div class="eyebrow"><span class="badge">🇮🇪 Ireland</span><span class="badge outline">Our home</span><span class="badge ireland">First-hand · local · still exploring</span></div>
   <h1 class="hero-headline">Ireland —<br><em>our home, and we're still discovering it</em></h1>
   <p class="hero-lead">We travel all over the world, but some of our favourite discoveries have been right here at home. We're Nicola and Padraig from Carlow, and this is our growing guide to Ireland — castles, country houses, gardens, ancient sites, brilliant little towns, road trips and the places we'd driven past for years until we finally stopped.</p>
@@ -270,11 +523,12 @@
     <div class="stat"><strong>6</strong><span>county guides live</span></div>
   </div>
   <div class="links"><a class="btn-primary" href="/carlow.html">Start with Carlow →</a><a class="btn-outline" href="#county-guides">Choose a county ↓</a></div>
+  </div>
 </div>
 
 <div id="county-guides" class="card greenCard">
   <div class="eyebrow"><span class="badge ireland">☘️ County guides completed</span><span class="badge outline">First-hand</span></div>
-  <h2>Choose a county</h2>
+  <h2>Choose a county</h2><div class="irishQuote">Ar an mbóthar arís — back on the road again.</div>
   <p style="color:var(--ink-soft);font-size:14px;">Start with one of the county guides we've completed so far. Each one combines our own visits, local connections, videos and practical ideas.</p>
   <div class="county-tabs" aria-label="Completed Ireland county guides">
     <a class="county-tab" href="/carlow.html">🏰 Carlow</a>
@@ -337,8 +591,8 @@
 </div>
 
 <div id="hidden" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">05</div><div class="chapterTitle"><div class="chapterLabel">This is very much our thing</div><div class="chapterName">Hidden Ireland</div></div></div></div>
-<div class="card goldCard">
-  <div class="eyebrow"><span class="badge">💎 Hidden Ireland</span><span class="badge outline">22+ films</span></div>
+<div class="card goldCard hiddenIrishCard">
+  <div class="eyebrow"><span class="badge">💎 Hidden Ireland</span><span class="badge outline">22+ films</span><span class="badge ireland">Our favourite kind of Ireland</span></div>
   <h2>The places most tourists drive straight past</h2>
   <p>Ruins on the side of roads, extraordinary gardens, castles without queues, little museums, curious villages and places that make us ask: <strong>why does nobody know about this?</strong> Hidden Ireland is our growing collection of those finds.</p>
   <div class="feature-wide"><h3>🎁 Free guide — 10 Deadly Irish Hidden Gems</h3><p>Quirky Irish spots worth putting on your next road trip — without the usual Cliffs of Moher and Blarney Stone list.</p><button class="btn-primary ml-onclick-form" onclick="ml('show','ZiCglE',true)" style="border:none;cursor:pointer;">Grab the free guide →</button></div>
@@ -435,7 +689,7 @@
   <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Where can I find unusual places in Ireland?</div><div class="faqA">Start with our <a href="/hidden-ireland-gems.html"><strong>Hidden Ireland guide</strong></a>. It's where we collect the castles, ruins, gardens, quirky attractions and overlooked places that have surprised us most.</div></div>
 </div>
 
-<div class="card heroCard irelandHero" style="text-align:center;">
+<div class="card heroCard irelandHero" style="text-align:center;min-height:360px;align-items:center;">
   <h2 style="text-align:center;">Come explore Ireland with us</h2>
   <p style="text-align:center;color:var(--ink-soft);max-width:620px;margin:0 auto 18px;">This page will keep growing as we do. Start in our home county, dive into Hidden Ireland, or pick a marker on the map and see where it takes you.</p>
   <div class="links" style="justify-content:center;"><a class="btn-primary" href="/carlow.html">Explore Carlow →</a><a class="btn-primary" href="/wexford.html">Explore Wexford →</a><a class="btn-gold" href="/hidden-ireland-gems.html">Discover Hidden Ireland →</a><a class="btn-outline" href="/#destinations">All destinations →</a></div>
