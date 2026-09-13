@@ -1,63 +1,411 @@
-<h1 class="pageTitle"> Newsletter Archive</h1>
 
-<div class="card" style="text-align:center;">
-  <p class="lead">The Two for the Row'd newsletter — real travel, honest reviews, hidden gems and where we're heading next. Have a browse of past issues, then <a href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener"><strong>join the list</strong></a> to get the next one straight to your inbox.</p>
-</div>
+<style>
+  /* ─────────────────────────────────────────────
+     NEWSLETTER ARCHIVE — editorial refresh
+     Scoped to #newsletter-page
+  ────────────────────────────────────────────── */
+  #newsletter-page{
+    --news-green:#103c32;
+    --news-green-2:#1d5c4c;
+    --news-gold:#d9ad45;
+    --news-gold-soft:#f4d984;
+    --news-cream:#f7f4ec;
+    --news-paper:#fffdf8;
+    --news-ink:#1d2521;
+    --news-soft:#66716b;
+    --news-border:rgba(29,37,33,.11);
+    --news-shadow:0 14px 38px rgba(16,60,50,.09);
+  }
 
-<div class="card">
-  <div class="hero-eyebrow">
-    <span class="badge">Edition 4</span>
-    <span class="badge outline">September 2026</span>
-    <span class="badge outline">Latest</span>
-  </div>
-  <h2>Heritage Week, autumn escapes &amp; a bigger Two for the Row'd</h2>
-  <p style="color:var(--ink-soft);">This month we're road-tripping through Heritage Week, sharing some brilliant Irish discoveries, looking ahead to autumn travel, and celebrating a major expansion of the Two for the Row'd website — plus Drive From Home, TR+ and our latest competition winner.</p>
-  <div class="links">
-    <a class="btn-primary" href="/newsletter-ed-04.pdf" target="_blank" rel="noopener">Read (PDF) →</a>
-  </div>
-</div>
+  #newsletter-page .news-wrap{
+    max-width:960px;
+    margin:0 auto;
+  }
 
-<div class="card">
-  <div class="hero-eyebrow">
-    <span class="badge">Edition 3</span>
-    <span class="badge outline">August 2026</span>
-  </div>
-  <h2>Neck fans, Morocco memories &amp; the Irish gem worth the detour</h2>
-  <p style="color:var(--ink-soft);">Our August pick that earned its place in the bag, a look back at what made our Morocco trip work, and the Kilkenny stop most people drive straight past — plus what's on the horizon before the autumn kicks in.</p>
-  <div class="links">
-    <a class="btn-primary" href="/newsletter-ed-03.pdf" target="_blank" rel="noopener">Read (PDF) →</a>
-  </div>
-</div>
+  #newsletter-page .news-hero{
+    min-height:420px;
+    border-radius:26px;
+    padding:44px;
+    display:flex;
+    align-items:flex-end;
+    color:#fff;
+    background:
+      radial-gradient(circle at 82% 17%,rgba(244,217,132,.18),transparent 34%),
+      linear-gradient(135deg,#103c32 0%,#1d5c4c 58%,#397964 100%);
+    box-shadow:var(--news-shadow);
+    overflow:hidden;
+    margin-bottom:18px;
+  }
 
-<div class="card">
-  <div class="hero-eyebrow">
-    <span class="badge">Edition 2</span>
-    <span class="badge outline">July 2026</span>
-  </div>
-  <h2>Basel, Colmar &amp; a hidden Irish gem in Kilkenny</h2>
-  <p style="color:var(--ink-soft);">Our Switzerland and France recap — fairytale Colmar, underrated Basel — plus Kilfane Glen, the Kilkenny hidden gem worth the detour. And we launched our travel journal giveaway (closes 23 August, so get in quick).</p>
-  <div class="links">
-    <a class="btn-primary" href="/newsletter-ed-02.pdf" target="_blank" rel="noopener">Read (PDF) →</a>
-  </div>
-</div>
+  #newsletter-page .news-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 12px;
+    border-radius:999px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.22);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin-bottom:15px;
+  }
 
-<div class="card">
-  <div class="hero-eyebrow">
-    <span class="badge">Edition 1</span>
-    <span class="badge outline">June 2026</span>
-    <span class="badge outline">Launch issue</span>
-  </div>
-  <h2>Welcome to Two for the Row'd — where we tell the honest version</h2>
-  <p style="color:var(--ink-soft);">Our very first newsletter. Why we started it, what you can expect (real travel, honest reviews, hidden gems), and our favourite spot we've been to so far. No fluff, no sponsored waffle — just the same honest voice you get on the site.</p>
-  <div class="links">
-    <a class="btn-primary" href="/newsletter-ed-01.pdf" target="_blank" rel="noopener">Read (PDF) →</a>
-  </div>
-</div>
+  #newsletter-page .news-hero h1{
+    color:#fff;
+    font-size:clamp(2.5rem,6vw,4.8rem);
+    line-height:1.02;
+    letter-spacing:-.035em;
+    margin:0 0 14px;
+  }
 
-<div class="card" style="background:linear-gradient(135deg,#ffd84a 0%,#ffe87a 100%);border-color:#e8c235;text-align:center;">
-  <h2>✈️ Don't miss the next one</h2>
-  <p style="color:#4a3f28;">Join the mailing list and get the next edition straight to your inbox.</p>
-  <div class="links" style="justify-content:center;">
-    <a class="btn-primary" href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener">Get our newsletter →</a>
+  #newsletter-page .news-hero h1 em{
+    display:block;
+    color:#f4d984;
+    font-size:.48em;
+    margin-top:10px;
+  }
+
+  #newsletter-page .news-hero p{
+    max-width:720px;
+    color:rgba(255,255,255,.90);
+    font-size:1rem;
+    margin:0;
+  }
+
+  #newsletter-page .news-actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:22px;
+  }
+
+  #newsletter-page .news-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 18px;
+    border-radius:11px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:800;
+    transition:.16s ease;
+  }
+
+  #newsletter-page .news-btn:hover{transform:translateY(-2px)}
+  #newsletter-page .news-btn.gold{background:#f4d984;color:#17231e}
+  #newsletter-page .news-btn.green{background:var(--news-green);color:#fff}
+  #newsletter-page .news-btn.white{background:#fff;color:var(--news-green)}
+
+  #newsletter-page .news-proof{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:28px;
+  }
+
+  #newsletter-page .proof{
+    background:#fff;
+    border:1px solid var(--news-border);
+    border-radius:17px;
+    padding:18px;
+    box-shadow:0 6px 20px rgba(16,60,50,.05);
+  }
+
+  #newsletter-page .proof strong{
+    display:block;
+    font-family:var(--font-display);
+    color:var(--news-green);
+    font-size:1.2rem;
+    margin-bottom:3px;
+  }
+
+  #newsletter-page .proof span{
+    font-size:12px;
+    color:var(--news-soft);
+  }
+
+  #newsletter-page .news-section{
+    margin:44px 0 16px;
+  }
+
+  #newsletter-page .news-eyebrow{
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--news-green-2);
+    margin-bottom:6px;
+  }
+
+  #newsletter-page .news-section h2{
+    font-size:clamp(1.85rem,4vw,2.8rem);
+    margin-bottom:8px;
+  }
+
+  #newsletter-page .news-section p{
+    max-width:720px;
+    color:var(--news-soft);
+  }
+
+  #newsletter-page .latest{
+    background:linear-gradient(145deg,#fffdf8,#eef5f1);
+    border:1px solid var(--news-border);
+    border-radius:24px;
+    box-shadow:var(--news-shadow);
+    padding:32px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  #newsletter-page .latest::after{
+    content:"LATEST";
+    position:absolute;
+    top:25px;
+    right:-38px;
+    transform:rotate(38deg);
+    background:var(--news-gold-soft);
+    color:#543f0e;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.12em;
+    padding:8px 48px;
+  }
+
+  #newsletter-page .issue-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-bottom:13px;
+  }
+
+  #newsletter-page .issue-pill{
+    display:inline-flex;
+    align-items:center;
+    padding:6px 10px;
+    border-radius:999px;
+    background:#fff;
+    border:1px solid var(--news-border);
+    font-size:11px;
+    font-weight:800;
+  }
+
+  #newsletter-page .issue-pill.gold{
+    background:var(--news-gold-soft);
+    border-color:var(--news-gold);
+    color:#61490f;
+  }
+
+  #newsletter-page .latest h2{
+    font-size:clamp(1.7rem,4vw,2.65rem);
+    max-width:740px;
+    margin-bottom:10px;
+  }
+
+  #newsletter-page .latest p{
+    max-width:760px;
+    color:var(--news-soft);
+  }
+
+  #newsletter-page .archive-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+  }
+
+  #newsletter-page .issue-card{
+    background:#fff;
+    border:1px solid var(--news-border);
+    border-radius:20px;
+    box-shadow:0 8px 24px rgba(16,60,50,.06);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+
+  #newsletter-page .issue-top{
+    height:8px;
+    background:linear-gradient(90deg,var(--news-green),var(--news-gold));
+  }
+
+  #newsletter-page .issue-body{
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+
+  #newsletter-page .issue-card h3{
+    font-size:1.25rem;
+    margin-bottom:8px;
+  }
+
+  #newsletter-page .issue-card p{
+    font-size:13.5px;
+    color:var(--news-soft);
+    flex:1;
+  }
+
+  #newsletter-page .issue-link{
+    margin-top:14px;
+    font-size:13px;
+    font-weight:800;
+    color:var(--news-green);
+    text-decoration:none;
+  }
+
+  #newsletter-page .issue-link:hover{text-decoration:underline}
+
+  #newsletter-page .signup{
+    margin-top:34px;
+    background:linear-gradient(135deg,#f4d984,#ffeaa7);
+    border:1px solid var(--news-gold);
+    border-radius:24px;
+    padding:34px;
+    text-align:center;
+    box-shadow:0 12px 32px rgba(217,173,69,.18);
+  }
+
+  #newsletter-page .signup h2{
+    font-size:clamp(1.8rem,4vw,2.7rem);
+    margin-bottom:7px;
+  }
+
+  #newsletter-page .signup p{
+    max-width:610px;
+    margin:0 auto 18px;
+    color:#5f5131;
+  }
+
+  #newsletter-page .news-note{
+    text-align:center;
+    font-size:12px;
+    color:var(--news-soft);
+    margin-top:14px;
+  }
+
+  @media(max-width:820px){
+    #newsletter-page .archive-grid{grid-template-columns:1fr}
+  }
+
+  @media(max-width:650px){
+    #newsletter-page .news-proof{grid-template-columns:1fr}
+    #newsletter-page .news-hero{
+      min-height:390px;
+      padding:28px 22px;
+      border-radius:20px;
+    }
+    #newsletter-page .news-hero h1{font-size:3rem}
+    #newsletter-page .latest{padding:25px 21px}
+    #newsletter-page .news-actions{flex-direction:column}
+    #newsletter-page .news-btn{width:100%}
+  }
+</style>
+
+<div id="newsletter-page">
+  <div class="news-wrap">
+
+    <div class="news-hero">
+      <div>
+        <div class="news-kicker">✈️ Two for the Row'd Newsletter</div>
+        <h1>Newsletter Archive
+          <em>real travel, honest reviews & whatever we're planning next</em>
+        </h1>
+        <p>Every edition brings together our latest trips, hidden gems, travel finds and the behind-the-scenes bits that don't always make it onto the main site. Have a browse through the archive — and if you like what you see, join us for the next one.</p>
+
+        <div class="news-actions">
+          <a class="news-btn gold" href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener">Join the mailing list →</a>
+          <a class="news-btn white" href="/newsletter-ed-04.pdf" target="_blank" rel="noopener">Read the latest edition →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-proof">
+      <div class="proof"><strong>4 editions</strong><span>and counting</span></div>
+      <div class="proof"><strong>Monthly-ish</strong><span>when we've something worth sending</span></div>
+      <div class="proof"><strong>No waffle</strong><span>just trips, finds, plans & honest opinions</span></div>
+    </div>
+
+    <div class="news-section">
+      <div class="news-eyebrow">Latest issue</div>
+      <h2>Start with September</h2>
+      <p>Our newest edition brings together Heritage Week, autumn travel ideas and a bigger Two for the Row'd.</p>
+    </div>
+
+    <article class="latest">
+      <div class="issue-meta">
+        <span class="issue-pill gold">Edition 4</span>
+        <span class="issue-pill">September 2026</span>
+      </div>
+
+      <h2>Heritage Week, autumn escapes & a bigger Two for the Row'd</h2>
+      <p>This month we're road-tripping through Heritage Week, sharing some brilliant Irish discoveries, looking ahead to autumn travel, and celebrating a major expansion of the Two for the Row'd website — plus Drive From Home, TR+ and our latest competition winner.</p>
+
+      <div class="news-actions">
+        <a class="news-btn green" href="/newsletter-ed-04.pdf" target="_blank" rel="noopener">Read Edition 4 (PDF) →</a>
+      </div>
+    </article>
+
+    <div class="news-section">
+      <div class="news-eyebrow">Previous editions</div>
+      <h2>From the archive</h2>
+      <p>Missed one? They're all still here.</p>
+    </div>
+
+    <div class="archive-grid">
+
+      <article class="issue-card">
+        <div class="issue-top"></div>
+        <div class="issue-body">
+          <div class="issue-meta">
+            <span class="issue-pill gold">Edition 3</span>
+            <span class="issue-pill">August 2026</span>
+          </div>
+          <h3>Neck fans, Morocco memories & the Irish gem worth the detour</h3>
+          <p>Our August pick that earned its place in the bag, a look back at what made our Morocco trip work, and the Kilkenny stop most people drive straight past — plus what's on the horizon before autumn kicks in.</p>
+          <a class="issue-link" href="/newsletter-ed-03.pdf" target="_blank" rel="noopener">Read Edition 3 →</a>
+        </div>
+      </article>
+
+      <article class="issue-card">
+        <div class="issue-top"></div>
+        <div class="issue-body">
+          <div class="issue-meta">
+            <span class="issue-pill gold">Edition 2</span>
+            <span class="issue-pill">July 2026</span>
+          </div>
+          <h3>Basel, Colmar & a hidden Irish gem in Kilkenny</h3>
+          <p>Our Switzerland and France recap — fairytale Colmar, underrated Basel — plus Kilfane Glen, the Kilkenny hidden gem worth the detour. This was also the edition where we launched our travel journal giveaway.</p>
+          <a class="issue-link" href="/newsletter-ed-02.pdf" target="_blank" rel="noopener">Read Edition 2 →</a>
+        </div>
+      </article>
+
+      <article class="issue-card">
+        <div class="issue-top"></div>
+        <div class="issue-body">
+          <div class="issue-meta">
+            <span class="issue-pill gold">Edition 1</span>
+            <span class="issue-pill">June 2026</span>
+            <span class="issue-pill">Launch issue</span>
+          </div>
+          <h3>Welcome to Two for the Row'd — where we tell the honest version</h3>
+          <p>Our very first newsletter: why we started it, what you can expect, and the travel stories we wanted to tell without the usual polished nonsense.</p>
+          <a class="issue-link" href="/newsletter-ed-01.pdf" target="_blank" rel="noopener">Read Edition 1 →</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="signup">
+      <div class="news-eyebrow" style="color:#6b5319;">The next one lands in your inbox</div>
+      <h2>Don't miss Edition 5 ✈️</h2>
+      <p>Join the Two for the Row'd mailing list for new trips, honest reviews, hidden gems and whatever we're plotting next.</p>
+      <a class="news-btn green" href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener">Get our newsletter →</a>
+    </div>
+
+    <p class="news-note">No spam. Just Two for the Row'd when we've actually got something worth sending.</p>
+
   </div>
 </div>
