@@ -1,4 +1,4 @@
-<!doctype html> 
+<!doctype html>
 <html lang="en">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
@@ -139,9 +139,44 @@
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.photo-grid-2{grid-template-columns:1fr;}.memory-strip{grid-template-columns:repeat(2,1fr);}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}.also-grid{grid-template-columns:1fr;}}
-  </style>
-  <link rel="stylesheet" href="/country-refresh.css">
-  <style>:root{--country-hero:url('/img/IofM.jpg')}</style>
+  
+    /* SAFE 2026 PILL/TAB READABILITY FIX — no layout changes */
+    .route-stop,
+    .state-pill,
+    .vibe-pill,
+    .tagRow .tag,
+    .dest-tab{
+      background:#fff !important;
+      color:#1b1813 !important;
+      border:1px solid rgba(27,24,19,.16) !important;
+      box-shadow:0 2px 9px rgba(27,24,19,.10) !important;
+      text-shadow:none !important;
+    }
+    .route-stop a,
+    .state-pill a,
+    .vibe-pill a,
+    .tagRow .tag a,
+    .dest-tab a{
+      color:#1b1813 !important;
+      text-decoration:none;
+    }
+    .route-strip,
+    .states-strip,
+    .vibe-strip,
+    .tagRow,
+    .dest-tabs{
+      gap:8px !important;
+    }
+    .dest-tab{
+      font-weight:800 !important;
+      border-radius:999px !important;
+    }
+    .dest-tab:hover{
+      transform:translateY(-1px);
+      box-shadow:0 5px 14px rgba(27,24,19,.13) !important;
+    }
+
+</style>
 </head>
 <body>
 
@@ -198,7 +233,7 @@
     </div>
 
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/306675?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book an Isle of Man tour on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/306675?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Book an Isle of Man tour on TourRadar →</a>
       <a class="btn-sea" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1278648&k_site=https%3A%2F%2Fwww.klook.com%2Factivity%2F146034-isle-of-man-viking-highlights-and-castles-shore-excursion%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book Viking Highlights & Castles on Klook →</a>
       <a class="btn-outline" href="https://twofortherowd.com/#map">See all our destinations →</a>
     </div>
@@ -412,7 +447,7 @@
     <h2>Book an Isle of Man tour through TourRadar</h2>
     <p>The Isle of Man is small enough to explore independently but a guided tour covers the highlights — the Laxey Wheel, Peel Castle, Snaefell, the TT course roads and the Viking heritage — with the context that makes everything make sense. TourRadar has great Isle of Man and British Isles options.</p>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/306675?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Isle of Man tours on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/306675?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse Isle of Man tours on TourRadar →</a>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
   </div>
@@ -518,7 +553,7 @@
     <h2 style="text-align:center;">Planning a trip to the Isle of Man?</h2>
     <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">Get the ferry, ride the horse tram, take the mountain railway to Snaefell, stand in front of the Laxey Wheel, eat fish and chips on the promenade and drive a road with no speed limit. The Isle of Man is completely one of a kind.</p>
     <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://www.tourradar.com/t/306675?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Isle of Man tours on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/306675?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse Isle of Man tours on TourRadar →</a>
       <a class="btn-gold" href="https://www.getyourguide.com/isle-of-man-island-l159936/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book experiences on GYG →</a>
       <a class="btn-sea" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1278648&k_site=https%3A%2F%2Fwww.klook.com%2Factivity%2F146034-isle-of-man-viking-highlights-and-castles-shore-excursion%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Viking & Castles tour on Klook →</a>
       <a class="btn-outline" href="https://twofortherowd.com/">Back to main site →</a>
