@@ -173,7 +173,7 @@
     a { color:inherit; }
     strong { font-weight:700; }
 
-    .wrap { max-width:860px; margin:0 auto; padding:0 16px 60px; }
+    .wrap { max-width:980px; margin:0 auto; padding:0 16px 60px; }
 
     .backBar {
       background:rgba(253,248,239,.95); backdrop-filter:blur(14px);
@@ -299,6 +299,234 @@
       .links { flex-direction:column; }
       .links a { text-align:center; justify-content:center; }
     }
+
+    /* ─────────────────────────────────────────────
+       HIDDEN IRELAND FR — editorial refresh
+    ────────────────────────────────────────────── */
+    .hiddenHeroFr{
+      min-height:520px;
+      border-radius:28px;
+      padding:48px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      background:
+        linear-gradient(90deg,rgba(10,34,28,.80),rgba(10,34,28,.52) 56%,rgba(10,34,28,.20)),
+        radial-gradient(circle at 82% 18%,rgba(255,216,74,.10),transparent 34%),
+        url('/img/irelandpic.jpg') center/cover no-repeat,
+        linear-gradient(135deg,#102f27 0%,#1d4b3c 52%,#3b725d 100%);
+      box-shadow:var(--shadow-lg);
+      margin-bottom:18px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .hiddenHeroFr h1{
+      color:#fff;
+      font-size:clamp(2.6rem,6vw,4.9rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
+      text-shadow:0 3px 16px rgba(0,0,0,.30);
+    }
+
+    .hiddenHeroFr h1 em{
+      display:block;
+      color:#ffd84a;
+      font-size:.48em;
+      line-height:1.12;
+      margin-top:10px;
+    }
+
+    .hiddenHeroFr .hero-lead{
+      color:rgba(255,255,255,.94);
+      max-width:760px;
+      text-shadow:0 2px 10px rgba(0,0,0,.24);
+      margin-bottom:14px;
+    }
+
+    .hiddenHeroFr .hero-extra{
+      color:rgba(255,255,255,.83);
+      max-width:760px;
+      font-size:14px;
+      text-shadow:0 2px 8px rgba(0,0,0,.20);
+    }
+
+    .hiddenHeroFr .gaeilge-block{
+      color:rgba(255,255,255,.83);
+      background:rgba(255,255,255,.10);
+      border-left-color:#ffd84a;
+      max-width:760px;
+      backdrop-filter:blur(5px);
+    }
+
+    .hiddenHeroFr .badge.outline,
+    .hiddenHeroFr .badge.green{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+    }
+
+    .hiddenHeroFr .tag{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.22);
+    }
+
+    .hiddenHeroFr .btn-outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.34);
+    }
+
+    .hiddenHeroFr .btn-primary{
+      background:#2d6a4f;
+      color:#fff;
+      box-shadow:0 7px 20px rgba(0,0,0,.18);
+    }
+
+    .proofStripFr{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin:0 0 30px;
+    }
+
+    .proofBoxFr{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:17px;
+      padding:18px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .proofBoxFr strong{
+      display:block;
+      font-family:var(--font-display);
+      color:var(--green);
+      font-size:1.22rem;
+      margin-bottom:3px;
+    }
+
+    .proofBoxFr span{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .editorialSectionFr{
+      margin:48px 0 16px;
+    }
+
+    .editorialEyebrowFr{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--green);
+      margin-bottom:6px;
+    }
+
+    .editorialSectionFr h2{
+      font-size:clamp(1.85rem,4vw,2.8rem);
+      margin-bottom:8px;
+    }
+
+    .editorialSectionFr p{
+      max-width:760px;
+      color:var(--ink-soft);
+    }
+
+    .featurePanelFr,
+    .bookingPanelFr,
+    .faqPanelFr,
+    .packingPanelFr,
+    .crossSellFr{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow-md);
+      margin-bottom:18px;
+    }
+
+    .featurePanelFr{
+      background:linear-gradient(145deg,#fffdf8,#edf6f1);
+      border-color:rgba(45,106,79,.16);
+    }
+
+    .gems-grid{
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .gem-item,
+    .tip-item,
+    .highlight-item{
+      background:#fff;
+      border-radius:17px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .tips-grid{
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .highlights-grid{
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .watchPanelFr{
+      background:linear-gradient(135deg,#123e31,#235d49);
+      color:#fff;
+      border-radius:24px;
+      padding:32px;
+      text-align:center;
+      box-shadow:var(--shadow-lg);
+      margin-bottom:18px;
+    }
+
+    .watchPanelFr h2{color:#fff;}
+    .watchPanelFr p{color:rgba(255,255,255,.84)!important;}
+    .watchPanelFr .btn-outline{
+      color:#fff;
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.28);
+    }
+
+    .finalCtaFr{
+      background:linear-gradient(135deg,#123e31,#235d49);
+      color:#fff;
+      border-radius:24px;
+      padding:34px;
+      text-align:center;
+      box-shadow:var(--shadow-lg);
+      margin-top:24px;
+    }
+
+    .finalCtaFr h2{color:#fff;}
+    .finalCtaFr p{color:rgba(255,255,255,.83)!important;}
+    .finalCtaFr .btn-outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
+    }
+
+    @media(max-width:820px){
+      .proofStripFr,.gems-grid,.tips-grid,.highlights-grid{grid-template-columns:repeat(2,1fr);}
+    }
+
+    @media(max-width:620px){
+      .hiddenHeroFr{
+        min-height:470px;
+        padding:30px 22px;
+        border-radius:20px;
+      }
+      .hiddenHeroFr h1{font-size:3rem;}
+      .proofStripFr,.gems-grid,.tips-grid,.highlights-grid{grid-template-columns:1fr;}
+    }
+
   </style>
 </head>
 
@@ -320,65 +548,59 @@
     </nav>
 
     <!-- HERO -->
-    <div class="card heroCard">
-      <div class="eyebrow">
-        <span class="badge">🇮🇪 Irlande</span>
-        <span class="badge outline">22 vidéos</span>
-        <span class="badge green">Hors des sentiers battus</span>
-      </div>
+    <div class="hiddenHeroFr">
+      <div>
+        <div class="eyebrow">
+          <span class="badge">🇮🇪 Irlande</span>
+          <span class="badge outline">22 vidéos</span>
+          <span class="badge green">Hors des sentiers battus</span>
+        </div>
 
-      <!-- Irish language intro -->
-      <div class="gaeilge-block">
-        🇮🇪 <strong>As Gaeilge:</strong> Fáilte go dtí ár dtreoir de sheoda ceilte na hÉireann.
-        Is tír iontach í Éire — tír lán le stair, le háilleacht agus le carachtair.
-        Sna físeáin seo, táimid ag taispeáint na n-áiteanna speisialta nach bhfeiceann
-        an chuid is mó de thurasóirí. Tá súil againn go mbainidh sibh taitneamh astu!
-      </div>
+        <div class="gaeilge-block">
+          🇮🇪 <strong>As Gaeilge:</strong> Fáilte go dtí ár dtreoir de sheoda ceilte na hÉireann.
+          Is tír iontach í Éire — tír lán le stair, le háilleacht agus le carachtair.
+          Sna físeáin seo, táimid ag taispeáint na n-áiteanna speisialta nach bhfeiceann
+          an chuid is mó de thurasóirí.
+        </div>
 
-      <h1 class="hero-headline">
-        Les joyaux cachés en Irlande —<br><em>22 endroits que les touristes ne trouvent jamais</em>
-      </h1>
+        <h1>Les joyaux cachés en Irlande
+          <em>22 endroits que les touristes ne trouvent presque jamais</em>
+        </h1>
 
-      <p class="hero-lead">
-        Nous sommes Nicola et Padraig — un couple irlandais de Carlow qui parcourt l'Irlande
-        à la recherche des endroits qui surprennent vraiment. Les lieux avec du caractère, de l'histoire,
-        des paysages à couper le souffle, et des histoires à raconter. Les endroits que vous pourriez
-        dépasser cent fois avant de vous arrêter un jour — et de réaliser que vous passiez à côté
-        de quelque chose d'exceptionnel.
-      </p>
+        <p class="hero-lead">
+          Nous sommes Nicola et Padraig — un couple irlandais de Carlow qui parcourt l'Irlande
+          à la recherche des endroits qui surprennent vraiment : histoire, paysages, villages,
+          ruines et coins tranquilles que l'on pourrait dépasser cent fois sans jamais s'arrêter.
+        </p>
 
-      <p>
-        Nicola est professeure de français et connaît bien les deux cultures — irlandaise et française.
-        Elle sait exactement ce qui plaît aux voyageurs francophones qui visitent l'Irlande et cherchent
-        à découvrir le pays authentique au-delà des circuits touristiques habituels.
-      </p>
+        <p class="hero-extra">
+          Nicola est professeure de français et connaît bien les cultures irlandaise et française —
+          ce guide est pensé pour les voyageurs francophones qui veulent découvrir une Irlande plus locale et authentique.
+        </p>
 
-      <div class="links">
-        <a class="btn-primary" href="https://twofortherowd.com/#hidden">
-          Voir les 22 vidéos Hidden Ireland →
-        </a>
-        <a class="btn-outline" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener">
-          S'abonner sur YouTube →
-        </a>
-      </div>
+        <div class="links">
+          <a class="btn-primary" href="https://twofortherowd.com/#hidden">Voir les 22 vidéos Hidden Ireland →</a>
+          <a class="btn-outline" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener">S'abonner sur YouTube →</a>
+        </div>
 
-      <div class="tagRow">
-        <span class="tag">joyaux cachés Irlande</span>
-        <span class="tag">endroits insolites Irlande</span>
-        <span class="tag">Irlande hors des sentiers battus</span>
-        <span class="tag">road trip Irlande</span>
-        <span class="tag">visiter l'Irlande authentique</span>
-        <span class="tag">sites cachés Irlande</span>
-        <span class="tag">voyage Irlande 2026</span>
-        <span class="tag">Irlande méconnue</span>
-        <span class="tag">que voir en Irlande</span>
+        <div class="tagRow">
+          <span class="tag">joyaux cachés Irlande</span>
+          <span class="tag">Irlande hors des sentiers battus</span>
+          <span class="tag">road trip Irlande</span>
+          <span class="tag">visiter l'Irlande authentique</span>
+        </div>
       </div>
     </div>
 
+    <div class="proofStripFr">
+      <div class="proofBoxFr"><strong>22 vidéos</strong><span>filmées à travers l'Irlande</span></div>
+      <div class="proofBoxFr"><strong>100 % vécu</strong><span>des endroits que nous avons réellement visités</span></div>
+      <div class="proofBoxFr"><strong>Guide local</strong><span>vu par un couple irlandais de Carlow</span></div>
+    </div>
+
     <!-- POURQUOI L'IRLANDE EST DIFFÉRENTE -->
-    <p class="section-label">Pourquoi l'Irlande nous surprend encore</p>
-    <div class="card">
-      <h2>L'Irlande a tellement plus à offrir que le circuit touristique habituel</h2>
+    <div class="editorialSectionFr"><div class="editorialEyebrowFr">Pourquoi l’Irlande nous surprend encore</div><h2>L’Irlande a tellement plus à offrir que le circuit touristique habituel</h2></div>
+    <div class="featurePanelFr">
       <p>
         La plupart des contenus sur l'Irlande couvrent les mêmes endroits — Dublin, Galway,
         les Falaises de Moher, l'Anneau du Kerry. Tous brillants, tous valant la visite. Mais
@@ -398,9 +620,8 @@
     </div>
 
     <!-- CE QUE NOUS CHERCHONS -->
-    <p class="section-label">Ce que nous cherchons</p>
-    <div class="card greenCard">
-      <h2>Qu'est-ce qui fait un vrai joyau caché ?</h2>
+    <div class="editorialSectionFr"><div class="editorialEyebrowFr">Ce que nous cherchons</div><h2>Qu’est-ce qui fait un vrai joyau caché ?</h2></div>
+    <div class="featurePanelFr">
       <div class="gems-grid">
 
         <div class="gem-item">
@@ -443,9 +664,8 @@
     </div>
 
     <!-- NOS TROUVAILLES -->
-    <p class="section-label">Quelques-unes de nos découvertes préférées</p>
-    <div class="card">
-      <h2>Les joyaux cachés que nous avons visités et filmés</h2>
+    <div class="editorialSectionFr"><div class="editorialEyebrowFr">Quelques-unes de nos découvertes préférées</div><h2>Les joyaux cachés que nous avons visités et filmés</h2></div>
+    <div class="featurePanelFr">
       <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">
         Voici les types d'endroits que nous couvrons dans notre série Hidden Ireland —
         ceux qui nous ont arrêtés net et nous ont fait saisir la caméra.
@@ -493,9 +713,8 @@
     </div>
 
     <!-- CONSEILS ROAD TRIP -->
-    <p class="section-label">Préparer votre road trip en Irlande</p>
-    <div class="card">
-      <h2>Conseils pour trouver les joyaux cachés de l'Irlande vous-même</h2>
+    <div class="editorialSectionFr"><div class="editorialEyebrowFr">Préparer votre road trip en Irlande</div><h2>Conseils pour trouver les joyaux cachés de l’Irlande vous-même</h2></div>
+    <div class="featurePanelFr">
       <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;"><strong>Les meilleures découvertes arrivent quand on quitte la route principale.</strong></p>
 
       <div class="tips-grid">
@@ -557,11 +776,10 @@
     </div>
 
     <!-- VOIR LES VIDÉOS -->
-    <div class="section-divider">🎬 Regarder la série</div>
+    <div class="editorialSectionFr"><div class="editorialEyebrowFr">Regarder la série</div><h2>22 joyaux cachés irlandais — en vidéo</h2></div>
 
-    <div class="card" style="text-align:center;">
-      <h2>22 joyaux cachés irlandais — en vidéo</h2>
-      <p style="color:var(--ink-soft);max-width:540px;margin:0 auto 16px;">
+    <div class="watchPanelFr">
+            <p style="color:var(--ink-soft);max-width:540px;margin:0 auto 16px;">
         On a filmé chacun de ces endroits pour que vous puissiez voir exactement à quoi ils ressemblent
         avant de les visiter. Regardez quelques vidéos et vous aurez votre prochain road trip irlandais
         planifié en un rien de temps.
@@ -573,9 +791,8 @@
     </div>
 
     <!-- GYG WIDGET -->
-    <p class="section-label">Réserver des activités en Irlande</p>
-    <div class="card">
-      <h2>Activités et visites guidées en Irlande — via GetYourGuide</h2>
+    <div class="editorialSectionFr"><div class="editorialEyebrowFr">Réserver des activités en Irlande</div><h2>Activités et visites guidées en Irlande — via GetYourGuide</h2></div>
+    <div class="bookingPanelFr">
       <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">
         Si nos joyaux cachés vous ont donné envie de planifier un vrai voyage en Irlande,
         GetYourGuide propose des circuits et expériences brillants à ajouter à votre itinéraire.
@@ -589,9 +806,8 @@
     </div>
 
     <!-- FAQ -->
-    <p class="section-label">Questions fréquentes</p>
-    <div class="card">
-      <h2>FAQ — Visiter l'Irlande hors des sentiers battus</h2>
+    <div class="editorialSectionFr"><div class="editorialEyebrowFr">Questions fréquentes</div><h2>FAQ — Visiter l’Irlande hors des sentiers battus</h2></div>
+    <div class="faqPanelFr">
 
       <div class="faqItem open">
         <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
@@ -675,7 +891,7 @@
         <a class="btn-gold" href="https://twofortherowd.com/avis-circuit-maroc.html">
           Lire notre avis circuit Maroc →
         </a>
-        <a class="btn-outline" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored">
+        <a class="btn-outline" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar storefront',button_label:'Voir les circuits sur TourRadar'});">
           Voir les circuits sur TourRadar →
         </a>
       </div>
@@ -684,9 +900,8 @@
       </p>
     </div>
 <!-- AMAZON IRLANDE PACKING -->
-<p class="section-label">Que mettre dans sa valise pour l’Irlande</p>
-<div class="card">
-  <h2>Essentiels à emporter pour l’Irlande — ce qu’on prendrait sans hésiter</h2>
+<div class="editorialSectionFr"><div class="editorialEyebrowFr">Que mettre dans sa valise pour l’Irlande</div><h2>Essentiels à emporter pour l’Irlande — ce qu’on prendrait sans hésiter</h2></div>
+<div class="packingPanelFr">
   <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">
     L’Irlande est magnifique — mais la météo peut changer en quelques minutes.
     Entre pluie, vent, froid et éclaircies inattendues, il faut être prêt à tout.
@@ -828,7 +1043,7 @@
   </p>
 </div>
     <!-- CTA FINAL -->
-    <div class="card heroCard" style="text-align:center;">
+    <div class="finalCtaFr">
       <h2 style="text-align:center;">Prêt à explorer l'Irlande cachée ?</h2>
       <p style="text-align:center;color:var(--ink-soft);max-width:540px;margin:0 auto 20px;">
         Regardez notre série complète Hidden Ireland — 22 vidéos couvrant des endroits brillants
