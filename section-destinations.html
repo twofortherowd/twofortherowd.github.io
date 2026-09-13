@@ -1,18 +1,274 @@
-<h1 class="pageTitle">Destination Guides</h1>
-
-<div class="card destinationIntro">
-  <div>
-    <span class="destEyebrow">🌍 Two for the Row'd Travel Guides</span>
-    <h2>Where we've been — and what we'd actually recommend</h2>
-    <p>Browse our first-hand destination guides by region. From quick city breaks to huge road trips, every main guide starts with somewhere we've genuinely travelled.</p>
+<div id="destinations-page">
+  <div class="destHero">
+    <div>
+      <div class="destHeroKicker">🌍 Two for the Row'd · first-hand travel guides</div>
+      <h1>Destination Guides
+        <em>60+ countries, hundreds of places — all actually travelled by us</em>
+      </h1>
+      <p>Browse our first-hand guides by region, from quick European city breaks to huge road trips, safaris, island-hopping adventures and places we once called home. Every main guide starts with somewhere we've genuinely been.</p>
+    </div>
   </div>
-  <div class="destStats">
-    <div><strong>60+</strong><span>countries & territories</span></div>
-    <div><strong>9</strong><span>regions</span></div>
-    <div><strong>1</strong><span>very long travel list</span></div>
-  </div>
-</div>
 
+  <div class="destProof">
+    <div class="destProofBox"><strong>60+</strong><span>countries & territories</span></div>
+    <div class="destProofBox"><strong>9 regions</strong><span>from Ireland to Oceania</span></div>
+    <div class="destProofBox"><strong>First-hand only</strong><span>no pretend-we've-been-there guides</span></div>
+  </div>
+
+<style>
+  #destinations-page{
+    --dest-green:#123d32;
+    --dest-green-2:#2d6a4f;
+    --dest-gold:#d9ad45;
+    --dest-cream:#f7f4ec;
+    --dest-paper:#fffdf8;
+    --dest-ink:#1c2722;
+    --dest-soft:#66716b;
+    --dest-border:rgba(28,39,34,.11);
+    --dest-shadow:0 14px 38px rgba(18,61,50,.08);
+  }
+
+  #destinations-page .destHero{
+    min-height:445px;
+    display:flex;
+    align-items:flex-end;
+    padding:44px;
+    margin-bottom:18px;
+    color:#fff;
+    border-radius:26px;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 84% 16%,rgba(244,217,132,.17),transparent 34%),
+      radial-gradient(circle at 12% 88%,rgba(82,183,136,.12),transparent 38%),
+      linear-gradient(135deg,#123d32 0%,#245c4a 56%,#4b806b 100%);
+    box-shadow:var(--dest-shadow);
+  }
+
+  #destinations-page .destHeroKicker{
+    display:inline-flex;
+    align-items:center;
+    padding:7px 12px;
+    margin-bottom:15px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.23);
+    background:rgba(255,255,255,.09);
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+  }
+
+  #destinations-page .destHero h1{
+    color:#fff;
+    font-size:clamp(2.7rem,6vw,5rem);
+    line-height:1.02;
+    letter-spacing:-.04em;
+    margin:0 0 14px;
+  }
+
+  #destinations-page .destHero h1 em{
+    display:block;
+    color:#f4d984;
+    font-size:.44em;
+    line-height:1.15;
+    margin-top:10px;
+  }
+
+  #destinations-page .destHero p{
+    max-width:760px;
+    color:rgba(255,255,255,.9);
+    font-size:1rem;
+    margin:0;
+  }
+
+  #destinations-page .destProof{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:28px;
+  }
+
+  #destinations-page .destProofBox{
+    background:#fff;
+    border:1px solid var(--dest-border);
+    border-radius:17px;
+    padding:18px;
+    box-shadow:0 6px 20px rgba(18,61,50,.05);
+  }
+
+  #destinations-page .destProofBox strong{
+    display:block;
+    font-family:var(--font-display);
+    font-size:1.25rem;
+    color:var(--dest-green);
+    margin-bottom:3px;
+  }
+
+  #destinations-page .destProofBox span{
+    font-size:12px;
+    color:var(--dest-soft);
+  }
+
+  #destinations-page .destinationIntro{display:none!important;}
+
+  #destinations-page .regionJump{
+    position:sticky;
+    top:8px;
+    z-index:15;
+    padding:13px 15px;
+    margin-bottom:30px;
+    border:1px solid var(--dest-border);
+    border-radius:18px;
+    background:rgba(255,253,248,.94);
+    backdrop-filter:blur(14px);
+    box-shadow:0 7px 22px rgba(18,61,50,.07);
+  }
+
+  #destinations-page .regionJumpLabel{
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    color:var(--dest-soft);
+    margin-bottom:8px;
+  }
+
+  #destinations-page .regionJumpLinks{
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    padding-bottom:1px;
+  }
+  #destinations-page .regionJumpLinks::-webkit-scrollbar{display:none;}
+
+  #destinations-page .regionJumpLinks a{
+    flex:0 0 auto;
+    text-decoration:none!important;
+    padding:7px 12px!important;
+    border-radius:999px!important;
+    background:#fff!important;
+    border:1px solid var(--dest-border)!important;
+    color:var(--dest-ink)!important;
+    font-size:12px!important;
+    font-weight:800!important;
+    transition:.15s ease;
+  }
+
+  #destinations-page .regionJumpLinks a:hover{
+    transform:translateY(-1px);
+    border-color:rgba(45,106,79,.35)!important;
+    color:var(--dest-green-2)!important;
+  }
+
+  #destinations-page .regionHead{
+    margin:52px 0 17px!important;
+    gap:13px!important;
+    font-size:clamp(1.35rem,2.6vw,1.8rem)!important;
+    scroll-margin-top:90px;
+  }
+
+  #destinations-page .regionHead > span:first-child,
+  #destinations-page .regionHead > span:last-child{
+    height:1px!important;
+    opacity:.55;
+  }
+
+  #destinations-page .regionCount{
+    font-family:var(--font-body);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.07em;
+    text-transform:uppercase;
+    color:var(--dest-soft);
+    background:#fff;
+    border:1px solid var(--dest-border);
+    border-radius:999px;
+    padding:5px 9px;
+    white-space:nowrap;
+  }
+
+  #destinations-page .featured-grid{
+    gap:14px!important;
+  }
+
+  #destinations-page .featured-grid .feat-card{
+    position:relative;
+    min-height:210px;
+    padding:21px!important;
+    border-radius:19px!important;
+    background:#fff!important;
+    border:1px solid var(--dest-border)!important;
+    box-shadow:0 7px 22px rgba(18,61,50,.045)!important;
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  }
+
+  #destinations-page .featured-grid .feat-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 30px rgba(18,61,50,.09)!important;
+    border-color:rgba(45,106,79,.25)!important;
+  }
+
+  #destinations-page .feat-title{
+    font-size:1.06rem!important;
+    line-height:1.3!important;
+    margin-top:12px!important;
+  }
+
+  #destinations-page .feat-sub{
+    color:var(--dest-soft)!important;
+    line-height:1.55!important;
+    -webkit-line-clamp:4;
+  }
+
+  #destinations-page .feat-arrow{
+    margin-top:auto!important;
+    padding-top:12px!important;
+    font-size:12px!important;
+    font-weight:800!important;
+    color:var(--dest-green-2)!important;
+  }
+
+  #destinations-page .destinationOutro{
+    margin-top:46px!important;
+    padding:34px!important;
+    border-radius:24px!important;
+    background:linear-gradient(135deg,#153e33,#2f6d56)!important;
+    color:#fff!important;
+    border:none!important;
+    box-shadow:var(--dest-shadow)!important;
+  }
+
+  #destinations-page .destinationOutro .bigLine,
+  #destinations-page .destinationOutro h2{
+    color:#fff!important;
+  }
+
+  #destinations-page .destinationOutro .bigLine{
+    color:#f4d984!important;
+  }
+
+  #destinations-page .destinationOutro p{
+    color:rgba(255,255,255,.82)!important;
+  }
+
+  #destinations-page .destinationOutro .btn-outline{
+    background:rgba(255,255,255,.1)!important;
+    border-color:rgba(255,255,255,.28)!important;
+    color:#fff!important;
+  }
+
+  @media(max-width:760px){
+    #destinations-page .destHero{
+      min-height:410px;
+      padding:28px 22px;
+      border-radius:20px;
+    }
+    #destinations-page .destHero h1{font-size:3rem;}
+    #destinations-page .destProof{grid-template-columns:1fr;}
+    #destinations-page .regionJump{top:4px;}
+  }
+</style>
 
 <style>
 .destinationIntro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.7fr);gap:28px;align-items:center;padding:26px 28px!important;background:linear-gradient(135deg,#fff 0%,#f5faf7 58%,#fff9e8 100%);border:1px solid rgba(45,106,79,.15);}
@@ -39,9 +295,9 @@
 </style>
 
 <!-- QUICK JUMP NAV -->
-<div class="card" style="padding:16px 20px;margin-bottom:16px;">
-  <p style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Jump to a region</p>
-  <div style="display:flex;flex-wrap:wrap;gap:8px;">
+<div class="regionJump">
+  <div class="regionJumpLabel">Jump to a region</div>
+  <div class="regionJumpLinks">
     <a href="#ireland" style="text-decoration:none;padding:6px 12px;background:rgba(45,106,79,.1);border:1px solid rgba(45,106,79,.25);border-radius:999px;font-size:13px;font-weight:700;color:#2d6a4f;">🇮🇪 Ireland</a>
     <a href="#africa" style="text-decoration:none;padding:6px 12px;background:rgba(200,134,10,.1);border:1px solid rgba(200,134,10,.25);border-radius:999px;font-size:13px;font-weight:700;color:#8a5e00;">🌍 Africa</a>
     <a href="#asia" style="text-decoration:none;padding:6px 12px;background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.2);border-radius:999px;font-size:13px;font-weight:700;color:#c0392b;">🌏 Asia & Middle East</a>
@@ -63,7 +319,7 @@
 </div>
 <div class="featured-grid">
   <div class="feat-card" onclick="window.location.href='/hidden-ireland-gems.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(45,106,79,.1);border-color:rgba(45,106,79,.25);color:#2d6a4f;">🇮🇪 Ireland</span><div class="feat-title">Hidden Ireland — 22 gems most tourists never find</div><p class="feat-sub">Ancient ruins, secret beaches, forgotten castles, and villages worth stopping in. All on video.</p><div class="feat-arrow">Start exploring →</div></div>
-  <div class="feat-card" onclick="window.location.href='/carlow.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(45,106,79,.1);border-color:rgba(45,106,79,.25);color:#2d6a4f;">🇮🇪 County Carlow</span><div class="feat-title">Carlow — Walt Disney's ancestors, Custer's Last Stand and 22 saints from one tiny county</div><p class="feat-sub">We're from Carlow — and we made 15 short films to prove it's one of Ireland's most extraordinary counties. Plus: book a private guided walking tour of the town with a fully accredited Irish tour guide.</p><div class="feat-arrow">Explore Carlow →</div></div>
+  <div class="feat-card" onclick="window.location.href='/carlow.html'" role="button" tabindex="0"><span class="feat-tag" style="background:rgba(45,106,79,.1);border-color:rgba(45,106,79,.25);color:#2d6a4f;">🇮🇪 County Carlow</span><div class="feat-title">Carlow — Walt Disney's ancestors, Custer's Last Stand and 22 saints from one tiny county</div><p class="feat-sub">We're from Carlow — and we made 18 short films to prove it's one of Ireland's most extraordinary counties. Plus: book a private guided walking tour of the town with a fully accredited Irish tour guide.</p><div class="feat-arrow">Explore Carlow →</div></div>
 </div>
 
 <!-- AFRICA -->
@@ -222,4 +478,5 @@
     <a class="btn-primary" href="https://www.instagram.com/twofortherowd25" target="_blank" rel="noopener">Follow on Instagram →</a>
     <a class="btn-outline" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener">Subscribe on YouTube →</a>
   </div>
+</div>
 </div>
