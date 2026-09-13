@@ -145,9 +145,48 @@
     footer a{color:var(--muted);font-weight:600;}
 
     @media(max-width:640px){#spainMap{height:300px;} .dest-grid{grid-template-columns:1fr;} .journey-grid{grid-template-columns:1fr;}}
-  </style>
-  <link rel="stylesheet" href="/country-refresh.css">
-  <style>:root{--country-hero:url('/img/spain.jpg')}</style>
+  
+    /* 2026 NAV / PILL READABILITY SWEEP */
+    .route-stop,
+    .state-pill,
+    .vibe-pill,
+    .tagRow .tag,
+    .dest-tab{
+      background:#fff !important;
+      color:#1b1813 !important;
+      border:1px solid rgba(27,24,19,.16) !important;
+      box-shadow:0 2px 9px rgba(27,24,19,.10) !important;
+      text-shadow:none !important;
+    }
+    .route-stop a,
+    .state-pill a,
+    .vibe-pill a,
+    .tagRow .tag a,
+    .dest-tab a{
+      color:#1b1813 !important;
+      text-decoration:none;
+    }
+    .route-arrow{
+      color:rgba(27,24,19,.54) !important;
+      text-shadow:none !important;
+    }
+    .route-strip,
+    .states-strip,
+    .vibe-strip,
+    .tagRow,
+    .dest-tabs{
+      gap:8px !important;
+    }
+    .dest-tab{
+      font-weight:800 !important;
+      border-radius:999px !important;
+    }
+    .dest-tab:hover{
+      transform:translateY(-1px);
+      box-shadow:0 5px 14px rgba(27,24,19,.13) !important;
+    }
+
+</style>
 </head>
 <body>
 
@@ -195,7 +234,7 @@
     <span class="route-stop">🌋 Tenerife</span>
   </div>
   <div class="links">
-    <a class="btn-primary" href="https://www.tourradar.com/t/291204?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book a Spain tour →</a>
+    <a class="btn-primary" href="https://www.tourradar.com/t/291204?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Book a Spain tour →</a>
     <a class="btn-outline" href="#stories">Read our stories ↓</a>
   </div>
 </div>

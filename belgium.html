@@ -150,9 +150,7 @@
   }
   </script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -350,7 +348,7 @@
       display: flex; flex-direction: column;
     }
     .dest-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .dest-card-img{width:100%;height:150px;object-fit:cover;object-position:center;display:block;background:#f2efe6;}
+    .dest-card-img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; }
     .dest-card-content { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
     .dest-card-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
     .dest-card-desc { font-size: 14px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 12px; flex: 1; }
@@ -406,7 +404,6 @@
 
     @media (max-width: 768px) {
       .destination-cards { grid-template-columns: 1fr; }
-      .dest-card-img { height: 210px; }
       .dest-tabs { justify-content: flex-start; }
       .dest-tab { font-size: 13px; padding: 8px 12px; }
     }
@@ -418,32 +415,47 @@
       .drive-grid { grid-template-columns: repeat(2, 1fr); }
     }
   
-/* BELGIUM INTERACTIVE JOURNEY MAP */
-.belgiumMapCard{padding:18px;overflow:hidden}.belgiumMapIntro{padding:4px 6px 14px}
-#belgiumJourneyMap{height:590px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1}
-.belgiumMapLegend{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--muted)}
-.belgiumMapLegendItem{display:flex;align-items:center;gap:6px}.belgiumMapDot{width:11px;height:11px;border-radius:50%;display:inline-block}
-.belgiumPopup{font-family:var(--font-body);min-width:190px}.belgiumPopupRegion{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
-.belgiumPopupTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px}
-.belgiumPopupText{font-size:12px;color:var(--ink-soft);line-height:1.5}.belgiumPopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--belgium);text-decoration:none}
-@media(max-width:640px){.belgiumMapCard{padding:12px}#belgiumJourneyMap{height:480px;border-radius:12px}.belgiumMapLegend{gap:9px;font-size:11px}}
+    /* 2026 NAV / PILL READABILITY SWEEP */
+    .route-stop,
+    .state-pill,
+    .vibe-pill,
+    .tagRow .tag,
+    .dest-tab{
+      background:#fff !important;
+      color:#1b1813 !important;
+      border:1px solid rgba(27,24,19,.16) !important;
+      box-shadow:0 2px 9px rgba(27,24,19,.10) !important;
+      text-shadow:none !important;
+    }
+    .route-stop a,
+    .state-pill a,
+    .vibe-pill a,
+    .tagRow .tag a,
+    .dest-tab a{
+      color:#1b1813 !important;
+      text-decoration:none;
+    }
+    .route-arrow{
+      color:rgba(27,24,19,.54) !important;
+      text-shadow:none !important;
+    }
+    .route-strip,
+    .states-strip,
+    .vibe-strip,
+    .tagRow,
+    .dest-tabs{
+      gap:8px !important;
+    }
+    .dest-tab{
+      font-weight:800 !important;
+      border-radius:999px !important;
+    }
+    .dest-tab:hover{
+      transform:translateY(-1px);
+      box-shadow:0 5px 14px rgba(27,24,19,.13) !important;
+    }
 
 </style>
-
-  
-
-
-<script>
-function nextBelgiumPhoto(img){
-  const c=(img.dataset.candidates||'').split('|');
-  let i=Number(img.dataset.candidateIndex||0)+1;
-  if(i<c.length){img.dataset.candidateIndex=i;img.src=c[i];}
-  else{img.onerror=null;}
-}
-</script>
-
-  <link rel="stylesheet" href="/country-refresh.css">
-  <style>:root{--country-hero:url('/img/brussels.jpg')}</style>
 </head>
 
 <body>
@@ -458,7 +470,7 @@ function nextBelgiumPhoto(img){
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="https://twofortherowd.com/">Home</a>
       <span>›</span>
-      <a href="https://twofortherowd.com/#map">Our Destinations</a>
+      <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
       <span>›</span>
       <span>Belgium</span>
     </nav>
@@ -483,12 +495,23 @@ function nextBelgiumPhoto(img){
       </p>
 
       <div class="links">
-        <a class="btn-primary" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
           Book a Belgium tour on TourRadar →
         </a>
-        <a class="btn-outline" href="https://twofortherowd.com/#map">
+        <a class="btn-outline" href="https://twofortherowd.com/#destinations">
           See all our destinations →
         </a>
+      </div>
+
+      <div class="tagRow">
+        <span class="tag">Belgium travel guide</span>
+        <span class="tag">Belgium city breaks</span>
+        <span class="tag">Brussels Bruges Ghent Antwerp</span>
+        <span class="tag">Belgian beer culture</span>
+        <span class="tag">Belgium itinerary</span>
+        <span class="tag">Belgium train travel</span>
+        <span class="tag">Spa-Francorchamps</span>
+        <span class="tag">Belgium from Ireland</span>
       </div>
     </div>
 
@@ -500,29 +523,12 @@ function nextBelgiumPhoto(img){
     </p>
 
     <div class="dest-tabs">
-      <a href="https://twofortherowd.com/#map" class="dest-tab">🌍 Destinations</a>
-      <a href="#belgium-map" class="dest-tab">🗺️ Belgium Map</a>
       <a href="belgium/brussels.html" class="dest-tab">🏛️ Brussels</a>
       <a href="belgium/bruges.html" class="dest-tab">🏰 Bruges</a>
       <a href="belgium/ghent.html" class="dest-tab">🏙️ Ghent</a>
       <a href="belgium/antwerp.html" class="dest-tab">🌊 Antwerp</a>
       <a href="belgium/liege.html" class="dest-tab">🏰 Liège</a>
       <a href="belgium/spa.html" class="dest-tab">🏁 Spa</a>
-    </div>
-
-
-    <div id="belgium-map" class="card belgiumMapCard">
-      <div class="belgiumMapIntro">
-        <div class="eyebrow"><span class="badge">🗺️ Interactive map</span><span class="badge red">Lived here · 2005–2006</span></div>
-        <h2>Explore our Belgium story on the map</h2>
-        <p style="color:var(--ink-soft);max-width:700px;">Brussels was home for a year, with trips across Flanders and Wallonia to Bruges, Ghent, Antwerp, Liège and Spa. Tap any marker to see the memory behind the stop and jump straight into its full city guide.</p>
-      </div>
-      <div id="belgiumJourneyMap" aria-label="Interactive map of Two for the Row'd Belgium destinations"></div>
-      <div class="belgiumMapLegend">
-        <span class="belgiumMapLegendItem"><span class="belgiumMapDot" style="background:#c0392b"></span>Brussels — home</span>
-        <span class="belgiumMapLegendItem"><span class="belgiumMapDot" style="background:#2980b9"></span>Flanders</span>
-        <span class="belgiumMapLegendItem"><span class="belgiumMapDot" style="background:#27ae60"></span>Wallonia</span>
-      </div>
     </div>
 
     <!-- ── THE STORY ─────────────────────────────────────── -->
@@ -596,11 +602,11 @@ function nextBelgiumPhoto(img){
     <div class="destination-cards">
       <!-- Brussels -->
       <div class="dest-card">
-        <img class="dest-card-img" src="/img/brussels.jpg" data-candidates="/img/brussels.jpg|/img/brussels.jpeg|/img/brussels.JPG|/img/brussels.JPEG|/img/brussels.png|/img/brussels.PNG|/img/brussels.webp|/img/brussels.WEBP|/img/brussels2.jpg|/img/brussels2.jpeg|/img/brussels2.JPG|/img/brussels2.JPEG|/img/brussels2.png|/img/brussels2.PNG|/img/brussels2.webp|/img/brussels2.WEBP|/img/brussels3.jpg|/img/brussels3.jpeg|/img/brussels3.JPG|/img/brussels3.JPEG|/img/brussels3.png|/img/brussels3.PNG|/img/brussels3.webp|/img/brussels3.WEBP|/img/brussels4.jpg|/img/brussels4.jpeg|/img/brussels4.JPG|/img/brussels4.JPEG|/img/brussels4.png|/img/brussels4.PNG|/img/brussels4.webp|/img/brussels4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Brussels Belgium">
+        <img src="img/brussels.jpg" alt="Grand Place Brussels Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Brussels</h3>
           <p class="dest-card-desc">
-            My home for a year in 2005–06, and the city that made me fall for Belgium. Grand Place, the Atomium, Art Nouveau, brilliant cafés and beer culture — Brussels is a city that rewards you the longer you stay.
+            The capital and Nicola's home for a year. Grand Place is one of Europe's most spectacular squares. The Atomium. Art Nouveau architecture. Beer culture. Neighbourhoods worth exploring. A city that becomes home.
           </p>
           <a href="belgium/brussels.html" class="dest-card-button">Explore Brussels →</a>
         </div>
@@ -608,11 +614,11 @@ function nextBelgiumPhoto(img){
 
       <!-- Bruges -->
       <div class="dest-card">
-        <img class="dest-card-img" src="/img/bruges2.jpg" data-candidates="/img/bruges2.jpg|/img/bruges2.jpeg|/img/bruges2.JPG|/img/bruges2.JPEG|/img/bruges2.png|/img/bruges2.PNG|/img/bruges2.webp|/img/bruges2.WEBP|/img/bruges.jpg|/img/bruges.jpeg|/img/bruges.JPG|/img/bruges.JPEG|/img/bruges.png|/img/bruges.PNG|/img/bruges.webp|/img/bruges.WEBP|/img/bruges3.jpg|/img/bruges3.jpeg|/img/bruges3.JPG|/img/bruges3.JPEG|/img/bruges3.png|/img/bruges3.PNG|/img/bruges3.webp|/img/bruges3.WEBP|/img/bruges4.jpg|/img/bruges4.jpeg|/img/bruges4.JPG|/img/bruges4.JPEG|/img/bruges4.png|/img/bruges4.PNG|/img/bruges4.webp|/img/bruges4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Bruges Belgium">
+        <img src="img/bruges.jpg" alt="Bruges canals Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Bruges</h3>
           <p class="dest-card-desc">
-            Canals, stepped-gable houses, cobbled streets and a medieval centre that really is as beautiful as the photographs suggest. Bruges may be famous for chocolate and postcard views, but wandering it on foot is the real pleasure.
+            One of the world's most perfectly preserved medieval cities. Canals reflecting the buildings above. Chocolate shops. Cobbled streets. Bruges is postcard perfection — and it delivers.
           </p>
           <a href="belgium/bruges.html" class="dest-card-button">Explore Bruges →</a>
         </div>
@@ -620,11 +626,11 @@ function nextBelgiumPhoto(img){
 
       <!-- Ghent -->
       <div class="dest-card">
-        <img class="dest-card-img" src="/img/ghent2.jpg" data-candidates="/img/ghent2.jpg|/img/ghent2.jpeg|/img/ghent2.JPG|/img/ghent2.JPEG|/img/ghent2.png|/img/ghent2.PNG|/img/ghent2.webp|/img/ghent2.WEBP|/img/ghent.jpg|/img/ghent.jpeg|/img/ghent.JPG|/img/ghent.JPEG|/img/ghent.png|/img/ghent.PNG|/img/ghent.webp|/img/ghent.WEBP|/img/ghent3.jpg|/img/ghent3.jpeg|/img/ghent3.JPG|/img/ghent3.JPEG|/img/ghent3.png|/img/ghent3.PNG|/img/ghent3.webp|/img/ghent3.WEBP|/img/ghent4.jpg|/img/ghent4.jpeg|/img/ghent4.JPG|/img/ghent4.JPEG|/img/ghent4.png|/img/ghent4.PNG|/img/ghent4.webp|/img/ghent4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Ghent Belgium">
+        <img src="img/ghent.jpg" alt="Ghent Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Ghent</h3>
           <p class="dest-card-desc">
-            Ghent has a personality entirely of its own: medieval towers and canals alongside a lively, lived-in city centre. Historic, atmospheric and full of character, it was one of the Belgian cities I loved exploring while living here.
+            Don't call it Bruges' younger sibling. Ghent is vibrant, artistic and gritty in the best way. Medieval architecture meets contemporary culture. Canals, brilliant restaurants, a distinctly cool edge.
           </p>
           <a href="belgium/ghent.html" class="dest-card-button">Explore Ghent →</a>
         </div>
@@ -632,11 +638,11 @@ function nextBelgiumPhoto(img){
 
       <!-- Antwerp -->
       <div class="dest-card">
-        <img class="dest-card-img" src="/img/antwerp2.jpg" data-candidates="/img/antwerp2.jpg|/img/antwerp2.jpeg|/img/antwerp2.JPG|/img/antwerp2.JPEG|/img/antwerp2.png|/img/antwerp2.PNG|/img/antwerp2.webp|/img/antwerp2.WEBP|/img/antwerp.jpg|/img/antwerp.jpeg|/img/antwerp.JPG|/img/antwerp.JPEG|/img/antwerp.png|/img/antwerp.PNG|/img/antwerp.webp|/img/antwerp.WEBP|/img/antwerp3.jpg|/img/antwerp3.jpeg|/img/antwerp3.JPG|/img/antwerp3.JPEG|/img/antwerp3.png|/img/antwerp3.PNG|/img/antwerp3.webp|/img/antwerp3.WEBP|/img/antwerp4.jpg|/img/antwerp4.jpeg|/img/antwerp4.JPG|/img/antwerp4.JPEG|/img/antwerp4.png|/img/antwerp4.PNG|/img/antwerp4.webp|/img/antwerp4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Antwerp Belgium">
+        <img src="img/antwerp.jpg" alt="Antwerp Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Antwerp</h3>
           <p class="dest-card-desc">
-            Antwerp mixes grand Flemish architecture with the Scheldt, Rubens, the Cathedral of Our Lady, diamonds and fashion. It feels confident and completely different again from Brussels, Bruges or Ghent.
+            Port city with Flemish pride. The Cathedral of Our Lady. Diamond district. World-class art and architecture. Rubens. Fashion. A city with serious cultural weight and atmosphere.
           </p>
           <a href="belgium/antwerp.html" class="dest-card-button">Explore Antwerp →</a>
         </div>
@@ -644,11 +650,11 @@ function nextBelgiumPhoto(img){
 
       <!-- Liège -->
       <div class="dest-card">
-        <img class="dest-card-img" src="/img/liege.jpg" data-candidates="/img/liege.jpg|/img/liege.jpeg|/img/liege.JPG|/img/liege.JPEG|/img/liege.png|/img/liege.PNG|/img/liege.webp|/img/liege.WEBP|/img/liege2.jpg|/img/liege2.jpeg|/img/liege2.JPG|/img/liege2.JPEG|/img/liege2.png|/img/liege2.PNG|/img/liege2.webp|/img/liege2.WEBP|/img/liege3.jpg|/img/liege3.jpeg|/img/liege3.JPG|/img/liege3.JPEG|/img/liege3.png|/img/liege3.PNG|/img/liege3.webp|/img/liege3.WEBP|/img/liege4.jpg|/img/liege4.jpeg|/img/liege4.JPG|/img/liege4.JPEG|/img/liege4.png|/img/liege4.PNG|/img/liege4.webp|/img/liege4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Liege Belgium">
+        <img src="img/liege.jpg" alt="Liège Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Liège</h3>
           <p class="dest-card-desc">
-            French-speaking Liège brings a completely different side of Belgium into the mix. Set on the Meuse, it has historic streets, a lively centre and an unmistakably Walloon character — plus the waffle that bears its name.
+            The Walloon character. French-speaking, lively, with a gritty charm that feels distinctly different from the Flemish cities. Historic architecture. Street markets. Genuine warmth.
           </p>
           <a href="belgium/liege.html" class="dest-card-button">Explore Liège →</a>
         </div>
@@ -656,11 +662,11 @@ function nextBelgiumPhoto(img){
 
       <!-- Spa -->
       <div class="dest-card">
-        <img class="dest-card-img" src="/img/spa2.jpg" data-candidates="/img/spa2.jpg|/img/spa2.jpeg|/img/spa2.JPG|/img/spa2.JPEG|/img/spa2.png|/img/spa2.PNG|/img/spa2.webp|/img/spa2.WEBP|/img/spa.jpg|/img/spa.jpeg|/img/spa.JPG|/img/spa.JPEG|/img/spa.png|/img/spa.PNG|/img/spa.webp|/img/spa.WEBP|/img/spa3.jpg|/img/spa3.jpeg|/img/spa3.JPG|/img/spa3.JPEG|/img/spa3.png|/img/spa3.PNG|/img/spa3.webp|/img/spa3.WEBP|/img/spa4.jpg|/img/spa4.jpeg|/img/spa4.JPG|/img/spa4.JPEG|/img/spa4.png|/img/spa4.PNG|/img/spa4.webp|/img/spa4.WEBP" data-candidate-index="0" onerror="nextBelgiumPhoto(this)" alt="Spa Belgium">
+        <img src="img/spa.jpg" alt="Spa Belgium" loading="lazy">
         <div class="dest-card-content">
           <h3 class="dest-card-title">Spa</h3>
           <p class="dest-card-desc">
-            A historic spa town in the Ardennes with one enormous extra draw: Spa-Francorchamps. I came here for the 2005 Belgian Grand Prix, had pit passes for the weekend and hoped in vain to meet my F1 hero Jacques Villeneuve. An unforgettable trip.
+            Historic spa town in the Ardennes. Famous for its mineral springs. Home to Spa-Francorchamps, one of the world's greatest Formula 1 circuits. Where Nicola had an unforgettable weekend.
           </p>
           <a href="belgium/spa.html" class="dest-card-button">Explore Spa →</a>
         </div>
@@ -905,7 +911,7 @@ function nextBelgiumPhoto(img){
         focus on the waffles, the beer, the architecture and the people.
       </p>
       <div class="links">
-        <a class="btn-primary" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
           Browse Belgium tours on TourRadar →
         </a>
       </div>
@@ -1108,13 +1114,13 @@ function nextBelgiumPhoto(img){
       </div>
 
       <div class="links" style="justify-content:center;margin-top:20px;">
-        <a class="btn-primary" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
           Book a Belgium tour →
         </a>
         <a class="btn-gold" href="https://www.getyourguide.com/belgium-l169005/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">
           Browse activities on GYG →
         </a>
-        <a class="btn-outline" href="https://twofortherowd.com/#map">
+        <a class="btn-outline" href="https://twofortherowd.com/#destinations">
           Back to all destinations →
         </a>
       </div>
@@ -1126,7 +1132,7 @@ function nextBelgiumPhoto(img){
     <p>
       © <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp;
       <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp;
-      <a href="https://twofortherowd.com/#map">Our destinations</a> &nbsp;•&nbsp;
+      <a href="https://twofortherowd.com/#destinations">Our destinations</a> &nbsp;•&nbsp;
       <a href="mailto:hello@twofortherowd.com">Get in touch</a>
     </p>
   </footer>
@@ -1134,23 +1140,6 @@ function nextBelgiumPhoto(img){
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
-<script>
-(function(){
- if(typeof L==='undefined') return;
- const el=document.getElementById('belgiumJourneyMap'); if(!el) return;
- const map=L.map(el,{scrollWheelZoom:false});
- L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
- const stops=[{"region": "Capital", "stop": "Brussels", "lat": 50.8503, "lng": 4.3517, "notes": "The bilingual capital. Nicola lived here 2005–2006 and fell in love with Belgium. Grand Place, the Atomium, beer culture, chocolate. The city that got under her skin.", "color": "#c0392b", "icon": "🏛️", "url": "belgium/brussels.html"}, {"region": "Flanders", "stop": "Bruges", "lat": 51.2093, "lng": 3.2244, "notes": "Medieval perfection. Canals, chocolate, lace and bridges. One of Europe's most beautiful small cities. Easy day trip or overnight from Brussels.", "color": "#2980b9", "icon": "🏰", "url": "belgium/bruges.html"}, {"region": "Flanders", "stop": "Ghent", "lat": 51.0543, "lng": 3.7196, "notes": "Vibrant and artistic. Medieval centre with its own distinct character. Gritty charm, creative energy and St. Bavo's Cathedral. Often overlooked but utterly rewarding.", "color": "#2980b9", "icon": "🏙️", "url": "belgium/ghent.html"}, {"region": "Flanders", "stop": "Antwerp", "lat": 51.2211, "lng": 4.4015, "notes": "Flemish identity and pride. Art, diamonds, fashion and industrial character. The Scheldt River and a city that refuses to be defined by its neighbours.", "color": "#2980b9", "icon": "🌊", "url": "belgium/antwerp.html"}, {"region": "Wallonia", "stop": "Liège", "lat": 50.6324, "lng": 5.5694, "notes": "French-speaking Walloon character. Historic heart on the Meuse River. Museums, culture and a distinctly different feel from the Flemish north.", "color": "#27ae60", "icon": "🏛️", "url": "belgium/liege.html"}, {"region": "Wallonia", "stop": "Spa", "lat": 50.4833, "lng": 5.8667, "notes": "Famous for its mineral springs and the legendary Spa-Francorchamps Formula 1 circuit. A journey through Belgium's racing heritage and natural beauty.", "color": "#27ae60", "icon": "🏁", "url": "belgium/spa.html"}];
- function icon(c){return L.divIcon({className:'',html:'<div style="background:'+c+';width:28px;height:28px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(26,18,8,.25)"></div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]});}
- stops.forEach(s=>{
-  const m=L.marker([s.lat,s.lng],{icon:icon(s.color)}).addTo(map);
-  m.bindPopup('<div class="belgiumPopup"><div class="belgiumPopupRegion" style="color:'+s.color+'">'+s.region+'</div><div class="belgiumPopupTitle">'+s.icon+' '+s.stop+'</div><div class="belgiumPopupText">'+s.notes+'</div><a class="belgiumPopupLink" href="'+s.url+'">Open our guide →</a></div>',{maxWidth:285});
- });
- map.fitBounds(L.latLngBounds(stops.map(s=>[s.lat,s.lng])).pad(.12));
- setTimeout(()=>map.invalidateSize(),250);
-})();
-</script>
 
 </body>
 </html>

@@ -150,9 +150,48 @@
     footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.photo-grid-2{grid-template-columns:1fr;}.photo-grid-3{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}.also-grid{grid-template-columns:1fr;}.food-grid{grid-template-columns:repeat(2,1fr);}}
-  </style>
-  <link rel="stylesheet" href="/country-refresh.css">
-  <style>:root{--country-hero:url('/img/Budapest 2009(1).jpg')}</style>
+  
+    /* 2026 NAV / PILL READABILITY SWEEP */
+    .route-stop,
+    .state-pill,
+    .vibe-pill,
+    .tagRow .tag,
+    .dest-tab{
+      background:#fff !important;
+      color:#1b1813 !important;
+      border:1px solid rgba(27,24,19,.16) !important;
+      box-shadow:0 2px 9px rgba(27,24,19,.10) !important;
+      text-shadow:none !important;
+    }
+    .route-stop a,
+    .state-pill a,
+    .vibe-pill a,
+    .tagRow .tag a,
+    .dest-tab a{
+      color:#1b1813 !important;
+      text-decoration:none;
+    }
+    .route-arrow{
+      color:rgba(27,24,19,.54) !important;
+      text-shadow:none !important;
+    }
+    .route-strip,
+    .states-strip,
+    .vibe-strip,
+    .tagRow,
+    .dest-tabs{
+      gap:8px !important;
+    }
+    .dest-tab{
+      font-weight:800 !important;
+      border-radius:999px !important;
+    }
+    .dest-tab:hover{
+      transform:translateY(-1px);
+      box-shadow:0 5px 14px rgba(27,24,19,.13) !important;
+    }
+
+</style>
 </head>
 <body>
 
@@ -166,7 +205,7 @@
   <nav class="breadcrumb">
     <a href="https://twofortherowd.com/">Home</a>
     <span>›</span>
-    <a href="https://twofortherowd.com/#map">Our Destinations</a>
+    <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
     <span>›</span>
     <span>Budapest — Hungary</span>
   </nav>
@@ -209,9 +248,9 @@
     </div>
 
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/319261?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book a Budapest tour on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/319261?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Book a Budapest tour on TourRadar →</a>
       <a class="btn-danube" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1279863&k_site=https%3A%2F%2Fwww.klook.com%2Fsearch%2Fresult%2F%3Fquery%3Dbudapest" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book Budapest activities on Klook →</a>
-      <a class="btn-outline" href="https://twofortherowd.com/#map">See all our destinations →</a>
+      <a class="btn-outline" href="https://twofortherowd.com/#destinations">See all our destinations →</a>
     </div>
 
     <div class="tagRow">
@@ -480,7 +519,7 @@
     <h2>Book a Budapest tour through TourRadar</h2>
     <p>Budapest rewards proper exploration — the Jewish Quarter, the communist history, the castle district and the thermal bath culture all have depth that a good guide brings to life completely. TourRadar has brilliant Budapest and Hungary options, from weekend city breaks to longer Central European itineraries.</p>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/319261?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Budapest tours on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/319261?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse Budapest tours on TourRadar →</a>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
   </div>
@@ -586,7 +625,7 @@
     <h2 style="text-align:center;">Planning your own Budapest trip?</h2>
     <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">Book the Parliament tour, go to the Gellért Baths, take the evening cruise, eat goulash soup until you can't move and find Szimpla Kert after dark. Budapest will absolutely not disappoint.</p>
     <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://www.tourradar.com/t/319261?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Budapest tours on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/319261?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse Budapest tours on TourRadar →</a>
       <a class="btn-gold" href="https://www.getyourguide.com/budapest-l29/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book experiences on GYG →</a>
       <a class="btn-danube" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1279863&k_site=https%3A%2F%2Fwww.klook.com%2Fsearch%2Fresult%2F%3Fquery%3Dbudapest" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book on Klook →</a>
       <a class="btn-outline" href="https://twofortherowd.com/">Back to main site →</a>
@@ -597,7 +636,7 @@
 </div><!-- end .wrap -->
 
 <footer>
-  <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#map">Our destinations</a></p>
+  <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#destinations">Our destinations</a></p>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>

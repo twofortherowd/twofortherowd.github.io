@@ -29,8 +29,6 @@
 
   <!-- GetYourGuide -->
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -252,12 +250,11 @@
 
     .faqItem{border-bottom:1px dashed var(--border-mid);padding:14px 0;}
     .faqItem:last-child{border-bottom:none;padding-bottom:0;}
-    .faqQ{width:100%;border:0;background:transparent;padding:0;text-align:left;font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;user-select:none;}
+    .faqQ{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;user-select:none;}
     .faqQ::after{content:"+";font-size:1.4rem;line-height:1;font-weight:400;flex-shrink:0;color:var(--muted);transition:transform .2s ease;}
     .faqItem.open .faqQ::after{transform:rotate(45deg);}
     .faqA{font-size:14px;line-height:1.7;color:var(--ink-soft);display:none;padding-top:10px;}
     .faqItem.open .faqA{display:block;}
-    .bulgaria-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.bulgaria-fact{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px}.bulgaria-fact span{display:block;font-size:22px}.bulgaria-fact strong{display:block;font-size:13px}.bulgaria-fact small{display:block;color:var(--ink-soft);line-height:1.45;margin-top:3px}.then-now{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}.era{border:1px solid var(--border);border-radius:14px;padding:20px}.era:first-child{background:linear-gradient(145deg,#fff,#fff2dc)}.era:last-child{background:linear-gradient(145deg,#fff,#e9f5fb)}.coast-map{display:grid;grid-template-columns:250px 1fr;min-height:485px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fff;margin-top:18px}.coast-head{padding:18px;color:#fff;background:linear-gradient(135deg,#177fa4,#1f5f8b);border-bottom:4px solid var(--gold)}.coast-head h3{color:#fff}.coast-head p{font-size:12px;margin:0}.coast-stop{display:grid;grid-template-columns:30px 1fr;gap:8px;width:100%;border:0;border-bottom:1px solid var(--border);background:#fff;padding:13px;text-align:left;font:inherit;cursor:pointer}.coast-stop:hover,.coast-stop.active{background:var(--gold-pale)}.coast-no{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--gold);font-weight:800}.coast-stop strong{font-size:12px}.coast-stop small{display:block;color:var(--muted)}#bulgariaCoastMap{min-height:485px;z-index:1}.coast-marker{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--gold);border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.3);font-weight:800}.coast-marker.active{background:#177fa4;color:#fff}
 
     .also-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px;}
     .also-item{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);transition:transform .15s ease,box-shadow .15s ease;display:block;}
@@ -267,7 +264,6 @@
     footer a{color:var(--muted);font-weight:600;}
 
     @media(max-width:640px){
-      .bulgaria-facts,.then-now{grid-template-columns:1fr 1fr}.coast-map{grid-template-columns:1fr}.coast-list{display:grid;grid-template-columns:repeat(2,1fr)}.coast-head{grid-column:1/-1}.coast-stop small{display:none}#bulgariaCoastMap{min-height:380px}
       .photo-grid-2,.photo-grid-3{grid-template-columns:1fr;}
       .links{flex-direction:column;}
       .links a{text-align:center;justify-content:center;}
@@ -275,9 +271,48 @@
       .food-grid{grid-template-columns:repeat(2,1fr);}
       .also-grid{grid-template-columns:1fr;}
     }
-  </style>
-  <link rel="stylesheet" href="/country-refresh.css">
-  <style>:root{--country-hero:url('/img/Bulgaria.jpg')}</style>
+  
+    /* 2026 NAV / PILL READABILITY SWEEP */
+    .route-stop,
+    .state-pill,
+    .vibe-pill,
+    .tagRow .tag,
+    .dest-tab{
+      background:#fff !important;
+      color:#1b1813 !important;
+      border:1px solid rgba(27,24,19,.16) !important;
+      box-shadow:0 2px 9px rgba(27,24,19,.10) !important;
+      text-shadow:none !important;
+    }
+    .route-stop a,
+    .state-pill a,
+    .vibe-pill a,
+    .tagRow .tag a,
+    .dest-tab a{
+      color:#1b1813 !important;
+      text-decoration:none;
+    }
+    .route-arrow{
+      color:rgba(27,24,19,.54) !important;
+      text-shadow:none !important;
+    }
+    .route-strip,
+    .states-strip,
+    .vibe-strip,
+    .tagRow,
+    .dest-tabs{
+      gap:8px !important;
+    }
+    .dest-tab{
+      font-weight:800 !important;
+      border-radius:999px !important;
+    }
+    .dest-tab:hover{
+      transform:translateY(-1px);
+      box-shadow:0 5px 14px rgba(27,24,19,.13) !important;
+    }
+
+</style>
 </head>
 
 <body>
@@ -292,7 +327,7 @@
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="https://twofortherowd.com/">Home</a>
     <span>›</span>
-    <a href="https://twofortherowd.com/#map">Our Destinations</a>
+    <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
     <span>›</span>
     <span>Bulgaria — Sunny Beach</span>
   </nav>
@@ -339,9 +374,9 @@
     </div>
 
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/340238?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Bulgaria tours on TourRadar →</a>
-      <a class="btn-sea" href="https://affiliate.klook.com/redirect?aid=119289&amp;aff_adid=1279863&amp;k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fco1070-bulgaria%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Bulgaria on Klook →</a>
-      <a class="btn-outline" href="https://twofortherowd.com/#map">See all our destinations →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/340238?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse Bulgaria tours on TourRadar →</a>
+      <a class="btn-sea" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1279863&k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fco1070-bulgaria%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Bulgaria on Klook →</a>
+      <a class="btn-outline" href="https://twofortherowd.com/#destinations">See all our destinations →</a>
     </div>
 
     <div class="tagRow">
@@ -354,36 +389,6 @@
       <span class="tag">late 90s family holiday</span>
       <span class="tag">Sunny Beach flood story</span>
     </div>
-  </div>
-
-  <p class="section-label">Bulgaria at a glance</p>
-  <div class="card goldCard">
-    <h2>Useful things to know now</h2>
-    <p>This story comes from 2000, but these are the practical basics for planning a modern Bulgaria trip.</p>
-    <div class="bulgaria-facts">
-      <div class="bulgaria-fact"><span>💶</span><strong>Currency</strong><small>Euro (€), adopted on 1 January 2026.</small></div>
-      <div class="bulgaria-fact"><span>👥</span><strong>Population</strong><small>Approximately 6.4 million people.</small></div>
-      <div class="bulgaria-fact"><span>🏛️</span><strong>Capital</strong><small>Sofia, in western Bulgaria.</small></div>
-      <div class="bulgaria-fact"><span>🗣️</span><strong>Language</strong><small>Bulgarian, written using the Cyrillic alphabet.</small></div>
-      <div class="bulgaria-fact"><span>🕐</span><strong>Time zone</strong><small>Two hours ahead of Ireland.</small></div>
-      <div class="bulgaria-fact"><span>✈️</span><strong>Sunny Beach airport</strong><small>Burgas Airport (BOJ).</small></div>
-      <div class="bulgaria-fact"><span>🌤️</span><strong>Beach season</strong><small>June to September, with July and August busiest.</small></div>
-      <div class="bulgaria-fact"><span>🔌</span><strong>Plug types</strong><small>Types C and F; Irish travellers need an adaptor.</small></div>
-      <div class="bulgaria-fact"><span>📞</span><strong>Emergency number</strong><small>Dial 112 throughout Bulgaria.</small></div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>Bulgaria then and now</h2>
-    <p>Our holiday captures Sunny Beach at a particular moment. Bulgaria was still finding its feet after the end of communist rule, and the resort felt cheaper, rougher around the edges and far less polished than the familiar Spanish and Portuguese destinations Irish families knew.</p>
-    <div class="then-now"><div class="era"><h3>🕰️ When we visited — 2000</h3><p>Bulgaria was outside the European Union, used the Bulgarian lev and felt like a genuine adventure. Market stalls, enormous hotels, rural villages and the visible legacy of the communist era all formed part of the experience.</p></div><div class="era"><h3>✨ Bulgaria today</h3><p>Bulgaria joined the EU in 2007 and adopted the euro in 2026. Sunny Beach has expanded enormously and is now one of the best-known Black Sea resorts, so this page is our personal memory of 2000 rather than a review of the resort exactly as it is today.</p></div></div>
-  </div>
-
-  <div class="card blueCard">
-    <div class="eyebrow"><span class="badge">🗺️ BLACK SEA COAST</span><span class="badge outline">3 PLACES</span></div>
-    <h2>Where is Sunny Beach?</h2>
-    <p>Sunny Beach sits on Bulgaria's Black Sea coast, north of Burgas Airport and immediately beside the historic town of Nessebar. Click any location to zoom in.</p>
-    <div class="coast-map"><div class="coast-list"><div class="coast-head"><h3>The Bulgarian coast</h3><p>Burgas • Sunny Beach • Nessebar</p></div><div id="bulgariaCoastStops"></div></div><div id="bulgariaCoastMap" aria-label="Interactive map of the Bulgarian Black Sea coast"></div></div>
   </div>
 
   <!-- PHOTOS -->
@@ -539,7 +544,7 @@
       Bulgaria is far more than Sunny Beach — it has Black Sea resorts, mountain villages, monasteries, old towns, traditional crafts and Balkan history. TourRadar is a good place to browse organised Bulgaria itineraries.
     </p>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/340238?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Bulgaria tours on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/340238?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse Bulgaria tours on TourRadar →</a>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
   </div>
@@ -550,7 +555,7 @@
     <h2>Book Bulgaria activities — GetYourGuide</h2>
     <p style="color:var(--ink-soft);font-size:14px;">From Black Sea excursions and Nessebar visits to mountain tours, cultural experiences and city breaks, Bulgaria has far more variety than we appreciated back in 2000.</p>
     <div class="gygWidgetWrap">
-      <div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="1658" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VYORXUN"></div>
+      <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="4" data-gyg-partner-id="VYORXUN" data-gyg-q="bulgaria"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/bulgaria-l169077/">GetYourGuide</a></span></div>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
   </div>
@@ -560,7 +565,7 @@
     <h2>Browse Bulgaria hotels and experiences on Klook</h2>
     <p style="color:var(--ink-soft);font-size:14px;">Klook is handy for browsing Bulgaria hotels, transfers and activities if you are planning a Black Sea or wider Bulgaria trip.</p>
     <div class="links">
-      <a class="btn-sea" href="https://affiliate.klook.com/redirect?aid=119289&amp;aff_adid=1279863&amp;k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fco1070-bulgaria%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Bulgaria on Klook →</a>
+      <a class="btn-sea" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1279863&k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fco1070-bulgaria%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Bulgaria on Klook →</a>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
   </div>
@@ -571,27 +576,27 @@
     <h2>Bulgaria FAQ</h2>
 
     <div class="faqItem open">
-      <button type="button" class="faqQ" aria-expanded="true" onclick="var i=this.closest('.faqItem'),o=i.classList.toggle('open');this.setAttribute('aria-expanded',o)">What was Sunny Beach Bulgaria like in 2000?</button>
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What was Sunny Beach Bulgaria like in 2000?</div>
       <div class="faqA">Sunny Beach in 2000 felt cheaper, rougher around the edges and very different from the Spain and Portugal resorts Irish families were used to. It had long Black Sea beaches, big hotels, beach bars, market stalls, nightlife and a visible post-communist atmosphere as Bulgaria was still in transition.</div>
     </div>
 
     <div class="faqItem">
-      <button type="button" class="faqQ" aria-expanded="false" onclick="var i=this.closest('.faqItem'),o=i.classList.toggle('open');this.setAttribute('aria-expanded',o)">Is Sunny Beach good for family holidays?</button>
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is Sunny Beach good for family holidays?</div>
       <div class="faqA">Sunny Beach became popular with families because it had long sandy beaches, large hotels, cheap food, markets, promenades and lots of resort entertainment. Around 2000 it felt more adventurous and less polished than Western European resort destinations.</div>
     </div>
 
     <div class="faqItem">
-      <button type="button" class="faqQ" aria-expanded="false" onclick="var i=this.closest('.faqItem'),o=i.classList.toggle('open');this.setAttribute('aria-expanded',o)">What can you do on a day trip from Sunny Beach?</button>
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What can you do on a day trip from Sunny Beach?</div>
       <div class="faqA">Day trips from Sunny Beach can include mountain villages, traditional craft workshops, local artisans, rural Bulgarian communities, Nessebar, Black Sea coastal stops and cultural tours away from the resort area.</div>
     </div>
 
     <div class="faqItem">
-      <button type="button" class="faqQ" aria-expanded="false" onclick="var i=this.closest('.faqItem'),o=i.classList.toggle('open');this.setAttribute('aria-expanded',o)">What is Bulgaria known for as a travel destination?</button>
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What is Bulgaria known for as a travel destination?</div>
       <div class="faqA">Bulgaria is known for Black Sea beaches, mountain villages, traditional crafts, Orthodox monasteries, post-communist history, cheap resort holidays, hearty food and a mix of Balkan, Slavic and Ottoman influences.</div>
     </div>
 
     <div class="faqItem">
-      <button type="button" class="faqQ" aria-expanded="false" onclick="var i=this.closest('.faqItem'),o=i.classList.toggle('open');this.setAttribute('aria-expanded',o)">Is Bulgaria cheap compared with Spain or Portugal?</button>
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is Bulgaria cheap compared with Spain or Portugal?</div>
       <div class="faqA">In 2000 Bulgaria felt much cheaper than Spain or Portugal for Irish families, especially for food, souvenirs, market goods and resort spending. That value was one of the big reasons Sunny Beach became popular.</div>
     </div>
   </div>
@@ -646,9 +651,9 @@
       Go for the Black Sea, the value, the mountain villages and the cultural contrasts — but pack waterproofs, avoid lifts during storms, and never underestimate the holiday story potential of total chaos.
     </p>
     <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://www.tourradar.com/t/340238?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse Bulgaria tours on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/340238?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse Bulgaria tours on TourRadar →</a>
       <a class="btn-gold" href="https://www.getyourguide.com/bulgaria-l169077/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book Bulgaria experiences on GYG →</a>
-      <a class="btn-sea" href="https://affiliate.klook.com/redirect?aid=119289&amp;aff_adid=1279863&amp;k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fco1070-bulgaria%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Bulgaria on Klook →</a>
+      <a class="btn-sea" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1279863&k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fco1070-bulgaria%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Bulgaria on Klook →</a>
       <a class="btn-outline" href="https://twofortherowd.com/">Back to main site →</a>
     </div>
     <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;border-top:1px dashed rgba(26,18,8,.15);">Affiliate disclosure: if you book through our links we may earn a small commission at no cost to you. We only recommend places and experiences that fit our own travel style.</p>
@@ -657,18 +662,8 @@
 </div>
 
 <footer>
-  <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#map">Our destinations</a></p>
+  <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#destinations">Our destinations</a></p>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-<script>
-(function(){
-  var places=[{id:1,name:'Burgas Airport',detail:'Gateway to the coast',lat:42.5696,lng:27.5152,emoji:'✈️'},{id:2,name:'Sunny Beach',detail:'Our resort base',lat:42.6951,lng:27.7104,emoji:'🏖️'},{id:3,name:'Nessebar',detail:'Historic peninsula nearby',lat:42.6601,lng:27.7206,emoji:'🏛️'}];
-  var mapEl=document.getElementById('bulgariaCoastMap'),list=document.getElementById('bulgariaCoastStops');
-  places.forEach(function(p){var b=document.createElement('button');b.type='button';b.className='coast-stop';b.dataset.id=p.id;b.innerHTML='<span class="coast-no">'+p.id+'</span><span><strong>'+p.name+' '+p.emoji+'</strong><small>'+p.detail+'</small></span>';list.appendChild(b);});
-  function fail(){mapEl.innerHTML='<div style="height:100%;display:grid;place-items:center;padding:25px;text-align:center"><strong>The interactive map could not load.<br><small>Please refresh or allow Leaflet and OpenStreetMap.</small></strong></div>';}
-  function init(){if(mapEl.dataset.ready||!window.L)return;mapEl.dataset.ready='1';var map=L.map(mapEl,{scrollWheelZoom:false});L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:18}).addTo(map);var markers={},active=0;function icon(id,on){return L.divIcon({html:'<div class="coast-marker'+(on?' active':'')+'">'+id+'</div>',className:'',iconSize:[36,36],iconAnchor:[18,18]});}function select(id,zoom){document.querySelectorAll('.coast-stop').forEach(function(b){b.classList.toggle('active',Number(b.dataset.id)===id);});if(active)markers[active].setIcon(icon(active,false));active=id;var m=markers[id];m.setIcon(icon(id,true));if(zoom)map.setView(m.getLatLng(),12,{animate:true});m.openPopup();}places.forEach(function(p){markers[p.id]=L.marker([p.lat,p.lng],{icon:icon(p.id,false)}).bindPopup('<strong>'+p.name+' '+p.emoji+'</strong><br>'+p.detail).addTo(map);markers[p.id].on('click',function(){select(p.id,true);});});document.querySelectorAll('.coast-stop').forEach(function(b){b.addEventListener('click',function(){select(Number(b.dataset.id),true);});});map.fitBounds(L.latLngBounds(places.map(function(p){return[p.lat,p.lng];})),{padding:[28,28]});select(2,false);setTimeout(function(){map.invalidateSize();},150);}
-  function load(){if(window.L){init();return;}var s=document.createElement('script');s.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';s.onload=init;s.onerror=fail;document.head.appendChild(s);}if(document.readyState==='complete')load();else window.addEventListener('load',load,{once:true});
-})();
-</script>
 </body>
 </html>

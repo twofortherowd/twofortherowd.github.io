@@ -146,10 +146,49 @@
     .nzMap{min-height:520px;z-index:1}
     .nzMapNote{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
     @media(max-width:760px){.nzMapShell{grid-template-columns:1fr}.nzMapStops{display:flex;overflow-x:auto;max-height:none;gap:6px;padding:8px}.nzMapStop{min-width:150px;flex:0 0 auto}.nzMap{min-height:420px}}
-  </style>
+  
+    /* 2026 NAV / PILL READABILITY SWEEP */
+    .route-stop,
+    .state-pill,
+    .vibe-pill,
+    .tagRow .tag,
+    .dest-tab{
+      background:#fff !important;
+      color:#1b1813 !important;
+      border:1px solid rgba(27,24,19,.16) !important;
+      box-shadow:0 2px 9px rgba(27,24,19,.10) !important;
+      text-shadow:none !important;
+    }
+    .route-stop a,
+    .state-pill a,
+    .vibe-pill a,
+    .tagRow .tag a,
+    .dest-tab a{
+      color:#1b1813 !important;
+      text-decoration:none;
+    }
+    .route-arrow{
+      color:rgba(27,24,19,.54) !important;
+      text-shadow:none !important;
+    }
+    .route-strip,
+    .states-strip,
+    .vibe-strip,
+    .tagRow,
+    .dest-tabs{
+      gap:8px !important;
+    }
+    .dest-tab{
+      font-weight:800 !important;
+      border-radius:999px !important;
+    }
+    .dest-tab:hover{
+      transform:translateY(-1px);
+      box-shadow:0 5px 14px rgba(27,24,19,.13) !important;
+    }
+
+</style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-  <link rel="stylesheet" href="/country-refresh.css">
-  <style>:root{--country-hero:url('/img/auckland.jpg')}</style>
 </head>
 <body>
 
@@ -179,7 +218,7 @@
   <nav class="breadcrumb">
     <a href="https://twofortherowd.com/">Home</a>
     <span>›</span>
-    <a href="https://twofortherowd.com/#map">Our Destinations</a>
+    <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
     <span>›</span>
     <span>New Zealand</span>
   </nav>
@@ -198,8 +237,8 @@
       <iframe loading="lazy" src="https://www.youtube.com/embed/dyYVV5hsGdM" title="New Zealand highlights — Two for the Row'd" allowfullscreen></iframe>
     </div>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/204593?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book a similar NZ tour on TourRadar →</a>
-      <a class="btn-outline" href="https://twofortherowd.com/#map">See all our destinations →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/204593?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Book a similar NZ tour on TourRadar →</a>
+      <a class="btn-outline" href="https://twofortherowd.com/#destinations">See all our destinations →</a>
     </div>
     <div class="tagRow">
       <span class="tag">New Zealand travel guide</span>
@@ -348,18 +387,16 @@
 
   <div class="card">
     <div class="photo-grid-3">
-      <img src="/img/auckland.jpg" alt="Auckland, New Zealand — Two for the Row'd" loading="lazy">
-      <img src="/img/Hobbiton.jpg" alt="Hobbiton Movie Set, New Zealand — Two for the Row'd" loading="lazy">
+      <img src="/img/queenstown.jpg" alt="Queenstown waterfront, New Zealand — Two for the Row'd" loading="lazy">
+      <img src="/img/Tekapo.jpg" alt="Church of the Good Shepherd at Lake Tekapo, New Zealand — Two for the Row'd" loading="lazy">
       <img src="/img/rotorua.jpg" alt="Geothermal landscape in Rotorua, New Zealand — Two for the Row'd" loading="lazy">
     </div>
-    <div class="photo-grid-3" style="margin-top:10px;">
-      <img src="/img/wellington.jpg" alt="Wellington, New Zealand — Two for the Row'd" loading="lazy">
-      <img src="/img/Tekapo.jpg" alt="Church of the Good Shepherd at Lake Tekapo, New Zealand — Two for the Row'd" loading="lazy">
-      <img src="/img/queenstown.jpg" alt="Queenstown waterfront, New Zealand — Two for the Row'd" loading="lazy">
-    </div>
-    <div class="photo-grid-3" style="margin-top:10px;">
+    <div class="photo-grid-2" style="margin-top:10px;">
+      <img src="/img/wellington.jpg" alt="Wellington Parliament and the Beehive, New Zealand — Two for the Row'd" loading="lazy">
       <img src="/img/milford-sound.jpg" alt="Milford Sound, New Zealand — Two for the Row'd" loading="lazy">
-      <img src="/img/Franz-Josef.jpg" alt="Franz Josef, New Zealand — Two for the Row'd" loading="lazy">
+    </div>
+    <div class="photo-grid-2" style="margin-top:10px;">
+      <img src="/img/Franz-Josef.jpg" alt="Franz Josef glacier landscape, New Zealand — Two for the Row'd" loading="lazy">
       <img src="/img/Christchurch.jpg" alt="Christchurch, New Zealand — Two for the Row'd" loading="lazy">
     </div>
   </div>
@@ -517,7 +554,7 @@
     <h2>Book a New Zealand guided tour</h2>
     <p>New Zealand is large and the highlights are spread across both islands — a guided tour takes the stress out of organising transport, ferries and accommodation and means you see far more than you would independently. This is the type of tour we did and would recommend without hesitation.</p>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/204593?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse NZ tours on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/204593?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse NZ tours on TourRadar →</a>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> Affiliate link — if you book through it we may earn a small commission at no extra cost to you.</p>
   </div>
@@ -628,7 +665,7 @@
     <h2 style="text-align:center;">Ready to plan your New Zealand trip?</h2>
     <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">New Zealand is one of those trips you plan for years and it exceeds every single expectation. Don't rush it — give both islands the time they deserve. You won't regret a single second of it.</p>
     <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://www.tourradar.com/t/204593?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse NZ tours on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/204593?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse NZ tours on TourRadar →</a>
       <a class="btn-outline" href="https://twofortherowd.com/">Back to main site →</a>
     </div>
   </div>
