@@ -22,6 +22,14 @@
     margin:0 auto;
   }
 
+  /* The homepage tab system hides main > section elements.
+     Keep every component inside the Work With Us tab visible. */
+  #work-page section{
+    display:block !important;
+    padding:0;
+    animation:none;
+  }
+
   #work-page .work-hero{
     min-height:520px;
     border-radius:26px;
@@ -335,7 +343,7 @@
 <div id="work-page">
   <div class="work-wrap">
 
-    <section class="work-hero">
+    <div class="work-hero">
       <div class="work-hero-inner">
         <div class="work-kicker">🇮🇪 Irish travel creators · available for partnerships</div>
         <h1>Work With Us
@@ -349,7 +357,7 @@
           <a class="work-btn outline" href="media/two-for-the-rowd-media-kit.pdf" target="_blank" rel="noopener">Download our media kit</a>
         </div>
       </div>
-    </section>
+    </div>
 
     <div class="work-statbar">
       <div class="work-stat">
@@ -370,7 +378,7 @@
       </div>
     </div>
 
-    <section class="trust-card">
+    <div class="trust-card">
       <div>
         <div class="work-eyebrow">Why brands work with us</div>
         <h2>We don't sound like an advert.</h2>
@@ -390,7 +398,7 @@
         <strong>Our approach:</strong><br>
         Real reactions, useful information, a clear story and enough personality that people remember it afterwards.
       </div>
-    </section>
+    </div>
 
     <div class="work-section">
       <div class="work-eyebrow">Partnership options</div>
@@ -441,7 +449,7 @@
       <h2>As featured on the How Is He Podcast</h2>
     </div>
 
-    <section class="media-card">
+    <div class="media-card">
       <a class="media-img" href="https://youtu.be/-RGroKocork" target="_blank" rel="noopener" onclick="fbq('track','ViewContent');">
         <img src="https://i.ytimg.com/vi/-RGroKocork/hqdefault.jpg" alt="Nicola on the How Is He Podcast">
       </a>
@@ -456,7 +464,7 @@
         </div>
         <div class="media-strip"><strong>Looking for rates, audience details or a campaign idea?</strong> Send the brief below and we'll come back with something useful.</div>
       </div>
-    </section>
+    </div>
 
     <div class="work-section">
       <div class="work-eyebrow">Partnership enquiries</div>
@@ -464,7 +472,7 @@
       <p>The more detail you give us, the easier it is for us to tell you quickly whether we're a good fit and what we can realistically create.</p>
     </div>
 
-    <section class="form-card">
+    <div class="form-card">
       <form action="https://formspree.io/f/xojnjzne" method="POST">
         <input type="hidden" name="_subject" value="New Partnership Enquiry — Two for the Row'd">
 
@@ -497,9 +505,9 @@
 
         <button class="work-btn green" type="submit" style="border:0;cursor:pointer;">Send partnership enquiry →</button>
       </form>
-    </section>
+    </div>
 
-    <section class="traveller-card">
+    <div class="traveller-card">
       <div class="traveller-head">
         <div>
           <div class="work-eyebrow">Not a brand?</div>
@@ -535,7 +543,7 @@
 
         <button class="work-btn green" type="submit" style="border:0;cursor:pointer;">Send your question →</button>
       </form>
-    </section>
+    </div>
 
   </div>
 </div>
