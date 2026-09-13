@@ -126,6 +126,22 @@
   }
   </script>
 
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Is Copenhagen worth visiting in winter?","acceptedAnswer":{"@type":"Answer","text":"Yes. Copenhagen has a distinctive winter atmosphere, with cosy cafés, lit streets and a strong sense of hygge. Warm layers are essential."}},
+      {"@type":"Question","name":"Is Christiania Freetown worth visiting?","acceptedAnswer":{"@type":"Answer","text":"Yes. Christiania is one of Copenhagen's most distinctive places, with an alternative culture and history that feels very different from the rest of the city."}},
+      {"@type":"Question","name":"What is Nyhavn like in Copenhagen?","acceptedAnswer":{"@type":"Answer","text":"Nyhavn is Copenhagen's famous waterfront of colourful townhouses, historic ships, restaurants and bars, and it is one of the city's most photogenic areas."}},
+      {"@type":"Question","name":"Is the Copenhagen Opera House worth visiting?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Copenhagen Opera House is an impressive waterfront building with world-class productions. We saw The Handmaid's Tale there during our 2022 visit."}},
+      {"@type":"Question","name":"How many days do you need in Copenhagen?","acceptedAnswer":{"@type":"Answer","text":"We found four nights gave us time for Nyhavn, Christiania, the Little Mermaid, museums, a city tour and time to wander without rushing."}},
+      {"@type":"Question","name":"Is Copenhagen expensive?","acceptedAnswer":{"@type":"Answer","text":"Copenhagen is one of the more expensive European city-break destinations, particularly for food, drink and accommodation, so it is worth budgeting carefully."}}
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -195,7 +211,7 @@
     a { color: inherit; }
     strong { font-weight: 700; }
 
-    .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 60px; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px 60px; }
 
     .backBar {
       background: rgba(253,248,239,.95);
@@ -349,6 +365,126 @@
       .links a { text-align: center; justify-content: center; }
       .route-strip { justify-content: center; }
     }
+  
+    /* ─────────────────────────────────────────────
+       COPENHAGEN — PRO EDITORIAL REFRESH
+    ────────────────────────────────────────────── */
+    .cphHero{
+      min-height:540px;
+      border-radius:28px;
+      padding:48px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      background:
+        linear-gradient(90deg,rgba(8,28,45,.88),rgba(8,28,45,.62) 58%,rgba(8,28,45,.24)),
+        radial-gradient(circle at 84% 18%,rgba(255,216,74,.12),transparent 34%),
+        url('/img/cop1.jpg') center/cover no-repeat,
+        linear-gradient(135deg,#112d46,#2f5c78);
+      box-shadow:var(--shadow-lg);
+      border:1px solid rgba(255,255,255,.09);
+      margin-bottom:18px;
+    }
+    .cphHero h1{
+      color:#fff;
+      font-size:clamp(2.8rem,6vw,5rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
+      text-shadow:0 3px 16px rgba(0,0,0,.28);
+    }
+    .cphHero h1 em{
+      display:block;
+      color:#ffd84a;
+      font-size:.50em;
+      line-height:1.12;
+      margin-top:10px;
+    }
+    .cphHero .hero-lead{
+      color:rgba(255,255,255,.93);
+      max-width:760px;
+      text-shadow:0 2px 10px rgba(0,0,0,.22);
+      margin-bottom:16px;
+    }
+    .cphHero .badge{
+      background:rgba(255,255,255,.11);
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+    }
+    .cphHero .route-stop,
+    .cphHero .state-pill,
+    .cphHero .tag{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.20);
+      backdrop-filter:blur(6px);
+    }
+    .cphHero .route-arrow{color:rgba(255,255,255,.60);}
+    .cphHero .btn-primary{background:#ffd84a;color:#142839;}
+    .cphHero .btn-outline{background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.28);}
+    .cphKicker{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 12px;border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.24);
+      font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+      margin-bottom:14px;
+    }
+    .section-divider{
+      justify-content:flex-start;
+      margin:48px 0 16px;
+      font-family:var(--font-body);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      color:var(--denmark);
+    }
+    .section-divider::before{display:none;}
+    .section-divider::after{
+      flex:1;
+      background:linear-gradient(90deg,rgba(198,12,48,.35),transparent);
+    }
+    .card{
+      border-radius:22px;
+      padding:28px;
+    }
+    .card:not(.cphHero){
+      box-shadow:0 10px 30px rgba(20,43,62,.08);
+    }
+    .highlights-grid{gap:14px;}
+    .highlight-item{
+      border-radius:17px;
+      background:#fff;
+      box-shadow:0 6px 18px rgba(20,43,62,.05);
+    }
+    .photo-grid-2 img,.photo-grid-3 img,.photo-grid-4 img{
+      border-radius:16px;
+    }
+    .gygWidgetWrap{
+      border-radius:18px;
+      background:#fff;
+    }
+    .proFinal{
+      background:linear-gradient(135deg,#102b42,#244f69);
+      color:#fff;
+      border-radius:26px;
+      padding:34px;
+      text-align:center;
+      box-shadow:var(--shadow-lg);
+      margin-top:28px;
+    }
+    .proFinal h2{color:#fff;}
+    .proFinal p{color:rgba(255,255,255,.84)!important;}
+    .proFinal .btn-outline{background:rgba(255,255,255,.10)!important;color:#fff;border-color:rgba(255,255,255,.25);}
+    .proFinal .disclosure{color:rgba(255,255,255,.70);border-top-color:rgba(255,255,255,.18)!important;}
+    @media(max-width:640px){
+      .cphHero{min-height:500px;padding:30px 22px;border-radius:20px;}
+      .cphHero h1{font-size:3rem;}
+      .card{padding:22px 20px;}
+    }
+
   </style>
 </head>
 
@@ -364,13 +500,15 @@
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="https://twofortherowd.com/">Home</a>
       <span>›</span>
-      <a href="https://twofortherowd.com/#map">Our Destinations</a>
+      <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
       <span>›</span>
       <span>Copenhagen</span>
     </nav>
 
     <!-- ── HERO ──────────────────────────────────────────── -->
-    <div class="card heroCard">
+    <div class="cphHero">
+      <div>
+      <div class="cphKicker">🇩🇰 Copenhagen · 4 nights · 2022</div>
       <div class="eyebrow">
         <span class="badge">🇩🇰 Denmark</span>
         <span class="badge outline">Nyhavn · Christiania · The Opera · Tivoli</span>
@@ -418,10 +556,10 @@
       </div>
 
       <div class="links">
-        <a class="btn-primary" href="https://www.tourradar.com/t/328598?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/328598?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'Copenhagen',button_label:this.textContent.trim()});">
           Book a Copenhagen tour on TourRadar →
         </a>
-        <a class="btn-outline" href="https://twofortherowd.com/#map">
+        <a class="btn-outline" href="https://twofortherowd.com/#destinations">
           See all our destinations →
         </a>
       </div>
@@ -436,7 +574,8 @@
         <span class="tag">Copenhagen from Ireland</span>
         <span class="tag">Copenhagen 4 nights</span>
       </div>
-    </div>
+      </div>
+  </div>
 
     <!-- ── THE STORY ─────────────────────────────────────── -->
     <div class="section-divider">🇩🇰 The Trip</div>
@@ -601,7 +740,7 @@
         brilliant way to see more of it without spending your holiday coordinating logistics.
       </p>
       <div class="links">
-        <a class="btn-primary" href="https://www.tourradar.com/t/328598?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/328598?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'Copenhagen',button_label:this.textContent.trim()});">
           Book a Copenhagen tour on TourRadar →
         </a>
       </div>
@@ -809,7 +948,7 @@
 
 
     <!-- ── FINAL CTA ───────────────────────────────────────── -->
-    <div class="card heroCard" style="text-align:center;">
+    <div class="proFinal">
       <h2 style="text-align:center;">Planning your own Copenhagen trip?</h2>
       <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">
         Copenhagen is one of Europe's most beautiful and rewarding cities — expensive, yes,
@@ -817,7 +956,7 @@
         with it for yourself.
       </p>
       <div class="links" style="justify-content:center;">
-        <a class="btn-primary" href="https://www.tourradar.com/t/328598?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/328598?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'Copenhagen',button_label:this.textContent.trim()});">
           Book a Copenhagen tour on TourRadar →
         </a>
         <a class="btn-gold" href="https://www.getyourguide.com/copenhagen-l12/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">
@@ -839,7 +978,7 @@
     <p>
       © <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp;
       <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp;
-      <a href="https://twofortherowd.com/#map">Our destinations</a> &nbsp;•&nbsp;
+      <a href="https://twofortherowd.com/#destinations">Our destinations</a> &nbsp;•&nbsp;
       <a href="https://twofortherowd.com/#gyg">More GetYourGuide picks</a>
     </p>
   </footer>

@@ -18,6 +18,21 @@
   <meta property="og:url" content="https://twofortherowd.com/eswatini.html"/>
   <meta property="og:image" content="https://twofortherowd.com/img/eswat.jpeg"/>
   <meta name="twitter:card" content="summary_large_image"/>
+  
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Is Eswatini worth visiting?","acceptedAnswer":{"@type":"Answer","text":"Yes. Eswatini is one of southern Africa's most overlooked destinations, with dramatic landscapes, a strong Swazi cultural identity and warm hospitality. We visited in 2018 and it became one of the most memorable parts of our journey."}},
+      {"@type":"Question","name":"What is Eswatini like?","acceptedAnswer":{"@type":"Answer","text":"Eswatini, formerly known as Swaziland, is a small landlocked kingdom in southern Africa bordered by South Africa and Mozambique, with highland and lowland landscapes and a distinct Swazi cultural identity."}},
+      {"@type":"Question","name":"How do you get to Eswatini?","acceptedAnswer":{"@type":"Answer","text":"Eswatini fits naturally into a southern Africa road trip and is accessible by road from South Africa. Border, passport, visa and vehicle requirements should always be checked before travel."}},
+      {"@type":"Question","name":"What is Mbabane like?","acceptedAnswer":{"@type":"Answer","text":"Mbabane is Eswatini's capital, set in the Mdimba Mountains. It has a relaxed atmosphere and works well as a base for exploring the kingdom."}},
+      {"@type":"Question","name":"What cultural experiences can you have in Eswatini?","acceptedAnswer":{"@type":"Answer","text":"Visitors can learn about Swazi traditions, crafts, music and community life through respectful cultural experiences. Our own 2018 visit included community and school visits that became some of our strongest memories from southern Africa."}}
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -35,7 +50,7 @@
     p{margin:0 0 .9rem;}p:last-child{margin-bottom:0;}
     ul,ol{margin:0 0 .9rem;padding-left:1.3rem;}li{margin-bottom:.35rem;}
     a{color:inherit;}strong{font-weight:700;}
-    .wrap{max-width:860px;margin:0 auto;padding:0 16px 60px;}
+    .wrap{max-width:980px;margin:0 auto;padding:0 16px 60px;}
     .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
     .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
     .backBar a:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
@@ -118,9 +133,127 @@
     @media(max-width:700px){.factsGrid{grid-template-columns:repeat(2,1fr);}.travelGrid{grid-template-columns:1fr;}}
 
     @media(max-width:640px){.photo-grid-4{grid-template-columns:repeat(2,1fr);}.shortGrid{max-width:100%;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.route-strip{justify-content:center;}}
+  
+    /* ─────────────────────────────────────────────
+       ESWATINI — PRO EDITORIAL REFRESH
+    ────────────────────────────────────────────── */
+    .eswHero{
+      min-height:560px;
+      border-radius:28px;
+      padding:48px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      background:
+        linear-gradient(90deg,rgba(15,28,45,.88),rgba(15,28,45,.62) 58%,rgba(15,28,45,.24)),
+        radial-gradient(circle at 85% 18%,rgba(255,216,74,.10),transparent 34%),
+        url('/img/eswat.jpeg') center/cover no-repeat,
+        linear-gradient(135deg,#203b69,#712f42);
+      box-shadow:var(--shadow-lg);
+      border:1px solid rgba(255,255,255,.09);
+      margin-bottom:18px;
+    }
+    .eswHero h1{
+      color:#fff;
+      font-size:clamp(2.8rem,6vw,5rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
+      text-shadow:0 3px 16px rgba(0,0,0,.30);
+    }
+    .eswHero h1 em{
+      display:block;
+      color:#ffd84a;
+      font-size:.50em;
+      line-height:1.12;
+      margin-top:10px;
+    }
+    .eswHero .hero-lead{
+      color:rgba(255,255,255,.94);
+      max-width:780px;
+      text-shadow:0 2px 10px rgba(0,0,0,.24);
+      margin-bottom:16px;
+    }
+    .eswHero .badge{
+      background:rgba(255,255,255,.11);
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+    }
+    .eswHero .route-stop,
+    .eswHero .state-pill,
+    .eswHero .tag{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.20);
+      backdrop-filter:blur(6px);
+    }
+    .eswHero .route-arrow{color:rgba(255,255,255,.60);}
+    .eswHero .btn-primary{background:#ffd84a;color:#1b2737;}
+    .eswHero .btn-outline{background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.28);}
+    .eswHero .heroMiniLabel{color:rgba(255,255,255,.72)!important;}
+    .eswKicker{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 12px;border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.24);
+      font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+      margin-bottom:14px;
+    }
+    .section-divider{
+      justify-content:flex-start;
+      margin:48px 0 16px;
+      font-family:var(--font-body);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      color:var(--esw-blue);
+    }
+    .section-divider::before{display:none;}
+    .section-divider::after{
+      flex:1;
+      background:linear-gradient(90deg,rgba(62,94,185,.35),transparent);
+    }
+    .card{border-radius:22px;padding:28px;}
+    .card:not(.eswHero){box-shadow:0 10px 30px rgba(32,43,68,.08);}
+    .destTabs{
+      margin:4px 0 22px;
+      padding:8px;
+      border-radius:18px;
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow-sm);
+    }
+    .destTab{border-radius:12px;}
+    .factsGrid{gap:12px;}
+    .factBox,.travelTip,.highlight-item{
+      border-radius:17px;
+      background:#fff;
+      box-shadow:0 6px 18px rgba(32,43,68,.05);
+    }
+    .photo-grid-4 img{border-radius:16px;}
+    .gygWidgetWrap{border-radius:18px;background:#fff;}
+    .proFinal{
+      background:linear-gradient(135deg,#213c72,#78324a);
+      color:#fff;
+      border-radius:26px;
+      padding:34px;
+      text-align:center;
+      box-shadow:var(--shadow-lg);
+      margin-top:28px;
+    }
+    .proFinal h2{color:#fff;}
+    .proFinal p{color:rgba(255,255,255,.84)!important;}
+    .proFinal .btn-outline{background:rgba(255,255,255,.10)!important;color:#fff;border-color:rgba(255,255,255,.25);}
+    .proFinal .disclosure{color:rgba(255,255,255,.70);border-top-color:rgba(255,255,255,.18)!important;}
+    @media(max-width:640px){
+      .eswHero{min-height:520px;padding:30px 22px;border-radius:20px;}
+      .eswHero h1{font-size:3rem;}
+      .card{padding:22px 20px;}
+    }
+
   </style>
-  <link rel="stylesheet" href="/country-refresh.css">
-  <style>:root{--country-hero:url('/img/eswat.jpeg')}</style>
 </head>
 <body>
 
@@ -150,7 +283,9 @@
   </div>
 
   <!-- HERO -->
-  <div class="card heroCard">
+  <div class="eswHero">
+    <div>
+    <div class="eswKicker">🇸🇿 Kingdom of Eswatini · our 2018 visit</div>
     <div class="eyebrow">
       <span class="badge">🇸🇿 Eswatini</span>
       <span class="badge outline">Mbabane · Culture · Community · Landscapes</span>
@@ -169,7 +304,7 @@
       <span class="route-arrow">→</span>
       <span class="route-stop">🌄 Savanna Landscapes</span>
     </div>
-    <p style="font-size:13px;font-weight:700;color:var(--muted);margin:14px 0 8px;letter-spacing:.06em;text-transform:uppercase;">What Eswatini gave us:</p>
+    <p class="heroMiniLabel" style="font-size:13px;font-weight:700;color:var(--muted);margin:14px 0 8px;letter-spacing:.06em;text-transform:uppercase;">What Eswatini gave us:</p>
     <div class="states-strip">
       <span class="state-pill">Mbabane capital 🏙️</span>
       <span class="state-pill">Swazi culture & traditions 🥁</span>
@@ -179,13 +314,14 @@
       <span class="state-pill">The warmest people 🇸🇿</span>
     </div>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/249083?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse our South Africa tour pick on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/249083?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'Eswatini/Southern Africa',button_label:this.textContent.trim()});">Browse our South Africa tour pick on TourRadar →</a>
       <a class="btn-outline" href="https://twofortherowd.com/#map">See all our destinations →</a>
     </div>
     <div class="tagRow">
       <span class="tag">Eswatini travel guide</span><span class="tag">Swaziland travel</span><span class="tag">Mbabane Eswatini</span><span class="tag">Swazi culture</span><span class="tag">southern Africa road trip</span><span class="tag">Eswatini from South Africa</span><span class="tag">southern Africa travel</span>
     </div>
-  </div>
+    </div>
+</div>
 
 
   <!-- COUNTRY GUIDE -->
@@ -303,7 +439,7 @@
     <p class="hero-lead" style="font-size:15px;"><strong>If Eswatini is part of a wider southern Africa trip, you may also be comparing organised South Africa itineraries. This is a current TourRadar option we’ve selected as a useful starting point — it is not the exact 2018 itinerary we travelled.</strong></p>
     <p>Our own journey combined South Africa and Eswatini, but itineraries vary enormously. Always check the individual tour route carefully if Eswatini is a must-see for you.</p>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/249083?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse our South Africa tour pick on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/249083?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'Eswatini/Southern Africa',button_label:this.textContent.trim()});">Browse our South Africa tour pick on TourRadar →</a>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
   </div>
@@ -353,11 +489,11 @@
   </div>
 
   <!-- FINAL CTA -->
-  <div class="card heroCard" style="text-align:center;">
+  <div class="proFinal">
     <h2 style="text-align:center;">Planning your own Eswatini visit?</h2>
     <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">Don't drive past. Stop, stay a night, spend time with the people and the culture of this extraordinary little kingdom. Eswatini will give you something that no big-ticket destination ever quite manages — genuine human connection and a perspective on the world you won't find anywhere else.</p>
     <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://www.tourradar.com/t/249083?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse our South Africa tour pick on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/249083?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'Eswatini/Southern Africa',button_label:this.textContent.trim()});">Browse our South Africa tour pick on TourRadar →</a>
       <a class="btn-gold" href="https://www.getyourguide.com/eswatini-l169179/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Eswatini activities on GYG →</a>
       <a class="btn-outline" href="https://twofortherowd.com/">Back to main site →</a>
     </div>
