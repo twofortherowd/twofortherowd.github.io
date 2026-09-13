@@ -1,0 +1,31 @@
+:root{--page-width:1120px;--hero-image:url('/img/alb8.jpeg')}
+body{background:#fdf8ef;color:#1a1208;font-family:'DM Sans',sans-serif}
+.backBar{position:relative;top:auto;min-height:52px;padding:0 max(17px,calc((100vw - var(--page-width))/2));background:#1a1208;color:#fff;border:0;align-items:center}
+.backBar a,.backBar .brandMark{padding:0!important;border:0!important;background:transparent!important;color:#fff!important;box-shadow:none!important;font-size:.9rem}
+.backBar a:last-child{font-family:'Playfair Display',serif;font-size:1.15rem!important}
+.chapterNav{top:0;background:rgba(255,255,255,.96);box-shadow:0 3px 15px rgba(26,18,8,.07)}
+.chapterNavInner{max-width:var(--page-width);padding:2px 17px}
+.chapterNavInner a{padding:8px 13px;color:#4a3f28}
+.chapterNavInner a:hover{background:#fff4c4;color:#1a1208}
+.wrap{max-width:var(--page-width);padding:0 17px 72px}
+.breadcrumb{margin:18px 0;font-size:.8rem}
+.wrap>.hero:first-of-type,.wrap>.heroCard:first-of-type{width:100vw;max-width:none;min-height:650px;margin-left:calc(50% - 50vw);margin-bottom:28px;padding:90px max(22px,calc((100vw - var(--page-width))/2)) 70px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;border:0;border-radius:0;color:#fff;background:linear-gradient(90deg,rgba(13,9,4,.84),rgba(13,9,4,.50) 54%,rgba(13,9,4,.12)),var(--hero-image) center/cover no-repeat;box-shadow:none}
+.wrap>.hero:first-of-type:before,.wrap>.hero:first-of-type:after{display:none}
+.wrap>.hero:first-of-type .hero-headline,.wrap>.heroCard:first-of-type .hero-headline{max-width:900px;color:#fff;font-size:clamp(3.2rem,8vw,6.5rem);line-height:1.01;margin:18px 0}
+.wrap>.hero:first-of-type .hero-headline br,.wrap>.heroCard:first-of-type .hero-headline br{display:none}
+.wrap>.hero:first-of-type .hero-headline em,.wrap>.heroCard:first-of-type .hero-headline em{display:block;color:#ffd84a;font-size:.46em;line-height:1.2;margin-top:10px}
+.wrap>.hero:first-of-type .hero-sub,.wrap>.hero:first-of-type .hero-lead,.wrap>.heroCard:first-of-type .hero-sub,.wrap>.heroCard:first-of-type .hero-lead{max-width:780px;color:#fff}
+.wrap>.hero:first-of-type .badge,.wrap>.heroCard:first-of-type .badge{background:#ffd84a;color:#1a1208;border-color:#e8c235}
+.wrap>.hero:first-of-type .badge.outline,.wrap>.hero:first-of-type .badge.blue,.wrap>.hero:first-of-type .badge.red,.wrap>.heroCard:first-of-type .badge.outline,.wrap>.heroCard:first-of-type .badge.blue,.wrap>.heroCard:first-of-type .badge.red{background:rgba(255,255,255,.92);color:#1a1208;border-color:transparent}
+.wrap>.hero:first-of-type .statsStrip,.wrap>.hero:first-of-type .route-strip{color:#1a1208;background:rgba(255,255,255,.88)}
+.wrap>.hero:first-of-type .btn-outline,.wrap>.heroCard:first-of-type .btn-outline{color:#1a1208;background:#fff}
+.card{padding:34px 38px;margin-bottom:22px;border-radius:20px;box-shadow:0 8px 25px rgba(26,18,8,.07)}
+.card h2{font-size:clamp(2rem,4vw,3.15rem);margin-bottom:16px}.card p{font-size:1.02rem}
+.chapterHeader{margin:72px 0 20px}.chapterName{font-size:clamp(1.7rem,3vw,2.45rem)}
+.glance-grid{grid-template-columns:repeat(4,1fr)}.glance-item{padding:18px;background:#fff}
+.destGrid{grid-template-columns:repeat(3,1fr);gap:20px}.destCard{padding:26px;border-radius:19px;box-shadow:0 7px 22px rgba(26,18,8,.07)}
+.photo-grid-3{gap:14px}.photo-grid-3 img{min-height:270px;border-radius:18px}
+.gyg-wrap,.gygBox,.gyg,.gygWidgetWrap{min-height:360px;background:#fff;border-radius:18px;padding:18px}
+footer{background:#1a1208;color:#ded7c8;padding:31px 15px}footer a{color:#fff}
+@media(max-width:850px){.glance-grid{grid-template-columns:repeat(2,1fr)}.destGrid{grid-template-columns:1fr}.wrap>.hero:first-of-type,.wrap>.heroCard:first-of-type{min-height:590px}}
+@media(max-width:640px){.wrap{padding:0 12px 45px}.card{padding:25px 21px}.chapterHeader{margin-top:52px}.glance-grid{grid-template-columns:1fr}.wrap>.hero:first-of-type,.wrap>.heroCard:first-of-type{padding:70px 18px 45px;min-height:560px}.wrap>.hero:first-of-type .hero-headline,.wrap>.heroCard:first-of-type .hero-headline{font-size:3.35rem}.statsStrip{grid-template-columns:repeat(2,1fr)}.photo-grid-3{grid-template-columns:1fr}.photo-grid-3 img{min-height:240px}}
