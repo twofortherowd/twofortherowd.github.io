@@ -38,8 +38,9 @@
     border-radius:26px;
     overflow:hidden;
     background:
-      radial-gradient(circle at 84% 16%,rgba(244,217,132,.17),transparent 34%),
-      radial-gradient(circle at 12% 88%,rgba(82,183,136,.12),transparent 38%),
+      linear-gradient(90deg,rgba(12,35,29,.84),rgba(12,35,29,.56) 58%,rgba(12,35,29,.22)),
+      radial-gradient(circle at 84% 16%,rgba(244,217,132,.10),transparent 34%),
+      url('/img/destinationspic.jpg') center/cover no-repeat,
       linear-gradient(135deg,#123d32 0%,#245c4a 56%,#4b806b 100%);
     box-shadow:var(--dest-shadow);
   }
@@ -61,6 +62,7 @@
   #destinations-page .destHero h1{
     color:#fff;
     font-size:clamp(2.7rem,6vw,5rem);
+    text-shadow:0 3px 16px rgba(0,0,0,.30);
     line-height:1.02;
     letter-spacing:-.04em;
     margin:0 0 14px;
@@ -76,7 +78,8 @@
 
   #destinations-page .destHero p{
     max-width:760px;
-    color:rgba(255,255,255,.9);
+    color:rgba(255,255,255,.94);
+    text-shadow:0 2px 10px rgba(0,0,0,.24);
     font-size:1rem;
     margin:0;
   }
