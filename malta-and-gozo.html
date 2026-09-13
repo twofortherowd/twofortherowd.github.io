@@ -126,9 +126,6 @@
   }
   </script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -198,7 +195,7 @@
     a { color: inherit; }
     strong { font-weight: 700; }
 
-    .wrap { max-width: 900px; margin: 0 auto; padding: 0 16px 60px; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 60px; }
 
     .backBar {
       background: rgba(253,248,239,.95);
@@ -335,37 +332,6 @@
     .section-divider { display: flex; align-items: center; gap: 12px; margin: 8px 0 16px; font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); }
     .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border-mid); }
 
-    .chapterNav { position: sticky; top: 52px; z-index: 40; background: rgba(253,248,239,.94); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); padding: 8px 0; }
-    .chapterNavInner { max-width: 900px; margin: 0 auto; padding: 0 16px; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
-    .chapterNavInner::-webkit-scrollbar { display: none; }
-    .chapterNav a { flex-shrink: 0; padding: 6px 12px; font-size: 12px; font-weight: 700; text-decoration: none; color: var(--ink-soft); border-radius: 999px; }
-    .chapterNav a:hover { background: var(--white); }
-    .chapterHeader { margin: 36px 0 18px; padding: 0 4px; }
-    .chapterHeaderInner { display: flex; align-items: flex-end; gap: 14px; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
-    .chapterNumber { font-family: var(--font-display); font-size: clamp(2.2rem,5vw,3rem); font-weight: 800; font-style: italic; line-height: .9; color: var(--ocean); }
-    .chapterLabel { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-    .chapterName { font-family: var(--font-display); font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 800; line-height: 1.1; }
-    .glance-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 10px; }
-    .glance-item { display: flex; gap: 10px; padding: 13px 14px; background: rgba(255,255,255,.75); border: 1px solid var(--border); border-radius: 13px; }
-    .glance-icon { font-size: 21px; }
-    .glance-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--muted); }
-    .glance-value { font-size: 13px; font-weight: 600; }
-    .photo-mosaic { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 190px 190px; gap: 10px; }
-    .photo-mosaic img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; box-shadow: var(--shadow-md); }
-    .photo-mosaic img:first-child { grid-row: 1 / 3; }
-    .journey-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
-    .journey-card { display: block; overflow: hidden; background: #fff; border: 1px solid var(--border); border-radius: 18px; text-decoration: none; box-shadow: var(--shadow-sm); }
-    .journey-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-    .journey-card img { display: block; width: 100%; height: 205px; object-fit: cover; }
-    .journey-body { padding: 17px; }
-    .journey-body h3 { margin-bottom: 6px; }
-    .journey-body p { font-size: 13px; color: var(--ink-soft); }
-    .journey-cta { font-size: 13px; font-weight: 800; color: var(--ocean); }
-    .mapCard { padding: 18px; overflow: hidden; }
-    #maltaMap { height: 560px; width: 100%; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-md); z-index: 1; }
-    .map-note { font-size: 12px; color: var(--muted); margin-top: 10px; text-align: center; }
-    .dfh-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 15px; }
-    .dfh-place { background: rgba(255,255,255,.75); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
     footer { margin-top: 10px; padding: 20px 0 12px; font-size: 13px; line-height: 1.6; color: var(--muted); text-align: center; }
     footer a { color: var(--muted); font-weight: 600; }
 
@@ -374,14 +340,45 @@
       .links { flex-direction: column; }
       .links a { text-align: center; justify-content: center; }
       .route-strip { justify-content: center; }
-      .journey-grid, .dfh-grid { grid-template-columns: 1fr; }
-      .photo-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 150px; }
-      .photo-mosaic img:first-child { grid-column: 1 / 3; grid-row: auto; }
-      #maltaMap { height: 470px; }
     }
-  </style>
-  <link rel="stylesheet" href="/country-refresh.css">
-  <style>:root{--country-hero:url('/img/MG.jpg')}</style>
+  
+    /* SAFE 2026 PILL/TAB READABILITY FIX — no layout changes */
+    .route-stop,
+    .state-pill,
+    .vibe-pill,
+    .tagRow .tag,
+    .dest-tab{
+      background:#fff !important;
+      color:#1b1813 !important;
+      border:1px solid rgba(27,24,19,.16) !important;
+      box-shadow:0 2px 9px rgba(27,24,19,.10) !important;
+      text-shadow:none !important;
+    }
+    .route-stop a,
+    .state-pill a,
+    .vibe-pill a,
+    .tagRow .tag a,
+    .dest-tab a{
+      color:#1b1813 !important;
+      text-decoration:none;
+    }
+    .route-strip,
+    .states-strip,
+    .vibe-strip,
+    .tagRow,
+    .dest-tabs{
+      gap:8px !important;
+    }
+    .dest-tab{
+      font-weight:800 !important;
+      border-radius:999px !important;
+    }
+    .dest-tab:hover{
+      transform:translateY(-1px);
+      box-shadow:0 5px 14px rgba(27,24,19,.13) !important;
+    }
+
+</style>
 </head>
 
 <body>
@@ -390,12 +387,6 @@
     <a href="https://twofortherowd.com/" aria-label="Back to Two for the Row'd">← Back to Two for the Row'd</a>
     <a class="site-name" href="https://twofortherowd.com/">Two for the Row'd 🇮🇪</a>
   </div>
-
-  <nav class="chapterNav" aria-label="Malta guide sections">
-    <div class="chapterNavInner">
-      <a href="#glance">At a Glance</a><a href="#map">Journey Map</a><a href="#photos">Photos</a><a href="#places">Choose a Place</a><a href="#story">Our Trip</a><a href="#experiences">Experiences</a><a href="#gozo">Gozo</a><a href="#practical">Before You Go</a><a href="#faq">FAQ</a>
-    </div>
-  </nav>
 
   <div class="wrap">
 
@@ -428,8 +419,6 @@
       </p>
 
       <div class="route-strip" style="margin-top:20px;">
-        <span class="route-stop">🌴 St Julian&apos;s Bay</span>
-        <span class="route-arrow">→</span>
         <span class="route-stop">🏛️ Valletta</span>
         <span class="route-arrow">→</span>
         <span class="route-stop">🏰 Mdina</span>
@@ -456,7 +445,7 @@
       </div>
 
       <div class="links">
-        <a class="btn-primary" href="https://www.tourradar.com/t/124729?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/124729?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
           Book a Malta tour on TourRadar →
         </a>
         <a class="btn-outline" href="https://twofortherowd.com/#map">
@@ -476,34 +465,7 @@
       </div>
     </div>
 
-    <div id="glance" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">01</div><div><div class="chapterLabel">Before you plan anything</div><div class="chapterName">Malta at a glance</div></div></div></div>
-    <div class="card blueCard"><div class="glance-grid">
-      <div class="glance-item"><div class="glance-icon">🏨</div><div><span class="glance-label">Our base</span><span class="glance-value">St Julian's Bay</span></div></div>
-      <div class="glance-item"><div class="glance-icon">🗓️</div><div><span class="glance-label">Our trip</span><span class="glance-value">One week in 2014</span></div></div>
-      <div class="glance-item"><div class="glance-icon">✈️</div><div><span class="glance-label">From Ireland</span><span class="glance-value">Direct flights from Dublin</span></div></div>
-      <div class="glance-item"><div class="glance-icon">💶</div><div><span class="glance-label">Currency</span><span class="glance-value">Euro</span></div></div>
-      <div class="glance-item"><div class="glance-icon">🗣️</div><div><span class="glance-label">Languages</span><span class="glance-value">Maltese and English</span></div></div>
-      <div class="glance-item"><div class="glance-icon">🔌</div><div><span class="glance-label">Plug</span><span class="glance-value">Type G — same as Ireland</span></div></div>
-      <div class="glance-item"><div class="glance-icon">⛴️</div><div><span class="glance-label">Island hopping</span><span class="glance-value">Gozo and Comino are easy day trips</span></div></div>
-      <div class="glance-item"><div class="glance-icon">☀️</div><div><span class="glance-label">Best for</span><span class="glance-value">History, sunshine and coast</span></div></div>
-    </div></div>
-
-    <div id="map" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">02</div><div><div class="chapterLabel">One small archipelago, an extraordinary amount to see</div><div class="chapterName">Our Malta and Gozo map</div></div></div></div>
-    <div class="card mapCard"><h2>From St Julian's Bay to Gozo</h2><p>Our base was St Julian's Bay. Tap any marker to see the places that shaped our week, from Valletta and Mdina to Comino's Blue Lagoon and Gozo.</p><div id="maltaMap" aria-label="Interactive map of our Malta and Gozo trip"></div><p class="map-note">The markers show the places we visited; they are not intended as an exact day-by-day driving route.</p></div>
-
-    <div id="photos" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">03</div><div><div class="chapterLabel">No stock photographs here</div><div class="chapterName">Malta through our lens</div></div></div></div>
-    <div class="card" style="padding:18px;"><div class="photo-mosaic"><img src="img/MG.jpg" alt="Malta harbour from our 2014 trip" loading="lazy"><img src="img/MG3.jpg" alt="Maltese church" loading="lazy"><img src="img/MG5.jpg" alt="Gozo coastline" loading="lazy"><img src="img/MG10.jpg" alt="Gozo coastal view" loading="lazy"><img src="img/MG14.jpg" alt="The Azure Window on Gozo in 2014" loading="lazy"></div><p class="map-note">Every photograph on this page is from our own Malta and Gozo trip in 2014.</p></div>
-
-    <div id="places" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">04</div><div><div class="chapterLabel">Pick your starting point</div><div class="chapterName">Four different sides of Malta</div></div></div></div>
-    <div class="journey-grid">
-      <a class="journey-card" href="#story"><img src="img/MG2.jpg" alt="Valletta and Grand Harbour" loading="lazy"><div class="journey-body"><h3>Valletta & Grand Harbour</h3><p>Baroque streets, grand churches, harbour views and one of Europe's great small capitals.</p><span class="journey-cta">Explore Valletta ↓</span></div></a>
-      <a class="journey-card" href="#story"><img src="img/MG11.jpg" alt="Historic hilltop town in Malta" loading="lazy"><div class="journey-body"><h3>Mdina</h3><p>Malta's ancient walled city: quiet lanes, honey-coloured stone and centuries of history.</p><span class="journey-cta">Discover Mdina ↓</span></div></a>
-      <a class="journey-card" href="#experiences"><img src="img/MG5.jpg" alt="Blue water near Comino" loading="lazy"><div class="journey-body"><h3>Comino & Blue Lagoon</h3><p>Impossible turquoise water and one of the Mediterranean's most famous boat trips.</p><span class="journey-cta">Find experiences ↓</span></div></a>
-      <a class="journey-card" href="#gozo"><img src="img/MG14.jpg" alt="Azure Window on Gozo before its collapse" loading="lazy"><div class="journey-body"><h3>Gozo</h3><p>Quieter, greener and wonderfully scenic—with the Azure Window still standing when we visited.</p><span class="journey-cta">Explore Gozo ↓</span></div></a>
-    </div>
-
     <!-- ── THE STORY ─────────────────────────────────────── -->
-    <div id="story" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">05</div><div><div class="chapterLabel">A wedding, an island tour and plenty of sunshine</div><div class="chapterName">Our Malta story</div></div></div></div>
     <div class="section-divider">🇲🇹 The Trip</div>
 
     <p class="section-label">The story</p>
@@ -618,7 +580,7 @@
         spending your holiday planning it.
       </p>
       <div class="links">
-        <a class="btn-primary" href="https://www.tourradar.com/t/124729?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/124729?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
           Book a Malta tour on TourRadar →
         </a>
       </div>
@@ -626,17 +588,6 @@
         <strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.
       </p>
     </div>
-
-<div id="experiences" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">06</div><div><div class="chapterLabel">Tours, tickets and virtual journeys</div><div class="chapterName">Book and explore</div></div></div></div>
-<div class="card blueCard">
-  <h2>🚗 Explore Malta and Gozo from home</h2>
-  <p>Get a feel for the islands before you travel with Drive From Home's virtual city journeys and local atmosphere.</p>
-  <div class="dfh-grid">
-    <div class="dfh-place"><h3>Malta</h3><div class="links"><a class="btn-outline" href="https://drivefromhome.com/cities/malta/" target="_blank" rel="noopener">Explore Malta virtually →</a><a class="btn-primary" href="https://drivefromhome.com/city/?city=MLA" target="_blank" rel="noopener">Start driving through Malta →</a></div></div>
-    <div class="dfh-place"><h3>Gozo</h3><div class="links"><a class="btn-outline" href="https://drivefromhome.com/cities/gozo-island/" target="_blank" rel="noopener">Explore Gozo virtually →</a><a class="btn-primary" href="https://drivefromhome.com/city/?city=GOZO" target="_blank" rel="noopener">Start driving through Gozo →</a></div></div>
-  </div>
-  <p class="disclosure">Drive From Home is a Two for the Row'd travel partner.</p>
-</div>
 
 <div class="section-divider">🎫 Book Experiences</div>
 <div class="card goldCard">
@@ -665,7 +616,7 @@
     </div>
 
     <!-- ── GOZO ───────────────────────────────────────────── -->
-    <div id="gozo" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">07</div><div><div class="chapterLabel">The quieter sister island</div><div class="chapterName">Gozo</div></div></div></div>
+    <div class="section-divider">⛴️ Gozo</div>
 
     <p class="section-label">The sister island</p>
     <div class="card greenCard">
@@ -705,7 +656,7 @@
     </div>
 
     <!-- ── FAQ ────────────────────────────────────────────── -->
-    <div id="faq" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">08</div><div><div class="chapterLabel">Common questions</div><div class="chapterName">Malta & Gozo FAQ</div></div></div></div>
+    <p class="section-label">Common questions</p>
     <div class="card">
       <h2>Malta & Gozo FAQ</h2>
 
@@ -783,7 +734,7 @@
     </div>
 
     <!-- ── PACKING ─────────────────────────────────────────── -->
-    <div id="practical" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">09</div><div><div class="chapterLabel">What to bring</div><div class="chapterName">Malta packing essentials</div></div></div></div>
+    <p class="section-label">What to pack for Malta</p>
     <div class="card">
       <h2>Malta packing essentials — what we'd bring</h2>
       <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">
@@ -882,7 +833,7 @@
         Browse activities and experiences to make the most of every day.
       </p>
       <div class="links" style="justify-content:center;">
-        <a class="btn-primary" href="https://www.tourradar.com/t/124729?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/124729?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
           Book a Malta tour on TourRadar →
         </a>
         <a class="btn-gold" href="https://www.getyourguide.com/malta-l90/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">
@@ -911,25 +862,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const maltaPlaces = [
-      {name:"St Julian's Bay",lat:35.9180,lng:14.4890,text:"Our base for the week: seaside walks, restaurants and those all-important happy hours."},
-      {name:"Valletta",lat:35.8989,lng:14.5146,text:"Malta's UNESCO-listed capital, filled with baroque architecture and harbour views."},
-      {name:"Grand Harbour",lat:35.8895,lng:14.5220,text:"One of the Mediterranean's great natural harbours."},
-      {name:"Mdina",lat:35.8869,lng:14.4031,text:"The Silent City: Malta's ancient walled capital."},
-      {name:"Blue Lagoon, Comino",lat:36.0143,lng:14.3236,text:"The brilliantly turquoise highlight of Comino."},
-      {name:"Victoria, Gozo",lat:36.0444,lng:14.2398,text:"Gozo's historic capital and the island's natural centre."},
-      {name:"Azure Window site",lat:36.0531,lng:14.1888,text:"We saw Gozo's famous Azure Window in 2014, before its collapse in 2017."}
-    ];
-    const maltaMap = L.map('maltaMap',{scrollWheelZoom:false}).setView([35.98,14.34],10);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors'}).addTo(maltaMap);
-    const maltaBounds=[];
-    maltaPlaces.forEach((place,index)=>{
-      maltaBounds.push([place.lat,place.lng]);
-      const icon=L.divIcon({className:'',html:'<div style="width:31px;height:31px;border-radius:50%;background:#1a6fa8;color:#fff;border:3px solid #ffd84a;display:grid;place-items:center;font:700 11px DM Sans">'+(index+1)+'</div>',iconSize:[31,31],iconAnchor:[15,15]});
-      L.marker([place.lat,place.lng],{icon}).addTo(maltaMap).bindPopup('<strong>'+place.name+'</strong><br>'+place.text);
-    });
-    maltaMap.fitBounds(maltaBounds,{padding:[28,28]});
   </script>
 
 </body>
