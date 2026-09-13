@@ -16,6 +16,8 @@ main>.card.hero:first-of-type h1 em{display:block;color:#ffd84a;font-size:.48em;
 main>.card.hero:first-of-type .lead{max-width:760px;color:#fff;font-size:clamp(1.05rem,2vw,1.28rem)}
 main>.card.hero:first-of-type .badge{background:#ffd84a;color:#1a1208;border-color:#e8c235}
 main>.card.hero:first-of-type .alert{max-width:800px;background:rgba(255,255,255,.92);color:#4a3f28;border:0}
+main>.card.hero:first-of-type .route span{color:#1a1208}
+main>.card.hero:first-of-type .btn:not(.primary){background:#fff;color:#1a1208}
 .card{max-width:var(--page-width);padding:34px 38px;margin:22px auto;border-radius:20px;border:1px solid rgba(26,18,8,.13);box-shadow:0 8px 25px rgba(26,18,8,.07)}
 .card h2{font-size:clamp(2rem,4vw,3.15rem);margin-bottom:16px}.card h3{font-size:1.3rem}.card p{font-size:1.02rem}
 .chapterHeader{margin:72px auto 20px;max-width:var(--page-width)}.chapterInner{border-bottom:2px solid #1a1208}.chapterNumber{color:#dc143c}.chapterName{font-size:clamp(1.7rem,3vw,2.45rem)}
