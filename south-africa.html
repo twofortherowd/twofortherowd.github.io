@@ -18,8 +18,6 @@
   <meta property="og:url" content="https://twofortherowd.com/south-africa.html"/>
   <meta property="og:image" content="https://twofortherowd.com/img/IMG_2180.JPG"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Article","headline":"South Africa — Cape Town, Kruger, Eswatini, Soweto & the Trip of a Lifetime","description":"12 days from Cape Town to Johannesburg — Table Mountain, Kruger National Park, the Big Five, Eswatini and Soweto.","author":{"@type":"Person","name":"Nicola and Padraig","url":"https://twofortherowd.com"},"publisher":{"@type":"Organization","name":"Two for the Row'd","url":"https://twofortherowd.com"},"url":"https://twofortherowd.com/south-africa.html","image":"https://twofortherowd.com/img/IMG_2180.JPG"}
@@ -48,7 +46,7 @@
     ul,ol{margin:0 0 .9rem;padding-left:1.3rem;}li{margin-bottom:.35rem;}
     a{color:inherit;}strong{font-weight:700;}
     img{max-width:100%;height:auto;}
-    .wrap{max-width:860px;margin:0 auto;padding:0 16px 60px;}
+    .wrap{max-width:980px;margin:0 auto;padding:0 16px 60px;}
     .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
     .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
     .backBar a:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
@@ -159,28 +157,156 @@
       .photoGridImg,.destCardImg,.photoStripImg{max-height:280px;}
     }
 
-    /* Interactive journey map */
-    .journeyMapCard{padding:18px;overflow:hidden;}
-    .journeyMapIntro{padding:4px 6px 14px;}
-    #saJourneyMap{height:610px;width:100%;border-radius:14px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1;}
-    .mapLegend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--ink-soft);}
-    .mapLegendItem{display:flex;align-items:center;gap:6px;}
-    .mapDot{width:11px;height:11px;border-radius:50%;display:inline-block;}
-    .mapPopup{font-family:var(--font-body);min-width:190px;}
-    .mapPopupStep{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--sa-green);margin-bottom:3px;}
-    .mapPopupTitle{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:4px;}
-    .mapPopupMeta{font-size:12px;color:var(--muted);padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid var(--border);}
-    .mapPopupText{font-size:12px;color:var(--ink-soft);line-height:1.5;}
-    .mapPopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--sa-green);text-decoration:none;}
-    @media(max-width:680px){
-      .journeyMapCard{padding:12px;}
-      #saJourneyMap{height:500px;border-radius:12px;}
-      .mapLegend{gap:9px;font-size:11px;}
+  
+    /* 2026 PRO EDITORIAL REFRESH */
+    .southAfricaHero{
+      min-height:560px;
+      border-radius:28px;
+      padding:48px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      margin-bottom:20px;
+      box-shadow:var(--shadow-lg);
+      border:1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(90deg,rgba(15,25,24,.87),rgba(15,25,24,.60) 58%,rgba(15,25,24,.22)),
+        radial-gradient(circle at 84% 18%,rgba(255,216,74,.10),transparent 34%),
+        url('/img/IMG_2180.JPG') center/cover no-repeat,
+        linear-gradient(135deg,#173f34,#7b5a24);
+    }
+    .southAfricaHero h1{
+      color:#fff;
+      font-size:clamp(2.9rem,6vw,5.2rem);
+      line-height:1.01;
+      letter-spacing:-.04em;
+      text-shadow:0 3px 18px rgba(0,0,0,.32);
+    }
+    .southAfricaHero h1 em{color:#ffd84a;}
+    .southAfricaHero .hero-lead{
+      color:rgba(255,255,255,.95);
+      max-width:790px;
+      text-shadow:0 2px 10px rgba(0,0,0,.25);
+    }
+    .southAfricaHero .badge,
+    .southAfricaHero .badge.outline,
+    .southAfricaHero .badge.green,
+    .southAfricaHero .badge.gold,
+    .southAfricaHero .badge.blue{
+      background:rgba(255,255,255,.11);
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+      backdrop-filter:blur(5px);
+    }
+    .southAfricaHero .quote-block{
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.20);
+      color:rgba(255,255,255,.96);
+      backdrop-filter:blur(5px);
+    }
+    .southAfricaHero .route-stop,
+    .southAfricaHero .state-pill,
+    .southAfricaHero .tag{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.20);
+    }
+    .southAfricaHero .route-arrow{color:rgba(255,255,255,.62);}
+    .southAfricaHero .btn-primary,
+    .southAfricaHero .btn-gold{
+      background:#ffd84a;
+      color:#211a10;
+      border-color:#ffd84a;
+    }
+    .southAfricaHero .btn-outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
     }
 
-  </style>
-  <link rel="stylesheet" href="/country-refresh.css">
-  <style>:root{--country-hero:url('/img/IMG_2180.JPG')}</style>
+    .card{border-radius:22px;}
+    .section-divider{margin-top:46px;}
+    .section-divider::before{display:none;}
+    .section-divider::after{
+      background:linear-gradient(90deg,rgba(80,110,95,.38),transparent);
+      height:2px;
+    }
+    .photo-grid-2 img,.photo-grid-3 img,.photo-grid-4 img,.photoStripImg{
+      border-radius:16px;
+    }
+    .highlight-item{
+      border-radius:16px;
+      box-shadow:var(--shadow-sm);
+    }
+    .proFinal{
+      background:linear-gradient(135deg,#173f34,#7b5a24);
+      color:#fff;
+      border-radius:26px;
+      padding:36px;
+      text-align:center;
+      box-shadow:var(--shadow-lg);
+      margin-top:30px;
+    }
+    .proFinal h2{color:#fff;}
+    .proFinal p{color:rgba(255,255,255,.86)!important;}
+    .proFinal .btn-outline{
+      color:#fff;border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.08);
+    }
+    @media(max-width:700px){
+      .southAfricaHero{min-height:500px;padding:30px 22px;border-radius:22px;}
+      .southAfricaHero h1{font-size:3rem;}
+    }
+    
+
+    /* HERO PILL / TAB READABILITY FIX — Two for the Row'd */
+    .route-stop,
+    .state-pill,
+    .tagRow .tag{
+      background:rgba(255,255,255,.94) !important;
+      color:#1b1813 !important;
+      border:1px solid rgba(255,255,255,.78) !important;
+      box-shadow:0 2px 9px rgba(0,0,0,.16) !important;
+      text-shadow:none !important;
+      backdrop-filter:blur(4px);
+    }
+    .route-stop a,
+    .state-pill a,
+    .tagRow .tag a{
+      color:#1b1813 !important;
+      text-decoration:none;
+    }
+    .route-arrow{
+      color:rgba(255,255,255,.92) !important;
+      text-shadow:0 1px 4px rgba(0,0,0,.45);
+    }
+    .heroCard .states-strip,
+    .proHero .states-strip,
+    .cphHero .states-strip,
+    .eswHero .states-strip,
+    .southAfricaHero .states-strip,
+    .zanzibarHero .states-strip,
+    .dubaiHero .states-strip,
+    .polandHero .states-strip,
+    .bucharestHero .states-strip,
+    .italyHero .states-strip{
+      gap:8px !important;
+    }
+    .heroCard > p[style*="text-transform:uppercase"],
+    .proHero > p[style*="text-transform:uppercase"],
+    .cphHero > p[style*="text-transform:uppercase"],
+    .eswHero > p[style*="text-transform:uppercase"],
+    .southAfricaHero > p[style*="text-transform:uppercase"],
+    .zanzibarHero > p[style*="text-transform:uppercase"],
+    .dubaiHero > p[style*="text-transform:uppercase"],
+    .polandHero > p[style*="text-transform:uppercase"],
+    .bucharestHero > p[style*="text-transform:uppercase"],
+    .italyHero > p[style*="text-transform:uppercase"]{
+      color:#fff !important;
+      text-shadow:0 2px 6px rgba(0,0,0,.55);
+    }
+
+</style>
 </head>
 <body>
 
@@ -209,7 +335,7 @@
   </div>
 
   <!-- HERO -->
-  <div class="card heroCard">
+  <div class="southAfricaHero">
     <div class="eyebrow">
       <span class="badge">🇿🇦 South Africa</span>
       <span class="badge outline">Cape Town · Kruger · Eswatini · Soweto · Panorama Route</span>
@@ -219,7 +345,7 @@
     <p class="hero-lead">Twelve extraordinary days from Cape Town to Johannesburg — one of the greatest group tours we have ever done. Table Mountain rising above one of the world's most beautiful cities, penguins waddling on Boulders Beach, hippos and crocodiles on the St Lucia Estuary, the Big Five in Hluhluwe and Kruger National Park, the breathtaking Panorama Route, a night in Eswatini, and the deeply moving Soweto and Apartheid Museum experience in Johannesburg. South Africa is extraordinary, heartbreaking, joyful and utterly unforgettable in equal measure.</p>
     <div class="quote-block">"South Africa gave us more emotions in twelve days than most destinations give in a lifetime. The beauty of Cape Town, the raw wilderness of Kruger at dawn, the warmth of the people in Eswatini — and then Soweto and the Apartheid Museum, which left us genuinely speechless. It is a country that demands to be understood, not just visited."</div>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/249083?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Book a South Africa tour on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/249083?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Book a South Africa tour on TourRadar →</a>
       <a class="btn-outline" href="https://twofortherowd.com/#map">See all our destinations →</a>
     </div>
     <div class="tagRow">
@@ -239,22 +365,6 @@
       <div class="factCard"><div class="factLabel">Provinces</div><div class="factValue">9</div></div>
     </div>
     <p style="margin-top:16px;font-size:14px;color:var(--ink-soft);">South Africa spans 1,220,813 km² and has three capitals: Pretoria (administrative), Cape Town (legislative) and Bloemfontein (judicial). Traffic drives on the left. With 12 official languages, nine provinces and extraordinary regional variety, it rewards travellers who allow time to understand how different each part of the country can feel.</p>
-  </div>
-
-
-  <!-- INTERACTIVE JOURNEY MAP -->
-  <div class="section-divider">🗺️ Our 12-Day South Africa & Eswatini Route</div>
-  <div class="card journeyMapCard">
-    <div class="journeyMapIntro">
-      <h2>Follow our journey from Cape Town to Johannesburg</h2>
-      <p>From five days around Cape Town and the Cape Peninsula, we flew east to KwaZulu-Natal, crossed into the Kingdom of Eswatini, continued to Kruger and the Panorama Route, and finished in Johannesburg and Soweto. <strong>Tap any marker</strong> to see what we did there.</p>
-    </div>
-    <div id="saJourneyMap" aria-label="Interactive map of our South Africa and Eswatini journey"></div>
-    <div class="mapLegend" aria-label="Map legend">
-      <span class="mapLegendItem"><span class="mapDot" style="background:#007A4D"></span>Journey stop</span>
-      <span class="mapLegendItem"><span class="mapDot" style="background:#FFB612"></span>Major destination</span>
-      <span class="mapLegendItem"><span class="mapDot" style="background:#DE3831"></span>History & culture</span>
-    </div>
   </div>
 
   <!-- UNDERSTANDING SOUTH AFRICA -->
@@ -391,7 +501,7 @@
     <h2>Group tours with expert guides and all logistics handled</h2>
     <p style="margin-bottom:16px;">South Africa is one of those destinations where a guided group tour genuinely transforms the experience. The distances, the game park logistics, the border crossings, the cultural context — all handled for you, leaving you free to focus on the extraordinary moments at every stop.</p>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/249083?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">Browse South Africa tours on TourRadar →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/249083?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse South Africa tours on TourRadar →</a>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
   </div>
@@ -446,64 +556,5 @@
   <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#map">Our destinations</a></p>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-
-<script>
-(function(){
-  if(typeof L === 'undefined') return;
-
-  const mapEl = document.getElementById('saJourneyMap');
-  if(!mapEl) return;
-
-  const map = L.map(mapEl, {scrollWheelZoom:false}).setView([-28.2,25.5],5);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-    attribution:'&copy; OpenStreetMap contributors',
-    maxZoom:19
-  }).addTo(map);
-
-  const stops = [
-    {step:1, day:'Days 1–5', title:'Cape Town', lat:-33.9249, lng:18.4241, meta:'Table Mountain · city tour · waterfront', text:'Our base for five days and the beginning of the journey.', color:'#FFB612', url:'/south-africa/cape-town.html'},
-    {step:2, day:'Day 4', title:'Cape Peninsula & Boulders Beach', lat:-34.1972, lng:18.4513, meta:'Cape Point · penguins · Kirstenbosch', text:'A full Cape Peninsula day, including the African penguin colony at Boulders Beach.', color:'#007A4D', url:'/south-africa/cape-town.html'},
-    {step:3, day:'Day 6', title:'St Lucia Estuary', lat:-28.3775, lng:32.4107, meta:'KwaZulu-Natal', text:'A wildlife cruise through the iSimangaliso Wetland Park area, with hippos and crocodiles among the highlights.', color:'#FFB612', url:'/south-africa/kwazulu-natal.html'},
-    {step:4, day:'Day 7', title:'Hluhluwe–iMfolozi', lat:-28.2198, lng:31.9519, meta:'Game drive · KwaZulu-Natal', text:'An early game drive in one of South Africa’s great wildlife reserves.', color:'#FFB612', url:'/south-africa/kwazulu-natal.html'},
-    {step:5, day:'Day 7', title:'KwaZulu-Natal school visit', lat:-28.25, lng:31.95, meta:'Community visit', text:'We spent time interacting and playing with children at a local school — one of the personal memories that stayed with us.', color:'#DE3831', url:'/south-africa/kwazulu-natal.html'},
-    {step:6, day:'Day 8', title:'Eswatini', lat:-26.3054, lng:31.1367, meta:'Ngwenya Glass · Matsamo Cultural Village', text:'We crossed into the Kingdom of Eswatini for cultural visits and a completely different chapter of the journey.', color:'#DE3831', url:'/eswatini.html'},
-    {step:7, day:'Day 9', title:'Kruger National Park', lat:-24.0, lng:31.5, meta:'Full-day safari', text:'A full day in an open safari vehicle, watching the bush come alive around us.', color:'#FFB612', url:'/south-africa/kruger-national-park.html'},
-    {step:8, day:'Day 10', title:'Panorama Route', lat:-24.8769, lng:30.8882, meta:"God’s Window · Blyde River Canyon · Bourke’s Luck Potholes", text:'A spectacular scenic day through Mpumalanga before continuing towards Johannesburg.', color:'#007A4D', url:'/south-africa/panorama-route.html'},
-    {step:9, day:'Days 11–12', title:'Johannesburg & Soweto', lat:-26.2485, lng:27.8540, meta:'Soweto · Vilakazi Street · Apartheid Museum', text:'Our final chapter brought us face to face with some of the most important places in South Africa’s modern history.', color:'#DE3831', url:'/south-africa/johannesburg.html'}
-  ];
-
-  function icon(color){
-    return L.divIcon({
-      className:'',
-      html:'<div style="background:'+color+';width:26px;height:26px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(26,18,8,.28)"></div>',
-      iconSize:[26,26], iconAnchor:[13,13], popupAnchor:[0,-12]
-    });
-  }
-
-  stops.forEach(s=>{
-    const marker=L.marker([s.lat,s.lng],{icon:icon(s.color)}).addTo(map);
-    marker.bindPopup(
-      '<div class="mapPopup">'+
-      '<div class="mapPopupStep">Stop '+s.step+' · '+s.day+'</div>'+
-      '<div class="mapPopupTitle">'+s.title+'</div>'+
-      '<div class="mapPopupMeta">'+s.meta+'</div>'+
-      '<div class="mapPopupText">'+s.text+'</div>'+
-      '<a class="mapPopupLink" href="'+s.url+'">Explore this stop →</a>'+
-      '</div>', {maxWidth:270}
-    );
-  });
-
-  const route = L.polyline(stops.map(s=>[s.lat,s.lng]),{
-    color:'#007A4D',weight:3,opacity:.55,dashArray:'8,6',lineCap:'round',lineJoin:'round'
-  }).addTo(map);
-
-  map.fitBounds(route.getBounds(),{padding:[35,35]});
-
-  /* Leaflet maps embedded in responsive cards occasionally need a resize
-     pass after layout settles. */
-  setTimeout(()=>map.invalidateSize(),250);
-})();
-</script>
-
 </body>
 </html>

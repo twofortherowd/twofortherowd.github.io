@@ -194,7 +194,7 @@
     a { color: inherit; }
     strong { font-weight: 700; }
 
-    .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 60px; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px 60px; }
 
     .backBar {
       background: rgba(253,248,239,.95);
@@ -303,11 +303,6 @@
     }
     .photo-grid-2 img:hover, .photo-grid-3 img:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 
-    /* Keep the people in zanz6 framed properly inside the 4:3 gallery crop */
-    .photo-grid-3 img.zanz-local-photo {
-      object-position: center 20%;
-    }
-
     .gygWidgetWrap { margin-top: 14px; padding: 10px; border-radius: 14px; background: rgba(255,255,255,.55); border: 1px solid var(--border); overflow: hidden; }
 
     .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 10px; }
@@ -361,7 +356,156 @@
       .route-strip { justify-content: center; }
       .explore-grid { grid-template-columns: 1fr; }
     }
-  </style>
+  
+    /* 2026 PRO EDITORIAL REFRESH */
+    .zanzibarHero{
+      min-height:560px;
+      border-radius:28px;
+      padding:48px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      color:#fff;
+      margin-bottom:20px;
+      box-shadow:var(--shadow-lg);
+      border:1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(90deg,rgba(15,25,24,.87),rgba(15,25,24,.60) 58%,rgba(15,25,24,.22)),
+        radial-gradient(circle at 84% 18%,rgba(255,216,74,.10),transparent 34%),
+        url('/img/zanz2.jpg') center/cover no-repeat,
+        linear-gradient(135deg,#0d5e5b,#b8753b);
+    }
+    .zanzibarHero h1{
+      color:#fff;
+      font-size:clamp(2.9rem,6vw,5.2rem);
+      line-height:1.01;
+      letter-spacing:-.04em;
+      text-shadow:0 3px 18px rgba(0,0,0,.32);
+    }
+    .zanzibarHero h1 em{color:#ffd84a;}
+    .zanzibarHero .hero-lead{
+      color:rgba(255,255,255,.95);
+      max-width:790px;
+      text-shadow:0 2px 10px rgba(0,0,0,.25);
+    }
+    .zanzibarHero .badge,
+    .zanzibarHero .badge.outline,
+    .zanzibarHero .badge.green,
+    .zanzibarHero .badge.gold,
+    .zanzibarHero .badge.blue{
+      background:rgba(255,255,255,.11);
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+      backdrop-filter:blur(5px);
+    }
+    .zanzibarHero .quote-block{
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.20);
+      color:rgba(255,255,255,.96);
+      backdrop-filter:blur(5px);
+    }
+    .zanzibarHero .route-stop,
+    .zanzibarHero .state-pill,
+    .zanzibarHero .tag{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.20);
+    }
+    .zanzibarHero .route-arrow{color:rgba(255,255,255,.62);}
+    .zanzibarHero .btn-primary,
+    .zanzibarHero .btn-gold{
+      background:#ffd84a;
+      color:#211a10;
+      border-color:#ffd84a;
+    }
+    .zanzibarHero .btn-outline{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
+    }
+
+    .card{border-radius:22px;}
+    .section-divider{margin-top:46px;}
+    .section-divider::before{display:none;}
+    .section-divider::after{
+      background:linear-gradient(90deg,rgba(80,110,95,.38),transparent);
+      height:2px;
+    }
+    .photo-grid-2 img,.photo-grid-3 img,.photo-grid-4 img,.photoStripImg{
+      border-radius:16px;
+    }
+    .highlight-item{
+      border-radius:16px;
+      box-shadow:var(--shadow-sm);
+    }
+    .proFinal{
+      background:linear-gradient(135deg,#0d5e5b,#b8753b);
+      color:#fff;
+      border-radius:26px;
+      padding:36px;
+      text-align:center;
+      box-shadow:var(--shadow-lg);
+      margin-top:30px;
+    }
+    .proFinal h2{color:#fff;}
+    .proFinal p{color:rgba(255,255,255,.86)!important;}
+    .proFinal .btn-outline{
+      color:#fff;border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.08);
+    }
+    @media(max-width:700px){
+      .zanzibarHero{min-height:500px;padding:30px 22px;border-radius:22px;}
+      .zanzibarHero h1{font-size:3rem;}
+    }
+    
+
+    /* HERO PILL / TAB READABILITY FIX — Two for the Row'd */
+    .route-stop,
+    .state-pill,
+    .tagRow .tag{
+      background:rgba(255,255,255,.94) !important;
+      color:#1b1813 !important;
+      border:1px solid rgba(255,255,255,.78) !important;
+      box-shadow:0 2px 9px rgba(0,0,0,.16) !important;
+      text-shadow:none !important;
+      backdrop-filter:blur(4px);
+    }
+    .route-stop a,
+    .state-pill a,
+    .tagRow .tag a{
+      color:#1b1813 !important;
+      text-decoration:none;
+    }
+    .route-arrow{
+      color:rgba(255,255,255,.92) !important;
+      text-shadow:0 1px 4px rgba(0,0,0,.45);
+    }
+    .heroCard .states-strip,
+    .proHero .states-strip,
+    .cphHero .states-strip,
+    .eswHero .states-strip,
+    .southAfricaHero .states-strip,
+    .zanzibarHero .states-strip,
+    .dubaiHero .states-strip,
+    .polandHero .states-strip,
+    .bucharestHero .states-strip,
+    .italyHero .states-strip{
+      gap:8px !important;
+    }
+    .heroCard > p[style*="text-transform:uppercase"],
+    .proHero > p[style*="text-transform:uppercase"],
+    .cphHero > p[style*="text-transform:uppercase"],
+    .eswHero > p[style*="text-transform:uppercase"],
+    .southAfricaHero > p[style*="text-transform:uppercase"],
+    .zanzibarHero > p[style*="text-transform:uppercase"],
+    .dubaiHero > p[style*="text-transform:uppercase"],
+    .polandHero > p[style*="text-transform:uppercase"],
+    .bucharestHero > p[style*="text-transform:uppercase"],
+    .italyHero > p[style*="text-transform:uppercase"]{
+      color:#fff !important;
+      text-shadow:0 2px 6px rgba(0,0,0,.55);
+    }
+
+</style>
 </head>
 
 <body>
@@ -376,13 +520,13 @@
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="https://twofortherowd.com/">Home</a>
       <span>›</span>
-      <a href="https://twofortherowd.com/#map">Our Destinations</a>
+      <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
       <span>›</span>
       <span>Zanzibar</span>
     </nav>
 
     <!-- ── HERO ──────────────────────────────────────────── -->
-    <div class="card heroCard">
+    <div class="zanzibarHero">
       <div class="eyebrow">
         <span class="badge">🇹🇿 Tanzania</span>
         <span class="badge outline">Stone Town · Prison Island · Spice Island</span>
@@ -398,10 +542,10 @@
       </p>
 
       <div class="links">
-        <a class="btn-primary" href="https://www.tourradar.com/t/273425?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/273425?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
           Book a Zanzibar tour on TourRadar →
         </a>
-        <a class="btn-outline" href="https://twofortherowd.com/#map">
+        <a class="btn-outline" href="https://twofortherowd.com/#destinations">
           See all our destinations →
         </a>
       </div>
@@ -492,7 +636,7 @@
         <img src="/img/zanz4.jpg" alt="Carved wooden door Stone Town Zanzibar — Two for the Row'd" loading="lazy">
       </div>
       <div class="photo-grid-3">
-        <img class="zanz-local-photo" src="/img/zanz6.jpg" alt="Photo with local musician in Stone Town, Zanzibar — Two for the Row'd" loading="lazy">
+        <img src="/img/zanz6.jpg" alt="Group photo with local musicians Zanzibar — Two for the Row'd" loading="lazy" style="object-position: center top;">
         <img src="/img/zanz7.jpg" alt="Group selfie on boat pier Zanzibar — Two for the Row'd" loading="lazy" style="object-position: center top;">
         <img src="/img/zanz8.jpg" alt="Boat on water at sunset Zanzibar — Two for the Row'd" loading="lazy">
       </div>
@@ -532,7 +676,7 @@
         tour takes all the logistics stress away so you can just enjoy every moment.
       </p>
       <div class="links">
-        <a class="btn-primary" href="https://www.tourradar.com/t/273425?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/273425?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
           Book a Zanzibar tour on TourRadar →
         </a>
       </div>
@@ -772,7 +916,7 @@
     </div>
 
     <!-- ── FINAL CTA ───────────────────────────────────────── -->
-    <div class="card heroCard" style="text-align:center;">
+    <div class="proFinal">
       <h2 style="text-align:center;">Planning your own Zanzibar trip?</h2>
       <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">
         Zanzibar is one of the most extraordinary islands on earth — combine it with a Tanzania
@@ -780,7 +924,7 @@
         on you. Bring cash, embrace the chaos and fall in love with it.
       </p>
       <div class="links" style="justify-content:center;">
-        <a class="btn-primary" href="https://www.tourradar.com/t/273425?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <a class="btn-primary" href="https://www.tourradar.com/t/273425?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
           Book a Zanzibar tour on TourRadar →
         </a>
         <a class="btn-gold" href="https://www.getyourguide.com/zanzibar-l871/" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">
@@ -802,7 +946,7 @@
     <p>
       © <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp;
       <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp;
-      <a href="https://twofortherowd.com/#map">Our destinations</a> &nbsp;•&nbsp;
+      <a href="https://twofortherowd.com/#destinations">Our destinations</a> &nbsp;•&nbsp;
       <a href="https://twofortherowd.com/#gyg">More GetYourGuide picks</a>
     </p>
   </footer>

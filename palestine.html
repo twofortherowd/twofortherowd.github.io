@@ -16,6 +16,54 @@
 <style>
 :root{--ink:#1c1712;--soft:#51493f;--muted:#7b7368;--cream:#faf6ed;--green:#137a45;--red:#c62d3b;--gold:#e4be62;--border:rgba(28,23,18,.11);--shadow:0 15px 42px rgba(28,23,18,.12);--display:'Playfair Display',Georgia,serif;--body:'DM Sans',Arial,sans-serif}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.72 var(--body)}a{color:inherit}.top{position:sticky;top:0;z-index:20;padding:10px 16px;background:rgba(250,246,237,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;justify-content:space-between}.top a{text-decoration:none;font-weight:800}.wrap{max-width:980px;margin:auto;padding:16px 16px 60px}.crumb{font-size:12px;color:var(--muted);margin:4px 0 16px}.hero{min-height:560px;border-radius:28px;padding:48px;display:flex;align-items:flex-end;color:#fff;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(90deg,rgba(18,30,23,.88),rgba(18,30,23,.60) 58%,rgba(18,30,23,.20)),radial-gradient(circle at 84% 16%,rgba(228,190,98,.12),transparent 34%),url('/img/israel13.jpeg') center/cover no-repeat,linear-gradient(135deg,#123e2c,#6b302f)}.hero h1{font:800 clamp(3rem,7vw,5.2rem)/1 var(--display);letter-spacing:-.04em;margin:10px 0 16px;text-shadow:0 3px 16px rgba(0,0,0,.30)}.hero h1 em{display:block;color:#f1d37e;font-size:.48em;margin-top:10px}.hero p{max-width:760px;color:rgba(255,255,255,.94);font-size:1.04rem}.pill{display:inline-block;padding:6px 11px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.10);border-radius:999px;font-weight:800;font-size:12px;margin:0 5px 6px 0}.section{margin:48px 0 15px}.section small{display:block;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}h2{font:800 clamp(2rem,4vw,2.9rem)/1.12 var(--display);margin:4px 0 8px}.card{background:#fff;border:1px solid var(--border);border-radius:24px;padding:28px;box-shadow:0 10px 30px rgba(28,23,18,.08);margin-bottom:18px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mini{padding:16px;border-radius:16px;background:#fffaf3;border:1px solid var(--border)}.photos{display:grid;grid-template-columns:1.3fr 1fr;gap:10px}.photos img{width:100%;height:360px;object-fit:cover;border-radius:18px}.quote{font:600 1.7rem/1.2 'Caveat',cursive;color:var(--green);margin:10px 0 18px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.btn{padding:12px 18px;border-radius:11px;text-decoration:none;font-weight:800}.btn.green{background:var(--green);color:#fff}.btn.gold{background:var(--gold);color:#211a10}.notice{background:#fff0e8;border:1px solid rgba(198,45,59,.18);border-left:5px solid var(--red)}.gyg{padding:12px;background:#fff;border-radius:18px;border:1px solid var(--border)}.final{background:linear-gradient(135deg,#113f2d,#7b302f);color:#fff;border-radius:26px;padding:34px;text-align:center;box-shadow:var(--shadow)}.final h2{color:#fff}.final p{max-width:620px;margin:0 auto 18px;color:rgba(255,255,255,.85)}@media(max-width:700px){.hero{min-height:500px;padding:30px 22px}.grid{grid-template-columns:1fr}.photos{grid-template-columns:1fr}.photos img{height:280px}}
+
+    /* HERO PILL / TAB READABILITY FIX — Two for the Row'd */
+    .route-stop,
+    .state-pill,
+    .tagRow .tag{
+      background:rgba(255,255,255,.94) !important;
+      color:#1b1813 !important;
+      border:1px solid rgba(255,255,255,.78) !important;
+      box-shadow:0 2px 9px rgba(0,0,0,.16) !important;
+      text-shadow:none !important;
+      backdrop-filter:blur(4px);
+    }
+    .route-stop a,
+    .state-pill a,
+    .tagRow .tag a{
+      color:#1b1813 !important;
+      text-decoration:none;
+    }
+    .route-arrow{
+      color:rgba(255,255,255,.92) !important;
+      text-shadow:0 1px 4px rgba(0,0,0,.45);
+    }
+    .heroCard .states-strip,
+    .proHero .states-strip,
+    .cphHero .states-strip,
+    .eswHero .states-strip,
+    .southAfricaHero .states-strip,
+    .zanzibarHero .states-strip,
+    .dubaiHero .states-strip,
+    .polandHero .states-strip,
+    .bucharestHero .states-strip,
+    .italyHero .states-strip{
+      gap:8px !important;
+    }
+    .heroCard > p[style*="text-transform:uppercase"],
+    .proHero > p[style*="text-transform:uppercase"],
+    .cphHero > p[style*="text-transform:uppercase"],
+    .eswHero > p[style*="text-transform:uppercase"],
+    .southAfricaHero > p[style*="text-transform:uppercase"],
+    .zanzibarHero > p[style*="text-transform:uppercase"],
+    .dubaiHero > p[style*="text-transform:uppercase"],
+    .polandHero > p[style*="text-transform:uppercase"],
+    .bucharestHero > p[style*="text-transform:uppercase"],
+    .italyHero > p[style*="text-transform:uppercase"]{
+      color:#fff !important;
+      text-shadow:0 2px 6px rgba(0,0,0,.55);
+    }
+
 </style></head><body>
 <div class="top"><a href="/">← Two for the Row'd</a><a href="/#destinations">Destinations</a></div>
 <main class="wrap"><div class="crumb"><a href="/">Home</a> › <a href="/#destinations">Destinations</a> › Palestine</div>
