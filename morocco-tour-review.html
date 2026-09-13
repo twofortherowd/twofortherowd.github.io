@@ -73,7 +73,7 @@
     a{color:inherit;}strong{font-weight:700;}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 
-    .wrap{max-width:900px;margin:0 auto;padding:0 16px 60px;}
+    .wrap{max-width:980px;margin:0 auto;padding:0 16px 60px;}
 
     /* TOP BAR */
     .backBar{background:rgba(253,248,239,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:50;}
@@ -83,7 +83,7 @@
 
     /* STICKY CHAPTER NAV */
     .chapterNav{position:sticky;top:52px;z-index:40;background:rgba(253,248,239,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:8px 0;}
-    .chapterNavInner{max-width:900px;margin:0 auto;padding:0 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;}
+    .chapterNavInner{max-width:980px;margin:0 auto;padding:0 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;}
     .chapterNavInner::-webkit-scrollbar{display:none;}
     .chapterNavInner a{flex-shrink:0;padding:6px 12px;font-size:12px;font-weight:700;text-decoration:none;color:var(--ink-soft);border-radius:999px;border:1px solid transparent;transition:all .15s ease;letter-spacing:.02em;}
     .chapterNavInner a:hover{background:var(--white);border-color:var(--border);color:var(--ink);}
@@ -225,6 +225,227 @@
       .videoGrid{grid-template-columns:1fr;}
       .chapterHeaderInner{gap:10px;}
     }
+
+    /* ─────────────────────────────────────────────
+       MOROCCO TOUR REVIEW — 2026 editorial polish
+    ────────────────────────────────────────────── */
+    .hero{
+      min-height:560px;
+      display:flex;
+      align-items:flex-end;
+      padding:48px;
+      color:#fff;
+      background:
+        radial-gradient(circle at 84% 16%,rgba(255,216,74,.18),transparent 34%),
+        radial-gradient(circle at 10% 90%,rgba(192,85,43,.25),transparent 38%),
+        linear-gradient(135deg,#4f1716 0%,#8f2c25 42%,#c36a34 72%,#b8780a 100%);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:30px;
+      box-shadow:var(--shadow-xl);
+      margin-bottom:22px;
+    }
+    .hero::before,.hero::after{display:none;}
+    .hero h1,.hero .hero-headline{color:#fff;}
+    .hero .hero-headline{
+      font-size:clamp(2.7rem,6vw,5rem);
+      line-height:1.01;
+      letter-spacing:-.04em;
+      max-width:820px;
+      margin-bottom:17px;
+    }
+    .hero .hero-headline em{
+      display:block;
+      color:#ffd84a;
+      font-size:.48em;
+      line-height:1.12;
+      margin-top:10px;
+    }
+    .hero .hero-lead{
+      color:rgba(255,255,255,.90);
+      max-width:760px;
+      font-size:1rem;
+    }
+    .hero .badge.outline,
+    .hero .badge.sand{
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.24);
+      color:#fff;
+    }
+    .hero .badge{box-shadow:none;}
+    .hero .statsStrip{
+      background:rgba(255,255,255,.09);
+      border-color:rgba(255,255,255,.17);
+      backdrop-filter:blur(8px);
+    }
+    .hero .statNum{color:#ffd84a;}
+    .hero .statLabel{color:rgba(255,255,255,.77);}
+    .hero .route-strip{
+      background:rgba(255,255,255,.09);
+      border-color:rgba(255,255,255,.16);
+    }
+    .hero .route-stop{
+      color:#fff;
+      background:rgba(255,255,255,.11);
+      border-color:rgba(255,255,255,.18);
+      box-shadow:none;
+    }
+    .hero .route-arrow{color:rgba(255,255,255,.62);}
+    .hero .btn-primary{
+      background:#fff;
+      color:#65201b;
+      border-color:#fff;
+    }
+    .hero .btn-outline{
+      color:#fff;
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.26);
+    }
+    .hero .tag{
+      color:#fff;
+      background:rgba(255,255,255,.09);
+      border-color:rgba(255,255,255,.17);
+    }
+
+    .chapterNav{
+      background:rgba(253,248,239,.91);
+      box-shadow:0 5px 20px rgba(26,18,8,.05);
+    }
+
+    .chapterHeader{
+      margin:54px 0 18px;
+    }
+    .chapterHeaderInner{
+      align-items:center;
+      gap:16px;
+      padding:0 0 15px;
+      border-bottom:1px solid rgba(26,18,8,.16);
+    }
+    .chapterNumber{
+      display:grid;
+      place-items:center;
+      width:58px;
+      height:58px;
+      flex:0 0 58px;
+      border-radius:18px;
+      color:#fff;
+      background:linear-gradient(135deg,#b8780a,#c0552b);
+      font-size:1.45rem;
+      line-height:1;
+      font-style:normal;
+      box-shadow:0 8px 20px rgba(192,85,43,.18);
+    }
+    .chapterLabel{color:var(--terracotta);}
+    .chapterName{
+      font-size:clamp(1.55rem,3vw,2.05rem);
+    }
+
+    .card{
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(26,18,8,.075);
+    }
+    .card:hover{
+      transform:none;
+      box-shadow:0 10px 30px rgba(26,18,8,.075);
+    }
+
+    .diary-block{
+      background:linear-gradient(145deg,#fffdf9,#fff8eb);
+      border:1px solid rgba(184,120,10,.16);
+      border-left:5px solid var(--terracotta);
+      border-radius:0 18px 18px 0;
+      padding:22px 24px;
+      box-shadow:0 6px 18px rgba(26,18,8,.04);
+    }
+    .diary-label{
+      color:var(--terracotta);
+      letter-spacing:.11em;
+    }
+
+    .quote-block{
+      background:linear-gradient(135deg,rgba(255,216,74,.15),rgba(192,85,43,.06));
+      border-left-color:var(--terracotta);
+      border-radius:0 16px 16px 0;
+    }
+
+    .tip-box,.fun-box{
+      border-radius:16px;
+    }
+
+    .destGrid{gap:14px;}
+    .nav-tile{
+      padding:20px;
+      border-radius:18px;
+      box-shadow:0 7px 20px rgba(26,18,8,.05);
+    }
+
+    .highlights-grid{
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+    .highlight-item{
+      border-radius:18px;
+      padding:20px;
+      box-shadow:0 7px 20px rgba(26,18,8,.045);
+    }
+
+    .videoGrid{
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+    .videoGrid .card{
+      padding:13px;
+      border-radius:18px;
+      overflow:hidden;
+    }
+    .videoGrid .card h3{
+      font-size:13.5px;
+      margin:0 0 10px;
+    }
+    .iframeWrap{
+      border-radius:13px;
+      box-shadow:none;
+    }
+
+    .videoGroupLabel{
+      background:transparent;
+      border:none;
+      box-shadow:none;
+      padding:18px 4px 8px;
+      margin:22px 0 4px;
+    }
+    .videoGroupLabel h3{
+      color:var(--terracotta);
+      font-size:11px;
+      letter-spacing:.13em;
+    }
+
+    #book + .card,
+    #book ~ .goldCard{
+      border-radius:24px;
+    }
+
+    .goldCard{
+      background:linear-gradient(135deg,#ffd84a 0%,#ffe99c 100%);
+      border-radius:26px;
+      box-shadow:0 14px 36px rgba(232,194,53,.22);
+    }
+
+    .faqItem{padding:18px 0;}
+    .faqQ{font-size:1.05rem;}
+
+    @media(max-width:760px){
+      .hero{
+        min-height:500px;
+        padding:30px 22px;
+        border-radius:22px;
+      }
+      .hero .hero-headline{font-size:3rem;}
+      .highlights-grid{grid-template-columns:1fr;}
+      .chapterNumber{
+        width:48px;height:48px;flex-basis:48px;border-radius:14px;font-size:1.2rem;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -268,7 +489,7 @@
       <span class="badge outline">TourRadar × Morhara Tours</span>
       <span class="badge sand">Marrakech · Atlas Mountains · Sahara</span>
     </div>
-    <h1 class="hero-headline">Morocco —<br><em>mint tea, desert nights and getting wonderfully lost</em></h1>
+    <h1 class="hero-headline">Morocco —<em>mint tea, Atlas roads, desert nights & getting wonderfully lost</em></h1>
     <p class="hero-lead">We booked a multi-day Morocco tour through TourRadar with Morhara Morocco Tours — and what followed was one of the most colourful, chaotic, and genuinely magical trips we've ever done. A medina that swallowed us whole, a drive through the Atlas Mountains that took our breath away (partly the scenery, partly the altitude), a women's argan oil co-op that we're still talking about, and a night in the Sahara under more stars than we knew existed. This is our honest account. In Nicola's words. 😄</p>
 
     <!-- STATS STRIP -->
@@ -309,7 +530,7 @@
     </div>
 
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See the exact tour we booked →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq(\'trackCustom\',\'TourRadarClick\');gtag(\'event\',\'tourradar_click\',{destination:\'Morocco tour 247114\',button_label:this.textContent.trim()});">See the exact tour we booked →</a>
       <a class="btn-outline" href="https://twofortherowd.com/#morocco">Watch our full video series ↓</a>
     </div>
 
@@ -386,7 +607,7 @@
     <div class="tip-box">
       <p class="tip-title">💡 Nicola's top tip for Marrakech</p>
       <p>Book a guided walking tour before you do anything else. We did ours with Ali from Get Marrakech and it completely changed how we saw the city. Without a guide, the medina will eat you alive — with one, it's the most fascinating place you'll ever walk through.</p>
-      <div class="links"><a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book the Marrakech walking tour with Ali →</a></div>
+      <div class="links"><a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq(\'trackCustom\',\'TourRadarClick\');gtag(\'event\',\'tourradar_click\',{destination:\'Marrakech walking tour 302623\',button_label:this.textContent.trim()});">Book the Marrakech walking tour with Ali →</a></div>
     </div>
   </div>
 
@@ -627,8 +848,8 @@
     <h2>The Morocco tour we booked — through TourRadar with Morhara Tours</h2>
     <p>You've now seen what the trip was actually like for us — Marrakech, the Atlas Mountains, the co-operatives, the Sahara and everything in between. If you'd like to follow a similar route, these are the two tours we personally booked and would recommend.</p>
     <div class="links">
-      <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See the multi-day Morocco tour →</a>
-      <a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">See the Marrakech walking tour with Ali →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq(\'trackCustom\',\'TourRadarClick\');gtag(\'event\',\'tourradar_click\',{destination:\'Morocco tour 247114\',button_label:this.textContent.trim()});">See the multi-day Morocco tour →</a>
+      <a class="btn-gold" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq(\'trackCustom\',\'TourRadarClick\');gtag(\'event\',\'tourradar_click\',{destination:\'Marrakech walking tour 302623\',button_label:this.textContent.trim()});">See the Marrakech walking tour with Ali →</a>
     </div>
     <p class="disclosure"><strong>Disclosure:</strong> Both are affiliate links. If you book through them we may earn a small commission at no extra cost to you. We only recommend tours we've actually done ourselves.</p>
   </div>
@@ -639,8 +860,8 @@
     <h2 style="text-align:center;color:var(--ink);">Ready to book your Morocco trip?</h2>
     <p style="text-align:center;color:var(--ink-soft);max-width:540px;margin:0 auto 20px;">Whether you want the full multi-day experience including the Sahara, or just a brilliant few days exploring Marrakech properly — both tours are through TourRadar and both come with our genuine, personal recommendation.</p>
     <div class="links" style="justify-content:center;">
-      <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">See the exact Morocco tour we did →</a>
-      <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Book the Marrakech walking tour →</a>
+      <a class="btn-primary" href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&utm_medium=tourradar_web&utm_campaign=share_tdp" target="_blank" rel="noopener sponsored" onclick="fbq(\'trackCustom\',\'TourRadarClick\');gtag(\'event\',\'tourradar_click\',{destination:\'Morocco tour 247114\',button_label:this.textContent.trim()});">See the exact Morocco tour we did →</a>
+      <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://www.tourradar.com/t/302623?utm_source=partner-traveller-&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq(\'trackCustom\',\'TourRadarClick\');gtag(\'event\',\'tourradar_click\',{destination:\'Marrakech walking tour 302623\',button_label:this.textContent.trim()});">Book the Marrakech walking tour →</a>
       <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://twofortherowd.com/avis-circuit-maroc.html">🇫🇷 Lire l'avis en français →</a>
       <a class="btn-outline" style="background:rgba(255,255,255,.8);" href="https://twofortherowd.com/#morocco">Watch our full video series first →</a>
     </div>
