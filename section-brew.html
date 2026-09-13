@@ -1,221 +1,560 @@
-<h1 class="pageTitle">Brew for Two ☕ — Best Gluten-Free Friendly Cafés in Carlow, Laois &amp; Kilkenny</h1>
 
 <style>
-  .brew-verdict{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;background:rgba(255,255,255,.8);border:1px solid var(--border);}
-  .brew-verdict.gf{background:rgba(45,106,79,.08);border-color:rgba(45,106,79,.2);color:#1e4d38;}
-  .brew-verdict.stars{color:#b8780a;}
-  .brew-meta{font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:8px;}
-  .brew-answer{font-size:13.5px;line-height:1.6;color:var(--ink-soft, #444);margin:0 0 10px;}
-  .lastUpdated{font-size:12px;color:var(--muted);text-align:center;max-width:880px;margin:0 auto 10px;}
-  .brewGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:880px;margin:0 auto 16px;}
-  .brewGrid .card{margin:0;display:flex;flex-direction:column;}
-  .brewGrid .iframeWrap{
+  /* ─────────────────────────────────────────────
+     BREW FOR TWO — editorial refresh
+     Scoped to #brew-page to avoid affecting other tabs
+  ────────────────────────────────────────────── */
+  #brew-page{
+    --brew-espresso:#2a1b14;
+    --brew-coffee:#6f4126;
+    --brew-caramel:#b9753e;
+    --brew-latte:#ead7bd;
+    --brew-cream:#fffaf2;
+    --brew-green:#2f6a4f;
+    --brew-ink:#251b16;
+    --brew-soft:#6d5c50;
+    --brew-border:rgba(42,27,20,.12);
+    --brew-shadow:0 14px 38px rgba(68,41,25,.10);
+  }
+
+  #brew-page .brew-wrap{max-width:960px;margin:0 auto;}
+
+  #brew-page .brew-hero{
+    min-height:430px;
+    border-radius:26px;
+    padding:42px;
+    display:flex;
+    align-items:flex-end;
+    color:#fff;
+    background:
+      radial-gradient(circle at 85% 15%,rgba(233,191,137,.22),transparent 35%),
+      linear-gradient(135deg,#2a1b14 0%,#5d3824 58%,#8d5a35 100%);
+    box-shadow:var(--brew-shadow);
+    border:1px solid rgba(255,255,255,.08);
+    overflow:hidden;
+    margin-bottom:18px;
+  }
+
+  #brew-page .brew-hero-inner{max-width:730px}
+
+  #brew-page .brew-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:999px;
+    padding:7px 12px;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    margin-bottom:15px;
+  }
+
+  #brew-page .brew-hero h1{
+    color:#fff;
+    font-size:clamp(2.4rem,6vw,4.6rem);
+    line-height:1.02;
+    letter-spacing:-.035em;
+    margin:0 0 14px;
+  }
+
+  #brew-page .brew-hero h1 em{
+    display:block;
+    color:#f3d39e;
+    font-size:.48em;
+    margin-top:10px;
+  }
+
+  #brew-page .brew-hero p{
+    max-width:700px;
+    color:rgba(255,255,255,.90);
+    font-size:1rem;
+    margin-bottom:0;
+  }
+
+  #brew-page .brew-proof{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin:0 0 26px;
+  }
+
+  #brew-page .proof{
+    background:#fff;
+    border:1px solid var(--brew-border);
+    border-radius:17px;
+    padding:18px;
+    box-shadow:0 6px 20px rgba(68,41,25,.06);
+  }
+
+  #brew-page .proof strong{
+    display:block;
+    font-family:var(--font-display);
+    font-size:1.25rem;
+    color:var(--brew-coffee);
+    margin-bottom:3px;
+  }
+
+  #brew-page .proof span{font-size:12px;color:var(--brew-soft)}
+
+  #brew-page .brew-section{
+    margin:44px 0 16px;
+  }
+
+  #brew-page .brew-eyebrow{
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--brew-caramel);
+    margin-bottom:6px;
+  }
+
+  #brew-page .brew-section h2{
+    font-size:clamp(1.8rem,4vw,2.8rem);
+    margin-bottom:8px;
+  }
+
+  #brew-page .brew-section p{
+    color:var(--brew-soft);
+    max-width:720px;
+  }
+
+  #brew-page .quick-picks{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:13px;
+  }
+
+  #brew-page .pick{
+    background:linear-gradient(145deg,#fffdf9,#f8efe3);
+    border:1px solid var(--brew-border);
+    border-radius:18px;
+    padding:21px;
+    box-shadow:0 7px 22px rgba(68,41,25,.06);
+  }
+
+  #brew-page .pick .icon{font-size:26px;margin-bottom:8px}
+  #brew-page .pick strong{display:block;font-size:14px;margin-bottom:4px}
+  #brew-page .pick p{font-size:13px;color:var(--brew-soft);margin:0}
+
+  #brew-page .brew-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+  }
+
+  #brew-page .brew-card{
+    background:#fff;
+    border:1px solid var(--brew-border);
+    border-radius:20px;
+    box-shadow:var(--brew-shadow);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+
+  #brew-page .brew-video{
     position:relative;
     width:100%;
-    padding-top:56.25%; /* 16:9 aspect ratio */
-    height:0;
+    aspect-ratio:16/9;
+    background:#1a120e;
     overflow:hidden;
-    border-radius:8px;
   }
-  .brewGrid .iframeWrap iframe{
+
+  #brew-page .brew-video iframe{
     position:absolute;
-    top:0;
-    left:0;
+    inset:0;
     width:100%;
     height:100%;
     border:0;
   }
-  @media(max-width:680px){
-    .brewGrid{grid-template-columns:1fr!important;gap:10px;}
+
+  #brew-page .brew-card-body{
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+
+  #brew-page .brew-place{
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.09em;
+    color:var(--brew-caramel);
+    margin-bottom:7px;
+  }
+
+  #brew-page .brew-card h3{
+    font-size:1.22rem;
+    margin-bottom:8px;
+  }
+
+  #brew-page .brew-card p{
+    font-size:13.5px;
+    color:var(--brew-soft);
+    margin-bottom:15px;
+  }
+
+  #brew-page .brew-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:auto;
+  }
+
+  #brew-page .brew-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    border-radius:999px;
+    padding:6px 10px;
+    font-size:12px;
+    font-weight:800;
+    border:1px solid var(--brew-border);
+    background:#fffaf4;
+  }
+
+  #brew-page .brew-tag.stars{color:#a46020}
+  #brew-page .brew-tag.gf{
+    color:#1f5a3c;
+    background:rgba(47,106,79,.08);
+    border-color:rgba(47,106,79,.2);
+  }
+
+  #brew-page .abroad-card{
+    background:linear-gradient(145deg,#fffdf9,#f3e4d2);
+  }
+
+  #brew-page .brew-cta{
+    margin-top:32px;
+    border-radius:22px;
+    padding:31px;
+    background:linear-gradient(135deg,#2a1b14,#694127);
+    color:#fff;
+    box-shadow:var(--brew-shadow);
+    text-align:center;
+  }
+
+  #brew-page .brew-cta h2{color:#fff;margin-bottom:7px}
+  #brew-page .brew-cta p{
+    color:rgba(255,255,255,.86);
+    max-width:600px;
+    margin:0 auto 18px;
+  }
+
+  #brew-page .brew-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    padding:12px 18px;
+    border-radius:11px;
+    background:#f1d3a6;
+    color:#2a1b14;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:800;
+  }
+
+  #brew-page .brew-btn:hover{transform:translateY(-2px)}
+
+  #brew-page .updated{
+    text-align:center;
+    color:var(--brew-soft);
+    font-size:12px;
+    margin:14px 0 0;
+  }
+
+  @media(max-width:760px){
+    #brew-page .brew-proof,
+    #brew-page .quick-picks{grid-template-columns:1fr}
+    #brew-page .brew-grid{grid-template-columns:1fr}
+  }
+
+  @media(max-width:560px){
+    #brew-page .brew-hero{
+      min-height:390px;
+      padding:28px 22px;
+      border-radius:20px;
+    }
+    #brew-page .brew-hero h1{font-size:3.05rem}
+    #brew-page .brew-card-body{padding:19px}
   }
 </style>
 
-<p class="lastUpdated">Last updated: 19 July 2026</p>
+<div id="brew-page">
+  <div class="brew-wrap">
 
-<!-- HERO / ANSWER CAPSULE -->
-<div class="card" style="max-width:880px;margin:0 auto 16px;background:linear-gradient(160deg,#ffffff 0%,#fdf3e3 55%,#f5e0c0 100%);border-color:rgba(160,80,20,.2);">
-  <div class="hero-eyebrow">
-    <span class="badge" style="background:#a05014;color:#fff;border-color:#7a3a0a;">☕ Brew for Two</span>
-    <span class="badge outline">12 cafés reviewed</span>
-    <span class="badge outline">🌾 Gluten-free ratings included</span>
+    <div class="brew-hero">
+      <div class="brew-hero-inner">
+        <div class="brew-kicker">☕ Brew for Two · honest café reviews</div>
+        <h1>Brew for Two
+          <em>good coffee, gluten-free treats & the cafés actually worth stopping for</em>
+        </h1>
+        <p>We rate the coffee, the atmosphere and — because Nicola is coeliac — the gluten-free options too. From drive-thrus in Carlow to hidden gems in Laois, garden centres in Kildare and even a medina café in Marrakech, this is the honest version.</p>
+      </div>
+    </div>
+
+    <div class="brew-proof">
+      <div class="proof"><strong>17 cafés</strong><span>reviewed so far</span></div>
+      <div class="proof"><strong>5-star favourites</strong><span>we'd genuinely go back to</span></div>
+      <div class="proof"><strong>GF ratings</strong><span>because “gluten-free” needs proper checking</span></div>
+    </div>
+
+    <div class="brew-section">
+      <div class="brew-eyebrow">Quick picks</div>
+      <h2>If you just want the answer…</h2>
+      <p>These are the places that stand out most from the cafés we've personally reviewed.</p>
+    </div>
+
+    <div class="quick-picks">
+      <div class="pick">
+        <div class="icon">🌾</div>
+        <strong>Best for gluten-free treats</strong>
+        <p>Johnstown Garden Centre, Naas — 5-star coffee plus genuinely good GF options.</p>
+      </div>
+      <div class="pick">
+        <div class="icon">☕</div>
+        <strong>Best coffee in Carlow</strong>
+        <p>The Wandering Donkey — 5/5 coffee and our top town-centre coffee pick.</p>
+      </div>
+      <div class="pick">
+        <div class="icon">🗺️</div>
+        <strong>Best hidden gem</strong>
+        <p>Tower and Bean, Timahoe — the kind of little stop you remember afterwards.</p>
+      </div>
+    </div>
+
+    <div class="brew-section">
+      <div class="brew-eyebrow">Ireland</div>
+      <h2>Carlow, Laois, Kildare, Kilkenny, Wexford & beyond</h2>
+      <p>Every café below is somewhere we've actually stopped, ordered and reviewed ourselves.</p>
+    </div>
+
+    <div class="brew-grid">
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/LJuH3nCk-wo" title="Xpresso Drive Thru Carlow" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Carlow Town</div>
+          <h3>Xpresso Drive Thru</h3>
+          <p>One of our top picks for genuinely good gluten-free treats and a very handy stop if you're passing through Carlow.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕☕ Coffee</span><span class="brew-tag gf">🌾 GF options</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/tVcyL096Tt0" title="Stradbally Fayre Laois" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Stradbally · Co. Laois</div>
+          <h3>Stradbally Fayre</h3>
+          <p>A full 5-star coffee rating plus gluten-free treats — an easy recommendation if you're around Stradbally.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕☕☕ Coffee</span><span class="brew-tag gf">🌾 GF options</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/l-8KEQGANAM" title="The Wandering Elk Portlaoise" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Portlaoise · Co. Laois</div>
+          <h3>The Wandering Elk</h3>
+          <p>A 5-star coffee stop with gluten-free options and one of our strongest recommendations in Laois.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕☕☕ Coffee</span><span class="brew-tag gf">🌾 GF options</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/55HaqI-MEwY" title="The Wandering Donkey Carlow" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Carlow Town</div>
+          <h3>The Wandering Donkey</h3>
+          <p>Our top coffee recommendation in Carlow town. Five stars for the coffee, though it's not the strongest option if you need GF treats.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕☕☕ Coffee</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/NlIOzfw6ISQ" title="Bewley's Barack Obama Plaza" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Moneygall · Co. Offaly</div>
+          <h3>Bewley's, Barack Obama Plaza</h3>
+          <p>Useful for a motorway stop with gluten-free options, though the coffee lands at 3/5 compared with some of the independents here.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕ Coffee</span><span class="brew-tag gf">🌾 GF options</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/ZNh8SdVvDIw" title="Rath's Carlow" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Carlow Town</div>
+          <h3>Rath's</h3>
+          <p>A reliable everyday town-centre option with 4/5 coffee and gluten-free treats available.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕☕ Coffee</span><span class="brew-tag gf">🌾 GF options</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/DXbuO4l9rL0" title="Costa Coffee Portlaoise" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Portlaoise · Co. Laois</div>
+          <h3>Costa Coffee</h3>
+          <p>Three stars for the coffee. We didn't find confirmed gluten-free treat options on our visit, so we'd check ahead if that's important to you.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕ Coffee</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/sI1YIwB4upg" title="Tower and Bean Timahoe" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Timahoe · Co. Laois</div>
+          <h3>Tower and Bean</h3>
+          <p>A proper hidden-gem coffee stop and one of our favourites in Laois. Full 5 stars for the coffee.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕☕☕ Coffee</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/4Qd2pI6f824" title="Third Space Mountain View Markets Kilkenny" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Mountain View Markets · Co. Kilkenny</div>
+          <h3>Third Space</h3>
+          <p>Five-star coffee and a great combined stop with Mountain View Markets, though it wasn't a strong GF-treat option when we visited.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕☕☕ Coffee</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/EL31fuenyd8" title="Johnstown Garden Centre Naas" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Naas · Co. Kildare</div>
+          <h3>Johnstown Garden Centre</h3>
+          <p>One of the best all-round stops we've reviewed: full 5-star coffee and genuinely good gluten-free treats.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕☕☕ Coffee</span><span class="brew-tag gf">🌾 GF options</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/rOzahPzcJjU" title="Shankill Castle Kilkenny" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Paulstown · Co. Kilkenny</div>
+          <h3>Shankill Castle Café</h3>
+          <p>Five-star coffee and a lovely stop to combine with the castle gardens, though not one we'd choose specifically for GF treats.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕☕☕ Coffee</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/qtC6DFnmQ2w" title="Doyle's Parlour Carlow" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Carlow</div>
+          <h3>Doyle's Parlour</h3>
+          <p>A newer Brew for Two stop in Carlow. Watch our short review for the full coffee-and-craic verdict.</p>
+          <div class="brew-tags"><span class="brew-tag">🎥 New review</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/9w-Ju_W591c" title="Wildflower Tea Rooms Kilkenny" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Kilkenny</div>
+          <h3>Wildflower Tea Rooms</h3>
+          <p>A lovely Kilkenny stop now added to Brew for Two. Our short review has the full first-hand verdict.</p>
+          <div class="brew-tags"><span class="brew-tag">🎥 New review</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/sAb0p6ib9co" title="Wells House Wexford" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Co. Wexford</div>
+          <h3>Wells House</h3>
+          <p>One of our Wexford café stops, with the review filmed on location. Watch the short for our take on the coffee stop.</p>
+          <div class="brew-tags"><span class="brew-tag">🎥 New review</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/sIvHfCugCa0" title="Huntington Castle cafe review" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Clonegal · Co. Carlow</div>
+          <h3>Huntington Castle</h3>
+          <p>A castle-and-coffee combination in Clonegal. Our short review covers the stop as part of a day out at Huntington Castle.</p>
+          <div class="brew-tags"><span class="brew-tag">🎥 New review</span></div>
+        </div>
+      </article>
+
+      <article class="brew-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/Qjy7zeq95TU" title="Waterlilies Carlow" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Carlow</div>
+          <h3>Waterlilies</h3>
+          <p>Another Carlow addition to the Brew for Two list. Watch our short review for the full first-hand verdict.</p>
+          <div class="brew-tags"><span class="brew-tag">🎥 New review</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="brew-section">
+      <div class="brew-eyebrow">Further afield</div>
+      <h2>Brew for Two abroad</h2>
+      <p>Because apparently we can't go on holidays without reviewing the coffee either.</p>
+    </div>
+
+    <div class="brew-grid">
+      <article class="brew-card abroad-card">
+        <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/Yf0kLJYxkPs" title="Sand Coffee Marrakech" allowfullscreen></iframe></div>
+        <div class="brew-card-body">
+          <div class="brew-place">Marrakech Medina · Morocco 🇲🇦</div>
+          <h3>Sand Coffee</h3>
+          <p>A standout coffee stop in the medina and a full 5-star rating from us — very welcome after a few hours in the souks.</p>
+          <div class="brew-tags"><span class="brew-tag stars">☕☕☕☕☕ Coffee</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="brew-cta">
+      <h2>Know somewhere we should try next?</h2>
+      <p>We're always looking for brilliant independents, hidden gems and genuinely coeliac-friendly stops. If there's somewhere we need to know about, send it our way.</p>
+      <a class="brew-btn" href="mailto:twofortherowd@gmail.com?subject=Brew%20for%20Two%20Suggestion">📧 Suggest a café →</a>
+    </div>
+
+    <p class="updated">Updated September 2026 · Ratings reflect our own visits and experiences.</p>
+
   </div>
-  <h2 style="margin-bottom:8px;">What's the best café for gluten-free treats near Carlow or Naas?</h2>
-  <p class="brew-answer" style="font-size:14px;">Johnstown Garden Centre (Naas) and Xpresso Drive Thru (Carlow) are our top picks for genuinely good gluten-free treats, both confirmed on-site. We also rate every café for gluten-free options where available, but these two stand out as the best specifically for GF. We personally taste-test the coffee, atmosphere, service, and — because one of us is coeliac — the gluten-free options at every café we review, from small-town Ireland to a medina café in Marrakech.</p>
 </div>
 
-<!-- IRELAND -->
-<p class="section-label" style="max-width:880px;margin:6px auto 10px;">🇮🇪 Ireland: Carlow, Laois &amp; Kilkenny cafés</p>
-<div class="brewGrid">
-
-  <div class="card">
-    <h3>Xpresso Drive Thru, Carlow — is it gluten-free friendly?</h3>
-    <div class="brew-meta">Carlow Town</div>
-    <p class="brew-answer">Xpresso Drive Thru in Carlow Town rates 4/5 for coffee and is one of our top picks for genuinely good gluten-free treats — a great quick stop for coeliac travellers passing through.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/LJuH3nCk-wo" title="Xpresso Drive Thru Carlow" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕☕ Coffee</span>
-      <span class="brew-verdict gf">🌾 GF options</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Stradbally Fayre, Laois — is it gluten-free friendly?</h3>
-    <div class="brew-meta">Stradbally, Co. Laois</div>
-    <p class="brew-answer">Stradbally Fayre earns a full 5-star coffee rating and stocks gluten-free treats, making it one of our top picks for a Laois coffee stop.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/tVcyL096Tt0" title="Stradbally Fayre Laois" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
-      <span class="brew-verdict gf">🌾 GF options</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>The Wandering Elk, Portlaoise — is it gluten-free friendly?</h3>
-    <div class="brew-meta">Portlaoise, Co. Laois</div>
-    <p class="brew-answer">The Wandering Elk in Portlaoise is a 5-star coffee stop with gluten-free options, and one of our most recommended cafés in Co. Laois.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/l-8KEQGANAM" title="The Wandering Elk" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
-      <span class="brew-verdict gf">🌾 GF options</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>The Wandering Donkey, Carlow — is it gluten-free friendly?</h3>
-    <div class="brew-meta">Carlow</div>
-    <p class="brew-answer">The Wandering Donkey in Carlow is a 5-star coffee spot and our top recommendation for coffee in Carlow town, though it's not a strong option if you need gluten-free treats.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/55HaqI-MEwY" title="The Wandering Donkey Carlow" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Bewley's, Barack Obama Plaza — is it gluten-free friendly?</h3>
-    <div class="brew-meta">Moneygall, Co. Offaly</div>
-    <p class="brew-answer">Bewley's at the Barack Obama Plaza in Moneygall rates 3/5 for coffee but does offer gluten-free options, useful for a motorway break on the M7/M8.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/NlIOzfw6ISQ" title="Bewley's Barack Obama Plaza" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕ Coffee</span>
-      <span class="brew-verdict gf">🌾 GF options</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Rath's, Carlow — is it gluten-free friendly?</h3>
-    <div class="brew-meta">Carlow Town</div>
-    <p class="brew-answer">Rath's in Carlow Town rates 4/5 for coffee and stocks gluten-free treats, a reliable everyday option in the town centre.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/ZNh8SdVvDIw" title="Rath's Carlow" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕☕ Coffee</span>
-      <span class="brew-verdict gf">🌾 GF options</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Costa Coffee, Portlaoise — is it gluten-free friendly?</h3>
-    <div class="brew-meta">Portlaoise, Co. Laois</div>
-    <p class="brew-answer">Costa Coffee in Portlaoise rates 3/5 for coffee. We did not find confirmed gluten-free treat options on our visit — worth calling ahead if that matters to you.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/DXbuO4l9rL0" title="Costa Coffee Portlaoise" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕ Coffee</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Tower and Bean, Timahoe — is it gluten-free friendly?</h3>
-    <div class="brew-meta">Timahoe, Co. Laois</div>
-    <p class="brew-answer">Tower and Bean in Timahoe rates a full 5 stars for coffee, making it one of our favourite hidden-gem stops in Laois, though gluten-free treat options were limited on our visit.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/sI1YIwB4upg" title="Tower and Bean Timahoe" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Third Space, Mountain View Markets, Kilkenny — is it gluten-free friendly?</h3>
-    <div class="brew-meta">Mountain View Markets, Co. Kilkenny</div>
-    <p class="brew-answer">Third Space at Mountain View Markets in Kilkenny rates a full 5 stars for coffee, a great combined stop with the market itself, though not the place to go for gluten-free treats.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/4Qd2pI6f824" title="Third Space Mountain View Markets Kilkenny" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Johnstown Garden Centre, Naas — is it gluten-free friendly?</h3>
-    <div class="brew-meta">Naas, Co. Kildare</div>
-    <p class="brew-answer">The café at Johnstown Garden Centre in Naas rates a full 5 stars for coffee and is one of our top picks for genuinely good gluten-free treats — a worthwhile stop in its own right, not just a garden centre extra.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/EL31fuenyd8" title="Johnstown Garden Centre Naas" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
-      <span class="brew-verdict gf">🌾 GF options</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Shankill Castle, Kilkenny — is it gluten-free friendly?</h3>
-    <div class="brew-meta">Paulstown, Co. Kilkenny</div>
-    <p class="brew-answer">The café at Shankill Castle near Paulstown, Co. Kilkenny rates a full 5 stars for coffee and pairs well with a walk through the castle gardens, though it's not a strong pick for gluten-free treats.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/rOzahPzcJjU" title="Shankill Castle Kilkenny" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
-    </div>
-  </div>
-
-</div>
-
-<!-- ABROAD -->
-<p class="section-label" style="max-width:880px;margin:6px auto 10px;">🌍 Further afield: cafés outside Ireland</p>
-<div class="brewGrid">
-
-  <div class="card">
-    <h3>Sand Coffee, Marrakech 🇲🇦 — what's it like?</h3>
-    <div class="brew-meta">Marrakech Medina, Morocco</div>
-    <p class="brew-answer">Sand Coffee in the Marrakech medina rates a full 5 stars for coffee, a standout stop if you're exploring the souks and need a proper coffee break.</p>
-    <div class="iframeWrap"><iframe loading="lazy" src="https://www.youtube.com/embed/Yf0kLJYxkPs" title="Sand Coffee Marrakech" allowfullscreen></iframe></div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-      <span class="brew-verdict stars">☕☕☕☕☕ Coffee</span>
-    </div>
-  </div>
-
-</div>
-
-<!-- BOTTOM CTA -->
-<div class="card" style="max-width:880px;margin:0 auto 16px;background:linear-gradient(160deg,#fdf3e3 0%,#f5e0c0 100%);border-color:rgba(160,80,20,.2);text-align:center;">
-  <h2 style="margin-bottom:6px;">Know a café we should review?</h2>
-  <p style="color:var(--ink-soft);font-size:14px;max-width:500px;margin:0 auto 16px;">We're always on the lookout for the next great coffee stop — hidden gems especially. Drop us a message and tell us where to go.</p>
-  <a class="btn-primary" href="mailto:twofortherowd@gmail.com?subject=Brew%20for%20Two%20Suggestion" style="text-decoration:none;">📧 Suggest a café →</a>
-</div>
-
-<!-- SCHEMA MARKUP FOR AI/SEARCH CRAWLERS -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
     {
-      "@type": "Question",
-      "name": "What's the best gluten-free friendly café in Carlow?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Xpresso Drive Thru in Carlow town is our top pick for genuinely good gluten-free treats, with a 4-star coffee rating and confirmed gluten-free options."
+      "@type":"Question",
+      "name":"What's the best gluten-free friendly café in Carlow?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Xpresso Drive Thru in Carlow town is our top pick for genuinely good gluten-free treats, with a 4-star coffee rating and confirmed gluten-free options."
       }
     },
     {
-      "@type": "Question",
-      "name": "Where can I get good gluten-free treats near Naas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The café at Johnstown Garden Centre in Naas is our top pick for gluten-free treats in the area, with a 5-star coffee rating and confirmed gluten-free options."
+      "@type":"Question",
+      "name":"Where can I get good gluten-free treats near Naas?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"The café at Johnstown Garden Centre in Naas is our top pick for gluten-free treats in the area, with a 5-star coffee rating and confirmed gluten-free options."
       }
     },
     {
-      "@type": "Question",
-      "name": "What's the best café stop between Dublin and Cork on the M8?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bewley's at the Barack Obama Plaza in Moneygall is a convenient motorway café stop, though it rates 3 out of 5 for coffee compared to town-centre alternatives."
+      "@type":"Question",
+      "name":"What's the best café stop between Dublin and Cork on the M8?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Bewley's at the Barack Obama Plaza in Moneygall is a convenient motorway café stop, though it rates 3 out of 5 for coffee compared to town-centre alternatives."
       }
     }
   ]
