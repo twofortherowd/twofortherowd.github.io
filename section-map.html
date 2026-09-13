@@ -1,128 +1,331 @@
 
 <style>
-  /* Small polish only — keep the original Where We've Been design */
-  #map-polish-wrap .mapHeroIntro{
-    max-width:760px;
-    margin:-4px auto 20px;
+  #map-page{
+    --map-green:#123d32;
+    --map-green-2:#2d6a4f;
+    --map-gold:#d9ad45;
+    --map-gold-soft:#f4d984;
+    --map-paper:#fffdf8;
+    --map-ink:#1d2722;
+    --map-soft:#66716b;
+    --map-border:rgba(29,39,34,.11);
+    --map-shadow:0 14px 38px rgba(18,61,50,.08);
+    max-width:960px;
+    margin:0 auto;
   }
 
-  #map-polish-wrap .heroCard{
-    border-radius:20px;
+  #map-page .mapHero{
+    min-height:440px;
+    display:flex;
+    align-items:flex-end;
+    padding:44px;
+    border-radius:26px;
+    color:#fff;
+    margin-bottom:18px;
+    overflow:hidden;
+    background:
+      linear-gradient(90deg,rgba(10,31,26,.84),rgba(10,31,26,.56) 56%,rgba(10,31,26,.20)),
+      radial-gradient(circle at 82% 18%,rgba(244,217,132,.09),transparent 34%),
+      url('/img/mappic.jpg') center/cover no-repeat,
+      linear-gradient(135deg,#123d32 0%,#245c4a 56%,#4b806b 100%);
+    box-shadow:var(--map-shadow);
   }
 
-  #map-polish-wrap .proof-strip{
-    gap:12px;
+  #map-page .mapHeroKicker{
+    display:inline-flex;
+    padding:7px 12px;
+    margin-bottom:15px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.23);
+    background:rgba(255,255,255,.10);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
   }
 
-  #map-polish-wrap .proof-item{
-    padding:10px 6px;
+  #map-page .mapHero h1{
+    color:#fff;
+    font-size:clamp(2.7rem,6vw,5rem);
+    text-shadow:0 3px 16px rgba(0,0,0,.30);
+    line-height:1.02;
+    letter-spacing:-.04em;
+    margin:0 0 14px;
   }
 
-  #map-polish-wrap #tfrMap{
+  #map-page .mapHero h1 em{
+    display:block;
+    margin-top:10px;
+    color:var(--map-gold-soft);
+    font-size:.45em;
+    line-height:1.15;
+  }
+
+  #map-page .mapHero p{
+    max-width:740px;
+    margin:0;
+    color:rgba(255,255,255,.94);
+    text-shadow:0 2px 10px rgba(0,0,0,.24);
+    font-size:1rem;
+  }
+
+  #map-page .mapHeroActions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+  }
+
+  #map-page .mapHeroActions.center{justify-content:center;}
+
+  #map-page .mapBtn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 18px;
+    border-radius:11px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:800;
+    transition:.16s ease;
+  }
+  #map-page .mapBtn:hover{transform:translateY(-2px);}
+  #map-page .mapBtn.gold{background:var(--map-gold-soft);color:#173026;}
+  #map-page .mapBtn.white{background:#fff;color:var(--map-green);}
+
+  #map-page .mapProof{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-bottom:34px;
+  }
+
+  #map-page .mapProofBox{
+    background:#fff;
+    border:1px solid var(--map-border);
+    border-radius:17px;
+    padding:18px;
+    box-shadow:0 6px 20px rgba(18,61,50,.05);
+  }
+
+  #map-page .mapProofBox strong{
+    display:block;
+    font-family:var(--font-display);
+    font-size:1.18rem;
+    color:var(--map-green);
+    margin-bottom:3px;
+  }
+
+  #map-page .mapProofBox span{
+    font-size:12px;
+    color:var(--map-soft);
+  }
+
+  #map-page .mapSectionHead{
+    margin:46px 0 16px;
+  }
+
+  #map-page .mapEyebrow{
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:var(--map-green-2);
+    margin-bottom:6px;
+  }
+
+  #map-page .mapEyebrow.light{color:var(--map-gold-soft);}
+
+  #map-page .mapSectionHead h2{
+    font-size:clamp(1.85rem,4vw,2.8rem);
+    margin-bottom:7px;
+  }
+
+  #map-page .mapSectionHead p{
+    max-width:720px;
+    color:var(--map-soft);
+  }
+
+  #map-page .mapCard{
+    background:#fff;
+    border:1px solid var(--map-border);
+    border-radius:24px;
+    padding:24px;
+    box-shadow:var(--map-shadow);
+  }
+
+  #map-page .mapNote{
+    font-size:13px;
+    color:var(--map-soft);
+    margin-bottom:15px;
+  }
+
+  #map-page #tfrMap{
+    width:100%;
+    border-radius:18px!important;
+    overflow:hidden;
     border:1px solid rgba(26,18,8,.08);
-    box-shadow:0 8px 24px rgba(26,18,8,.06);
+    box-shadow:0 8px 24px rgba(18,61,50,.07);
     background:#d4e8f5;
   }
 
-  #map-polish-wrap #tfrTooltip{
+  #map-page #tfrTooltip{
     display:flex;
     align-items:center;
-    min-height:28px!important;
+    min-height:30px!important;
     font-size:13px!important;
+    padding:5px 2px!important;
   }
 
-  #map-polish-wrap .mapLegend{
+  #map-page .mapLegend{
     display:flex;
-    align-items:center;
     flex-wrap:wrap;
     gap:16px;
-    margin-top:10px;
+    margin-top:8px;
     font-size:12px;
-    color:var(--muted);
+    color:var(--map-soft);
   }
 
-  #map-polish-wrap .mapLegend span{
-    display:inline-flex;
+  #map-page .mapLegend > span{
+    display:inline-flex!important;
     align-items:center;
     gap:6px;
   }
 
-  #map-polish-wrap .countryList{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
-    gap:7px!important;
+  #map-page .countryDirectory{
+    background:#fff;
+    border:1px solid var(--map-border);
+    border-radius:24px;
+    padding:26px;
+    box-shadow:var(--map-shadow);
   }
 
-  #map-polish-wrap .countryList > a{
-    border-radius:10px!important;
-    padding:7px 10px!important;
+  #map-page .countryDirectory h3{
+    font-size:1.25rem;
+    margin-bottom:6px;
+  }
+
+  #map-page .directoryNote{
+    color:var(--map-soft);
+    font-size:13px;
+    margin-bottom:17px;
+  }
+
+  #map-page .directoryNote span{color:var(--muted);}
+
+  #map-page .countryList{
+    display:grid!important;
+    grid-template-columns:repeat(auto-fill,minmax(175px,1fr))!important;
+    gap:8px!important;
+  }
+
+  #map-page .countryList > a{
+    border-radius:11px!important;
+    padding:8px 10px!important;
+    background:linear-gradient(135deg,rgba(255,216,74,.22),rgba(255,244,186,.44))!important;
+    border:1px solid rgba(217,173,69,.42)!important;
     transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease!important;
   }
 
-  #map-polish-wrap .countryList > a:hover{
+  #map-page .countryList > a:hover{
     transform:translateY(-2px)!important;
-    box-shadow:0 5px 14px rgba(184,120,10,.10);
-    border-color:rgba(184,120,10,.55)!important;
+    box-shadow:0 6px 15px rgba(184,120,10,.11);
+    border-color:rgba(184,120,10,.62)!important;
   }
 
-  #map-polish-wrap .mapFinalCta{
-    border-radius:20px;
+  #map-page .mapFinalCta{
+    margin-top:38px;
+    padding:34px;
+    border-radius:24px;
+    text-align:center;
+    color:#fff;
+    background:linear-gradient(135deg,#123d32,#2f6d56);
+    box-shadow:var(--map-shadow);
   }
 
-  @media(max-width:680px){
-    #map-polish-wrap .proof-strip{
-      grid-template-columns:repeat(2,1fr)!important;
+  #map-page .mapFinalCta h2{
+    color:#fff;
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    margin-bottom:8px;
+  }
+
+  #map-page .mapFinalCta p{
+    max-width:600px;
+    margin:0 auto;
+    color:rgba(255,255,255,.83);
+  }
+
+  @media(max-width:780px){
+    #map-page .mapProof{grid-template-columns:repeat(2,1fr);}
+  }
+
+  @media(max-width:620px){
+    #map-page .mapHero{
+      min-height:400px;
+      padding:28px 22px;
+      border-radius:20px;
     }
-    #map-polish-wrap .countryList{
-      grid-template-columns:repeat(2,minmax(0,1fr));
-    }
-    #map-polish-wrap .countryList > a{
-      font-size:12px!important;
-    }
+    #map-page .mapHero h1{font-size:3rem;}
+    #map-page .mapProof{grid-template-columns:1fr;}
+    #map-page .mapCard,
+    #map-page .countryDirectory{padding:18px;}
+    #map-page .countryList{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
   }
 
   @media(max-width:430px){
-    #map-polish-wrap .countryList{
-      grid-template-columns:1fr;
-    }
+    #map-page .countryList{grid-template-columns:1fr!important;}
   }
 </style>
 
-<div id="map-polish-wrap">
-<h1 class="pageTitle">Where We've Been</h1>
-<p class="mapHeroIntro" style="text-align:center;color:var(--ink-soft);font-size:15px;line-height:1.7;">Our master travel map — everywhere we've been between us, with direct links to the guides we've built so far.</p>
 
-<div class="card heroCard">
-  <div class="hero-eyebrow">
-    <span class="badge">🌍 60+ countries & territories</span>
-    <span class="badge outline">6 continents</span>
-    <span class="badge outline">And still going</span>
+
+<div id="map-page">
+  <div class="mapHero">
+    <div>
+      <div class="mapHeroKicker">🌍 Our travel map · every place we've been</div>
+      <h1>Where We've Been
+        <em>60+ countries & territories — and we're nowhere near finished</em>
+      </h1>
+      <p>Our master travel map shows everywhere we've visited between us. Hover over or tap a gold country to see its name, then open the guide if we've built one. Prefer browsing by region? Head straight to our Destination Guides.</p>
+      <div class="mapHeroActions">
+        <a class="mapBtn gold" href="#destinations" onclick="event.preventDefault();show('destinations');">Browse destination guides →</a>
+      </div>
+    </div>
   </div>
-  <p style="color:var(--ink-soft);font-size:15px;line-height:1.7;margin-bottom:0;">Here's everywhere we've been between us. Hover over — or tap — a gold country to see its name, and click any gold country with a guide to start exploring. Prefer to browse by region? Head to our <a href="#destinations" onclick="event.preventDefault();show('destinations');" style="color:#b8780a;font-weight:700;">Destination Guides</a>.</p>
-</div>
 
-<div class="card" style="padding:20px 24px;">
-  <div class="proof-strip" style="border-top:none;padding-top:0;margin-top:0;">
-    <div class="proof-item"><div class="proof-num">60+</div><div class="proof-label">countries & territories</div></div>
-    <div class="proof-item"><div class="proof-num">6</div><div class="proof-label">continents explored</div></div>
-    <div class="proof-item"><div class="proof-num">34</div><div class="proof-label">European countries</div></div>
-    <div class="proof-item"><div class="proof-num">6</div><div class="proof-label">African countries</div></div>
+  <div class="mapProof">
+    <div class="mapProofBox"><strong>60+</strong><span>countries & territories</span></div>
+    <div class="mapProofBox"><strong>6 continents</strong><span>travelled between us</span></div>
+    <div class="mapProofBox"><strong>34 in Europe</strong><span>and still adding more</span></div>
+    <div class="mapProofBox"><strong>6 in Africa</strong><span>from Morocco to South Africa</span></div>
   </div>
-</div>
 
-<div class="card" style="padding:20px 24px;">
-  <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">Hover over or tap a country to see its name; click a gold country to open its guide. Smaller territories such as Gibraltar, Vatican City, Martinique and St Barths are too small to show clearly at this map scale, but they’re included in the full list below.</p>
+
+  <div class="mapSectionHead">
+    <div class="mapEyebrow">Interactive map</div>
+    <h2>Tap around the world with us</h2>
+    <p>Gold means we've been there. If we've built a guide, the country is clickable.</p>
+  </div>
+
+  <div class="mapCard">
+    <p class="mapNote">Hover over or tap a country to see its name; click a gold country to open its guide. Smaller territories such as Gibraltar, Vatican City, Martinique and St Barths are too small to show clearly at this scale, but they’re included in the full list below.</p>
   <div id="tfrMap" style="width:100%;border-radius:var(--radius-md);overflow:hidden;"></div>
   <div id="tfrTooltip" style="font-size:14px;font-weight:700;color:#b8780a;min-height:22px;margin-top:10px;padding:4px 0;"></div>
   <div class="mapLegend">
     <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:3px;background:#e8c235;display:inline-block;border:1px solid #c8a230;"></span>Visited</span>
     <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:3px;background:#c8c3b5;display:inline-block;border:1px solid #bbb6aa;"></span>Not yet</span>
   </div>
-</div>
+  </div>
 
-<div class="card">
-  <h2>The full list</h2>
-  <p style="color:var(--ink-soft);font-size:14px;margin-bottom:16px;">Every country and territory we've set foot in, between us. Use the gold links to jump straight into a guide. <span style="color:var(--muted);">(Alaska and Hawaii are covered within our USA travels, and Tasmania within Australia.)</span></p>
+  <div class="mapSectionHead">
+    <div class="mapEyebrow">Everywhere we've been</div>
+    <h2>The full list</h2>
+    <p>Every country and territory we've set foot in, between us.</p>
+  </div>
+
+  <div class="countryDirectory">
+    <h3>Countries & territories</h3>
+    <p class="directoryNote">Use the gold links to jump straight into a guide. <span>(Alaska and Hawaii are covered within our USA travels, and Tasmania within Australia.)</span></p>
   <div class="countryList">
 
     <a href="/albania.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇦🇱 Albania →</a>
@@ -190,16 +393,19 @@
     <a href="/vatican-city.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇻🇦 Vatican City →</a>
 
     
+    </div>
   </div>
-</div>
 
-<div class="card heroCard mapFinalCta" style="text-align:center;">
-  <h2 style="text-align:center;">Want to keep exploring?</h2>
-  <p style="text-align:center;color:var(--ink-soft);font-size:14px;max-width:520px;margin:0 auto 20px;">Use our Destination Guides to browse by region, or head back home for the latest trips, videos and travel stories.</p>
-  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-    <a class="btn-primary" href="#destinations" onclick="event.preventDefault();show('destinations');">Browse our destination guides →</a>
-    <a class="btn-outline" href="#home" onclick="event.preventDefault();show('home');">Back to Two for the Row’d home</a>
+  <div class="mapFinalCta">
+    <div class="mapEyebrow light">Keep exploring</div>
+    <h2>Where to next?</h2>
+    <p>Browse the destination guides by region, or head back home for our newest trips, videos and travel stories.</p>
+    <div class="mapHeroActions center">
+      <a class="mapBtn gold" href="#destinations" onclick="event.preventDefault();show('destinations');">Browse destination guides →</a>
+      <a class="mapBtn white" href="#home" onclick="event.preventDefault();show('home');">Back to Two for the Row'd home</a>
+    </div>
   </div>
+
 </div>
 
 <script>
@@ -215,4 +421,3 @@
   loadLibs(draw);
 })();
 </script>
-</div>
