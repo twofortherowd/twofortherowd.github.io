@@ -1,102 +1,415 @@
-<h1 class="pageTitle">Hotel Stays 🏨</h1>
 
 <style>
-  /* Portrait videos in hotel grid — cap height on desktop too */
-  .hotelGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:880px;margin:0 auto 16px;}
-  .hotelGrid .card{margin:0;}
-  .hotelGrid .iframeWrap.short{aspect-ratio:unset;height:280px;}
-  @media(max-width:680px){
-    .hotelGrid{grid-template-columns:repeat(2,1fr)!important;gap:10px;}
-    .hotelGrid .iframeWrap.short{height:180px;}
+  /* ─────────────────────────────────────────────
+     HOTEL STAYS — editorial refresh
+     Scoped to #hotel-page
+  ────────────────────────────────────────────── */
+  #hotel-page{
+    --hotel-navy:#182534;
+    --hotel-navy-2:#27415a;
+    --hotel-gold:#d9ad45;
+    --hotel-cream:#f7f4ec;
+    --hotel-paper:#fffdf8;
+    --hotel-ink:#1f252b;
+    --hotel-soft:#66717a;
+    --hotel-border:rgba(31,37,43,.11);
+    --hotel-shadow:0 14px 38px rgba(24,37,52,.10);
+  }
+
+  #hotel-page .hotel-wrap{max-width:960px;margin:0 auto;}
+
+  #hotel-page .hotel-hero{
+    min-height:430px;
+    border-radius:26px;
+    padding:44px;
+    display:flex;
+    align-items:flex-end;
+    color:#fff;
+    background:
+      radial-gradient(circle at 82% 18%,rgba(255,216,74,.17),transparent 34%),
+      linear-gradient(135deg,#182534 0%,#27415a 58%,#46657e 100%);
+    box-shadow:var(--hotel-shadow);
+    border:1px solid rgba(255,255,255,.08);
+    margin-bottom:18px;
+    overflow:hidden;
+  }
+
+  #hotel-page .hotel-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 12px;
+    border-radius:999px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.22);
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    margin-bottom:15px;
+  }
+
+  #hotel-page .hotel-hero h1{
+    color:#fff;
+    font-size:clamp(2.5rem,6vw,4.8rem);
+    line-height:1.02;
+    letter-spacing:-.035em;
+    margin:0 0 14px;
+  }
+
+  #hotel-page .hotel-hero h1 em{
+    display:block;
+    color:#f4d984;
+    font-size:.48em;
+    margin-top:10px;
+  }
+
+  #hotel-page .hotel-hero p{
+    max-width:720px;
+    color:rgba(255,255,255,.90);
+    font-size:1rem;
+    margin:0;
+  }
+
+  #hotel-page .hotel-proof{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:26px;
+  }
+
+  #hotel-page .proof{
+    background:#fff;
+    border:1px solid var(--hotel-border);
+    border-radius:17px;
+    padding:18px;
+    box-shadow:0 6px 20px rgba(24,37,52,.06);
+  }
+
+  #hotel-page .proof strong{
+    display:block;
+    font-family:var(--font-display);
+    color:var(--hotel-navy);
+    font-size:1.3rem;
+    margin-bottom:3px;
+  }
+
+  #hotel-page .proof span{font-size:12px;color:var(--hotel-soft)}
+
+  #hotel-page .hotel-section{
+    margin:44px 0 16px;
+  }
+
+  #hotel-page .hotel-eyebrow{
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--hotel-navy-2);
+    margin-bottom:6px;
+  }
+
+  #hotel-page .hotel-section h2{
+    font-size:clamp(1.8rem,4vw,2.8rem);
+    margin-bottom:8px;
+  }
+
+  #hotel-page .hotel-section p{
+    max-width:720px;
+    color:var(--hotel-soft);
+  }
+
+  #hotel-page .hotel-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+  }
+
+  #hotel-page .hotel-card{
+    background:#fff;
+    border:1px solid var(--hotel-border);
+    border-radius:20px;
+    box-shadow:var(--hotel-shadow);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+
+  #hotel-page .hotel-video{
+    position:relative;
+    width:100%;
+    height:310px;
+    background:#111;
+    overflow:hidden;
+  }
+
+  #hotel-page .hotel-video iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+  }
+
+  #hotel-page .hotel-card-body{
+    padding:20px 22px 22px;
+  }
+
+  #hotel-page .hotel-place{
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--hotel-navy-2);
+    margin-bottom:6px;
+  }
+
+  #hotel-page .hotel-card h3{
+    font-size:1.2rem;
+    margin-bottom:0;
+  }
+
+  #hotel-page .hotel-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    padding:6px 10px;
+    margin-top:12px;
+    border-radius:999px;
+    background:#f7f3e7;
+    border:1px solid rgba(217,173,69,.25);
+    font-size:12px;
+    font-weight:800;
+    color:#76561d;
+  }
+
+  #hotel-page .hotel-cta{
+    margin-top:34px;
+    border-radius:22px;
+    padding:32px;
+    background:linear-gradient(135deg,#182534,#31516b);
+    color:#fff;
+    box-shadow:var(--hotel-shadow);
+  }
+
+  #hotel-page .hotel-cta h2{color:#fff;margin-bottom:7px}
+  #hotel-page .hotel-cta p{
+    color:rgba(255,255,255,.86);
+    max-width:650px;
+    margin:0 0 18px;
+  }
+
+  #hotel-page .hotel-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    padding:12px 18px;
+    border-radius:11px;
+    background:#f4d984;
+    color:#182534;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:800;
+    transition:.16s ease;
+  }
+
+  #hotel-page .hotel-btn:hover{transform:translateY(-2px)}
+
+  #hotel-page .hotel-disclosure{
+    font-size:12px;
+    color:rgba(255,255,255,.68);
+    margin-top:12px;
+  }
+
+  #hotel-page .hotel-note{
+    text-align:center;
+    font-size:12px;
+    color:var(--hotel-soft);
+    margin-top:15px;
+  }
+
+  @media(max-width:760px){
+    #hotel-page .hotel-proof{grid-template-columns:1fr}
+    #hotel-page .hotel-grid{grid-template-columns:1fr}
+    #hotel-page .hotel-video{height:240px}
+  }
+
+  @media(max-width:560px){
+    #hotel-page .hotel-hero{
+      min-height:390px;
+      padding:28px 22px;
+      border-radius:20px;
+    }
+    #hotel-page .hotel-hero h1{font-size:3rem}
+    #hotel-page .hotel-video{height:220px}
   }
 </style>
 
-<!-- HERO -->
-<div class="card heroCard" style="max-width:880px;margin:0 auto 16px;">
-  <div class="hero-eyebrow">
-    <span class="badge">🏨 Hotel Stays</span>
-    <span class="badge outline">13 hotels reviewed</span>
-    <span class="badge outline">Ireland · Morocco · Poland · Jamaica · Maldives · France · Switzerland</span>
+<div id="hotel-page">
+  <div class="hotel-wrap">
+
+    <div class="hotel-hero">
+      <div>
+        <div class="hotel-kicker">🏨 Hotel Stays · honest video reviews</div>
+        <h1>Hotel Stays
+          <em>room tours, first impressions & whether we'd actually go back</em>
+        </h1>
+        <p>We've stayed in everything from Dublin city hotels and Moroccan riads to a Jamaican resort and an island stay in the Maldives. No glossy brochure copy — just a look at the room, the setting and the bits travellers actually want to know before they book.</p>
+      </div>
+    </div>
+
+    <div class="hotel-proof">
+      <div class="proof"><strong>13 hotels</strong><span>reviewed on video</span></div>
+      <div class="proof"><strong>7 countries</strong><span>Ireland to the Maldives</span></div>
+      <div class="proof"><strong>Real stays</strong><span>every hotel featured is somewhere we've actually stayed</span></div>
+    </div>
+
+    <div class="hotel-section">
+      <div class="hotel-eyebrow">Ireland</div>
+      <h2>Hotel stays closer to home</h2>
+      <p>City breaks, airport stays and Irish weekends away — all reviewed from our own stays.</p>
+    </div>
+
+    <div class="hotel-grid">
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.youtube.com/embed/8rgFhGusUz4" title="Camden Court Hotel Dublin" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Dublin · Ireland 🇮🇪</div>
+          <h3>Camden Court Hotel</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.youtube.com/embed/gIFmEE2o5cw" title="Shannon Springs Hotel" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Shannon · Ireland 🇮🇪</div>
+          <h3>Shannon Springs Hotel</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.youtube.com/embed/92x1qDOXEPo" title="Academy Plaza Hotel Dublin" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Dublin · Ireland 🇮🇪</div>
+          <h3>Academy Plaza Hotel</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.youtube.com/embed/NTR7--xMfGs" title="Tullamore Court Hotel" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Tullamore · Ireland 🇮🇪</div>
+          <h3>Tullamore Court Hotel</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="hotel-section">
+      <div class="hotel-eyebrow">Further afield</div>
+      <h2>Hotels we've stayed in abroad</h2>
+      <p>From Marrakech to Wrocław, Jamaica, Colmar, Basel and the Maldives.</p>
+    </div>
+
+    <div class="hotel-grid">
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.youtube.com/embed/dmtF1M-rzFk" title="Grand Mogador Menara Marrakech" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Marrakech · Morocco 🇲🇦</div>
+          <h3>Grand Mogador Menara</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.instagram.com/reel/DXzOXB5ES-v/embed" title="Riad Zoraida Marrakech" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Marrakech · Morocco 🇲🇦</div>
+          <h3>Riad Zoraida</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.youtube.com/embed/ghG4GeFna3U" title="Palm View Palace Morocco" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Morocco 🇲🇦</div>
+          <h3>Palm View Palace</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.youtube.com/embed/UyapEmAYNcg" title="The Art Hotel Wroclaw" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Wrocław · Poland 🇵🇱</div>
+          <h3>The Art Hotel</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.youtube.com/embed/7OXcjW0P5_M" title="Iberostar Rosehall Suites Jamaica" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Jamaica 🇯🇲</div>
+          <h3>Iberostar Rosehall Suites</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.youtube.com/embed/Q7XsYnMIcMQ" title="Meeru Island Maldives" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Maldives 🇲🇻</div>
+          <h3>Meeru Island Resort</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1746654509688657%2F&show_text=false" title="Grand Hotel Bristol Colmar" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Colmar · France 🇫🇷</div>
+          <h3>Grand Hotel Bristol</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.youtube.com/embed/m4uEZR61PTk" title="Hotel City Inn Basel" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Basel · Switzerland 🇨🇭</div>
+          <h3>Hotel City Inn</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-video"><iframe loading="lazy" src="https://www.youtube.com/embed/FXppPG3U_eU" title="Motel One Basel" allowfullscreen></iframe></div>
+        <div class="hotel-card-body">
+          <div class="hotel-place">Basel · Switzerland 🇨🇭</div>
+          <h3>Motel One</h3>
+          <span class="hotel-tag">🎥 Video review</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="hotel-cta">
+      <h2>Looking for your next hotel?</h2>
+      <p>Klook has hotels worldwide alongside tours, attractions and transport — handy if you like keeping the practical bits of a trip in one place.</p>
+      <a class="hotel-btn" href="https://affiliate.klook.com/redirect?aid=117926&aff_adid=1280035&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Search hotels on Klook →</a>
+      <div class="hotel-disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</div>
+    </div>
+
+    <p class="hotel-note">Hotel reviews reflect our own stays and first-hand experiences.</p>
+
   </div>
-  <h2 style="margin-bottom:8px;">Honest hotel reviews — from Maldives overwater bungalows to budget Dublin city stays</h2>
-  <p style="color:var(--ink-soft);font-size:14px;line-height:1.7;margin-bottom:0;">We've stayed in everything from a riad in Marrakech to a resort island in the Maldives — and a fair few Irish hotels in between. No over-polished nonsense. Just room tours, first impressions, and whether we'd actually go back.</p>
-</div>
-
-<!-- VIDEOS -->
-<p class="section-label" style="max-width:880px;margin:6px auto 10px;">All hotel reviews</p>
-<div class="hotelGrid">
-
-  <div class="card">
-    <h3>Camden Court Hotel, Dublin 🇮🇪</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/8rgFhGusUz4" title="Camden Court Hotel Dublin" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>Shannon Springs Hotel 🇮🇪</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/gIFmEE2o5cw" title="Shannon Springs Hotel" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>Academy Plaza Hotel, Dublin 🇮🇪</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/92x1qDOXEPo" title="Academy Plaza Hotel Dublin" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>Tullamore Court Hotel 🇮🇪</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/NTR7--xMfGs" title="Tullamore Court Hotel" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>Grand Mogador Menara, Marrakech 🇲🇦</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/dmtF1M-rzFk" title="Grand Mogador Menara Marrakech" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>Riad Zoraida, Marrakech 🇲🇦</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.instagram.com/reel/DXzOXB5ES-v/embed" title="Riad Zoraida Marrakech" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>Palm View Palace, Morocco 🇲🇦</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/ghG4GeFna3U" title="Palm View Palace Morocco" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>The Art Hotel, Wrocław 🇵🇱</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/UyapEmAYNcg" title="The Art Hotel Wroclaw" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>Iberostar Rosehall Suites, Jamaica 🇯🇲</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/7OXcjW0P5_M" title="Iberostar Rosehall Suites Jamaica" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>Meeru Island Resort, Maldives 🇲🇻</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/Q7XsYnMIcMQ" title="Meeru Island Maldives" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>Grand Hotel Bristol, Colmar 🇫🇷</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1746654509688657%2F&show_text=false" title="Grand Hotel Bristol Colmar" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>Hotel City Inn, Basel 🇨🇭</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/m4uEZR61PTk" title="Hotel City Inn Basel" allowfullscreen></iframe></div>
-  </div>
-
-  <div class="card">
-    <h3>Motel One, Basel 🇨🇭</h3>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/FXppPG3U_eU" title="Motel One Basel" allowfullscreen></iframe></div>
-  </div>
-
-</div>
-
-<!-- KLOOK CTA -->
-<div class="card" style="max-width:880px;margin:0 auto 16px;background:linear-gradient(160deg,#ffffff 0%,#fff0ee 55%,#ffd8d0 100%);border-color:rgba(224,92,42,.2);">
-  <h2 style="margin-bottom:6px;">Looking for your next hotel?</h2>
-  <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">Klook has hotels worldwide alongside experiences and skip-the-line tickets — handy to have everything in one place when you're planning a trip.</p>
-  <a class="btn-gold" href="https://affiliate.klook.com/redirect?aid=117926&aff_adid=1280035&k_site=https%3A%2F%2Fwww.klook.com%2Fhotels%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Search hotels on Klook →</a>
-  <p class="disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
 </div>
