@@ -103,18 +103,23 @@
     .terraCard{background:linear-gradient(160deg,#ffffff 0%,#fff4ee 55%,#fde0d2 100%);border-color:rgba(192,85,43,.22);}
 
     /* HERO */
-    .hero{background:
-        linear-gradient(155deg,rgba(255,255,255,.85) 0%,rgba(255,251,232,.78) 40%,rgba(253,243,227,.8) 100%),
-        radial-gradient(ellipse at top left,rgba(255,216,74,.4) 0%,transparent 55%);
-      border:1px solid rgba(232,194,53,.4);
-      border-radius:var(--radius-xl);
-      padding:36px 30px 32px;
+    .hero{
+      min-height:0;
+      display:block;
+      padding:48px;
+      border-radius:28px;
       box-shadow:var(--shadow-lg);
       margin-bottom:18px;
       overflow:hidden;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(90deg,rgba(63,24,18,.86),rgba(63,24,18,.58) 56%,rgba(63,24,18,.22)),
+        radial-gradient(circle at 83% 18%,rgba(255,216,74,.10),transparent 34%),
+        url('/img/moroccotea.jpg') center/cover no-repeat,
+        linear-gradient(135deg,#661a1e 0%,#9d2b31 48%,#c76532 100%);
     }
-    .hero::before{content:"";position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(192,85,43,.10) 0%,transparent 70%);pointer-events:none;}
-    .hero::after{content:"";position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(184,120,10,.10) 0%,transparent 70%);pointer-events:none;}
+    .hero::before,.hero::after{display:none;}
 
     .eyebrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:16px;}
     .badge{display:inline-block;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:700;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);letter-spacing:.01em;}
@@ -446,7 +451,29 @@
       }
     }
 
-  </style>
+  
+    .hero .hero-headline{
+      color:#fff;
+      font-size:clamp(2.9rem,6vw,5.2rem);
+      line-height:1.01;
+      letter-spacing:-.04em;
+      text-shadow:0 3px 16px rgba(0,0,0,.30);
+    }
+    .hero .hero-headline em{color:#ffd84a;}
+    .hero .hero-lead{color:rgba(255,255,255,.94);text-shadow:0 2px 10px rgba(0,0,0,.24);max-width:760px;}
+    .hero .badge{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.25);}
+    .hero .badge.outline,.hero .badge.sand{background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.24);}
+    .hero .route-strip{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.18);backdrop-filter:blur(6px);}
+    .hero .route-stop,.hero .state-pill,.hero .tag{background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.20);}
+    .hero .route-arrow{color:rgba(255,255,255,.58);}
+    .hero .btn-primary{background:#fff;color:#6b1d22;border-color:#fff;}
+    .hero .btn-outline{background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.28);}
+    @media(max-width:760px){
+      .hero{padding:30px 22px;border-radius:22px;}
+      .hero .hero-headline{font-size:3rem;}
+    }
+
+</style>
 </head>
 <body>
 
