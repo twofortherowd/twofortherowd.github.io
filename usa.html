@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
+<!doctype html><html lang="en"><head><meta name="robots" content="noindex, nofollow"><script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','981657641071814');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"/></noscript>
@@ -160,6 +160,15 @@
     .tour-pick a{font-size:13px;font-weight:800;color:var(--usa-blue);text-decoration:none;}
     .tour-pick a:hover{text-decoration:underline;}
     .tour-note{margin-top:16px;padding:14px 16px;border-radius:14px;background:rgba(23,74,126,.07);border:1px solid rgba(23,74,126,.14);font-size:13px;color:var(--ink-soft);}
+
+    /* TOURRADAR WIDGET (test: USA page only) */
+    .tr-widget-block{margin-top:22px;padding-top:20px;border-top:1px solid var(--border);min-width:0;}
+    .tr-widget-block h3{margin:0 0 6px;font-size:1.25rem;}
+    .tr-widget-block > p{margin:0 0 14px;font-size:14px;color:var(--ink-soft);}
+    .tr-widget-frame{width:100%;max-width:100%;min-width:0;overflow:hidden;}
+    .tr-widget-frame x-tr-tours{display:block;width:100%;max-width:100%;}
+    .tr-widget-credit{padding:6px 0 0;text-align:right;}
+    .tr-widget-credit a{font:400 11px/1.4 system-ui,-apple-system,sans-serif;color:#8a8a8a;text-decoration:none;}
 
     footer{margin-top:24px;padding:24px 0 16px;font-size:13px;line-height:1.7;color:var(--muted);text-align:center;}
     footer a{color:var(--muted);font-weight:600;}
@@ -525,6 +534,18 @@
     <strong>Our pick, not our trip:</strong> these are tours we've selected as useful ideas for readers; our own USA journeys were independently planned and were not taken with TourRadar.
   </div>
 
+  <!-- TOURRADAR WIDGET — test on USA page. Official embed from TourRadar partner dashboard (partner-id two-for-the-rowd). Script loads only when the visitor scrolls near this block. -->
+  <div class="tr-widget-block" id="tourradar-widget">
+    <h3>Explore the USA with TourRadar</h3>
+    <p>Want more options? Browse guided USA tours and multi-day trips below — live prices, dates and availability come straight from TourRadar.</p>
+    <div class="tr-widget-frame">
+      <x-tr-tours partner-id="two-for-the-rowd" campaign="tours-widget" layout="slider" results="6" density="full" primary-color="#174A7E" bg-color="#FFFFFF" text-color="#1A1208" radius="16px" cta="View tour"></x-tr-tours>
+    </div>
+    <div class="tr-widget-credit">
+      <a href="https://www.tourradar.com" target="_blank" rel="noopener">Powered by TourRadar</a>
+    </div>
+  </div>
+
   <div class="links">
     <a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored">Browse more USA tours on TourRadar →</a>
   </div>
@@ -624,6 +645,26 @@
 
 <footer><p>© <span id="year"></span> <a href="/">Two for the Row'd</a> · <a href="/#destinations">All destinations</a></p></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+/* Load the TourRadar widget script only when the visitor nears the Tours section */
+(function(){
+  var block=document.getElementById('tourradar-widget'); if(!block) return;
+  var loaded=false;
+  function loadTR(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.type='module';
+    s.src='https://assets.api.b2b.tourradar.com/widgets/loader.js';
+    document.body.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      if(entries.some(function(e){return e.isIntersecting;})){ loadTR(); io.disconnect(); }
+    },{rootMargin:'800px 0px'});
+    io.observe(block);
+  } else { loadTR(); }
+})();
+</script>
 
 <script>
 (function(){
