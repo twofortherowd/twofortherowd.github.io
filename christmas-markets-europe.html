@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta name="robots" content="noindex, nofollow">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>
     window.dataLayer=window.dataLayer||[];
@@ -145,6 +146,15 @@
     .partner{border-radius:19px;padding:25px;color:#fff;min-height:230px;display:flex;flex-direction:column}
     .partner h3{font-size:1.55rem;margin:10px 0}.partner p{color:rgba(255,255,255,.85);font-size:.9rem;flex:1}
     .partner.gyg{background:#8127e3}.partner.tr{background:#103c32}.partner.klook{background:#d9611d}
+    /* TOURRADAR WIDGET (test) */
+    .tr-widget-card{margin-top:18px;margin-bottom:0;min-width:0}
+    .tr-widget-card .eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--green-2);margin-bottom:7px}
+    .tr-widget-card h3{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:8px}
+    .tr-widget-card > p{color:var(--ink-soft);max-width:760px;margin-bottom:16px}
+    .tr-widget-frame{width:100%;max-width:100%;min-width:0;overflow:hidden}
+    .tr-widget-frame x-tr-tours{display:block;width:100%;max-width:100%}
+    .tr-widget-credit{padding:6px 0 0;text-align:right}
+    .tr-widget-credit a{font:400 11px/1.4 system-ui,-apple-system,sans-serif;color:#8a8a8a;text-decoration:none}
     .packing{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .pack{background:#fff;border:1px solid var(--border);border-radius:18px;padding:25px}
     .pack h3{font-size:1.55rem;margin-bottom:8px}
@@ -396,6 +406,18 @@
       <a class="btn btn-white" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1429169&k_site=https%3A%2F%2Fwww.klook.com%2Fblog%2Fchristmas-markets-europe%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');gtag('event','christmas_affiliate_click',{'partner':'Klook','placement':'booking'});">Explore Christmas markets on Klook →</a>
     </div>
   </div>
+  <!-- TOURRADAR WIDGET — test. Official embed from TourRadar partner dashboard (partner-id two-for-the-rowd, query Christmas Markets). Script loads only when the visitor scrolls near this block. -->
+  <div class="card tr-widget-card" id="tourradar-widget">
+    <div class="eyebrow">Organised festive trips</div>
+    <h3>Christmas market tours with TourRadar</h3>
+    <p>Rather let someone else handle the trains, hotels and route? Browse escorted Christmas market tours below — live prices, dates and availability come straight from TourRadar.</p>
+    <div class="tr-widget-frame">
+      <x-tr-tours partner-id="two-for-the-rowd" campaign="tours-widget" layout="slider" results="6" density="compact" primary-color="#103C32" bg-color="#FFFFFF" text-color="#18211D" radius="18px" cta="View tour" query="Christmas Markets"></x-tr-tours>
+    </div>
+    <div class="tr-widget-credit">
+      <a href="https://www.tourradar.com" target="_blank" rel="noopener">Powered by TourRadar</a>
+    </div>
+  </div>
   <p class="disclosure"><strong>Affiliate disclosure:</strong> Some links on this page are affiliate links. If you book or buy through them, we may earn a small commission at no extra cost to you.</p>
 
   <div class="section">
@@ -475,5 +497,25 @@
   <p>Dates and opening arrangements can change. Always confirm directly with the relevant market or city before travelling.</p>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+/* Load the TourRadar widget script only when the visitor nears the booking section */
+(function(){
+  var block=document.getElementById('tourradar-widget'); if(!block) return;
+  var loaded=false;
+  function loadTR(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.type='module';
+    s.src='https://assets.api.b2b.tourradar.com/widgets/loader.js';
+    document.body.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      if(entries.some(function(e){return e.isIntersecting;})){ loadTR(); io.disconnect(); }
+    },{rootMargin:'800px 0px'});
+    io.observe(block);
+  } else { loadTR(); }
+})();
+</script>
 </body>
 </html>
