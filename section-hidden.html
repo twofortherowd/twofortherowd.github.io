@@ -1,4 +1,4 @@
-<!-- HIDDEN IRELAND TAB — slim section loaded into the homepage (no <head>, no tracking scripts: the homepage already runs those).
+<!-- IRELAND ON VIDEO TAB (tab id "hidden") — slim section loaded into the homepage (no <head>, no tracking scripts: the homepage already runs those).
      Full article lives at /hidden-ireland-gems.html -->
 <style>
   #hidden-tab .hiddenTabHero{
@@ -18,7 +18,8 @@
   #hidden-tab .hiddenTabHero .badge.outline{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3);}
   #hidden-tab .hiddenGuide{background:linear-gradient(135deg,#ffd84a,#ffeb9b);border-color:#e8c235;text-align:center;}
   #hidden-tab .hiddenGuide p{color:#5a4b2b;max-width:600px;margin:0 auto 14px;}
-  #hidden-tab .shortGrid{grid-template-columns:repeat(2,1fr);gap:14px;max-width:620px;margin:0 auto 16px;}
+  #hidden-tab .playlistWrap{position:relative;aspect-ratio:16/9;max-width:880px;margin:0 auto 16px;border-radius:16px;overflow:hidden;background:#000;box-shadow:var(--shadow-md);}
+  #hidden-tab .playlistWrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
   @media(max-width:620px){
     #hidden-tab .hiddenTabHero{padding:26px 20px;}
     #hidden-tab .links{flex-direction:column;}
@@ -29,13 +30,13 @@
 <div id="hidden-tab">
 
   <div class="card hiddenTabHero">
-    <span class="badge">🇮🇪 Hidden Ireland</span>
-    <span class="badge outline">Off the beaten track</span>
-    <h2>Hidden Ireland
-      <em>the places most tourists drive straight past</em>
+    <span class="badge">🇮🇪 Ireland on Video</span>
+    <span class="badge outline">80 videos</span>
+    <h2>Ireland on Video
+      <em>hidden gems, heritage, history — and the odd coffee stop</em>
     </h2>
     <p class="irish">🇮🇪 <strong>As Gaeilge:</strong> Fáilte go dtí ár dtreoir de sheoda ceilte na hÉireann.</p>
-    <p>We're Nicola and Padraig from Carlow, and we're on a mission to find the places around Ireland that surprise you — forgotten ruins, quiet coastlines, unusual stories and the spots you might drive past a hundred times before finally stopping.</p>
+    <p>We're Nicola and Padraig from Carlow, and we film the places around Ireland that surprise us — forgotten ruins, secret gardens, unusual stories, brilliant cafés and the spots you might drive past a hundred times before finally stopping.</p>
     <div class="links">
       <a class="btn-gold" href="/hidden-ireland-gems.html">Read our Hidden Ireland guide →</a>
       <a class="btn-outline" href="/ireland.html">Explore our full Ireland guide →</a>
@@ -48,17 +49,14 @@
     <button class="btn-primary ml-onclick-form" onclick="ml('show','ZiCglE',true)" style="border:none;cursor:pointer;">Grab your free guide →</button>
   </div>
 
-  <p class="section-label" style="margin-top:22px;">Watch the Hidden Ireland series</p>
-  <div class="shortGrid">
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/Fi2rv2NoPD8" title="Hidden Ireland short 1" allowfullscreen></iframe></div>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/C-5H3VxAiuM" title="Hidden Ireland short 2" allowfullscreen></iframe></div>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/GJq_daIOK_Q" title="Hidden Ireland short 3" allowfullscreen></iframe></div>
-    <div class="iframeWrap short"><iframe loading="lazy" src="https://www.youtube.com/embed/XmB1wPN_lZ8" title="Hidden Ireland short 4" allowfullscreen></iframe></div>
+  <p class="section-label" style="margin-top:22px;">Press play, then skip through all 80 with the playlist button</p>
+  <div class="playlistWrap">
+    <iframe loading="lazy" src="https://www.youtube.com/embed/videoseries?list=PLNUCVjl2eJ7j_yl9V5PyETF9ehaEMauvk" title="Two for the Row'd — Ireland videos playlist" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
 
   <div class="card" style="text-align:center;">
     <div class="links" style="justify-content:center;margin-top:0;">
-      <a class="btn-primary" href="https://www.youtube.com/@twofortherowd" target="_blank" rel="noopener">See the full series on YouTube →</a>
+      <a class="btn-primary" href="https://www.youtube.com/playlist?list=PLNUCVjl2eJ7j_yl9V5PyETF9ehaEMauvk" target="_blank" rel="noopener">Open the playlist on YouTube →</a>
       <a class="btn-outline" href="https://www.instagram.com/twofortherowd25" target="_blank" rel="noopener">Follow us on Instagram →</a>
       <a class="btn-outline" href="/les-joyaux-caches-irlande.html">🇫🇷 Lire en français</a>
     </div>
