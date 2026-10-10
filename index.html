@@ -542,12 +542,12 @@ header{
   </a>
 </div>
 
-<!-- TOURRADAR WIDGET — official embed (partner-id two-for-the-rowd, worldwide deals). Script loads only when the visitor scrolls near it. -->
+<!-- TOURRADAR WIDGET — official embed (partner-id two-for-the-rowd, deals only, query cheapest tours). Script loads only when the visitor scrolls near it. -->
 <div class="card tr-home-widget" id="tourradar-widget">
   <p class="section-label" style="margin:0 0 4px;">🔥 Current TourRadar deals</p>
-  <p style="color:var(--ink-soft);font-size:14px;margin:0 0 12px;">Discounted multi-day tours from around the world — live prices straight from TourRadar.</p>
+  <p style="color:var(--ink-soft);font-size:14px;margin:0 0 12px;">Budget-friendly tour deals from around the world — live prices straight from TourRadar.</p>
   <div class="tr-widget-frame">
-    <x-tr-tours partner-id="two-for-the-rowd" campaign="tours-widget" layout="slider" results="6" density="compact" primary-color="#1A1208" bg-color="#FFFFFF" text-color="#1A1208" radius="16px" cta="View tour" deals-only="true"></x-tr-tours>
+    <x-tr-tours partner-id="two-for-the-rowd" campaign="tours-widget" layout="slider" results="12" density="compact" primary-color="#1A1208" bg-color="#FFFFFF" text-color="#1A1208" radius="16px" cta="View tour" deals-only="true" query="cheapest tours"></x-tr-tours>
   </div>
   <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;">
     <a class="btn-outline" href="https://www.tourradar.com/deals/anywhere?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=home-deals" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar deals',button_label:'Home view all deals'});">View all TourRadar deals →</a>
