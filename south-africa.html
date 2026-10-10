@@ -553,5 +553,20 @@
   <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#map">Our destinations</a></p>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<!-- Group trip poll (Tally) — tour pages only. Shows once per visitor, never again after they answer. -->
+<script>
+window.TallyConfig = {
+  "formId": "KY9K2g",
+  "popup": {
+    "width": 800,
+    "emoji": { "text": "👋", "animation": "wave" },
+    "open": { "trigger": "time", "ms": 20000 },
+    "layout": "modal",
+    "showOnce": true,
+    "doNotShowAfterSubmit": true
+  }
+};
+</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
 </body>
 </html>
