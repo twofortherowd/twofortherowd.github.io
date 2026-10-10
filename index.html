@@ -217,7 +217,8 @@ header{
       .logo{width:100%;max-width:100%;margin:0 auto 10px;}
       nav{gap:4px;padding:8px 8px;margin:6px auto 12px;}
       .tabBtn{padding:6px 10px;font-size:12px;}
-      .affiliate-links{display:none;}
+      .affiliate-links{gap:6px;margin-top:8px;}
+      .affiliate-links .pill{padding:6px 10px;font-size:12px;}
     }
     @media(max-width:480px){.grid,.stats{grid-template-columns:1fr;}.logo-strip{gap:28px;}}
     @media(max-width:380px){.pill.icon{width:36px;height:36px;}.pill.icon svg{width:18px;height:18px;}}
@@ -422,7 +423,7 @@ header{
       <a class="pill" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">TourRadar</a>
       <a class="pill" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">GetYourGuide</a>
       <a class="pill" href="https://affiliate.klook.com/redirect?aid=119289&amp;aff_adid=1262030&amp;k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Klook</a>
-      <a class="pill" href="https://link.amazon/B0gSDiA5S" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">Amazon</a>
+      <a class="pill" href="/#shop" onclick="show('shop');fbq('track','ViewContent');return false;">Amazon</a>
     </div>
   </div>
 </header>
