@@ -330,6 +330,22 @@
     padding-top:16px;
   }
 
+  #shop-page a.quick{display:block;text-decoration:none;color:inherit;cursor:pointer;transition:transform .16s ease,box-shadow .16s ease;}
+  #shop-page a.quick:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(16,60,50,.10);}
+
+  #shop-page .shop-textlinks{font-size:13px;margin:14px 0 0;color:var(--shop-soft);}
+  #shop-page .shop-textlinks a{color:var(--shop-green);font-weight:800;text-decoration:none;}
+  #shop-page .shop-textlinks a:hover{text-decoration:underline;}
+
+  #shop-page .gear-cat{background:#fff;border:1px solid var(--shop-border);border-radius:18px;margin:12px 0;box-shadow:0 6px 18px rgba(16,60,50,.04);overflow:hidden;}
+  #shop-page .gear-cat summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 20px;font-weight:800;font-size:15px;}
+  #shop-page .gear-cat summary::-webkit-details-marker{display:none;}
+  #shop-page .gear-cat summary em{font-style:normal;font-size:12px;font-weight:700;color:var(--shop-soft);display:flex;align-items:center;gap:10px;white-space:nowrap;}
+  #shop-page .gear-cat summary em::after{content:"+";font-size:20px;line-height:1;color:var(--shop-green);transition:transform .2s ease;}
+  #shop-page .gear-cat[open] summary em::after{transform:rotate(45deg);}
+  #shop-page .gear-cat[open] summary{border-bottom:1px solid var(--shop-border);}
+  #shop-page .gear-cat .shop-grid{padding:16px;background:var(--shop-cream);}
+
   @media(max-width:820px){
     #shop-page .shop-quick{grid-template-columns:repeat(2,1fr)}
   }
@@ -362,13 +378,13 @@
     </div>
 
     <div class="shop-quick">
-      <div class="quick"><div>🚶</div><strong>Our own tour</strong><span>Private guided Carlow walking tours</span></div>
-      <div class="quick"><div>🧭</div><strong>Multi-day trips</strong><span>TourRadar organised adventures</span></div>
-      <div class="quick"><div>🎟️</div><strong>Things to do</strong><span>Klook + GetYourGuide activities</span></div>
-      <div class="quick"><div>📦</div><strong>Travel gear</strong><span>30+ products we've actually used</span></div>
+      <a class="quick" href="#shop-carlow" onclick="document.getElementById('shop-carlow').scrollIntoView({behavior:'smooth',block:'start'});return false;"><div>🚶</div><strong>Our own tour</strong><span>Private guided Carlow walking tours</span></a>
+      <a class="quick" href="#shop-tours" onclick="document.getElementById('shop-tours').scrollIntoView({behavior:'smooth',block:'start'});return false;"><div>🧭</div><strong>Multi-day trips</strong><span>TourRadar organised adventures</span></a>
+      <a class="quick" href="#shop-things" onclick="document.getElementById('shop-things').scrollIntoView({behavior:'smooth',block:'start'});return false;"><div>🎟️</div><strong>Things to do</strong><span>Klook + GetYourGuide activities</span></a>
+      <a class="quick" href="#shop-gear" onclick="document.getElementById('shop-gear').scrollIntoView({behavior:'smooth',block:'start'});return false;"><div>📦</div><strong>Travel gear</strong><span>30+ products we've actually used</span></a>
     </div>
 
-    <div class="shop-section">
+    <div class="shop-section" id="shop-carlow">
       <div class="shop-eyebrow">Two for the Row'd original</div>
       <h2>Walk Carlow with Nicola</h2>
       <p>Our own private guided tour — not an affiliate link, not somebody else's product.</p>
@@ -396,7 +412,7 @@
       </div>
     </div>
 
-    <div class="shop-section">
+    <div class="shop-section" id="shop-tours">
       <div class="shop-eyebrow">Multi-day tours</div>
       <h2>Want the whole trip organised?</h2>
       <p>TourRadar is where we'd start for escorted holidays, small-group adventures and proper multi-day itineraries.</p>
@@ -416,13 +432,12 @@
            onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{'destination':'TourRadar storefront','button_label':'Search 50,000+ tours'});">
           🔍 Search 50,000+ tours →
         </a>
-        <a class="shop-btn white" href="tourradar-discount-code.html">See our TourRadar discount guide →</a>
       </div>
-
-      <div class="shop-actions">
-        <a class="shop-btn white" onclick="show('morocco');">Read our Morocco experience →</a>
-        <a class="shop-btn white" href="/south-africa.html">See the South Africa safari tour we did →</a>
-      </div>
+      <p class="shop-textlinks">
+        <a href="tourradar-discount-code.html">Our TourRadar discount guide</a> ·
+        <a href="/morocco-tour-review.html">Our Morocco tour review</a> ·
+        <a href="/south-africa.html">The South Africa safari we did</a>
+      </p>
 
       <div class="widget-card">
         <h4>🔥 Current TourRadar deals</h4>
@@ -442,7 +457,7 @@
       <p class="disclosure"><strong>Disclosure:</strong> If you book through our links we may earn a small commission at no extra cost to you.</p>
     </div>
 
-    <div class="shop-section">
+    <div class="shop-section" id="shop-things">
       <div class="shop-eyebrow">Day trips & activities</div>
       <h2>Planning the smaller pieces yourself?</h2>
       <p>Klook and GetYourGuide are better suited to day trips, local tours, attraction tickets and city experiences.</p>
@@ -476,7 +491,7 @@
       </div>
     </div>
 
-    <div class="shop-section">
+    <div class="shop-section" id="shop-gear">
       <div class="shop-eyebrow">Travel essentials</div>
       <h2>The stuff that's actually earned space in our bags</h2>
       <p>No random catalogue filling. These are the products we've personally used across 60+ countries and genuinely found useful.</p>
@@ -490,65 +505,79 @@
       <div class="disclosure">Affiliate link — we may earn a small commission at no extra cost to you.</div>
     </div>
 
-    <div class="category-head"><span>✈️ Every flight, every trip</span></div>
-    <div class="shop-grid">
+    <details class="gear-cat" open>
+      <summary><span>✈️ Every flight, every trip</span><em>6 picks</em></summary>
+      <div class="shop-grid">
       <div class="product-card"><div class="product-icon">🎒</div><h3>Packing Cubes</h3><p>Less chaos, more space and you can actually find things when you arrive. We use a set on every trip.</p><a class="shop-btn amazon" href="https://link.amazon/B08G7PJ01" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🔌</div><h3>Travel Adapter</h3><p>You only forget this once. A universal adapter covers almost everywhere and removes one airport panic.</p><a class="shop-btn amazon" href="https://link.amazon/B0cAbABD9" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">😴</div><h3>Travel Pillow</h3><p>Long flights are a completely different experience with a decent pillow. Worth it once you're past the four-hour mark.</p><a class="shop-btn amazon" href="https://link.amazon/B00gSYRua" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🧦</div><h3>Compression Socks</h3><p>We both wear them on long flights now. Your ankles will thank you.</p><a class="shop-btn amazon" href="https://link.amazon/B0g88ggv0" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">📍</div><h3>AirTags</h3><p>After a bag went missing in Lisbon, these started going into every checked bag.</p><a class="shop-btn amazon" href="https://link.amazon/B0f9gRrOh" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🇮🇪</div><h3>Irish Passport Wallet</h3><p>Keeps passport, cards and boarding passes together instead of scattered through three pockets.</p><a class="shop-btn amazon" href="https://link.amazon/B0gYTP6Gh" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
-    </div>
+      </div>
+    </details>
 
-    <div class="category-head"><span>🚢 Cruise must-haves</span></div>
-    <div class="shop-grid">
+    <details class="gear-cat">
+      <summary><span>🚢 Cruise must-haves</span><em>6 picks</em></summary>
+      <div class="shop-grid">
       <div class="product-card"><div class="product-icon">🧲</div><h3>Magnetic Hooks</h3><p>Cruise cabin walls are magnetic and storage is tight. One of the simplest cruise hacks.</p><a class="shop-btn amazon" href="https://link.amazon/B09HrYA6f" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🪪</div><h3>Lanyards</h3><p>Your cruise card is always needed. A lanyard saves endless rooting around.</p><a class="shop-btn amazon" href="https://link.amazon/B0cJ5hXoM" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">👜</div><h3>Laundry Bag</h3><p>Keeps clean and dirty clothes from becoming one depressing pile by day four.</p><a class="shop-btn amazon" href="https://link.amazon/B01XA1WgJ" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🚪</div><h3>Over-the-Door Organiser</h3><p>A very useful bit of extra storage for small cruise bathrooms and cabins.</p><a class="shop-btn amazon" href="https://link.amazon/B0bvX7Kjf" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🌊</div><h3>Motion Sickness Bands</h3><p>Drug-free, simple and worth carrying if you're even slightly susceptible.</p><a class="shop-btn amazon" href="https://link.amazon/B0fURolww" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">📱</div><h3>Waterproof Phone Pouch</h3><p>For beach days, excursions and anywhere your phone really shouldn't be getting wet.</p><a class="shop-btn amazon" href="https://link.amazon/B0fPJP4dy" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
-    </div>
+      </div>
+    </details>
 
-    <div class="category-head"><span>🌞 Hot weather essentials</span></div>
-    <div class="shop-grid">
+    <details class="gear-cat">
+      <summary><span>🌞 Hot weather essentials</span><em>5 picks</em></summary>
+      <div class="shop-grid">
       <div class="product-card"><div class="product-icon">💨</div><h3>Neck Fan</h3><p>Looks ridiculous, works brilliantly. We used ours in Morocco and Jamaica.</p><a class="shop-btn amazon" href="https://link.amazon/B0faK8xzy" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🌡️</div><h3>Cooling Blanket</h3><p>One of those things we didn't expect to love until an Irish heatwave proved otherwise.</p><a class="shop-btn amazon" href="https://link.amazon/B0iCgfu5i" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🛏️</div><h3>Cooling Mattress Protector</h3><p>Useful when a hot hotel room and poor aircon are conspiring against sleep.</p><a class="shop-btn amazon" href="https://link.amazon/B0cgzEczh" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🧊</div><h3>Cooling Towel</h3><p>Wet it, wring it out and use it on long hot days when shade has abandoned you.</p><a class="shop-btn amazon" href="https://link.amazon/B05z4Un6K" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🌬️</div><h3>Portable USB Fan</h3><p>Handy for hotel rooms and apartments where the aircon is more theory than reality.</p><a class="shop-btn amazon" href="https://link.amazon/B03MOWzCW" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
-    </div>
+      </div>
+    </details>
 
-    <div class="category-head"><span>💧 Hydration & daily rituals</span></div>
-    <div class="shop-grid">
+    <details class="gear-cat">
+      <summary><span>💧 Hydration & daily rituals</span><em>2 picks</em></summary>
+      <div class="shop-grid">
       <div class="product-card"><div class="product-icon">⚡</div><h3>Electrolyte Sachets</h3><p>Useful for hot countries, long walking days and travel days when you forget how little you've actually drunk.</p><a class="shop-btn amazon" href="https://link.amazon/B0bzCFKuv" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card spacegoods"><div class="product-icon">🚀</div><h3>Spacegoods — Nicola's Daily Ritual</h3><p>Hydrodust for hydration and Rainbow Dust coffee for a calmer energy boost. Use Nicola's link for a discount.</p><a class="shop-btn gold" href="https://www.spacegoods.com/NICOLA66188" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">Shop Spacegoods →</a></div>
-    </div>
+      </div>
+    </details>
 
-    <div class="category-head"><span>🎥 Camera & content gear</span></div>
-    <div class="shop-grid">
+    <details class="gear-cat">
+      <summary><span>🎥 Camera & content gear</span><em>5 picks</em></summary>
+      <div class="shop-grid">
       <div class="product-card"><div class="product-icon">📱</div><h3>iPhone Mount</h3><p>What we use for a huge amount of our short-form filming on the road.</p><a class="shop-btn amazon" href="https://link.amazon/B03pRwbMY" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🎬</div><h3>Travel Tripod</h3><p>Compact enough to travel, sturdy enough not to collapse halfway through the shot.</p><a class="shop-btn amazon" href="https://link.amazon/B0ahPxSJV" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🎙️</div><h3>Microphone</h3><p>A clip-on mic makes a much bigger difference than people expect, especially outdoors.</p><a class="shop-btn amazon" href="https://link.amazon/B0dnkyruR" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🤳</div><h3>Selfie Stick</h3><p>Useful for getting both of us in the shot without asking strangers to become the camera crew.</p><a class="shop-btn amazon" href="https://link.amazon/B05vjJWGW" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">💾</div><h3>Memory Cards</h3><p>We shoot a lot. More storage than you think you'll need is generally the right amount.</p><a class="shop-btn amazon" href="https://link.amazon/B0fEdU3k6" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
-    </div>
+      </div>
+    </details>
 
-    <div class="category-head"><span>🚗 Road trip essentials</span></div>
-    <div class="shop-grid">
+    <details class="gear-cat">
+      <summary><span>🚗 Road trip essentials</span><em>3 picks</em></summary>
+      <div class="shop-grid">
       <div class="product-card"><div class="product-icon">📲</div><h3>Phone Holder</h3><p>Hands-free navigation is non-negotiable. We've driven through 14 US states with ours.</p><a class="shop-btn amazon" href="https://link.amazon/B0hduxLJ7" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🔋</div><h3>Car Charger</h3><p>Maps, music and two phones make a decent car charger a lot more important than it sounds.</p><a class="shop-btn amazon" href="https://link.amazon/B00mADIAW" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🧺</div><h3>Cool Bag</h3><p>Road-trip lunches, cold drinks and beach stops. Simple, useful and constantly used.</p><a class="shop-btn amazon" href="https://link.amazon/B02u9GtP6" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
-    </div>
+      </div>
+    </details>
 
-    <div class="category-head"><span>☕ Travel comfort</span></div>
-    <div class="shop-grid">
+    <details class="gear-cat">
+      <summary><span>☕ Travel comfort</span><em>5 picks</em></summary>
+      <div class="shop-grid">
       <div class="product-card"><div class="product-icon">☕</div><h3>Travel Kettle</h3><p>Some hotel rooms don't have one. We don't function before tea. Enough said.</p><a class="shop-btn amazon" href="https://link.amazon/B0jlqWHiV" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🫖</div><h3>Travel Mug</h3><p>Airport mornings, road trips and avoiding another €5 coffee.</p><a class="shop-btn amazon" href="https://link.amazon/B033VfhPy" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🍴</div><h3>Travel Cutlery</h3><p>Picnics, airport food and long train journeys. Small thing, constantly useful.</p><a class="shop-btn amazon" href="https://link.amazon/B02bi0P5R" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🌙</div><h3>Eye Mask</h3><p>Flights, overnight trains and hotel curtains with absolutely no interest in blocking sunlight.</p><a class="shop-btn amazon" href="https://link.amazon/B01h5rRrV" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
       <div class="product-card"><div class="product-icon">🔇</div><h3>Ear Plugs</h3><p>Noisy hotels, loud flights and Padraig snoring after a long travel day.</p><a class="shop-btn amazon" href="https://link.amazon/B0iuZsR8k" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');">View on Amazon →</a></div>
-    </div>
+      </div>
+    </details>
 
     <p class="site-disclosure">
       Two for the Row'd participates in affiliate programmes including TourRadar, Klook, GetYourGuide, Amazon Associates and Spacegoods. If you book or buy something through certain links on this page, we may receive a small commission — at no additional cost to you. We only recommend things we'd use ourselves.
