@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
+<!doctype html><html lang="en"><head><meta name="robots" content="noindex, nofollow"><script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','981657641071814');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"/></noscript>
@@ -525,6 +525,14 @@
       text-shadow:0 2px 6px rgba(0,0,0,.55);
     }
 
+    /* TOURRADAR WIDGET (test) */
+    .tr-widget-block{margin-top:22px;padding-top:20px;border-top:1px solid var(--border);min-width:0;}
+    .tr-widget-block h3{margin:0 0 6px;font-size:1.25rem;}
+    .tr-widget-block > p{margin:0 0 14px;font-size:14px;color:var(--ink-soft);}
+    .tr-widget-frame{width:100%;max-width:100%;min-width:0;overflow:hidden;}
+    .tr-widget-frame x-tr-tours{display:block;width:100%;max-width:100%;}
+    .tr-widget-credit{padding:6px 0 0;text-align:right;}
+    .tr-widget-credit a{font:400 11px/1.4 system-ui,-apple-system,sans-serif;color:#8a8a8a;text-decoration:none;}
 </style><script>(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account','2378028');</script>
 </head>
 <body>
@@ -536,12 +544,11 @@
 <nav class="chapterNav" aria-label="Ireland hub sections">
   <div class="chapterNavInner">
     <a href="#county-guides">County Guides</a>
+    <a href="#hidden">Hidden Ireland</a>
     <a href="#glance">At a Glance</a>
     <a href="#journey-map">Map</a>
     <a href="#photos">Photos</a>
     <a href="#regions">Regions</a>
-    <a href="#hidden">Hidden Ireland</a>
-    <a href="#destinations">Destinations</a>
     <a href="#experiences">Things to Do</a>
     <a href="#practical">Road Trip Tips</a>
     <a href="#faq">FAQ</a>
@@ -574,21 +581,31 @@
   </div>
 </div>
 
+<span id="destinations"></span>
 <div id="county-guides" class="card greenCard">
   <div class="eyebrow"><span class="badge ireland">☘️ County guides completed</span><span class="badge outline">First-hand</span></div>
   <h2>Choose a county</h2><div class="irishQuote">Ar an mbóthar arís — back on the road again.</div>
-  <p style="color:var(--ink-soft);font-size:14px;">Start with one of the county guides we've completed so far. Each one combines our own visits, local connections, videos and practical ideas.</p>
-  <div class="county-tabs" aria-label="Completed Ireland county guides">
-    <a class="county-tab" href="/carlow.html">🏰 Carlow</a>
-    <a class="county-tab" href="/kildare.html">🐎 Kildare</a>
-    <a class="county-tab" href="/kilkenny.html">🏯 Kilkenny</a>
-    <a class="county-tab" href="/laois.html">⛰️ Laois</a>
-    <a class="county-tab" href="/wexford.html">🌊 Wexford</a>
-    <a class="county-tab" href="/wicklow.html">🌿 Wicklow</a>
+  <p style="color:var(--ink-soft);font-size:14px;">Start with one of our county guides. Each one combines our own visits, local connections, videos and practical ideas.</p>
+  <div class="dest-grid">
+    <a class="dest-link" href="/carlow.html"><strong>🏰 County Carlow</strong><span>Our home county — ancient Ireland, castles, saints and strange stories</span></a>
+    <a class="dest-link" href="/kildare.html"><strong>🐎 County Kildare</strong><span>Kilcullen, south-Kildare heritage, castles and our own filmed visits</span></a>
+    <a class="dest-link" href="/kilkenny.html"><strong>🏯 County Kilkenny</strong><span>The medieval city, historic houses, gardens and county discoveries</span></a>
+    <a class="dest-link" href="/laois.html"><strong>⛰️ County Laois</strong><span>Nicola's home county, childhood favourites, woods and hidden heritage</span></a>
+    <a class="dest-link" href="/wexford.html"><strong>🌊 County Wexford</strong><span>Childhood beaches, quiet coastal favourites, heritage discoveries and hidden corners</span></a>
+    <a class="dest-link" href="/wicklow.html"><strong>🌿 County Wicklow</strong><span>Fifteen years in Baltinglass, monastic history, mountains, gardens and coast</span></a>
   </div>
 </div>
 
-<div id="glance" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">01</div><div class="chapterTitle"><div class="chapterLabel">Before you hit the road</div><div class="chapterName">Ireland at a glance</div></div></div></div>
+<div id="hidden" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">01</div><div class="chapterTitle"><div class="chapterLabel">This is very much our thing</div><div class="chapterName">Hidden Ireland</div></div></div></div>
+<div class="card goldCard hiddenIrishCard">
+  <div class="eyebrow"><span class="badge">💎 Hidden Ireland</span><span class="badge outline">22+ films</span><span class="badge ireland">Our favourite kind of Ireland</span></div>
+  <h2>The places most tourists drive straight past</h2>
+  <p>Ruins on the side of roads, extraordinary gardens, castles without queues, little museums, curious villages and places that make us ask: <strong>why does nobody know about this?</strong> Hidden Ireland is our collection of those finds.</p>
+  <div class="feature-wide"><h3>🎁 Free guide — 10 Deadly Irish Hidden Gems</h3><p>Quirky Irish spots worth putting on your next road trip — without the usual Cliffs of Moher and Blarney Stone list.</p><button class="btn-primary ml-onclick-form" onclick="ml('show','ZiCglE',true)" style="border:none;cursor:pointer;">Grab the free guide →</button></div>
+  <div class="links"><a class="btn-primary" href="/hidden-ireland-gems.html">Explore Hidden Ireland →</a></div>
+</div>
+
+<div id="glance" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">02</div><div class="chapterTitle"><div class="chapterLabel">Before you hit the road</div><div class="chapterName">Ireland at a glance</div></div></div></div>
 <div class="card greenCard">
   <div class="glance-grid">
     <div class="glance-item"><div class="glance-icon">🏠</div><div class="glance-body"><span class="glance-label">Our base</span><span class="glance-value"><strong>Carlow</strong>, South Leinster</span></div></div>
@@ -602,14 +619,14 @@
   </div>
 </div>
 
-<div id="journey-map" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">02</div><div class="chapterTitle"><div class="chapterLabel">Start close to home, then wander</div><div class="chapterName">Explore our Ireland on the map</div></div></div></div>
+<div id="journey-map" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">03</div><div class="chapterTitle"><div class="chapterLabel">Start close to home, then wander</div><div class="chapterName">Explore our Ireland on the map</div></div></div></div>
 <div class="card irelandMapCard">
-  <div class="usaMapIntro"><h2>Places we've explored around Ireland</h2><p>This map is the beginning of our Ireland archive. We'll keep adding markers as our county guides grow. <strong>Tap a marker</strong> to jump into the matching guide or Hidden Ireland collection.</p></div>
+  <div class="usaMapIntro"><h2>Places we've explored around Ireland</h2><p><strong>Tap a marker</strong> to jump into the matching county guide or Hidden Ireland find.</p></div>
   <div id="irelandJourneyMap" aria-label="Interactive map of Two for the Row'd Ireland destinations"></div>
   <div class="irelandMapLegend"><span class="irelandMapLegendItem"><span class="irelandMapDot" style="background:#176b45"></span>Leinster</span><span class="irelandMapLegendItem"><span class="irelandMapDot" style="background:#e8562a"></span>Munster</span><span class="irelandMapLegendItem"><span class="irelandMapDot" style="background:#174a7e"></span>Connacht</span><span class="irelandMapLegendItem"><span class="irelandMapDot" style="background:#6a1b9a"></span>Ulster</span></div>
 </div>
 
-<div id="photos" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">03</div><div class="chapterTitle"><div class="chapterLabel">No stock photos here</div><div class="chapterName">Ireland through our lens</div></div></div></div>
+<div id="photos" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">04</div><div class="chapterTitle"><div class="chapterLabel">No stock photos here</div><div class="chapterName">Ireland through our lens</div></div></div></div>
 <div class="card" style="padding:18px;">
   <div class="photo-mosaic">
     <img src="/img/ireland26.jpg" alt="One of our heritage stops while exploring Ireland — Two for the Row'd" loading="lazy">
@@ -622,51 +639,28 @@
 </div>
 
 <div class="card greenCard">
-  <div class="eyebrow"><span class="badge ireland">🇮🇪 A guide that grows with us</span></div>
+  <div class="eyebrow"><span class="badge ireland">🇮🇪 First-hand only</span></div>
   <h2>We're exploring Ireland one county at a time</h2>
-  <p>This isn't a generic Ireland guide written from a desk. The places we feature come from somewhere we've actually visited, filmed or explored ourselves. As we travel more of Ireland, the county guides, photographs and map on this page will keep growing with us.</p>
+  <p>This isn't a generic Ireland guide written from a desk. The places we feature come from somewhere we've actually visited, filmed or explored ourselves.</p>
 </div>
 
-<div id="regions" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">04</div><div class="chapterTitle"><div class="chapterLabel">Pick a direction</div><div class="chapterName">Explore Ireland by province</div></div></div></div>
+<div id="regions" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">05</div><div class="chapterTitle"><div class="chapterLabel">Pick a direction</div><div class="chapterName">Explore Ireland by province</div></div></div></div>
 <div class="card">
-  <p style="color:var(--ink-soft);font-size:14px;">We're building Ireland out gradually from the places we've actually visited and filmed — no thin county pages just for the sake of having them.</p>
+  <p style="color:var(--ink-soft);font-size:14px;">Leinster is home, so it's where our guides go deepest — but every corner of the island has something worth the drive.</p>
   <div class="journey-grid">
-    <div class="journey-card"><div class="journey-body"><div class="journey-kicker">☘️ Our home province</div><div class="journey-title">Leinster</div><p class="journey-text">Carlow, Kilkenny, Laois, Kildare, Wicklow, Wexford and the brilliant corners of Ireland closest to home.</p><span class="journey-cta">Guides growing now →</span></div></div>
-    <div class="journey-card"><div class="journey-body"><div class="journey-kicker">🌊 South & southwest</div><div class="journey-title">Munster</div><p class="journey-text">Waterford, Cork, Kerry, Clare, Tipperary and Limerick — coastline, history, towns and road-trip country.</p><span class="journey-cta">More coming →</span></div></div>
-    <div class="journey-card"><div class="journey-body"><div class="journey-kicker">🌿 West of Ireland</div><div class="journey-title">Connacht</div><p class="journey-text">Galway, Mayo, Sligo, Roscommon and Leitrim — wild landscapes, Atlantic roads and plenty still on our list.</p><span class="journey-cta">More coming →</span></div></div>
-    <div class="journey-card"><div class="journey-body"><div class="journey-kicker">🏰 North & northwest</div><div class="journey-title">Ulster</div><p class="journey-text">Donegal and Northern Ireland — a section we'll expand as our travels take us farther north.</p><span class="journey-cta">More coming →</span></div></div>
+    <div class="journey-card"><div class="journey-body"><div class="journey-kicker">☘️ Our home province</div><div class="journey-title">Leinster</div><p class="journey-text">Carlow, Kilkenny, Laois, Kildare, Wicklow, Wexford and the brilliant corners of Ireland closest to home.</p><a class="journey-cta" href="#county-guides">See our Leinster guides →</a></div></div>
+    <div class="journey-card"><div class="journey-body"><div class="journey-kicker">🌊 South & southwest</div><div class="journey-title">Munster</div><p class="journey-text">Waterford, Cork, Kerry, Clare, Tipperary and Limerick — coastline, history, towns and road-trip country.</p></div></div>
+    <div class="journey-card"><div class="journey-body"><div class="journey-kicker">🌿 West of Ireland</div><div class="journey-title">Connacht</div><p class="journey-text">Galway, Mayo, Sligo, Roscommon and Leitrim — wild landscapes, Atlantic roads and plenty still on our list.</p></div></div>
+    <div class="journey-card"><div class="journey-body"><div class="journey-kicker">🏰 North & northwest</div><div class="journey-title">Ulster</div><p class="journey-text">Donegal and Northern Ireland — a section we'll expand as our travels take us farther north.</p></div></div>
   </div>
 </div>
 
-<div id="hidden" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">05</div><div class="chapterTitle"><div class="chapterLabel">This is very much our thing</div><div class="chapterName">Hidden Ireland</div></div></div></div>
-<div class="card goldCard hiddenIrishCard">
-  <div class="eyebrow"><span class="badge">💎 Hidden Ireland</span><span class="badge outline">22+ films</span><span class="badge ireland">Our favourite kind of Ireland</span></div>
-  <h2>The places most tourists drive straight past</h2>
-  <p>Ruins on the side of roads, extraordinary gardens, castles without queues, little museums, curious villages and places that make us ask: <strong>why does nobody know about this?</strong> Hidden Ireland is our growing collection of those finds.</p>
-  <div class="feature-wide"><h3>🎁 Free guide — 10 Deadly Irish Hidden Gems</h3><p>Quirky Irish spots worth putting on your next road trip — without the usual Cliffs of Moher and Blarney Stone list.</p><button class="btn-primary ml-onclick-form" onclick="ml('show','ZiCglE',true)" style="border:none;cursor:pointer;">Grab the free guide →</button></div>
-  <div class="links"><a class="btn-primary" href="/hidden-ireland-gems.html">Explore Hidden Ireland →</a></div>
-</div>
-
-<div id="destinations" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">06</div><div class="chapterTitle"><div class="chapterLabel">The archive starts here</div><div class="chapterName">Explore by destination</div></div></div></div>
-<div class="card greenCard">
-  <p style="font-size:14px;color:var(--ink-soft);">We'll add county and town guides here as they become substantial enough to deserve their own page.</p>
-  <div class="dest-grid">
-    <a class="dest-link" href="/carlow.html"><strong>🏰 County Carlow</strong><span>Our home county — ancient Ireland, castles, saints and strange stories</span></a>
-    <a class="dest-link" href="/kildare.html"><strong>🐎 County Kildare</strong><span>Kilcullen, south-Kildare heritage, castles and our own filmed visits</span></a>
-    <a class="dest-link" href="/kilkenny.html"><strong>🏯 County Kilkenny</strong><span>The medieval city, historic houses, gardens and county discoveries</span></a>
-    <a class="dest-link" href="/laois.html"><strong>⛰️ County Laois</strong><span>Nicola's home county, childhood favourites, woods and hidden heritage</span></a>
-    <a class="dest-link" href="/wexford.html"><strong>🌊 County Wexford</strong><span>Childhood beaches, quiet coastal favourites, heritage discoveries and hidden corners</span></a>
-    <a class="dest-link" href="/wicklow.html"><strong>🌿 County Wicklow</strong><span>Fifteen years in Baltinglass, monastic history, mountains, gardens and coast</span></a>
-    <a class="dest-link" href="/hidden-ireland-gems.html"><strong>💎 Hidden Ireland</strong><span>Our growing collection of places most visitors miss</span></a>
-  </div>
-</div>
-
-<div id="experiences" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">07</div><div class="chapterTitle"><div class="chapterLabel">Tours, experiences & places to stay</div><div class="chapterName">Plan your Ireland trip</div></div></div></div>
+<div id="experiences" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">06</div><div class="chapterTitle"><div class="chapterLabel">Tours, experiences & places to stay</div><div class="chapterName">Plan your Ireland trip</div></div></div></div>
 
 <div class="card greenCard">
   <div class="eyebrow"><span class="badge ireland">🚐 TourRadar</span><span class="badge outline">Multi-day Ireland tours</span></div>
   <h2>Prefer to let someone else plan the route?</h2>
-  <p style="color:var(--ink-soft);font-size:14px;">We love exploring Ireland independently, but if you'd rather have the route, transport and logistics organised, these are two Ireland itineraries we'd start by looking at. <strong>These are our picks, not tours we've personally taken.</strong></p>
+  <p style="color:var(--ink-soft);font-size:14px;">Our own Ireland is mostly back roads and hidden corners — but if you'd rather have the classic loop of Connemara, the Burren, the Cliffs of Moher and Kerry organised for you, these are two itineraries we'd start by looking at. <strong>These are our picks, not tours we've personally taken.</strong></p>
   <div class="tour-grid">
     <div class="tour-pick">
       <span class="badge ireland">☘️ Small group</span>
@@ -681,7 +675,18 @@
       <a href="https://www.tourradar.com/t/129407?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored">View Best of Ireland →</a>
     </div>
   </div>
-  <div class="links"><a class="btn-primary" href="https://tr.tours/twofortherowd" target="_blank" rel="noopener sponsored">Browse more Ireland tours on TourRadar →</a></div><p class="disclosure"><strong>Disclosure:</strong> TourRadar links are affiliate links. If you book through them we may earn a commission at no extra cost to you.</p>
+  <!-- TOURRADAR WIDGET — test. Official embed from TourRadar partner dashboard (partner-id two-for-the-rowd, deals only, query ireland). Script loads only when the visitor scrolls near this block. -->
+  <div class="tr-widget-block" id="tourradar-widget">
+    <h3>Explore Ireland with TourRadar</h3>
+    <p>Want more options? Browse current deals on guided Ireland tours below — live prices, dates and availability come straight from TourRadar.</p>
+    <div class="tr-widget-frame">
+      <x-tr-tours partner-id="two-for-the-rowd" campaign="tours-widget" layout="slider" results="6" density="compact" primary-color="#176B45" bg-color="#FFFFFF" text-color="#1A1208" radius="16px" cta="View tour" deals-only="true" query="ireland"></x-tr-tours>
+    </div>
+    <div class="tr-widget-credit">
+      <a href="https://www.tourradar.com" target="_blank" rel="noopener">Powered by TourRadar</a>
+    </div>
+  </div>
+  <div class="links"><a class="btn-primary" href="https://www.tourradar.com/d/ireland?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=ireland-browse" target="_blank" rel="noopener sponsored">Browse more Ireland tours on TourRadar →</a></div><p class="disclosure"><strong>Disclosure:</strong> TourRadar links are affiliate links. If you book through them we may earn a commission at no extra cost to you.</p>
 </div>
 
 <div class="card">
@@ -707,16 +712,16 @@
   <p class="disclosure"><strong>Disclosure:</strong> Klook links are affiliate links. If you book through them we may earn a small commission at no extra cost to you.</p>
 </div>
 
-<div class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">08</div><div class="chapterTitle"><div class="chapterLabel">One more from the road</div><div class="chapterName">More Ireland through our lens</div></div></div></div>
+<div class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">07</div><div class="chapterTitle"><div class="chapterLabel">One more from the road</div><div class="chapterName">More Ireland through our lens</div></div></div></div>
 <div class="card" style="padding:18px;">
   <div class="photo-grid-2">
     <img src="/img/ireland26e.jpg" alt="Historic church and tower photographed on our travels around Ireland" loading="lazy">
     <img src="/img/ireland26b.jpg" alt="Kylemore Abbey during our Ireland travels" loading="lazy">
   </div>
-  <p class="note">Our own photographs from Ireland — the archive will grow as the guides do.</p>
+  <p class="note">Our own photographs from Ireland — no stock images.</p>
 </div>
 
-<div id="practical" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">09</div><div class="chapterTitle"><div class="chapterLabel">The best bits are often between stops</div><div class="chapterName">Our Ireland road-trip tips</div></div></div></div>
+<div id="practical" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">08</div><div class="chapterTitle"><div class="chapterLabel">The best bits are often between stops</div><div class="chapterName">Our Ireland road-trip tips</div></div></div></div>
 <div class="card goldCard">
   <ul>
     <li><strong>Leave room for detours.</strong> Some of our favourite discoveries began with a sign, a gate or a road we'd never taken before.</li>
@@ -728,7 +733,7 @@
   </ul>
 </div>
 
-<div id="faq" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">10</div><div class="chapterTitle"><div class="chapterLabel">Common questions</div><div class="chapterName">Ireland travel FAQ</div></div></div></div>
+<div id="faq" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">09</div><div class="chapterTitle"><div class="chapterLabel">Common questions</div><div class="chapterName">Ireland travel FAQ</div></div></div></div>
 <div class="card">
   <div class="faqItem open"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What are the best places to visit in Ireland?</div><div class="faqA">There isn't one perfect list. Ireland's famous places are famous for a reason, but we think some of the best trips mix them with smaller towns, heritage sites and unexpected stops. That's why this hub is organised around the Ireland we've actually explored rather than a generic top-ten list.</div></div>
   <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What parts of Ireland do tourists miss?</div><div class="faqA">The Midlands and South Leinster are regularly overlooked beside Dublin and the west coast. Our <a href="/hidden-ireland-gems.html"><strong>Hidden Ireland</strong></a> collection is specifically about the places that deserve more attention.</div></div>
@@ -739,13 +744,33 @@
 
 <div class="card heroCard irelandHero" style="text-align:center;min-height:360px;align-items:center;">
   <h2 style="text-align:center;">Come explore Ireland with us</h2>
-  <p style="text-align:center;color:var(--ink-soft);max-width:620px;margin:0 auto 18px;">This page will keep growing as we do. Start in our home county, dive into Hidden Ireland, or pick a marker on the map and see where it takes you.</p>
+  <p style="text-align:center;color:var(--ink-soft);max-width:620px;margin:0 auto 18px;">Start in our home county, dive into Hidden Ireland, or pick a marker on the map and see where it takes you.</p>
   <div class="links" style="justify-content:center;"><a class="btn-primary" href="/carlow.html">Explore Carlow →</a><a class="btn-primary" href="/wexford.html">Explore Wexford →</a><a class="btn-gold" href="/hidden-ireland-gems.html">Discover Hidden Ireland →</a><a class="btn-outline" href="/#destinations">All destinations →</a></div>
 </div>
 </div>
 
 <footer><p>© <span id="year"></span> <a href="/">Two for the Row'd</a> · <a href="/#destinations">All destinations</a></p></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+/* Load the TourRadar widget script only when the visitor nears the tours section */
+(function(){
+  var block=document.getElementById('tourradar-widget'); if(!block) return;
+  var loaded=false;
+  function loadTR(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.type='module';
+    s.src='https://assets.api.b2b.tourradar.com/widgets/loader.js';
+    document.body.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      if(entries.some(function(e){return e.isIntersecting;})){ loadTR(); io.disconnect(); }
+    },{rootMargin:'800px 0px'});
+    io.observe(block);
+  } else { loadTR(); }
+})();
+</script>
 
 <script>
 (function(){
@@ -755,7 +780,7 @@
   const map=L.map(el,{scrollWheelZoom:false}).setView([53.35,-7.7],7);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
   const stops=[
-    {name:'Carlow',lat:52.8365,lng:-6.9341,region:'Leinster',color:'#176b45',text:'Our home county and the starting point for our growing Ireland archive.',url:'/carlow.html'},
+    {name:'Carlow',lat:52.8365,lng:-6.9341,region:'Leinster',color:'#176b45',text:'Our home county and where our Ireland guides began.',url:'/carlow.html'},
     {name:'Kildare',lat:53.158,lng:-6.909,region:'Leinster',color:'#176b45',text:'Kilcullen, horse country, castles and south-Kildare heritage explored first-hand.',url:'/kildare.html'},
     {name:'Kilkenny',lat:52.654,lng:-7.245,region:'Leinster',color:'#176b45',text:'Ireland’s medieval city, historic houses, gardens and county discoveries.',url:'/kilkenny.html'},
     {name:'Laois',lat:53.032,lng:-7.299,region:'Leinster',color:'#176b45',text:'Nicola’s home county — childhood favourites, woodland walks and hidden heritage.',url:'/laois.html'},
