@@ -369,6 +369,20 @@
 .exp-code{font-family:monospace;font-weight:700;text-decoration:line-through;color:var(--ink-soft,#4a3f28)}
 .exp-date{white-space:nowrap}
 </style>
+<style>
+/* Newsletter signup box */
+.nlx{max-width:940px;margin:36px auto;padding:0 16px;position:relative;z-index:1}
+.nlx-inner{text-align:center;background:linear-gradient(135deg,#ffd84a,#ffeb9b);border:1px solid #e8c235;border-radius:24px;padding:30px 22px;box-shadow:0 12px 32px rgba(232,194,53,.22);color:#1a1208;font-family:'DM Sans','Segoe UI',Arial,sans-serif}
+.nlx-emoji{font-size:34px;line-height:1}
+.nlx h2{font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;line-height:1.2;margin:8px 0 10px;color:#1a1208}
+.nlx p{max-width:600px;margin:0 auto 16px;color:#5a4b2b;font-size:15px;line-height:1.65}
+.nlx button{display:inline-flex;align-items:center;gap:6px;padding:12px 20px;border-radius:12px;border:0;background:#1a1208;color:#fff;font:700 14px 'DM Sans',Arial,sans-serif;cursor:pointer}
+.nlx button:hover{background:#2e2410}
+.nlx button:focus-visible{outline:3px solid #e8c235;outline-offset:3px}
+</style>
+  <!-- MailerLite Universal -->
+  <script>(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account','2378028');</script>
+  <!-- End MailerLite Universal -->
 </head>
 <body>
 
@@ -575,6 +589,15 @@
   </div>
 
 </div>
+
+<section class="nlx" aria-label="Newsletter">
+  <div class="nlx-inner">
+    <div class="nlx-emoji" aria-hidden="true">💌</div>
+    <h2>Never miss a travel deal</h2>
+    <p>Join our newsletter and we’ll send you the travel deals and discount codes we actually rate — including Black Friday — plus new guides. You’ll get our free <strong>10 Deadly Irish Hidden Gems</strong> guide straight away.</p>
+    <button class="ml-onclick-form" type="button" onclick="ml('show','ZiCglE',true);gtag('event','newsletter_click',{location:location.pathname});">🎁 Join &amp; get the free guide →</button>
+  </div>
+</section>
 
 <footer>
   <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/tourradar-discount-code.html">TourRadar discount codes</a></p>
