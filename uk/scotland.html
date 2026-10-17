@@ -1,12 +1,12 @@
 <!doctype html> 
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','981657641071814');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"/></noscript>
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Scotland — Edinburgh, Aberdeen & Scottish Highlands | Two for the Row'd</title>
   <meta name="description" content="Explore Scotland with Two for the Row'd: Edinburgh, Aberdeen and the Scottish Highlands, including Stirling Castle, Loch Ness, Glencoe and Fort William." />
@@ -131,6 +131,15 @@
       .links a { text-align: center; justify-content: center; }
     }
   </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/scotland.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 <body>
 
@@ -150,6 +159,14 @@
     <span>›</span>
     <span>Scotland</span>
   </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="https://twofortherowd.com/united-kingdom.html">← United Kingdom</a>
+  <a href="#our-scottish-destinations">Our Scottish destinations</a>
+  <a href="#guided-tours">Guided tours</a>
+  <a href="#things-to-do">Things to do</a>
+  <a href="#where-to-stay">Where to stay</a>
+</div></nav>
+
 
   <!-- HERO -->
   <div class="card heroCard">
@@ -186,7 +203,7 @@
   </div>
 
   <!-- DESTINATIONS -->
-  <div class="section-divider">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Our Scottish destinations</div>
+  <div  id="our-scottish-destinations" class="section-divider">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Our Scottish destinations</div>
   <div class="card">
     <p style="color:var(--ink-soft);margin-bottom:16px;">Detailed guides for the places we've actually visited and loved in Scotland.</p>
     <div class="dest-grid">
@@ -216,7 +233,7 @@
   </div>
 
   <!-- SCOTLAND TOURS -->
-  <div class="section-divider">🚌 Guided tours</div>
+  <div  id="guided-tours" class="section-divider">🚌 Guided tours</div>
   <div class="card heroCard">
     <h2>Explore Scotland with TourRadar</h2>
     <p>The Highlands are best explored with time and freedom — a guided tour takes care of the logistics so you can focus on the views.</p>
@@ -227,7 +244,7 @@
   </div>
 
   <!-- EXPERIENCES -->
-  <div class="section-divider">🎫 Things to do</div>
+  <div  id="things-to-do" class="section-divider">🎫 Things to do</div>
   <div class="card">
     <h2>Book Scotland experiences</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">Highland day trips, Edinburgh Castle tours, Loch Ness cruises, whisky tastings and more.</p>
@@ -238,7 +255,7 @@
   </div>
 
   <!-- HOTELS -->
-  <div class="section-divider">🏨 Where to stay</div>
+  <div  id="where-to-stay" class="section-divider">🏨 Where to stay</div>
   <div class="card">
     <h2>Find a hotel in Edinburgh</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">Planning to start your Scotland trip in Edinburgh? Browse Edinburgh hotel options on Klook.</p>

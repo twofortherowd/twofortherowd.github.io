@@ -1,12 +1,12 @@
 <!doctype html> 
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','981657641071814');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"/></noscript>
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Wales — Cardiff, Swansea, Llandudno & Coastal Scenery | Two for the Row'd</title>
   <meta name="description" content="Explore Wales with Two for the Row'd. Cardiff's charm, Swansea's bay, Llandudno's Victorian seaside and stunning Welsh coastlines." />
@@ -133,6 +133,15 @@
       .links a { text-align: center; justify-content: center; }
     }
   </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/wales.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 <body>
 
@@ -152,6 +161,15 @@
     <span>›</span>
     <span>Wales</span>
   </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="https://twofortherowd.com/united-kingdom.html">← United Kingdom</a>
+  <a href="#our-welsh-destinations">Our Welsh destinations</a>
+  <a href="#from-the-archives">From the archives</a>
+  <a href="#guided-tours">Guided tours</a>
+  <a href="#things-to-do">Things to do</a>
+  <a href="#where-to-stay">Where to stay</a>
+</div></nav>
+
 
   <!-- HERO -->
   <div class="card heroCard">
@@ -187,7 +205,7 @@
   </div>
 
   <!-- DESTINATIONS -->
-  <div class="section-divider">🏴󠁧󠁢󠁷󠁬󠁳󠁿 Our Welsh destinations</div>
+  <div  id="our-welsh-destinations" class="section-divider">🏴󠁧󠁢󠁷󠁬󠁳󠁿 Our Welsh destinations</div>
   <div class="card">
     <p style="color:var(--ink-soft);margin-bottom:16px;">Detailed guides for the places we've actually visited and loved in Wales.</p>
     <div class="dest-grid">
@@ -217,7 +235,7 @@
   </div>
 
   <!-- FROM THE ARCHIVES: FISHGUARD -->
-  <div class="section-divider">🎞️ From the archives</div>
+  <div  id="from-the-archives" class="section-divider">🎞️ From the archives</div>
   <div class="card heroCard">
     <div class="eyebrow">
       <span class="badge">Fishguard</span>
@@ -235,7 +253,7 @@
   </div>
 
   <!-- WALES TOURS -->
-  <div class="section-divider">🚌 Guided tours</div>
+  <div  id="guided-tours" class="section-divider">🚌 Guided tours</div>
   <div class="card heroCard">
     <h2>Explore Wales with TourRadar</h2>
     <p>Wales has some of the most dramatic scenery in the British Isles — Snowdonia, the Brecon Beacons, the Pembrokeshire Coast. A guided tour is a great way to see the best without spending your holiday navigating the roads.</p>
@@ -246,7 +264,7 @@
   </div>
 
   <!-- EXPERIENCES -->
-  <div class="section-divider">🎫 Things to do</div>
+  <div  id="things-to-do" class="section-divider">🎫 Things to do</div>
   <div class="card">
     <h2>Book Wales experiences</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">Snowdonia hikes, Brecon Beacons tours, coastal walks, Cardiff attractions and much more.</p>
@@ -257,7 +275,7 @@
   </div>
 
   <!-- HOTELS -->
-  <div class="section-divider">🏨 Where to stay</div>
+  <div  id="where-to-stay" class="section-divider">🏨 Where to stay</div>
   <div class="card">
     <h2>Find a hotel in Cardiff</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">Planning a Cardiff stay? Browse hotel options around Cardiff on Klook.</p>
