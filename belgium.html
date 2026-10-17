@@ -276,6 +276,12 @@
     .subItem h3{font-size:1.02rem;margin-bottom:6px;}
     .subItem p{font-size:13.5px;line-height:1.6;color:var(--ink-soft);margin:0;}
 
+    .hotelCityGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:16px 0;}
+    .hotelCity{background:rgba(255,255,255,.82);border:1px solid var(--border);border-radius:13px;padding:14px 9px;text-align:center;box-shadow:var(--shadow-sm);text-decoration:none;color:inherit;display:block;transition:transform .15s ease,box-shadow .15s ease;}.hotelCity:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--gold-dark);}
+    .hotelCityIcon{font-size:22px;display:block;margin-bottom:4px;}.hotelCityName{font-family:var(--font-display);font-size:.98rem;font-weight:800;display:block;}
+    .hotelCityNote{font-size:10.5px;color:var(--muted);display:block;margin-top:2px;line-height:1.25;}.hotelCityCta{font-size:11px;font-weight:800;color:var(--bel-red);display:block;margin-top:8px;}
+    .amzBtn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:8px;background:var(--gold);border:1px solid var(--gold-dark);}
+    @media(max-width:700px){.hotelCityGrid{grid-template-columns:repeat(2,1fr);}}
     /* --- Belgium map --- */
     .belgiumMapCard{padding:18px;overflow:hidden}.belgiumMapIntro{padding:4px 6px 14px}
     #belgiumJourneyMap{height:480px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1}
@@ -328,6 +334,7 @@
     <a href="#food">Food &amp; Drink</a>
     <a href="#getting-around">Getting Around</a>
     <a href="#tours">Tours</a>
+    <a href="#hotels">Hotels</a>
     <a href="#things-to-do">Things to Do</a>
     <a href="#faq">FAQ</a>
     <a href="#packing">Packing</a>
@@ -552,8 +559,31 @@
     <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
   </div>
 
-  <!-- 08 THINGS TO DO -->
-  <div id="things-to-do" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">08</div><div class="chapterTitle"><div class="chapterLabel">Tours &amp; experiences</div><div class="chapterName">Things to do in Belgium</div></div></div></div>
+  <!-- 08 HOTELS -->
+  <div id="hotels" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">08</div><div class="chapterTitle"><div class="chapterLabel">Where to stay</div><div class="chapterName">Hotels in Belgium</div></div></div></div>
+  <div class="card goldCard">
+    <div class="eyebrow"><span class="badge">🏨 Belgium hotel search</span><span class="badge outline">Klook</span></div>
+    <h2>Choose your Belgian base</h2>
+    <p style="color:var(--ink-soft);font-size:14px;">Brussels is the easiest base for the whole country, but an overnight in Bruges, Ghent or Antwerp lets you see them once the day-trippers have gone. Jump straight to the Klook hotel search for the city you're planning.</p>
+    <div class="hotelCityGrid">
+      <a class="hotelCity" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1507214&k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fc306-brussels%2F3-hotel%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <span class="hotelCityIcon">🏛️</span><span class="hotelCityName">Brussels</span><span class="hotelCityNote">Our home base</span><span class="hotelCityCta">Search hotels →</span>
+      </a>
+      <a class="hotelCity" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1507215&k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fc305-bruges%2F3-hotel%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <span class="hotelCityIcon">🏰</span><span class="hotelCityName">Bruges</span><span class="hotelCityNote">Stay overnight</span><span class="hotelCityCta">Search hotels →</span>
+      </a>
+      <a class="hotelCity" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1507216&k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fc74812-gent%2F3-hotel%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <span class="hotelCityIcon">🏙️</span><span class="hotelCityName">Ghent</span><span class="hotelCityNote">Canals &amp; character</span><span class="hotelCityCta">Search hotels →</span>
+      </a>
+      <a class="hotelCity" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1507219&k_site=https%3A%2F%2Fwww.klook.com%2Fdestination%2Fc198434-antwerp%2F3-hotel%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">
+        <span class="hotelCityIcon">🌊</span><span class="hotelCityName">Antwerp</span><span class="hotelCityNote">Port city stays</span><span class="hotelCityCta">Search hotels →</span>
+      </a>
+    </div>
+    <p class="disclosure"><strong>Disclosure:</strong> Klook is an affiliate partner. If you book through our links, we may earn a small commission at no extra cost to you.</p>
+  </div>
+
+  <!-- 09 THINGS TO DO -->
+  <div id="things-to-do" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">09</div><div class="chapterTitle"><div class="chapterLabel">Tours &amp; experiences</div><div class="chapterName">Things to do in Belgium</div></div></div></div>
   <div class="card">
     <h2>Book Belgium experiences with GetYourGuide</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">From Grand Place walking tours to Belgian beer tastings, Bruges day trips and Ghent food experiences — check dates and prices below, or browse more activities:</p>
@@ -579,8 +609,8 @@
     <p class="disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
   </div>
 
-  <!-- 09 FAQ -->
-  <div id="faq" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">09</div><div class="chapterTitle"><div class="chapterLabel">Common questions</div><div class="chapterName">Belgium FAQ</div></div></div></div>
+  <!-- 10 FAQ -->
+  <div id="faq" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">10</div><div class="chapterTitle"><div class="chapterLabel">Common questions</div><div class="chapterName">Belgium FAQ</div></div></div></div>
   <div class="card">
     <h2>Belgium FAQ</h2>
     <div class="faqItem open">
@@ -621,21 +651,23 @@
     </div>
   </div>
 
-  <!-- 10 PACKING -->
-  <div id="packing" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">10</div><div class="chapterTitle"><div class="chapterLabel">Before you go</div><div class="chapterName">What to pack for Belgium</div></div></div></div>
+  <!-- 11 PACKING -->
+  <div id="packing" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">11</div><div class="chapterTitle"><div class="chapterLabel">Before you go</div><div class="chapterName">What to pack for Belgium</div></div></div></div>
   <div class="card">
     <h2>Belgium packing essentials — what we'd bring</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">Belgium's weather can be changeable — pack layers. Comfortable walking shoes are essential as all six cities are very walkable. Whether summer warmth or winter cold, good preparation keeps you comfortable while you explore.</p>
     <div class="highlights-grid">
-      <div class="highlight-item"><div class="highlight-icon">👟</div><div class="highlight-title">Comfortable walking shoes</div><p class="highlight-text">All six cities are best explored on foot. Brussels, Bruges, Ghent, Antwerp — expect cobblestone streets. Comfortable, well-broken-in shoes are essential.</p></div>
-      <div class="highlight-item"><div class="highlight-icon">🧥</div><div class="highlight-title">Light layers</div><p class="highlight-text">Belgian weather is changeable. A lightweight sweater or fleece you can pack away works year-round. In summer, light layers for variable temperatures and evening coolness.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">👟</div><div class="highlight-title">Comfortable walking shoes</div><p class="highlight-text">All six cities are best explored on foot. Brussels, Bruges, Ghent, Antwerp — expect cobblestone streets. Comfortable, well-broken-in shoes are essential.</p><a class="amzBtn" href="https://amzn.to/4c3cH8F" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a></div>
+      <div class="highlight-item"><div class="highlight-icon">🧥</div><div class="highlight-title">Light layers</div><p class="highlight-text">Belgian weather is changeable. A lightweight sweater or fleece you can pack away works year-round. In summer, light layers for variable temperatures and evening coolness.</p><a class="amzBtn" href="https://amzn.to/4mlylrZ" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a></div>
       <div class="highlight-item"><div class="highlight-icon">🌧️</div><div class="highlight-title">Rain jacket</div><p class="highlight-text">Belgium gets rain. A packable rain jacket doesn't take up much space and is genuinely useful. Keep one in your day bag when exploring.</p></div>
       <div class="highlight-item"><div class="highlight-icon">☔</div><div class="highlight-title">Compact umbrella</div><p class="highlight-text">Small, lightweight umbrella for sudden rain. Many cafés and shops provide shelter, but being prepared means you can explore regardless.</p></div>
-      <div class="highlight-item"><div class="highlight-icon">🎒</div><div class="highlight-title">Day bag</div><p class="highlight-text">For day trips to Bruges, Ghent or Liège from Brussels. Carry water, extra layer, camera, anything you pick up without weighing yourself down.</p></div>
-      <div class="highlight-item"><div class="highlight-icon">📱</div><div class="highlight-title">Portable power bank</div><p class="highlight-text">Belgium is incredibly photogenic — Grand Place, Bruges canals, the Atomium. Keep your phone charged for maps, photos and music.</p></div>
-      <div class="highlight-item"><div class="highlight-icon">🔌</div><div class="highlight-title">Travel adaptor</div><p class="highlight-text">Belgium uses Type E plugs. A universal travel adaptor is essential so you can charge devices at your accommodation.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🎒</div><div class="highlight-title">Day bag</div><p class="highlight-text">For day trips to Bruges, Ghent or Liège from Brussels. Carry water, extra layer, camera, anything you pick up without weighing yourself down.</p><a class="amzBtn" href="https://amzn.to/4tC4r5e" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a></div>
+      <div class="highlight-item"><div class="highlight-icon">📱</div><div class="highlight-title">Portable power bank</div><p class="highlight-text">Belgium is incredibly photogenic — Grand Place, Bruges canals, the Atomium. Keep your phone charged for maps, photos and music.</p><a class="amzBtn" href="https://amzn.to/41XJZju" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a></div>
+      <div class="highlight-item"><div class="highlight-icon">🔌</div><div class="highlight-title">Travel adaptor</div><p class="highlight-text">Belgium uses Type E plugs. A universal travel adaptor is essential so you can charge devices at your accommodation.</p><a class="amzBtn" href="https://link.amazon/B0cAbABD9" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a></div>
+      <div class="highlight-item"><div class="highlight-icon">📶</div><div class="highlight-title">eSIM card (Europe)</div><p class="highlight-text">Stay connected across Belgium without roaming worries — handy for train times, maps and finding your way between cities.</p><a class="amzBtn" href="https://amzn.to/4u1bbKl" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a></div>
       <div class="highlight-item"><div class="highlight-icon">💧</div><div class="highlight-title">Reusable water bottle</div><p class="highlight-text">Belgium has excellent tap water. Bring a reusable bottle, refill at cafés and fountains, stay hydrated on long walking days.</p></div>
     </div>
+    <p class="disclosure"><strong>Disclosure:</strong> These are Amazon affiliate links. If you buy through them we may earn a small commission at no extra cost to you.</p>
   </div>
 
   <!-- FINAL CTA -->
