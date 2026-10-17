@@ -2,16 +2,16 @@
   <div class="destHero">
     <div>
       <div class="destHeroKicker">🌍 Two for the Row'd · first-hand travel guides</div>
-      <h1>Destination Guides
+      <h1>Destinations
         <em>60+ countries, hundreds of places — all actually travelled by us</em>
       </h1>
-      <p>Browse our first-hand guides by region, from quick European city breaks to huge road trips, safaris, island-hopping adventures and places we once called home. Every main guide starts with somewhere we've genuinely been.</p>
+      <p>Everywhere we've been, all in one place. Tap a country on the map, jump straight to one from the list, or browse our first-hand guides by region — from quick European city breaks to huge road trips, safaris, island-hopping and places we once called home.</p>
     </div>
   </div>
 
   <div class="destProof">
     <div class="destProofBox"><strong>60+</strong><span>countries & territories</span></div>
-    <div class="destProofBox"><strong>9 regions</strong><span>from Ireland to Oceania</span></div>
+    <div class="destProofBox"><strong>6 continents</strong><span>travelled between us</span></div>
     <div class="destProofBox"><strong>First-hand only</strong><span>no pretend-we've-been-there guides</span></div>
   </div>
 
@@ -274,6 +274,399 @@
 </style>
 
 <style>
+  #map-page{
+    --map-green:#123d32;
+    --map-green-2:#2d6a4f;
+    --map-gold:#d9ad45;
+    --map-gold-soft:#f4d984;
+    --map-paper:#fffdf8;
+    --map-ink:#1d2722;
+    --map-soft:#66716b;
+    --map-border:rgba(29,39,34,.11);
+    --map-shadow:0 14px 38px rgba(18,61,50,.08);
+    max-width:960px;
+    margin:0 auto;
+  }
+
+  #map-page .mapHero{
+    min-height:440px;
+    display:flex;
+    align-items:flex-end;
+    padding:44px;
+    border-radius:26px;
+    color:#fff;
+    margin-bottom:18px;
+    overflow:hidden;
+    background:
+      linear-gradient(90deg,rgba(10,31,26,.84),rgba(10,31,26,.56) 56%,rgba(10,31,26,.20)),
+      radial-gradient(circle at 82% 18%,rgba(244,217,132,.09),transparent 34%),
+      url('/img/mappic.jpg') center/cover no-repeat,
+      linear-gradient(135deg,#123d32 0%,#245c4a 56%,#4b806b 100%);
+    box-shadow:var(--map-shadow);
+  }
+
+  #map-page .mapHeroKicker{
+    display:inline-flex;
+    padding:7px 12px;
+    margin-bottom:15px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.23);
+    background:rgba(255,255,255,.10);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+
+  #map-page .mapHero h1{
+    color:#fff;
+    font-size:clamp(2.7rem,6vw,5rem);
+    text-shadow:0 3px 16px rgba(0,0,0,.30);
+    line-height:1.02;
+    letter-spacing:-.04em;
+    margin:0 0 14px;
+  }
+
+  #map-page .mapHero h1 em{
+    display:block;
+    margin-top:10px;
+    color:var(--map-gold-soft);
+    font-size:.45em;
+    line-height:1.15;
+  }
+
+  #map-page .mapHero p{
+    max-width:740px;
+    margin:0;
+    color:rgba(255,255,255,.94);
+    text-shadow:0 2px 10px rgba(0,0,0,.24);
+    font-size:1rem;
+  }
+
+  #map-page .mapHeroActions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+  }
+
+  #map-page .mapHeroActions.center{justify-content:center;}
+
+  #map-page .mapBtn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 18px;
+    border-radius:11px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:800;
+    transition:.16s ease;
+  }
+  #map-page .mapBtn:hover{transform:translateY(-2px);}
+  #map-page .mapBtn.gold{background:var(--map-gold-soft);color:#173026;}
+  #map-page .mapBtn.white{background:#fff;color:var(--map-green);}
+
+  #map-page .mapProof{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-bottom:34px;
+  }
+
+  #map-page .mapProofBox{
+    background:#fff;
+    border:1px solid var(--map-border);
+    border-radius:17px;
+    padding:18px;
+    box-shadow:0 6px 20px rgba(18,61,50,.05);
+  }
+
+  #map-page .mapProofBox strong{
+    display:block;
+    font-family:var(--font-display);
+    font-size:1.18rem;
+    color:var(--map-green);
+    margin-bottom:3px;
+  }
+
+  #map-page .mapProofBox span{
+    font-size:12px;
+    color:var(--map-soft);
+  }
+
+  #map-page .mapSectionHead{
+    margin:46px 0 16px;
+  }
+
+  #map-page .mapEyebrow{
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:var(--map-green-2);
+    margin-bottom:6px;
+  }
+
+  #map-page .mapEyebrow.light{color:var(--map-gold-soft);}
+
+  #map-page .mapSectionHead h2{
+    font-size:clamp(1.85rem,4vw,2.8rem);
+    margin-bottom:7px;
+  }
+
+  #map-page .mapSectionHead p{
+    max-width:720px;
+    color:var(--map-soft);
+  }
+
+  #map-page .mapCard{
+    background:#fff;
+    border:1px solid var(--map-border);
+    border-radius:24px;
+    padding:24px;
+    box-shadow:var(--map-shadow);
+  }
+
+  #map-page .mapNote{
+    font-size:13px;
+    color:var(--map-soft);
+    margin-bottom:15px;
+  }
+
+  #map-page #tfrMap{
+    width:100%;
+    border-radius:18px!important;
+    overflow:hidden;
+    border:1px solid rgba(26,18,8,.08);
+    box-shadow:0 8px 24px rgba(18,61,50,.07);
+    background:#d4e8f5;
+  }
+
+  #map-page #tfrTooltip{
+    display:flex;
+    align-items:center;
+    min-height:30px!important;
+    font-size:13px!important;
+    padding:5px 2px!important;
+  }
+
+  #map-page .mapLegend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-top:8px;
+    font-size:12px;
+    color:var(--map-soft);
+  }
+
+  #map-page .mapLegend > span{
+    display:inline-flex!important;
+    align-items:center;
+    gap:6px;
+  }
+
+  #map-page .countryDirectory{
+    background:#fff;
+    border:1px solid var(--map-border);
+    border-radius:24px;
+    padding:26px;
+    box-shadow:var(--map-shadow);
+  }
+
+  #map-page .countryDirectory h3{
+    font-size:1.25rem;
+    margin-bottom:6px;
+  }
+
+  #map-page .directoryNote{
+    color:var(--map-soft);
+    font-size:13px;
+    margin-bottom:17px;
+  }
+
+  #map-page .directoryNote span{color:var(--muted);}
+
+  #map-page .countryList{
+    display:grid!important;
+    grid-template-columns:repeat(auto-fill,minmax(175px,1fr))!important;
+    gap:8px!important;
+  }
+
+  #map-page .countryList > a{
+    border-radius:11px!important;
+    padding:8px 10px!important;
+    background:linear-gradient(135deg,rgba(255,216,74,.22),rgba(255,244,186,.44))!important;
+    border:1px solid rgba(217,173,69,.42)!important;
+    transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease!important;
+  }
+
+  #map-page .countryList > a:hover{
+    transform:translateY(-2px)!important;
+    box-shadow:0 6px 15px rgba(184,120,10,.11);
+    border-color:rgba(184,120,10,.62)!important;
+  }
+
+  #map-page .mapFinalCta{
+    margin-top:38px;
+    padding:34px;
+    border-radius:24px;
+    text-align:center;
+    color:#fff;
+    background:linear-gradient(135deg,#123d32,#2f6d56);
+    box-shadow:var(--map-shadow);
+  }
+
+  #map-page .mapFinalCta h2{
+    color:#fff;
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    margin-bottom:8px;
+  }
+
+  #map-page .mapFinalCta p{
+    max-width:600px;
+    margin:0 auto;
+    color:rgba(255,255,255,.83);
+  }
+
+  @media(max-width:780px){
+    #map-page .mapProof{grid-template-columns:repeat(2,1fr);}
+  }
+
+  @media(max-width:620px){
+    #map-page .mapHero{
+      min-height:400px;
+      padding:28px 22px;
+      border-radius:20px;
+    }
+    #map-page .mapHero h1{font-size:3rem;}
+    #map-page .mapProof{grid-template-columns:1fr;}
+    #map-page .mapCard,
+    #map-page .countryDirectory{padding:18px;}
+    #map-page .countryList{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  }
+
+  @media(max-width:430px){
+    #map-page .countryList{grid-template-columns:1fr!important;}
+  }
+</style>
+<style>
+#destinations-page #map-page{max-width:none;margin:0 0 8px;}
+#destinations-page .regionsHead{margin:34px 0 6px;}
+#destinations-page .featured-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none;gap:12px;}
+#destinations-page .featured-grid .feat-card{padding:15px 16px;}
+#destinations-page .featured-grid .feat-title{font-size:.98rem;}
+#destinations-page .featured-grid .feat-sub{-webkit-line-clamp:2;font-size:12.5px;margin-bottom:10px;}
+@media(max-width:860px){#destinations-page .featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:520px){#destinations-page .featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}#destinations-page .featured-grid .feat-sub{display:none;}#destinations-page .featured-grid .feat-title{font-size:.9rem!important;line-height:1.25!important;margin-bottom:8px!important;}#destinations-page .featured-grid .feat-tag{font-size:10px;padding:2px 7px;margin-bottom:7px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}#destinations-page .featured-grid .feat-card{padding:11px!important;}#destinations-page .featured-grid .feat-card{min-height:0!important;}}
+@media(max-width:620px){#destinations-page #map-page .countryList{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;}#destinations-page #map-page .countryList>a{font-size:12.5px!important;padding:7px 8px!important;}#destinations-page .featured-grid .feat-sub{margin-bottom:8px;}}
+</style>
+
+<div id="map-page">
+  <div class="mapSectionHead">
+    <div class="mapEyebrow">Interactive map</div>
+    <h2>Tap around the world with us</h2>
+    <p>Gold means we've been there. If we've built a guide, the country is clickable.</p>
+  </div>
+
+  <div class="mapCard">
+    <p class="mapNote">Hover over or tap a country to see its name; click a gold country to open its guide. Smaller territories such as Gibraltar, Vatican City, Martinique and St Barths are too small to show clearly at this scale, but they’re included in the full list below.</p>
+  <div id="tfrMap" style="width:100%;border-radius:var(--radius-md);overflow:hidden;"></div>
+  <div id="tfrTooltip" style="font-size:14px;font-weight:700;color:#b8780a;min-height:22px;margin-top:10px;padding:4px 0;"></div>
+  <div class="mapLegend">
+    <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:3px;background:#e8c235;display:inline-block;border:1px solid #c8a230;"></span>Visited</span>
+    <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:3px;background:#c8c3b5;display:inline-block;border:1px solid #bbb6aa;"></span>Not yet</span>
+  </div>
+  </div>
+
+  <div class="mapSectionHead">
+    <div class="mapEyebrow">Everywhere we've been</div>
+    <h2>The full list</h2>
+    <p>Every country and territory we've set foot in, between us — tap a gold one to open its guide.</p>
+  </div>
+
+  <div class="countryDirectory">
+    <h3>Countries & territories</h3>
+    <p class="directoryNote">Use the gold links to jump straight into a guide. <span>(Alaska and Hawaii are covered within our USA travels, and Tasmania within Australia.)</span></p>
+  <div class="countryList">
+
+    <a href="/albania.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇦🇱 Albania →</a>
+    <a href="/anguilla.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇦🇮 Anguilla →</a>
+    <a href="/australia.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇦🇺 Australia →</a>
+    <a href="/austria.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇦🇹 Austria →</a>
+    <a href="/balearic-islands.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇪🇸 Balearic Islands →</a>
+    <a href="/belgium.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇧🇪 Belgium →</a>
+    <a href="/bulgaria.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇧🇬 Bulgaria →</a>
+    <a href="/canada.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇨🇦 Canada →</a>
+    <a href="/tenerife.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇮🇨 Canary Islands →</a>
+    <a href="/prague.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇨🇿 Czechia →</a>
+    <a href="/channel-islands.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇯🇪 Channel Islands →</a>
+    <a href="/copenhagen.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇩🇰 Denmark →</a>
+    <a href="/dominica.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇩🇲 Dominica →</a>
+    <a href="/estonia.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇪🇪 Estonia →</a>
+    <a href="/eswatini.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇸🇿 Eswatini →</a>
+    <a href="/finland.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇫🇮 Finland →</a>
+    <a href="/france.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇫🇷 France →</a>
+    <a href="/germany.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇩🇪 Germany →</a>
+    <a href="/gibraltar.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇬🇮 Gibraltar →</a>
+    <a href="/greece.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇬🇷 Greece →</a>
+    <a href="/guadeloupe.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇬🇵 Guadeloupe →</a>
+    <a href="/hungary.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇭🇺 Hungary →</a>
+    <a href="/iceland.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇮🇸 Iceland →</a>
+    <a href="/ireland.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇮🇪 Ireland →</a>
+    <a href="/isle-of-man.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇮🇲 Isle of Man →</a>
+    <a href="/israel.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇮🇱 Israel →</a>
+    <a href="/italy.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇮🇹 Italy →</a>
+    <a href="/jamaica.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇯🇲 Jamaica →</a>
+    <a href="/kenya.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇰🇪 Kenya →</a>
+    <a href="/latvia.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇱🇻 Latvia →</a>
+    <a href="/lesotho.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇱🇸 Lesotho →</a>
+    <a href="/liechtenstein.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇱🇮 Liechtenstein →</a>
+    <a href="/lithuania.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇱🇹 Lithuania →</a>
+    <a href="/luxembourg.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇱🇺 Luxembourg →</a>
+    <a href="/maldives.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇲🇻 Maldives →</a>
+    <a href="/malta-and-gozo.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇲🇹 Malta →</a>
+    <a href="/martinique.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇲🇶 Martinique →</a>
+    <a href="/mexico.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇲🇽 Mexico →</a>
+    <a href="/monaco.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇲🇨 Monaco →</a>
+    <a href="/morocco-tour-review.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇲🇦 Morocco →</a>
+    <a href="/netherlands.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇳🇱 Netherlands →</a>
+    <a href="/new-zealand.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇳🇿 New Zealand →</a>
+    <a href="/norway.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇳🇴 Norway →</a>
+    <a href="/palestine.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇵🇸 Palestine →</a>
+   <a href="/poland.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇵🇱 Poland →</a>
+    <a href="/lisbon.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇵🇹 Portugal →</a>
+    <a href="/bucharest.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇷🇴 Romania →</a>
+    <a href="/russia.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇷🇺 Russia →</a>
+    <a href="/st-barths.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇧🇱 St Barths →</a>
+    <a href="/st-lucia.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇱🇨 Saint Lucia →</a>
+    <a href="/singapore.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇸🇬 Singapore →</a>
+    <a href="/sint-maarten.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇸🇽 Sint Maarten →</a>
+    <a href="/slovakia.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇸🇰 Slovakia →</a>
+    <a href="/south-africa.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇿🇦 South Africa →</a>
+    <a href="/spain.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇪🇸 Spain →</a>
+    <a href="/sweden.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇸🇪 Sweden →</a>
+    <a href="/switzerland.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇨🇭 Switzerland →</a>
+    <a href="/zanzibar.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇹🇿 Tanzania →</a>
+    <a href="/tunisia.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇹🇳 Tunisia →</a>
+    <a href="/dubai.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇦🇪 UAE →</a>
+    <a href="/united-kingdom.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇬🇧 United Kingdom →</a>
+    <a href="/usa.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇺🇸 USA →</a>
+    <a href="/vatican-city.html" style="text-decoration:none;font-size:13px;padding:6px 10px;background:rgba(255,216,74,.28);border:1px solid rgba(232,194,53,.6);border-radius:8px;font-weight:700;color:var(--ink);display:block;transition:transform .15s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">🇻🇦 Vatican City →</a>
+
+    
+    </div>
+  </div>
+
+
+  <div class="mapSectionHead regionsHead">
+    <div class="mapEyebrow">Our guides</div>
+    <h2>Browse by region</h2>
+    <p>Every guide, grouped by part of the world.</p>
+  </div>
+</div>
+
+<style>
 .destinationIntro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.7fr);gap:28px;align-items:center;padding:26px 28px!important;background:linear-gradient(135deg,#fff 0%,#f5faf7 58%,#fff9e8 100%);border:1px solid rgba(45,106,79,.15);}
 .destEyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#2d6a4f;margin-bottom:8px;}
 .destinationIntro h2{margin:0 0 8px;font-family:var(--font-display);font-size:clamp(1.35rem,2.4vw,1.9rem);}
@@ -483,3 +876,17 @@
   </div>
 </div>
 </div>
+
+<script>
+(function(){
+  if(window._tfrMapInit)return;window._tfrMapInit=true;
+  var visited=new Set(["Albania","Austria","Belgium","Bulgaria","Czechia","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Iceland","Ireland","Israel","Italy","Latvia","Liechtenstein","Lithuania","Luxembourg","Malta","Monaco","Netherlands","Norway","Poland","Portugal","Romania","Russia","Slovakia","Spain","Sweden","Switzerland","United Kingdom","Eswatini","Kenya","Lesotho","Morocco","South Africa","Tunisia","Tanzania","Singapore","Maldives","United Arab Emirates","Canada","Dominica","Jamaica","Mexico","Saint Lucia","United States of America","Australia","New Zealand","Palestine"]);
+  var aliases={"United States of America":["United States","USA","United States of America"],"United Arab Emirates":["United Arab Emirates","UAE"],"Tanzania":["United Republic of Tanzania","Tanzania"],"Russia":["Russia","Russian Federation"],"Saint Lucia":["Saint Lucia","St. Lucia"]};
+  var guideUrls={'Albania':'/albania.html','Australia':'/australia.html','Austria':'/austria.html','Belgium':'/belgium.html','Bulgaria':'/bulgaria.html','Canada':'/canada.html','Czechia':'/prague.html','Denmark':'/copenhagen.html','Estonia':'/estonia.html','Eswatini':'/eswatini.html','Finland':'/finland.html','France':'/france.html','Germany':'/germany.html','Greece':'/greece.html','Hungary':'/hungary.html','Iceland':'/iceland.html','Ireland':'/ireland.html','Israel':'/israel.html','Italy':'/italy.html','Jamaica':'/jamaica.html','Kenya':'/kenya.html','Latvia':'/latvia.html','Lesotho':'/lesotho.html','Liechtenstein':'/liechtenstein.html','Lithuania':'/lithuania.html','Luxembourg':'/luxembourg.html','Maldives':'/maldives.html','Malta':'/malta-and-gozo.html','Mexico':'/mexico.html','Monaco':'/monaco.html','Morocco':'/morocco-tour-review.html','Netherlands':'/netherlands.html','New Zealand':'/new-zealand.html','Norway':'/norway.html','Palestine':'/palestine.html','Poland':'/poland.html','Portugal':'/lisbon.html','Romania':'/bucharest.html','Russia':'/russia.html','Saint Lucia':'/st-lucia.html','Singapore':'/singapore.html','Slovakia':'/slovakia.html','South Africa':'/south-africa.html','Spain':'/spain.html','Sweden':'/sweden.html','Switzerland':'/switzerland.html','Tanzania':'/zanzibar.html','Tunisia':'/tunisia.html','United Arab Emirates':'/dubai.html','United Kingdom':'/united-kingdom.html','United States of America':'/usa.html'};
+  function isVisited(n){if(visited.has(n))return true;for(var k in aliases){if(aliases[k].indexOf(n)>-1&&visited.has(k))return true;}return false;}
+  var ids={"008":"Albania","012":"Algeria","024":"Angola","032":"Argentina","036":"Australia","040":"Austria","056":"Belgium","068":"Bolivia","076":"Brazil","100":"Bulgaria","124":"Canada","152":"Chile","156":"China","170":"Colombia","191":"Croatia","203":"Czechia","208":"Denmark","233":"Estonia","246":"Finland","250":"France","276":"Germany","300":"Greece","348":"Hungary","352":"Iceland","372":"Ireland","376":"Israel","380":"Italy","388":"Jamaica","404":"Kenya","426":"Lesotho","428":"Latvia","438":"Liechtenstein","440":"Lithuania","442":"Luxembourg","462":"Maldives","470":"Malta","484":"Mexico","492":"Monaco","504":"Morocco","528":"Netherlands","554":"New Zealand","578":"Norway","275":"Palestine","616":"Poland","620":"Portugal","642":"Romania","643":"Russia","662":"Saint Lucia","702":"Singapore","703":"Slovakia","710":"South Africa","724":"Spain","748":"Eswatini","752":"Sweden","756":"Switzerland","760":"Syria","784":"United Arab Emirates","788":"Tunisia","804":"Ukraine","826":"United Kingdom","834":"Tanzania","840":"United States of America"};
+  function loadLibs(cb){if(window.d3&&window.topojson){cb();return;}var s1=document.createElement('script');s1.src='https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js';s1.onload=function(){var s2=document.createElement('script');s2.src='https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js';s2.onload=cb;document.head.appendChild(s2);};document.head.appendChild(s1);}
+  function draw(){var el=document.getElementById('tfrMap');var tip=document.getElementById('tfrTooltip');if(!el||!tip||el.querySelector('svg'))return;var w=840,h=440;var svg=d3.select(el).append('svg').attr('viewBox','0 0 '+w+' '+h).attr('width','100%').style('background','#d4e8f5').style('display','block');var proj=d3.geoNaturalEarth1().scale(130).translate([w/2,h/2]);var path=d3.geoPath(proj);d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function(world){svg.selectAll('path').data(topojson.feature(world,world.objects.countries).features).join('path').attr('d',path).attr('fill',function(d){var n=ids[String(d.id).padStart(3,'0')]||'';return isVisited(n)?'#e8c235':'#c8c3b5';}).attr('stroke','#fff').attr('stroke-width',0.4).style('cursor',function(d){var n=ids[String(d.id).padStart(3,'0')]||'';return guideUrls[n]?'pointer':'default';}).on('click',function(event,d){var n=ids[String(d.id).padStart(3,'0')]||'';if(guideUrls[n]){window.location.href=guideUrls[n];}}).on('mouseover',function(event,d){var n=ids[String(d.id).padStart(3,'0')]||'';var v=isVisited(n);d3.select(this).attr('fill',v?'#ffd84a':'#b0ab9e');if(n){tip.textContent=(v?'✓ ':'')+n+(guideUrls[n]?' — click to explore':'');tip.style.color=v?'#b8780a':'var(--muted)';}}).on('mouseout',function(event,d){var n=ids[String(d.id).padStart(3,'0')]||'';d3.select(this).attr('fill',isVisited(n)?'#e8c235':'#c8c3b5');tip.textContent='';});svg.append('path').datum(d3.geoGraticule()()).attr('d',path).attr('fill','none').attr('stroke','rgba(255,255,255,0.25)').attr('stroke-width',0.3);});}
+  loadLibs(draw);
+})();
+</script>

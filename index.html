@@ -227,11 +227,10 @@ header{
     .tr-home-widget x-tr-tours{display:block;width:100%;max-width:100%;}
   </style>
   <script>
-  const TAB_IDS = ["home","destinations","map","morocco","hidden","carlow","brew","hotel","shop","work","newsletters"];
+  const TAB_IDS = ["home","destinations","morocco","hidden","carlow","brew","hotel","shop","work","newsletters"];
     const SECTION_FILES = {
       home:         "section-home.html",
       destinations: "section-destinations.html",
-      map:          "section-map.html",
       morocco:      "section-morocco.html",
       hidden:       "section-hidden.html",
       carlow:       "section-carlow.html",
@@ -244,7 +243,9 @@ header{
     /* "home" content ships inline in the initial HTML for indexability,
        so it's pre-marked as loaded and won't be re-fetched/overwritten. */
     const loaded = { home: true };
-    const INITIAL_HASH = (location.hash || "").replace("#","");
+    /* old tab names that now live inside another tab */
+    const TAB_ALIASES = { map: "destinations" };
+    const INITIAL_HASH = (h => TAB_ALIASES[h] || h)((location.hash || "").replace("#",""));
     if (location.hash) history.replaceState(null,"",location.pathname+location.search);
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
@@ -390,7 +391,8 @@ header{
     });
     /* Back / Forward between tabs. Hashes that aren't tab names (in-page anchors) are ignored. */
     window.addEventListener("popstate", () => {
-      const t = (location.hash || "").replace("#","");
+      let t = (location.hash || "").replace("#","");
+      t = TAB_ALIASES[t] || t;
       if (TAB_IDS.includes(t)) show(t, {scroll:true, smooth:false, updateHash:false});
     });
     window.addEventListener("DOMContentLoaded", () => {
@@ -446,8 +448,7 @@ header{
 </div>
 <nav role="tablist" aria-label="Site sections">
   <button class="tabBtn" role="tab" id="tab-home"         aria-controls="home"         data-tab="home"         onclick="show('home')"         aria-selected="true"  tabindex="0">Home</button>
-  <button class="tabBtn" role="tab" id="tab-destinations" aria-controls="destinations" data-tab="destinations" onclick="show('destinations')" aria-selected="false" tabindex="-1">Destination Guides</button>
-  <button class="tabBtn" role="tab" id="tab-map"          aria-controls="map"          data-tab="map"          onclick="show('map')"          aria-selected="false" tabindex="-1">Where We've Been</button>
+  <button class="tabBtn" role="tab" id="tab-destinations" aria-controls="destinations" data-tab="destinations" onclick="show('destinations')" aria-selected="false" tabindex="-1">Destinations</button>
   <button class="tabBtn" role="tab" id="tab-morocco"      aria-controls="morocco"      data-tab="morocco"      onclick="show('morocco')"      aria-selected="false" tabindex="-1">Morocco Series</button>
   <button class="tabBtn" role="tab" id="tab-hidden"       aria-controls="hidden"       data-tab="hidden"       onclick="show('hidden')"       aria-selected="false" tabindex="-1">Ireland on Video</button>
   <button class="tabBtn" role="tab" id="tab-carlow"       aria-controls="carlow"       data-tab="carlow"       onclick="show('carlow')"       aria-selected="false" tabindex="-1">🇮🇪 Carlow</button>
@@ -589,7 +590,6 @@ header{
 </div>
   </section>
 <section id="destinations" role="tabpanel" aria-labelledby="tab-destinations"></section>
-  <section id="map"          role="tabpanel" aria-labelledby="tab-map"></section>
   <section id="morocco"      role="tabpanel" aria-labelledby="tab-morocco"></section>
   <section id="hidden"       role="tabpanel" aria-labelledby="tab-hidden"></section>
   <section id="carlow"       role="tabpanel" aria-labelledby="tab-carlow"></section>
