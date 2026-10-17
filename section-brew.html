@@ -517,7 +517,7 @@
           <div class="brew-tags"><span class="brew-tag stars">☕☕☕☕☕ Coffee</span></div>
         </div>
       </article>
-      <article class="brew-card abroad-card">
+      <article class="brew-card abroad-card" data-release="2026-11-07T20:00:00">
         <div class="brew-video"><iframe loading="lazy" src="https://www.youtube.com/embed/B_tdqjEHdWo" title="Fab4 Café The Beatles Story Liverpool" allowfullscreen></iframe></div>
         <div class="brew-card-body">
           <div class="brew-place">The Beatles Story, Royal Albert Dock · Liverpool 🇬🇧</div>
@@ -527,6 +527,19 @@
         </div>
       </article>
     </div>
+
+    <script>
+    /* Hide reviews whose YouTube video isn't public yet (release times are Irish time). */
+    (function(){
+      var now = Date.now();
+      document.querySelectorAll('.brew-card[data-release]').forEach(function(card){
+        var stamp = card.getAttribute('data-release'), d = new Date(stamp + 'Z'), y = d.getUTCFullYear();
+        function lastSun(m){ var t = new Date(Date.UTC(y, m + 1, 0)); t.setUTCDate(t.getUTCDate() - t.getUTCDay()); return t; }
+        var summer = d >= lastSun(2) && d < lastSun(9);
+        if (d.getTime() - (summer ? 3600000 : 0) > now) card.remove();
+      });
+    })();
+    </script>
 
     <div class="brew-cta">
       <h2>Know somewhere we should try next?</h2>
