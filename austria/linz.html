@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','981657641071814');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"/></noscript>
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Linz Travel Guide — Danube, Ars Electronica & Cultural Rebirth | Two for the Row'd</title>
   <meta name="description" content="Linz is Austria's underrated city. The Danube, Ars Electronica museum, Hauptplatz square and a cultural transformation that's genuinely worth experiencing." />
@@ -84,6 +84,15 @@
     footer a{color:var(--muted);font-weight:600;}
     @media(max-width:640px){.photo-grid-2{grid-template-columns:1fr;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}}
   </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/linz.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 <body>
 
@@ -101,6 +110,14 @@
     <span>›</span>
     <span>Linz</span>
   </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="../austria.html">← Austria</a>
+  <a href="#about-linz">About Linz</a>
+  <a href="#book-experiences">Book experiences</a>
+  <a href="#faq">FAQ</a>
+  <a href="#explore-austria">Explore Austria</a>
+</div></nav>
+
 
   <a href="../austria.html" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;font-size:14px;font-weight:700;color:var(--aut-red);text-decoration:none;">← Back to Austria</a>
 
@@ -132,7 +149,7 @@
   </div>
 
   <!-- ABOUT LINZ -->
-  <div class="section-divider">💫 About Linz</div>
+  <div  id="about-linz" class="section-divider">💫 About Linz</div>
 
   <div class="card">
     <h2>The city Austria forgot, until it transformed itself.</h2>
@@ -182,7 +199,7 @@
   </div>
 
   <!-- TOURS & EXPERIENCES -->
-  <div class="section-divider">✨ Book experiences</div>
+  <div  id="book-experiences" class="section-divider">✨ Book experiences</div>
 
   <div class="card heroCard">
     <h2>Browse Linz tours on TourRadar</h2>
@@ -206,7 +223,7 @@
   </div>
 
   <!-- FAQ -->
-  <div class="section-divider">❓ FAQ</div>
+  <div  id="faq" class="section-divider">❓ FAQ</div>
 
   <div class="card">
     <div class="faqItem open">
@@ -256,7 +273,7 @@
   </div>
 
   <!-- BOTTOM NAV -->
-  <div class="section-divider">🇦🇹 Explore Austria</div>
+  <div  id="explore-austria" class="section-divider">🇦🇹 Explore Austria</div>
 
   <div class="card heroCard" style="text-align:center;">
     <h2 style="text-align:center;">Other Austrian cities</h2>
