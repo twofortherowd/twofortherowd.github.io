@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>
@@ -29,8 +30,6 @@
 
   <!-- GetYourGuide -->
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- ═══ SEO ═══ -->
@@ -379,6 +378,15 @@
     }
 
 </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/MG.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 
 <body>
@@ -397,6 +405,14 @@
       <span>›</span>
       <span>Malta & Gozo</span>
     </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="https://twofortherowd.com/#map">← Our Destinations</a>
+  <a href="#the-trip">The Trip</a>
+  <a href="#malta-in-pictures">Malta in Pictures</a>
+  <a href="#book-experiences">Book Experiences</a>
+  <a href="#gozo">Gozo</a>
+</div></nav>
+
 
     <!-- ── HERO ──────────────────────────────────────────── -->
     <div class="card heroCard">
@@ -466,7 +482,7 @@
     </div>
 
     <!-- ── THE STORY ─────────────────────────────────────── -->
-    <div class="section-divider">🇲🇹 The Trip</div>
+    <div  id="the-trip" class="section-divider">🇲🇹 The Trip</div>
 
     <p class="section-label">The story</p>
     <div class="card">
@@ -543,7 +559,7 @@
     </div>
 
     <!-- ── MALTA PHOTOS ───────────────────────────────────── -->
-    <div class="section-divider">📸 Malta in Pictures</div>
+    <div  id="malta-in-pictures" class="section-divider">📸 Malta in Pictures</div>
 
     <p class="section-label">The island</p>
     <div class="card blueCard">
@@ -589,7 +605,7 @@
       </p>
     </div>
 
-<div class="section-divider">🎫 Book Experiences</div>
+<div  id="book-experiences" class="section-divider">🎫 Book Experiences</div>
 <div class="card goldCard">
   <h2>Book your experiences on Klook 🎫</h2>
   <p style="color:var(--ink-soft);font-size:14px;">Skip-the-line tickets, city passes, day trips and attraction entry worldwide — often cheaper than booking at the door.</p>
@@ -619,7 +635,7 @@
     </div>
 
     <!-- ── GOZO ───────────────────────────────────────────── -->
-    <div class="section-divider">⛴️ Gozo</div>
+    <div  id="gozo" class="section-divider">⛴️ Gozo</div>
 
     <p class="section-label">The sister island</p>
     <div class="card greenCard">

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
@@ -11,8 +12,6 @@
 
   <!-- GetYourGuide -->
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- ═══ SEO ═══ -->
@@ -331,6 +330,15 @@
     }
 
 </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/monaco1.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 
 <body>
@@ -349,6 +357,12 @@
       <span>›</span>
       <span>Monaco</span>
     </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="https://twofortherowd.com/#map">← Our Destinations</a>
+  <a href="#the-story">The Story</a>
+  <a href="#our-monaco-video">Our Monaco Video</a>
+</div></nav>
+
 
     <!-- ── HERO ──────────────────────────────────────────── -->
     <div class="card heroCard">
@@ -421,7 +435,7 @@
     </div>
 
     <!-- ── THE STORY ─────────────────────────────────────── -->
-    <div class="section-divider">🇲🇨 The Story</div>
+    <div  id="the-story" class="section-divider">🇲🇨 The Story</div>
 
     <p class="section-label">The world's most glamorous square kilometre</p>
     <div class="card">
@@ -508,7 +522,7 @@
     </div>
 
     <!-- ── VIDEO ──────────────────────────────────────────── -->
-    <div class="section-divider">🎬 Our Monaco Video</div>
+    <div  id="our-monaco-video" class="section-divider">🎬 Our Monaco Video</div>
 
     <div class="card darkCard">
       <h2>Watch our Monaco video</h2>

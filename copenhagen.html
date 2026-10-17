@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>
@@ -29,8 +30,6 @@
 
   <!-- GetYourGuide -->
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- ═══ SEO ═══ -->
@@ -534,6 +533,15 @@
     }
 
 </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/Copenhagen(11).jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 
 <body>
@@ -552,9 +560,18 @@
       <span>›</span>
       <span>Copenhagen</span>
     </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="https://twofortherowd.com/#destinations">← Our Destinations</a>
+  <a href="#the-trip">The Trip</a>
+  <a href="#explore-copenhagen-from-home">Explore Copenhagen from Home</a>
+  <a href="#our-copenhagen-video">Our Copenhagen Video</a>
+  <a href="#copenhagen-in-pictures">Copenhagen in Pictures</a>
+  <a href="#book-experiences">Book Experiences</a>
+</div></nav>
+
 
     <!-- ── HERO ──────────────────────────────────────────── -->
-    <div class="cphHero">
+    <div class="cphHero heroCard">
       <div>
       <div class="cphKicker">🇩🇰 Copenhagen · 4 nights · 2022</div>
       <div class="eyebrow">
@@ -626,7 +643,7 @@
   </div>
 
     <!-- ── THE STORY ─────────────────────────────────────── -->
-    <div class="section-divider">🇩🇰 The Trip</div>
+    <div  id="the-trip" class="section-divider">🇩🇰 The Trip</div>
 
     <p class="section-label">The story</p>
     <div class="card">
@@ -707,7 +724,7 @@
     </div>
 
     <!-- ── DRIVE FROM HOME ───────────────────────────────── -->
-    <div class="section-divider">🚗 Explore Copenhagen from Home</div>
+    <div  id="explore-copenhagen-from-home" class="section-divider">🚗 Explore Copenhagen from Home</div>
 
     <div class="card blueCard">
       <h2>Take a virtual drive around Copenhagen</h2>
@@ -719,7 +736,7 @@
     </div>
 
     <!-- ── VIDEO ──────────────────────────────────────────── -->
-    <div class="section-divider">🎬 Our Copenhagen Video</div>
+    <div  id="our-copenhagen-video" class="section-divider">🎬 Our Copenhagen Video</div>
 
     <div class="card darkCard">
       <h2>Watch our Copenhagen video</h2>
@@ -733,7 +750,7 @@
     </div>
 
     <!-- ── PHOTOS ─────────────────────────────────────────── -->
-    <div class="section-divider">📸 Copenhagen in Pictures</div>
+    <div  id="copenhagen-in-pictures" class="section-divider">📸 Copenhagen in Pictures</div>
 
     <div class="card blueCard">
       <h2>Nyhavn, palaces and winter streets</h2>
@@ -797,7 +814,7 @@
       </p>
     </div>
     
- <div class="section-divider">🎫 Book Experiences</div>
+ <div  id="book-experiences" class="section-divider">🎫 Book Experiences</div>
 <div class="card goldCard">
   <h2>Book your experiences on Klook 🎫</h2>
   <p style="color:var(--ink-soft);font-size:14px;">Skip-the-line tickets, city passes, day trips and attraction entry worldwide — often cheaper than booking at the door.</p>

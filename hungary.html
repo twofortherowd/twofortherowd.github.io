@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','981657641071814');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"/></noscript>
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Budapest — Parliament, Thermal Baths, Ruin Bars & the Danube | Two for the Row'd</title>
   <meta name="description" content="We spent 3 nights in Budapest in 2009 — the Parliament building lit up at night, the Chain Bridge, Buda Castle, Fisherman's Bastion, the Gellért Baths, ruin bars, a Danube evening cruise and goulash for next to nothing. Our honest Budapest travel guide." />
@@ -311,7 +311,6 @@
       letter-spacing:.13em !important;
       text-transform:uppercase;
     }
-    .section-divider::before{display:none !important;}
     .section-divider::after{
       flex:1;
       height:2px !important;
@@ -360,6 +359,15 @@
     }
     
 </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/Budapest 2009(1).jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 <body>
 
@@ -377,9 +385,25 @@
     <span>›</span>
     <span>Budapest — Hungary</span>
   </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="https://twofortherowd.com/#map">← Our Destinations</a>
+  <a href="#the-story">The Story</a>
+  <a href="#the-big-sights">The Big Sights</a>
+  <a href="#budapest-after-dark">Budapest After Dark</a>
+  <a href="#the-thermal-baths">The Thermal Baths</a>
+  <a href="#the-ruin-bars">The Ruin Bars</a>
+  <a href="#heroes-square-city-park">Heroes' Square &amp; City Park</a>
+  <a href="#the-food">The Food</a>
+  <a href="#the-highlights">The Highlights</a>
+  <a href="#explore-budapest-from-home">Explore Budapest from Home</a>
+  <a href="#book-a-budapest-tour">Book a Budapest Tour</a>
+  <a href="#book-budapest-experiences">Book Budapest Experiences</a>
+  <a href="#also-in-central-europe">Also in Central Europe</a>
+</div></nav>
+
 
   <!-- HERO -->
-  <div class="proCountryHero">
+  <div class="proCountryHero heroCard">
     <div class="eyebrow">
       <span class="badge">🇭🇺 Hungary</span>
       <span class="badge outline">Budapest</span>
@@ -446,7 +470,7 @@
   </div>
 
   <!-- THE STORY -->
-  <div class="section-divider">🌉 The Story</div>
+  <div  id="the-story" class="section-divider">🌉 The Story</div>
   <div class="card">
     <h2>Faded elegance, cheap beer and one of Europe's great cities</h2>
     <div class="quote-block">"Budapest had an atmosphere unlike any Western European city we had visited. Grand Austro-Hungarian architecture on every street — enormous, ornate, slightly weathered — trams rattling past, thermal steam rising from grates, the smell of goulash from restaurant doorways and then, at night, the whole city glowing in the dark reflected in the Danube. It was completely intoxicating."</div>
@@ -456,7 +480,7 @@
   </div>
 
   <!-- THE BIG SIGHTS -->
-  <div class="section-divider">🏛️ The Big Sights</div>
+  <div  id="the-big-sights" class="section-divider">🏛️ The Big Sights</div>
   <div class="card danubeCard">
     <h2>Budapest's unmissable landmarks</h2>
 
@@ -501,7 +525,7 @@
   </div>
 
   <!-- DANUBE AT NIGHT -->
-  <div class="section-divider">🌙 Budapest After Dark</div>
+  <div  id="budapest-after-dark" class="section-divider">🌙 Budapest After Dark</div>
   <div class="card nightCard">
     <h2>The Danube at night — one of Europe's great views</h2>
     <p>Budapest at night is something else entirely. The Parliament building lit up from the water, Buda Castle glowing gold on the hillside above, the Chain Bridge illuminated against the dark sky — the whole city transforms after sunset into one of the most beautiful and atmospheric urban landscapes in Europe.</p>
@@ -517,7 +541,7 @@
   </div>
 
   <!-- THERMAL BATHS -->
-  <div class="section-divider">♨️ The Thermal Baths</div>
+  <div  id="the-thermal-baths" class="section-divider">♨️ The Thermal Baths</div>
   <div class="card thermalCard">
     <h2>Budapest's thermal baths — a 2,000-year-old tradition</h2>
     <p>Budapest sits on a geological fault line with over 120 natural hot springs beneath the city — a fact that the Romans discovered and the Ottomans developed into the bathing culture that still defines the city today. Visiting at least one of Budapest's thermal baths is not optional — it is the single most uniquely Budapest experience available and something you will find nowhere else in Europe on this scale.</p>
@@ -538,7 +562,7 @@
   </div>
 
   <!-- RUIN BARS -->
-  <div class="section-divider">🍺 The Ruin Bars</div>
+  <div  id="the-ruin-bars" class="section-divider">🍺 The Ruin Bars</div>
   <div class="card ruinCard">
     <h2>Budapest's ruin bars — nothing like them anywhere in the world</h2>
     <div class="quote-block ruin" style="border-left-color:rgba(255,216,74,.6);background:rgba(255,216,74,.08);color:rgba(255,255,255,.9);">"Random furniture from every decade, graffiti on every surface, old televisions stacked in corners, plants growing through the walls, a courtyard packed with people who looked like they had been there for several days. Welcome to Szimpla Kert. Welcome to Budapest's ruin bar scene. Nothing like it existed anywhere in Western Europe."</div>
@@ -554,7 +578,7 @@
   </div>
 
   <!-- HEROES SQUARE & MORE -->
-  <div class="section-divider">🏛️ Heroes' Square & City Park</div>
+  <div  id="heroes-square-city-park" class="section-divider">🏛️ Heroes' Square & City Park</div>
   <div class="card danubeCard">
     <h2>Heroes' Square, City Park and more of Budapest</h2>
 
@@ -594,7 +618,7 @@
   </div>
 
   <!-- FOOD -->
-  <div class="section-divider">🥣 The Food</div>
+  <div  id="the-food" class="section-divider">🥣 The Food</div>
   <div class="card paprikaCard">
     <h2>Hungarian food — hearty, paprika-rich and brilliantly cheap</h2>
     <p>Budapest in 2009 was extraordinarily affordable by Irish standards — and the food was not just cheap but genuinely brilliant. Hungarian cuisine is hearty, warming and built around a handful of extraordinary ingredients — paprika above all, but also sour cream, beef, pork and the flavours of Central European cooking that you simply don't find anywhere else.</p>
@@ -633,7 +657,7 @@
   </div>
 
   <!-- HIGHLIGHTS -->
-  <div class="section-divider">⭐ The Highlights</div>
+  <div  id="the-highlights" class="section-divider">⭐ The Highlights</div>
   <div class="card redCard">
     <h2>The moments that stood out most</h2>
     <div class="highlights-grid">
@@ -671,7 +695,7 @@
   </div>
 
   <!-- DRIVE FROM HOME -->
-  <div class="section-divider">🚗 Explore Budapest from Home</div>
+  <div  id="explore-budapest-from-home" class="section-divider">🚗 Explore Budapest from Home</div>
   <div class="card danubeCard">
     <h2>Take a virtual drive around Budapest</h2>
     <p>Want to revisit Budapest — or get a feel for the Hungarian capital before you go? Drive From Home lets you virtually explore the streets of Budapest and see the city from the road, from its grand architecture and Danube views to the neighbourhoods beyond the main sights. It's a brilliant companion to our own Budapest memories and travel guide.</p>
@@ -682,7 +706,7 @@
   </div>
 
   <!-- TOURRADAR -->
-  <div class="section-divider">🧭 Book a Budapest Tour</div>
+  <div  id="book-a-budapest-tour" class="section-divider">🧭 Book a Budapest Tour</div>
   <div class="card goldCard">
     <h2>Book a Budapest tour through TourRadar</h2>
     <p>Budapest rewards proper exploration — the Jewish Quarter, the communist history, the castle district and the thermal bath culture all have depth that a good guide brings to life completely. TourRadar has brilliant Budapest and Hungary options, from weekend city breaks to longer Central European itineraries.</p>
@@ -693,7 +717,7 @@
   </div>
 
   <!-- GYG -->
-  <div class="section-divider">🎫 Book Budapest Experiences</div>
+  <div  id="book-budapest-experiences" class="section-divider">🎫 Book Budapest Experiences</div>
   <div class="card danubeCard">
     <h2>Book Budapest activities — GetYourGuide</h2>
     <p style="color:var(--ink-soft);font-size:14px;">Danube evening cruises, thermal bath entry with skip-the-line, Buda Castle guided tours, communist history walking tours, ruin bar pub crawls, Parliament building tours and Heroes' Square excursions — book in advance, especially the Parliament tour and thermal baths.</p>
@@ -762,7 +786,7 @@
   </div>
 
   <!-- ALSO NEARBY -->
-  <div class="section-divider">🏰 Also in Central Europe</div>
+  <div  id="also-in-central-europe" class="section-divider">🏰 Also in Central Europe</div>
   <div class="card">
     <h2>More of our Central European guides</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">Budapest sits at the heart of one of Europe's most rewarding travel regions — read our other nearby guides below.</p>

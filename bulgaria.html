@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>
@@ -29,8 +30,6 @@
 
   <!-- GetYourGuide -->
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- SEO -->
@@ -432,7 +431,6 @@
       letter-spacing:.13em !important;
       text-transform:uppercase;
     }
-    .section-divider::before{display:none !important;}
     .section-divider::after{
       flex:1;
       height:2px !important;
@@ -481,6 +479,15 @@
     }
     
 </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/Bulgaria.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 
 <body>
@@ -499,9 +506,23 @@
     <span>›</span>
     <span>Bulgaria — Sunny Beach</span>
   </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="https://twofortherowd.com/#map">← Our Destinations</a>
+  <a href="#bulgaria-our-photos">Bulgaria — our photos</a>
+  <a href="#sunny-beach">Sunny Beach</a>
+  <a href="#bulgaria-in-transition">Bulgaria in Transition</a>
+  <a href="#the-mountain-day-trip">The Mountain Day Trip</a>
+  <a href="#the-final-night-disaster">The Final-Night Disaster</a>
+  <a href="#why-we-remember-it">Why We Remember It</a>
+  <a href="#explore-burgas-from-home">Explore Burgas from Home</a>
+  <a href="#book-bulgaria-tours">Book Bulgaria Tours</a>
+  <a href="#book-bulgaria-experiences">Book Bulgaria Experiences</a>
+  <a href="#also-nearby">Also Nearby</a>
+</div></nav>
+
 
   <!-- HERO -->
-  <div class="proCountryHero">
+  <div class="proCountryHero heroCard">
     <div class="eyebrow">
       <span class="badge">🇧🇬 Bulgaria</span>
       <span class="badge outline">Sunny Beach 2000</span>
@@ -560,7 +581,7 @@
   </div>
 
   <!-- PHOTOS -->
-  <div class="section-divider">📸 Bulgaria — our photos</div>
+  <div  id="bulgaria-our-photos" class="section-divider">📸 Bulgaria — our photos</div>
   <div class="card" style="padding:20px;">
     <div class="photo-grid-2">
       <img src="img/Bulgaria.jpg" alt="Sunny Beach Bulgaria — Two for the Row'd" loading="lazy">
@@ -571,7 +592,7 @@
   </div>
 
   <!-- SUNNY BEACH -->
-  <div class="section-divider">🏖️ Sunny Beach</div>
+  <div  id="sunny-beach" class="section-divider">🏖️ Sunny Beach</div>
   <div class="card seaCard">
     <h2>Sunny Beach in 2000 — cheap, busy and still rough around the edges</h2>
     <p>
@@ -592,7 +613,7 @@
   </div>
 
   <!-- POST COMMUNIST -->
-  <div class="section-divider">🧱 Bulgaria in Transition</div>
+  <div  id="bulgaria-in-transition" class="section-divider">🧱 Bulgaria in Transition</div>
   <div class="card redCard">
     <h2>The post-communist atmosphere we noticed even as teenagers</h2>
     <p>
@@ -607,7 +628,7 @@
   </div>
 
   <!-- MOUNTAINS -->
-  <div class="section-divider">🏔️ The Mountain Day Trip</div>
+  <div  id="the-mountain-day-trip" class="section-divider">🏔️ The Mountain Day Trip</div>
   <div class="card mountainCard">
     <h2>The day trip that showed us rural Bulgaria</h2>
     <p>
@@ -646,7 +667,7 @@
   </div>
 
   <!-- FLOOD -->
-  <div class="section-divider">🌧️ The Final-Night Disaster</div>
+  <div  id="the-final-night-disaster" class="section-divider">🌧️ The Final-Night Disaster</div>
   <div class="card stormCard">
     <h2>The biblical rain, the flooded hotel and Nicola stuck in the lift</h2>
     <p>
@@ -673,7 +694,7 @@
   </div>
 
   <!-- WHY IT STANDS OUT -->
-  <div class="section-divider">⭐ Why We Remember It</div>
+  <div  id="why-we-remember-it" class="section-divider">⭐ Why We Remember It</div>
   <div class="card goldCard">
     <h2>Why Bulgaria became one of those holidays nobody forgot</h2>
     <p>
@@ -690,7 +711,7 @@
   </div>
 
   <!-- DRIVE FROM HOME -->
-  <div class="section-divider">🚗 Explore Burgas from Home</div>
+  <div  id="explore-burgas-from-home" class="section-divider">🚗 Explore Burgas from Home</div>
   <div class="card seaCard">
     <div class="eyebrow">
       <span class="badge sea">🚗 DRIVE FROM HOME</span>
@@ -705,7 +726,7 @@
   </div>
 
   <!-- BOOKING -->
-  <div class="section-divider">🧭 Book Bulgaria Tours</div>
+  <div  id="book-bulgaria-tours" class="section-divider">🧭 Book Bulgaria Tours</div>
   <div class="card seaCard">
     <h2>Book Bulgaria tours through TourRadar</h2>
     <p style="color:var(--ink-soft);font-size:14px;">
@@ -718,7 +739,7 @@
   </div>
 
   <!-- GYG -->
-  <div class="section-divider">🎫 Book Bulgaria Experiences</div>
+  <div  id="book-bulgaria-experiences" class="section-divider">🎫 Book Bulgaria Experiences</div>
   <div class="card greenCard">
     <h2>Book Bulgaria activities — GetYourGuide</h2>
     <p style="color:var(--ink-soft);font-size:14px;">From Black Sea excursions and Nessebar visits to mountain tours, cultural experiences and city breaks, Bulgaria has far more variety than we appreciated back in 2000.</p>
@@ -786,7 +807,7 @@
   </div>
 
   <!-- ALSO NEARBY -->
-  <div class="section-divider">🌍 Also Nearby</div>
+  <div  id="also-nearby" class="section-divider">🌍 Also Nearby</div>
   <div class="card">
     <h2>More European resort and Eastern Europe guides</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">If you liked this Bulgaria memory, these nearby and similar travel stories are worth reading too.</p>

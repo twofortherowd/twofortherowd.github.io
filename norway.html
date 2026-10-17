@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','981657641071814');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"/></noscript>
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Oslo, Norway — Vikings, Fjords, Naked Statues & Brown Cheese | Two for the Row'd</title>
   <meta name="description" content="We spent a weekend in Oslo in 2009 — Vigeland Sculpture Park, the Viking Ship Museum, the brand new Opera House roof, Akershus Fortress, a fjord sightseeing boat, reindeer hot dogs and the most expensive round of drinks we had ever paid for. Our honest Oslo travel guide." />
@@ -307,7 +307,6 @@
       letter-spacing:.13em !important;
       text-transform:uppercase;
     }
-    .section-divider::before{display:none !important;}
     .section-divider::after{
       flex:1;
       height:2px !important;
@@ -356,6 +355,15 @@
     }
     
 </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/oslo.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 <body>
 
@@ -373,9 +381,24 @@
     <span>›</span>
     <span>Norway — Oslo</span>
   </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="https://twofortherowd.com/#map">← Our Destinations</a>
+  <a href="#the-story">The Story</a>
+  <a href="#vigeland-sculpture-park">Vigeland Sculpture Park</a>
+  <a href="#the-bygdy-museums">The Bygdøy Museums</a>
+  <a href="#oslo-city-highlights">Oslo City Highlights</a>
+  <a href="#the-oslofjord">The Oslofjord</a>
+  <a href="#the-food">The Food</a>
+  <a href="#the-highlights">The Highlights</a>
+  <a href="#explore-oslo-from-home">Explore Oslo from Home</a>
+  <a href="#book-a-norway-tour">Book a Norway Tour</a>
+  <a href="#book-oslo-experiences">Book Oslo Experiences</a>
+  <a href="#also-in-scandinavia">Also in Scandinavia</a>
+</div></nav>
+
 
   <!-- HERO -->
-  <div class="proCountryHero">
+  <div class="proCountryHero heroCard">
     <div class="eyebrow">
       <span class="badge">🇳🇴 Norway</span>
       <span class="badge outline">Oslo</span>
@@ -436,7 +459,7 @@
   </div>
 
   <!-- THE STORY -->
-  <div class="section-divider">🇳🇴 The Story</div>
+  <div  id="the-story" class="section-divider">🇳🇴 The Story</div>
   <div class="card">
     <h2>Clean, beautiful and absolutely ruinous on the wallet</h2>
     <div class="quote-block">"Oslo in 2009 was like nowhere any of us had been before. Immaculately clean streets. Public transport that ran on time and made a sound like a whisper. Tall blond Norwegians in minimalist cafés paying for everything without flinching. And prices that made us look at each other across the table in silent, mutual disbelief."</div>
@@ -453,7 +476,7 @@
   </div>
 
   <!-- VIGELAND -->
-  <div class="section-divider">🗿 Vigeland Sculpture Park</div>
+  <div  id="vigeland-sculpture-park" class="section-divider">🗿 Vigeland Sculpture Park</div>
   <div class="card nordicCard">
     <h2>The naked statues — extraordinary, strange and completely free</h2>
     <div class="quote-block">"We turned a corner in the park and were confronted by a column of writhing naked bodies thirty metres tall. Then an enormous naked man throwing children away from himself in all directions. Then a naked couple having what appeared to be a difficult conversation. Gustav Vigeland had feelings about the human condition and he expressed all of them, in bronze, in a park in Oslo."</div>
@@ -469,7 +492,7 @@
   </div>
 
   <!-- BYGDØY MUSEUMS -->
-  <div class="section-divider">⚓ The Bygdøy Museums</div>
+  <div  id="the-bygdy-museums" class="section-divider">⚓ The Bygdøy Museums</div>
   <div class="card vikingCard">
     <h2>Viking ships, polar explorers and the Kon-Tiki — Oslo's museum peninsula</h2>
     <p>The Bygdøy peninsula, a short ferry or bus ride from the city centre, is home to an extraordinary concentration of world-class museums — and the Viking Ship Museum is the reason most people make the trip.</p>
@@ -501,7 +524,7 @@
   </div>
 
   <!-- CITY HIGHLIGHTS -->
-  <div class="section-divider">🏛️ Oslo City Highlights</div>
+  <div  id="oslo-city-highlights" class="section-divider">🏛️ Oslo City Highlights</div>
   <div class="card fjordCard">
     <h2>The Opera House, the harbour and the city centre</h2>
 
@@ -540,7 +563,7 @@
   </div>
 
   <!-- FJORD BOAT -->
-  <div class="section-divider">🚢 The Oslofjord</div>
+  <div  id="the-oslofjord" class="section-divider">🚢 The Oslofjord</div>
   <div class="card darkCard">
     <h2>On the fjord — the view that explains Oslo</h2>
     <p>The little sightseeing boat trip on the Oslofjord was one of those simple experiences that turns out to be one of the best things you do on a trip. Seen from the water, Oslo makes complete sense — the city arranged around the head of the fjord, the fortress on its promontory, the hills rising behind the rooftops and the islands scattered across the water in the middle distance.</p>
@@ -554,7 +577,7 @@
   </div>
 
   <!-- FOOD -->
-  <div class="section-divider">🌭 The Food</div>
+  <div  id="the-food" class="section-divider">🌭 The Food</div>
   <div class="card snowCard">
     <h2>Norwegian food — and the brown cheese question</h2>
     <p>Norwegian food in 2009 was brilliant when you found the right things — and eye-wateringly expensive almost everywhere. The trick, we discovered, was to eat like a Norwegian rather than like a tourist: kiosk food for lunch, supermarket runs for snacks and one good restaurant dinner where the quality justified the cost.</p>
@@ -594,7 +617,7 @@
   </div>
 
   <!-- HIGHLIGHTS -->
-  <div class="section-divider">⭐ The Highlights</div>
+  <div  id="the-highlights" class="section-divider">⭐ The Highlights</div>
   <div class="card redCard">
     <h2>The moments that stood out most</h2>
     <div class="highlights-grid">
@@ -632,7 +655,7 @@
   </div>
 
   <!-- DRIVE FROM HOME -->
-  <div class="section-divider">🚗 Explore Oslo from Home</div>
+  <div  id="explore-oslo-from-home" class="section-divider">🚗 Explore Oslo from Home</div>
   <div class="card fjordCard">
     <div class="eyebrow">
       <span class="badge fjord">🚗 DRIVE FROM HOME</span>
@@ -647,7 +670,7 @@
   </div>
 
   <!-- TOURRADAR -->
-  <div class="section-divider">🧭 Book a Norway Tour</div>
+  <div  id="book-a-norway-tour" class="section-divider">🧭 Book a Norway Tour</div>
   <div class="card goldCard">
     <h2>Book a Norway tour through TourRadar</h2>
     <p>Norway beyond Oslo is extraordinary — the western fjords of Geirangerfjord and Nærøyfjord, the Bergen railway, the Lofoten Islands, the Northern Lights above the Arctic Circle. TourRadar has brilliant Norway itineraries from weekend Oslo breaks to full fjord country adventures.</p>
@@ -658,7 +681,7 @@
   </div>
 
   <!-- GYG -->
-  <div class="section-divider">🎫 Book Oslo Experiences</div>
+  <div  id="book-oslo-experiences" class="section-divider">🎫 Book Oslo Experiences</div>
   <div class="card fjordCard">
     <h2>Book Oslo activities — GetYourGuide</h2>
     <p style="color:var(--ink-soft);font-size:14px;">Oslofjord sightseeing cruises, Viking Ship Museum guided tours, Bygdøy peninsula excursions, Oslo city walking tours, Northern Lights chases and Norwegian fjord day trips from Oslo — book in advance.</p>
@@ -727,7 +750,7 @@
   </div>
 
   <!-- ALSO NEARBY -->
-  <div class="section-divider">🌍 Also in Scandinavia</div>
+  <div  id="also-in-scandinavia" class="section-divider">🌍 Also in Scandinavia</div>
   <div class="card">
     <h2>More of our Nordic guides</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">Oslo is the gateway to one of the world's most beautiful regions — read our other Nordic guides below.</p>
