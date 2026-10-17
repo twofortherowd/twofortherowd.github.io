@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>
@@ -27,8 +28,6 @@
 
   <!-- GetYourGuide -->
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- SEO -->
@@ -381,7 +380,6 @@
       letter-spacing:.13em !important;
       text-transform:uppercase;
     }
-    .section-divider::before{display:none !important;}
     .section-divider::after{
       flex:1;
       height:2px !important;
@@ -430,6 +428,13 @@
     }
     
 </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/switzerland.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+  </style>
 </head>
 
 <body>
@@ -449,8 +454,22 @@
     <span>Switzerland</span>
   </nav>
 
+  <nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+    <a href="https://twofortherowd.com/#map">🌍 Destinations</a>
+    <a href="#at-a-glance">At a Glance</a>
+    <a href="#photos">Switzerland — our photos</a>
+    <a href="#story">Our Swiss Story</a>
+    <a href="#bern-preview">Explore the Three Cities</a>
+    <a href="#zurich-preview">Bern vs Zurich vs Basel</a>
+    <a href="#basel-preview">Swiss Scenery &amp; Budget Reality</a>
+    <a href="#booking">Tours, Activities &amp; Stays</a>
+    <a href="#packing">Before You Go</a>
+    <a href="#faq">Common Questions</a>
+  </div></nav>
+
+
   <!-- HERO -->
-  <div class="proCountryHero">
+  <div class="proCountryHero heroCard">
     <div class="eyebrow">
       <span class="badge">🇨🇭 Switzerland</span>
       <span class="badge outline">Interrailing 2005</span>

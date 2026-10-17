@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','981657641071814');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"/></noscript>
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Iceland Travel Guide — Golden Circle, South Coast & Reykjavík | Two for the Row'd</title>
   <meta name="description" content="Our first-hand Iceland travel guide covers the Golden Circle, Gullfoss, Seljalandsfoss, Skógafoss, Reynisfjara, the Blue Lagoon and the best things to do in Reykjavík." />
@@ -309,7 +309,6 @@
       letter-spacing:.13em !important;
       text-transform:uppercase;
     }
-    .section-divider::before{display:none !important;}
     .section-divider::after{
       flex:1;
       height:2px !important;
@@ -358,6 +357,13 @@
     }
     
 </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/Iceland6.jpeg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+  </style>
 </head>
 <body>
 
@@ -376,8 +382,24 @@
     <span>Iceland — Land of Fire & Ice</span>
   </nav>
 
+  <nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+    <a href="https://twofortherowd.com/#map">🌍 Destinations</a>
+    <a href="#watch-our-iceland-reels">Watch Our Iceland Reels</a>
+    <a href="#the-story">The Story</a>
+    <a href="#the-golden-circle">The Golden Circle</a>
+    <a href="#south-coast-waterfalls">South Coast &amp; Waterfalls</a>
+    <a href="#the-blue-lagoon">The Blue Lagoon</a>
+    <a href="#reykjavik">Reykjavík</a>
+    <a href="#the-highlights">The Highlights</a>
+    <a href="#explore-reykjavik-from-home">Explore Reykjavík from Home</a>
+    <a href="#book-an-iceland-tour">Book an Iceland Tour</a>
+    <a href="#book-iceland-experiences">Book Iceland Experiences</a>
+    <a href="#also-on-this-trip">Also on this trip</a>
+  </div></nav>
+
+
   <!-- HERO -->
-  <div class="proCountryHero">
+  <div class="proCountryHero heroCard">
     <div class="eyebrow">
       <span class="badge">🇮🇸 Iceland</span>
       <span class="badge outline">Land of Fire & Ice</span>
@@ -444,7 +466,7 @@
   </div>
 
   <!-- YOUTUBE SHORTS -->
-  <div class="section-divider">🎬 Watch Our Iceland Reels</div>
+  <div id="watch-our-iceland-reels" class="section-divider">🎬 Watch Our Iceland Reels</div>
   <div class="shorts-grid">
     <div class="shorts-wrap">
       <iframe loading="lazy" src="https://www.youtube.com/embed/pRVhT1xsq6s" title="Iceland reel — Two for the Row'd" allowfullscreen></iframe>
@@ -455,7 +477,7 @@
   </div>
 
   <!-- THE STORY -->
-  <div class="section-divider">🌋 The Story</div>
+  <div id="the-story" class="section-divider">🌋 The Story</div>
   <div class="card">
     <h2>From Rome to Reykjavík — two planets, one trip</h2>
     <div class="quote-block">"I had just spent a few days in Rome surrounded by two thousand years of history, warm evenings, pasta and espresso. Then I landed in Iceland. The contrast was extraordinary. Nothing here is ancient in the human sense — everything is geological, violent and still very much in progress. Iceland doesn't just tell you about the forces that shaped the earth. It shows you."</div>
@@ -465,7 +487,7 @@
   </div>
 
   <!-- GOLDEN CIRCLE -->
-  <div class="section-divider">🔵 The Golden Circle</div>
+  <div id="the-golden-circle" class="section-divider">🔵 The Golden Circle</div>
   <div class="card iceCard">
     <h2>The Golden Circle — Iceland's unmissable day trip</h2>
     <p>The Golden Circle is the essential Iceland experience — a roughly 300km loop from Reykjavík that takes in three of the country's most extraordinary natural sites in a single day. Every visitor to Iceland does it and every visitor to Iceland should do it. It is that simple.</p>
@@ -498,7 +520,7 @@
   </div>
 
   <!-- SOUTH COAST -->
-  <div class="section-divider">🖤 South Coast & Waterfalls</div>
+  <div id="south-coast-waterfalls" class="section-divider">🖤 South Coast & Waterfalls</div>
   <div class="card lavaCard">
     <h2>The South Coast — waterfalls, black sand and raw Atlantic drama</h2>
     <p>The South Coast of Iceland is where the landscape gets truly dramatic — a succession of extraordinary natural sights strung along the Ring Road, each one more spectacular than the last.</p>
@@ -531,7 +553,7 @@
   </div>
 
   <!-- BLUE LAGOON -->
-  <div class="section-divider">♨️ The Blue Lagoon</div>
+  <div id="the-blue-lagoon" class="section-divider">♨️ The Blue Lagoon</div>
   <div class="card steelCard">
     <h2>The Blue Lagoon — Iceland's most iconic experience</h2>
     <p>The Blue Lagoon is one of those places that appears on every Iceland itinerary for a very good reason — it is extraordinary. The geothermal spa sits in a lava field near Keflavík, its milky turquoise water heated by Iceland's volcanic activity to a perfect bathing temperature year-round. Steam rises constantly from the surface. The surrounding lava landscape is stark and otherworldly. And floating in warm water while the cold Icelandic air bites at your face is one of the most memorable sensory experiences in all of travel.</p>
@@ -547,7 +569,7 @@
   </div>
 
   <!-- REYKJAVIK -->
-  <div class="section-divider">🏙️ Reykjavík</div>
+  <div id="reykjavik" class="section-divider">🏙️ Reykjavík</div>
   <div class="card greenCard">
     <h2>Reykjavík — the world's most northerly capital</h2>
     <p>Reykjavík is small, colourful, completely charming and surprisingly full of things to see and do. The city tour guides are a genuine highlight — they deliver a brilliant mix of Viking history, geothermal energy pride, honest banking crash comedy, elf folklore and constant reference to just how few people live in a country this extraordinary. It is one of the most entertaining city tours we have ever done anywhere.</p>
@@ -602,7 +624,7 @@
   </div>
 
   <!-- HIGHLIGHTS -->
-  <div class="section-divider">⭐ The Highlights</div>
+  <div id="the-highlights" class="section-divider">⭐ The Highlights</div>
   <div class="card redCard">
     <h2>The moments that stood out most</h2>
     <div class="highlights-grid">
@@ -640,7 +662,7 @@
   </div>
 
   <!-- DRIVE FROM HOME -->
-  <div class="section-divider">🚗 Explore Reykjavík from Home</div>
+  <div id="explore-reykjavik-from-home" class="section-divider">🚗 Explore Reykjavík from Home</div>
   <div class="card iceCard">
     <h2>Take a virtual drive around Reykjavík</h2>
     <p>Want to revisit Reykjavík — or get a feel for Iceland's colourful capital before you go? Drive From Home lets you virtually explore the city streets and see Reykjavík from the road, from its distinctive architecture to the everyday neighbourhoods beyond the main sights. It's a brilliant companion to our own Reykjavík memories and Iceland travel guide.</p>
@@ -651,7 +673,7 @@
   </div>
 
   <!-- TOURRADAR -->
-  <div class="section-divider">🧭 Book an Iceland Tour</div>
+  <div id="book-an-iceland-tour" class="section-divider">🧭 Book an Iceland Tour</div>
   <div class="card goldCard">
     <h2>Book an Iceland tour through TourRadar</h2>
     <p>Iceland is one of those destinations where a guided tour makes an enormous difference — the distances between sites are significant, driving in Icelandic winter conditions requires experience and a good guide turns a list of waterfalls into an extraordinary story about the country. TourRadar has brilliant Iceland ring road and Golden Circle itineraries.</p>
@@ -662,7 +684,7 @@
   </div>
 
   <!-- GYG -->
-  <div class="section-divider">🎫 Book Iceland Experiences</div>
+  <div id="book-iceland-experiences" class="section-divider">🎫 Book Iceland Experiences</div>
   <div class="card iceCard">
     <h2>Book Iceland activities — GetYourGuide</h2>
     <p style="color:var(--ink-soft);font-size:14px;">Golden Circle day tours, Blue Lagoon entry, South Coast waterfall excursions, Reykjavík city tours, Northern Lights hunts, whale watching from the Old Harbour and glacier hikes — book in advance, especially for the Blue Lagoon.</p>
@@ -738,7 +760,7 @@
   </div>
 
   <!-- ALSO VISITED -->
-  <div class="section-divider">🌍 Also on this trip</div>
+  <div id="also-on-this-trip" class="section-divider">🌍 Also on this trip</div>
   <div class="card">
     <h2>More from around Europe</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">Iceland was part of a bigger European adventure — read our other guides below.</p>

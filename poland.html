@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','981657641071814');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"/></noscript>
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Poland Travel Guide — Warsaw, Kraków, Poznań, Wrocław & Bydgoszcz | Two for the Row'd</title>
   <meta name="description" content="Explore our Poland travel guides for Warsaw, Kraków, Poznań, Wrocław and Bydgoszcz — five very different Polish city breaks, from historic capitals and Christmas markets to underrated hidden gems." />
@@ -152,6 +152,13 @@
     }
 
 </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/wroclaw3.jpeg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px}
+  </style>
 </head>
 <body>
 
@@ -170,8 +177,16 @@
     <span>Poland</span>
   </nav>
 
+  <nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+    <a href="https://twofortherowd.com/#map">🌍 Destinations</a>
+    <a href="#our-polish-cities">Our Polish Cities</a>
+    <a href="#why-poland">Why Poland?</a>
+    <a href="#book-poland-experiences">Book Poland Experiences</a>
+  </div></nav>
+
+
   <!-- HERO -->
-  <div class="polandHero">
+  <div class="polandHero heroCard">
     <div class="eyebrow">
       <span class="badge">🇵🇱 Poland</span>
       <span class="badge outline">Five cities · Five very different experiences</span>
@@ -196,7 +211,7 @@
   </nav>
 
   <!-- CITY CARDS -->
-  <div class="section-divider">🏙️ Our Polish Cities</div>
+  <div id="our-polish-cities" class="section-divider">🏙️ Our Polish Cities</div>
 
 
   <!-- WARSAW -->
@@ -280,7 +295,7 @@
   </div>
 
   <!-- WHY POLAND -->
-  <div class="section-divider">🇵🇱 Why Poland?</div>
+  <div id="why-poland" class="section-divider">🇵🇱 Why Poland?</div>
   <div class="card">
     <h2>Poland — the country that keeps surprising us</h2>
     <p>Poland is one of the most underrated travel destinations in Europe. Brilliant food, extraordinary history, beautiful cities and some of the warmest and most welcoming people you will encounter anywhere on the continent. It is also excellent value — your money goes much further in Poland than in Western Europe without any compromise on quality.</p>
@@ -289,7 +304,7 @@
   </div>
 
   <!-- GYG -->
-  <div class="section-divider">🎟 Book Poland Experiences</div>
+  <div id="book-poland-experiences" class="section-divider">🎟 Book Poland Experiences</div>
   <div class="card">
     <h2>Things to do in Poland — via GetYourGuide</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">Walking tours, Christmas market experiences, food tours and more across Poland's best cities:</p>
