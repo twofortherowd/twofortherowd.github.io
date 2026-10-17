@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -26,8 +27,6 @@
   /></noscript>
 
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>Brussels Travel Guide — Grand Place, Atomium, Beer & Living in Belgium | Two for the Row'd</title>
@@ -285,6 +284,19 @@
       .links a { text-align: center; justify-content: center; }
     }
   </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/brussels.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px}
+    .section-divider{display:block!important;text-align:left!important}
+    .section-divider::after{display:none!important;content:none!important}
+    .section-divider::before{height:auto!important;background:none!important;flex:none!important;vertical-align:baseline}
+    .wrap>.heroCard:first-of-type img{display:none!important}
+    .dest-tabs .dest-tab{font-size:13px!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+  </style>
 </head>
 
 <body>
@@ -306,9 +318,20 @@
       <span>Brussels</span>
     </nav>
 
-    <a href="../belgium.html" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;font-size:14px;font-weight:700;color:var(--brussels);text-decoration:none;">
-      ← Back to Belgium
-    </a>
+    <nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+      <a href="../belgium.html">🇧🇪 Belgium</a>
+      <a href="#living-in-brussels">Living in Brussels</a>
+      <a href="#what-to-see-in-brussels">What to see in Brussels</a>
+      <a href="#where-to-stay-in-brussels">Where to stay in Brussels</a>
+      <a href="#getting-around-brussels">Getting around Brussels</a>
+      <a href="#how-much-does-brussels-cost">How much does Brussels cost?</a>
+      <a href="#when-to-visit-brussels">When to visit Brussels</a>
+      <a href="#using-brussels-as-a-base">Using Brussels as a base</a>
+      <a href="#language-in-brussels">Language in Brussels</a>
+      <a href="#plan-book">Plan &amp; book</a>
+      <a href="#faq">FAQ</a>
+      <a href="#continue-exploring-belgium">Continue exploring Belgium</a>
+    </div></nav>
 
     <!-- ── HERO ──────────────────────────────────────────── -->
     <div class="card heroCard">
@@ -359,7 +382,7 @@
     </div>
 
     <!-- ── THE STORY ─────────────────────────────────────── -->
-    <div class="section-divider">💫 Living in Brussels</div>
+    <div id="living-in-brussels" class="section-divider">💫 Living in Brussels</div>
 
     <p class="section-label">A year that changed everything</p>
     <div class="card">
@@ -427,7 +450,7 @@
     </div>
 
     <!-- ── WHAT TO SEE ───────────────────────────────────── -->
-    <div class="section-divider">🏛️ What to see in Brussels</div>
+    <div id="what-to-see-in-brussels" class="section-divider">🏛️ What to see in Brussels</div>
 
     <div class="card blueCard">
       <h2>The essential Brussels experiences</h2>
@@ -467,7 +490,7 @@
     </div>
 
     <!-- ── PRACTICAL: WHERE TO STAY ────────────────────── -->
-    <div class="section-divider">🏨 Where to stay in Brussels</div>
+    <div id="where-to-stay-in-brussels" class="section-divider">🏨 Where to stay in Brussels</div>
 
     <div class="card">
       <h2>Best neighbourhoods for different travellers</h2>
@@ -494,7 +517,7 @@
     </div>
 
     <!-- ── PRACTICAL: GETTING AROUND ────────────────────– -->
-    <div class="section-divider">🚂 Getting around Brussels</div>
+    <div id="getting-around-brussels" class="section-divider">🚂 Getting around Brussels</div>
 
     <div class="card">
       <h2>Transport, costs and logistics</h2>
@@ -525,7 +548,7 @@
     </div>
 
     <!-- ── PRACTICAL: COSTS ────────────────────────────– -->
-    <div class="section-divider">💰 How much does Brussels cost?</div>
+    <div id="how-much-does-brussels-cost" class="section-divider">💰 How much does Brussels cost?</div>
 
     <div class="card goldCard">
       <h2>Budget breakdown per day</h2>
@@ -565,7 +588,7 @@
     </div>
 
     <!-- ── PRACTICAL: WHEN TO VISIT ────────────────────– -->
-    <div class="section-divider">🌦️ When to visit Brussels</div>
+    <div id="when-to-visit-brussels" class="section-divider">🌦️ When to visit Brussels</div>
 
     <div class="card">
       <h2>Best time and what to expect</h2>
@@ -608,7 +631,7 @@
     </div>
 
     <!-- ── MULTI-CITY GUIDE ──────────────────────────────– -->
-    <div class="section-divider">🗺️ Using Brussels as a base</div>
+    <div id="using-brussels-as-a-base" class="section-divider">🗺️ Using Brussels as a base</div>
 
     <div class="card">
       <h2>Day trips and multi-city combinations</h2>
@@ -644,7 +667,7 @@
     </div>
 
     <!-- ── LANGUAGE ──────────────────────────────────────– -->
-    <div class="section-divider">🗣️ Language in Brussels</div>
+    <div id="language-in-brussels" class="section-divider">🗣️ Language in Brussels</div>
 
     <div class="card">
       <h2>What you need to know</h2>
@@ -671,6 +694,8 @@
     </div>
 
     <!-- ── BOOK THE TOUR ──────────────────────────────────– -->
+    <div id="plan-book" class="section-divider">🎟️ Plan &amp; book</div>
+
     <div class="card heroCard">
       <h2>Plan your Brussels trip</h2>
       <p class="hero-lead" style="font-size:15px;margin-bottom:16px;">
@@ -721,7 +746,7 @@
     </div>
 
     <!-- ── FAQ ────────────────────────────────────────────– -->
-    <p class="section-label">Common questions</p>
+    <div id="faq" class="section-divider">❓ FAQ</div>
     <div class="card">
       <h2>Brussels FAQ</h2>
 
@@ -799,7 +824,7 @@
     </div>
 
     <!-- ── BOTTOM NAV ──────────────────────────────────────– -->
-    <div class="section-divider">🗺️ Continue exploring Belgium</div>
+    <div id="continue-exploring-belgium" class="section-divider">🗺️ Continue exploring Belgium</div>
 
     <div class="card heroCard" style="text-align:center;">
       <h2 style="text-align:center;">All six Belgian cities</h2>

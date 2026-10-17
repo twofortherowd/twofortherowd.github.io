@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en"> 
 <head>
+  <meta charset="utf-8"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -25,8 +26,6 @@
   /></noscript>
 
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>Antwerp Travel Guide — Rubens, Diamonds, Fashion & the Scheldt | Two for the Row'd</title>
@@ -246,6 +245,19 @@
       .links a { text-align: center; justify-content: center; }
     }
   </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/antwerp.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px}
+    .section-divider{display:block!important;text-align:left!important}
+    .section-divider::after{display:none!important;content:none!important}
+    .section-divider::before{height:auto!important;background:none!important;flex:none!important;vertical-align:baseline}
+    .wrap>.heroCard:first-of-type img{display:none!important}
+    .dest-tabs .dest-tab{font-size:13px!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+  </style>
 </head>
 
 <body>
@@ -267,9 +279,14 @@
       <span>Antwerp</span>
     </nav>
 
-    <a href="../belgium.html" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;font-size:14px;font-weight:700;color:var(--antwerp);text-decoration:none;">
-      ← Back to Belgium
-    </a>
+    <nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+      <a href="../belgium.html">🇧🇪 Belgium</a>
+      <a href="#about-antwerp">About Antwerp</a>
+      <a href="#practical-information">Practical information</a>
+      <a href="#book-experiences">Book experiences</a>
+      <a href="#faq">FAQ</a>
+      <a href="#explore-belgium">Explore Belgium</a>
+    </div></nav>
 
     <!-- ── HERO ──────────────────────────────────────────── -->
     <div class="card heroCard">
@@ -317,7 +334,7 @@
     </div>
 
     <!-- ── ABOUT ANTWERP ─────────────────────────────────── -->
-    <div class="section-divider">💫 About Antwerp</div>
+    <div id="about-antwerp" class="section-divider">💫 About Antwerp</div>
 
     <div class="card">
       <h2>Why Antwerp rewards a longer stay.</h2>
@@ -356,7 +373,7 @@
     </div>
 
     <!-- ── PRACTICAL INFO ────────────────────────────────── -->
-    <div class="section-divider">🗺️ Practical information</div>
+    <div id="practical-information" class="section-divider">🗺️ Practical information</div>
 
     <div class="card">
       <h3>Getting there and around</h3>
@@ -405,7 +422,7 @@
     </div>
 
     <!-- ── TOURS & EXPERIENCES ───────────────────────────── -->
-    <div class="section-divider">✨ Book experiences</div>
+    <div id="book-experiences" class="section-divider">✨ Book experiences</div>
 
     <div class="card heroCard">
       <h2>Browse tours and activities</h2>
@@ -432,7 +449,7 @@
     </div>
 
     <!-- ── FAQ ────────────────────────────────────────────– -->
-    <div class="section-divider">❓ FAQ</div>
+    <div id="faq" class="section-divider">❓ FAQ</div>
 
     <div class="card">
       <div class="faqItem open">
@@ -482,7 +499,7 @@
     </div>
 
     <!-- ── BOTTOM NAV ──────────────────────────────────────– -->
-    <div class="section-divider">🗺️ Explore Belgium</div>
+    <div id="explore-belgium" class="section-divider">🗺️ Explore Belgium</div>
 
     <div class="card heroCard" style="text-align:center;">
       <h2 style="text-align:center;">All Belgian cities</h2>

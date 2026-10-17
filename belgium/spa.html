@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-H7SPF3M3X8');</script>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '981657641071814'); fbq('track', 'PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1" /></noscript>
-  <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script><meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Spa-Francorchamps & the Spa Town — Formula 1, Thermal Spas & Ardennes Belgium | Two for the Row'd</title>
   <meta name="description" content="Spa is a historic spa town in the Ardennes with thermal heritage and Spa-Francorchamps Formula 1 circuit. Nicola's personal account of a 2004 Grand Prix weekend with pit passes. Historic thermal town and motorsport passion." />
   <link rel="canonical" href="https://twofortherowd.com/belgium/spa.html" />
@@ -97,6 +96,19 @@
     footer a { color: var(--muted); font-weight: 600; }
     @media (max-width: 768px) { .photo-grid-2 { grid-template-columns: 1fr; } .links { flex-direction: column; } .links a { text-align: center; justify-content: center; } }
   </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/spa.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px}
+    .section-divider{display:block!important;text-align:left!important}
+    .section-divider::after{display:none!important;content:none!important}
+    .section-divider::before{height:auto!important;background:none!important;flex:none!important;vertical-align:baseline}
+    .wrap>.heroCard:first-of-type img{display:none!important}
+    .dest-tabs .dest-tab{font-size:13px!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+  </style>
 </head>
 
 <body>
@@ -115,9 +127,17 @@
       <span>Spa</span>
     </nav>
 
-    <a href="../belgium.html" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;font-size:14px;font-weight:700;color:var(--spa);text-decoration:none;">
-      ← Back to Belgium
-    </a>
+    <nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+      <a href="../belgium.html">🇧🇪 Belgium</a>
+      <a href="#a-weekend-that-became-a-memory">A weekend that became a memory</a>
+      <a href="#spa-the-town">Spa the town</a>
+      <a href="#spa-for-different-visitors">Spa for different visitors</a>
+      <a href="#getting-to-spa">Getting to Spa</a>
+      <a href="#visiting-spa-francorchamps">Visiting Spa-Francorchamps</a>
+      <a href="#plan-book">Plan &amp; book</a>
+      <a href="#faq">FAQ</a>
+      <a href="#continue-exploring-belgium">Continue exploring Belgium</a>
+    </div></nav>
 
     <div class="card heroCard">
       <div class="eyebrow">
@@ -159,7 +179,7 @@
       </div>
     </div>
 
-    <div class="section-divider">🏁 A weekend that became a memory</div>
+    <div id="a-weekend-that-became-a-memory" class="section-divider">🏁 A weekend that became a memory</div>
 
     <p class="section-label">August 2004 — Nicola's Grand Prix weekend</p>
     <div class="card">
@@ -214,7 +234,7 @@
       </p>
     </div>
 
-    <div class="section-divider">🏛️ Spa the town</div>
+    <div id="spa-the-town" class="section-divider">🏛️ Spa the town</div>
 
     <div class="card">
       <h2>Beyond the circuit — the thermal heritage</h2>
@@ -237,7 +257,7 @@
       </p>
     </div>
 
-    <div class="section-divider">🎯 Spa for different visitors</div>
+    <div id="spa-for-different-visitors" class="section-divider">🎯 Spa for different visitors</div>
 
     <div class="card blueCard">
       <h2>What Spa means depends on your passion</h2>
@@ -276,7 +296,7 @@
       </div>
     </div>
 
-    <div class="section-divider">🚂 Getting to Spa</div>
+    <div id="getting-to-spa" class="section-divider">🚂 Getting to Spa</div>
 
     <div class="card">
       <h2>Reaching Spa</h2>
@@ -296,7 +316,7 @@
       </p>
     </div>
 
-    <div class="section-divider">🏎️ Visiting Spa-Francorchamps</div>
+    <div id="visiting-spa-francorchamps" class="section-divider">🏎️ Visiting Spa-Francorchamps</div>
 
     <div class="card goldCard">
       <h2>The circuit experience</h2>
@@ -318,6 +338,8 @@
         Its combination of elevation changes, fast corners and Ardennes setting makes it one of the most distinctive circuits on the Formula 1 calendar.
       </p>
     </div>
+
+    <div id="plan-book" class="section-divider">🎟️ Plan &amp; book</div>
 
     <div class="card heroCard">
       <h2>Plan your Belgium trip</h2>
@@ -362,7 +384,7 @@
       </p>
     </div>
 
-    <p class="section-label">Common questions</p>
+    <div id="faq" class="section-divider">❓ FAQ</div>
     <div class="card">
       <h2>Spa FAQ</h2>
 
@@ -412,7 +434,7 @@
       </div>
     </div>
 
-    <div class="section-divider">🗺️ Continue exploring Belgium</div>
+    <div id="continue-exploring-belgium" class="section-divider">🗺️ Continue exploring Belgium</div>
 
     <div class="card heroCard" style="text-align:center;">
       <h2 style="text-align:center;">All six Belgian cities</h2>

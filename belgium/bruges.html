@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -26,8 +27,6 @@
   /></noscript>
 
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>Bruges Travel Guide — Medieval Canals, Chocolate & Historic Belgium | Two for the Row'd</title>
@@ -299,6 +298,19 @@ function nextImageCandidate(img){
 }
 </script>
 
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/bruges.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px}
+    .section-divider{display:block!important;text-align:left!important}
+    .section-divider::after{display:none!important;content:none!important}
+    .section-divider::before{height:auto!important;background:none!important;flex:none!important;vertical-align:baseline}
+    .wrap>.heroCard:first-of-type img{display:none!important}
+    .dest-tabs .dest-tab{font-size:13px!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+  </style>
 </head>
 
 <body>
@@ -320,9 +332,16 @@ function nextImageCandidate(img){
       <span>Bruges</span>
     </nav>
 
-    <a href="../belgium.html" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;font-size:14px;font-weight:700;color:var(--bruges);text-decoration:none;">
-      ← Back to Belgium
-    </a>
+    <nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+      <a href="../belgium.html">🇧🇪 Belgium</a>
+      <a href="#medieval-perfection">Medieval perfection</a>
+      <a href="#essential-bruges">Essential Bruges</a>
+      <a href="#getting-to-bruges">Getting to Bruges</a>
+      <a href="#food-drink">Food &amp; Drink</a>
+      <a href="#plan-book">Plan &amp; book</a>
+      <a href="#faq">FAQ</a>
+      <a href="#continue-exploring-belgium">Continue exploring Belgium</a>
+    </div></nav>
 
     <!-- ── HERO ──────────────────────────────────────────── -->
     <div class="card heroCard">
@@ -367,7 +386,7 @@ function nextImageCandidate(img){
     </div>
 
     <!-- ── THE CITY ──────────────────────────────────────── -->
-    <div class="section-divider">🏰 Medieval perfection</div>
+    <div id="medieval-perfection" class="section-divider">🏰 Medieval perfection</div>
 
     <p class="section-label">One of Europe's greatest medieval cities</p>
     <div class="card">
@@ -426,7 +445,7 @@ function nextImageCandidate(img){
     </div>
 
     <!-- ── WHAT TO SEE ───────────────────────────────────── -->
-    <div class="section-divider">🎯 Essential Bruges</div>
+    <div id="essential-bruges" class="section-divider">🎯 Essential Bruges</div>
 
     <div class="card blueCard">
       <h2>The key sights and experiences</h2>
@@ -466,7 +485,7 @@ function nextImageCandidate(img){
     </div>
 
     <!-- ── GETTING THERE ────────────────────────────────– -->
-    <div class="section-divider">🚂 Getting to Bruges</div>
+    <div id="getting-to-bruges" class="section-divider">🚂 Getting to Bruges</div>
 
     <div class="card">
       <h2>Bruges as a day trip or overnight destination</h2>
@@ -491,7 +510,7 @@ function nextImageCandidate(img){
     </div>
 
     <!-- ── FOOD & DRINK ──────────────────────────────────– -->
-    <div class="section-divider">🍽️ Food & Drink</div>
+    <div id="food-drink" class="section-divider">🍽️ Food & Drink</div>
 
     <div class="card goldCard">
       <h2>Eating in Bruges</h2>
@@ -521,6 +540,8 @@ function nextImageCandidate(img){
     </div>
 
     <!-- ── BOOK THE TOUR ──────────────────────────────────– -->
+    <div id="plan-book" class="section-divider">🎟️ Plan &amp; book</div>
+
     <div class="card heroCard">
       <h2>Plan your Belgium trip</h2>
       <p class="hero-lead" style="font-size:15px;margin-bottom:16px;">
@@ -570,7 +591,7 @@ function nextImageCandidate(img){
     </div>
 
     <!-- ── FAQ ────────────────────────────────────────────– -->
-    <p class="section-label">Common questions</p>
+    <div id="faq" class="section-divider">❓ FAQ</div>
     <div class="card">
       <h2>Bruges FAQ</h2>
 
@@ -630,7 +651,7 @@ function nextImageCandidate(img){
     </div>
 
     <!-- ── BOTTOM NAV ──────────────────────────────────────– -->
-    <div class="section-divider">🗺️ Continue exploring Belgium</div>
+    <div id="continue-exploring-belgium" class="section-divider">🗺️ Continue exploring Belgium</div>
 
     <div class="card heroCard" style="text-align:center;">
       <h2 style="text-align:center;">All six Belgian cities</h2>
