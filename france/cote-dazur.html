@@ -1,6 +1,7 @@
 <!doctype html> 
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
@@ -11,8 +12,6 @@
 
   <!-- GetYourGuide -->
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Côte d'Azur, France — Nice, Cannes & the French Riviera | Two for the Row'd</title>
@@ -117,6 +116,15 @@
     footer{padding:20px 16px 28px;font-size:13px;color:var(--muted);text-align:center}footer a{font-weight:600;color:var(--muted)}
     @media(max-width:700px){.memory-strip{grid-template-columns:repeat(2,1fr)}.story-grid,.place-grid,.dfh-grid,.photo-grid{grid-template-columns:1fr}.links{flex-direction:column;align-items:stretch}.links a{width:100%}.card{padding:21px 18px}}
   </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/nice2.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 <body>
   <div class="backBar">
@@ -129,6 +137,16 @@
 <a href="https://twofortherowd.com/">Home</a><span class="sep">›</span>
 <a href="https://twofortherowd.com/france.html">France</a><span class="sep">›</span><span>Côte d'Azur</span>
 </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="https://twofortherowd.com/france.html">← France</a>
+  <a href="#nice">Nice</a>
+  <a href="#cannes">Cannes</a>
+  <a href="#exploring-the-riviera">Exploring the Riviera</a>
+  <a href="#explore-the-cote-d-azur-from-home">Explore the Côte d'Azur from Home</a>
+  <a href="#nice-in-pictures">Nice in Pictures</a>
+  <a href="#plan-your-own-riviera-trip">Plan Your Own Riviera Trip</a>
+</div></nav>
+
 
 <section class="card heroCard">
 <div class="eyebrow"><span class="badge">🇫🇷 Côte d'Azur</span><span class="badge outline">Nice · Cannes</span><span class="badge blue">French Riviera</span></div>
@@ -143,7 +161,7 @@
 <div class="tagRow"><span class="tag">French Riviera</span><span class="tag">Nice</span><span class="tag">Cannes</span><span class="tag">Mediterranean France</span><span class="tag">Côte d'Azur</span></div>
 </section>
 
-<div class="section-divider">🌊 Nice</div>
+<div  id="nice" class="section-divider">🌊 Nice</div>
 <section class="card blueCard">
 <h2>More than a promenade and a beach</h2>
 <p><strong>Nice</strong> is the Côte d'Azur's major city and a destination in its own right. The Promenade des Anglais follows the Mediterranean waterfront, but the city also has the lanes of Vieux-Nice, Cours Saleya, museums, distinctive Niçois food and a landscape that moves quickly from coast towards hills and mountains.</p>
@@ -155,7 +173,7 @@
 </div>
 </section>
 
-<div class="section-divider">🎬 Cannes</div>
+<div  id="cannes" class="section-divider">🎬 Cannes</div>
 <section class="card goldCard">
 <h2>Yes, there's a red carpet — but keep walking</h2>
 <p><strong>Cannes</strong> inevitably brings the film festival to mind, and the Palais des Festivals and La Croisette are part of the experience. But the city's own tourism information also points visitors towards <strong>Le Suquet, the old port and the Lérins Islands</strong> — enough to make Cannes worthwhile even when there isn't a film star in sight.</p>
@@ -166,7 +184,7 @@
 </div>
 </section>
 
-<div class="section-divider">🚆 Exploring the Riviera</div>
+<div  id="exploring-the-riviera" class="section-divider">🚆 Exploring the Riviera</div>
 <section class="card seaCard">
 <h2>You don't necessarily need to drive the coast</h2>
 <p>One of the useful things about this stretch of the Côte d'Azur is that the principal coastal cities are linked by regional trains. That makes it realistic to base yourself in one place and make day trips rather than changing hotel every night.</p>
@@ -177,7 +195,7 @@
 </div>
 </section>
 
-<div class="section-divider">🚗 Explore the Côte d'Azur from Home</div>
+<div  id="explore-the-cote-d-azur-from-home" class="section-divider">🚗 Explore the Côte d'Azur from Home</div>
 <section class="card blueCard">
 <div class="eyebrow"><span class="badge blue">Drive From Home</span><span class="badge outline">Nice · Cannes</span></div>
 <h2>Two Riviera cities you can drive virtually</h2>
@@ -204,7 +222,7 @@
 </section>
 
 
-<div class="section-divider">📸 Nice in Pictures</div>
+<div  id="nice-in-pictures" class="section-divider">📸 Nice in Pictures</div>
 <section class="card">
 <h2>Our Nice memories</h2>
 <p>Some of our own photos from Nice and the Côte d'Azur — blue Mediterranean views, grand architecture and the waterfront.</p>
@@ -228,7 +246,7 @@
 </div>
 </section>
 
-<div class="section-divider">🎟 Plan Your Own Riviera Trip</div>
+<div  id="plan-your-own-riviera-trip" class="section-divider">🎟 Plan Your Own Riviera Trip</div>
 <section class="card">
 <h2>Browse Côte d'Azur experiences with GetYourGuide</h2>
 <p style="color:var(--ink-soft);font-size:14px;">Use the widget below to browse current tours, cruises and experiences around Nice, Cannes and the wider French Riviera. These are planning options rather than a claim that we personally took the exact activities displayed.</p>

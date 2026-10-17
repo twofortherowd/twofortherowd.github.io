@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en"> 
 <head>
+  <meta charset="utf-8"/>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
@@ -11,8 +12,6 @@
 
   <!-- GetYourGuide -->
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
-
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Lyon, France — Vieux Lyon, Fourvière & Traboules | Two for the Row'd</title>
@@ -117,6 +116,15 @@
     footer{padding:20px 16px 28px;font-size:13px;color:var(--muted);text-align:center}footer a{font-weight:600;color:var(--muted)}
     @media(max-width:700px){.memory-strip{grid-template-columns:repeat(2,1fr)}.story-grid,.place-grid,.dfh-grid,.photo-grid{grid-template-columns:1fr}.links{flex-direction:column;align-items:stretch}.links a{width:100%}.card{padding:21px 18px}}
   </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/lyon.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 <body>
   <div class="backBar">
@@ -129,6 +137,18 @@
 <a href="https://twofortherowd.com/">Home</a><span class="sep">›</span>
 <a href="https://twofortherowd.com/france.html">France</a><span class="sep">›</span><span>Lyon</span>
 </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="https://twofortherowd.com/france.html">← France</a>
+  <a href="#vieux-lyon">Vieux Lyon</a>
+  <a href="#the-traboules">The Traboules</a>
+  <a href="#fourviere">Fourvière</a>
+  <a href="#2-000-years-in-one-city">2,000 Years in One City</a>
+  <a href="#lyon-food">Lyon &amp; Food</a>
+  <a href="#explore-lyon-from-home">Explore Lyon from Home</a>
+  <a href="#lyon-in-pictures">Lyon in Pictures</a>
+  <a href="#plan-your-own-lyon-trip">Plan Your Own Lyon Trip</a>
+</div></nav>
+
 
 <section class="card heroCard">
 <div class="eyebrow"><span class="badge">🇫🇷 Lyon</span><span class="badge outline">Vieux Lyon · Fourvière</span><span class="badge blue">Rhône & Saône</span></div>
@@ -143,7 +163,7 @@
 <div class="tagRow"><span class="tag">Lyon</span><span class="tag">Vieux Lyon</span><span class="tag">Traboules</span><span class="tag">Fourvière</span><span class="tag">French food</span></div>
 </section>
 
-<div class="section-divider">🏘️ Vieux Lyon</div>
+<div  id="vieux-lyon" class="section-divider">🏘️ Vieux Lyon</div>
 <section class="card goldCard">
 <h2>A Renaissance city hiding behind ordinary doors</h2>
 <p><strong>Vieux Lyon</strong> sits between Fourvière hill and the Saône and preserves one of Europe's major Renaissance urban ensembles. The old quarter covers around 24 hectares, with narrow streets, courtyards, staircase towers and Italian-style galleries.</p>
@@ -154,7 +174,7 @@
 </div>
 </section>
 
-<div class="section-divider">🚪 The Traboules</div>
+<div  id="the-traboules" class="section-divider">🚪 The Traboules</div>
 <section class="card blueCard">
 <h2>Lyon's best-known hidden feature</h2>
 <p>A <strong>traboule</strong> is essentially a shortcut passing through one or more buildings between streets. Lyon's tourism office counts roughly <strong>500 traboules</strong> across Vieux Lyon, the slopes of Croix-Rousse and the Presqu'île, although only some are accessible to visitors.</p>
@@ -166,7 +186,7 @@
 </div>
 </section>
 
-<div class="section-divider">⛪ Fourvière</div>
+<div  id="fourviere" class="section-divider">⛪ Fourvière</div>
 <section class="card seaCard">
 <h2>Look down on 2,000 years of Lyon</h2>
 <p>Fourvière hill is one of the places where Lyon's history becomes easiest to understand. Roman Lugdunum developed here, and today the hill combines ancient remains with the unmistakable <strong>Basilica of Notre-Dame de Fourvière</strong> overlooking the modern city.</p>
@@ -178,7 +198,7 @@
 </div>
 </section>
 
-<div class="section-divider">🌍 2,000 Years in One City</div>
+<div  id="2-000-years-in-one-city" class="section-divider">🌍 2,000 Years in One City</div>
 <section class="card">
 <h2>Why Lyon is UNESCO listed</h2>
 <p>Lyon's historic site was inscribed on the UNESCO World Heritage List in <strong>1998</strong>. The protected urban landscape includes Vieux Lyon, Fourvière, the slopes of Croix-Rousse and much of the Presqu'île.</p>
@@ -189,7 +209,7 @@
 </div>
 </section>
 
-<div class="section-divider">🍴 Lyon & Food</div>
+<div  id="lyon-food" class="section-divider">🍴 Lyon & Food</div>
 <section class="card goldCard">
 <h2>You can't really talk about Lyon without talking about eating</h2>
 <p>Lyon's culinary reputation is one of the city's defining characteristics. Traditional <strong>bouchons lyonnais</strong> serve the kind of hearty local cooking associated with the city, while Lyon's broader food culture stretches from markets and bakeries to celebrated restaurants.</p>
@@ -197,7 +217,7 @@
 <p class="note"><strong>Gluten-free travellers:</strong> don't assume a traditional bouchon menu will automatically suit you. Check directly with the restaurant about ingredients and cross-contamination before booking.</p>
 </section>
 
-<div class="section-divider">🚗 Explore Lyon from Home</div>
+<div  id="explore-lyon-from-home" class="section-divider">🚗 Explore Lyon from Home</div>
 <section class="card blueCard">
 <div class="eyebrow"><span class="badge blue">Drive From Home</span><span class="badge outline">Lyon · LYS</span></div>
 <h2>Take a virtual drive through Lyon</h2>
@@ -209,7 +229,7 @@
 </section>
 
 
-<div class="section-divider">📸 Lyon in Pictures</div>
+<div  id="lyon-in-pictures" class="section-divider">📸 Lyon in Pictures</div>
 <section class="card">
 <h2>Our Lyon memories</h2>
 <p>Some of our own photos from Lyon — panoramic city views, Fourvière, the rivers and the Roman remains that reveal just how many layers of history the city has.</p>
@@ -234,7 +254,7 @@
 </div>
 </section>
 
-<div class="section-divider">🎟 Plan Your Own Lyon Trip</div>
+<div  id="plan-your-own-lyon-trip" class="section-divider">🎟 Plan Your Own Lyon Trip</div>
 <section class="card">
 <h2>Browse Lyon experiences with GetYourGuide</h2>
 <p style="color:var(--ink-soft);font-size:14px;">Use the widget below to browse current Lyon walking tours, food experiences and sightseeing options. These are planning ideas and don't imply that we personally took the exact activities displayed.</p>
