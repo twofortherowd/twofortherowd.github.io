@@ -40,7 +40,7 @@
   <meta property="og:description" content="Haunted castles, witches, banshees and headless horsemen — the spookiest stories and folklore hidden across Ireland. A new tale every Friday." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://twofortherowd.com/friday-night-frights.html" />
-  <meta property="og:image" content="https://i.ytimg.com/vi/bfiotwqaTe4/hqdefault.jpg" />
+  <meta property="og:image" content="https://twofortherowd.com/img/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <script type="application/ld+json">
@@ -52,25 +52,7 @@
     "url": "https://twofortherowd.com/friday-night-frights.html",
     "author": {"@type": "Person","name": "Nicola and Padraig","url": "https://twofortherowd.com"},
     "publisher": {"@type": "Organization","name": "Two for the Row'd","url": "https://twofortherowd.com"},
-    "dateModified": "2026-10-17",
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"The Rock of Dunamase","url":"https://youtube.com/shorts/bfiotwqaTe4"},
-      {"@type":"ListItem","position":2,"name":"Alice Kyteler — The Witch of Kilkenny","url":"https://youtube.com/shorts/YFSIDsLFD8M"},
-      {"@type":"ListItem","position":3,"name":"The Hellfire Club — Dublin’s Most Haunted Hill","url":"https://youtube.com/shorts/TFR8VPjts4E"},
-      {"@type":"ListItem","position":4,"name":"Fairy Forts — Ireland’s Mysterious Otherworld","url":"https://youtube.com/shorts/DnYHOSCyjrM"},
-      {"@type":"ListItem","position":5,"name":"The Dullahan — Ireland’s Headless Horseman","url":"https://youtube.com/shorts/sF_8_ONfflE"},
-      {"@type":"ListItem","position":6,"name":"Duckett’s Grove — The Haunted Mansion of Carlow","url":"https://youtube.com/shorts/AwtLbRKrpwo"},
-      {"@type":"ListItem","position":7,"name":"The Children of Lir","url":"https://youtube.com/shorts/F-CbaDuRzBM"},
-      {"@type":"ListItem","position":8,"name":"Carlow Castle — The Fortress That Fell to a Doctor","url":"https://youtube.com/shorts/bfd2eSJmOpw"},
-      {"@type":"ListItem","position":9,"name":"The Witch of the Blackstairs","url":"https://youtube.com/shorts/jv2TBS_qaIg"},
-      {"@type":"ListItem","position":10,"name":"The Banshee — Ireland’s Messenger of Death","url":"https://youtube.com/shorts/tF5Cf515mng"},
-      {"@type":"ListItem","position":11,"name":"The Púca — Ireland’s Mischievous Shape-Shifter","url":"https://youtube.com/shorts/BJfdE9GshO0"},
-      {"@type":"ListItem","position":12,"name":"The Ghostly Jester of Malahide Castle","url":"https://youtube.com/shorts/whypsDzS5t8"},
-      {"@type":"ListItem","position":13,"name":"The Devil at Loftus Hall","url":"https://youtube.com/shorts/oSebzc4Fuww"}
-      ]
-    }
+    "dateModified": "2026-10-17"
   }
   </script>
   <script type="application/ld+json">
@@ -137,6 +119,11 @@
 @media(max-width:860px){.fnf-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.fnf-card{grid-template-columns:118px minmax(0,1fr);gap:12px;padding:12px}.fnf-title{font-size:1.02rem}.fnf-body p{font-size:13.5px}}
 @media(prefers-reduced-motion:reduce){.fnf-video img{transition:none}.fnf-video:hover img{transform:none}}
+    [hidden]{display:none!important}
+    .fnf-soon{text-align:center;background:#1d1828;border:1px dashed rgba(255,216,74,.35);border-radius:20px;padding:36px 22px}
+    .fnf-soon-icon{font-size:40px;margin-bottom:6px}
+    .fnf-soon h2{font-family:'Playfair Display',Georgia,serif;color:#fff;font-size:clamp(1.4rem,3vw,1.9rem);margin:0 0 8px}
+    .fnf-soon p{max-width:560px;margin:0 auto;color:rgba(239,233,251,.8)}
     .fnf-cta{margin-top:30px;text-align:center;background:linear-gradient(135deg,#ffd84a,#ffeb9b);color:#1a1208;border-radius:22px;padding:30px 24px}
     .fnf-cta h2{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;margin:0 0 8px}
     .fnf-cta p{max-width:600px;margin:0 auto 16px;color:#4a3f28}
@@ -172,13 +159,18 @@
       </div>
     </header>
 
-    <section aria-labelledby="tales">
-      <div class="fnf-section-head">
+    <section class="fnf-scope" aria-labelledby="tales">
+      <div class="fnf-section-head" data-fnf-when="some">
         <h2 id="tales">The tales so far</h2>
-        <p>Tap any video to watch. If you dare…</p>
+        <p>Tap any video to watch. If you dare… A new tale arrives every Friday night.</p>
+      </div>
+      <div class="fnf-soon" data-fnf-when="none" hidden>
+        <div class="fnf-soon-icon" aria-hidden="true">🕯️</div>
+        <h2>The first fright arrives Friday 23 October</h2>
+        <p>Our first tale goes live on Friday 23 October, with a new one every Friday night after that. Subscribe on YouTube so you don’t miss it — if you dare…</p>
       </div>
       <div class="fnf-grid">
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2027-01-15T20:00:00">
         <button class="fnf-video" type="button" data-vid="bfiotwqaTe4" aria-label="Play: The Rock of Dunamase"><img src="https://i.ytimg.com/vi/bfiotwqaTe4/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Co. Laois · Castle ruin</div>
@@ -187,7 +179,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/bfiotwqaTe4" target="_blank" rel="noopener">Watch on YouTube ↗</a><a class="fnf-more" href="/laois.html">Our Laois guide →</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2027-01-08T20:00:00">
         <button class="fnf-video" type="button" data-vid="YFSIDsLFD8M" aria-label="Play: Alice Kyteler — The Witch of Kilkenny"><img src="https://i.ytimg.com/vi/YFSIDsLFD8M/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Co. Kilkenny · True history</div>
@@ -196,7 +188,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/YFSIDsLFD8M" target="_blank" rel="noopener">Watch on YouTube ↗</a><a class="fnf-more" href="/kilkenny.html">Our Kilkenny guide →</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2027-01-01T20:00:00">
         <button class="fnf-video" type="button" data-vid="TFR8VPjts4E" aria-label="Play: The Hellfire Club — Dublin’s Most Haunted Hill"><img src="https://i.ytimg.com/vi/TFR8VPjts4E/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Dublin Mountains · Haunted ruin</div>
@@ -205,7 +197,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/TFR8VPjts4E" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2026-12-25T20:00:00">
         <button class="fnf-video" type="button" data-vid="DnYHOSCyjrM" aria-label="Play: Fairy Forts — Ireland’s Mysterious Otherworld"><img src="https://i.ytimg.com/vi/DnYHOSCyjrM/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">All over Ireland · Folklore</div>
@@ -214,7 +206,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/DnYHOSCyjrM" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2026-12-18T20:00:00">
         <button class="fnf-video" type="button" data-vid="sF_8_ONfflE" aria-label="Play: The Dullahan — Ireland’s Headless Horseman"><img src="https://i.ytimg.com/vi/sF_8_ONfflE/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Irish mythology</div>
@@ -223,7 +215,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/sF_8_ONfflE" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2026-12-11T20:00:00">
         <button class="fnf-video" type="button" data-vid="AwtLbRKrpwo" aria-label="Play: Duckett’s Grove — The Haunted Mansion of Carlow"><img src="https://i.ytimg.com/vi/AwtLbRKrpwo/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Co. Carlow · Haunted mansion</div>
@@ -232,7 +224,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/AwtLbRKrpwo" target="_blank" rel="noopener">Watch on YouTube ↗</a><a class="fnf-more" href="/carlow.html">Our Carlow guide →</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2026-12-04T20:00:00">
         <button class="fnf-video" type="button" data-vid="F-CbaDuRzBM" aria-label="Play: The Children of Lir"><img src="https://i.ytimg.com/vi/F-CbaDuRzBM/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Co. Westmeath & beyond · Legend</div>
@@ -241,7 +233,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/F-CbaDuRzBM" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2026-11-27T20:00:00">
         <button class="fnf-video" type="button" data-vid="bfd2eSJmOpw" aria-label="Play: Carlow Castle — The Fortress That Fell to a Doctor"><img src="https://i.ytimg.com/vi/bfd2eSJmOpw/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Co. Carlow · True history</div>
@@ -250,7 +242,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/bfd2eSJmOpw" target="_blank" rel="noopener">Watch on YouTube ↗</a><a class="fnf-more" href="/carlow.html">Our Carlow guide →</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2026-11-20T20:00:00">
         <button class="fnf-video" type="button" data-vid="jv2TBS_qaIg" aria-label="Play: The Witch of the Blackstairs"><img src="https://i.ytimg.com/vi/jv2TBS_qaIg/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Carlow–Wexford border · Folklore</div>
@@ -259,7 +251,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/jv2TBS_qaIg" target="_blank" rel="noopener">Watch on YouTube ↗</a><a class="fnf-more" href="/carlow.html">Our Carlow guide →</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2026-11-13T20:00:00">
         <button class="fnf-video" type="button" data-vid="tF5Cf515mng" aria-label="Play: The Banshee — Ireland’s Messenger of Death"><img src="https://i.ytimg.com/vi/tF5Cf515mng/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Irish folklore</div>
@@ -268,7 +260,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/tF5Cf515mng" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2026-11-06T20:00:00">
         <button class="fnf-video" type="button" data-vid="BJfdE9GshO0" aria-label="Play: The Púca — Ireland’s Mischievous Shape-Shifter"><img src="https://i.ytimg.com/vi/BJfdE9GshO0/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Irish folklore · Samhain</div>
@@ -277,7 +269,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/BJfdE9GshO0" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2026-10-30T20:00:00">
         <button class="fnf-video" type="button" data-vid="whypsDzS5t8" aria-label="Play: The Ghostly Jester of Malahide Castle"><img src="https://i.ytimg.com/vi/whypsDzS5t8/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Co. Dublin · Castle ghost</div>
@@ -286,7 +278,7 @@
           <div class="fnf-links"><a class="fnf-yt" href="https://youtube.com/shorts/whypsDzS5t8" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
         </div>
       </article>
-      <article class="fnf-card">
+      <article class="fnf-card" data-release="2026-10-23T20:00:00">
         <button class="fnf-video" type="button" data-vid="oSebzc4Fuww" aria-label="Play: The Devil at Loftus Hall"><img src="https://i.ytimg.com/vi/oSebzc4Fuww/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fnf-play" aria-hidden="true">▶</span></button>
         <div class="fnf-body">
           <div class="fnf-place">Co. Wexford · Haunted house</div>
@@ -296,6 +288,30 @@
         </div>
       </article>
       </div>
+      <script>
+(function(){
+  var scripts = document.getElementsByTagName('script');
+  var box = scripts[scripts.length - 1].parentNode;
+  var keep = null, shown = 0, now = Date.now();
+  function irishTime(stamp){
+    // Ireland is UTC+1 until the last Sunday of October, then UTC+0 until the last Sunday of March.
+    var d = new Date(stamp + 'Z'), y = d.getUTCFullYear();
+    function lastSun(m){ var t = new Date(Date.UTC(y, m + 1, 0)); t.setUTCDate(t.getUTCDate() - t.getUTCDay()); return t; }
+    var summer = d >= lastSun(2) && d < lastSun(9);
+    return d.getTime() - (summer ? 3600000 : 0);
+  }
+  box.querySelectorAll('.fnf-card[data-release]').forEach(function(c){
+    if (irishTime(c.getAttribute('data-release')) > now || (keep !== null && shown >= keep)) c.remove();
+    else shown++;
+  });
+  var root = box.closest('.fnf-scope') || document;
+  root.querySelectorAll('[data-fnf-count]').forEach(function(el){ el.textContent = shown; });
+  root.querySelectorAll('[data-fnf-when]').forEach(function(el){
+    var want = el.getAttribute('data-fnf-when');
+    el.hidden = (want === 'none') ? shown > 0 : shown === 0;
+  });
+})();
+</script>
     </section>
 
     <section class="fnf-cta">
