@@ -198,6 +198,16 @@
     }
     @media(max-width:460px){.factsGrid{grid-template-columns:1fr;}}
   </style>
+
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/tunis.jpg')}
+    .chapterNavInner a{color:var(--soft)!important}
+    .section-divider{scroll-margin-top:70px;text-transform:none!important;letter-spacing:normal!important}
+    .wrap>.heroCard:first-of-type img,.wrap>.hero:first-of-type img{display:none!important}
+    .card .highlight-text,.card .faqA{font-size:14px!important}
+    .wrap>.heroCard:first-of-type h2,.wrap>.heroCard:first-of-type h3{color:#fff!important}
+    .wrap>.heroCard:first-of-type .memory,.wrap>.heroCard:first-of-type .fact,.wrap>.heroCard:first-of-type .statBox,.wrap>.heroCard:first-of-type .glance-item{background:rgba(13,9,4,.5)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.wrap>.heroCard:first-of-type .memory *,.wrap>.heroCard:first-of-type .fact *{color:#fff!important}\n  </style>
 </head>
 <body>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=981657641071814&amp;ev=PageView&amp;noscript=1"/></noscript>
@@ -214,9 +224,22 @@
     <a href="https://twofortherowd.com/#map">Our Destinations</a><span aria-hidden="true">›</span>
     <span aria-current="page">Tunisia</span>
   </nav>
+<nav class="chapterNav" aria-label="Page sections"><div class="chapterNavInner">
+  <a href="https://twofortherowd.com/#map">← Our Destinations</a>
+  <a href="#facts">Tunisia at a glance</a>
+  <a href="#map">Where we've been</a>
+  <a href="#guides">Our Tunisia guides</a>
+  <a href="#story">Our story</a>
+  <a href="#before-you-go">Before you go</a>
+  <a href="#photos">Tunisia in pictures</a>
+  <a href="#book">Book your trip</a>
+  <a href="#faq">Tunisia FAQ</a>
+  <a href="#packing">What to pack</a>
+</div></nav>
+
 
   <!-- HERO -->
-  <header class="proCountryHero">
+  <header class="proCountryHero heroCard">
     <div class="eyebrow">
       <span class="badge">🇹🇳 Tunisia</span>
       <span class="badge">Visited in 2009</span>
@@ -246,7 +269,7 @@
   </nav>
 
   <!-- KEY FACTS -->
-  <div class="section-divider" id="facts">🇹🇳 Tunisia at a glance</div>
+  <div  id="facts" class="section-divider">🇹🇳 Tunisia at a glance</div>
   <div class="card heroCard">
     <div class="factsGrid">
       <div class="fact"><div class="fact-k">Capital</div><div class="fact-v">Tunis</div><div class="fact-n">About 1.1 million people live in the Tunis governorate (2024 census)</div></div>
@@ -266,7 +289,7 @@
   </div>
 
   <!-- MAP -->
-  <div class="section-divider" id="map">🗺️ Where we've been</div>
+  <div  id="map" class="section-divider">🗺️ Where we've been</div>
   <div class="card mapCard">
     <h2>Our Tunisia route</h2>
     <p class="hero-lead" style="font-size:15px;margin-bottom:14px;">From the coast and the souks of Tunis, south to the Roman amphitheatre at El Jem and Douz, and on into the Sahara for our overnight camel trip. Tap a marker to open the guide for that stop.</p>
@@ -281,7 +304,7 @@
   </div>
 
   <!-- OUR GUIDES -->
-  <div class="section-divider" id="guides">📖 Our Tunisia guides</div>
+  <div  id="guides" class="section-divider">📖 Our Tunisia guides</div>
   <div class="guideGrid">
     <a class="guideCard" href="/tunisia/tunis.html">
       <div class="guidePhoto"><img src="img/tunis.jpg" alt="Tunis during our 2009 Tunisia trip" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
@@ -298,7 +321,7 @@
   </div>
 
   <!-- THE STORY -->
-  <div class="section-divider" id="story">🐪 Our story</div>
+  <div  id="story" class="section-divider">🐪 Our story</div>
   <div class="card story">
     <h2>Beach days, ancient souks and a night under the Sahara stars.</h2>
     <div class="quote-block">"Sitting on a camel watching the sun go down over the Sahara dunes is one of those moments that makes you feel very small and very lucky at the same time. The silence, the colours, the sheer scale of it — there is nothing quite like the desert at sunset. We were not prepared for how beautiful it would be."</div>
@@ -325,7 +348,7 @@
   </div>
 
   <!-- BEFORE YOU GO -->
-  <div class="section-divider" id="before-you-go">🧭 Before you go</div>
+  <div  id="before-you-go" class="section-divider">🧭 Before you go</div>
   <div class="callout">
     <div class="callIcon" aria-hidden="true">⚠️</div>
     <p><strong>Our trip was in 2009, and things have changed.</strong> The details below come from the <a href="https://www.ireland.ie/en/dfa/overseas-travel/advice/tunisia/" target="_blank" rel="noopener">Irish Department of Foreign Affairs travel advice for Tunisia</a> (checked September 2026). Read the latest version before you book, because advice can change quickly.</p>
@@ -384,7 +407,7 @@
   </div>
 
   <!-- PHOTOS -->
-  <div class="section-divider" id="photos">📸 Tunisia in pictures</div>
+  <div  id="photos" class="section-divider">📸 Tunisia in pictures</div>
   <div class="card darkCard">
     <h2>The Sahara Desert — our own photos from 2009</h2>
     <p>From the desert landscape and the camel trains to the extraordinary Sahara sunset — Tunisia through our lens.</p>
@@ -397,7 +420,7 @@
   </div>
 
   <!-- BOOK -->
-  <div class="section-divider" id="book">🎟️ Book your trip</div>
+  <div  id="book" class="section-divider">🎟️ Book your trip</div>
   <div class="card heroCard">
     <h2>Book a Tunisia tour through TourRadar</h2>
     <p class="hero-lead" style="font-size:15px;"><strong>Want to experience the very best of Tunisia — the Sahara Desert, the ancient medinas, the Mediterranean coast and the Roman ruins — with everything organised for you? TourRadar has brilliant tours covering this remarkable country.</strong></p>
@@ -420,7 +443,7 @@
   </div>
 
   <!-- FAQ -->
-  <div class="section-divider" id="faq">❓ Tunisia FAQ</div>
+  <div  id="faq" class="section-divider">❓ Tunisia FAQ</div>
   <div class="card">
     <details class="faqItem" open>
       <summary>Is Tunisia worth visiting?</summary>
@@ -465,7 +488,7 @@
   </div>
 
   <!-- PACKING -->
-  <div class="section-divider" id="packing">🎒 What to pack</div>
+  <div  id="packing" class="section-divider">🎒 What to pack</div>
   <div class="card">
     <h2>Tunisia packing essentials — what we'd bring</h2>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">Tunisia is warm and sunny — lightweight clothing, strong sun protection and insect repellent are the essentials. For the Sahara overnight trip, bring a warm layer for the desert night which can be surprisingly cool, and wear covered shoes and long trousers for the camel ride.</p>
