@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script>
@@ -30,7 +31,6 @@
   <!-- GetYourGuide -->
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VYORXUN"></script>
 
-  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- ═══ SEO ═══ -->
@@ -150,1000 +150,550 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://twofortherowd.com/"},
+    {"@type":"ListItem","position":2,"name":"Our Destinations","item":"https://twofortherowd.com/#map"},
+    {"@type":"ListItem","position":3,"name":"Belgium","item":"https://twofortherowd.com/belgium.html"}
+  ]}
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --gold:       #ffd84a;
-      --gold-dark:  #e8c235;
-      --gold-pale:  #fff9e0;
-      --ink:        #1a1208;
-      --ink-soft:   #4a3f28;
-      --muted:      #7a6e58;
-      --cream:      #fdf8ef;
-      --white:      #ffffff;
-      --border:     rgba(26,18,8,.10);
-      --border-mid: rgba(26,18,8,.16);
-      --card-bg:    rgba(255,255,255,.88);
-      --shadow-sm:  0 2px 8px rgba(26,18,8,.07);
-      --shadow-md:  0 8px 24px rgba(26,18,8,.10);
-      --shadow-lg:  0 16px 48px rgba(26,18,8,.13);
-      --radius-sm:  10px;
-      --radius-md:  16px;
-      --radius-lg:  22px;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body:    'DM Sans', 'Segoe UI', Arial, sans-serif;
-      --belgium:    #EF3340;
-      --belgium-gold: #FDDA24;
-      --belgium-black: #1a1208;
-      --belgium-soft: #fff8e0;
-      --brussels:   #2c5f8a;
-      --brussels-soft: #e4f0fa;
-    }
+    :root{--gold:#ffd84a;--gold-dark:#e8c235;--ink:#1a1208;--ink-soft:#4a3f28;--muted:#7a6e58;--cream:#fdf8ef;--white:#ffffff;--border:rgba(26,18,8,.10);--border-mid:rgba(26,18,8,.16);--card-bg:rgba(255,255,255,.88);--shadow-sm:0 2px 8px rgba(26,18,8,.07);--shadow-md:0 8px 24px rgba(26,18,8,.10);--shadow-lg:0 16px 48px rgba(26,18,8,.13);--radius-sm:10px;--radius-md:16px;--radius-lg:22px;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans','Segoe UI',Arial,sans-serif;--font-hand:'Caveat',cursive;--bel-red:#EF3340;--bel-gold:#FDDA24;--brussels:#2c5f8a;}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{margin:0;font-family:var(--font-body);font-size:15px;font-weight:400;line-height:1.7;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 80% 60% at 10% 0%,rgba(239,51,64,.06) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 90% 100%,rgba(253,218,36,.12) 0%,transparent 55%);}
+    *{position:relative;z-index:1;}
+    h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);line-height:1.18;margin-top:0;}
+    h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;margin-bottom:14px;letter-spacing:-.01em;}
+    h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;margin-bottom:12px;letter-spacing:-.005em;}
+    h3{font-size:clamp(1.05rem,1.8vw,1.25rem);font-weight:700;margin-bottom:8px;}
+    p{margin:0 0 .9rem;}p:last-child{margin-bottom:0;}
+    ul,ol{margin:0 0 .9rem;padding-left:1.3rem;}li{margin-bottom:.35rem;}
+    a{color:inherit;}strong{font-weight:700;}
+    .wrap{max-width:900px;margin:0 auto;padding:0 16px 60px;}
+    .backBar{background:rgba(253,248,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+    .backBar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink);padding:7px 14px;border-radius:999px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-sm);}
+    .card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-md);padding:24px 26px;margin-bottom:16px;backdrop-filter:blur(4px);transition:transform .18s ease,box-shadow .18s ease;}
+    .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+    .heroCard{background:linear-gradient(160deg,#ffffff 0%,#fff9e6 45%,#fffbe8 100%);border-color:rgba(253,218,36,.25);}
+    .redCard{background:linear-gradient(160deg,#ffffff 0%,#fff5f5 55%,#ffe0e0 100%);border-color:rgba(239,51,64,.15);}
+    .darkCard{background:linear-gradient(160deg,#f8f8f8 0%,#f0f0f0 55%,#e8e8e8 100%);border-color:rgba(26,26,26,.15);}
+    .goldCard{background:linear-gradient(160deg,#ffffff 0%,#fffbe8 55%,#fff3c0 100%);border-color:rgba(232,194,53,.3);}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--ink);color:var(--white);border:none;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 6px 20px rgba(26,18,8,.2);}
+    .btn-gold{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:var(--white);color:var(--ink);border:1.5px solid var(--border-mid);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;}
+    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+    .badge{display:inline-block;padding:4px 11px;border-radius:999px;font-size:12px;font-weight:700;background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);}
+    .badge.outline{background:rgba(255,255,255,.8);border-color:var(--border-mid);color:var(--ink-soft);}
+    .eyebrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;}
+    .hero-headline{font-family:var(--font-display);font-size:clamp(2rem,5.2vw,3.2rem);font-weight:900;line-height:1.08;margin-bottom:14px;letter-spacing:-.015em;}
+    .hero-headline em{font-style:italic;color:var(--bel-red);font-weight:800;}
+    .hero-lead{font-size:1.08rem;line-height:1.72;color:var(--ink-soft);margin-bottom:24px;max-width:680px;}
+    .states-strip{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0;}
+    .state-pill{background:rgba(253,218,36,.15);border:1px solid rgba(253,218,36,.4);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:600;color:#7a5c00;text-decoration:none;}
+    .photo-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0;}
+    .photo-grid-3 img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-md);display:block;}
+    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:10px;}
+    .highlight-item{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px;}
+    .highlight-icon{font-size:22px;margin-bottom:6px;}
+    .highlight-title{font-weight:700;font-size:14px;margin-bottom:4px;}
+    .highlight-text{font-size:13px;color:var(--ink-soft);line-height:1.5;}
+    .quote-block{border-left:3px solid var(--bel-red);padding:12px 18px;margin:16px 0;background:rgba(239,51,64,.04);border-radius:0 12px 12px 0;font-style:italic;font-size:15px;color:var(--ink-soft);line-height:1.7;}
+    .gygWidgetWrap{margin-top:14px;padding:10px;border-radius:14px;background:rgba(255,255,255,.55);border:1px solid var(--border);overflow:hidden;}
+    .faqItem{border-bottom:1px dashed var(--border-mid);padding:14px 0;}
+    .faqItem:last-child{border-bottom:none;padding-bottom:0;}
+    .faqQ{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;user-select:none;}
+    .faqQ::after{content:"+";font-size:1.4rem;line-height:1;font-weight:400;flex-shrink:0;color:var(--muted);transition:transform .2s ease;}
+    .faqItem.open .faqQ::after{transform:rotate(45deg);}
+    .faqA{font-size:14px;line-height:1.7;color:var(--ink-soft);display:none;padding-top:10px;}
+    .faqItem.open .faqA{display:block;}
+    .tagRow{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+    .tag{display:inline-block;padding:6px 11px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.8);font-size:12px;font-weight:600;color:var(--ink-soft);}
+    .disclosure{font-size:12px;line-height:1.55;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px dashed var(--border-mid);}
+    .breadcrumb{font-size:12px;color:var(--muted);margin-bottom:16px;display:flex;flex-wrap:wrap;gap:4px;align-items:center;}
+    .breadcrumb a{color:var(--muted);text-decoration:none;font-weight:600;}
+    .breadcrumb span{opacity:.5;}
+    footer{margin-top:10px;padding:20px 0 12px;font-size:13px;line-height:1.6;color:var(--muted);text-align:center;}
+    footer a{color:var(--muted);font-weight:600;}
 
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    /* --- compact city cards --- */
+    .dest-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px;}
+    a.dest-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-sm);padding:16px 17px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .18s ease,box-shadow .18s ease;}
+    a.dest-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+    .dest-card .dest-flag{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+    .dest-card h3{margin-bottom:5px;font-size:1.1rem;}
+    .dest-card p{font-size:13px;line-height:1.5;color:var(--ink-soft);flex-grow:1;margin:0;}
+    .dest-card .card-cta{display:inline-flex;align-items:center;margin-top:12px;align-self:flex-start;font-size:12px;font-weight:800;padding:7px 12px;border-radius:9px;background:var(--ink);color:#fff;}
+    a.dest-card:hover .card-cta{transform:translateX(2px);}
+    a.dest-card.brussels{background:linear-gradient(160deg,#ffffff 0%,#fff5f5 60%,#ffe6e6 100%);border-color:rgba(239,51,64,.2);}
+    a.dest-card.brussels .card-cta{background:var(--bel-red);}
+    a.dest-card.flanders{background:linear-gradient(160deg,#ffffff 0%,#fffbe8 60%,#fff4c4 100%);border-color:rgba(232,194,53,.32);}
+    a.dest-card.flanders .card-cta{background:var(--gold);color:var(--ink);border:1px solid var(--gold-dark);}
+    a.dest-card.wallonia{background:linear-gradient(160deg,#ffffff 0%,#f2f6ff 60%,#e1ebf8 100%);border-color:rgba(44,95,138,.18);}
+    .regionStrip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px;}
+    .regionItem{background:rgba(255,255,255,.8);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:12.5px;line-height:1.5;color:var(--ink-soft);}
+    .regionItem b{display:block;font-family:var(--font-display);font-size:1rem;color:var(--ink);margin-bottom:2px;}
 
-    body {
-      margin: 0;
-      font-family: var(--font-body);
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 1.7;
-      color: var(--ink);
-      background: var(--cream);
-      -webkit-font-smoothing: antialiased;
-    }
+    /* --- Drive From Home module --- */
+    .dfh-card{background:linear-gradient(160deg,#1a1208 0%,#2a2110 55%,#332812 100%);color:#fdf8ef;border-radius:var(--radius-md);box-shadow:var(--shadow-md);padding:24px 26px;margin-bottom:16px;border:1px solid rgba(255,216,74,.25);}
+    .dfh-card h2{color:var(--gold);}
+    .dfh-card p{color:#e8e0cc;}
+    .dfh-card .badge{background:rgba(255,216,74,.18);color:var(--gold);border-color:rgba(255,216,74,.4);}
+    .dfh-card .btn-gold{padding:10px 16px;font-size:13px;}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(44,95,138,.10) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(253,218,36,.18) 0%, transparent 55%);
-    }
+    /* --- sticky chapter navigation --- */
+    .chapterNav{position:sticky;top:0;z-index:50;margin:0 -16px 18px;padding:8px 16px;background:rgba(253,248,239,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;}
+    .chapterNav::-webkit-scrollbar{display:none;}
+    .chapterNav a{flex:0 0 auto;text-decoration:none;font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px;color:var(--ink-soft);border:1px solid transparent;white-space:nowrap;}
+    .chapterNav a:hover{background:#fff;border-color:var(--border);color:var(--bel-red);}
 
-    * { position: relative; z-index: 1; }
+    /* --- numbered chapter headers --- */
+    .chapterHeader{scroll-margin-top:110px;margin:36px 0 18px;padding:0 4px;}
+    .chapterHeaderInner{display:flex;align-items:flex-end;gap:14px;padding-bottom:14px;border-bottom:2px solid var(--ink);}
+    .chapterNumber{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3rem);font-weight:900;line-height:.9;color:var(--bel-red);letter-spacing:-.02em;font-style:italic;}
+    .chapterTitle{flex:1;min-width:0;}
+    .chapterLabel{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+    .chapterName{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:var(--ink);line-height:1.1;letter-spacing:-.01em;}
 
-    h1, h2, h3, h4 { font-family: var(--font-display); color: var(--ink); line-height: 1.18; margin-top: 0; }
-    h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 14px; }
-    h2 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); font-weight: 700; margin-bottom: 10px; }
-    h3 { font-size: clamp(1.05rem, 1.8vw, 1.25rem); font-weight: 700; margin-bottom: 8px; }
-    p { margin: 0 0 .9rem; }
-    p:last-child { margin-bottom: 0; }
-    ul, ol { margin: 0 0 .9rem; padding-left: 1.3rem; }
-    li { margin-bottom: .35rem; }
-    a { color: inherit; }
-    strong { font-weight: 700; }
+    /* --- quick stats --- */
+    .statStrip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 18px;}
+    .statBox{background:rgba(255,255,255,.82);border:1px solid var(--border);border-radius:13px;padding:12px 10px;text-align:center;box-shadow:var(--shadow-sm);}
+    .statValue{font-family:var(--font-display);font-weight:900;font-size:clamp(1.45rem,3vw,2rem);line-height:1;color:var(--bel-red);}
+    .statLabel{font-size:10.5px;color:var(--ink-soft);font-weight:700;margin-top:5px;text-transform:uppercase;letter-spacing:.055em;line-height:1.3;}
+    .handCaption{font-family:var(--font-hand);font-size:1.7rem;color:var(--bel-red);line-height:1;margin:10px 0 0;text-align:center;transform:rotate(-1.5deg);}
 
-    .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 60px; }
+    /* --- food / getting around subsections --- */
+    .subGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px;}
+    .subItem{background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:14px;padding:16px 18px;}
+    .subItem h3{font-size:1.02rem;margin-bottom:6px;}
+    .subItem p{font-size:13.5px;line-height:1.6;color:var(--ink-soft);margin:0;}
 
-    .backBar {
-      background: rgba(253,248,239,.95);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .backBar a {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 13px; font-weight: 700; text-decoration: none; color: var(--ink);
-      padding: 7px 14px; border-radius: 999px; background: var(--white);
-      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .backBar a:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .backBar .site-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--ink); text-decoration: none; }
+    /* --- Belgium map --- */
+    .belgiumMapCard{padding:18px;overflow:hidden}.belgiumMapIntro{padding:4px 6px 14px}
+    #belgiumJourneyMap{height:480px;width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow-md);z-index:1}
+    .belgiumMapLegend{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;padding:0 4px;font-size:12px;color:var(--muted)}
+    .belgiumMapLegendItem{display:flex;align-items:center;gap:6px}.belgiumMapDot{width:11px;height:11px;border-radius:50%;display:inline-block}
+    .belgiumPopup{font-family:var(--font-body);min-width:190px}.belgiumPopupTrip{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+    .belgiumPopupTitle{font-family:var(--font-display);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:5px}.belgiumPopupText{font-size:12px;color:var(--ink-soft);line-height:1.5}
+    .belgiumPopupLink{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;color:var(--bel-red);text-decoration:none}
 
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-md);
-      padding: 24px 26px;
-      margin-bottom: 16px;
-      backdrop-filter: blur(4px);
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-    .heroCard  { background: linear-gradient(160deg, #ffffff 0%, #e4f0fa 45%, #fffbe8 100%); border-color: rgba(44,95,138,.2); }
-    .redCard   { background: linear-gradient(160deg, #ffffff 0%, #fff5f5 55%, #ffd6d6 100%); border-color: rgba(239,51,64,.2); }
-    .blueCard  { background: linear-gradient(160deg, #ffffff 0%, #e4f0fa 55%, #c8dff5 100%); border-color: rgba(44,95,138,.2); }
-    .goldCard  { background: linear-gradient(160deg, #ffffff 0%, #fffbe8 55%, #fff3b0 100%); border-color: rgba(232,194,53,.3); }
-    .darkCard  { background: linear-gradient(160deg, #f8f9fc 0%, #eef1f7 55%, #e0e6f0 100%); border-color: rgba(44,95,138,.2); }
-
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 22px; background: var(--ink); color: var(--white);
-      border: none; border-radius: var(--radius-sm);
-      font-family: var(--font-body); font-size: 14px; font-weight: 700;
-      text-decoration: none; cursor: pointer;
-      box-shadow: 0 6px 20px rgba(26,18,8,.2);
-      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-    }
-    .btn-primary:hover { background: #2e2410; transform: translateY(-2px); color: var(--white); }
-
-    .btn-gold {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 22px; background: var(--gold); color: var(--ink);
-      border: 1px solid var(--gold-dark); border-radius: var(--radius-sm);
-      font-family: var(--font-body); font-size: 14px; font-weight: 700;
-      text-decoration: none; cursor: pointer;
-      box-shadow: 0 6px 18px rgba(232,194,53,.35);
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); color: var(--ink); }
-
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 20px; background: var(--white); color: var(--ink);
-      border: 1.5px solid var(--border-mid); border-radius: var(--radius-sm);
-      font-family: var(--font-body); font-size: 14px; font-weight: 700;
-      text-decoration: none; cursor: pointer; box-shadow: var(--shadow-sm);
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .btn-outline:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); color: var(--ink); }
-
-    .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
-
-    .badge { display: inline-block; padding: 4px 11px; border-radius: 999px; font-size: 12px; font-weight: 700; background: var(--gold); color: var(--ink); border: 1px solid var(--gold-dark); }
-    .badge.outline { background: rgba(255,255,255,.8); border-color: var(--border-mid); color: var(--ink-soft); }
-    .badge.red  { background: rgba(239,51,64,.10); border-color: rgba(239,51,64,.25); color: var(--belgium); }
-    .badge.blue { background: rgba(44,95,138,.10); border-color: rgba(44,95,138,.25); color: var(--brussels); }
-
-    .eyebrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
-    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .10em; text-transform: uppercase; color: var(--muted); margin: 6px 0 10px; }
-
-    .hero-headline { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.12; margin-bottom: 14px; }
-    .hero-headline em { font-style: italic; color: var(--belgium); }
-    .hero-lead { font-size: 1.05rem; line-height: 1.7; color: var(--ink-soft); margin-bottom: 20px; }
-
-    .quote-block {
-      border-left: 3px solid var(--brussels); padding: 12px 18px; margin: 16px 0;
-      background: rgba(44,95,138,.05); border-radius: 0 12px 12px 0;
-      font-style: italic; font-size: 15px; color: var(--ink-soft); line-height: 1.7;
-    }
-
-    .dest-tabs {
-      display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0;
-      justify-content: center;
-    }
-    .dest-tab {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 10px 16px; background: rgba(255,255,255,.8); color: var(--ink);
-      border: 1.5px solid var(--border-mid); border-radius: 999px;
-      font-family: var(--font-body); font-size: 14px; font-weight: 700;
-      text-decoration: none; cursor: pointer;
-      box-shadow: var(--shadow-sm);
-      transition: all .2s ease;
-    }
-    .dest-tab:hover {
-      transform: translateY(-3px);
-      background: var(--white);
-      border-color: var(--gold);
-      box-shadow: var(--shadow-md);
-      color: var(--belgium);
-    }
-
-    .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 10px; }
-    .highlight-item { background: rgba(255,255,255,.75); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
-    .highlight-icon { font-size: 22px; margin-bottom: 6px; }
-    .highlight-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
-    .highlight-text { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
-
-    .destination-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 14px; }
-    .dest-card {
-      background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md);
-      box-shadow: var(--shadow-md); overflow: hidden;
-      transition: transform .18s ease, box-shadow .18s ease;
-      display: flex; flex-direction: column;
-    }
-    .dest-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .dest-card-img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; }
-    .dest-card-content { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
-    .dest-card-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
-    .dest-card-desc { font-size: 14px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 12px; flex: 1; }
-    .dest-card-button { display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; background: var(--gold); color: var(--ink); border: 1px solid var(--gold-dark); border-radius: var(--radius-sm); font-weight: 700; font-size: 13px; text-decoration: none; cursor: pointer; align-self: flex-start; transition: all .15s ease; }
-    .dest-card-button:hover { background: var(--gold-dark); transform: translateY(-1px); }
-
-    .regions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 14px; }
-    .region-card { background: rgba(255,255,255,.8); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
-    .region-icon { font-size: 26px; margin-bottom: 8px; }
-    .region-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
-    .region-text { font-size: 13px; line-height: 1.6; color: var(--ink-soft); }
-
-    .drive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 12px; }
-    .drive-item { background: rgba(255,255,255,.8); border: 1.5px solid var(--border); border-radius: 12px; padding: 14px; text-align: center; cursor: pointer; transition: all .2s ease; }
-    .drive-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--belgium); }
-    .drive-city { font-weight: 700; font-size: 15px; margin-bottom: 6px; color: var(--ink); }
-    .drive-link { display: inline-block; font-size: 12px; color: var(--brussels); font-weight: 700; text-decoration: none; padding: 6px 10px; background: rgba(44,95,138,.08); border-radius: 6px; margin-top: 6px; }
-
-    .gygWidgetWrap { margin-top: 14px; padding: 10px; border-radius: 14px; background: rgba(255,255,255,.55); border: 1px solid var(--border); overflow: hidden; }
-
-    .faqItem { border-bottom: 1px dashed var(--border-mid); padding: 14px 0; }
-    .faqItem:last-child { border-bottom: none; padding-bottom: 0; }
-    .faqQ { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; user-select: none; }
-    .faqQ::after { content: "+"; font-size: 1.4rem; line-height: 1; font-weight: 400; flex-shrink: 0; color: var(--muted); transition: transform .2s ease; }
-    .faqItem.open .faqQ::after { transform: rotate(45deg); }
-    .faqA { font-size: 14px; line-height: 1.7; color: var(--ink-soft); display: none; padding-top: 10px; }
-    .faqItem.open .faqA { display: block; }
-
-    .tagRow { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
-    .tag { display: inline-block; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,.8); font-size: 12px; font-weight: 600; color: var(--ink-soft); }
-
-    .disclosure { font-size: 12px; line-height: 1.55; color: var(--muted); margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--border-mid); }
-
-    .breadcrumb { font-size: 12px; color: var(--muted); margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
-    .breadcrumb a { color: var(--muted); text-decoration: none; font-weight: 600; }
-    .breadcrumb a:hover { color: var(--ink); }
-    .breadcrumb span { opacity: .5; }
-
-    .section-divider { display: flex; align-items: center; gap: 12px; margin: 8px 0 16px; font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); }
-    .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border-mid); }
-
-    .photo-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 16px 0; }
-    .photo-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0; }
-    .photo-grid-2 img, .photo-grid-3 img {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover;
-      border-radius: 12px; box-shadow: var(--shadow-md); display: block;
-      transition: transform .2s ease;
-    }
-    .photo-grid-2 img:hover, .photo-grid-3 img:hover { transform: translateY(-3px); }
-
-    footer { margin-top: 10px; padding: 20px 0 12px; font-size: 13px; line-height: 1.6; color: var(--muted); text-align: center; }
-    footer a { color: var(--muted); font-weight: 600; }
-
-    @media (max-width: 768px) {
-      .destination-cards { grid-template-columns: 1fr; }
-      .dest-tabs { justify-content: flex-start; }
-      .dest-tab { font-size: 13px; padding: 8px 12px; }
-    }
-
-    @media (max-width: 640px) {
-      .photo-grid-2, .photo-grid-3 { grid-template-columns: 1fr; }
-      .links { flex-direction: column; }
-      .links a { text-align: center; justify-content: center; }
-      .drive-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-  
-    /* 2026 NAV / PILL READABILITY SWEEP */
-    .route-stop,
-    .state-pill,
-    .vibe-pill,
-    .tagRow .tag,
-    .dest-tab{
-      background:#fff !important;
-      color:#1b1813 !important;
-      border:1px solid rgba(27,24,19,.16) !important;
-      box-shadow:0 2px 9px rgba(27,24,19,.10) !important;
-      text-shadow:none !important;
-    }
-    .route-stop a,
-    .state-pill a,
-    .vibe-pill a,
-    .tagRow .tag a,
-    .dest-tab a{
-      color:#1b1813 !important;
-      text-decoration:none;
-    }
-    .route-arrow{
-      color:rgba(27,24,19,.54) !important;
-      text-shadow:none !important;
-    }
-    .route-strip,
-    .states-strip,
-    .vibe-strip,
-    .tagRow,
-    .dest-tabs{
-      gap:8px !important;
-    }
-    .dest-tab{
-      font-weight:800 !important;
-      border-radius:999px !important;
-    }
-    .dest-tab:hover{
-      transform:translateY(-1px);
-      box-shadow:0 5px 14px rgba(27,24,19,.13) !important;
-    }
-
-</style>
+    @media(max-width:850px){.dest-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    @media(max-width:640px){.statStrip{grid-template-columns:repeat(2,1fr);}.chapterNav{margin-left:-16px;margin-right:-16px;}.photo-grid-3,.subGrid,.regionStrip{grid-template-columns:1fr;}.dest-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px!important;}a.dest-card{padding:12px 12px;}.dest-card h3{font-size:1rem;}.dest-card .dest-flag{font-size:9.5px;}.dest-card p{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;}.dest-card .card-cta{font-size:11px;padding:6px 9px;}.links{flex-direction:column;}.links a{text-align:center;justify-content:center;}.belgiumMapCard{padding:12px}#belgiumJourneyMap{height:400px;border-radius:12px}}
+  </style>
+  <link rel="stylesheet" href="/country-refresh.css">
+  <style>
+    :root{--country-hero:url('/img/brussels.jpg')}
+    /* keep the city cards compact under the shared refresh styles */
+    .dest-grid .card-cta{box-shadow:none}
+    .regionStrip,.dest-grid{gap:12px!important}
+    .card .dest-grid .dest-card p{font-size:13px!important;line-height:1.5!important}
+    .card .regionStrip .regionItem{font-size:12.5px!important}
+    @media(max-width:640px){.card .dest-grid .dest-card p{font-size:12px!important;line-height:1.45!important;-webkit-line-clamp:3;max-height:4.35em}.dest-card .card-cta{white-space:nowrap}}
+    .wrap>.heroCard:first-of-type .state-pill{background:rgba(255,255,255,.94)!important;color:var(--ink)!important;border-color:transparent!important;font-weight:700}
+  </style>
 </head>
-
 <body>
 
-  <div class="backBar">
-    <a href="https://twofortherowd.com/" aria-label="Back to Two for the Row'd">← Back to Two for the Row'd</a>
-    <a class="site-name" href="https://twofortherowd.com/">Two for the Row'd 🇮🇪</a>
+<div class="backBar">
+  <a href="https://twofortherowd.com/" aria-label="← Back to Two for the Row'd">← Back to Two for the Row'd</a>
+  <a href="https://twofortherowd.com/" style="font-family:var(--font-display);font-size:15px;font-weight:700;">Two for the Row'd 🇮🇪</a>
+</div>
+
+<div class="wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="https://twofortherowd.com/">Home</a>
+    <span>&rsaquo;</span>
+    <a href="https://twofortherowd.com/#map">Our Destinations</a>
+    <span>&rsaquo;</span>
+    <span>Belgium</span>
+  </nav>
+
+  <nav class="chapterNav" aria-label="Belgium page sections">
+    <a href="https://twofortherowd.com/#map">🌍 Destinations</a>
+    <a href="#belgium-map">🗺️ Belgium Map</a>
+    <a href="#at-a-glance">At a Glance</a>
+    <a href="#cities">Six Cities</a>
+    <a href="#our-story">Our Story</a>
+    <a href="#spa-grand-prix">Spa Grand Prix</a>
+    <a href="#why-belgium">Why Belgium</a>
+    <a href="#food">Food &amp; Drink</a>
+    <a href="#getting-around">Getting Around</a>
+    <a href="#tours">Tours</a>
+    <a href="#things-to-do">Things to Do</a>
+    <a href="#faq">FAQ</a>
+    <a href="#packing">Packing</a>
+  </nav>
+
+  <!-- HERO -->
+  <div id="at-a-glance" class="card heroCard">
+    <div class="eyebrow">
+      <span class="badge">🇧🇪 Belgium</span>
+      <span class="badge outline">Brussels · Bruges · Ghent · Antwerp · Liège · Spa</span>
+      <span class="badge outline">Lived here · 2005–2006</span>
+    </div>
+    <h1 class="hero-headline">Belgium —<br><em>medieval cities, extraordinary beer, chocolate and the country that got under my skin</em></h1>
+    <p class="hero-lead">Nicola lived in Brussels from 2005 to 2006 and fell in love with Belgium. Not just the capital, but the entire country — the Flemish cities with their canals and cobbled streets, the Walloon character of the east, the warm people, the food culture, the beer tradition recognised by UNESCO, the iconic Spa-Francorchamps circuit. Belgium is one of Europe's most underrated countries. This is why you should explore it.</p>
+
+    <div class="states-strip">
+      <a class="state-pill" href="/belgium/brussels.html">Brussels 🏛️</a>
+      <a class="state-pill" href="/belgium/bruges.html">Bruges 🏰</a>
+      <a class="state-pill" href="/belgium/ghent.html">Ghent 🏙️</a>
+      <a class="state-pill" href="/belgium/antwerp.html">Antwerp 🌊</a>
+      <a class="state-pill" href="/belgium/liege.html">Liège 🧇</a>
+      <a class="state-pill" href="/belgium/spa.html">Spa 🏁</a>
+    </div>
+
+    <div class="links">
+      <a class="btn-gold" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Book a Belgium tour on TourRadar →</a>
+      <a class="btn-outline" href="#cities">Choose a city ↓</a>
+    </div>
+
+    <div class="tagRow">
+      <span class="tag">Belgium travel guide</span>
+      <span class="tag">Belgium city breaks</span>
+      <span class="tag">Brussels Bruges Ghent Antwerp</span>
+      <span class="tag">Belgian beer culture</span>
+      <span class="tag">Belgium itinerary</span>
+      <span class="tag">Belgium train travel</span>
+      <span class="tag">Spa-Francorchamps</span>
+      <span class="tag">Belgium from Ireland</span>
+    </div>
   </div>
 
-  <div class="wrap">
-
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="https://twofortherowd.com/">Home</a>
-      <span>›</span>
-      <a href="https://twofortherowd.com/#destinations">Our Destinations</a>
-      <span>›</span>
-      <span>Belgium</span>
-    </nav>
-
-    <!-- ── HERO ──────────────────────────────────────────── -->
-    <div class="card heroCard">
-      <div class="eyebrow">
-        <span class="badge">🇧🇪 Belgium</span>
-        <span class="badge red">Lived Here · 2005–2006</span>
-      </div>
-
-      <h1 class="hero-headline">
-        Belgium —<br><em>medieval cities, extraordinary beer, chocolate and the country that got under my skin</em>
-      </h1>
-
-      <p class="hero-lead">
-        Nicola lived in Brussels from 2005 to 2006 and fell in love with Belgium. Not just the capital,
-        but the entire country — the Flemish cities with their canals and cobbled streets, the Walloon
-        character of the east, the warm people, the food culture, the beer tradition recognised by UNESCO,
-        the iconic Spa-Francorchamps circuit. Belgium is one of Europe's most underrated countries.
-        This is why you should explore it.
-      </p>
-
-      <div class="links">
-        <a class="btn-primary" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
-          Book a Belgium tour on TourRadar →
-        </a>
-        <a class="btn-outline" href="https://twofortherowd.com/#destinations">
-          See all our destinations →
-        </a>
-      </div>
-
-      <div class="tagRow">
-        <span class="tag">Belgium travel guide</span>
-        <span class="tag">Belgium city breaks</span>
-        <span class="tag">Brussels Bruges Ghent Antwerp</span>
-        <span class="tag">Belgian beer culture</span>
-        <span class="tag">Belgium itinerary</span>
-        <span class="tag">Belgium train travel</span>
-        <span class="tag">Spa-Francorchamps</span>
-        <span class="tag">Belgium from Ireland</span>
-      </div>
-    </div>
-
-    <!-- ── EXPLORE BELGIUM NAV ───────────────────────────── -->
-    <div class="section-divider">🗺️ Explore Belgium</div>
-
-    <p style="text-align:center;color:var(--ink-soft);margin:0 0 14px;font-size:14px;">
-      Six incredible cities, each with its own character and story. Explore them all.
-    </p>
-
-    <div class="dest-tabs">
-      <a href="belgium/brussels.html" class="dest-tab">🏛️ Brussels</a>
-      <a href="belgium/bruges.html" class="dest-tab">🏰 Bruges</a>
-      <a href="belgium/ghent.html" class="dest-tab">🏙️ Ghent</a>
-      <a href="belgium/antwerp.html" class="dest-tab">🌊 Antwerp</a>
-      <a href="belgium/liege.html" class="dest-tab">🏰 Liège</a>
-      <a href="belgium/spa.html" class="dest-tab">🏁 Spa</a>
-    </div>
-
-    <!-- ── THE STORY ─────────────────────────────────────── -->
-    <div class="section-divider">💫 The Story</div>
-
-    <p class="section-label">The year Belgium got under my skin</p>
-    <div class="card">
-      <h2>From study abroad to a love affair with Belgium that never ended.</h2>
-
-      <div class="quote-block">
-        "Brussels didn't just grow on me — it got completely under my skin. But Belgium isn't just Brussels. It's Bruges on the water, Ghent's gritty charm, Antwerp's Flemish pride, Liège's French-speaking soul, and Spa's legendary circuit. I spent a year living in Brussels and travelled this country top to bottom. I fell in love with all of it."
-        — Nicola
-      </div>
-
-      <p>
-        Nicola arrived in Brussels in 2005 to study and ended up staying a full year. That year changed everything.
-        Belgium is not a destination that reveals itself in a weekend — it rewards those who stay, who explore,
-        who take time to understand the differences between Brussels, Flanders and Wallonia, who sit in cafés and
-        drink Belgian beer, who eat their way through the food culture, who travel between cities by train.
-      </p>
-      <p>
-        The first thing that strikes you about Belgium is how small it is, yet how much it contains. From Brussels
-        you can reach Bruges, Ghent, Antwerp, Liège and beyond — all within an hour or two by train. This makes Belgium
-        ideal for exploration. You can move through the country collecting experiences, discovering different atmospheres,
-        understanding how Flanders differs from Wallonia, seeing how each city has its own distinct character.
-      </p>
-      <p>
-        Then there is the culture. The beer culture that runs so deep it's been recognised by UNESCO as an Intangible
-        Cultural Heritage of Humanity. The chocolate that genuinely deserves its reputation. The waffles. The frites with
-        proper Belgian mayonnaise. The moules-frites. The stoemp and carbonnade flamande. Eating in Belgium is not just
-        about sustenance — it's an event, a ritual, part of understanding what it means to be Belgian.
-      </p>
-      <p>
-        The architecture stopped Nicola in her tracks again and again — the Gothic and Baroque guild houses ringing Grand
-        Place, the medieval centres of Bruges and Ghent with their canals and bridges, the industrial character of Antwerp,
-        the historic heart of Liège. Belgium is not a traditionally beautiful country in a postcard sense — but it has a
-        deep, lived-in beauty that grows more compelling the longer you spend there.
-      </p>
-      <p>
-        And then there are the moments. A memorable race weekend at Spa-Francorchamps, with pit passes behind the scenes at
-        one of the world's greatest racing circuits. Dinner at Le Grand Maur near Spa, in a beautiful historic mansion with
-        stone walls and a grand fireplace. The realisation that you don't just like Belgium — you love it. That you could
-        live here. That you want to come back.
-      </p>
-    </div>
-
-    <!-- ── BELGIUM BY REGION ────────────────────────────── -->
-    <div class="section-divider">🗺️ Three experiences</div>
-
-    <div class="regions-grid">
-      <div class="region-card blueCard" style="border-color:rgba(44,95,138,.2);">
-        <div class="region-icon">🏛️</div>
-        <div class="region-title">Brussels</div>
-        <p class="region-text">The bilingual capital. International, cultured, home to Grand Place and the Atomium. Where Nicola lived and where Belgium's story begins. A city that grows more rewarding the longer you spend in it.</p>
-      </div>
-      <div class="region-card redCard" style="border-color:rgba(239,51,64,.2);">
-        <div class="region-icon">🏰</div>
-        <div class="region-title">Flanders</div>
-        <p class="region-text">The Flemish north — Bruges with its canals, Ghent with its creative energy, Antwerp with its art and diamonds. Medieval cities filled with history, character and some of Europe's most distinctive architecture.</p>
-      </div>
-      <div class="region-card goldCard" style="border-color:rgba(232,194,53,.3);">
-        <div class="region-icon">🌍</div>
-        <div class="region-title">Wallonia</div>
-        <p class="region-text">The French-speaking south and east — Liège with its Walloon identity and vibrant street markets, Spa with its mineral springs and legendary F1 circuit. A noticeably different atmosphere and character.</p>
-      </div>
-    </div>
-
-    <!-- ── DESTINATION CARDS ────────────────────────────── -->
-    <div class="section-divider">🌟 The six cities</div>
-
-    <div class="destination-cards">
-      <!-- Brussels -->
-      <div class="dest-card">
-        <img src="img/brussels.jpg" alt="Grand Place Brussels Belgium" loading="lazy">
-        <div class="dest-card-content">
-          <h3 class="dest-card-title">Brussels</h3>
-          <p class="dest-card-desc">
-            The capital and Nicola's home for a year. Grand Place is one of Europe's most spectacular squares. The Atomium. Art Nouveau architecture. Beer culture. Neighbourhoods worth exploring. A city that becomes home.
-          </p>
-          <a href="belgium/brussels.html" class="dest-card-button">Explore Brussels →</a>
-        </div>
-      </div>
-
-      <!-- Bruges -->
-      <div class="dest-card">
-        <img src="img/bruges.jpg" alt="Bruges canals Belgium" loading="lazy">
-        <div class="dest-card-content">
-          <h3 class="dest-card-title">Bruges</h3>
-          <p class="dest-card-desc">
-            One of the world's most perfectly preserved medieval cities. Canals reflecting the buildings above. Chocolate shops. Cobbled streets. Bruges is postcard perfection — and it delivers.
-          </p>
-          <a href="belgium/bruges.html" class="dest-card-button">Explore Bruges →</a>
-        </div>
-      </div>
-
-      <!-- Ghent -->
-      <div class="dest-card">
-        <img src="img/ghent.jpg" alt="Ghent Belgium" loading="lazy">
-        <div class="dest-card-content">
-          <h3 class="dest-card-title">Ghent</h3>
-          <p class="dest-card-desc">
-            Don't call it Bruges' younger sibling. Ghent is vibrant, artistic and gritty in the best way. Medieval architecture meets contemporary culture. Canals, brilliant restaurants, a distinctly cool edge.
-          </p>
-          <a href="belgium/ghent.html" class="dest-card-button">Explore Ghent →</a>
-        </div>
-      </div>
-
-      <!-- Antwerp -->
-      <div class="dest-card">
-        <img src="img/antwerp.jpg" alt="Antwerp Belgium" loading="lazy">
-        <div class="dest-card-content">
-          <h3 class="dest-card-title">Antwerp</h3>
-          <p class="dest-card-desc">
-            Port city with Flemish pride. The Cathedral of Our Lady. Diamond district. World-class art and architecture. Rubens. Fashion. A city with serious cultural weight and atmosphere.
-          </p>
-          <a href="belgium/antwerp.html" class="dest-card-button">Explore Antwerp →</a>
-        </div>
-      </div>
-
-      <!-- Liège -->
-      <div class="dest-card">
-        <img src="img/liege.jpg" alt="Liège Belgium" loading="lazy">
-        <div class="dest-card-content">
-          <h3 class="dest-card-title">Liège</h3>
-          <p class="dest-card-desc">
-            The Walloon character. French-speaking, lively, with a gritty charm that feels distinctly different from the Flemish cities. Historic architecture. Street markets. Genuine warmth.
-          </p>
-          <a href="belgium/liege.html" class="dest-card-button">Explore Liège →</a>
-        </div>
-      </div>
-
-      <!-- Spa -->
-      <div class="dest-card">
-        <img src="img/spa.jpg" alt="Spa Belgium" loading="lazy">
-        <div class="dest-card-content">
-          <h3 class="dest-card-title">Spa</h3>
-          <p class="dest-card-desc">
-            Historic spa town in the Ardennes. Famous for its mineral springs. Home to Spa-Francorchamps, one of the world's greatest Formula 1 circuits. Where Nicola had an unforgettable weekend.
-          </p>
-          <a href="belgium/spa.html" class="dest-card-button">Explore Spa →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── SPA GRAND PRIX ───────────────────────────────── -->
-    <div class="section-divider">🏁 Belgian Grand Prix · Spa-Francorchamps 2005</div>
-
-    <div class="card redCard">
-      <h2>One unforgettable Grand Prix weekend at Spa-Francorchamps</h2>
-
-      <p>
-        In September 2005, during Nicola's year living in Belgium, she went to the Belgian Grand Prix at Spa-Francorchamps — a genuine bucket-list weekend. The race took place on 11 September, with Kimi Räikkönen taking the win. Spa-Francorchamps, set in the Ardennes hills, is one of Formula 1's most celebrated circuits.
-        The track demands respect. The atmosphere is electric. The racing is brilliant.
-      </p>
-      <p>
-        Having pit passes for the weekend made it even more special. Getting behind the scenes, seeing the cars and teams up close and soaking up the atmosphere made an already brilliant Grand Prix weekend unforgettable.
-      </p>
-      <p>
-        The one thing Nicola was desperately hoping for was a chance to meet her Formula 1 hero, Jacques Villeneuve, who was racing for Sauber that weekend. Sadly, that meeting never happened — although Villeneuve did give her something to cheer about by finishing sixth.
-      </p>
-      <p>
-        And then there was dinner at <strong>Le Grand Maur</strong>, remembered for its wonderfully atmospheric historic setting — old stone, timber and a grand fireplace — and a proper multi-course gastronomic meal. The racing, the pit access, Spa, the Ardennes setting and that memorable dinner all combined to make the trip one of Nicola's standout memories from her year in Belgium.
-      </p>
-      <p style="margin-top:16px;">
-        <a href="belgium/spa.html" class="btn-gold">Learn more about Spa →</a>
-      </p>
-    </div>
-
-    <!-- ── WHAT MAKES BELGIUM SPECIAL ────────────────────── -->
-    <div class="section-divider">✨ What makes Belgium special</div>
-
-    <div class="card goldCard">
-      <h2>Why Belgium belongs on your list</h2>
-
-      <div class="highlights-grid">
-        <div class="highlight-item">
-          <div class="highlight-icon">🏛️</div>
-          <div class="highlight-title">Medieval Cities</div>
-          <p class="highlight-text">Bruges, Ghent, Antwerp — preserved medieval centres that feel lived-in and real, not frozen in time.</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🍺</div>
-          <div class="highlight-title">Beer Culture</div>
-          <p class="highlight-text">UNESCO-recognised tradition. Hundreds of distinct Belgian beers. Abbey beers, lambics, Trappist ales — extraordinary brewing.</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🍫</div>
-          <div class="highlight-title">Belgian Chocolate</div>
-          <p class="highlight-text">Not a cliché. Genuinely exceptional. The craftsmanship, the quality, the history. Every visit to a chocolatier is rewarding.</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🧇</div>
-          <div class="highlight-title">Waffles</div>
-          <p class="highlight-text">Brussels waffles, Liège waffles — both exceptional in different ways. Fresh, warm, often with chocolate or fruit.</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🍟</div>
-          <div class="highlight-title">Frites & Moules</div>
-          <p class="highlight-text">Belgian fries (frites) with proper Belgian mayonnaise. Moules-frites — mussels and fries — is a Belgian institution.</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">⚛️</div>
-          <div class="highlight-title">The Atomium</div>
-          <p class="highlight-text">Brussels' most iconic landmark — a 102-metre-tall model of an iron crystal from 1958. Quirky, futuristic, unforgettable.</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🏆</div>
-          <div class="highlight-title">Grand Place</div>
-          <p class="highlight-text">One of the most spectacular squares in Europe. UNESCO World Heritage Site. Gothic and Baroque guild houses surrounding the Town Hall.</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🎨</div>
-          <div class="highlight-title">Art & Architecture</div>
-          <p class="highlight-text">Flemish art, Art Nouveau, medieval streets. Belgium has serious cultural depth.</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">📚</div>
-          <div class="highlight-title">Comic-Book Culture</div>
-          <p class="highlight-text">Tintin. The Smurfs. Belgium's contribution to comic book history is serious and celebrated throughout the country.</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🏁</div>
-          <div class="highlight-title">Spa-Francorchamps</div>
-          <p class="highlight-text">One of the world's greatest Formula 1 circuits. Legendary, challenging, set in beautiful Ardennes hills.</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🚂</div>
-          <div class="highlight-title">Easy City Hopping</div>
-          <p class="highlight-text">A strong rail network makes the major cities easy to combine, whether you travel from one base or build a multi-city trip.</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🤝</div>
-          <div class="highlight-title">The People</div>
-          <p class="highlight-text">Belgians are warm, funny and genuinely welcoming. They're proud of their country and culture. Take time to engage and they'll surprise you.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── BELGIAN FOOD & DRINK ──────────────────────────── -->
-    <div class="section-divider">🍽️ Food & Drink</div>
-
-    <div class="card">
-      <h2>Why Belgium's food culture is extraordinary</h2>
-
-      <p>
-        Eating in Belgium is not just about sustenance — it's a core part of the culture. Belgian food reflects the country's geography,
-        history and values. Every city has its specialities. Every café and brasserie has pride in what it serves.
-      </p>
-
-      <h3 style="margin-top:16px;margin-bottom:10px;">Belgian Beer — UNESCO Heritage</h3>
-      <p>
-        Belgium's brewing tradition runs deep. The country produces hundreds of distinct beers — abbey beers brewed by monks using centuries-old recipes,
-        Trappist ales from monastic communities, lambics with wild yeasts and fruit, strong dark beers, crisp pilsners. Belgian beer culture was recognised
-        by UNESCO as an Intangible Cultural Heritage of Humanity. This is not exaggeration. The diversity, complexity and quality are genuinely world-class.
-        Sitting in a Belgian café with a proper beer is one of life's pleasures.
-      </p>
-
-      <h3 style="margin-top:16px;margin-bottom:10px;">Waffles — Two Styles</h3>
-      <p>
-        Brussels waffles are fluffy, golden, often served with chocolate or fruit. Liège waffles are denser, richer, with pearl sugar baked into the batter.
-        Both are exceptional. Fresh Belgian waffles from a proper street stand are worth the detour — they're nothing like the frozen versions you might have tried elsewhere.
-      </p>
-
-      <h3 style="margin-top:16px;margin-bottom:10px;">Belgian Chocolate</h3>
-      <p>
-        Belgian chocolate deserves its reputation. The craftsmanship is serious. The quality is exceptional. From artisanal chocolatiers creating intricate pralines
-        to larger makers like Godiva and Neuhaus, Belgium has chocolate culture built into its DNA. A visit to a traditional chocolaterie is not just about buying
-        chocolate — it's about understanding Belgian quality and pride.
-      </p>
-
-      <h3 style="margin-top:16px;margin-bottom:10px;">Frites & Moules-Frites</h3>
-      <p>
-        Belgian fries (frites) are an art form. Cut thick, fried twice, served in a paper cone with proper Belgian mayonnaise (not ketchup). Moules-frites
-        — mussels and fries — is a Belgian institution. Fresh mussels steamed with white wine, shallots and herbs, served with frites. It's simple, it's perfect,
-        it's Belgium.
-      </p>
-
-      <h3 style="margin-top:16px;margin-bottom:10px;">Traditional Dishes</h3>
-      <p>
-        Carbonnade flamande is a rich Flemish beef stew with beer and dark spices. Stoemp is creamy mashed potatoes with vegetables. Waterzooi is a vegetable
-        or chicken stew. These are comfort foods that have been perfected over centuries. Eating them in Belgium, in a proper brasserie with locals around you,
-        connects you to the country's history and culture.
-      </p>
-
-      <h3 style="margin-top:16px;margin-bottom:10px;">Café Culture</h3>
-      <p>
-        The Belgian café and brasserie culture is an essential part of travel. This is where you sit for hours with a coffee or beer, where you watch the
-        city pass by, where you have conversations and experience Belgian life. It's not about rushing through a meal — it's about settling in, taking time,
-        being part of the rhythm.
-      </p>
-    </div>
-
-    <!-- ── GETTING AROUND ────────────────────────────────── -->
-    <div class="section-divider">🚂 Getting around Belgium</div>
-
-    <div class="card">
-      <h2>Why Belgium is ideal for independent travel</h2>
-
-      <p>
-        Belgium is fantastically compact. You can experience several very different cities without huge travel days. The rail network connects the major centres well,
-        making Belgium ideal if you want to explore independently without hiring a car, while having a car can be useful for the Ardennes and more rural areas.
-      </p>
-
-      <h3 style="margin-top:16px;margin-bottom:10px;">Rail Travel</h3>
-      <p>
-        Belgium's rail network makes city hopping refreshingly straightforward. Brussels, Bruges, Ghent, Antwerp and Liège are well connected, so you can build a multi-city itinerary without needing a car. For exact journey times, fares and engineering updates, check the current SNCB/NMBS timetable before travelling.
-      </p>
-
-      <h3 style="margin-top:16px;margin-bottom:10px;">Brussels as a Base</h3>
-      <p>
-        Because Brussels is so well connected, it works brilliantly as a base for exploring Belgium. Spend 3–4 days in the capital, then take day trips
-        to Bruges, Ghent, Antwerp, even Liège. Or use Brussels as your starting point and make it your only overnight base, moving through other cities
-        as you go.
-      </p>
-
-      <h3 style="margin-top:16px;margin-bottom:10px;">Multi-City Combinations</h3>
-      <p>
-        A classic Belgium trip might be: 2 nights Brussels, 1 night Bruges, 1 night Ghent, back to Brussels. Or: Brussels → Bruges → Ghent → Antwerp → home.
-        Or if you have a week: Brussels → Bruges → Ghent → Antwerp → Liège → Spa → back to Brussels. The trains make this easy.
-      </p>
-
-      <h3 style="margin-top:16px;margin-bottom:10px;">When to Use a Car</h3>
-      <p>
-        For the six main cities, trains are better than a car — parking is expensive, city centres are compact and walkable, trains avoid stress. A car
-        becomes useful if you're exploring the Ardennes region, rural Wallonia, or want to visit smaller towns beyond the main cities.
-      </p>
-
-      <h3 style="margin-top:16px;margin-bottom:10px;">Getting There from Ireland</h3>
-      <p>
-        Belgium is an easy European option from Ireland, with direct air links to the Brussels area available on many schedules. From Brussels Airport there are rail connections into the city and onward around Belgium. Check current airline and rail timetables for your travel dates.
-      </p>
-    </div>
-
-    <!-- ── DRIVE FROM HOME ───────────────────────────────── -->
-    <div class="section-divider">🚗 Drive Belgium from your sofa</div>
-
-    <div class="card">
-      <h2>Virtually explore Belgian cities before your trip</h2>
-
-      <p style="color:var(--ink-soft);font-size:14px;margin-bottom:16px;">
-        Want to get a feel for what these cities are really like before you book your trip? Our partnership with Drive From Home
-        lets you virtually explore four major Belgian cities from your own home. It's a brilliant way to see the streets, architecture
-        and atmosphere — and help plan your real journey.
-      </p>
-
-      <div class="drive-grid">
-        <div class="drive-item">
-          <div class="drive-city">Brussels</div>
-          <a href="https://drivefromhome.com/city/?city=BRU" target="_blank" rel="noopener" class="drive-link">🚗 Explore now</a>
-        </div>
-        <div class="drive-item">
-          <div class="drive-city">Ghent</div>
-          <a href="https://drivefromhome.com/city/?city=GNE" target="_blank" rel="noopener" class="drive-link">🚗 Explore now</a>
-        </div>
-        <div class="drive-item">
-          <div class="drive-city">Antwerp</div>
-          <a href="https://drivefromhome.com/city/?city=ANR" target="_blank" rel="noopener" class="drive-link">🚗 Explore now</a>
-        </div>
-        <div class="drive-item">
-          <div class="drive-city">Liège</div>
-          <a href="https://drivefromhome.com/city/?city=LGG" target="_blank" rel="noopener" class="drive-link">🚗 Explore now</a>
-        </div>
-      </div>
-
-      <p class="disclosure">
-        <strong>Note:</strong> Drive From Home experiences are available here for Brussels, Ghent, Antwerp and Liège.
-      </p>
-    </div>
-
-    <!-- ── BOOK THE TOUR ──────────────────────────────────– -->
-    <div class="card heroCard">
-      <h2>Plan your Belgium trip with expert guidance</h2>
-      <p class="hero-lead" style="font-size:15px;">
-        <strong>Want to explore Belgium properly with expert guides and everything taken care of? TourRadar has brilliant multi-day tours
-        covering the best of this incredible country.</strong>
-      </p>
-      <p>
-        Belgium rewards exploration — and a guided tour is an excellent way to move between cities, learn the stories behind
-        what you're seeing, and discover places you might miss on your own. Let someone else handle the logistics while you
-        focus on the waffles, the beer, the architecture and the people.
-      </p>
-      <div class="links">
-        <a class="btn-primary" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
-          Browse Belgium tours on TourRadar →
-        </a>
-      </div>
-      <p class="disclosure">
-        <strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.
-      </p>
-    </div>
-
-    <!-- ── KLOOK ──────────────────────────────────────────── -->
-    <div class="card goldCard">
-      <h2>Book your experiences on Klook</h2>
-      <p style="color:var(--ink-soft);font-size:14px;">
-        Skip-the-line tickets, city passes, day trips and attraction entry — often cheaper than booking at the door.
-      </p>
-      <div class="links">
-        <a class="btn-gold" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262052&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">
-          Browse Klook experiences →
-        </a>
-      </div>
-      <p class="disclosure">
-        <strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.
-      </p>
-    </div>
-
-    <!-- ── GYG ────────────────────────────────────────────── -->
-    <div class="card">
-      <h2>Book Belgium experiences with GetYourGuide</h2>
-      <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">
-        From Grand Place walking tours to Belgian beer tastings, Bruges day trips and Ghent food experiences — browse activities here:
-      </p>
-      <div class="gygWidgetWrap">
-        <div class="gygAvail" style="display:grid;gap:12px;margin:8px 0 18px;">
-          <div data-gyg-href="https://widget.getyourguide.com/default/availability.frame" data-gyg-tour-id="67161" data-gyg-locale-code="en-US" data-gyg-currency="EUR" data-gyg-widget="availability" data-gyg-variant="horizontal" data-gyg-partner-id="VYORXUN"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/brussels-l8/">GetYourGuide</a></span></div>
-          <div data-gyg-href="https://widget.getyourguide.com/default/availability.frame" data-gyg-tour-id="66951" data-gyg-locale-code="en-US" data-gyg-currency="EUR" data-gyg-widget="availability" data-gyg-variant="horizontal" data-gyg-partner-id="VYORXUN"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/brussels-l8/">GetYourGuide</a></span></div>
-        </div>
-        <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="5" data-gyg-partner-id="VYORXUN" data-gyg-q="belgium">
-          <span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/belgium-l169005/">GetYourGuide</a></span>
-        </div>
-      </div>
-      <p class="disclosure">
-        <strong>Disclosure:</strong> If you book through these links we may earn a small commission at no extra cost to you.
-      </p>
-    </div>
-
-    <!-- ── FAQ ────────────────────────────────────────────── -->
-    <p class="section-label">Common questions</p>
-    <div class="card">
-      <h2>Belgium FAQ</h2>
-
-      <div class="faqItem open">
-        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
-          Is Belgium worth visiting?
-        </div>
-        <div class="faqA">
-          Absolutely. Belgium is one of Europe's most underrated countries. It has world-class medieval cities, an extraordinary beer culture recognised by UNESCO, exceptional chocolate and food, stunning architecture and genuinely warm people. From Grand Place in Brussels to the canals of Bruges and Ghent — Belgium rewards exploration and is incredibly compact and easy to navigate.
-        </div>
-      </div>
-
-      <div class="faqItem">
-        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
-          What are the best cities to visit in Belgium?
-        </div>
-        <div class="faqA">
-          The six essential Belgian cities are: Brussels (the capital, home to Grand Place and the Atomium), Bruges (medieval perfection with canals and chocolate), Ghent (vibrant and artistic), Antwerp (Flemish identity, art and diamonds), Liège (French-speaking Walloon character), and Spa (famous for its mineral springs and the legendary F1 circuit Spa-Francorchamps).
-        </div>
-      </div>
-
-      <div class="faqItem">
-        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
-          How many days do you need in Belgium?
-        </div>
-        <div class="faqA">
-          A long weekend gives you time to explore Brussels properly and take a day trip to Bruges or Ghent. A full week allows you to visit multiple cities — perhaps Brussels, Bruges, Ghent and Liège, with time to explore each properly. Belgium's compact size means city hopping is easy and rewarding.
-        </div>
-      </div>
-
-      <div class="faqItem">
-        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
-          Is Belgium easy to travel around by train?
-        </div>
-        <div class="faqA">
-          Yes — Belgium has a strong rail network connecting its major cities, making independent city-hopping straightforward. Brussels is a particularly useful base for trips to Bruges, Ghent, Antwerp and Liège, while Spa is also reachable by rail with a longer journey.
-        </div>
-      </div>
-
-      <div class="faqItem">
-        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
-          Is Brussels a good base for exploring Belgium?
-        </div>
-        <div class="faqA">
-          Yes — Brussels is very well positioned for exploring the rest of Belgium by rail. Bruges, Ghent, Antwerp and Liège all work well as onward stops or day trips, while Spa takes a little longer. You can stay in Brussels and explore from one base or use the capital as the starting point for a multi-city trip.
-        </div>
-      </div>
-
-      <div class="faqItem">
-        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
-          What food should you try in Belgium?
-        </div>
-        <div class="faqA">
-          Belgian food is extraordinary. Must-tries include: Belgian waffles (especially Liège waffles), Belgian chocolate, frites (Belgian fries) with proper Belgian mayonnaise, moules-frites (mussels and fries), carbonnade flamande (Flemish beef stew), stoemp (mashed potatoes with vegetables), and Belgian beer — recognised by UNESCO as an Intangible Cultural Heritage. The café and brasserie culture is part of the experience.
-        </div>
-      </div>
-
-      <div class="faqItem">
-        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
-          What is the difference between Brussels, Flanders and Wallonia?
-        </div>
-        <div class="faqA">
-          Belgium has three main regions: Brussels is the bilingual capital (French and Flemish/Dutch). Flanders is the northern region — Flemish-speaking, including cities like Bruges, Ghent and Antwerp. Wallonia is the southern region — French-speaking, including cities like Liège and Spa. Each has its own distinct character, though they're all unmistakably Belgian.
-        </div>
-      </div>
-
-      <div class="faqItem">
-        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
-          Is Belgium easy to visit from Ireland?
-        </div>
-        <div class="faqA">
-          Belgium is an easy European city-break option from Ireland, with direct air links to the Brussels area available on many schedules. Once there, the country's compact size and strong rail network make independent travel between the main cities straightforward. Check current airline schedules for the dates you plan to travel.
-        </div>
-      </div>
-
-      <div class="faqItem">
-        <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">
-          When is the best time to visit Belgium?
-        </div>
-        <div class="faqA">
-          Spring (April–May) and early summer (June–July) offer the best weather for walking the cities and exploring outdoors. Summer is warm and lively. Autumn (September–October) is quieter and pleasant. Christmas in Belgium is magical with stunning markets and festive atmosphere. Belgian weather can be changeable, so pack layers regardless of season.
-        </div>
-      </div>
-    </div>
-
-    <!-- ── PACKING ─────────────────────────────────────────– -->
-    <p class="section-label">What to pack for Belgium</p>
-    <div class="card">
-      <h2>Belgium packing essentials — what we'd bring</h2>
-      <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">
-        Belgium's weather can be changeable — pack layers. Comfortable walking shoes are essential as all six cities are very walkable.
-        Whether summer warmth or winter cold, good preparation keeps you comfortable while you explore.
-      </p>
-
-      <div class="highlights-grid">
-        <div class="highlight-item">
-          <div class="highlight-icon">👟</div>
-          <div class="highlight-title">Comfortable walking shoes</div>
-          <p class="highlight-text">All six cities are best explored on foot. Brussels, Bruges, Ghent, Antwerp — expect cobblestone streets. Comfortable, well-broken-in shoes are essential.</p>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-icon">🧥</div>
-          <div class="highlight-title">Light layers</div>
-          <p class="highlight-text">Belgian weather is changeable. A lightweight sweater or fleece you can pack away works year-round. In summer, light layers for variable temperatures and evening coolness.</p>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-icon">🌧️</div>
-          <div class="highlight-title">Rain jacket</div>
-          <p class="highlight-text">Belgium gets rain. A packable rain jacket doesn't take up much space and is genuinely useful. Keep one in your day bag when exploring.</p>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-icon">☔</div>
-          <div class="highlight-title">Compact umbrella</div>
-          <p class="highlight-text">Small, lightweight umbrella for sudden rain. Many cafés and shops provide shelter, but being prepared means you can explore regardless.</p>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-icon">🎒</div>
-          <div class="highlight-title">Day bag</div>
-          <p class="highlight-text">For day trips to Bruges, Ghent or Liège from Brussels. Carry water, extra layer, camera, anything you pick up without weighing yourself down.</p>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-icon">📱</div>
-          <div class="highlight-title">Portable power bank</div>
-          <p class="highlight-text">Belgium is incredibly photogenic — Grand Place, Bruges canals, the Atomium. Keep your phone charged for maps, photos and music.</p>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-icon">🔌</div>
-          <div class="highlight-title">Travel adaptor</div>
-          <p class="highlight-text">Belgium uses Type E plugs. A universal travel adaptor is essential so you can charge devices at your accommodation.</p>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-icon">💧</div>
-          <div class="highlight-title">Reusable water bottle</div>
-          <p class="highlight-text">Belgium has excellent tap water. Bring a reusable bottle, refill at cafés and fountains, stay hydrated on long walking days.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── BOTTOM NAV ──────────────────────────────────────– -->
-    <div class="section-divider">🗺️ Continue exploring Belgium</div>
-
-    <div class="card heroCard" style="text-align:center;">
-      <h2 style="text-align:center;">All six Belgian cities</h2>
-      <div class="dest-tabs" style="justify-content:center;">
-        <a href="belgium/brussels.html" class="dest-tab">🏛️ Brussels</a>
-        <a href="belgium/bruges.html" class="dest-tab">🏰 Bruges</a>
-        <a href="belgium/ghent.html" class="dest-tab">🏙️ Ghent</a>
-        <a href="belgium/antwerp.html" class="dest-tab">🌊 Antwerp</a>
-        <a href="belgium/liege.html" class="dest-tab">🏰 Liège</a>
-        <a href="belgium/spa.html" class="dest-tab">🏁 Spa</a>
-      </div>
-
-      <div class="links" style="justify-content:center;margin-top:20px;">
-        <a class="btn-primary" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">
-          Book a Belgium tour →
-        </a>
-        <a class="btn-gold" href="https://www.getyourguide.com/belgium-l169005/?partner_id=VYORXUN&utm_medium=online_publisher" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">
-          Browse activities on GYG →
-        </a>
-        <a class="btn-outline" href="https://twofortherowd.com/#destinations">
-          Back to all destinations →
-        </a>
-      </div>
-    </div>
-
+  <div class="statStrip">
+    <div class="statBox"><div class="statValue">2005</div><div class="statLabel">Moved to Brussels</div></div>
+    <div class="statBox"><div class="statValue">1 year</div><div class="statLabel">Living in Brussels</div></div>
+    <div class="statBox"><div class="statValue">6</div><div class="statLabel">Full city guides</div></div>
+    <div class="statBox"><div class="statValue">3</div><div class="statLabel">Regions explored</div></div>
   </div>
 
-  <footer>
-    <p>
-      © <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp;
-      <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp;
-      <a href="https://twofortherowd.com/#destinations">Our destinations</a> &nbsp;•&nbsp;
-      <a href="mailto:hello@twofortherowd.com">Get in touch</a>
-    </p>
-  </footer>
+  <p class="handCaption">From a year in Brussels to every corner of Belgium ✨</p>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <!-- INTERACTIVE BELGIUM MAP -->
+  <section id="belgium-map" class="card belgiumMapCard">
+    <div class="belgiumMapIntro">
+      <div class="eyebrow"><span class="badge">🗺️ Interactive map</span><span class="badge outline">Belgium since 2005</span></div>
+      <h2>Follow our Belgium story</h2>
+      <p style="color:var(--ink-soft);max-width:690px;">Brussels was home for a year, and from there the trains made the rest of the country easy — north into Flanders for Bruges, Ghent and Antwerp, and south-east into Wallonia for Liège and Spa. <strong>Tap a marker</strong> to see the stop and open its guide.</p>
+    </div>
+    <div id="belgiumJourneyMap" aria-label="Interactive map of Two for the Row'd Belgium destinations"></div>
+    <div class="belgiumMapLegend">
+      <span class="belgiumMapLegendItem"><span class="belgiumMapDot" style="background:#EF3340"></span>Brussels — home base</span>
+      <span class="belgiumMapLegendItem"><span class="belgiumMapDot" style="background:#e0b400"></span>Flanders</span>
+      <span class="belgiumMapLegendItem"><span class="belgiumMapDot" style="background:#2c5f8a"></span>Wallonia</span>
+    </div>
+  </section>
+
+  <!-- 01 CITIES -->
+  <div id="cities" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">01</div><div class="chapterTitle"><div class="chapterLabel">Choose your city</div><div class="chapterName">Explore Belgium</div></div></div></div>
+  <div class="card">
+    <p style="color:var(--ink-soft);margin-bottom:4px;">Six incredible cities, each with its own character and story. Start wherever your own trip is taking you.</p>
+    <div class="dest-grid">
+
+      <a class="dest-card brussels" href="/belgium/brussels.html" aria-label="Explore Brussels →">
+        <div class="dest-flag">🇧🇪 Brussels · the capital</div>
+        <h3>Brussels</h3>
+        <p>The capital and Nicola's home for a year. Grand Place is one of Europe's most spectacular squares. The Atomium. Art Nouveau architecture. Beer culture. A city that becomes home.</p>
+        <span class="card-cta">Explore Brussels →</span>
+      </a>
+
+      <a class="dest-card flanders" href="/belgium/bruges.html" aria-label="Explore Bruges →">
+        <div class="dest-flag">🇧🇪 Flanders</div>
+        <h3>Bruges</h3>
+        <p>One of the world's most perfectly preserved medieval cities. Canals reflecting the buildings above. Chocolate shops. Cobbled streets. Postcard perfection — and it delivers.</p>
+        <span class="card-cta">Explore Bruges →</span>
+      </a>
+
+      <a class="dest-card flanders" href="/belgium/ghent.html" aria-label="Explore Ghent →">
+        <div class="dest-flag">🇧🇪 Flanders</div>
+        <h3>Ghent</h3>
+        <p>Don't call it Bruges' younger sibling. Vibrant, artistic and gritty in the best way. Medieval architecture meets contemporary culture, with a distinctly cool edge.</p>
+        <span class="card-cta">Explore Ghent →</span>
+      </a>
+
+      <a class="dest-card flanders" href="/belgium/antwerp.html" aria-label="Explore Antwerp →">
+        <div class="dest-flag">🇧🇪 Flanders</div>
+        <h3>Antwerp</h3>
+        <p>Port city with Flemish pride. The Cathedral of Our Lady. Diamond district. Rubens. Fashion. A city with serious cultural weight and atmosphere.</p>
+        <span class="card-cta">Explore Antwerp →</span>
+      </a>
+
+      <a class="dest-card wallonia" href="/belgium/liege.html" aria-label="Explore Liège →">
+        <div class="dest-flag">🇧🇪 Wallonia</div>
+        <h3>Liège</h3>
+        <p>The Walloon character. French-speaking, lively, with a gritty charm that feels distinctly different from the Flemish cities. Street markets and genuine warmth.</p>
+        <span class="card-cta">Explore Liège →</span>
+      </a>
+
+      <a class="dest-card wallonia" href="/belgium/spa.html" aria-label="Explore Spa →">
+        <div class="dest-flag">🇧🇪 Wallonia</div>
+        <h3>Spa</h3>
+        <p>Historic spa town in the Ardennes, famous for its mineral springs and home to Spa-Francorchamps — where Nicola had an unforgettable Grand Prix weekend.</p>
+        <span class="card-cta">Explore Spa →</span>
+      </a>
+
+    </div>
+
+    <div class="regionStrip">
+      <div class="regionItem"><b>🏛️ Brussels</b>The bilingual capital — international, cultured and where Belgium's story begins.</div>
+      <div class="regionItem"><b>🏰 Flanders</b>The Flemish north — canals, creative energy, art and some of Europe's most distinctive architecture.</div>
+      <div class="regionItem"><b>🌍 Wallonia</b>The French-speaking south and east — Liège's Walloon identity and Spa's springs and circuit.</div>
+    </div>
+  </div>
+
+  <!-- DRIVE FROM HOME -->
+  <div class="dfh-card">
+    <div class="eyebrow"><span class="badge">🚗 Drive From Home partner</span></div>
+    <h2>Drive Belgium from your sofa</h2>
+    <p>Want to get a feel for what these cities are really like before you book? Our partnership with Drive From Home lets you virtually explore four major Belgian cities — a brilliant way to see the streets, architecture and atmosphere and help plan your real journey.</p>
+    <div class="links">
+      <a class="btn-gold" href="https://drivefromhome.com/city/?city=BRU" target="_blank" rel="noopener">Brussels →</a>
+      <a class="btn-gold" href="https://drivefromhome.com/city/?city=GNE" target="_blank" rel="noopener">Ghent →</a>
+      <a class="btn-gold" href="https://drivefromhome.com/city/?city=ANR" target="_blank" rel="noopener">Antwerp →</a>
+      <a class="btn-gold" href="https://drivefromhome.com/city/?city=LGG" target="_blank" rel="noopener">Liège →</a>
+    </div>
+  </div>
+
+  <!-- 02 OUR STORY -->
+  <div id="our-story" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">02</div><div class="chapterTitle"><div class="chapterLabel">Where it started</div><div class="chapterName">The year Belgium got under my skin</div></div></div></div>
+  <div class="card goldCard">
+    <h2>From study abroad to a love affair with Belgium that never ended.</h2>
+    <div class="quote-block">"Brussels didn't just grow on me — it got completely under my skin. But Belgium isn't just Brussels. It's Bruges on the water, Ghent's gritty charm, Antwerp's Flemish pride, Liège's French-speaking soul, and Spa's legendary circuit. I spent a year living in Brussels and travelled this country top to bottom. I fell in love with all of it." — Nicola</div>
+    <p>Nicola arrived in Brussels in 2005 to study and ended up staying a full year. That year changed everything. Belgium is not a destination that reveals itself in a weekend — it rewards those who stay, who explore, who take time to understand the differences between Brussels, Flanders and Wallonia, who sit in cafés and drink Belgian beer, who eat their way through the food culture, who travel between cities by train.</p>
+    <p>The first thing that strikes you about Belgium is how small it is, yet how much it contains. From Brussels you can reach Bruges, Ghent, Antwerp, Liège and beyond — all within an hour or two by train. This makes Belgium ideal for exploration. You can move through the country collecting experiences, discovering different atmospheres, understanding how Flanders differs from Wallonia, seeing how each city has its own distinct character.</p>
+    <p>Then there is the culture. The beer culture that runs so deep it's been recognised by UNESCO as an Intangible Cultural Heritage of Humanity. The chocolate that genuinely deserves its reputation. The waffles. The frites with proper Belgian mayonnaise. The moules-frites. The stoemp and carbonnade flamande. Eating in Belgium is not just about sustenance — it's an event, a ritual, part of understanding what it means to be Belgian.</p>
+    <p>The architecture stopped Nicola in her tracks again and again — the Gothic and Baroque guild houses ringing Grand Place, the medieval centres of Bruges and Ghent with their canals and bridges, the industrial character of Antwerp, the historic heart of Liège. Belgium is not a traditionally beautiful country in a postcard sense — but it has a deep, lived-in beauty that grows more compelling the longer you spend there.</p>
+    <p>And then there are the moments. A memorable race weekend at Spa-Francorchamps, with pit passes behind the scenes at one of the world's greatest racing circuits. Dinner at Le Grand Maur near Spa, in a beautiful historic mansion with stone walls and a grand fireplace. The realisation that you don't just like Belgium — you love it. That you could live here. That you want to come back.</p>
+    <div class="photo-grid-3">
+      <img src="/img/brussels2.jpg" alt="Brussels — Two for the Row'd" loading="lazy">
+      <img src="/img/bruges.jpg" alt="Bruges canals — Two for the Row'd" loading="lazy">
+      <img src="/img/ghent.jpg" alt="Ghent — Two for the Row'd" loading="lazy">
+    </div>
+  </div>
+
+  <!-- 03 SPA GRAND PRIX -->
+  <div id="spa-grand-prix" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">03</div><div class="chapterTitle"><div class="chapterLabel">Belgian Grand Prix · 2005</div><div class="chapterName">Spa-Francorchamps</div></div></div></div>
+  <div class="card redCard">
+    <h2>One unforgettable Grand Prix weekend at Spa-Francorchamps</h2>
+    <p>In September 2005, during Nicola's year living in Belgium, she went to the Belgian Grand Prix at Spa-Francorchamps — a genuine bucket-list weekend. The race took place on 11 September, with Kimi Räikkönen taking the win. Spa-Francorchamps, set in the Ardennes hills, is one of Formula 1's most celebrated circuits. The track demands respect. The atmosphere is electric. The racing is brilliant.</p>
+    <p>Having pit passes for the weekend made it even more special. Getting behind the scenes, seeing the cars and teams up close and soaking up the atmosphere made an already brilliant Grand Prix weekend unforgettable.</p>
+    <p>The one thing Nicola was desperately hoping for was a chance to meet her Formula 1 hero, Jacques Villeneuve, who was racing for Sauber that weekend. Sadly, that meeting never happened — although Villeneuve did give her something to cheer about by finishing sixth.</p>
+    <p>And then there was dinner at <strong>Le Grand Maur</strong>, remembered for its wonderfully atmospheric historic setting — old stone, timber and a grand fireplace — and a proper multi-course gastronomic meal. The racing, the pit access, Spa, the Ardennes setting and that memorable dinner all combined to make the trip one of Nicola's standout memories from her year in Belgium.</p>
+    <div class="links"><a class="btn-gold" href="/belgium/spa.html">Read our Spa guide →</a></div>
+  </div>
+
+  <!-- 04 WHY BELGIUM -->
+  <div id="why-belgium" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">04</div><div class="chapterTitle"><div class="chapterLabel">What makes it special</div><div class="chapterName">Why Belgium belongs on your list</div></div></div></div>
+  <div class="card goldCard">
+    <div class="highlights-grid">
+      <div class="highlight-item"><div class="highlight-icon">🏛️</div><div class="highlight-title">Medieval Cities</div><p class="highlight-text">Bruges, Ghent, Antwerp — preserved medieval centres that feel lived-in and real, not frozen in time.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🍺</div><div class="highlight-title">Beer Culture</div><p class="highlight-text">UNESCO-recognised tradition. Hundreds of distinct Belgian beers. Abbey beers, lambics, Trappist ales — extraordinary brewing.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🍫</div><div class="highlight-title">Belgian Chocolate</div><p class="highlight-text">Not a cliché. Genuinely exceptional. The craftsmanship, the quality, the history. Every visit to a chocolatier is rewarding.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🧇</div><div class="highlight-title">Waffles</div><p class="highlight-text">Brussels waffles, Liège waffles — both exceptional in different ways. Fresh, warm, often with chocolate or fruit.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🍟</div><div class="highlight-title">Frites &amp; Moules</div><p class="highlight-text">Belgian fries (frites) with proper Belgian mayonnaise. Moules-frites — mussels and fries — is a Belgian institution.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">⚛️</div><div class="highlight-title">The Atomium</div><p class="highlight-text">Brussels' most iconic landmark — a 102-metre-tall model of an iron crystal from 1958. Quirky, futuristic, unforgettable.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🏆</div><div class="highlight-title">Grand Place</div><p class="highlight-text">One of the most spectacular squares in Europe. UNESCO World Heritage Site. Gothic and Baroque guild houses surrounding the Town Hall.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🎨</div><div class="highlight-title">Art &amp; Architecture</div><p class="highlight-text">Flemish art, Art Nouveau, medieval streets. Belgium has serious cultural depth.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">📚</div><div class="highlight-title">Comic-Book Culture</div><p class="highlight-text">Tintin. The Smurfs. Belgium's contribution to comic book history is serious and celebrated throughout the country.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🏁</div><div class="highlight-title">Spa-Francorchamps</div><p class="highlight-text">One of the world's greatest Formula 1 circuits. Legendary, challenging, set in beautiful Ardennes hills.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🚂</div><div class="highlight-title">Easy City Hopping</div><p class="highlight-text">A strong rail network makes the major cities easy to combine, whether you travel from one base or build a multi-city trip.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🤝</div><div class="highlight-title">The People</div><p class="highlight-text">Belgians are warm, funny and genuinely welcoming. They're proud of their country and culture. Take time to engage and they'll surprise you.</p></div>
+    </div>
+  </div>
+
+  <!-- 05 FOOD & DRINK -->
+  <div id="food" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">05</div><div class="chapterTitle"><div class="chapterLabel">Eat and drink like a local</div><div class="chapterName">Belgian food &amp; drink</div></div></div></div>
+  <div class="card">
+    <h2>Why Belgium's food culture is extraordinary</h2>
+    <p>Eating in Belgium is not just about sustenance — it's a core part of the culture. Belgian food reflects the country's geography, history and values. Every city has its specialities. Every café and brasserie has pride in what it serves.</p>
+    <div class="subGrid">
+      <div class="subItem"><h3>🍺 Belgian Beer — UNESCO Heritage</h3><p>Belgium's brewing tradition runs deep. The country produces hundreds of distinct beers — abbey beers brewed by monks using centuries-old recipes, Trappist ales from monastic communities, lambics with wild yeasts and fruit, strong dark beers, crisp pilsners. Belgian beer culture was recognised by UNESCO as an Intangible Cultural Heritage of Humanity. This is not exaggeration. The diversity, complexity and quality are genuinely world-class. Sitting in a Belgian café with a proper beer is one of life's pleasures.</p></div>
+      <div class="subItem"><h3>🧇 Waffles — Two Styles</h3><p>Brussels waffles are fluffy, golden, often served with chocolate or fruit. Liège waffles are denser, richer, with pearl sugar baked into the batter. Both are exceptional. Fresh Belgian waffles from a proper street stand are worth the detour — they're nothing like the frozen versions you might have tried elsewhere.</p></div>
+      <div class="subItem"><h3>🍫 Belgian Chocolate</h3><p>Belgian chocolate deserves its reputation. The craftsmanship is serious. The quality is exceptional. From artisanal chocolatiers creating intricate pralines to larger makers like Godiva and Neuhaus, Belgium has chocolate culture built into its DNA. A visit to a traditional chocolaterie is not just about buying chocolate — it's about understanding Belgian quality and pride.</p></div>
+      <div class="subItem"><h3>🍟 Frites &amp; Moules-Frites</h3><p>Belgian fries (frites) are an art form. Cut thick, fried twice, served in a paper cone with proper Belgian mayonnaise (not ketchup). Moules-frites — mussels and fries — is a Belgian institution. Fresh mussels steamed with white wine, shallots and herbs, served with frites. It's simple, it's perfect, it's Belgium.</p></div>
+      <div class="subItem"><h3>🍲 Traditional Dishes</h3><p>Carbonnade flamande is a rich Flemish beef stew with beer and dark spices. Stoemp is creamy mashed potatoes with vegetables. Waterzooi is a vegetable or chicken stew. These are comfort foods that have been perfected over centuries. Eating them in Belgium, in a proper brasserie with locals around you, connects you to the country's history and culture.</p></div>
+      <div class="subItem"><h3>☕ Café Culture</h3><p>The Belgian café and brasserie culture is an essential part of travel. This is where you sit for hours with a coffee or beer, where you watch the city pass by, where you have conversations and experience Belgian life. It's not about rushing through a meal — it's about settling in, taking time, being part of the rhythm.</p></div>
+    </div>
+  </div>
+
+  <!-- 06 GETTING AROUND -->
+  <div id="getting-around" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">06</div><div class="chapterTitle"><div class="chapterLabel">Trains, bases and routes</div><div class="chapterName">Getting around Belgium</div></div></div></div>
+  <div class="card">
+    <h2>Why Belgium is ideal for independent travel</h2>
+    <p>Belgium is fantastically compact. You can experience several very different cities without huge travel days. The rail network connects the major centres well, making Belgium ideal if you want to explore independently without hiring a car, while having a car can be useful for the Ardennes and more rural areas.</p>
+    <div class="subGrid">
+      <div class="subItem"><h3>🚆 Rail Travel</h3><p>Belgium's rail network makes city hopping refreshingly straightforward. Brussels, Bruges, Ghent, Antwerp and Liège are well connected, so you can build a multi-city itinerary without needing a car. For exact journey times, fares and engineering updates, check the current SNCB/NMBS timetable before travelling.</p></div>
+      <div class="subItem"><h3>🏛️ Brussels as a Base</h3><p>Because Brussels is so well connected, it works brilliantly as a base for exploring Belgium. Spend 3–4 days in the capital, then take day trips to Bruges, Ghent, Antwerp, even Liège. Or use Brussels as your starting point and make it your only overnight base, moving through other cities as you go.</p></div>
+      <div class="subItem"><h3>🗺️ Multi-City Combinations</h3><p>A classic Belgium trip might be: 2 nights Brussels, 1 night Bruges, 1 night Ghent, back to Brussels. Or: Brussels → Bruges → Ghent → Antwerp → home. Or if you have a week: Brussels → Bruges → Ghent → Antwerp → Liège → Spa → back to Brussels. The trains make this easy.</p></div>
+      <div class="subItem"><h3>🚗 When to Use a Car</h3><p>For the six main cities, trains are better than a car — parking is expensive, city centres are compact and walkable, trains avoid stress. A car becomes useful if you're exploring the Ardennes region, rural Wallonia, or want to visit smaller towns beyond the main cities.</p></div>
+    </div>
+    <div class="subItem" style="margin-top:12px;"><h3>✈️ Getting There from Ireland</h3><p>Belgium is an easy European option from Ireland, with direct air links to the Brussels area available on many schedules. From Brussels Airport there are rail connections into the city and onward around Belgium. Check current airline and rail timetables for your travel dates.</p></div>
+  </div>
+
+  <!-- 07 TOURRADAR -->
+  <div id="tours" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">07</div><div class="chapterTitle"><div class="chapterLabel">Leave the logistics to someone else</div><div class="chapterName">Explore Belgium with TourRadar</div></div></div></div>
+  <div class="card heroCard">
+    <div class="eyebrow"><span class="badge">🇧🇪 Our TourRadar pick</span><span class="badge outline">Multi-day Belgium ideas</span></div>
+    <h2>Plan your Belgium trip with expert guidance</h2>
+    <p><strong>Want to explore Belgium properly with expert guides and everything taken care of? TourRadar has brilliant multi-day tours covering the best of this incredible country.</strong></p>
+    <p>Belgium rewards exploration — and a guided tour is an excellent way to move between cities, learn the stories behind what you're seeing, and discover places you might miss on your own. Let someone else handle the logistics while you focus on the waffles, the beer, the architecture and the people.</p>
+    <div class="links">
+      <a class="btn-primary" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse Belgium tours on TourRadar →</a>
+    </div>
+    <p class="disclosure"><strong>Disclosure:</strong> This is an affiliate link. If you book through it we may earn a small commission at no extra cost to you.</p>
+  </div>
+
+  <!-- 08 THINGS TO DO -->
+  <div id="things-to-do" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">08</div><div class="chapterTitle"><div class="chapterLabel">Tours &amp; experiences</div><div class="chapterName">Things to do in Belgium</div></div></div></div>
+  <div class="card">
+    <h2>Book Belgium experiences with GetYourGuide</h2>
+    <p style="color:var(--ink-soft);font-size:14px;margin-bottom:4px;">From Grand Place walking tours to Belgian beer tastings, Bruges day trips and Ghent food experiences — check dates and prices below, or browse more activities:</p>
+    <div class="gygWidgetWrap">
+      <div class="gygAvail" style="display:grid;gap:12px;margin:8px 0 18px;">
+        <div data-gyg-href="https://widget.getyourguide.com/default/availability.frame" data-gyg-tour-id="67161" data-gyg-locale-code="en-US" data-gyg-currency="EUR" data-gyg-widget="availability" data-gyg-variant="horizontal" data-gyg-partner-id="VYORXUN"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/brussels-l8/">GetYourGuide</a></span></div>
+        <div data-gyg-href="https://widget.getyourguide.com/default/availability.frame" data-gyg-tour-id="66951" data-gyg-locale-code="en-US" data-gyg-currency="EUR" data-gyg-widget="availability" data-gyg-variant="horizontal" data-gyg-partner-id="VYORXUN"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/brussels-l8/">GetYourGuide</a></span></div>
+      </div>
+      <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="5" data-gyg-partner-id="VYORXUN" data-gyg-q="belgium">
+        <span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/belgium-l169005/">GetYourGuide</a></span>
+      </div>
+    </div>
+    <p class="disclosure"><strong>Disclosure:</strong> If you book through these links we may earn a small commission at no extra cost to you.</p>
+  </div>
+
+  <div class="card goldCard">
+    <div class="eyebrow"><span class="badge">🎫 Klook</span><span class="badge outline">Tickets &amp; passes</span></div>
+    <h2>Book your experiences on Klook</h2>
+    <p style="color:var(--ink-soft);font-size:14px;">Skip-the-line tickets, city passes, day trips and attraction entry — often cheaper than booking at the door.</p>
+    <div class="links">
+      <a class="btn-gold" href="https://affiliate.klook.com/redirect?aid=119289&aff_adid=1262052&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse Klook experiences →</a>
+    </div>
+    <p class="disclosure"><strong>Disclosure:</strong> If you book through this link we may earn a small commission at no extra cost to you.</p>
+  </div>
+
+  <!-- 09 FAQ -->
+  <div id="faq" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">09</div><div class="chapterTitle"><div class="chapterLabel">Common questions</div><div class="chapterName">Belgium FAQ</div></div></div></div>
+  <div class="card">
+    <h2>Belgium FAQ</h2>
+    <div class="faqItem open">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is Belgium worth visiting?</div>
+      <div class="faqA">Absolutely. Belgium is one of Europe's most underrated countries. It has world-class medieval cities, an extraordinary beer culture recognised by UNESCO, exceptional chocolate and food, stunning architecture and genuinely warm people. From Grand Place in Brussels to the canals of Bruges and Ghent — Belgium rewards exploration and is incredibly compact and easy to navigate.</div>
+    </div>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What are the best cities to visit in Belgium?</div>
+      <div class="faqA">The six essential Belgian cities are: Brussels (the capital, home to Grand Place and the Atomium), Bruges (medieval perfection with canals and chocolate), Ghent (vibrant and artistic), Antwerp (Flemish identity, art and diamonds), Liège (French-speaking Walloon character), and Spa (famous for its mineral springs and the legendary F1 circuit Spa-Francorchamps).</div>
+    </div>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">How many days do you need in Belgium?</div>
+      <div class="faqA">A long weekend gives you time to explore Brussels properly and take a day trip to Bruges or Ghent. A full week allows you to visit multiple cities — perhaps Brussels, Bruges, Ghent and Liège, with time to explore each properly. Belgium's compact size means city hopping is easy and rewarding.</div>
+    </div>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is Belgium easy to travel around by train?</div>
+      <div class="faqA">Yes — Belgium has a strong rail network connecting its major cities, making independent city-hopping straightforward. Brussels is a particularly useful base for trips to Bruges, Ghent, Antwerp and Liège, while Spa is also reachable by rail with a longer journey.</div>
+    </div>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is Brussels a good base for exploring Belgium?</div>
+      <div class="faqA">Yes — Brussels is very well positioned for exploring the rest of Belgium by rail. Bruges, Ghent, Antwerp and Liège all work well as onward stops or day trips, while Spa takes a little longer. You can stay in Brussels and explore from one base or use the capital as the starting point for a multi-city trip.</div>
+    </div>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What food should you try in Belgium?</div>
+      <div class="faqA">Belgian food is extraordinary. Must-tries include: Belgian waffles (especially Liège waffles), Belgian chocolate, frites (Belgian fries) with proper Belgian mayonnaise, moules-frites (mussels and fries), carbonnade flamande (Flemish beef stew), stoemp (mashed potatoes with vegetables), and Belgian beer — recognised by UNESCO as an Intangible Cultural Heritage. The café and brasserie culture is part of the experience.</div>
+    </div>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What is the difference between Brussels, Flanders and Wallonia?</div>
+      <div class="faqA">Belgium has three main regions: Brussels is the bilingual capital (French and Flemish/Dutch). Flanders is the northern region — Flemish-speaking, including cities like Bruges, Ghent and Antwerp. Wallonia is the southern region — French-speaking, including cities like Liège and Spa. Each has its own distinct character, though they're all unmistakably Belgian.</div>
+    </div>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Is Belgium easy to visit from Ireland?</div>
+      <div class="faqA">Belgium is an easy European city-break option from Ireland, with direct air links to the Brussels area available on many schedules. Once there, the country's compact size and strong rail network make independent travel between the main cities straightforward. Check current airline schedules for the dates you plan to travel.</div>
+    </div>
+    <div class="faqItem">
+      <div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">When is the best time to visit Belgium?</div>
+      <div class="faqA">Spring (April–May) and early summer (June–July) offer the best weather for walking the cities and exploring outdoors. Summer is warm and lively. Autumn (September–October) is quieter and pleasant. Christmas in Belgium is magical with stunning markets and festive atmosphere. Belgian weather can be changeable, so pack layers regardless of season.</div>
+    </div>
+  </div>
+
+  <!-- 10 PACKING -->
+  <div id="packing" class="chapterHeader"><div class="chapterHeaderInner"><div class="chapterNumber">10</div><div class="chapterTitle"><div class="chapterLabel">Before you go</div><div class="chapterName">What to pack for Belgium</div></div></div></div>
+  <div class="card">
+    <h2>Belgium packing essentials — what we'd bring</h2>
+    <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px;">Belgium's weather can be changeable — pack layers. Comfortable walking shoes are essential as all six cities are very walkable. Whether summer warmth or winter cold, good preparation keeps you comfortable while you explore.</p>
+    <div class="highlights-grid">
+      <div class="highlight-item"><div class="highlight-icon">👟</div><div class="highlight-title">Comfortable walking shoes</div><p class="highlight-text">All six cities are best explored on foot. Brussels, Bruges, Ghent, Antwerp — expect cobblestone streets. Comfortable, well-broken-in shoes are essential.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🧥</div><div class="highlight-title">Light layers</div><p class="highlight-text">Belgian weather is changeable. A lightweight sweater or fleece you can pack away works year-round. In summer, light layers for variable temperatures and evening coolness.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🌧️</div><div class="highlight-title">Rain jacket</div><p class="highlight-text">Belgium gets rain. A packable rain jacket doesn't take up much space and is genuinely useful. Keep one in your day bag when exploring.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">☔</div><div class="highlight-title">Compact umbrella</div><p class="highlight-text">Small, lightweight umbrella for sudden rain. Many cafés and shops provide shelter, but being prepared means you can explore regardless.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🎒</div><div class="highlight-title">Day bag</div><p class="highlight-text">For day trips to Bruges, Ghent or Liège from Brussels. Carry water, extra layer, camera, anything you pick up without weighing yourself down.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">📱</div><div class="highlight-title">Portable power bank</div><p class="highlight-text">Belgium is incredibly photogenic — Grand Place, Bruges canals, the Atomium. Keep your phone charged for maps, photos and music.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">🔌</div><div class="highlight-title">Travel adaptor</div><p class="highlight-text">Belgium uses Type E plugs. A universal travel adaptor is essential so you can charge devices at your accommodation.</p></div>
+      <div class="highlight-item"><div class="highlight-icon">💧</div><div class="highlight-title">Reusable water bottle</div><p class="highlight-text">Belgium has excellent tap water. Bring a reusable bottle, refill at cafés and fountains, stay hydrated on long walking days.</p></div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="card heroCard" style="text-align:center;">
+    <h2 style="text-align:center;">Planning your own Belgium trip?</h2>
+    <p style="text-align:center;color:var(--ink-soft);max-width:560px;margin:0 auto 20px;">Start in Brussels, hop on a train to Bruges or Ghent, and save a day for Liège or Spa. Belgium is small, but it has an awful lot packed into it.</p>
+    <div class="links" style="justify-content:center;">
+      <a class="btn-primary" href="https://www.tourradar.com/t/319435?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Book a Belgium tour →</a>
+      <a class="btn-gold" href="https://www.getyourguide.com/belgium-l169005/?partner_id=VYORXUN&utm_medium=online_publisher" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Browse activities on GYG →</a>
+      <a class="btn-outline" href="https://twofortherowd.com/#destinations">Back to all destinations →</a>
+    </div>
+    <p class="disclosure" style="text-align:center;max-width:500px;margin:16px auto 0;">Affiliate disclosure: if you book through our links we may earn a small commission at no cost to you. We only recommend trips and experiences we'd be happy to stand over.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/">Back to main site</a> &nbsp;•&nbsp; <a href="https://twofortherowd.com/#destinations">Our destinations</a> &nbsp;•&nbsp; <a href="mailto:hello@twofortherowd.com">Get in touch</a></p>
+</footer>
+
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<script>
+(function(){
+  if(typeof L==='undefined') return;
+  const el=document.getElementById('belgiumJourneyMap'); if(!el) return;
+  const map=L.map(el,{scrollWheelZoom:false}).setView([50.75,4.6],8);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+  const home=[50.8467,4.3525];
+  const stops=[
+    {region:'home',stop:'Brussels',lat:50.8467,lng:4.3525,icon:'🏛️',color:'#EF3340',url:'/belgium/brussels.html',notes:"Nicola's home for a year from 2005. Grand Place, the Atomium, Art Nouveau and the base for exploring the whole country by train."},
+    {region:'flanders',stop:'Bruges',lat:51.2093,lng:3.2247,icon:'🏰',color:'#e0b400',url:'/belgium/bruges.html',notes:'Medieval perfection — canals, cobbled streets and chocolate shops.'},
+    {region:'flanders',stop:'Ghent',lat:51.0543,lng:3.7174,icon:'🏙️',color:'#e0b400',url:'/belgium/ghent.html',notes:'Vibrant, artistic and gritty in the best way, with canals and a distinctly cool edge.'},
+    {region:'flanders',stop:'Antwerp',lat:51.2194,lng:4.4025,icon:'🌊',color:'#e0b400',url:'/belgium/antwerp.html',notes:'Port city with Flemish pride — the Cathedral of Our Lady, Rubens, diamonds and fashion.'},
+    {region:'wallonia',stop:'Liège',lat:50.6326,lng:5.5797,icon:'🧇',color:'#2c5f8a',url:'/belgium/liege.html',notes:'French-speaking Walloon character, street markets and genuine warmth.'},
+    {region:'wallonia',stop:'Spa',lat:50.4921,lng:5.8644,icon:'🏁',color:'#2c5f8a',url:'/belgium/spa.html',notes:'Mineral springs in the Ardennes and the 2005 Belgian Grand Prix at Spa-Francorchamps.'}
+  ];
+  function markerIcon(color){
+    return L.divIcon({className:'',html:'<div style="background:'+color+';width:28px;height:28px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(26,18,8,.25)"></div>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-13]});
+  }
+  function label(s){
+    if(s.region==='home') return '🏠 Home base';
+    if(s.region==='flanders') return '🇧🇪 Flanders';
+    return '🇧🇪 Wallonia';
+  }
+  const bounds=[];
+  stops.forEach(s=>{
+    if(s.region!=='home') L.polyline([home,[s.lat,s.lng]],{color:s.color,weight:3,opacity:.6,dashArray:'8,5',lineCap:'round'}).addTo(map);
+  });
+  stops.forEach(s=>{
+    bounds.push([s.lat,s.lng]);
+    const m=L.marker([s.lat,s.lng],{icon:markerIcon(s.color)}).addTo(map);
+    m.bindPopup('<div class="belgiumPopup"><div class="belgiumPopupTrip" style="color:'+s.color+'">'+label(s)+'</div><div class="belgiumPopupTitle">'+s.icon+' '+s.stop+'</div><div class="belgiumPopupText">'+s.notes+'</div><a class="belgiumPopupLink" href="'+s.url+'">Open our guide →</a></div>',{maxWidth:285});
+  });
+  map.fitBounds(bounds,{padding:[30,30]});
+  setTimeout(()=>map.invalidateSize(),250);
+})();
+</script>
 
 </body>
 </html>
