@@ -235,5 +235,6 @@
  stops.forEach(s=>{const icon=L.divIcon({className:'',html:'<div style="width:18px;height:18px;border-radius:50%;background:'+s.color+';border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,.28)"></div>',iconSize:[18,18],iconAnchor:[9,9]});L.marker([s.lat,s.lng],{icon}).addTo(map).bindPopup('<div style="font-family:DM Sans,Arial,sans-serif;min-width:180px"><strong style="font-family:Georgia,serif;font-size:16px">'+s.name+'</strong><br><span style="font-size:11px;font-weight:700">'+s.type+'</span><p style="font-size:12px;line-height:1.45;margin:6px 0">'+s.text+'</p></div>')});
 })();
 </script>
+<script src="/js/haunted-popup.js" defer></script>
 </body>
 </html>

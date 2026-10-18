@@ -644,11 +644,12 @@ header{
 <div class="promoModal" id="promoModal" aria-hidden="true" role="dialog" aria-label="Newsletter signup popup">
   <div class="promoBox" role="document">
     <button class="promoClose" type="button" onclick="closePromoModal()" aria-label="Close popup">×</button>
-    <h2>✈️ Before you go — join our mailing list!</h2>
-    <p class="lead"><strong>Real travel. Honest reviews. Hidden gems — straight to your inbox.</strong></p>
-    <p>We write it ourselves every time — no automated newsletter, just the same honest voice you get on the site. Tap the button below to sign up. No spam, unsubscribe any time. 💛</p>
+    <img src="img/haunted-ireland-cover.jpg" alt="The free Haunted Ireland guide" style="display:block;width:120px;margin:0 auto 14px;border-radius:4px;border:1px solid #d9b45f;box-shadow:0 10px 30px rgba(0,0,0,.25);transform:rotate(-2deg);">
+    <h2>👻 Before you go — grab our free Haunted Ireland guide!</h2>
+    <p class="lead"><strong>13 Irish ghost stories, myths &amp; legends, free when you join our mailing list.</strong></p>
+    <p>Haunted castles, witches, banshees and the Devil himself, from our Friday Night Frights series. You'll get our Hidden Gems guide too, plus honest travel tips and deals we write ourselves. No spam, unsubscribe any time. 💛</p>
     <div style="margin-top:16px;">
-      <a class="btn-gold" href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" onclick="closePromoModal();" style="width:100%;justify-content:center;font-size:15px;padding:15px 22px;">Get our newsletter →</a>
+      <a class="btn-gold" href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" onclick="closePromoModal();if(window.fbq){fbq('track','Lead');}" style="width:100%;justify-content:center;font-size:15px;padding:15px 22px;">Send me the free guide →</a>
     </div>
     <p class="promoSub" style="margin-top:12px;">Or if you're here for Morocco — <a href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="closePromoModal();fbq('track','InitiateCheckout');" style="font-weight:700;color:var(--ink);">book your Morocco trip here →</a></p>
     <p class="promoSub" style="margin-top:8px;"><button type="button" onclick="closePromoModal()" style="background:none;border:none;font-family:var(--font-body);font-size:12px;color:var(--muted);cursor:pointer;padding:0;">No thanks</button></p>
