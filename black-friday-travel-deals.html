@@ -142,6 +142,34 @@ footer a{font-weight:600}
       </div>
     </header>
 
+<!-- ===== BLACK FRIDAY BANNER (TourRadar) START: remove after Cyber Monday, 30 Nov 2026 ===== -->
+<style>
+.bf-banner{--bf-ink:#1a1208;--bf-gold:#ffd84a;--bf-cream:#fff9e0;max-width:880px;margin:20px auto 24px;padding:22px 24px;background:var(--bf-ink);color:var(--bf-cream);border-radius:16px;border-left:8px solid var(--bf-gold);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 20px;box-sizing:border-box;text-align:left;}
+.bf-banner .bf-text{flex:1 1 360px;min-width:0;}
+.bf-banner .bf-title{margin:0 0 6px;font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.2;color:var(--bf-gold);}
+.bf-banner .bf-body{margin:0;font-size:1rem;line-height:1.55;max-width:60ch;color:var(--bf-cream);}
+.bf-banner .bf-btn{display:inline-block;padding:13px 24px;background:var(--bf-gold);color:var(--bf-ink);font-weight:700;font-size:1rem;text-decoration:none;border-radius:999px;white-space:nowrap;}
+.bf-banner .bf-btn:hover{background:#ffe27a;}
+.bf-banner .bf-btn:focus-visible{outline:3px solid var(--bf-cream);outline-offset:3px;}
+.bf-banner .bf-note{flex-basis:100%;margin:0;font-size:.82rem;opacity:.75;}
+@media(max-width:600px){.bf-banner{padding:18px 16px;}.bf-banner .bf-btn{width:100%;text-align:center;white-space:normal;}}
+.bf-banner.light{background:#fff9e0;color:#1a1208;border:1px solid rgba(26,18,8,.10);border-left:8px solid #ffd84a;box-shadow:0 8px 24px rgba(26,18,8,.10);}
+.bf-banner.light .bf-title{color:#1a1208;}
+.bf-banner.light .bf-body{color:#4a3f28;}
+.bf-banner.light .bf-btn{background:#1a1208;color:#ffd84a;}
+.bf-banner.light .bf-btn:hover{background:#2e2410;}
+.bf-banner.light .bf-btn:focus-visible{outline-color:#1a1208;}
+</style>
+<section class="bf-banner light" aria-label="TourRadar Black Friday travel deals">
+  <div class="bf-text">
+    <h2 class="bf-title">Black Friday tour deals are already on</h2>
+    <p class="bf-body">TourRadar has opened early access to its Black Friday sale, with up to 70% off multi-day tours. It’s free to join TourRadar+ to see the sale prices, and you get in weeks before the usual Black Friday rush.</p>
+  </div>
+  <a class="bf-btn" href="https://www.tourradar.com/sales/black-friday-travel-deals?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=general" target="_blank" rel="sponsored noopener">See the Black Friday deals</a>
+  <p class="bf-note">This is an affiliate link. If you book through it, we earn a small commission at no extra cost to you.</p>
+</section>
+<!-- ===== BLACK FRIDAY BANNER (TourRadar) END ===== -->
+
     <div class="mm-section">
       <div class="mm-eyebrow">Where we’ll be shopping</div>
       <h2>The best places for Black Friday travel deals</h2>
@@ -154,7 +182,7 @@ footer a{font-weight:600}
         <h3>TourRadar</h3>
         <p>Best for organised multi-day trips — we booked our Morocco tour through TourRadar and loved it. TourRadar typically runs Black Friday and Cyber Monday deals, and your free <strong>TourRadar+</strong> saving (up to 7%) is applied automatically when you’re signed in.</p>
         <div class="mm-actions">
-          <a class="mm-btn dark" href="https://www.tourradar.com/?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=black-friday-hub" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">Browse TourRadar tours →</a>
+          <a class="mm-btn dark" href="https://www.tourradar.com/sales/black-friday-travel-deals?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=black-friday-hub" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar',button_label:this.textContent.trim()});">See TourRadar’s Black Friday deals →</a>
           <a class="mm-btn ghost" href="/tourradar-discount-code.html">How to save on TourRadar</a>
         </div>
       </article>
