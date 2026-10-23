@@ -70,6 +70,12 @@
   .link-arrow{color:var(--muted);font-size:1.2rem;flex-shrink:0;}
 
   .link-btn.featured{background:var(--teal);border-color:var(--teal);}
+  /* Black Friday button: remove after Cyber Monday (30 Nov 2026) */
+  .link-btn.deal{background:#1b1b1f;border:2px solid var(--sun);}
+  .link-btn.deal .link-title{color:var(--sun);}
+  .link-btn.deal .link-desc{color:rgba(255,255,255,0.8);}
+  .link-btn.deal .link-arrow{color:var(--sun);}
+  .link-btn.deal .badge{background:var(--sun);color:#1b1b1f;}
   .link-btn.spooky{background:linear-gradient(135deg,#241b2c,#0e0b11);border-color:#d9b45f;}
   .link-btn.spooky .link-title{color:#f3e3b8;}
   .link-btn.spooky .link-desc{color:rgba(243,227,184,0.75);}
@@ -123,6 +129,17 @@
   <p class="sub">Irish travel couple — hidden gems, honest guides, and the odd disaster along the way.</p>
 
   <div class="link-list">
+
+    <!-- BLACK FRIDAY (TourRadar) START: remove after Cyber Monday, 30 Nov 2026 -->
+    <a href="https://www.tourradar.com/sales/black-friday-travel-deals?utm_source=partner-traveller-1228400&utm_medium=ambassador&utm_campaign=general" target="_blank" rel="noopener sponsored" class="link-btn deal">
+      <div class="link-emoji">🏷️</div>
+      <div class="link-text">
+        <div class="link-title">Black Friday Tour Deals<span class="badge">EARLY ACCESS</span></div>
+        <div class="link-desc">Up to 70% off on TourRadar. Join TourRadar+ free to unlock the prices</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+    <!-- BLACK FRIDAY (TourRadar) END -->
 
     <a href="https://twofortherowd.com/haunted-ireland.html" target="_blank" rel="noopener" class="link-btn spooky">
       <div class="link-emoji">👻</div>
