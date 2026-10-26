@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SPF3M3X8');</script>
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','981657641071814');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=981657641071814&ev=PageView&noscript=1"/></noscript>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Extreme Day Trips from Ireland — Out at Dawn, Home by Midnight | Two for the Row'd</title>
+  <meta name="description" content="Our extreme day trips from Ireland: an early flight out, a late flight home, and no hotel. First-hand guides to doing a whole city in a single day, starting with Liverpool in 14 hours." />
+  <link rel="canonical" href="https://twofortherowd.com/extreme-day-trips.html" />
+  <meta name="theme-color" content="#ffd84a" />
+  <meta property="og:title" content="Extreme Day Trips from Ireland — Two for the Row'd" />
+  <meta property="og:description" content="Out at dawn, home by midnight, no hotel needed. Our first-hand guides to doing a whole city in one day." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://twofortherowd.com/extreme-day-trips.html" />
+  <meta property="og:image" content="https://i.ytimg.com/vi/yAtXQXU6Fb0/hqdefault.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Extreme Day Trips from Ireland",
+    "description": "First-hand guides to flying out early, flying home late and doing a whole city in one day, by Nicola and Pádraig of Two for the Row'd.",
+    "url": "https://twofortherowd.com/extreme-day-trips.html",
+    "publisher": { "@type": "Organization", "name": "Two for the Row'd", "url": "https://twofortherowd.com" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Liverpool in a Day from Dublin", "url": "https://twofortherowd.com/uk/england/liverpool.html" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is an extreme day trip?","acceptedAnswer":{"@type":"Answer","text":"An early morning flight out of Ireland, a full day exploring a city, and a late-night flight home the same day. No hotel, no annual leave beyond a single day, and as much as we can fit in between."}},
+      {"@type":"Question","name":"Can you really do a city in a day from Ireland?","acceptedAnswer":{"@type":"Answer","text":"Yes. On our Liverpool trip, an early flight from Dublin and a late flight home gave us roughly 14 hours in the city, enough for the Magical Mystery Tour, the Cavern Club, afternoon tea at The Beatles Story and an open-top bus tour."}},
+      {"@type":"Question","name":"How do you plan an extreme day trip?","acceptedAnswer":{"@type":"Answer","text":"Look for a route with an early outbound flight and a late return on the same day, then book your main activity first and build the rest of the day around it. Travel light so there is no bag to collect."}}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <style>
+    :root {
+      --gold: #ffd84a; --gold-dark: #e8c235;
+      --ink: #1a1208; --ink-soft: #4a3f28; --muted: #7a6e58;
+      --cream: #fdf8ef; --white: #ffffff;
+      --border: rgba(26,18,8,.10); --border-mid: rgba(26,18,8,.16);
+      --card-bg: rgba(255,255,255,.88);
+      --shadow-sm: 0 2px 8px rgba(26,18,8,.07);
+      --shadow-md: 0 8px 24px rgba(26,18,8,.10);
+      --radius-sm: 10px; --radius-md: 16px; --radius-lg: 22px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', 'Segoe UI', Arial, sans-serif;
+      --dawn: #e8590c;     /* sunrise orange: the early flight out */
+      --midnight: #1c2b5a; /* night blue: the late flight home */
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { margin: 0; font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--ink); background: var(--cream); -webkit-font-smoothing: antialiased; }
+    body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; background: radial-gradient(ellipse 80% 60% at 10% 0%, rgba(232,89,12,.07) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 90% 100%, rgba(28,43,90,.07) 0%, transparent 55%); }
+    .wrap, .backBar, footer { position: relative; z-index: 1; }
+    h1,h2,h3 { font-family: var(--font-display); color: var(--ink); line-height: 1.18; margin-top: 0; }
+    h2 { font-size: clamp(1.3rem,2.5vw,1.75rem); font-weight: 700; margin-bottom: 10px; }
+    h3 { font-size: clamp(1.1rem,1.8vw,1.3rem); font-weight: 700; margin-bottom: 6px; }
+    p { margin: 0 0 .9rem; } p:last-child { margin-bottom: 0; }
+    a { color: inherit; } strong { font-weight: 700; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px 60px; }
+
+    .backBar { background: rgba(253,248,239,.95); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; }
+    .backBar a { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; text-decoration: none; color: var(--ink); padding: 7px 14px; border-radius: 999px; background: var(--white); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+    .breadcrumb { font-size: 12px; color: var(--muted); margin: 16px 0; display: flex; flex-wrap: wrap; gap: 4px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; font-weight: 600; }
+    .breadcrumb span { opacity: .5; }
+
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-md); padding: 24px 26px; margin-bottom: 16px; }
+
+    /* HERO: dawn-to-midnight sky */
+    .hero { position: relative; overflow: hidden; border-radius: var(--radius-lg); padding: 34px 28px 28px; margin-bottom: 18px; color: #fff; background: linear-gradient(100deg, #f4a259 0%, #e8590c 22%, #b8336a 48%, #4a2c6e 72%, #1c2b5a 100%); box-shadow: 0 16px 48px rgba(28,43,90,.25); }
+    .hero::after { content: "✈"; position: absolute; right: 22px; top: 14px; font-size: 64px; opacity: .14; transform: rotate(-12deg); }
+    .hero .badge { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); color: #fff; }
+    .hero h1 { color: #fff; font-size: clamp(2rem,5vw,3.1rem); font-weight: 800; line-height: 1.05; margin: 14px 0 12px; }
+    .hero h1 em { display: block; font-style: italic; font-size: .5em; font-weight: 700; margin-top: 8px; opacity: .92; }
+    .hero p { font-size: 1.05rem; color: rgba(255,255,255,.92); max-width: 640px; }
+    .sky { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; padding-top: 14px; border-top: 1px dashed rgba(255,255,255,.35); font-size: 13px; font-weight: 700; gap: 10px; }
+    .sky span { white-space: nowrap; }
+    .sky .line { flex: 1; height: 2px; background: repeating-linear-gradient(90deg, rgba(255,255,255,.7) 0 8px, transparent 8px 14px); }
+
+    .badge { display: inline-block; padding: 4px 11px; border-radius: 999px; font-size: 12px; font-weight: 700; background: var(--gold); color: var(--ink); border: 1px solid var(--gold-dark); }
+    .badge.outline { background: #fff; border-color: var(--border-mid); color: var(--ink-soft); }
+
+    /* RULES */
+    .rules { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .rule { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
+    .rule .ico { font-size: 26px; line-height: 1; }
+    .rule strong { display: block; font-family: var(--font-display); font-size: 1.05rem; margin: 8px 0 4px; }
+    .rule span { font-size: 13.5px; color: var(--ink-soft); }
+
+    .section-divider { display: flex; align-items: center; gap: 12px; margin: 30px 0 16px; font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; scroll-margin-top: 70px; }
+    .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border-mid); }
+
+    /* FILTERS */
+    .filters { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; margin-bottom: 16px; }
+    .fgroup { display: flex; flex-direction: column; gap: 6px; }
+    .fgroup label { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { font-family: var(--font-body); font-size: 13px; font-weight: 700; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--border-mid); background: #fff; color: var(--ink); cursor: pointer; transition: all .15s ease; }
+    .chip:hover { border-color: var(--ink); }
+    .chip[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .count { font-size: 13px; color: var(--muted); margin: -6px 0 14px; }
+
+    /* TRIP CARDS */
+    .trips { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .trip { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column; }
+    .trip .thumb { position: relative; aspect-ratio: 16/9; background: #222 center/cover no-repeat; }
+    .trip .hours { position: absolute; left: 12px; bottom: 12px; background: var(--gold); color: var(--ink); border: 1px solid var(--gold-dark); font-weight: 800; font-size: 13px; padding: 5px 12px; border-radius: 999px; box-shadow: var(--shadow-sm); }
+    .trip .play { position: absolute; right: 12px; bottom: 12px; background: rgba(0,0,0,.65); color: #fff; font-size: 12px; font-weight: 700; padding: 5px 11px; border-radius: 999px; text-decoration: none; }
+    .trip .body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+    .trip .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+    .trip .hook { font-size: 14px; color: var(--ink-soft); margin-bottom: 10px; }
+    .trip ul { list-style: none; padding: 0; margin: 0 0 14px; font-size: 13.5px; color: var(--ink-soft); }
+    .trip li { padding: 3px 0 3px 22px; position: relative; }
+    .trip li::before { content: "✓"; position: absolute; left: 2px; color: var(--dawn); font-weight: 800; }
+    .trip .actions { margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .trip.soon { border: 2px dashed var(--border-mid); background: rgba(255,255,255,.6); box-shadow: none; justify-content: center; align-items: center; text-align: center; padding: 30px 24px; min-height: 280px; }
+    .trip.soon .big { font-size: 46px; line-height: 1; margin-bottom: 10px; }
+    .trip.soon p { font-size: 14px; color: var(--ink-soft); max-width: 300px; margin: 0 auto 14px; }
+    .empty { display: none; text-align: center; color: var(--muted); padding: 20px; }
+
+    .btn-primary, .btn-outline, .btn-gold { display: inline-flex; align-items: center; gap: 6px; padding: 11px 18px; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 14px; font-weight: 700; text-decoration: none; transition: transform .15s ease; cursor: pointer; }
+    .btn-primary { background: var(--ink); color: #fff; border: none; box-shadow: 0 6px 20px rgba(26,18,8,.2); }
+    .btn-outline { background: #fff; color: var(--ink); border: 1.5px solid var(--border-mid); }
+    .btn-gold { background: var(--gold); color: var(--ink); border: 1px solid var(--gold-dark); }
+    .btn-primary:hover, .btn-outline:hover, .btn-gold:hover { transform: translateY(-2px); }
+
+    /* FINDER */
+    .finder { background: linear-gradient(160deg,#ffffff 0%,#fff4ea 55%,#eef0f8 100%); border-color: rgba(232,89,12,.18); }
+    .finderGrid { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 12px; margin: 6px 0 14px; }
+    .field { display: flex; flex-direction: column; gap: 5px; }
+    .field label { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .field select, .field input { font-family: var(--font-body); font-size: 15px; font-weight: 600; padding: 11px 12px; border-radius: var(--radius-sm); border: 1.5px solid var(--border-mid); background: #fff; color: var(--ink); width: 100%; }
+    .finderBtns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .finderNote { font-size: 13px; color: var(--muted); margin-top: 12px; }
+    .calc { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--border-mid); font-size: 14px; }
+    .calcRow { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 8px; }
+    .calcRow label { font-size: 13px; font-weight: 700; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; }
+    .calcRow input { font-family: var(--font-body); font-size: 14px; padding: 7px 8px; border-radius: 8px; border: 1.5px solid var(--border-mid); }
+    .calcOut { font-weight: 800; background: var(--gold); border: 1px solid var(--gold-dark); padding: 5px 12px; border-radius: 999px; }
+    @media (max-width: 700px) {
+      .finderGrid { grid-template-columns: 1fr; }
+      .finderBtns a { width: 100%; justify-content: center; text-align: center; }
+    }
+
+    /* MAP */
+    #dtMap { height: 380px; border-radius: 14px; border: 1px solid var(--border); z-index: 1; }
+    .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); margin-top: 10px; }
+    .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+
+    /* HOW TO */
+    .steps { counter-reset: s; list-style: none; padding: 0; margin: 0; }
+    .steps li { counter-increment: s; display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--border-mid); }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before { content: counter(s); flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--midnight); color: #fff; font-weight: 800; display: grid; place-items: center; font-size: 14px; }
+    .steps strong { display: block; }
+    .steps span { font-size: 14px; color: var(--ink-soft); }
+
+    .faqItem { border-bottom: 1px dashed var(--border-mid); padding: 14px 0; }
+    .faqItem:last-child { border-bottom: none; padding-bottom: 0; }
+    .faqQ { font-family: var(--font-display); font-size: 1rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; gap: 10px; user-select: none; }
+    .faqQ::after { content: "+"; font-size: 1.4rem; line-height: 1; font-weight: 400; color: var(--muted); transition: transform .2s ease; }
+    .faqItem.open .faqQ::after { transform: rotate(45deg); }
+    .faqA { font-size: 14px; color: var(--ink-soft); display: none; padding-top: 10px; }
+    .faqItem.open .faqA { display: block; }
+
+    .closing { text-align: center; background: linear-gradient(160deg,#fff 0%,#fff4ea 50%,#eef0f8 100%); }
+    .closing .links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+
+    footer { padding: 20px 0 12px; font-size: 13px; color: var(--muted); text-align: center; }
+    footer a { color: var(--muted); font-weight: 600; }
+
+    @media (max-width: 700px) {
+      .rules { grid-template-columns: 1fr; }
+      .trips { grid-template-columns: 1fr; }
+      .card { padding: 20px; }
+      .hero { padding: 28px 20px 22px; }
+      #dtMap { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="backBar">
+  <a href="https://twofortherowd.com/" aria-label="Back to Two for the Row'd">← Back to Two for the Row'd</a>
+  <a href="https://twofortherowd.com/" style="font-family:var(--font-display);font-size:15px;">Two for the Row'd 🇮🇪</a>
+</div>
+
+<div class="wrap">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="https://twofortherowd.com/">Home</a><span>›</span><span>Extreme Day Trips</span>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="badge">✈️ A Two for the Row'd series</span>
+    <h1>Extreme Day Trips
+      <em>out at dawn, home by midnight</em>
+    </h1>
+    <p>Who says you need a weekend away to explore a new city? Our extreme day trips are simple: an early flight out of Ireland, a full day packing in as much as humanly possible, and a late flight home. No hotel. One day off. No regrets.</p>
+    <div class="sky" aria-hidden="true">
+      <span>🌅 Early flight out</span>
+      <div class="line"></div>
+      <span>One full day</span>
+      <div class="line"></div>
+      <span>Late flight home 🌙</span>
+    </div>
+  </header>
+
+  <!-- THE RULES -->
+  <div class="card">
+    <h2>What makes it "extreme"?</h2>
+    <div class="rules">
+      <div class="rule"><div class="ico">🌅</div><strong>Out at dawn</strong><span>The earliest flight we can get. The sooner we land, the more city we get.</span></div>
+      <div class="rule"><div class="ico">🛏️</div><strong>Zero nights</strong><span>No hotel, no check-in, no luggage. Just a small bag and comfy shoes.</span></div>
+      <div class="rule"><div class="ico">🌙</div><strong>Home the same night</strong><span>Last flight back, fit for the bed, and already planning the next one.</span></div>
+    </div>
+  </div>
+
+  <!-- TRIPS -->
+  <div id="our-trips" class="section-divider">🗺️ Our extreme day trips</div>
+
+  <div class="filters" role="group" aria-label="Filter trips">
+    <div class="fgroup">
+      <label>Flying from</label>
+      <div class="chips" id="fromChips"></div>
+    </div>
+    <div class="fgroup">
+      <label>Time on the ground</label>
+      <div class="chips" id="hoursChips">
+        <button class="chip" data-hours="0" aria-pressed="true">Any</button>
+        <button class="chip" data-hours="10" aria-pressed="false">10+ hours</button>
+        <button class="chip" data-hours="12" aria-pressed="false">12+ hours</button>
+      </div>
+    </div>
+  </div>
+  <p class="count" id="tripCount"></p>
+
+  <div class="trips" id="tripGrid"></div>
+  <p class="empty" id="emptyMsg">No trips match those filters yet. Give us time, we're working on it! ✈️</p>
+
+  <!-- FINDER -->
+  <div id="find-your-own" class="section-divider">🔎 Find your own extreme day trip</div>
+  <div class="card finder">
+    <p style="color:var(--ink-soft);">Pick where you're flying from, where you fancy and a date. We'll open a <strong>same-day return</strong> search for you. Then look for an early flight out and a late flight back.</p>
+    <form id="finderForm" class="finderGrid" onsubmit="return false;">
+      <div class="field">
+        <label for="fFrom">Flying from</label>
+        <select id="fFrom">
+          <option value="DUB">Dublin</option>
+          <option value="ORK">Cork</option>
+          <option value="SNN">Shannon</option>
+          <option value="NOC">Knock (Ireland West)</option>
+          <option value="KIR">Kerry</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fTo">Going to</label>
+        <select id="fTo">
+          <optgroup label="Britain">
+            <option value="LPL">Liverpool</option>
+            <option value="MAN">Manchester</option>
+            <option value="EDI">Edinburgh</option>
+            <option value="GLA">Glasgow</option>
+            <option value="STN">London (Stansted)</option>
+            <option value="LGW">London (Gatwick)</option>
+            <option value="BHX">Birmingham</option>
+            <option value="BRS">Bristol</option>
+            <option value="NCL">Newcastle</option>
+            <option value="LBA">Leeds Bradford</option>
+            <option value="EMA">East Midlands (Nottingham)</option>
+            <option value="CWL">Cardiff</option>
+          </optgroup>
+          <optgroup label="Further afield">
+            <option value="AMS">Amsterdam</option>
+            <option value="BRU">Brussels</option>
+            <option value="CRL">Brussels Charleroi</option>
+            <option value="CDG">Paris (Charles de Gaulle)</option>
+            <option value="BVA">Paris (Beauvais)</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fDate">Date</label>
+        <input type="date" id="fDate">
+      </div>
+    </form>
+    <div class="finderBtns">
+      <a class="btn-gold" id="goRyanair" href="#" target="_blank" rel="noopener">Search Ryanair →</a>
+      <a class="btn-primary" id="goGoogle" href="#" target="_blank" rel="noopener">Search all airlines (Google Flights) →</a>
+    </div>
+    <p class="finderNote">💡 Not every route runs from every airport, and timetables change between summer and winter. If Ryanair doesn't fly it, Google Flights shows every airline. Aim for landing before 9am and leaving after 8pm.</p>
+
+    <div class="calc">
+      <strong>⏱ How long would you get?</strong>
+      <div class="calcRow">
+        <label>Land at <input type="time" id="cLand" value="08:00"></label>
+        <label>Fly home at <input type="time" id="cHome" value="21:30"></label>
+        <span class="calcOut" id="cOut"></span>
+      </div>
+      <p class="finderNote" style="margin-top:8px;">We knock off 1½ hours for getting out of the airport and back through security for the flight home.</p>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div id="trip-map" class="section-divider">📍 Where we've been in a day</div>
+  <div class="card">
+    <div id="dtMap" role="img" aria-label="Map of our extreme day trip routes from Ireland"></div>
+    <div class="legend">
+      <span><i style="background:var(--midnight)"></i>Irish airport we flew from</span>
+      <span><i style="background:var(--dawn)"></i>Extreme day trip destination</span>
+    </div>
+  </div>
+
+  <!-- HOW TO -->
+  <div id="plan-your-own" class="section-divider">🧭 Plan your own extreme day trip</div>
+  <div class="card">
+    <ol class="steps">
+      <li><div><strong>Find the right flight times</strong><span>You want the first flight out in the morning and the last one home that evening, on the same day. Check the airline's own website for the schedule on your date. Timetables change between summer and winter, so a route that works in September may not work in January.</span></div></li>
+      <li><div><strong>Book your main activity first</strong><span>Pick the one thing you'd be gutted to miss and book a time slot for it. Build the rest of the day around it. That's what made our Liverpool day work.</span></div></li>
+      <li><div><strong>Travel light</strong><span>Cabin bag only, or even just a small backpack. No bag drop at home, no carousel at the other end.</span></div></li>
+      <li><div><strong>Know your way in and out of the airport</strong><span>Sort out how you'll get from the airport to the city centre, and how long it takes, before you go. On the way home, leave plenty of time.</span></div></li>
+      <li><div><strong>Leave room for a sit-down</strong><span>A long lunch or an afternoon tea in the middle of the day recharges the batteries for the second half.</span></div></li>
+    </ol>
+  </div>
+
+  <!-- FAQ -->
+  <div id="faq" class="section-divider">❓ Extreme day trip FAQ</div>
+  <div class="card">
+    <div class="faqItem open"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">What is an extreme day trip?</div><div class="faqA">An early morning flight out of Ireland, a full day exploring a city, and a late-night flight home the same day. No hotel, no annual leave beyond a single day, and as much as we can fit in between.</div></div>
+    <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">Can you really do a city in a day from Ireland?</div><div class="faqA">Yes! On our Liverpool trip, an early flight from Dublin and a late flight home gave us roughly 14 hours in the city: enough for the Magical Mystery Tour, the Cavern Club, afternoon tea at The Beatles Story and an open-top bus tour.</div></div>
+    <div class="faqItem"><div class="faqQ" onclick="this.closest('.faqItem').classList.toggle('open')">How do you plan an extreme day trip?</div><div class="faqA">Look for a route with an early outbound flight and a late return on the same day, then book your main activity first and build the rest of the day around it. Travel light so there's no bag to collect.</div></div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="card closing">
+    <h2>Two for the Row'd: proving you can pack a whole lot of adventure into just one day! ✈️</h2>
+    <p style="color:var(--ink-soft);">Got a city you think we should take on in a day? Tell us on socials and it might be the next one.</p>
+    <div class="links">
+      <a class="btn-primary" href="/uk/england/liverpool.html">Start with Liverpool →</a>
+      <a class="btn-outline" href="https://twofortherowd.com/">Back to Two for the Row'd</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a></p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+/* =====================================================================
+   ADD A NEW TRIP HERE
+   Copy the Liverpool block, paste it below, and change the details.
+   The cards, filters, trip counter and map all update by themselves.
+   ===================================================================== */
+const TRIPS = [
+  {
+    city: "Liverpool",
+    country: "England",
+    flag: "🇬🇧",
+    date: "26 September 2026",
+    from: "Dublin",
+    hours: 14,
+    hook: "The Beatles, the Cavern Club and the city from the top deck, all in one very long, very brilliant day.",
+    highlights: [
+      "Magical Mystery Tour: Penny Lane & Strawberry Field",
+      "The Cavern Club",
+      "Afternoon tea at The Beatles Story",
+      "Open-top sightseeing bus"
+    ],
+    page: "/uk/england/liverpool.html",
+    youtube: "yAtXQXU6Fb0",
+    lat: 53.4084, lng: -2.9916
+  }
+  /* , {
+    city: "Next city",
+    country: "Country",
+    flag: "🏳️",
+    date: "Day Month Year",
+    from: "Dublin",          // or Shannon, Cork, Kerry, Knock...
+    hours: 12,
+    hook: "One line on what made the day.",
+    highlights: ["Thing 1", "Thing 2", "Thing 3"],
+    page: "/path/to/page.html",
+    youtube: "VIDEO_ID",     // the bit after youtu.be/
+    lat: 0, lng: 0
+  } */
+];
+
+/* Irish airports we've flown from: map pins */
+const AIRPORTS = {
+  "Dublin":  { lat: 53.4213, lng: -6.2701 },
+  "Shannon": { lat: 52.7020, lng: -8.9248 },
+  "Cork":    { lat: 51.8413, lng: -8.4911 },
+  "Kerry":   { lat: 52.1809, lng: -9.5238 },
+  "Knock":   { lat: 53.9103, lng: -8.8185 }
+};
+
+const state = { from: "All", hours: 0 };
+const grid = document.getElementById('tripGrid');
+
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function track(name, params){
+  try { gtag('event', name, params); } catch(e) {}
+}
+
+function tripCard(t){
+  const thumb = t.youtube ? `https://i.ytimg.com/vi/${t.youtube}/hqdefault.jpg` : '';
+  return `
+  <article class="trip">
+    <div class="thumb" style="background-image:url('${thumb}')">
+      <span class="hours">⏱ ~${t.hours} hrs on the ground</span>
+      ${t.youtube ? `<a class="play" href="https://youtu.be/${t.youtube}" target="_blank" rel="noopener" data-track="video" data-city="${esc(t.city)}">▶ Watch</a>` : ''}
+    </div>
+    <div class="body">
+      <h3>${t.flag} ${esc(t.city)} in a day</h3>
+      <div class="meta">
+        <span class="badge">✈️ From ${esc(t.from)}</span>
+        <span class="badge outline">${esc(t.date)}</span>
+      </div>
+      <p class="hook">${esc(t.hook)}</p>
+      <ul>${t.highlights.map(h => `<li>${esc(h)}</li>`).join('')}</ul>
+      <div class="actions">
+        <a class="btn-primary" href="${t.page}" data-track="read" data-city="${esc(t.city)}">Read our day →</a>
+      </div>
+    </div>
+  </article>`;
+}
+
+const SOON = `
+  <article class="trip soon">
+    <div class="big">🌅✈️🌙</div>
+    <h3>Next one loading…</h3>
+    <p>We're already eyeing up our next out-and-back. Follow along on socials to find out where we end up!</p>
+  </article>`;
+
+function render(){
+  const list = TRIPS.filter(t =>
+    (state.from === "All" || t.from === state.from) && t.hours >= state.hours
+  );
+  grid.innerHTML = list.map(tripCard).join('') + (state.from === "All" && state.hours === 0 ? SOON : '');
+  document.getElementById('emptyMsg').style.display = list.length ? 'none' : 'block';
+  const n = TRIPS.length;
+  document.getElementById('tripCount').textContent =
+    list.length === n ? `${n} extreme day trip${n === 1 ? '' : 's'} so far, and counting.`
+                      : `Showing ${list.length} of ${n} trips`;
+}
+
+/* Build the "Flying from" chips from whatever airports the trips use */
+const fromChips = document.getElementById('fromChips');
+["All", ...new Set(TRIPS.map(t => t.from))].forEach((name, i) => {
+  const b = document.createElement('button');
+  b.className = 'chip';
+  b.textContent = name === "All" ? "Anywhere" : name;
+  b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+  b.onclick = () => {
+    state.from = name;
+    fromChips.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === b ? 'true' : 'false'));
+    track('daytrip_filter', { type: 'from', value: name });
+    render();
+  };
+  fromChips.appendChild(b);
+});
+
+document.querySelectorAll('#hoursChips .chip').forEach(b => {
+  b.onclick = () => {
+    state.hours = Number(b.dataset.hours);
+    document.querySelectorAll('#hoursChips .chip').forEach(c => c.setAttribute('aria-pressed', c === b ? 'true' : 'false'));
+    track('daytrip_filter', { type: 'hours', value: state.hours });
+    render();
+  };
+});
+
+grid.addEventListener('click', e => {
+  const a = e.target.closest('[data-track]');
+  if (a) track('daytrip_click', { action: a.dataset.track, city: a.dataset.city });
+});
+
+render();
+
+/* FINDER: builds same-day return search links (opens the airline / Google; nothing is scraped) */
+(function(){
+  const fFrom = document.getElementById('fFrom'), fTo = document.getElementById('fTo'), fDate = document.getElementById('fDate');
+  const goR = document.getElementById('goRyanair'), goG = document.getElementById('goGoogle');
+  const pad = n => String(n).padStart(2,'0');
+  const iso = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+
+  // Default to next Saturday
+  const d = new Date(); d.setDate(d.getDate() + ((6 - d.getDay() + 7) % 7 || 7));
+  fDate.value = iso(d); fDate.min = iso(new Date());
+
+  function update(){
+    const from = fFrom.value, to = fTo.value, day = fDate.value;
+    goR.href = `https://www.ryanair.com/ie/en/trip/flights/select?adults=1&teens=0&children=0&infants=0&dateOut=${day}&dateIn=${day}&isConnectedFlight=false&discount=0&promoCode=&isReturn=true&originIata=${from}&destinationIata=${to}`;
+    goG.href = `https://www.google.com/travel/flights?q=${encodeURIComponent(`Flights from ${from} to ${to} on ${day} returning ${day}`)}`;
+  }
+  [fFrom, fTo, fDate].forEach(el => el.addEventListener('change', update));
+  update();
+
+  goR.addEventListener('click', () => track('daytrip_search', { site: 'ryanair', from: fFrom.value, to: fTo.value }));
+  goG.addEventListener('click', () => track('daytrip_search', { site: 'google_flights', from: fFrom.value, to: fTo.value }));
+
+  // Hours-on-the-ground calculator
+  const cLand = document.getElementById('cLand'), cHome = document.getElementById('cHome'), cOut = document.getElementById('cOut');
+  function calc(){
+    const [lh, lm] = cLand.value.split(':').map(Number), [hh, hm] = cHome.value.split(':').map(Number);
+    if (isNaN(lh) || isNaN(hh)) { cOut.textContent = ''; return; }
+    // Allow ~1.5 hrs at the far airport for getting in/out and security on the way home
+    const mins = (hh*60 + hm) - (lh*60 + lm) - 90;
+    cOut.textContent = mins > 0 ? `≈ ${Math.floor(mins/60)}h ${pad(mins%60)}m in the city` : 'Not enough time!';
+  }
+  [cLand, cHome].forEach(el => el.addEventListener('input', calc));
+  calc();
+})();
+
+/* MAP */
+try {
+  const map = L.map('dtMap', { scrollWheelZoom: false });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18, attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  const pts = [];
+  const usedAirports = new Set(TRIPS.map(t => t.from));
+  usedAirports.forEach(name => {
+    const a = AIRPORTS[name]; if (!a) return;
+    L.circleMarker([a.lat, a.lng], { radius: 9, color: '#fff', weight: 2, fillColor: '#1c2b5a', fillOpacity: 1 })
+      .addTo(map).bindPopup(`<strong>${name} Airport</strong><br>Where we set off from`);
+    pts.push([a.lat, a.lng]);
+  });
+
+  TRIPS.forEach(t => {
+    const a = AIRPORTS[t.from];
+    if (a) L.polyline([[a.lat, a.lng], [t.lat, t.lng]], { color: '#e8590c', weight: 3, dashArray: '8 8', opacity: .85 }).addTo(map);
+    L.circleMarker([t.lat, t.lng], { radius: 10, color: '#fff', weight: 2, fillColor: '#e8590c', fillOpacity: 1 })
+      .addTo(map)
+      .bindPopup(`<strong>${t.flag} ${t.city} in a day</strong><br>~${t.hours} hours on the ground<br><a href="${t.page}">Read our day →</a>`);
+    pts.push([t.lat, t.lng]);
+  });
+
+  if (pts.length) map.fitBounds(pts, { padding: [50, 50], maxZoom: 7 });
+  else map.setView([53.4, -6.2], 5);
+} catch (e) {
+  document.getElementById('dtMap').style.display = 'none';
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
