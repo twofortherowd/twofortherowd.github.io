@@ -366,18 +366,18 @@ header{
       modal.classList.remove("open");
       modal.setAttribute("aria-hidden","true");
       document.body.style.overflow = "";
-      store.set("promoClosed","true");
+      store.set("promoClosedXmas26","true");
     }
     function setupExitIntent() {
       let triggered = false;
       document.addEventListener("mouseleave", e => {
-        if (e.clientY <= 0 && !triggered && !store.get("promoClosed")) {
+        if (e.clientY <= 0 && !triggered && !store.get("promoClosedXmas26")) {
           triggered = true; openPromoModal();
         }
       });
       /* timed fallback for phones and tablets (no mouse): 45 seconds */
       setTimeout(() => {
-        if (!triggered && !store.get("promoClosed")) { triggered = true; openPromoModal(); }
+        if (!triggered && !store.get("promoClosedXmas26")) { triggered = true; openPromoModal(); }
       }, 45000);
     }
     window.addEventListener("click", e => {
@@ -503,6 +503,7 @@ header{
   </div>
 </div>
 
+<!-- SEASONAL: October mid-term block retired 1 Nov 2026 (kept for reuse next year; page is /summer-deals.html)
 <div class="card" style="background:linear-gradient(135deg,#9A4406 0%,#B45309 100%);border-color:rgba(120,53,15,.55);text-align:center;color:#fff;">
   <div style="font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#fff;margin-bottom:6px;">🍂 October Mid-Term 2026</div>
   <h2 style="margin-bottom:8px;color:#fff;">Autumn Travel Deals + Halloween Picks 🎃</h2>
@@ -512,15 +513,50 @@ header{
     <a class="btn-outline" href="/summer-deals.html#halloween" onclick="fbq('track','ViewContent');gtag('event','halloween_home_click');" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.75);">See Halloween trips →</a>
   </div>
 </div>
+-->
 
-<div class="card" style="background:linear-gradient(135deg,#103c32 0%,#1d5c4c 100%);border-color:rgba(16,60,50,.55);text-align:center;color:#fff;overflow:hidden;">
-  <div style="font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#f4d984;margin-bottom:6px;">🎄 New for Christmas 2026</div>
-  <h2 style="margin-bottom:8px;color:#fff;">Five European Christmas Markets We've Actually Visited</h2>
-  <p style="color:rgba(255,255,255,.92);max-width:610px;margin:0 auto 16px;">Cologne, Copenhagen, Turin, Bydgoszcz and Wrocław — our honest first-hand verdicts, 2026 dates, which one we'd choose, and where to book the tours.</p>
+<div class="card" style="background:linear-gradient(135deg,#0d3029 0%,#1d5c4c 60%,#24705c 100%);border-color:rgba(16,60,50,.55);text-align:center;color:#fff;overflow:hidden;padding:34px 26px;">
+  <div style="font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#f4d984;margin-bottom:6px;">🎄 Christmas Markets 2026 · Most open mid-November</div>
+  <h2 style="margin-bottom:8px;color:#fff;font-size:clamp(1.6rem,3.4vw,2.3rem);">Five European Christmas Markets We've Actually Visited</h2>
+  <p style="color:rgba(255,255,255,.92);max-width:640px;margin:0 auto 20px;">Cologne, Copenhagen, Turin, Bydgoszcz and Wrocław: our honest first-hand verdicts, 2026 dates, which one we'd choose, and where to book the tours. Late-November and December weekends book up fast, so now's the time.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px;text-align:left;margin:0 auto 20px;max-width:900px;">
+      <a href="/christmas-markets-europe.html#markets" onclick="gtag('event','christmas_market_tile_click',{city:'Cologne'});" style="display:block;text-decoration:none;background:rgba(255,255,255,.10);border:1px solid rgba(244,217,132,.35);border-radius:14px;padding:14px 12px;color:#fff;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f4d984;">Best classic</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">🇩🇪 Cologne</div>
+        <div style="font-size:12px;line-height:1.45;color:rgba(255,255,255,.88);">Huge, traditional and properly German.</div>
+        <div style="font-size:11px;font-weight:700;margin-top:6px;color:#f4d984;">16 Nov – 23 Dec</div>
+      </a>
+      <a href="/christmas-markets-europe.html#markets" onclick="gtag('event','christmas_market_tile_click',{city:'Wrocław'});" style="display:block;text-decoration:none;background:rgba(255,255,255,.10);border:1px solid rgba(244,217,132,.35);border-radius:14px;padding:14px 12px;color:#fff;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f4d984;">Prettiest</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">🇵🇱 Wrocław</div>
+        <div style="font-size:12px;line-height:1.45;color:rgba(255,255,255,.88);">Gorgeous Old Town and full festive drama.</div>
+        <div style="font-size:11px;font-weight:700;margin-top:6px;color:#f4d984;">20 Nov – 7 Jan</div>
+      </a>
+      <a href="/christmas-markets-europe.html#markets" onclick="gtag('event','christmas_market_tile_click',{city:'Bydgoszcz'});" style="display:block;text-decoration:none;background:rgba(255,255,255,.10);border:1px solid rgba(244,217,132,.35);border-radius:14px;padding:14px 12px;color:#fff;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f4d984;">Best surprise</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">🇵🇱 Bydgoszcz</div>
+        <div style="font-size:12px;line-height:1.45;color:rgba(255,255,255,.88);">Wonderful lights, brilliant value, so welcoming.</div>
+        <div style="font-size:11px;font-weight:700;margin-top:6px;color:#f4d984;">20 Nov – 21 Dec</div>
+      </a>
+      <a href="/christmas-markets-europe.html#markets" onclick="gtag('event','christmas_market_tile_click',{city:'Copenhagen'});" style="display:block;text-decoration:none;background:rgba(255,255,255,.10);border:1px solid rgba(244,217,132,.35);border-radius:14px;padding:14px 12px;color:#fff;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f4d984;">Best atmosphere</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">🇩🇰 Copenhagen</div>
+        <div style="font-size:12px;line-height:1.45;color:rgba(255,255,255,.88);">Expensive, yes. Ridiculously cosy, also yes.</div>
+        <div style="font-size:11px;font-weight:700;margin-top:6px;color:#f4d984;">13 Nov – 3 Jan</div>
+      </a>
+      <a href="/christmas-markets-europe.html#markets" onclick="gtag('event','christmas_market_tile_click',{city:'Turin'});" style="display:block;text-decoration:none;background:rgba(255,255,255,.10);border:1px solid rgba(244,217,132,.35);border-radius:14px;padding:14px 12px;color:#fff;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f4d984;">Best city + food</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">🇮🇹 Turin</div>
+        <div style="font-size:12px;line-height:1.45;color:rgba(255,255,255,.88);">Go for Christmas, stay for the piazzas and pizza.</div>
+        <div style="font-size:11px;font-weight:700;margin-top:6px;color:#f4d984;">Dates TBC</div>
+      </a>
+  </div>
   <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
     <a class="btn-primary" href="/christmas-markets-europe.html" onclick="fbq('track','ViewContent');gtag('event','christmas_market_home_click');" style="background:#f4d984;color:#14211c;">See our Christmas market guide →</a>
+    <a class="btn-outline" href="/christmas-markets-europe.html#dates" onclick="gtag('event','christmas_market_dates_click');" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35);">All 2026 dates →</a>
     <a class="btn-outline" href="https://www.getyourguide.com/en-gb/europe-l207848/christmas-market-tours-tc2182/?partner_id=VYORXUN&amp;utm_medium=online_publisher" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35);">Browse festive tours →</a>
   </div>
+  <p style="font-size:11px;color:rgba(255,255,255,.65);margin:14px 0 0;">Dates are the published 2026 dates; always recheck the official market site before booking.</p>
 </div>
 
 <p class="section-label">What we get up to</p>
@@ -532,6 +568,7 @@ header{
   <a class="feat-card" href="/ireland.html"><span class="feat-tag">🇮🇪 Ireland</span><div class="feat-title">Ireland, from two people who actually live here</div><p class="feat-sub">Our county guides, Ireland map and 80 videos from around Ireland — including the places most tourists drive straight past.</p><div class="feat-arrow">Explore our Ireland guide →</div></a>
   <a class="feat-card" href="/#hotel" onclick="show('hotel');return false;"><span class="feat-tag">🏨 Hotel stays</span><div class="feat-title">Honest hotel reviews — what you actually want to know before you book</div><p class="feat-sub">Room tours, first impressions and the real verdict. No over-polished nonsense.</p><div class="feat-arrow">See hotel reviews →</div></a>
   <a class="feat-card" href="/#brew" onclick="show('brew');return false;"><span class="feat-tag">☕ Brew for Two</span><div class="feat-title">On a mission to find the best coffee in Ireland — one café at a time</div><p class="feat-sub">Honest café reviews, gluten-free treat ratings, hidden coffee spots and the ones genuinely worth stopping for.</p><div class="feat-arrow">See the reviews →</div></a>
+  <a class="feat-card" href="/haunted-ireland.html"><span class="feat-tag">👻 Free guide</span><div class="feat-title">Haunted Ireland — 13 Irish ghost stories, myths &amp; legends</div><p class="feat-sub">Haunted castles, witches, banshees and the Devil himself, from our Friday Night Frights series. Free when you join our mailing list.</p><div class="feat-arrow">Get the free guide →</div></a>
 </div>
 
 <div class="grid" style="grid-template-columns:repeat(3,1fr);">
@@ -666,12 +703,12 @@ header{
 <div class="promoModal" id="promoModal" aria-hidden="true" role="dialog" aria-label="Newsletter signup popup">
   <div class="promoBox" role="document">
     <button class="promoClose" type="button" onclick="closePromoModal()" aria-label="Close popup">×</button>
-    <img src="img/haunted-ireland-cover.jpg" alt="The free Haunted Ireland guide" style="display:block;width:120px;margin:0 auto 14px;border-radius:4px;border:1px solid #d9b45f;box-shadow:0 10px 30px rgba(0,0,0,.25);transform:rotate(-2deg);">
-    <h2>👻 Before you go — grab our free Haunted Ireland guide!</h2>
-    <p class="lead"><strong>13 Irish ghost stories, myths &amp; legends, free when you join our mailing list.</strong></p>
-    <p>Haunted castles, witches, banshees and the Devil himself, from our Friday Night Frights series. You'll get our Hidden Gems guide too, plus honest travel tips and deals we write ourselves. No spam, unsubscribe any time. 💛</p>
+    <img src="img/byd4.jpeg" alt="Christmas lights at the Bydgoszcz Christmas market" style="display:block;width:100%;max-height:150px;object-fit:cover;margin:0 0 14px;border-radius:12px;border:1px solid #d9b45f;">
+    <h2>🎄 Before you go — get our festive travel picks!</h2>
+    <p class="lead"><strong>Christmas market tips, Black Friday travel deals and the discount codes we actually rate, straight to your inbox.</strong></p>
+    <p>Join our mailing list and you'll get our free Hidden Gems guide straight away, plus honest travel tips and deals we write ourselves. No spam, unsubscribe any time. 💛</p>
     <div style="margin-top:16px;">
-      <a class="btn-gold" href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" onclick="closePromoModal();if(window.fbq){fbq('track','Lead');}" style="width:100%;justify-content:center;font-size:15px;padding:15px 22px;">Send me the free guide →</a>
+      <a class="btn-gold" href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" onclick="closePromoModal();if(window.fbq){fbq('track','Lead');}" style="width:100%;justify-content:center;font-size:15px;padding:15px 22px;">Count me in →</a>
     </div>
     <p class="promoSub" style="margin-top:12px;">Or if you're here for Morocco — <a href="https://www.tourradar.com/t/247114?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=tour" target="_blank" rel="noopener sponsored" onclick="closePromoModal();fbq('track','InitiateCheckout');" style="font-weight:700;color:var(--ink);">book your Morocco trip here →</a></p>
     <p class="promoSub" style="margin-top:8px;"><button type="button" onclick="closePromoModal()" style="background:none;border:none;font-family:var(--font-body);font-size:12px;color:var(--muted);cursor:pointer;padding:0;">No thanks</button></p>
