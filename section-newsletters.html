@@ -210,6 +210,27 @@
     color:var(--news-soft);
   }
 
+  #newsletter-page .latest-grid{
+    display:grid;
+    grid-template-columns:1fr 240px;
+    gap:28px;
+    align-items:center;
+  }
+
+  #newsletter-page .latest-video{
+    width:100%;
+    aspect-ratio:9/16;
+    border-radius:18px;
+    background:#111;
+    box-shadow:0 12px 30px rgba(16,60,50,.18);
+    display:block;
+  }
+
+  @media(max-width:820px){
+    #newsletter-page .latest-grid{grid-template-columns:1fr}
+    #newsletter-page .latest-video{max-width:280px;margin:0 auto}
+  }
+
   #newsletter-page .archive-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -336,6 +357,8 @@
     </div>
 
     <article class="latest">
+      <div class="latest-grid">
+      <div>
       <div class="issue-meta">
         <span class="issue-pill gold">Edition 6</span>
         <span class="issue-pill">November 2026</span>
@@ -347,6 +370,10 @@
       <div class="news-actions">
         <a class="news-btn green" href="/newsletter-ed-06.pdf" target="_blank" rel="noopener">Read Edition 6 (PDF) →</a>
         <a class="news-btn white" href="/ireland-road-trip-checklist.html">Get the free 32 Counties checklist →</a>
+      </div>
+      </div>
+
+      <video class="latest-video" src="/video/newsletter-nov-2026.mp4" poster="/video/newsletter-nov-2026-poster.jpg" controls playsinline muted loop preload="metadata" aria-label="November 2026 newsletter preview video"></video>
       </div>
     </article>
 
