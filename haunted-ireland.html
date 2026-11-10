@@ -150,7 +150,33 @@
 
   </div>
 
-  <footer>
+  <!-- kx-next-reads -->
+<style>
+.kx{max-width:1040px;margin:40px auto;padding:0 16px;position:relative;z-index:1}
+.kx h2{font-family:'Playfair Display',Georgia,serif;font-size:1.8rem;line-height:1.2;margin:0 0 6px;color:#1a1208;text-align:center}
+.kx>p{text-align:center;color:#5a4b2b;margin:0 auto 20px;max-width:600px;font-size:15px}
+.kx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.kx-card{display:block;background:#fff;border-radius:16px;overflow:hidden;text-decoration:none;color:#1a1208;box-shadow:0 6px 20px rgba(26,18,8,.10);transition:transform .2s,box-shadow .2s}
+.kx-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(26,18,8,.16)}
+.kx-card:focus-visible{outline:3px solid #e8c235;outline-offset:3px}
+.kx-card img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#f3ead2}
+.kx-body{padding:12px 14px 16px}
+.kx-kick{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#a07d12;font-weight:700}
+.kx-title{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;margin:4px 0 4px;line-height:1.25}
+.kx-blurb{font-size:14px;color:#5a4b2b;margin:0}
+.kx-dark h2{color:#ffd84a}.kx-dark>p{color:#e9dfc7}
+</style>
+<section class="kx kx-dark" aria-label="Related guides">
+<h2>Keep exploring Ireland</h2>
+<p>More spooky tales and hidden corners from home.</p>
+<div class="kx-grid">
+<a class="kx-card" href="/friday-night-frights.html" onclick="if(window.gtag){gtag('event','related_click',{from_page:'/haunted-ireland.html',to_page:'/friday-night-frights.html'});}"><img src="/img/haunted-ireland-cover.jpg" alt="Friday Night Frights" loading="lazy"><div class="kx-body"><div class="kx-kick">Ireland · Folklore</div><div class="kx-title">Friday Night Frights</div><p class="kx-blurb">Irish ghost stories, myths & legends →</p></div></a>
+<a class="kx-card" href="/hidden-ireland-gems.html" onclick="if(window.gtag){gtag('event','related_click',{from_page:'/haunted-ireland.html',to_page:'/hidden-ireland-gems.html'});}"><img src="/img/ireland26a.jpg" alt="Hidden Gems in Ireland" loading="lazy"><div class="kx-body"><div class="kx-kick">Ireland</div><div class="kx-title">Hidden Gems in Ireland</div><p class="kx-blurb">Places most tourists never find →</p></div></a>
+<a class="kx-card" href="/carlow.html" onclick="if(window.gtag){gtag('event','related_click',{from_page:'/haunted-ireland.html',to_page:'/carlow.html'});}"><img src="/img/carlowpic.jpg" alt="Carlow" loading="lazy"><div class="kx-body"><div class="kx-kick">Ireland · County guide</div><div class="kx-title">Carlow</div><p class="kx-blurb">Our Carlow county guide →</p></div></a>
+<a class="kx-card" href="/ireland-road-trip-checklist.html" onclick="if(window.gtag){gtag('event','related_click',{from_page:'/haunted-ireland.html',to_page:'/ireland-road-trip-checklist.html'});}"><img src="/img/ireland-checklist-cover.jpg" alt="32 Counties Road Trip Checklist" loading="lazy"><div class="kx-body"><div class="kx-kick">Free download</div><div class="kx-title">32 Counties Road Trip Checklist</div><p class="kx-blurb">Tick off every county →</p></div></a>
+</div>
+</section>
+<footer>
     &copy; <span id="year"></span> <a href="https://twofortherowd.com/">Two for the Row'd</a> &nbsp;&bull;&nbsp; <a href="/friday-night-frights.html">Friday Night Frights</a> &nbsp;&bull;&nbsp; <a href="/ireland.html">Ireland guide</a>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
