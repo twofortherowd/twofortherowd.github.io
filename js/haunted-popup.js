@@ -79,8 +79,8 @@
     document.addEventListener('keydown', onKey);
     o.querySelector('.hp-btn').addEventListener('click', function () {
       set('signed-up');
-      if (window.fbq) fbq('track', 'Lead');
-      if (window.gtag) gtag('event', 'generate_lead', { form: 'haunted-popup' });
+      if (window.fbq) fbq('trackCustom', 'SignupClick');
+      if (window.gtag) gtag('event', 'signup_click', { form: 'haunted-popup' });
       setTimeout(function () { o.remove(); }, 200);
     });
   }
