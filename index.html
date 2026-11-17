@@ -414,6 +414,19 @@ header{
 <body>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=981657641071814&amp;ev=PageView&amp;noscript=1"/></noscript>
 
+<!-- Passport Awards 2027 vote banner: hides itself after voting closes (14 Feb 2027) -->
+<div id="passportBanner" style="display:none;background:#13264a;color:#fff;font-size:14px;line-height:1.4;padding:10px 44px 10px 14px;text-align:center;position:relative;">
+  🛂 We're nominated for <strong>Best Budget Traveller</strong> at The Passport Awards 2027!
+  <a href="https://thepassportawards.com/v/twofortherowd" target="_blank" rel="noopener" style="color:#e7c873;font-weight:700;white-space:nowrap;">Vote for us →</a>
+  <button type="button" aria-label="Close banner" onclick="document.getElementById('passportBanner').style.display='none';try{localStorage.setItem('passportBannerClosed','1')}catch(e){}" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;">×</button>
+</div>
+<script>
+  (function(){
+    var closed=false; try{closed=localStorage.getItem('passportBannerClosed')==='1'}catch(e){}
+    if(!closed && Date.now() < Date.UTC(2027,1,15,0,0,0)){document.getElementById('passportBanner').style.display='block';}
+  })();
+</script>
+
 <header>
 <!-- Add width="…" height="…" (the logo file's pixel size) to stop the page jumping while this loads -->
 <img src="img/logoimg2.png" class="logo" alt="Two for the Row'd logo" fetchpriority="high" decoding="async">
