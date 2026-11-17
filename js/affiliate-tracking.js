@@ -152,3 +152,13 @@
     }, 0);
   });
 })();
+
+/* Load the Passport Awards vote prompts (banner + end-of-guide card).
+   js/passport-vote.js switches itself off after voting closes on 14 Feb 2027. */
+(function () {
+  if (Date.now() >= Date.UTC(2027, 1, 15)) return;
+  var s = document.createElement('script');
+  s.src = '/js/passport-vote.js';
+  s.defer = true;
+  document.head.appendChild(s);
+})();
