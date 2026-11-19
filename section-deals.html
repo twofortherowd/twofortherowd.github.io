@@ -1,0 +1,78 @@
+<style>
+  /* DEALS TAB — scoped to #deals-page */
+  #deals-page .deals-hero{max-width:880px;margin:0 auto 18px;padding:30px 28px;border-radius:22px;background:linear-gradient(135deg,#1a1208 0%,#3a2a10 100%);color:#fff9e0;box-shadow:var(--shadow-md);border-left:8px solid #ffd84a;text-align:left;}
+  #deals-page .deals-hero h2{color:#ffd84a;font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 10px;}
+  #deals-page .deals-hero p{margin:0 0 14px;line-height:1.6;color:rgba(255,249,224,.9);max-width:62ch;}
+  #deals-page .checked{display:inline-flex;align-items:center;gap:6px;background:rgba(255,216,74,.14);border:1px solid rgba(255,216,74,.45);color:#ffd84a;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:800;letter-spacing:.04em;}
+  #deals-page .promise{max-width:880px;margin:0 auto 18px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  #deals-page .promise div{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;text-align:left;font-size:13.5px;line-height:1.5;color:var(--ink-soft);}
+  #deals-page .promise strong{display:block;color:var(--ink);font-size:14.5px;margin-bottom:4px;}
+  #deals-page .feat-tag{align-self:flex-start;}
+  @media(max-width:700px){#deals-page .promise{grid-template-columns:1fr;}#deals-page .deals-hero{padding:24px 20px;}}
+</style>
+
+<div id="deals-page">
+
+  <!-- ===== UPDATE THIS DATE every time you check the deals ===== -->
+  <div class="deals-hero">
+    <h2>💶 Travel deals &amp; money-saving picks</h2>
+    <p>We both work full-time, and as a teacher, Nicola can only travel during school holidays, when prices are at their highest. So we've had to get good at finding value. These are the deals, discount codes and cheap trips we actually use ourselves.</p>
+    <span class="checked">✔ Last checked: 19 November 2026</span>
+  </div>
+
+  <div class="promise">
+    <div><strong>🧾 Real costs</strong>We show what our trips actually cost, down to the airport parking.</div>
+    <div><strong>🔍 Checked by us</strong>We only list codes and deals we've checked, and we take them down when they stop working.</div>
+    <div><strong>🤝 Honest links</strong>Some links earn us a small commission. It never costs you a cent extra.</div>
+  </div>
+
+  <!-- ON NOW (seasonal — swap this card out when the sale ends) -->
+  <p class="section-label">🔥 On now</p>
+  <div class="featured-grid">
+    <a class="feat-card" href="/black-friday-travel-deals.html" onclick="if(window.gtag){gtag('event','deals_tab_click',{item:'black_friday'});}"><span class="feat-tag gold">🛍️ Black Friday 2026</span><div class="feat-title">Black Friday travel deals: tours, experiences &amp; hotels</div><p class="feat-sub">TourRadar's sale is already live. Our picks for winter and 2027 trips, plus how to tell a real bargain from a fake one.</p><div class="feat-arrow">See the Black Friday deals →</div></a>
+    <a class="feat-card" href="/summer-deals.html" onclick="if(window.gtag){gtag('event','deals_tab_click',{item:'seasonal'});}"><span class="feat-tag">☀️ Seasonal picks</span><div class="feat-title">Sun, city breaks and big trips for Irish travellers</div><p class="feat-sub">Canaries, Madeira, Malta and Cyprus sun, plus city breaks and bigger tours, rounded up by season.</p><div class="feat-arrow">See the seasonal deals →</div></a>
+  </div>
+
+  <!-- DISCOUNT CODES -->
+  <p class="section-label">🏷️ Discount codes &amp; savings</p>
+  <div class="featured-grid">
+    <a class="feat-card" href="/klook-discount.html" onclick="if(window.gtag){gtag('event','deals_tab_click',{item:'klook_code'});}"><span class="feat-tag">Klook</span><div class="feat-title">Klook promo codes, checked monthly</div><p class="feat-sub">Working codes for attractions, day tours and hotels, updated every month.</p><div class="feat-arrow">Get the codes →</div></a>
+    <a class="feat-card" href="/tourradar-discount-code.html" onclick="if(window.gtag){gtag('event','deals_tab_click',{item:'tourradar_code'});}"><span class="feat-tag">TourRadar</span><div class="feat-title">TourRadar savings: how to pay less</div><p class="feat-sub">There's no public code, but first bookings save automatically with TourRadar+. Here's how it works.</p><div class="feat-arrow">See how to save →</div></a>
+  </div>
+
+  <!-- BUDGET TRIPS -->
+  <p class="section-label">✈️ Big trips, small budgets</p>
+  <div class="featured-grid">
+    <a class="feat-card" href="/extreme-day-trips.html" onclick="if(window.gtag){gtag('event','deals_tab_click',{item:'extreme_day_trips'});}"><span class="feat-tag gold">🌅 Extreme day trips</span><div class="feat-title">A whole city in a day, no hotel</div><p class="feat-sub">Our Liverpool day from Dublin cost about €150 each, everything included. Early flight out, late flight home.</p><div class="feat-arrow">See our day trips →</div></a>
+    <a class="feat-card" href="/is-tourradar-worth-it.html" onclick="if(window.gtag){gtag('event','deals_tab_click',{item:'tourradar_worth_it'});}"><span class="feat-tag">🧭 Group tours</span><div class="feat-title">Is TourRadar worth it?</div><p class="feat-sub">Our honest take on booking a group tour, from two people who booked Morocco this way.</p><div class="feat-arrow">Read our verdict →</div></a>
+    <a class="feat-card" href="/bydgoszcz.html" onclick="if(window.gtag){gtag('event','deals_tab_click',{item:'bydgoszcz'});}"><span class="feat-tag">🇵🇱 Bydgoszcz</span><div class="feat-title">A Christmas market without the big-city prices</div><p class="feat-sub">Glühwein, stunning lights and Mill Island, in a Polish city most people have never heard of.</p><div class="feat-arrow">Read the guide →</div></a>
+    <a class="feat-card" href="/turin.html" onclick="if(window.gtag){gtag('event','deals_tab_click',{item:'turin'});}"><span class="feat-tag">🇮🇹 Turin</span><div class="feat-title">Italy's underrated city break</div><p class="feat-sub">Baroque piazzas and brilliant food, without the crowds and prices of Rome or Venice.</p><div class="feat-arrow">Read the guide →</div></a>
+  </div>
+
+  <!-- LIVE TOURRADAR DEALS -->
+  <div class="card tr-home-widget" id="tourradar-widget-deals" style="max-width:880px;margin:0 auto 16px;">
+    <p class="section-label" style="margin:0 0 4px;">🔥 Live tour deals</p>
+    <p style="color:var(--ink-soft);font-size:14px;margin:0 0 12px;">Budget-friendly tour deals from around the world, with live prices straight from TourRadar.</p>
+    <div class="tr-widget-frame">
+      <x-tr-tours partner-id="two-for-the-rowd" campaign="deals-tab" layout="slider" results="12" density="compact" primary-color="#1A1208" bg-color="#FFFFFF" text-color="#1A1208" radius="16px" cta="View tour" deals-only="true" query="cheapest tours"></x-tr-tours>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;">
+      <a class="btn-outline" href="https://www.tourradar.com/deals/anywhere?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=deals-tab" target="_blank" rel="noopener sponsored" onclick="if(window.fbq){fbq('trackCustom','TourRadarClick');}if(window.gtag){gtag('event','tourradar_click',{destination:'TourRadar deals',button_label:'Deals tab view all deals'});}">View all TourRadar deals →</a>
+      <a href="https://www.tourradar.com/?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=widget-credit" target="_blank" rel="noopener sponsored" style="font:400 11px/1.4 system-ui,-apple-system,sans-serif;color:#8a8a8a;text-decoration:none;">Powered by TourRadar</a>
+    </div>
+  </div>
+
+  <p style="max-width:880px;margin:0 auto 20px;font-size:12px;color:var(--muted);text-align:left;"><strong>Disclosure:</strong> Some links on this page are affiliate links. If you book through them, we may earn a small commission at no extra cost to you. Prices and codes change often, so always check the final price before you book.</p>
+
+</div>
+
+<script>
+/* Load the TourRadar widget script for the Deals tab */
+(function(){
+  if (document.querySelector('script[src*="tourradar.com/widgets/loader.js"]')) return;
+  var s=document.createElement('script');
+  s.type='module';
+  s.src='https://assets.api.b2b.tourradar.com/widgets/loader.js';
+  document.body.appendChild(s);
+})();
+</script>
