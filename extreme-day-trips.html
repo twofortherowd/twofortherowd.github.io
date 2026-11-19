@@ -382,6 +382,7 @@ const TRIPS = [
     date: "26 September 2026",
     from: "Dublin",
     hours: 14,
+    cost: "~€150 each",       // what the whole day cost per person
     hook: "The Beatles, the Cavern Club and the city from the top deck, all in one very long, very brilliant day.",
     highlights: [
       "Magical Mystery Tour: Penny Lane & Strawberry Field",
@@ -400,6 +401,7 @@ const TRIPS = [
     date: "Day Month Year",
     from: "Dublin",          // or Shannon, Cork, Kerry, Knock...
     hours: 12,
+    cost: "~€100 each",       // optional: what the day cost per person
     hook: "One line on what made the day.",
     highlights: ["Thing 1", "Thing 2", "Thing 3"],
     page: "/path/to/page.html",
@@ -439,6 +441,7 @@ function tripCard(t){
       <div class="meta">
         <span class="badge">✈️ From ${esc(t.from)}</span>
         <span class="badge outline">${esc(t.date)}</span>
+        ${t.cost ? `<span class="badge">💶 ${esc(t.cost)}</span>` : ''}
       </div>
       <p class="hook">${esc(t.hook)}</p>
       <ul>${t.highlights.map(h => `<li>${esc(h)}</li>`).join('')}</ul>
