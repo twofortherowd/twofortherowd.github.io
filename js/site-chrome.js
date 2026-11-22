@@ -262,6 +262,12 @@
       });
     }
 
+    // white cards that ended up with white text (inherited from a dark section): give them dark text
+    [].slice.call(document.querySelectorAll('[class*="card"], [class*="Card"], [class*="tile"]')).forEach(function (c) {
+      if (c.closest('.trr-chrome')) return;
+      var cs = getComputedStyle(c), b = lum(cs.backgroundColor), t = lum(cs.color);
+      if (b && b.a > 0.8 && b.l > 0.85 && t && t.l > 0.8) c.classList.add('rf-onlight');
+    });
     // light boxes: on their own -> open sections; in a row -> simple tiles. Coloured/dark boxes untouched.
     [].slice.call(document.querySelectorAll('.card, [class*="Card"]:not([class*="Cards"]), [class*="-card"], [class*="statBox"], .stat, .story, .quick, .visit, .highlight, .booking, .tip, .fact, .deep, .panel, .box, section.section > .wrap')).forEach(function (c) {
       if (c.closest('.trr-chrome') || c.closest('.rf-hero') || c.classList.contains('rf-hero')) return;

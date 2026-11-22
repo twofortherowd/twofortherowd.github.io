@@ -28,8 +28,9 @@ body.rf:not(.rf-darkpage)::before{display:none!important;}
 .rf .rf-hero [class*="btn"][class*="dark"],.rf .rf-hero [class*="btn"].primary,.rf .rf-hero [class*="btn-primary"]{color:#fff!important;}
 .rf .rf-hero [class*="btn-outline"],.rf .rf-hero .btn.outline{color:#fff!important;background:rgba(255,255,255,.12)!important;border-color:rgba(255,255,255,.5)!important;}
 
-/* light chips/boxes inside the hero keep dark text */
+/* light chips/boxes keep dark text */
 .rf .rf-hero .rf-onlight,.rf .rf-hero .rf-onlight *{color:#1a1208!important;text-shadow:none!important;}
+.rf .rf-onlight,.rf .rf-onlight :is(p,h2,h3,h4,li,strong,em,small,span:not([class*="btn"])){color:#1a1208!important;text-shadow:none!important;}
 
 /* ---- plain light boxes become open sections ---- */
 .rf .rf-flat{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding-left:0!important;padding-right:0!important;backdrop-filter:none!important;border-top:1px solid rgba(26,18,8,.12)!important;padding-top:34px!important;margin-top:26px!important;}
