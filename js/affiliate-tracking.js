@@ -153,6 +153,15 @@
   });
 })();
 
+/* Load the shared site header + footer (same top bar, menu and footer as the homepage).
+   Edit js/site-chrome.js to change the menu or footer on every page at once. */
+(function () {
+  var s = document.createElement('script');
+  s.src = '/js/site-chrome.js';
+  s.defer = true;
+  document.head.appendChild(s);
+})();
+
 /* Load the Passport Awards vote prompts (banner + end-of-guide card).
    js/passport-vote.js switches itself off after voting closes on 14 Feb 2027. */
 (function () {
