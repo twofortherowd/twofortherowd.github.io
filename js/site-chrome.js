@@ -281,6 +281,56 @@
     });
   }
 
+
+  /* ---------- tidy YouTube Shorts / reels: no giant vertical videos ---------- */
+  function tidyVideos() {
+    var MAXW = 270;
+    var items = [].slice.call(document.querySelectorAll('iframe[src*="youtube"], iframe[data-src*="youtube"], .ytLite'));
+    var grids = [];
+    items.forEach(function (it) {
+      if (it.closest('.trr-chrome') || it.__trrTidy) return;
+      it.__trrTidy = true;
+      var src = it.getAttribute('src') || it.getAttribute('data-src') || '';
+      var w = it, r = it.getBoundingClientRect();
+      // climb to the box that holds just this video
+      while (w.parentElement && w.parentElement !== document.body) {
+        var p = w.parentElement, pr = p.getBoundingClientRect(), pd = getComputedStyle(p).display;
+        if (/grid|flex/.test(pd) && p.children.length > 1) break;
+        if (Math.abs(pr.width - r.width) > 3 || (r.height > 0 && Math.abs(pr.height - r.height) > 3)) break;
+        w = p;
+      }
+      var names = (w.className + ' ' + (w.parentElement ? w.parentElement.className : '') + ' ' + it.className).toString();
+      var portrait = /\/shorts\//.test(src) || /short|portrait|reel/i.test(names) || (r.height > 0 && r.height / r.width > 1.2);
+      if (r.height > 0 && r.height / r.width < 0.9) portrait = false;   // it is clearly a landscape video
+      if (!portrait) return;
+      var wr = w.getBoundingClientRect();
+      if (wr.width <= MAXW + 12 && wr.height > 0) return;      // already a sensible size
+      w.style.setProperty('width', '100%', 'important');
+      w.style.setProperty('max-width', MAXW + 'px', 'important');
+      w.style.setProperty('aspect-ratio', '9 / 16', 'important');
+      w.style.setProperty('height', 'auto', 'important');
+      w.style.setProperty('padding', '0', 'important');
+      w.style.setProperty('border-radius', '14px', 'important');
+      w.style.setProperty('overflow', 'hidden', 'important');
+      if (getComputedStyle(w).position === 'static') w.style.setProperty('position', 'relative', 'important');
+      if (w !== it && it.tagName === 'IFRAME') {
+        it.style.setProperty('position', 'absolute', 'important');
+        it.style.setProperty('inset', '0', 'important');
+        it.style.setProperty('width', '100%', 'important');
+        it.style.setProperty('height', '100%', 'important');
+      }
+      var par = w.parentElement, pdisp = par ? getComputedStyle(par).display : '';
+      if (/grid/.test(pdisp) && par.children.length > 1) { w.__trrPortrait = true; if (grids.indexOf(par) < 0) grids.push(par); }
+      else w.style.setProperty('margin', '14px auto', 'important');
+    });
+    grids.forEach(function (g) {
+      if (![].every.call(g.children, function (c) { return c.__trrPortrait; })) return;   // mixed rows keep their layout
+      g.style.setProperty('grid-template-columns', 'repeat(auto-fill, minmax(180px, ' + MAXW + 'px))', 'important');
+      g.style.setProperty('justify-content', 'center', 'important');
+      g.style.setProperty('gap', '14px', 'important');
+    });
+  }
+
   function build() {
     if (document.querySelector('.mainbar') || document.querySelector('.trr-chrome')) return;
 
@@ -350,6 +400,7 @@
       head.classList.toggle('trr-narrow', w < 1060);
     }
     try { refreshPage(); } catch (e) {}
+    try { tidyVideos(); window.addEventListener('load', function () { try { tidyVideos(); } catch (e) {} }); } catch (e) {}
     function fit() { bleed(head, true, false); bleed(foot, false, true); align(); }
     fit();
     window.addEventListener('resize', fit, { passive: true });
