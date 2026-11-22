@@ -54,7 +54,7 @@ body.rf{--red:#b8780a;--red-light:#fff6d6;--france-red:#b8780a;--aus-red:#b8780a
 /* section headings: number in gold, small label, big title, one thin rule */
 .rf .chapterHeader,.rf .chapterHead,.rf .sectionHead{margin:54px 0 22px!important;padding:0!important;}
 .rf .chapterHeaderInner,.rf .chapterInner{display:flex!important;align-items:flex-end!important;gap:16px!important;padding-bottom:14px!important;border-bottom:1px solid rgba(26,18,8,.18)!important;border-top:0!important;background:none!important;}
-.rf .chapterNumber,.rf .chapterNo,.rf .chapterHeader .num{font-family:'Playfair Display',Georgia,serif!important;font-style:italic!important;font-weight:800!important;font-size:clamp(2.2rem,5vw,3rem)!important;line-height:.9!important;color:#b8780a!important;}
+.rf .chapterNumber,.rf .chapterNo,.rf .chapterHeader .num{background:none!important;box-shadow:none!important;width:auto!important;height:auto!important;flex:none!important;border-radius:0!important;display:block!important;font-family:'Playfair Display',Georgia,serif!important;font-style:italic!important;font-weight:800!important;font-size:clamp(2.2rem,5vw,3rem)!important;line-height:.9!important;color:#b8780a!important;}
 .rf .chapterLabel,.rf .chapterKicker{font-family:'DM Sans','Segoe UI',Arial,sans-serif!important;font-size:12px!important;font-weight:800!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:#8a7a5c!important;margin-bottom:4px!important;}
 .rf .chapterName,.rf .chapterHead h2,.rf .sectionHead h2{font-family:'Playfair Display',Georgia,serif!important;font-size:clamp(1.7rem,3.4vw,2.4rem)!important;font-weight:800!important;line-height:1.1!important;color:#1a1208!important;}
 /* section labels used on other page types match the chapter labels */
@@ -77,3 +77,15 @@ body.rf{--red:#b8780a;--red-light:#fff6d6;--france-red:#b8780a;--aus-red:#b8780a
 .rf .section-divider{border-bottom:1px solid rgba(26,18,8,.18)!important;}
 .rf .section-divider:before,.rf .section-divider::before{color:#b8780a!important;}
 .rf blockquote{background:transparent!important;border-left:3px solid #ffd84a!important;border-top:0!important;border-right:0!important;border-bottom:0!important;border-radius:0!important;box-shadow:none!important;}
+
+/* "What it cost us" box, reusable on any guide: <div class="trr-cost"> with a <table> */
+.trr-cost{background:#fff;border:1px solid rgba(26,18,8,.12);border-left:4px solid #ffd84a;border-radius:14px;padding:24px 26px;margin:22px 0 28px;}
+.trr-cost h3{margin:0 0 6px!important;font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.3rem,2.4vw,1.6rem)!important;color:#1a1208;}
+.trr-cost-intro{margin:0 0 12px!important;color:#5b4f38;}
+.trr-cost table{width:100%;border-collapse:collapse;font-size:16px;}
+.trr-cost td{padding:11px 4px;border-bottom:1px solid rgba(26,18,8,.10);vertical-align:top;color:#1a1208;}
+.trr-cost td:last-child{text-align:right;white-space:nowrap;font-weight:700;padding-left:14px;}
+.trr-cost tr.total td{border-bottom:0;border-top:2px solid #1a1208;font-weight:800;font-size:17px;padding-top:13px;}
+.trr-cost tr.total td:last-child{color:#8a5700;}
+.trr-cost-note{margin:14px 0 0!important;font-size:15px!important;color:#4a3f28;}
+@media(max-width:560px){.trr-cost{padding:18px 16px;}.trr-cost td{font-size:15px;}}
