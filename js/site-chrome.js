@@ -193,6 +193,14 @@
       }
     }
     if (bg && bg.a > 0.4 && bg.l < 0.82) return false;      // coloured/dark box: keep
+    if (!bg || bg.a < 0.4) {                                 // see-through box: judge by what is behind it
+      for (var up = el.parentElement; up && up !== document.documentElement; up = up.parentElement) {
+        var ucs = getComputedStyle(up), ub = lum(ucs.backgroundColor);
+        if (ucs.backgroundImage && ucs.backgroundImage !== 'none' && !/gradient\(.*rgba?\(2[3-5]\d/.test(ucs.backgroundImage)) return false;
+        if (ub && ub.a > 0.4) { if (ub.l < 0.82) return false; break; }
+      }
+    }
+    if ([].some.call(el.querySelectorAll('h2, h3, p'), function (t) { var c = lum(getComputedStyle(t).color); return c && c.l > 0.7; })) return false;
     var tc = lum(cs.color); if (tc && tc.l > 0.7) return false; // light text = designed dark box
     return true;
   }
@@ -202,6 +210,8 @@
     var link = document.createElement('link');
     link.rel = 'stylesheet'; link.href = '/site-refresh.css';
     document.head.appendChild(link);
+    var bb = lum(getComputedStyle(document.body).backgroundColor);
+    if (bb && bb.a > 0.4 && bb.l < 0.5) document.body.classList.add('rf-darkpage');   // spooky/dark pages keep their dark background
     document.body.classList.add('rf');
 
     // hero = the outermost box around the page title
@@ -253,12 +263,13 @@
     }
 
     // light boxes: on their own -> open sections; in a row -> simple tiles. Coloured/dark boxes untouched.
-    [].slice.call(document.querySelectorAll('.card, [class*="Card"]:not([class*="Cards"]), [class*="-card"], [class*="statBox"], .stat')).forEach(function (c) {
+    [].slice.call(document.querySelectorAll('.card, [class*="Card"]:not([class*="Cards"]), [class*="-card"], [class*="statBox"], .stat, .story, .quick, .visit, .highlight, .booking, .tip, .fact, .deep, .panel, .box, section.section > .wrap')).forEach(function (c) {
       if (c.closest('.trr-chrome') || c.closest('.rf-hero') || c.classList.contains('rf-hero')) return;
       if (!isLight(c)) return;
       if (/stat/i.test(c.className)) { c.classList.add('rf-stat'); return; }
       var p = c.parentElement, pd = p ? getComputedStyle(p).display : '';
-      var inRow = /grid|flex/.test(pd) && p.children.length > 1;
+      var first = c.classList[0];
+      var inRow = /grid|flex/.test(pd) && [].some.call(p.children, function (sib) { return sib !== c && sib.classList.contains(first); });
       var nested = c.parentElement && c.parentElement.closest('.rf-flat, .rf-tile, .card');
       c.classList.add(inRow || nested ? 'rf-tile' : 'rf-flat');
     });
