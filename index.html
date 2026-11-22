@@ -228,6 +228,147 @@ header{
     .tr-home-widget{min-width:0;}
     .tr-home-widget .tr-widget-frame{width:100%;max-width:100%;min-width:0;overflow:hidden;}
     .tr-home-widget x-tr-tours{display:block;width:100%;max-width:100%;}
+
+    /* ═══════════ NEW HOMEPAGE LAYOUT (Nov 2026) ═══════════ */
+    /* top link bar */
+    .topbar{background:var(--ink);color:#fdf8ef;font-size:13px;position:relative;z-index:60;}
+    .topbar-in{max-width:1180px;margin:0 auto;padding:7px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .topbar a{color:#fdf8ef;text-decoration:none;}
+    .topbar a:hover{color:var(--gold);}
+    .tb-left,.tb-right{display:flex;align-items:center;gap:14px;min-width:0;}
+    .tb-mail{display:inline-flex;align-items:center;gap:7px;font-weight:600;}
+    .tb-mail svg,.tb-soc svg{width:17px;height:17px;fill:currentColor;display:block;}
+    .tb-vote{display:none;align-items:center;gap:6px;padding:3px 11px;border-radius:999px;background:rgba(255,216,74,.14);border:1px solid rgba(255,216,74,.45);color:var(--gold)!important;font-weight:700;white-space:nowrap;}
+    .tb-vote:hover{background:var(--gold);color:var(--ink)!important;}
+    .tb-follow{font-weight:600;opacity:.8;}
+    .tb-soc{display:flex;align-items:center;gap:12px;}
+    .tb-sep{width:1px;height:18px;background:rgba(253,248,239,.25);}
+    /* main bar */
+    .mainbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:3px solid var(--gold);box-shadow:0 6px 20px rgba(26,18,8,.08);}
+    .mainbar-in{max-width:1180px;margin:0 auto;padding:8px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .brand{display:block;flex:0 0 auto;background:none;border:0;padding:0;cursor:pointer;}
+    .brand img{height:58px;width:auto;display:block;}
+    .mainnav{display:flex;align-items:center;gap:4px;margin:0;padding:0;max-width:none;background:none;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;border-radius:0;flex-wrap:nowrap;overflow:visible;}
+    .mainnav .tabBtn{background:none;border:0;box-shadow:none;border-radius:8px;padding:9px 11px;font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;}
+    .mainnav .tabBtn:hover{transform:none;box-shadow:none;background:rgba(255,216,74,.28);}
+    .mainnav .tabBtn[aria-selected="true"]{background:none;box-shadow:inset 0 -3px 0 var(--gold);border-radius:0;}
+    .navMore{position:relative;}
+    .navMoreBtn{background:none;border:0;padding:9px 11px;font-family:var(--font-body);font-size:15px;font-weight:700;color:var(--ink);cursor:pointer;border-radius:8px;}
+    .navMoreBtn:hover,.navMore.open .navMoreBtn{background:rgba(255,216,74,.28);}
+    .navMoreMenu{display:none;position:absolute;right:0;top:calc(100% + 8px);min-width:210px;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-lg);padding:8px;z-index:70;}
+    .navMore.open .navMoreMenu{display:block;}
+    .navMoreMenu .tabBtn{display:block;width:100%;text-align:left;}
+    .nav-cta{display:inline-flex;align-items:center;padding:10px 18px;margin-left:8px;border-radius:10px;background:var(--gold);border:1px solid var(--gold-dark);color:var(--ink);font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap;}
+    .nav-cta:hover{background:var(--gold-dark);color:var(--ink);}
+    .burger{display:none;background:none;border:1.5px solid var(--border-mid);border-radius:10px;width:44px;height:44px;cursor:pointer;font-size:22px;line-height:1;color:var(--ink);}
+    .navHomeMobile{display:none!important;}
+    @media(max-width:980px){
+      .burger{display:block;}
+      .brand img{height:48px;}
+      .mainnav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;align-items:stretch;padding:10px 14px 16px;border-bottom:3px solid var(--gold);box-shadow:var(--shadow-lg);}
+      .mainnav.open{display:flex;}
+      .mainnav .tabBtn{text-align:left;padding:12px 10px;border-bottom:1px solid var(--border);border-radius:0;}
+      .mainnav .tabBtn[aria-selected="true"]{box-shadow:inset 4px 0 0 var(--gold);}
+      .navMoreBtn{display:none;}
+      .navMoreMenu{display:block;position:static;box-shadow:none;border:0;padding:0;min-width:0;}
+      .nav-cta{margin:12px 0 0;justify-content:center;}
+      .navHomeMobile{display:block!important;}
+      .tb-follow,.tb-sep,.tb-mail span{display:none;}
+    }
+    @media(max-width:520px){.tb-vote .tb-vote-long{display:none;}.topbar-in{padding:7px 12px;}.tb-soc{gap:10px;}}
+
+    /* home layout */
+    .homeWide{max-width:1080px;margin:0 auto;}
+    .kicker{display:inline-block;padding:5px 12px;border-radius:999px;background:#fff;border:1px solid var(--border-mid);font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);box-shadow:var(--shadow-sm);}
+    .secHead{text-align:center;max-width:720px;margin:44px auto 20px;}
+    .secHead h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800;margin:12px 0 8px;}
+    .secHead p{color:var(--ink-soft);margin:0;}
+    /* hero */
+    .hero2{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;align-items:center;padding:30px 0 10px;}
+    .hero2-copy h1{font-size:clamp(2.1rem,4.6vw,3.3rem);font-weight:800;line-height:1.08;margin:16px 0 14px;}
+    .hero2-copy h1 span{background:linear-gradient(transparent 64%,var(--gold) 64%);}
+    .hero2-copy .lead{color:var(--ink-soft);font-size:1.06rem;max-width:520px;margin-bottom:22px;}
+    .hero2-ctas{display:flex;flex-wrap:wrap;gap:10px;}
+    html,body{overflow-x:clip;}
+    .flightpath{position:absolute;left:-30px;width:calc(100% + 60px);top:-10px;height:120px;pointer-events:none;z-index:0;opacity:.9;}
+    .hero2-copy>*:not(.flightpath){position:relative;z-index:1;}
+    .tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .tile{display:block;position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/4.3;box-shadow:var(--shadow-md);border:3px solid #fff;text-decoration:none;cursor:pointer;background:#e9dfc8;padding:0;font:inherit;}
+    .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+    .tile:hover img{transform:scale(1.06);}
+    .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(26,18,8,.72) 100%);z-index:1;}
+    .tile-label{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;color:#fff;font-family:var(--font-display);font-size:1.2rem;font-weight:700;line-height:1.15;text-align:left;}
+    .tile-label small{display:block;font-family:var(--font-body);font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.04em;margin-top:3px;}
+    .tile-tab{position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:2;background:var(--ink);color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:0 0 10px 10px;white-space:nowrap;}
+    .tile.tall{aspect-ratio:auto;}
+    /* passport stamps */
+    .stamps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 6px;}
+    .stamp{background:#fff;border:2px dashed rgba(184,120,10,.55);outline:5px solid #fff;box-shadow:var(--shadow-md);border-radius:16px;padding:18px 14px;text-align:center;}
+    .stamp:nth-child(odd){transform:rotate(-1.2deg);}
+    .stamp:nth-child(even){transform:rotate(1deg);}
+    .stamp-ico{font-size:24px;line-height:1;margin-bottom:6px;}
+    .stamp-num{font-family:var(--font-display);font-size:1.55rem;font-weight:800;line-height:1.1;}
+    .stamp-lbl{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8a5700;margin-top:4px;}
+    /* departures board */
+    .board{background:#14110a;border-radius:20px;padding:24px 24px 18px;margin:40px 0 18px;box-shadow:0 16px 40px rgba(20,17,10,.25);border:1px solid rgba(255,216,74,.25);}
+    .board-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+    .board-title{font-family:'Courier New',monospace;font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;}
+    .board-title::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#3ccf6e;margin-right:9px;vertical-align:middle;box-shadow:0 0 8px #3ccf6e;}
+    .board-cols{display:grid;grid-template-columns:1fr auto auto;gap:18px;font-family:'Courier New',monospace;font-size:11px;letter-spacing:.14em;color:rgba(253,248,239,.5);text-transform:uppercase;padding:0 4px 6px;}
+    .brow{display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:center;text-decoration:none;padding:6px 4px;border-radius:8px;cursor:pointer;background:none;border:0;width:100%;font:inherit;}
+    .brow:hover{background:rgba(255,216,74,.08);}
+    .bcells{display:flex;gap:3px;flex-wrap:nowrap;}
+    .bc{display:inline-flex;align-items:center;justify-content:center;width:22px;height:30px;background:#231d10;border-radius:3px;font-family:'Courier New',monospace;font-weight:700;font-size:17px;color:#ffd84a;position:relative;box-shadow:inset 0 -1px 0 rgba(0,0,0,.6);}
+    .bc::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.55);}
+    .bstat .bc{color:#7dffa4;}
+    .bstat.boarding .bc{color:#ffd84a;animation:blink 1.4s steps(2,start) infinite;}
+    @keyframes blink{to{opacity:.35;}}
+    .board-note{font-size:12px;color:rgba(253,248,239,.55);margin:10px 4px 0;}
+    @media(max-width:860px){.board .btime,.board-cols .ctime{display:none;}.brow,.board-cols{grid-template-columns:1fr auto;}}
+    @media(max-width:560px){.bc{width:17px;height:24px;font-size:13px;}.bcells{gap:2px;}.board{padding:18px 10px 14px;}.brow{grid-template-columns:1fr;gap:4px;padding:8px 4px;border-bottom:1px solid rgba(255,216,74,.12);}.board-cols{display:none;}.bstat .bc{width:12px;height:17px;font-size:10px;}}
+    /* partner logo strip */
+    .partners{background:#fff;border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow-md);padding:26px 0 24px;margin:16px 0;overflow:hidden;text-align:center;}
+    .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);margin:16px 0 18px;}
+    .marquee-track{display:flex;align-items:center;gap:64px;width:max-content;animation:scrollx 32s linear infinite;}
+    .marquee:hover .marquee-track{animation-play-state:paused;}
+    @keyframes scrollx{to{transform:translateX(-50%);}}
+    .marquee-track a{flex:0 0 auto;display:flex;align-items:center;height:64px;opacity:.85;transition:opacity .2s ease,transform .2s ease;text-decoration:none;}
+    .marquee-track a:hover{opacity:1;transform:translateY(-3px);}
+    .marquee-track img{height:46px;width:auto;display:block;}
+    .marquee-track img.gyg{height:60px;}
+    .wordmark{font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--ink);white-space:nowrap;}
+    .wordmark small{display:block;font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+    .partners .note{font-size:12px;color:var(--muted);max-width:620px;margin:0 auto 14px;padding:0 16px;}
+    @media (prefers-reduced-motion:reduce){.marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;}.bstat.boarding .bc{animation:none;}}
+    /* footer */
+    .siteFooter{text-align:left;padding:0;background:var(--ink);color:rgba(253,248,239,.82);margin-top:30px;border-top:4px solid var(--gold);font-size:14px;}
+    .siteFooter a{color:rgba(253,248,239,.82);text-decoration:none;}
+    .siteFooter a:hover{color:var(--gold);}
+    .ft-in{max-width:1180px;margin:0 auto;padding:40px 18px 20px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;}
+    .ft-brand{font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:#fff;margin:0 0 8px;}
+    .ft-col h4{font-family:var(--font-body);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:4px 0 12px;}
+    .ft-col ul{list-style:none;padding:0;margin:0;}
+    .ft-col li{margin:0 0 8px;}
+    .ft-col button.linkBtn{background:none;border:0;padding:0;font:inherit;color:rgba(253,248,239,.82);cursor:pointer;}
+    .ft-col button.linkBtn:hover{color:var(--gold);}
+    .ft-soc{display:flex;gap:12px;margin:14px 0;}
+    .ft-soc svg{width:20px;height:20px;fill:currentColor;display:block;}
+    .ft-sub{display:inline-flex;padding:11px 18px;border-radius:10px;background:var(--gold);color:var(--ink)!important;font-weight:800;}
+    .ft-badge{display:flex;align-items:center;gap:12px;margin-top:16px;}
+    .ft-bottom{max-width:1180px;margin:0 auto;padding:16px 18px 26px;border-top:1px solid rgba(253,248,239,.15);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:12px;color:rgba(253,248,239,.6);}
+    .ft-bottom p{margin:0;max-width:720px;}
+    @media(max-width:900px){.flightpath{left:0;width:100%;}.hero2{grid-template-columns:1fr;}.stamps{grid-template-columns:repeat(2,1fr);}.ft-in{grid-template-columns:1fr 1fr;}}
+    @media(max-width:520px){.ft-in{grid-template-columns:1fr;}.stamp-num{font-size:1.3rem;}.tile-label{font-size:1.05rem;}}
+
+    /* widen the existing home blocks to match the new layout */
+    #home .card,#home .featured-grid,#home .trFeat,#home .bf26-banner,#home .shortGrid,#home .section-label{max-width:1080px;}
+    #home .newsletterBox{max-width:1080px!important;}
+    #home .bf26-banner{max-width:1080px!important;}
+    #home .featured-grid{grid-template-columns:repeat(3,1fr);}
+    @media(max-width:900px){#home .featured-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:560px){#home .featured-grid{grid-template-columns:1fr;}}
+    #home .featured-grid > .feat-card:last-child{grid-column:1/-1;}
+    .marquee-track img[src*='tourradar']{height:58px;}
   </style>
   <script>
   const TAB_IDS = ["home","destinations","deals","morocco","hidden","carlow","brew","hotel","shop","work","newsletters"];
@@ -417,90 +558,148 @@ header{
 <body>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=981657641071814&amp;ev=PageView&amp;noscript=1"/></noscript>
 
-<!-- Passport Awards 2027 vote banner: hides itself after voting closes (14 Feb 2027) -->
-<div id="passportBanner" style="display:none;background:#13264a;color:#fff;font-size:14px;line-height:1.4;padding:10px 44px 10px 14px;text-align:center;position:relative;">
-  🛂 We're nominated for <strong>Best Budget Traveller</strong> at The Passport Awards 2027!
-  <a href="https://thepassportawards.com/v/twofortherowd" target="_blank" rel="noopener" style="color:#e7c873;font-weight:700;white-space:nowrap;">Vote for us →</a>
-  <button type="button" aria-label="Close banner" onclick="document.getElementById('passportBanner').style.display='none';try{localStorage.setItem('passportBannerClosed','1')}catch(e){}" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;">×</button>
-</div>
-<script>
-  (function(){
-    var closed=false; try{closed=localStorage.getItem('passportBannerClosed')==='1'}catch(e){}
-    if(!closed && Date.now() < Date.UTC(2027,1,15,0,0,0)){document.getElementById('passportBanner').style.display='block';}
-  })();
-</script>
-
-<header>
-<!-- Add width="…" height="…" (the logo file's pixel size) to stop the page jumping while this loads -->
-<img src="img/logoimg2.png" class="logo" alt="Two for the Row'd logo" fetchpriority="high" decoding="async">
-  <div class="header-bar">
-    <span class="email-badge"><a href="mailto:twofortherowd@gmail.com">twofortherowd@gmail.com</a></span>
-    <div class="social-links" aria-label="Social links">
-      <a class="pill icon" href="https://www.facebook.com/share/1DKADAR7dV/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.5 1.6-1.5h1.6V5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.7V11H6.6v3h2.7v8h4.2z"/></svg><span class="sr-only">Facebook</span></a>
-      <a class="pill icon" href="https://www.instagram.com/twofortherowd" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 10.5zM18 6.8a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg><span class="sr-only">Instagram</span></a>
-      <a class="pill icon" href="https://www.tiktok.com/@twofortherowd?_r=1&amp;_t=ZN-93qLG9ldk18" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3c.6 3.5 2.7 5.6 6 5.9V12c-2.1 0-4-.7-5.6-2v6.4c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1V14c-.3-.2-.6-.3-.9-.3-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5V3h3.1z"/></svg><span class="sr-only">TikTok</span></a>
-      <a class="pill icon" href="https://www.youtube.com/@twofortherowd?sub_confirmation=1" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg><span class="sr-only">YouTube</span></a>
-      <a class="pill icon" href="https://www.pinterest.com/twofortherowd/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.1-.8 3.3-.2 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.5 2.1-4.5 4.4 0 .9.3 1.8.8 2.3.1.1.1.2.1.3l-.3 1.2c0 .2-.2.3-.4.2-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg><span class="sr-only">Pinterest</span></a>
+<!-- TOP LINK BAR -->
+<!-- Empty placeholder: tells /js/passport-vote.js not to add its own banner here (the vote link lives in the top bar) -->
+<div id="passportBanner" hidden></div>
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="tb-left">
+      <a class="tb-mail" href="mailto:twofortherowd@gmail.com" aria-label="Email us"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.4l8 5.6 8-5.6V7h-.4L12 12.2z"/></svg><span>twofortherowd@gmail.com</span></a>
+      <!-- Passport Awards vote link: hides itself after voting closes (14 Feb 2027) -->
+      <a class="tb-vote" id="tbVote" href="https://thepassportawards.com/v/twofortherowd" target="_blank" rel="noopener" onclick="if(window.gtag){gtag('event','passport_vote_click',{prompt:'home_topbar'});}">🛂 <span class="tb-vote-long">Nominated: Best Budget Traveller ·</span> Vote for us →</a>
     </div>
-    <div class="affiliate-links">
-      <a class="pill" href="https://www.tourradar.com/?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=home-header" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');">TourRadar</a>
-      <a class="pill" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">GetYourGuide</a>
-      <a class="pill" href="https://affiliate.klook.com/redirect?aid=119289&amp;aff_adid=1262030&amp;k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');">Klook</a>
-      <a class="pill" href="https://link.amazon/B07NEpvEG" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');gtag('event','amazon_click',{'placement':'home_header'});">Amazon</a>
-    </div>
-  </div>
-</header>
-
-<!-- DRIVE FROM HOME PARTNERSHIP BANNER -->
-<div style="max-width:1080px;margin:0 auto;padding:0 16px 4px;overflow:hidden;">
-  <div style="background:linear-gradient(135deg,#ffffff 0%,#fdf8ef 100%);border:1px solid rgba(26,18,8,.12);border-radius:16px;box-shadow:0 6px 20px rgba(26,18,8,.08);padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;overflow:hidden;">
-    <div style="display:flex;align-items:center;gap:14px;flex:1 1 260px;min-width:0;">
-      <span style="font-size:30px;line-height:1;flex-shrink:0;" aria-hidden="true">🚗</span>
-      <div style="min-width:0;">
-        <p style="margin:0 0 2px;font-size:1rem;font-weight:700;line-height:1.18;color:#1a1208;font-family:'Playfair Display',Georgia,serif;">Explore 1,100+ cities virtually</p>
-        <p style="font-size:13px;color:#4a3f28;margin:0;">Get a feel for a destination before you go — with our partners at Drive From Home.</p>
+    <div class="tb-right">
+      <span class="tb-follow">Follow us</span><span class="tb-sep"></span>
+      <div class="tb-soc" aria-label="Social links">
+        <a href="https://www.facebook.com/share/1DKADAR7dV/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.5 1.6-1.5h1.6V5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.7V11H6.6v3h2.7v8h4.2z"/></svg></a>
+        <a href="https://www.instagram.com/twofortherowd" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 10.5zM18 6.8a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg></a>
+        <a href="https://www.tiktok.com/@twofortherowd?_r=1&amp;_t=ZN-93qLG9ldk18" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3c.6 3.5 2.7 5.6 6 5.9V12c-2.1 0-4-.7-5.6-2v6.4c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1V14c-.3-.2-.6-.3-.9-.3-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5V3h3.1z"/></svg></a>
+        <a href="https://www.youtube.com/@twofortherowd?sub_confirmation=1" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+        <a href="https://www.pinterest.com/twofortherowd/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.1-.8 3.3-.2 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.5 2.1-4.5 4.4 0 .9.3 1.8.8 2.3.1.1.1.2.1.3l-.3 1.2c0 .2-.2.3-.4.2-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg></a>
       </div>
     </div>
-    <a href="https://drivefromhome.com/?utm_source=twofortherowd&amp;utm_medium=partnership&amp;utm_campaign=homepage" target="_blank" rel="noopener" onclick="fbq('track','ViewContent');" style="display:inline-flex;align-items:center;gap:8px;padding:11px 20px;background:#1a1208;color:#fff;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;">Take a virtual drive →</a>
   </div>
 </div>
-<nav role="tablist" aria-label="Site sections">
-  <button class="tabBtn" role="tab" id="tab-home"         aria-controls="home"         data-tab="home"         onclick="show('home')"         aria-selected="true"  tabindex="0">Home</button>
-  <button class="tabBtn" role="tab" id="tab-destinations" aria-controls="destinations" data-tab="destinations" onclick="show('destinations')" aria-selected="false" tabindex="-1">Destinations</button>
-  <button class="tabBtn" role="tab" id="tab-deals"        aria-controls="deals"        data-tab="deals"        onclick="show('deals')"        aria-selected="false" tabindex="-1">💶 Deals</button>
-  <button class="tabBtn" role="tab" id="tab-morocco"      aria-controls="morocco"      data-tab="morocco"      onclick="show('morocco')"      aria-selected="false" tabindex="-1">Morocco Series</button>
-  <button class="tabBtn" role="tab" id="tab-hidden"       aria-controls="hidden"       data-tab="hidden"       onclick="show('hidden')"       aria-selected="false" tabindex="-1">Ireland on Video</button>
-  <button class="tabBtn" role="tab" id="tab-carlow"       aria-controls="carlow"       data-tab="carlow"       onclick="show('carlow')"       aria-selected="false" tabindex="-1">🇮🇪 Carlow</button>
-  <button class="tabBtn" role="tab" id="tab-brew"         aria-controls="brew"         data-tab="brew"         onclick="show('brew')"         aria-selected="false" tabindex="-1">Brew for Two</button>
-  <button class="tabBtn" role="tab" id="tab-hotel"        aria-controls="hotel"        data-tab="hotel"        onclick="show('hotel')"        aria-selected="false" tabindex="-1">Hotel Stays</button>
-  <button class="tabBtn" role="tab" id="tab-shop"         aria-controls="shop"         data-tab="shop"         onclick="show('shop')"         aria-selected="false" tabindex="-1">Shop &amp; Tours</button>
-  <button class="tabBtn" role="tab" id="tab-work"         aria-controls="work"         data-tab="work"         onclick="show('work')"         aria-selected="false" tabindex="-1">Work With Us</button>
-  <button class="tabBtn" role="tab" id="tab-newsletters"  aria-controls="newsletters"  data-tab="newsletters"  onclick="show('newsletters')"  aria-selected="false" tabindex="-1">Newsletter</button>
-</nav>
+<script>
+  (function(){ if(Date.now() < Date.UTC(2027,1,15,0,0,0)){ var v=document.getElementById('tbVote'); if(v) v.style.display='inline-flex'; } })();
+</script>
+
+<!-- MAIN BAR: logo + menu -->
+<header class="mainbar">
+  <div class="mainbar-in">
+    <a class="brand" href="/#home" onclick="event.preventDefault();show('home');closeMenus();" aria-label="Two for the Row'd home">
+      <img src="img/logoimg2.png" alt="Two for the Row'd logo" width="752" height="223" fetchpriority="high" decoding="async">
+    </a>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainnav" onclick="toggleMenu(this)">☰</button>
+    <nav class="mainnav" id="mainnav" role="tablist" aria-label="Site sections">
+      <button class="tabBtn navHomeMobile" role="tab" id="tab-home" aria-controls="home" data-tab="home" onclick="show('home')" aria-selected="true" tabindex="0">Home</button>
+      <button class="tabBtn" role="tab" id="tab-destinations" aria-controls="destinations" data-tab="destinations" onclick="show('destinations')" aria-selected="false" tabindex="-1">Destinations</button>
+      <button class="tabBtn" role="tab" id="tab-deals"        aria-controls="deals"        data-tab="deals"        onclick="show('deals')"        aria-selected="false" tabindex="-1">Deals</button>
+      <button class="tabBtn" role="tab" id="tab-hidden"       aria-controls="hidden"       data-tab="hidden"       onclick="show('hidden')"       aria-selected="false" tabindex="-1">Ireland on Video</button>
+      <button class="tabBtn" role="tab" id="tab-hotel"        aria-controls="hotel"        data-tab="hotel"        onclick="show('hotel')"        aria-selected="false" tabindex="-1">Hotel Stays</button>
+      <button class="tabBtn" role="tab" id="tab-brew"         aria-controls="brew"         data-tab="brew"         onclick="show('brew')"         aria-selected="false" tabindex="-1">Brew for Two</button>
+      <div class="navMore" id="navMore">
+        <button class="navMoreBtn" type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleMore(event)">More ▾</button>
+        <div class="navMoreMenu">
+          <button class="tabBtn" role="tab" id="tab-morocco"     aria-controls="morocco"     data-tab="morocco"     onclick="show('morocco')"     aria-selected="false" tabindex="-1">Morocco Series</button>
+          <button class="tabBtn" role="tab" id="tab-carlow"      aria-controls="carlow"      data-tab="carlow"      onclick="show('carlow')"      aria-selected="false" tabindex="-1">🇮🇪 Carlow</button>
+          <button class="tabBtn" role="tab" id="tab-shop"        aria-controls="shop"        data-tab="shop"        onclick="show('shop')"        aria-selected="false" tabindex="-1">Shop &amp; Tours</button>
+          <button class="tabBtn" role="tab" id="tab-newsletters" aria-controls="newsletters" data-tab="newsletters" onclick="show('newsletters')" aria-selected="false" tabindex="-1">Past Newsletters</button>
+          <button class="tabBtn" role="tab" id="tab-work"        aria-controls="work"        data-tab="work"        onclick="show('work')"        aria-selected="false" tabindex="-1">Work With Us</button>
+        </div>
+      </div>
+      <a class="nav-cta" href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('trackCustom','SignupClick');}">Subscribe</a>
+    </nav>
+  </div>
+</header>
+<script>
+  function closeMenus(){
+    var n=document.getElementById('mainnav'), b=document.querySelector('.burger'), m=document.getElementById('navMore');
+    if(n) n.classList.remove('open'); if(b){b.setAttribute('aria-expanded','false');b.textContent='☰';}
+    if(m){m.classList.remove('open'); var mb=m.querySelector('.navMoreBtn'); if(mb) mb.setAttribute('aria-expanded','false');}
+  }
+  function toggleMenu(btn){
+    var n=document.getElementById('mainnav'); var open=!n.classList.contains('open');
+    n.classList.toggle('open',open); btn.setAttribute('aria-expanded',open?'true':'false'); btn.textContent=open?'✕':'☰';
+  }
+  function toggleMore(e){
+    e.stopPropagation(); var m=document.getElementById('navMore'); var open=!m.classList.contains('open');
+    m.classList.toggle('open',open); e.currentTarget.setAttribute('aria-expanded',open?'true':'false');
+  }
+  document.addEventListener('click',function(e){
+    if(e.target.closest && e.target.closest('.mainnav .tabBtn')) { closeMenus(); return; }
+    var m=document.getElementById('navMore'); if(m && !m.contains(e.target)) { m.classList.remove('open'); }
+  });
+</script>
+
 
 <main class="wrap">
   <section id="home" class="active" role="tabpanel" aria-labelledby="tab-home">
-<div class="card heroCard">
-  <div class="hero-eyebrow">
-    <span class="badge">🇮🇪 Irish travel couple</span>
-  </div>
-
-  <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:16px;">
-    <div style="flex:1 1 0;min-width:0;">
-      <h1 class="hero-h1">We're Nicola and Pádraig — an Irish couple who have visited 60+ countries &amp; territories and can't stop talking about it.</h1>
-      <p class="hero-strap"><span>Proof you don't need to quit your job to see the world.</span></p>
-      <p style="color:var(--ink-soft);font-size:14px;margin:0;">We're from Carlow, we've been pretty much everywhere, and we tell the honest version of every trip — including when things aren't perfect. That's why people follow along. (The name? Two for the Row'd is a nod to Nicola's surname, Rowan, and to "two for the road".)</p>
+<div class="homeWide">
+<div class="hero2">
+  <div class="hero2-copy">
+    <svg class="flightpath" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 100 C 150 10, 330 130, 600 20" fill="none" stroke="#b8780a" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round" opacity=".55"/><text x="560" y="34" font-size="22" transform="rotate(-18 560 34)">✈️</text></svg>
+    <span class="kicker">🇮🇪 Irish travel couple · 60+ countries</span>
+    <h1>We're Nicola &amp; Pádraig. <span>Proof you don't need to quit your job to see the world.</span></h1>
+    <p class="lead">We're from Carlow, we've visited 60+ countries &amp; territories, and we tell the honest version of every trip, including when things aren't perfect. Real jobs, real budgets, and a lot of early flights.</p>
+    <div class="hero2-ctas">
+      <button type="button" class="btn-primary" onclick="show('destinations')">Explore our destinations →</button>
+      <a class="btn-outline" href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('trackCustom','SignupClick');}">Get our newsletter</a>
     </div>
-    <img src="img/NP11.jpeg" alt="Nicola and Pádraig" style="width:110px;height:110px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 4px 16px rgba(26,18,8,.15);border:3px solid var(--white);">
   </div>
-
-  <div class="proof-strip">
-    <div class="proof-item"><div class="proof-num">702,000+</div><div class="proof-label">total views across platforms</div></div>
-    <div class="proof-item"><div class="proof-num">60+ countries</div><div class="proof-label">between us and still going</div></div>
-    <div class="proof-item"><div class="proof-num">TourRadar</div><div class="proof-label">official ambassadors</div></div>
-    <div class="proof-item"><div class="proof-num">Accredited</div><div class="proof-label">tour guide — fully qualified</div></div>
+  <div class="tiles">
+    <button type="button" class="tile" onclick="show('destinations')"><span class="tile-tab">Destinations</span><img src="img/home-tile-destinations.jpg" alt="Nicola and Pádraig on a boat trip" loading="eager"><span class="tile-label">Where we've been<small>60+ countries &amp; territories →</small></span></button>
+    <button type="button" class="tile" onclick="show('deals')"><span class="tile-tab">Deals</span><img src="img/home-tile-deals.jpg" alt="The Koutoubia Mosque in Marrakech, Morocco" loading="eager"><span class="tile-label">Travel deals<small>Tours &amp; codes we rate →</small></span></button>
+    <a class="tile" href="/ireland.html"><span class="tile-tab">Ireland</span><img src="img/home-tile-ireland.jpg" alt="Green Irish countryside with mountains" loading="lazy"><span class="tile-label">Ireland, from locals<small>County guides &amp; videos →</small></span></a>
+    <button type="button" class="tile" onclick="show('hotel')"><span class="tile-tab">Hotel Stays</span><img src="img/home-tile-hotels.jpg" alt="Hotel reception desk with a service bell" loading="lazy"><span class="tile-label">Honest hotel reviews<small>The real verdict →</small></span></button>
   </div>
 </div>
+
+<div class="stamps">
+  <div class="stamp"><div class="stamp-ico">👀</div><div class="stamp-num">702,000+</div><div class="stamp-lbl">Views across platforms</div></div>
+  <div class="stamp"><div class="stamp-ico">🌍</div><div class="stamp-num">60+</div><div class="stamp-lbl">Countries &amp; territories</div></div>
+  <div class="stamp"><div class="stamp-ico">🧭</div><div class="stamp-num">TourRadar</div><div class="stamp-lbl">Official ambassadors</div></div>
+  <div class="stamp"><div class="stamp-ico">🎓</div><div class="stamp-num">Accredited</div><div class="stamp-lbl">Irish tour guide</div></div>
+</div>
+
+<!-- DEPARTURES BOARD: each row links somewhere. data-end hides a row automatically from that date. -->
+<div class="board" id="departures">
+  <div class="board-top"><div class="board-title">Departures · Two for the Row'd</div></div>
+  <div class="board-cols"><span>Now boarding</span><span class="ctime">When</span><span>Status</span></div>
+  <a class="brow" href="/black-friday-travel-deals.html" data-end="2026-12-01" data-d="BLACK FRIDAY DEALS" data-t="27 NOV" data-s="BOARDING"></a>
+  <a class="brow" href="/christmas-markets-europe.html" data-d="CHRISTMAS MARKETS" data-t="NOW" data-s="ON TIME"></a>
+  <a class="brow" href="/christmas-gifts-for-travellers.html" data-d="TRAVEL GIFT GUIDE" data-t="DEC" data-s="BOARDING"></a>
+  <a class="brow" href="/extreme-day-trips.html" data-d="EXTREME DAY TRIPS" data-t="DAWN" data-s="ON TIME"></a>
+  <button type="button" class="brow" onclick="show('morocco')" data-d="MOROCCO SERIES" data-t="26 VIDS" data-s="ON TIME"></button>
+  <p class="board-note">Tap any departure to jump straight in.</p>
+</div>
+<script>
+(function(){
+  var board=document.getElementById('departures'); if(!board) return;
+  var CH="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  var rows=[].slice.call(board.querySelectorAll('.brow'));
+  var today=new Date();
+  function pad(s,n){s=s.toUpperCase();while(s.length<n)s+=' ';return s.slice(0,n);}
+  function cells(txt,cls){var w=document.createElement('span');w.className='bcells '+cls;for(var i=0;i<txt.length;i++){var c=document.createElement('span');c.className='bc';c.dataset.f=txt[i]===' '?' ':txt[i];c.textContent=' ';w.appendChild(c);}return w;}
+  rows.forEach(function(r){
+    var end=r.getAttribute('data-end'); if(end && today>=new Date(end+'T00:00:00')){ r.remove(); return; }
+    var narrow=window.innerWidth<560;
+    r.appendChild(cells(pad(r.dataset.d,narrow?17:18),'bdest'));
+    r.appendChild(cells(pad(r.dataset.t,7),'btime'));
+    var st=cells(pad(r.dataset.s,narrow?8:8),'bstat'+(r.dataset.s==='BOARDING'?' boarding':'')); r.appendChild(st);
+    r.setAttribute('aria-label',r.dataset.d+', '+r.dataset.t+', '+r.dataset.s);
+  });
+  var all=[].slice.call(board.querySelectorAll('.bc'));
+  function flip(){
+    if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches){all.forEach(function(c){c.textContent=c.dataset.f;});return;}
+    all.forEach(function(c,i){
+      var n=0, max=6+Math.floor(Math.random()*10);
+      setTimeout(function tick(){ if(n++<max){ c.textContent=CH[Math.floor(Math.random()*CH.length)]; setTimeout(tick,55); } else { c.textContent=c.dataset.f; } }, (i%20)*25);
+    });
+  }
+  if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(e){ if(e.some(function(x){return x.isIntersecting;})){ flip(); io.disconnect(); } },{threshold:.25}); io.observe(board); } else flip();
+})();
+</script>
 
 <!-- FEATURED BY TOURRADAR (testimonial on tourradar.com/mlp/affiliates, Oct 2026) -->
 <style>
@@ -598,9 +797,8 @@ header{
   <p style="font-size:11px;color:rgba(255,255,255,.65);margin:14px 0 0;">Dates are the published 2026 dates; always recheck the official market site before booking.</p>
 </div>
 
-<p class="section-label">What we get up to</p>
+<div class="secHead"><span class="kicker">What we get up to</span><h2>Honest guides from two people who actually go</h2><p>Every guide is from a trip we took ourselves, with the good bits, the bad bits and what we'd do differently.</p></div>
 <div class="featured-grid">
-  <a class="feat-card" href="/black-friday-travel-deals.html"><span class="feat-tag gold">🛍️ Black Friday 2026</span><div class="feat-title">Black Friday travel deals — tours, experiences &amp; hotels</div><p class="feat-sub">TourRadar’s sale is live: this week’s tour deals, how to spot a genuine bargain, and our working discount codes.</p><div class="feat-arrow">See the deals guide →</div></a>
   <a class="feat-card" href="/christmas-gifts-for-travellers.html"><span class="feat-tag">🎄 Gift guide</span><div class="feat-title">Christmas gifts for travellers — 16 things we actually use</div><p class="feat-sub">Packing cubes, AirTags, a travel kettle and the long-haul essentials that come on every trip with us.</p><div class="feat-arrow">See the gift guide →</div></a>
   <a class="feat-card" href="/#morocco" onclick="show('morocco');return false;"><span class="feat-tag gold">Morocco series</span><div class="feat-title">Our complete Morocco tour review — what it's actually like</div><p class="feat-sub">Route map, 26 videos, desert camps, local guides and an honest take on booking through TourRadar.</p><div class="feat-arrow">Watch the full series →</div></a>
   <a class="feat-card" href="/extreme-day-trips.html"><span class="feat-tag gold">✈️ Extreme day trips</span><div class="feat-title">Out at dawn, home by midnight — a whole city in one day</div><p class="feat-sub">Our extreme day trips from Ireland, starting with Liverpool in 14 hours, plus a search to plan your own same-day out-and-back.</p><div class="feat-arrow">See our extreme day trips →</div></a>
@@ -610,37 +808,28 @@ header{
   <a class="feat-card" href="/haunted-ireland.html"><span class="feat-tag">👻 Free guide</span><div class="feat-title">Haunted Ireland — 13 Irish ghost stories, myths &amp; legends</div><p class="feat-sub">Haunted castles, witches, banshees and the Devil himself, from our Friday Night Frights series. Free when you join our mailing list.</p><div class="feat-arrow">Get the free guide →</div></a>
 </div>
 
-<div class="grid" style="grid-template-columns:repeat(3,1fr);">
-  <img loading="lazy" src="img/NP2.jpeg" alt="Nicola and Padraig travelling together">
-  <img loading="lazy" src="img/NP6.jpeg" alt="Two for the Row'd travel moment">
-  <img loading="lazy" src="img/NP7.jpeg" alt="Travel photo from Two for the Row'd">
-  <img loading="lazy" src="img/NP9.jpeg" alt="Travel storytelling image">
-  <img loading="lazy" src="img/NP10.jpeg" alt="Travel creators Nicola and Padraig">
-  <img class="np11" loading="lazy" src="img/NP11.jpeg" alt="Irish travel creators on their travels">
-</div>
 
-<p class="section-label">Things we actually use and recommend</p>
-<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:880px;margin:0 auto 16px;">
-  <a class="aff-card" href="https://www.tourradar.com/?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=home-card" target="_blank" rel="noopener sponsored" onclick="fbq('track','InitiateCheckout');" style="padding:16px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><span style="font-size:22px;">🧭</span><span class="aff-title" style="margin:0;">TourRadar</span></div>
-    <p class="aff-desc" style="margin-bottom:6px;">How we booked Morocco — stress-free, everything organised. <strong>New users may get €50 off</strong> their first booking.</p>
-    <span class="aff-cta">Browse tours →</span>
-  </a>
-  <a class="aff-card" href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');" style="padding:16px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><span style="font-size:22px;">🎟</span><span class="aff-title" style="margin:0;">GetYourGuide</span></div>
-    <p class="aff-desc" style="margin-bottom:6px;">Day trips, city tours and experiences worldwide — easy to book, genuinely worth doing.</p>
-    <span class="aff-cta">See our top picks →</span>
-  </a>
-  <a class="aff-card" href="https://affiliate.klook.com/redirect?aid=119289&amp;aff_adid=1262030&amp;k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');" style="padding:16px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><span style="font-size:22px;">🎫</span><span class="aff-title" style="margin:0;">Klook</span></div>
-    <p class="aff-desc" style="margin-bottom:6px;">Skip-the-line tickets, city passes and experiences — often cheaper than booking at the door.</p>
-    <span class="aff-cta">Browse Klook →</span>
-  </a>
-  <a class="aff-card" href="https://link.amazon/B07NEpvEG" target="_blank" rel="noopener sponsored nofollow" onclick="fbq('track','ViewContent');gtag('event','amazon_click',{'placement':'home_card'});" style="padding:16px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><span style="font-size:22px;">📦</span><span class="aff-title" style="margin:0;">Amazon travel picks</span></div>
-    <p class="aff-desc" style="margin-bottom:6px;">30+ things we actually pack — luggage scales, packing cubes, neck fans, cruise hacks and more.</p>
-    <span class="aff-cta">See our full Amazon list →</span>
-  </a>
+<!-- PARTNER LOGO STRIP: every logo is a tracked affiliate/partner link. Hover pauses the scroll. -->
+<div class="partners">
+  <span class="kicker">Brands we use &amp; book with</span>
+  <div class="marquee" aria-label="Our travel partners">
+    <div class="marquee-track">
+      <!-- set 1 -->
+      <a href="https://www.tourradar.com/?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=home-logos" target="_blank" rel="noopener sponsored" onclick="if(window.fbq){fbq('track','InitiateCheckout');}if(window.gtag){gtag('event','partner_logo_click',{partner:'TourRadar'});}"><img src="img/img-tourradar-logo.png" alt="TourRadar" loading="eager"></a>
+      <a href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'GetYourGuide'});}"><img class="gyg" src="img/img-getyourguide-logo.png" alt="GetYourGuide" loading="eager"></a>
+      <a href="https://affiliate.klook.com/redirect?aid=119289&amp;aff_adid=1262030&amp;k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'Klook'});}"><img src="img/img-klook-logo.png" alt="Klook" loading="eager"></a>
+      <a href="https://link.amazon/B07NEpvEG" target="_blank" rel="noopener sponsored nofollow" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','amazon_click',{'placement':'home_logos'});}"><img src="img/img-amazon-logo-clean.png" alt="Amazon: our travel picks" loading="eager"></a>
+      <a href="https://drivefromhome.com/?utm_source=twofortherowd&amp;utm_medium=partnership&amp;utm_campaign=homepage" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'Drive From Home'});}"><span class="wordmark">🚗 Drive From Home<small>Explore 1,100+ cities virtually</small></span></a>
+      <!-- set 2 (copy of set 1 so the loop is seamless; hidden from screen readers) -->
+      <a href="https://www.tourradar.com/?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=home-logos" target="_blank" rel="noopener sponsored" aria-hidden="true" tabindex="-1" onclick="if(window.fbq){fbq('track','InitiateCheckout');}if(window.gtag){gtag('event','partner_logo_click',{partner:'TourRadar'});}"><img src="img/img-tourradar-logo.png" alt="" loading="eager"></a>
+      <a href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" aria-hidden="true" tabindex="-1" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'GetYourGuide'});}"><img class="gyg" src="img/img-getyourguide-logo.png" alt="" loading="eager"></a>
+      <a href="https://affiliate.klook.com/redirect?aid=119289&amp;aff_adid=1262030&amp;k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" aria-hidden="true" tabindex="-1" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'Klook'});}"><img src="img/img-klook-logo.png" alt="" loading="eager"></a>
+      <a href="https://link.amazon/B07NEpvEG" target="_blank" rel="noopener sponsored nofollow" aria-hidden="true" tabindex="-1" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','amazon_click',{'placement':'home_logos'});}"><img src="img/img-amazon-logo-clean.png" alt="" loading="eager"></a>
+      <a href="https://drivefromhome.com/?utm_source=twofortherowd&amp;utm_medium=partnership&amp;utm_campaign=homepage" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'Drive From Home'});}"><span class="wordmark">🚗 Drive From Home<small>Explore 1,100+ cities virtually</small></span></a>
+    </div>
+  </div>
+  <p class="note">These are the companies we actually book with. Booking through these logos supports us at no extra cost to you.</p>
+  <button type="button" class="btn-primary" onclick="show('deals')">See all our deals →</button>
 </div>
 
 <!-- TOURRADAR WIDGET — official embed (partner-id two-for-the-rowd, deals only, query cheapest tours). Script loads only when the visitor scrolls near it. -->
@@ -680,12 +869,13 @@ header{
 </div>
 
 <!-- NEWSLETTER -->
-<div style="background:linear-gradient(135deg,#ffd84a 0%,#ffe87a 100%);border:1px solid #e8c235;border-radius:16px;box-shadow:0 10px 32px rgba(232,194,53,.3);padding:20px 24px;text-align:center;max-width:880px;margin:0 auto 16px;">
+<div class="newsletterBox" style="background:linear-gradient(135deg,#ffd84a 0%,#ffe87a 100%);border:1px solid #e8c235;border-radius:16px;box-shadow:0 10px 32px rgba(232,194,53,.3);padding:20px 24px;text-align:center;max-width:880px;margin:0 auto 16px;">
   <h2 style="margin-bottom:6px;">✈️ Join the Two for the Row'd Mailing List</h2>
   <p style="font-size:14px;color:#4a3f28;margin-bottom:16px;">Real travel. Honest reviews. Hidden gems — straight to your inbox.</p>
   <a href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;background:#1a1208;color:#fff;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;">Get our newsletter →</a>
   <p style="font-size:12px;color:#4a3f28;margin:12px 0 0;">Curious what you'll get? <a href="/#newsletters" onclick="show('newsletters');return false;" style="color:#1a1208;text-decoration:underline;font-weight:700;">Read past issues →</a></p>
 </div>
+</div><!-- /homeWide -->
   </section>
 <section id="destinations" role="tabpanel" aria-labelledby="tab-destinations"></section>
   <section id="deals"        role="tabpanel" aria-labelledby="tab-deals"></section>
@@ -698,12 +888,65 @@ header{
   <section id="work"         role="tabpanel" aria-labelledby="tab-work"></section>
   <section id="newsletters"  role="tabpanel" aria-labelledby="tab-newsletters"></section>
 
-  <footer>
-    <p style="margin:0 0 12px;"><a href="https://thepassportawards.com/v/twofortherowd?s=badge" target="_blank" rel="noopener"><img src="https://thepassportawards.com/assets/img/badge-nominated.png" alt="Nominated · The Passport Awards 2027 · Best Budget Traveller" width="110" height="110" style="width:110px;height:110px;"></a><br><a href="https://thepassportawards.com/v/twofortherowd?s=badge" target="_blank" rel="noopener">Nominated for Best Budget Traveller · Vote for us</a></p>
-    <p class="disclosure"><strong>Affiliate disclosure:</strong> Some links on this website are affiliate links. If you book or buy through them, we may earn a small commission at no extra cost to you. We only recommend experiences and products we genuinely believe are useful.</p>
-    © <span id="year"></span> Two for the Row'd &nbsp;•&nbsp; Built with love, caffeine, and a bit of chaos
-  </footer>
 </main>
+
+<footer class="siteFooter">
+  <div class="ft-in">
+    <div class="ft-col">
+      <p class="ft-brand">Two for the Row'd</p>
+      <p style="margin:0 0 10px;">An Irish travel couple from Carlow sharing honest travel guides, hidden Irish gems, hotel stays and the tours we actually rate. Proof you don't need to quit your job to see the world.</p>
+      <a href="mailto:twofortherowd@gmail.com">twofortherowd@gmail.com</a>
+      <div class="ft-badge" id="ftBadge">
+        <a href="https://thepassportawards.com/v/twofortherowd?s=badge" target="_blank" rel="noopener"><img src="https://thepassportawards.com/assets/img/badge-nominated.png" alt="Nominated · The Passport Awards 2027 · Best Budget Traveller" width="84" height="84" style="width:84px;height:84px;" loading="lazy"></a>
+        <a href="https://thepassportawards.com/v/twofortherowd?s=badge" target="_blank" rel="noopener"><strong style="color:#fff;">Nominated: Best Budget Traveller</strong><br>The Passport Awards 2027 · Vote for us →</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><button class="linkBtn" type="button" onclick="show('destinations')">Destinations</button></li>
+        <li><button class="linkBtn" type="button" onclick="show('deals')">Travel deals</button></li>
+        <li><a href="/ireland.html">Ireland guide</a></li>
+        <li><button class="linkBtn" type="button" onclick="show('hidden')">Ireland on Video</button></li>
+        <li><button class="linkBtn" type="button" onclick="show('morocco')">Morocco Series</button></li>
+        <li><button class="linkBtn" type="button" onclick="show('hotel')">Hotel Stays</button></li>
+        <li><button class="linkBtn" type="button" onclick="show('brew')">Brew for Two</button></li>
+        <li><a href="/extreme-day-trips.html">Extreme day trips</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Book with our partners</h4>
+      <ul>
+        <li><a href="https://www.tourradar.com/?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=home-footer" target="_blank" rel="noopener sponsored" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">TourRadar tours</a></li>
+        <li><a href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="if(window.fbq){fbq('track','ViewContent');}">GetYourGuide experiences</a></li>
+        <li><a href="https://affiliate.klook.com/redirect?aid=119289&amp;aff_adid=1262030&amp;k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="if(window.fbq){fbq('track','ViewContent');}">Klook tickets &amp; passes</a></li>
+        <li><a href="https://link.amazon/B07NEpvEG" target="_blank" rel="noopener sponsored nofollow" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','amazon_click',{'placement':'home_footer'});}">Our Amazon travel picks</a></li>
+        <li><a href="https://drivefromhome.com/?utm_source=twofortherowd&amp;utm_medium=partnership&amp;utm_campaign=homepage" target="_blank" rel="noopener">Drive From Home</a></li>
+        <li><button class="linkBtn" type="button" onclick="show('shop')">Shop &amp; Tours</button></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Stay in touch</h4>
+      <ul>
+        <li><button class="linkBtn" type="button" onclick="show('newsletters')">Past newsletters</button></li>
+        <li><button class="linkBtn" type="button" onclick="show('work')">Work with us</button></li>
+      </ul>
+      <div class="ft-soc">
+        <a href="https://www.facebook.com/share/1DKADAR7dV/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.5 1.6-1.5h1.6V5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.7V11H6.6v3h2.7v8h4.2z"/></svg></a>
+        <a href="https://www.instagram.com/twofortherowd" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 10.5zM18 6.8a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg></a>
+        <a href="https://www.tiktok.com/@twofortherowd?_r=1&amp;_t=ZN-93qLG9ldk18" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3c.6 3.5 2.7 5.6 6 5.9V12c-2.1 0-4-.7-5.6-2v6.4c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .6 0 .9.1V14c-.3-.2-.6-.3-.9-.3-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5V3h3.1z"/></svg></a>
+        <a href="https://www.youtube.com/@twofortherowd?sub_confirmation=1" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.6 31.6 0 0 0 2 12a31.6 31.6 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 22 12a31.6 31.6 0 0 0-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+        <a href="https://www.pinterest.com/twofortherowd/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.1-.8 3.3-.2 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.5 2.1-4.5 4.4 0 .9.3 1.8.8 2.3.1.1.1.2.1.3l-.3 1.2c0 .2-.2.3-.4.2-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg></a>
+      </div>
+      <a class="ft-sub" href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('trackCustom','SignupClick');}">Subscribe →</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p><strong>Affiliate disclosure:</strong> Some links on this website are affiliate links. If you book or buy through them, we may earn a small commission at no extra cost to you. We only recommend experiences and products we genuinely believe are useful.</p>
+    <span>© <span id="year"></span> Two for the Row'd · Built with love, caffeine, and a bit of chaos</span>
+  </div>
+</footer>
+<script>(function(){ if(Date.now() >= Date.UTC(2027,1,15,0,0,0)){ var b=document.getElementById('ftBadge'); if(b) b.style.display='none'; } })();</script>
 
 <script>
 /* Load the TourRadar widget script only when the visitor scrolls near it */
