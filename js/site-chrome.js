@@ -17,7 +17,7 @@
 
   var path = location.pathname.replace(/\/+$/, '');
   if (path === '' || path === '/index.html') return;          // homepage has its own
-  if (/^\/(links|section-[a-z]+)\.html$/.test(path)) return;    // link-in-bio page + homepage fragments
+  if (/^\/(links|carlow-walking-tour-map|section-[a-z]+)\.html$/.test(path)) return; // link-in-bio page, full-screen map, homepage fragments
 
   var SITE = 'https://twofortherowd.com';
   var SUBSCRIBE = 'https://preview.mailerlite.io/forms/2378028/188440618450551814/share';
@@ -189,9 +189,11 @@
 
     // old "Back to Two for the Row'd" bars
     var olds = [].slice.call(document.querySelectorAll('.backBar'));
-    [].slice.call(document.querySelectorAll('body > .topbar')).forEach(function (t) {
+    [].slice.call(document.querySelectorAll('body > div.topbar, body > div.top')).forEach(function (t) {
       if (/Back to|Two for the Row/i.test(t.textContent)) olds.push(t);
     });
+    // newer city pages: keep their dark bar of section links, just drop the duplicate site name
+    [].slice.call(document.querySelectorAll('header.topbar .brand')).forEach(function (b) { b.classList.add('trr-hide'); });
     olds.forEach(function (b) { b.classList.add('trr-hide'); });
     // section menus that used to stick just under the old (sticky) back bar now stick to the very top
     if (olds.length) {
