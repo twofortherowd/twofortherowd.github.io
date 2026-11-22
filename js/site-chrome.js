@@ -174,6 +174,96 @@
     if (bottom) el.style.marginBottom = (-pb) + 'px';
   }
 
+
+  /* ---------- "Magazine" page style: see /site-refresh.css ---------- */
+  function lum(c) {
+    var m = c && c.match(/rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)/);
+    if (!m) return null;
+    return { l: (0.2126 * m[1] + 0.7152 * m[2] + 0.0722 * m[3]) / 255, a: m[4] === undefined ? 1 : parseFloat(m[4]) };
+  }
+  function isLight(el) {
+    var cs = getComputedStyle(el), bg = lum(cs.backgroundColor), img = cs.backgroundImage;
+    if (img && img !== 'none') {
+      if (/url\(/.test(img)) return false;                    // photo backgrounds stay
+      var cols = img.match(/rgba?\([^)]+\)|#[0-9a-f]{3,8}/gi) || [];
+      for (var i = 0; i < cols.length; i++) {
+        var c = cols[i];
+        if (c[0] === '#') { var h = c.slice(1); if (h.length === 3) h = h.replace(/./g, '$&$&'); c = 'rgb(' + parseInt(h.substr(0, 2), 16) + ',' + parseInt(h.substr(2, 2), 16) + ',' + parseInt(h.substr(4, 2), 16) + ')'; }
+        var L = lum(c); if (L && L.a > 0.4 && L.l < 0.82) return false;   // coloured/dark gradient: keep
+      }
+    }
+    if (bg && bg.a > 0.4 && bg.l < 0.82) return false;      // coloured/dark box: keep
+    var tc = lum(cs.color); if (tc && tc.l > 0.7) return false; // light text = designed dark box
+    return true;
+  }
+  function refreshPage() {
+    var h1 = document.querySelector('h1');
+    if (!h1 || h1.closest('.trr-chrome')) return;
+    var link = document.createElement('link');
+    link.rel = 'stylesheet'; link.href = '/site-refresh.css';
+    document.head.appendChild(link);
+    document.body.classList.add('rf');
+
+    // hero = the outermost box around the page title
+    var chain = [], n = h1.parentElement;
+    while (n && n !== document.body) {
+      if (n.matches('.card, .heroCard, header, [class*="hero"], [class*="Hero"]')) chain.push(n);
+      if (n.matches('main') || (chain.length && n.classList.contains('wrap') && !/hero/i.test(n.className))) break;
+      n = n.parentElement;
+    }
+    var hero = chain.length ? chain[chain.length - 1] : null;
+    if (hero) {
+      for (var q = h1.parentElement; q && q !== hero; q = q.parentElement) q.classList.add('rf-heroInner');
+      hero.classList.add('rf-hero');
+      ['margin-left', 'margin-right'].forEach(function (k) { hero.style.setProperty(k, 'calc(50% - 50vw)', 'important'); });
+      hero.style.setProperty('width', '100vw', 'important');
+      hero.style.setProperty('max-width', 'none', 'important');
+      hero.style.setProperty('border-radius', '0', 'important');
+      hero.style.setProperty('padding', 'clamp(90px,14vh,150px) max(24px,calc(50vw - 540px)) 64px', 'important');
+      if (window.innerWidth <= 700) hero.style.setProperty('padding', '80px 20px 40px', 'important');
+      // photo: the hero's own background photo, else the first real photo on the page
+      var url = null, bgs = [hero].concat(chain).map(function (x) { return getComputedStyle(x).backgroundImage; }).join(' ');
+      var m = bgs.match(/url\(["']?([^"')]+)["']?\)/);
+      if (m) url = m[1];
+      if (!url) {   // the page's own share photo is usually the best one
+        var og = document.querySelector('meta[property="og:image"]');
+        var ou = og && og.getAttribute('content');
+        if (ou && !/logo|cover|poster|map|checklist|badge|real|guide|thumb/i.test(ou.split('/').pop()) && !/\/og\.jpg$/i.test(ou)) url = ou.replace(/^https?:\/\/(www\.)?twofortherowd\.com/, location.origin);
+      }
+      if (!url) {
+        var pick = [].slice.call(document.querySelectorAll('img')).filter(function (i) {
+          var src = i.currentSrc || i.src || '';
+          return src.indexOf(location.origin + '/img/') === 0 && !i.closest('.trr-chrome') && !i.closest('.rf-hero') && !/logo|icon|badge|flag|avatar|sprite|real|guide|poster|cover|checklist|thumb|map|getyourguide|klook|tourradar|amazon/i.test(src.split('/').pop()) && (i.naturalWidth === 0 || i.naturalWidth >= 400);
+        })[0];
+        if (pick) url = pick.currentSrc || pick.src;
+      }
+      if (url) hero.style.setProperty('--rf-photo', 'url("' + url + '")');
+      // one small label instead of a row of badges; tidy tag rows that are not links
+      var badges = [].slice.call(hero.querySelectorAll('.badge, [class*="pill"]')).filter(function (b) { return !b.closest('a'); });
+      badges.forEach(function (b, i) { b.classList.add(i ? 'rf-hide' : 'rf-kicker'); });
+      [].slice.call(hero.querySelectorAll('[class*="tag"], [class*="Tag"], [class*="chip"], .facts, .eyebrow')).forEach(function (t) {
+        if (!t.querySelector('a') && t.tagName !== 'A' && !t.contains(h1) && !t.querySelector('.rf-kicker')) t.classList.add('rf-hide');
+      });
+      [].slice.call(hero.querySelectorAll('img')).forEach(function (i) { if (!i.closest('a')) i.classList.add('rf-hide'); });
+      [].slice.call(hero.querySelectorAll('*')).forEach(function (el) {
+        if (el === h1 || el.closest('h1') || el.classList.contains('rf-heroInner') || el.classList.contains('rf-hide') || el.closest('.rf-kicker')) return;
+        var b = lum(getComputedStyle(el).backgroundColor);
+        if (b && b.a > 0.5 && b.l > 0.8) el.classList.add('rf-onlight');
+      });
+    }
+
+    // light boxes: on their own -> open sections; in a row -> simple tiles. Coloured/dark boxes untouched.
+    [].slice.call(document.querySelectorAll('.card, [class*="Card"]:not([class*="Cards"]), [class*="-card"], [class*="statBox"], .stat')).forEach(function (c) {
+      if (c.closest('.trr-chrome') || c.closest('.rf-hero') || c.classList.contains('rf-hero')) return;
+      if (!isLight(c)) return;
+      if (/stat/i.test(c.className)) { c.classList.add('rf-stat'); return; }
+      var p = c.parentElement, pd = p ? getComputedStyle(p).display : '';
+      var inRow = /grid|flex/.test(pd) && p.children.length > 1;
+      var nested = c.parentElement && c.parentElement.closest('.rf-flat, .rf-tile, .card');
+      c.classList.add(inRow || nested ? 'rf-tile' : 'rf-flat');
+    });
+  }
+
   function build() {
     if (document.querySelector('.mainbar') || document.querySelector('.trr-chrome')) return;
 
@@ -242,6 +332,7 @@
       inners.forEach(function (n) { n.style.maxWidth = Math.round(w + 36) + 'px'; });
       head.classList.toggle('trr-narrow', w < 1060);
     }
+    try { refreshPage(); } catch (e) {}
     function fit() { bleed(head, true, false); bleed(foot, false, true); align(); }
     fit();
     window.addEventListener('resize', fit, { passive: true });
