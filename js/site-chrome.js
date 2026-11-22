@@ -27,11 +27,12 @@
   var MENU = [
     ['Destinations', '/#destinations'],
     ['Deals', '/#deals'],
+    ['Budget Travel', '/budget-travel.html'],
     ['Ireland', '/ireland.html'],
-    ['Hotel Stays', '/#hotel'],
-    ['Brew for Two', '/#brew']
+    ['Hotel Stays', '/#hotel']
   ];
   var MORE = [
+    ['Brew for Two', '/#brew'],
     ['Ireland on Video', '/#hidden'],
     ['Morocco Series', '/#morocco'],
     ['Christmas Markets', '/christmas-markets-europe.html'],
@@ -148,7 +149,7 @@
         (VOTE_OPEN ? '<p><a href="' + VOTE + '" target="_blank" rel="noopener" data-trr="vote"><strong style="color:#fff">\ud83d\udec2 Nominated: Best Budget Traveller</strong></a><br>The Passport Awards 2027 \u00b7 <a href="' + VOTE + '" target="_blank" rel="noopener" data-trr="vote">Vote for us \u2192</a></p>' : '') +
       '</div>' +
       '<div class="trr-fc"><h4>Explore</h4><ul>' +
-        [['Destinations', '/#destinations'], ['Travel deals', '/#deals'], ['Ireland guide', '/ireland.html'], ['Ireland on Video', '/#hidden'], ['Morocco Series', '/#morocco'], ['Hotel Stays', '/#hotel'], ['Brew for Two', '/#brew'], ['Extreme day trips', '/extreme-day-trips.html']]
+        [['Destinations', '/#destinations'], ['Travel deals', '/#deals'], ['Ireland guide', '/ireland.html'], ['Ireland on Video', '/#hidden'], ['Morocco Series', '/#morocco'], ['Hotel Stays', '/#hotel'], ['Brew for Two', '/#brew'], ['Budget travel guide', '/budget-travel.html'], ['Extreme day trips', '/extreme-day-trips.html']]
           .map(function (l) { return '<li><a href="' + l[1] + '">' + l[0] + '</a></li>'; }).join('') +
       '</ul></div>' +
       '<div class="trr-fc"><h4>Book with our partners</h4><ul>' +
