@@ -307,7 +307,11 @@ header{
     .tile-tab{position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:2;background:var(--ink);color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:0 0 10px 10px;white-space:nowrap;}
     .tile.tall{aspect-ratio:auto;}
     /* passport stamps */
-    .stamps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 6px;}
+    .stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:34px 0 6px;}
+    a.stamp-vote{display:block;color:var(--ink);text-decoration:none;transition:box-shadow .15s ease;}
+    a.stamp-vote:hover{box-shadow:var(--shadow-lg);}
+    a.stamp-vote:hover .stamp-lbl{text-decoration:underline;}
+    .stamp-seal{display:block;width:30px;height:30px;margin:0 auto 6px;}
     .stamp{background:#fff;border:2px dashed rgba(184,120,10,.55);outline:5px solid #fff;box-shadow:var(--shadow-md);border-radius:16px;padding:18px 14px;text-align:center;}
     .stamp:nth-child(odd){transform:rotate(-1.2deg);}
     .stamp:nth-child(even){transform:rotate(1deg);}
@@ -362,7 +366,7 @@ header{
     .ft-badge{display:flex;align-items:center;gap:12px;margin-top:16px;}
     .ft-bottom{max-width:1180px;margin:0 auto;padding:16px 18px 26px;border-top:1px solid rgba(253,248,239,.15);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:12px;color:rgba(253,248,239,.6);}
     .ft-bottom p{margin:0;max-width:720px;}
-    @media(max-width:900px){.flightpath{left:0;width:100%;}.hero2{grid-template-columns:1fr;}.stamps{grid-template-columns:repeat(2,1fr);}.ft-in{grid-template-columns:1fr 1fr;}}
+    @media(max-width:900px){.flightpath{left:0;width:100%;}.hero2{grid-template-columns:1fr;}.stamps{grid-template-columns:repeat(2,1fr);}.stamp-vote{grid-column:1/-1;}.ft-in{grid-template-columns:1fr 1fr;}}
     @media(max-width:520px){.ft-in{grid-template-columns:1fr;}.stamp-num{font-size:1.3rem;}.tile-label{font-size:1.05rem;}}
 
     /* widen the existing home blocks to match the new layout */
@@ -663,6 +667,7 @@ header{
 </div>
 
 <div class="stamps">
+  <a class="stamp stamp-vote" href="https://thepassportawards.com/v/twofortherowd?s=stamp" target="_blank" rel="noopener" aria-label="Nominated for Best Budget Traveller at The Passport Awards 2027. Vote for us" onclick="if(window.gtag){gtag('event','passport_vote_click',{prompt:'home_stamp'});}"><svg class="stamp-seal" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#1a1208"/><circle cx="18" cy="18" r="14.5" fill="none" stroke="#ffd84a" stroke-width="1.2"/><g transform="translate(8.4 8.4) scale(0.8)" fill="none" stroke="#ffd84a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></g></svg><div class="stamp-num">Nominated</div><div class="stamp-lbl">Best Budget Traveller</div></a>
   <div class="stamp"><div class="stamp-ico">👀</div><div class="stamp-num">702,000+</div><div class="stamp-lbl">Views across platforms</div></div>
   <div class="stamp"><div class="stamp-ico">🌍</div><div class="stamp-num">60+</div><div class="stamp-lbl">Countries &amp; territories</div></div>
   <div class="stamp"><div class="stamp-ico">🧭</div><div class="stamp-num">TourRadar</div><div class="stamp-lbl">Official ambassadors</div></div>
