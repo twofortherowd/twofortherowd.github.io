@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
+<!-- Opener: cover the page from the first paint so the homepage doesn't flash before the intro -->
+<style>html.opener-pending{background:#0e0a05!important}html.opener-pending body{visibility:hidden!important}</style>
+<script>(function(){try{var d=document.documentElement,l=location,p=l.pathname;
+if((p!=="/"&&p!=="/index.html")||l.hash||/[?&]noopener/.test(l.search))return;
+if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+if(/(google|bing|duckduckgo|yahoo|ecosia|baidu|yandex)\./i.test(document.referrer||""))return;
+if(/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent||""))return;
+var c=navigator.connection;if(c&&(c.saveData||/(^|-)2g$/.test(c.effectiveType||"")))return;
+d.classList.add("opener-pending");setTimeout(function(){d.classList.remove("opener-pending")},4000);}catch(e){}})();</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SPF3M3X8"></script>
   <script src="/js/affiliate-tracking.js" defer></script>

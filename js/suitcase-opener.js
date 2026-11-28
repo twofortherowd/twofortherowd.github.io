@@ -5,6 +5,7 @@
    The homepage is fully loaded underneath; tap, Esc or Skip ends it at once. */
 (function () {
   "use strict";
+  function reveal() { document.documentElement.classList.remove("opener-pending"); }
   var KEY = "tftrOpenerSeen";
   /* Plays on every homepage visit (Nicola's choice). To make it once per visit again, restore the ls.get(KEY) check below. */
   var ls = {
@@ -14,15 +15,15 @@
 
   try {
     var p = location.pathname;
-    if (p !== "/" && p !== "/index.html") return;
-    if (typeof INITIAL_HASH !== "undefined" && INITIAL_HASH) return;
-    if (location.search && /[?&]noopener/.test(location.search)) return;
-    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (/(google|bing|duckduckgo|yahoo|ecosia|baidu|yandex)\./i.test(document.referrer || "")) return;
-    if (/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent || "")) return;
+    if (p !== "/" && p !== "/index.html") { reveal(); return; }
+    if (typeof INITIAL_HASH !== "undefined" && INITIAL_HASH) { reveal(); return; }
+    if (location.search && /[?&]noopener/.test(location.search)) { reveal(); return; }
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { reveal(); return; }
+    if (/(google|bing|duckduckgo|yahoo|ecosia|baidu|yandex)\./i.test(document.referrer || "")) { reveal(); return; }
+    if (/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent || "")) { reveal(); return; }
     var c = navigator.connection;
-    if (c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || ""))) return;
-  } catch (e) { return; }
+    if (c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || ""))) { reveal(); return; }
+  } catch (e) { reveal(); return; }
 
   var small = Math.min(window.innerWidth, window.innerHeight * 1.78) < 900;
   var SRC_CLOSED = small ? "/img/opener-suitcase-closed-sm.webp" : "/img/opener-suitcase-closed.webp";
@@ -30,7 +31,7 @@
   var SRC_US = "/img/home-tile-destinations.jpg";
 
   var css = "" +
-    ".tfo{position:fixed;inset:0;z-index:20000;background:#0e0a05;overflow:hidden;cursor:pointer;opacity:0;transition:opacity .45s ease}" +
+    ".tfo{position:fixed;inset:0;z-index:20000;visibility:visible;background:#0e0a05;overflow:hidden;cursor:pointer;opacity:1;transition:opacity .45s ease}" +
     ".tfo.tfo-in{opacity:1}.tfo.tfo-out{opacity:0;transition:opacity .8s ease}" +
     ".tfo-frame{position:absolute;left:50%;top:50%;width:max(100vw,177.78vh);aspect-ratio:16/9;translate:-50% -50%;transition:transform 2.4s cubic-bezier(.4,0,.3,1),opacity .6s ease}" +
     "@media (max-aspect-ratio:1/1){.tfo-frame{width:165vw}}" +
@@ -169,6 +170,7 @@
     prevOverflow = document.documentElement.style.overflow;
     document.documentElement.style.overflow = "hidden";
     document.body.appendChild(overlay);
+    reveal();
   }
 
   function play() {
@@ -193,12 +195,12 @@
 
   /* Preload both images; give up quietly if they're slow so nobody waits */
   var ready = 0, gaveUp = false;
-  var giveUp = setTimeout(function () { gaveUp = true; }, 2500);
+  var giveUp = setTimeout(function () { gaveUp = true; reveal(); }, 2500);
   function loaded() { ready++; if (ready === 3 && !gaveUp) { clearTimeout(giveUp); play(); } }
   [SRC_CLOSED, SRC_OPEN, SRC_US].forEach(function (src) {
     var im = new Image();
     im.onload = loaded;
-    im.onerror = function () { gaveUp = true; };
+    im.onerror = function () { gaveUp = true; reveal(); };
     im.src = src;
   });
 })();
