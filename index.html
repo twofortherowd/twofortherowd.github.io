@@ -323,7 +323,9 @@ header{
     a.stamp-vote:hover .stamp-lbl{text-decoration:underline;}
     .stamp-seal{display:block;width:30px;height:30px;margin:0 auto 6px;}
     .gygAvail>div{min-width:0;max-width:100%;}
-    .gygAvail iframe{width:100%!important;max-width:100%!important;}
+    .gygAvail iframe{width:100%!important;max-width:100%!important;min-width:0!important;}
+    .gygAvail>div *{max-width:100%;box-sizing:border-box;}
+    @media(max-width:600px){#home .xmasCard{padding:28px 12px!important;}#home .xmasTours{padding:10px 6px!important;}}
     a.stamp{display:block;text-decoration:none;color:var(--ink);transition:box-shadow .15s ease;}
     a.stamp:hover{box-shadow:var(--shadow-lg);}
     a.stamp:hover .stamp-lbl{text-decoration:underline;}
@@ -772,7 +774,7 @@ header{
 </div>
 <script>(function(){var b=document.currentScript.previousElementSibling;if(b&&new Date()>=new Date(b.getAttribute('data-bf-end')+'T00:00:00'))b.style.display='none';})();</script>
 
-<div class="card" style="background:linear-gradient(135deg,#0d3029 0%,#1d5c4c 60%,#24705c 100%);border-color:rgba(16,60,50,.55);text-align:center;color:#fff;overflow:hidden;padding:34px 26px;">
+<div class="card xmasCard" style="background:linear-gradient(135deg,#0d3029 0%,#1d5c4c 60%,#24705c 100%);border-color:rgba(16,60,50,.55);text-align:center;color:#fff;overflow:hidden;padding:34px 26px;">
   <div style="font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#f4d984;margin-bottom:6px;">Christmas Markets 2026 · Most open mid-November</div>
   <h2 style="margin-bottom:8px;color:#fff;font-size:clamp(1.6rem,3.4vw,2.3rem);">Five European Christmas Markets We've Actually Visited</h2>
   <p style="color:rgba(255,255,255,.92);max-width:640px;margin:0 auto 20px;">Cologne, Copenhagen, Turin, Bydgoszcz and Wrocław: our honest first-hand verdicts, 2026 dates, which one we'd choose, and where to book the tours. Late-November and December weekends book up fast, so now's the time.</p>
@@ -813,7 +815,7 @@ header{
     <a class="btn-outline" href="/christmas-markets-europe.html#dates" onclick="gtag('event','christmas_market_dates_click');" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35);">All 2026 dates →</a>
     <a class="btn-outline" href="https://www.getyourguide.com/en-gb/europe-l207848/christmas-market-tours-tc2182/?partner_id=VYORXUN&amp;utm_medium=online_publisher" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35);">Browse festive tours →</a>
   </div>
-  <div style="background:rgba(255,255,255,.96);border-radius:16px;padding:14px 16px;margin:18px auto 0;max-width:900px;text-align:left;color:#14211c;">
+  <div class="xmasTours" style="background:rgba(255,255,255,.96);border-radius:16px;padding:14px 16px;margin:18px auto 0;max-width:900px;text-align:left;color:#14211c;">
     <div style="font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#1d5c4c;margin-bottom:10px;">Festive tours worth a look · live dates &amp; prices</div>
     <div class="gygAvail" style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));">
       <div data-gyg-href="https://widget.getyourguide.com/default/availability.frame" data-gyg-tour-id="1230430" data-gyg-locale-code="en-US" data-gyg-currency="EUR" data-gyg-widget="availability" data-gyg-variant="horizontal" data-gyg-partner-id="VYORXUN"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/cologne-l19/">GetYourGuide</a></span></div>
