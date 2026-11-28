@@ -312,6 +312,9 @@ header{
     a.stamp-vote:hover{box-shadow:var(--shadow-lg);}
     a.stamp-vote:hover .stamp-lbl{text-decoration:underline;}
     .stamp-seal{display:block;width:30px;height:30px;margin:0 auto 6px;}
+    a.stamp{display:block;text-decoration:none;color:var(--ink);transition:box-shadow .15s ease;}
+    a.stamp:hover{box-shadow:var(--shadow-lg);}
+    a.stamp:hover .stamp-lbl{text-decoration:underline;}
     .stamp{background:#fff;border:2px dashed rgba(184,120,10,.55);outline:5px solid #fff;box-shadow:var(--shadow-md);border-radius:16px;padding:18px 14px;text-align:center;}
     .stamp:nth-child(odd){transform:rotate(-1.2deg);}
     .stamp:nth-child(even){transform:rotate(1deg);}
@@ -376,7 +379,6 @@ header{
     #home .featured-grid{grid-template-columns:repeat(3,1fr);}
     @media(max-width:900px){#home .featured-grid{grid-template-columns:1fr 1fr;}}
     @media(max-width:560px){#home .featured-grid{grid-template-columns:1fr;}}
-    #home .featured-grid > .feat-card:last-child{grid-column:1/-1;}
     .marquee-track img[src*='tourradar']{height:58px;}
   </style>
   <script>
@@ -575,7 +577,7 @@ header{
     <div class="tb-left">
       <a class="tb-mail" href="mailto:twofortherowd@gmail.com" aria-label="Email us"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.4l8 5.6 8-5.6V7h-.4L12 12.2z"/></svg><span>twofortherowd@gmail.com</span></a>
       <!-- Passport Awards vote link: hides itself after voting closes (14 Feb 2027) -->
-      <a class="tb-vote" id="tbVote" href="https://thepassportawards.com/v/twofortherowd" target="_blank" rel="noopener" onclick="if(window.gtag){gtag('event','passport_vote_click',{prompt:'home_topbar'});}">🛂 <span class="tb-vote-long">Nominated: Best Budget Traveller ·</span> Vote for us →</a>
+      <a class="tb-vote" id="tbVote" href="https://thepassportawards.com/v/twofortherowd" target="_blank" rel="noopener" onclick="if(window.gtag){gtag('event','passport_vote_click',{prompt:'home_topbar'});}"><span class="tb-vote-long">Nominated: Best Budget Traveller ·</span> Vote for us →</a>
     </div>
     <div class="tb-right">
       <span class="tb-follow">Follow us</span><span class="tb-sep"></span>
@@ -612,7 +614,7 @@ header{
         <div class="navMoreMenu">
           <button class="tabBtn" role="tab" id="tab-brew"         aria-controls="brew"         data-tab="brew"         onclick="show('brew')"         aria-selected="false" tabindex="-1">Brew for Two</button>
           <button class="tabBtn" role="tab" id="tab-morocco"     aria-controls="morocco"     data-tab="morocco"     onclick="show('morocco')"     aria-selected="false" tabindex="-1">Morocco Series</button>
-          <button class="tabBtn" role="tab" id="tab-carlow"      aria-controls="carlow"      data-tab="carlow"      onclick="show('carlow')"      aria-selected="false" tabindex="-1">🇮🇪 Carlow</button>
+          <button class="tabBtn" role="tab" id="tab-carlow"      aria-controls="carlow"      data-tab="carlow"      onclick="show('carlow')"      aria-selected="false" tabindex="-1">Carlow</button>
           <button class="tabBtn" role="tab" id="tab-shop"        aria-controls="shop"        data-tab="shop"        onclick="show('shop')"        aria-selected="false" tabindex="-1">Shop &amp; Tours</button>
           <button class="tabBtn" role="tab" id="tab-newsletters" aria-controls="newsletters" data-tab="newsletters" onclick="show('newsletters')" aria-selected="false" tabindex="-1">Past Newsletters</button>
           <button class="tabBtn" role="tab" id="tab-work"        aria-controls="work"        data-tab="work"        onclick="show('work')"        aria-selected="false" tabindex="-1">Work With Us</button>
@@ -648,8 +650,8 @@ header{
 <div class="homeWide">
 <div class="hero2">
   <div class="hero2-copy">
-    <svg class="flightpath" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 100 C 150 10, 330 130, 600 20" fill="none" stroke="#b8780a" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round" opacity=".55"/><text x="560" y="34" font-size="22" transform="rotate(-18 560 34)">✈️</text></svg>
-    <span class="kicker">🇮🇪 Budget travel from Ireland · 60+ countries</span>
+    <svg class="flightpath" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 100 C 150 10, 330 130, 600 20" fill="none" stroke="#b8780a" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round" opacity=".55"/><g transform="translate(548 22) rotate(62 12 12)" fill="#b8780a"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></g></svg>
+    <span class="kicker">Budget travel from Ireland · 60+ countries</span>
     <h1>We're Nicola &amp; Pádraig. <span>Proof you don't need to quit your job to see the world.</span></h1>
     <p class="lead">We're from Carlow. We hold down real jobs, travel on real budgets and have still made it to 60+ countries &amp; territories, with cheap flights, deals worth booking and a lot of early starts. We share exactly how we do it, and the honest version of every trip.</p>
     <div class="hero2-ctas">
@@ -668,10 +670,10 @@ header{
 
 <div class="stamps">
   <a class="stamp stamp-vote" href="https://thepassportawards.com/v/twofortherowd?s=stamp" target="_blank" rel="noopener" aria-label="Nominated for Best Budget Traveller at The Passport Awards 2027. Vote for us" onclick="if(window.gtag){gtag('event','passport_vote_click',{prompt:'home_stamp'});}"><svg class="stamp-seal" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#1a1208"/><circle cx="18" cy="18" r="14.5" fill="none" stroke="#ffd84a" stroke-width="1.2"/><g transform="translate(8.4 8.4) scale(0.8)" fill="none" stroke="#ffd84a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></g></svg><div class="stamp-num">Nominated</div><div class="stamp-lbl">Best Budget Traveller · vote by 14 Feb</div></a>
-  <div class="stamp"><div class="stamp-ico">👀</div><div class="stamp-num">728,000+</div><div class="stamp-lbl">Views across platforms</div></div>
-  <div class="stamp"><div class="stamp-ico">🌍</div><div class="stamp-num">60+</div><div class="stamp-lbl">Countries &amp; territories</div></div>
-  <div class="stamp"><div class="stamp-ico">🧭</div><div class="stamp-num">TourRadar</div><div class="stamp-lbl">Official ambassadors</div></div>
-  <div class="stamp"><div class="stamp-ico">🎓</div><div class="stamp-num">Accredited</div><div class="stamp-lbl">Irish tour guide</div></div>
+  <div class="stamp"><svg class="stamp-seal" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#1a1208"/><circle cx="18" cy="18" r="14.5" fill="none" stroke="#ffd84a" stroke-width="1.2"/><g transform="translate(9 9) scale(0.75)" fill="none" stroke="#ffd84a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></g></svg><div class="stamp-num">728,000+</div><div class="stamp-lbl">Views across platforms</div></div>
+  <div class="stamp"><svg class="stamp-seal" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#1a1208"/><circle cx="18" cy="18" r="14.5" fill="none" stroke="#ffd84a" stroke-width="1.2"/><g transform="translate(9 9) scale(0.75)" fill="none" stroke="#ffd84a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></g></svg><div class="stamp-num">60+</div><div class="stamp-lbl">Countries &amp; territories</div></div>
+  <a class="stamp" href="https://www.tourradar.com/mlp/affiliates" target="_blank" rel="noopener" onclick="if(window.gtag){gtag('event','tourradar_partner_page_click',{placement:'home_stamp'});}"><svg class="stamp-seal" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#1a1208"/><circle cx="18" cy="18" r="14.5" fill="none" stroke="#ffd84a" stroke-width="1.2"/><g transform="translate(9 9) scale(0.75)" fill="none" stroke="#ffd84a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2.1 6.3-6.3 2.1 2.1-6.3z"/></g></svg><div class="stamp-num">TourRadar</div><div class="stamp-lbl">Official ambassadors</div></a>
+  <div class="stamp"><svg class="stamp-seal" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#1a1208"/><circle cx="18" cy="18" r="14.5" fill="none" stroke="#ffd84a" stroke-width="1.2"/><g transform="translate(9 9) scale(0.75)" fill="none" stroke="#ffd84a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></g></svg><div class="stamp-num">Accredited</div><div class="stamp-lbl">Irish tour guide</div></div>
 </div>
 
 <!-- DEPARTURES BOARD: each row links somewhere. data-end hides a row automatically from that date. -->
@@ -728,7 +730,7 @@ header{
 <div class="trFeat">
   <img src="/img/img-tourradar-logo.png" alt="TourRadar logo" loading="lazy">
   <div class="trFeatBody">
-    <p class="trFeatKicker">⭐ As featured by TourRadar</p>
+    <p class="trFeatKicker">As featured by TourRadar</p>
     <p class="trFeatTitle">TourRadar chose us as the featured creators on their official partner page</p>
     <p class="trFeatText">We joined TourRadar because it fits how we already travel, and we only <strong>recommend tours we actually believe in</strong>. TourRadar now showcases our story to creators around the world.</p>
     <a class="trFeatLink" href="https://www.tourradar.com/mlp/affiliates#testimonials" target="_blank" rel="noopener" onclick="if(window.gtag){gtag('event','tourradar_feature_click',{placement:'home'});}">See us on TourRadar's partner page →</a>
@@ -737,8 +739,8 @@ header{
 
 <!-- SEASONAL: October mid-term block retired 1 Nov 2026 (kept for reuse next year; page is /summer-deals.html)
 <div class="card" style="background:linear-gradient(135deg,#9A4406 0%,#B45309 100%);border-color:rgba(120,53,15,.55);text-align:center;color:#fff;">
-  <div style="font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#fff;margin-bottom:6px;">🍂 October Mid-Term 2026</div>
-  <h2 style="margin-bottom:8px;color:#fff;">Autumn Travel Deals + Halloween Picks 🎃</h2>
+  <div style="font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#fff;margin-bottom:6px;">October Mid-Term 2026</div>
+  <h2 style="margin-bottom:8px;color:#fff;">Autumn Travel Deals + Halloween Picks </h2>
   <p style="color:#fff;max-width:610px;margin:0 auto 16px;">Sun escapes, city breaks and bigger autumn adventures — plus spooky Halloween experiences including Dracula’s Castle, Derry Halloween, Edinburgh ghost tours and Disneyland Paris.</p>
   <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
     <a class="btn-primary" href="/summer-deals.html" onclick="fbq('track','ViewContent');gtag('event','autumn_home_click');" style="background:rgba(26,18,8,.9);color:#ffd84a;">See October mid-term picks →</a>
@@ -750,7 +752,7 @@ header{
 <!-- BLACK FRIDAY 2026 BANNER: hides itself automatically from 1 December 2026 -->
 <div class="bf26-banner" data-bf-end="2026-12-01" style="margin:0 auto 18px;max-width:880px;box-sizing:border-box;background:linear-gradient(135deg,#14110a 0%,#2b2210 60%,#3a2c0c 100%);border:1px solid rgba(255,216,74,.45);border-radius:18px;padding:22px 24px;color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 12px 32px rgba(0,0,0,.12);">
   <div style="flex:1 1 380px;min-width:0;">
-    <div style="font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#ffd84a;margin-bottom:6px;">🛍️ Black Friday 2026 · Friday 27 November</div>
+    <div style="font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#ffd84a;margin-bottom:6px;">Black Friday 2026 · Friday 27 November</div>
     <div style="font-size:clamp(1.15rem,2.4vw,1.45rem);font-weight:700;line-height:1.25;margin-bottom:6px;color:#fff;">Black Friday travel deals: our picks for winter and 2027 trips</div>
     <div style="font-size:14px;line-height:1.5;color:rgba(255,255,255,.85);">TourRadar’s sale is already live, and we’ve rounded up the tour, experience and hotel deals worth looking at, plus the discount codes we actually use.</div>
   </div>
@@ -759,37 +761,37 @@ header{
 <script>(function(){var b=document.currentScript.previousElementSibling;if(b&&new Date()>=new Date(b.getAttribute('data-bf-end')+'T00:00:00'))b.style.display='none';})();</script>
 
 <div class="card" style="background:linear-gradient(135deg,#0d3029 0%,#1d5c4c 60%,#24705c 100%);border-color:rgba(16,60,50,.55);text-align:center;color:#fff;overflow:hidden;padding:34px 26px;">
-  <div style="font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#f4d984;margin-bottom:6px;">🎄 Christmas Markets 2026 · Most open mid-November</div>
+  <div style="font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#f4d984;margin-bottom:6px;">Christmas Markets 2026 · Most open mid-November</div>
   <h2 style="margin-bottom:8px;color:#fff;font-size:clamp(1.6rem,3.4vw,2.3rem);">Five European Christmas Markets We've Actually Visited</h2>
   <p style="color:rgba(255,255,255,.92);max-width:640px;margin:0 auto 20px;">Cologne, Copenhagen, Turin, Bydgoszcz and Wrocław: our honest first-hand verdicts, 2026 dates, which one we'd choose, and where to book the tours. Late-November and December weekends book up fast, so now's the time.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px;text-align:left;margin:0 auto 20px;max-width:900px;">
       <a href="/germany/cologne.html" onclick="gtag('event','christmas_market_tile_click',{city:'Cologne'});" style="display:block;text-decoration:none;background:rgba(255,255,255,.10);border:1px solid rgba(244,217,132,.35);border-radius:14px;padding:14px 12px;color:#fff;">
         <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f4d984;">Best classic</div>
-        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">🇩🇪 Cologne</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">Cologne</div>
         <div style="font-size:12px;line-height:1.45;color:rgba(255,255,255,.88);">Huge, traditional and properly German.</div>
         <div style="font-size:11px;font-weight:700;margin-top:6px;color:#f4d984;">16 Nov – 23 Dec</div>
       </a>
       <a href="/wroclaw.html" onclick="gtag('event','christmas_market_tile_click',{city:'Wrocław'});" style="display:block;text-decoration:none;background:rgba(255,255,255,.10);border:1px solid rgba(244,217,132,.35);border-radius:14px;padding:14px 12px;color:#fff;">
         <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f4d984;">Prettiest</div>
-        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">🇵🇱 Wrocław</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">Wrocław</div>
         <div style="font-size:12px;line-height:1.45;color:rgba(255,255,255,.88);">Gorgeous Old Town and full festive drama.</div>
         <div style="font-size:11px;font-weight:700;margin-top:6px;color:#f4d984;">20 Nov – 7 Jan</div>
       </a>
       <a href="/bydgoszcz.html" onclick="gtag('event','christmas_market_tile_click',{city:'Bydgoszcz'});" style="display:block;text-decoration:none;background:rgba(255,255,255,.10);border:1px solid rgba(244,217,132,.35);border-radius:14px;padding:14px 12px;color:#fff;">
         <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f4d984;">Best surprise</div>
-        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">🇵🇱 Bydgoszcz</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">Bydgoszcz</div>
         <div style="font-size:12px;line-height:1.45;color:rgba(255,255,255,.88);">Wonderful lights, brilliant value, so welcoming.</div>
         <div style="font-size:11px;font-weight:700;margin-top:6px;color:#f4d984;">20 Nov – 21 Dec</div>
       </a>
       <a href="/copenhagen.html" onclick="gtag('event','christmas_market_tile_click',{city:'Copenhagen'});" style="display:block;text-decoration:none;background:rgba(255,255,255,.10);border:1px solid rgba(244,217,132,.35);border-radius:14px;padding:14px 12px;color:#fff;">
         <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f4d984;">Best atmosphere</div>
-        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">🇩🇰 Copenhagen</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">Copenhagen</div>
         <div style="font-size:12px;line-height:1.45;color:rgba(255,255,255,.88);">Expensive, yes. Ridiculously cosy, also yes.</div>
         <div style="font-size:11px;font-weight:700;margin-top:6px;color:#f4d984;">13 Nov – 3 Jan</div>
       </a>
       <a href="/turin.html" onclick="gtag('event','christmas_market_tile_click',{city:'Turin'});" style="display:block;text-decoration:none;background:rgba(255,255,255,.10);border:1px solid rgba(244,217,132,.35);border-radius:14px;padding:14px 12px;color:#fff;">
         <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f4d984;">Best city + food</div>
-        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">🇮🇹 Turin</div>
+        <div style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:2px 0 4px;">Turin</div>
         <div style="font-size:12px;line-height:1.45;color:rgba(255,255,255,.88);">Go for Christmas, stay for the piazzas and pizza.</div>
         <div style="font-size:11px;font-weight:700;margin-top:6px;color:#f4d984;">Usually early Dec – 6 Jan</div>
       </a>
@@ -799,9 +801,9 @@ header{
     <a class="btn-outline" href="/christmas-markets-europe.html#dates" onclick="gtag('event','christmas_market_dates_click');" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35);">All 2026 dates →</a>
     <a class="btn-outline" href="https://www.getyourguide.com/en-gb/europe-l207848/christmas-market-tours-tc2182/?partner_id=VYORXUN&amp;utm_medium=online_publisher" target="_blank" rel="noopener sponsored" onclick="fbq('track','ViewContent');" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35);">Browse festive tours →</a>
   </div>
-  <div style="background:rgba(255,255,255,.96);border-radius:16px;padding:16px;margin:22px auto 0;max-width:900px;text-align:left;color:#14211c;">
-    <div style="font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#1d5c4c;margin-bottom:10px;">🎄 Festive tours worth a look · live dates &amp; prices</div>
-    <div class="gygAvail" style="display:grid;gap:12px;">
+  <div style="background:rgba(255,255,255,.96);border-radius:16px;padding:14px 16px;margin:18px auto 0;max-width:900px;text-align:left;color:#14211c;">
+    <div style="font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#1d5c4c;margin-bottom:10px;">Festive tours worth a look · live dates &amp; prices</div>
+    <div class="gygAvail" style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));">
       <div data-gyg-href="https://widget.getyourguide.com/default/availability.frame" data-gyg-tour-id="1230430" data-gyg-locale-code="en-US" data-gyg-currency="EUR" data-gyg-widget="availability" data-gyg-variant="horizontal" data-gyg-partner-id="VYORXUN"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/cologne-l19/">GetYourGuide</a></span></div>
       <div data-gyg-href="https://widget.getyourguide.com/default/availability.frame" data-gyg-tour-id="1140306" data-gyg-locale-code="en-US" data-gyg-currency="EUR" data-gyg-widget="availability" data-gyg-variant="horizontal" data-gyg-partner-id="VYORXUN"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/bydgoszcz-l100311/">GetYourGuide</a></span></div>
     </div>
@@ -810,30 +812,16 @@ header{
   <p style="font-size:11px;color:rgba(255,255,255,.65);margin:14px 0 0;">Dates are the published 2026 dates; always recheck the official market site before booking.</p>
 </div>
 
-<div class="secHead"><span class="kicker">What we get up to</span><h2>Honest guides from two people who actually go</h2><p>Every guide is from a trip we took ourselves, with the good bits, the bad bits and what we'd do differently.</p></div>
+<div class="secHead"><span class="kicker">What we get up to</span><h2 style="text-wrap:balance;">Honest guides from two people who actually&nbsp;go</h2><p>Every guide is from a trip we took ourselves, with the good bits, the bad bits and what we'd do differently.</p></div>
 <div class="featured-grid">
-  <a class="feat-card" href="/christmas-gifts-for-travellers.html"><span class="feat-tag">🎄 Gift guide</span><div class="feat-title">Christmas gifts for travellers — 16 things we actually use</div><p class="feat-sub">Packing cubes, AirTags, a travel kettle and the long-haul essentials that come on every trip with us.</p><div class="feat-arrow">See the gift guide →</div></a>
+  <a class="feat-card" href="/christmas-gifts-for-travellers.html"><span class="feat-tag">Gift guide</span><div class="feat-title">Christmas gifts for travellers — 16 things we actually use</div><p class="feat-sub">Packing cubes, AirTags, a travel kettle and the long-haul essentials that come on every trip with us.</p><div class="feat-arrow">See the gift guide →</div></a>
   <a class="feat-card" href="/#morocco" onclick="show('morocco');return false;"><span class="feat-tag gold">Morocco series</span><div class="feat-title">Our complete Morocco tour review — what it's actually like</div><p class="feat-sub">Route map, 26 videos, desert camps, local guides and an honest take on booking through TourRadar.</p><div class="feat-arrow">Watch the full series →</div></a>
-  <a class="feat-card" href="/extreme-day-trips.html"><span class="feat-tag gold">✈️ Extreme day trips</span><div class="feat-title">Out at dawn, home by midnight — a whole city in one day</div><p class="feat-sub">Our extreme day trips from Ireland, starting with Liverpool in 14 hours, plus a search to plan your own same-day out-and-back.</p><div class="feat-arrow">See our extreme day trips →</div></a>
-  <a class="feat-card" href="/ireland.html"><span class="feat-tag">🇮🇪 Ireland</span><div class="feat-title">Ireland, from two people who actually live here</div><p class="feat-sub">Our county guides, Ireland map and 80 videos from around Ireland — including the places most tourists drive straight past.</p><div class="feat-arrow">Explore our Ireland guide →</div></a>
-  <a class="feat-card" href="/#hotel" onclick="show('hotel');return false;"><span class="feat-tag">🏨 Hotel stays</span><div class="feat-title">Honest hotel reviews — what you actually want to know before you book</div><p class="feat-sub">Room tours, first impressions and the real verdict. No over-polished nonsense.</p><div class="feat-arrow">See hotel reviews →</div></a>
-  <a class="feat-card" href="/#brew" onclick="show('brew');return false;"><span class="feat-tag">☕ Brew for Two</span><div class="feat-title">On a mission to find the best coffee in Ireland — one café at a time</div><p class="feat-sub">Honest café reviews, gluten-free treat ratings, hidden coffee spots and the ones genuinely worth stopping for.</p><div class="feat-arrow">See the reviews →</div></a>
-  <a class="feat-card" href="/haunted-ireland.html"><span class="feat-tag">👻 Free guide</span><div class="feat-title">Haunted Ireland — 13 Irish ghost stories, myths &amp; legends</div><p class="feat-sub">Haunted castles, witches, banshees and the Devil himself, from our Friday Night Frights series. Free when you join our mailing list.</p><div class="feat-arrow">Get the free guide →</div></a>
+  <a class="feat-card" href="/extreme-day-trips.html"><span class="feat-tag gold">Extreme day trips</span><div class="feat-title">Out at dawn, home by midnight — a whole city in one day</div><p class="feat-sub">Our extreme day trips from Ireland, starting with Liverpool in 14 hours, plus a search to plan your own same-day out-and-back.</p><div class="feat-arrow">See our extreme day trips →</div></a>
+  <a class="feat-card" href="/ireland.html"><span class="feat-tag">Ireland</span><div class="feat-title">Ireland, from two people who actually live here</div><p class="feat-sub">Our county guides, Ireland map and 80 videos from around Ireland — including the places most tourists drive straight past.</p><div class="feat-arrow">Explore our Ireland guide →</div></a>
+  <a class="feat-card" href="/#hotel" onclick="show('hotel');return false;"><span class="feat-tag">Hotel stays</span><div class="feat-title">Honest hotel reviews — what you actually want to know before you book</div><p class="feat-sub">Room tours, first impressions and the real verdict. No over-polished nonsense.</p><div class="feat-arrow">See hotel reviews →</div></a>
+  <a class="feat-card" href="/#brew" onclick="show('brew');return false;"><span class="feat-tag">Brew for Two</span><div class="feat-title">On a mission to find the best coffee in Ireland — one café at a time</div><p class="feat-sub">Honest café reviews, gluten-free treat ratings, hidden coffee spots and the ones genuinely worth stopping for.</p><div class="feat-arrow">See the reviews →</div></a>
 </div>
 
-
-<!-- TOURRADAR WIDGET — official embed (partner-id two-for-the-rowd, deals only, query cheapest tours). Script loads only when the visitor scrolls near it. -->
-<div class="card tr-home-widget" id="tourradar-widget">
-  <p class="section-label" style="margin:0 0 4px;">🔥 Current TourRadar deals</p>
-  <p style="color:var(--ink-soft);font-size:14px;margin:0 0 12px;">Budget-friendly tour deals from around the world — live prices straight from TourRadar.</p>
-  <div class="tr-widget-frame">
-    <x-tr-tours partner-id="two-for-the-rowd" campaign="tours-widget" layout="slider" results="12" density="compact" primary-color="#1A1208" bg-color="#FFFFFF" text-color="#1A1208" radius="16px" cta="View tour" deals-only="true" query="cheapest tours"></x-tr-tours>
-  </div>
-  <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;">
-    <a class="btn-outline" href="https://www.tourradar.com/deals/anywhere?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=home-deals" target="_blank" rel="noopener sponsored" onclick="fbq('trackCustom','TourRadarClick');gtag('event','tourradar_click',{destination:'TourRadar deals',button_label:'Home view all deals'});">View all TourRadar deals →</a>
-    <a href="https://www.tourradar.com/?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=widget-credit" target="_blank" rel="noopener sponsored" style="font:400 11px/1.4 system-ui,-apple-system,sans-serif;color:#8a8a8a;text-decoration:none;">Powered by TourRadar</a>
-  </div>
-</div>
 
 <!-- PARTNER LOGO STRIP: every logo is a tracked affiliate/partner link. Hover pauses the scroll. -->
 <div class="partners">
@@ -845,13 +833,13 @@ header{
       <a href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'GetYourGuide'});}"><img class="gyg" src="img/img-getyourguide-logo.png" alt="GetYourGuide" loading="eager"></a>
       <a href="https://affiliate.klook.com/redirect?aid=119289&amp;aff_adid=1262030&amp;k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'Klook'});}"><img src="img/img-klook-logo.png" alt="Klook" loading="eager"></a>
       <a href="https://link.amazon/B07NEpvEG" target="_blank" rel="noopener sponsored nofollow" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','amazon_click',{'placement':'home_logos'});}"><img src="img/img-amazon-logo-clean.png" alt="Amazon: our travel picks" loading="eager"></a>
-      <a href="https://drivefromhome.com/?utm_source=twofortherowd&amp;utm_medium=partnership&amp;utm_campaign=homepage" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'Drive From Home'});}"><span class="wordmark">🚗 Drive From Home<small>Explore 1,100+ cities virtually</small></span></a>
+      <a href="https://drivefromhome.com/?utm_source=twofortherowd&amp;utm_medium=partnership&amp;utm_campaign=homepage" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'Drive From Home'});}"><span class="wordmark">Drive From Home<small>Explore 1,100+ cities virtually</small></span></a>
       <!-- set 2 (copy of set 1 so the loop is seamless; hidden from screen readers) -->
       <a href="https://www.tourradar.com/?utm_source=partner-traveller-1228400&amp;utm_medium=ambassador&amp;utm_campaign=home-logos" target="_blank" rel="noopener sponsored" aria-hidden="true" tabindex="-1" onclick="if(window.fbq){fbq('track','InitiateCheckout');}if(window.gtag){gtag('event','partner_logo_click',{partner:'TourRadar'});}"><img src="img/img-tourradar-logo.png" alt="" loading="eager"></a>
       <a href="https://gyg.me/JeeARAr9" target="_blank" rel="noopener sponsored" aria-hidden="true" tabindex="-1" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'GetYourGuide'});}"><img class="gyg" src="img/img-getyourguide-logo.png" alt="" loading="eager"></a>
       <a href="https://affiliate.klook.com/redirect?aid=119289&amp;aff_adid=1262030&amp;k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener sponsored" aria-hidden="true" tabindex="-1" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'Klook'});}"><img src="img/img-klook-logo.png" alt="" loading="eager"></a>
       <a href="https://link.amazon/B07NEpvEG" target="_blank" rel="noopener sponsored nofollow" aria-hidden="true" tabindex="-1" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','amazon_click',{'placement':'home_logos'});}"><img src="img/img-amazon-logo-clean.png" alt="" loading="eager"></a>
-      <a href="https://drivefromhome.com/?utm_source=twofortherowd&amp;utm_medium=partnership&amp;utm_campaign=homepage" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'Drive From Home'});}"><span class="wordmark">🚗 Drive From Home<small>Explore 1,100+ cities virtually</small></span></a>
+      <a href="https://drivefromhome.com/?utm_source=twofortherowd&amp;utm_medium=partnership&amp;utm_campaign=homepage" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1" onclick="if(window.fbq){fbq('track','ViewContent');}if(window.gtag){gtag('event','partner_logo_click',{partner:'Drive From Home'});}"><span class="wordmark">Drive From Home<small>Explore 1,100+ cities virtually</small></span></a>
     </div>
   </div>
   <p class="note">These are the companies we actually book with. Booking through these logos supports us at no extra cost to you.</p>
@@ -866,7 +854,7 @@ header{
     </span>
   </a>
   <div style="flex:1 1 240px;">
-    <span class="badge outline">🎙️ As Featured On</span>
+    <span class="badge outline">As Featured On</span>
     <h3 style="margin:8px 0 6px;">Nicola sat down with the How Is He Podcast</h3>
     <p style="color:var(--ink-soft);font-size:14px;margin-bottom:10px;">How Two for the Row'd got started, life on the road as a couple, and the honest side of travel we don't always show on Instagram.</p>
     <a class="btn-outline" href="https://youtu.be/-RGroKocork" target="_blank" rel="noopener" onclick="fbq('track','ViewContent');">Watch the episode →</a>
@@ -877,7 +865,7 @@ header{
 <div class="newsletterBox" style="background:linear-gradient(135deg,#ffd84a 0%,#ffe87a 100%);border:1px solid #e8c235;border-radius:16px;box-shadow:0 10px 32px rgba(232,194,53,.3);padding:24px 28px;max-width:880px;margin:0 auto 16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:22px 30px;">
   <a href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('trackCustom','SignupClick');}if(window.gtag){gtag('event','signup_click',{form:'home-haunted-cover'});}" style="flex:0 0 auto;display:block;"><img src="img/haunted-ireland-cover.jpg" alt="Cover of our free Haunted Ireland guide: 13 spooky stories, myths and legends" width="150" height="212" loading="lazy" style="width:150px;height:auto;display:block;border-radius:6px;transform:rotate(-3deg);box-shadow:0 12px 28px rgba(26,18,8,.35);"></a>
   <div style="flex:1 1 300px;text-align:left;">
-    <h2 style="margin-bottom:6px;">✈️ Good trips. Great deals. The odd ghost story.</h2>
+    <h2 style="margin-bottom:6px;">Good trips. Great deals. The odd ghost story.</h2>
     <p style="font-size:14px;color:#4a3f28;margin-bottom:16px;">Join our free newsletter and get your copy of <strong>Haunted Ireland</strong>: 13 Irish ghost stories, myths &amp; legends, plus honest travel inspiration and deals worth knowing about.</p>
     <a href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('trackCustom','SignupClick');}if(window.gtag){gtag('event','signup_click',{form:'home-newsletter'});}" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;background:#1a1208;color:#fff;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;">Send me my free guide →</a>
     <p style="font-size:12px;color:#4a3f28;margin:12px 0 0;">Free to join. Unsubscribe whenever you like. <a href="/#newsletters" onclick="show('newsletters');return false;" style="color:#1a1208;text-decoration:underline;font-weight:700;">Read past issues →</a></p>
@@ -997,9 +985,9 @@ header{
   <div class="promoBox" role="document">
     <button class="promoClose" type="button" onclick="closePromoModal()" aria-label="Close popup">×</button>
     <img src="img/byd4.jpeg" alt="Christmas lights at the Bydgoszcz Christmas market" style="display:block;width:100%;max-height:150px;object-fit:cover;margin:0 0 14px;border-radius:12px;border:1px solid #d9b45f;">
-    <h2>🎄 Before you go — get our festive travel picks!</h2>
+    <h2>Before you go — get our festive travel picks!</h2>
     <p class="lead"><strong>Christmas market tips, Black Friday travel deals and the discount codes we actually rate, straight to your inbox.</strong></p>
-    <p>Join our mailing list and you'll get our free Hidden Gems guide straight away, plus honest travel tips and deals we write ourselves. No spam, unsubscribe any time. 💛</p>
+    <p>Join our mailing list and you'll get our free Hidden Gems guide straight away, plus honest travel tips and deals we write ourselves. No spam, unsubscribe any time. </p>
     <div style="margin-top:16px;">
       <a class="btn-gold" href="https://preview.mailerlite.io/forms/2378028/188440618450551814/share" target="_blank" rel="noopener" onclick="closePromoModal();if(window.fbq){fbq('trackCustom','SignupClick');}" style="width:100%;justify-content:center;font-size:15px;padding:15px 22px;">Count me in →</a>
     </div>
