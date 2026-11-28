@@ -45,7 +45,7 @@
 <meta name="twitter:image" content="https://twofortherowd.com/img/og-share-2026.jpg"/>
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "Article", "headline": "Black Friday Travel Deals 2026 — Tours, Experiences & Hotels", "description": "Black Friday 2026 is 27 November. How to get the best Black Friday travel deals on tours, day trips, attractions and hotels from TourRadar, GetYourGuide and Klook — from two Irish travellers who book with them.", "author": {"@type": "Person", "name": "Nicola and Padraig", "url": "https://twofortherowd.com"}, "publisher": {"@type": "Organization", "name": "Two for the Row'd", "url": "https://twofortherowd.com"}, "url": "https://twofortherowd.com/black-friday-travel-deals.html", "image": "https://twofortherowd.com/img/og-share-2026.jpg", "datePublished": "2026-10-17", "dateModified": "2026-11-21"}
+  {"@context": "https://schema.org", "@type": "Article", "headline": "Black Friday Travel Deals 2026 — Tours, Experiences & Hotels", "description": "Black Friday 2026 is 27 November. How to get the best Black Friday travel deals on tours, day trips, attractions and hotels from TourRadar, GetYourGuide and Klook — from two Irish travellers who book with them.", "author": {"@type": "Person", "name": "Nicola and Padraig", "url": "https://twofortherowd.com"}, "publisher": {"@type": "Organization", "name": "Two for the Row'd", "url": "https://twofortherowd.com"}, "url": "https://twofortherowd.com/black-friday-travel-deals.html", "image": "https://twofortherowd.com/img/og-share-2026.jpg", "datePublished": "2026-10-17", "dateModified": "2026-11-28"}
   </script>
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When is Black Friday 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Black Friday 2026 is on Friday 27 November, and Cyber Monday is on Monday 30 November. Many travel sales start earlier in the week and run through the weekend."}}, {"@type": "Question", "name": "Is Black Friday a good time to book tours and travel?", "acceptedAnswer": {"@type": "Answer", "text": "It can be. Travel companies typically use Black Friday to fill trips for the year ahead, so it’s a good moment to book something you were planning anyway. The trick is to shortlist and price-check now, so you can tell a genuine deal from a dressed-up full price."}}, {"@type": "Question", "name": "Does TourRadar have Black Friday deals?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. TourRadar’s Black Friday sale is live now, with up to 70% off multi-day tours and new deals added as the sale goes on. Your free TourRadar+ saving is also applied automatically at checkout when you’re signed in. See our TourRadar discount guide."}}, {"@type": "Question", "name": "Can I use a Klook promo code on Black Friday sale prices?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not. Klook’s promo code terms say codes generally can’t be combined with already-discounted items or other promotions, so compare the sale price with the full price plus a code and pick whichever works out cheaper. Our Klook codes page lists the codes that are in date right now."}}]}
@@ -149,9 +149,16 @@ footer a{font-weight:600}
       <div class="mm-dates">
         <div class="mm-date"><span>Black Friday</span><strong>Fri 27 November</strong></div>
         <div class="mm-date"><span>Cyber Monday</span><strong>Mon 30 November</strong></div>
-        <div class="mm-date" id="bfCountdownBox"><span>Countdown</span><strong><span class="mm-count" id="bfCountdown">—</span></strong></div>
+        <div class="mm-date" id="bfCountdownBox"><span>Cyber Monday ends in</span><strong><span class="mm-count" id="bfCountdown">—</span></strong></div>
       </div>
+      <a class="bf-jump" id="bfJump" href="#our-picks">See our top 3 deals ↓ <span class="bf-off">up to 50% off</span></a>
     </header>
+    <style>
+    .bf-jump{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px;padding:14px 22px;background:#ffd84a;color:#1a1208;font-weight:800;font-size:1.05rem;text-decoration:none;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+    .mm-hero .bf-jump span.bf-off{font-weight:600;font-size:.85rem;background:#1a1208;color:#ffd84a !important;padding:3px 10px;border-radius:999px;display:inline-block}
+    .bf-jump:hover{background:#ffe27a}
+    @media(max-width:640px){.mm-dates .mm-date:not(#bfCountdownBox){display:none}.bf-jump{width:100%;justify-content:center;box-sizing:border-box}}
+    </style>
 
 <!-- ===== BLACK FRIDAY BANNER (TourRadar) START: remove after Cyber Monday, 30 Nov 2026 ===== -->
 <style>
@@ -195,6 +202,7 @@ footer a{font-weight:600}
         <div class="mm-eyebrow">As seen in our reel</div>
         <h2>Our 3 Black Friday picks</h2>
         <p>Three deals from TourRadar’s Black Friday sale that we’d happily book ourselves: a Nile cruise, a proper tour of Italy and a short break in Andalusia.</p>
+        <p style="font-size:.9rem;opacity:.8">Prices below are TourRadar’s US-dollar prices. Check the live price in euro on their site before you book.</p>
       </div>
       <div class="mm-grid three">
         <article class="mm-card">
@@ -452,8 +460,16 @@ footer a{font-weight:600}
       var el = document.getElementById('bfCountdown'); if (!el) return;
       var bf = new Date('2026-11-27T00:00:00Z').getTime(), cm = new Date('2026-12-01T00:00:00Z').getTime(), now = Date.now();
       if (now < bf) { var d = Math.ceil((bf - now) / 86400000); el.textContent = d + (d === 1 ? ' day to go' : ' days to go'); }
-      else if (now < cm) { el.textContent = 'Deals are live!'; }
-      else { document.getElementById('bfCountdownBox').remove(); }
+      else if (now < cm) {
+        var tick = function(){
+          var ms = cm - Date.now();
+          if (ms <= 0) { el.textContent = 'Ended'; return; }
+          var d = Math.floor(ms / 86400000), h = Math.floor(ms % 86400000 / 3600000), m = Math.floor(ms % 3600000 / 60000);
+          el.textContent = d > 0 ? d + 'd ' + h + 'h ' + m + 'm' : h + 'h ' + m + 'm';
+        };
+        tick(); setInterval(tick, 30000);
+      }
+      else { document.getElementById('bfCountdownBox').remove(); var j = document.getElementById('bfJump'); if (j) j.remove(); }
     })();
     </script>
 
